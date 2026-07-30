@@ -4,7 +4,7 @@
 > `tools/export_companion.py`. Nothing here is authored, and any edit made here will be
 > destroyed the next time it is regenerated.
 >
-> **Source:** [aaaaaaaaaaaavm/EMOCD](https://github.com/aaaaaaaaaaaavm/EMOCD) at commit `ab149e6`
+> **Source:** [aaaaaaaaaaaavm/EMOCD](https://github.com/aaaaaaaaaaaavm/EMOCD) at commit `cef4052`
 > **Found a mistake?** Fix it in the flagship. This repository will pick it up.
 >
 > The flagship is the authoritative engineering record. Where this repository and the
@@ -14,9 +14,9 @@
 | Repository | Role | You are here |
 |---|---|---|
 | [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) | Flagship: the authoritative engineering record, and the portfolio |  |
-| [EMOCD-paper](https://github.com/aaaaaaaaaaaavm/EMOCD-paper) | IEEE companion: manuscript and reproducibility package *(generated)* |  |
-| **[EMOCD-thesis](https://github.com/aaaaaaaaaaaavm/EMOCD-thesis)** | Thesis companion: university submission *(generated)* | ← |
-| [EMOCD-lab](https://github.com/aaaaaaaaaaaavm/EMOCD-lab) | Phase II: research, redesign, deliberately unstable |  |
+| [VOLLEY-paper](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) | IEEE companion: manuscript and reproducibility package *(generated)* |  |
+| **[VOLLEY-thesis](https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis)** | Thesis companion: university submission *(generated)* | ← |
+| [VOLLEY-lab](https://github.com/aaaaaaaaaaaavm/VOLLEY-lab) | Phase II: research, redesign, deliberately unstable |  |
 <!-- PROGRAMME-HEADER-END -->
 
 ---
