@@ -1,10 +1,10 @@
-> ## Generated repository — do not edit here
+> ## Generated repository, do not edit here
 >
-> Every file in this repository is generated from the **EMOCD flagship** by
+> Every file in this repository is generated from the **VOLLEY flagship** by
 > `tools/export_companion.py`. Nothing here is authored, and any edit made here will be
 > destroyed the next time it is regenerated.
 >
-> **Source:** [aaaaaaaaaaaavm/EMOCD](https://github.com/aaaaaaaaaaaavm/EMOCD) at commit `c927df9`
+> **Source:** [aaaaaaaaaaaavm/EMOCD](https://github.com/aaaaaaaaaaaavm/EMOCD) at commit `7648506`
 > **Found a mistake?** Fix it in the flagship. This repository will pick it up.
 >
 > The flagship is the authoritative engineering record. Where this repository and the
@@ -13,35 +13,52 @@
 <!-- PROGRAMME-HEADER-START -->
 | Repository | Role | You are here |
 |---|---|---|
-| [EMOCD](https://github.com/aaaaaaaaaaaavm/EMOCD) | Flagship — authoritative engineering record, portfolio |  |
-| [EMOCD-paper](https://github.com/aaaaaaaaaaaavm/EMOCD-paper) | IEEE companion — manuscript and reproducibility package *(generated)* |  |
-| **[EMOCD-thesis](https://github.com/aaaaaaaaaaaavm/EMOCD-thesis)** | Thesis companion — university submission *(generated)* | ← |
-| [EMOCD-lab](https://github.com/aaaaaaaaaaaavm/EMOCD-lab) | Phase II — research, redesign, deliberately unstable |  |
+| [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) | Flagship: the authoritative engineering record, and the portfolio |  |
+| [EMOCD-paper](https://github.com/aaaaaaaaaaaavm/EMOCD-paper) | IEEE companion: manuscript and reproducibility package *(generated)* |  |
+| **[EMOCD-thesis](https://github.com/aaaaaaaaaaaavm/EMOCD-thesis)** | Thesis companion: university submission *(generated)* | ← |
+| [EMOCD-lab](https://github.com/aaaaaaaaaaaavm/EMOCD-lab) | Phase II: research, redesign, deliberately unstable |  |
 <!-- PROGRAMME-HEADER-END -->
 
 ---
 
-# EMOCD — thesis companion
+# VOLLEY: thesis companion
 
-Final-year thesis submission material, generated from the EMOCD flagship.
+Final-year thesis submission material, generated from the VOLLEY flagship.
+
+**[Read the manuscript](source/VOLLEY_IEEE_Conference.pdf)**
 
 ## Layout
 
 | | |
 |---|---|
-| `source/` | Manuscript source and figures |
-| `analysis/` | The scripts behind every number |
-| `validation/` | Acceptance bands, declared before each run |
-| `cad/` | Three CAD generations with their defect audit |
-| `appendix/` | Baseline, defect ledger, validation report, provenance, decision records |
+| `source/` | Manuscript and figures |
+| `analysis/` | Six scripts producing every number in the work |
+| `validation/` | Nine analyses, each with its acceptance band declared before the run |
+| `cad/` | Three CAD generations, with the defect audit for each |
+| `appendix/` | Baseline, defect ledger, validation report, provenance, prior art, literature, decision records |
 
-## University material goes here, not upstream
+## For an examiner, in reading order
 
-This is the one generated repository with hand-added content: submission forms, templates,
-formatting mandates and viva material are university-specific and do not belong in the
-flagship. **Keep them in `university/`, which the exporter never touches.** Everything outside
-`university/` is regenerated and will be overwritten.
+1. `appendix/PROVENANCE.md`, which says what stands behind each claim and what does not.
+2. `appendix/BASELINE.md`, the twenty frozen values, and the rule for changing any of them.
+3. `appendix/adr/`, eighteen decision records. Each states the alternatives considered and the
+   consequences accepted. ADR-003 carries its own amendment showing an argument it got wrong.
+4. `appendix/OPEN_PROBLEMS.md`, every known defect, including the ones that damage the work's own
+   claims.
+5. `appendix/PRIOR_ART.md`, the nearest published work, and the two claims retracted after reading
+   it.
 
-**Read [`appendix/PROVENANCE.md`](appendix/PROVENANCE.md) first.** Every number in this work
-is a model output. Nothing has been built or measured, and the defect ledger in
-`appendix/OPEN_PROBLEMS.md` is published deliberately rather than tidied away.
+The decision records are the part most worth reading. They are where the reasoning lives, and
+several of them record a choice being made against the author's initial preference.
+
+## University material goes in `university/`
+
+That directory is the one place in this repository where hand-written content survives.
+Submission forms, formatting mandates and viva material are university-specific and do not belong
+upstream. **Everything outside `university/` is regenerated and will be overwritten.**
+
+## Before citing
+
+Every number here is a model output. Nothing has been built or measured. The defect ledger is
+published deliberately rather than tidied away, and it is the honest measure of how far the work
+has actually got.
