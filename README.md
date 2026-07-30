@@ -4,7 +4,7 @@
 > `tools/export_companion.py`. Nothing here is authored, and any edit made here will be
 > destroyed the next time it is regenerated.
 >
-> **Source:** [aaaaaaaaaaaavm/EMOCD](https://github.com/aaaaaaaaaaaavm/EMOCD) at commit `7648506`
+> **Source:** [aaaaaaaaaaaavm/EMOCD](https://github.com/aaaaaaaaaaaavm/EMOCD) at commit `ab149e6`
 > **Found a mistake?** Fix it in the flagship. This repository will pick it up.
 >
 > The flagship is the authoritative engineering record. Where this repository and the
@@ -49,7 +49,7 @@ Final-year thesis submission material, generated from the VOLLEY flagship.
    it.
 
 The decision records are the part most worth reading. They are where the reasoning lives, and
-several of them record a choice being made against the author's initial preference.
+several of them record the alternative that was rejected and why.
 
 ## University material goes in `university/`
 

@@ -472,16 +472,14 @@ them currently validates the design as it stands:
 | Analysis | Run at | Still valid? |
 |---|---|---|
 | **A5** GMAT lifetime | dv = 20.37 m/s | **No.** Both baseline and boosted orbits change; the multiplier the scripts now give is x1.62, not x1.80. The *falsification* of the invariance claim (P16) survives, because that is about the shape of the model and not the velocity, but the numbers do not. |
-| **A8** ngspice pulse chain | F = 1413.4 N, m = 8.86 kg, 2630 J | **No.** The netlist carries the old mass and energy. Peak current moved 392 to 330 A and pulse duration 128 to 157 ms, which is exactly what that analysis exists to check. |
+| **A8** ngspice pulse chain | F = 1413.4 N, m = 8.86 kg, 2630 J | **Re-run 2026-07-30 as A8-R** against fresh bands, at 16.537 m/s. Five of six met; the closure row failed and produced P24. This half of the item is closed. |
 | **A4** CalculiX chassis | 3672 N Maxwell attraction | **Yes, structurally.** The load is magnetostatic and does not depend on sled mass or velocity. Separately 37 % high, see P17. |
 
 **What this costs.** The validation table on the front pages says four of nine analyses have
 run (A1 added 2026-07-29, and A1 alone is at the current operating point). Strictly, three have run *against a superseded design*. That is not the same claim, and
 the difference is exactly the kind a reviewer notices.
 
-**Cheapest closure first.** A8 is minutes, the netlist is `validation/spice/emocd_shot.cir`
-and only its `.param` line needs the new operating point, though the declared bands must be
-re-read before the run rather than after. A5 is days of wall time for the low-activity leg.
+**A8 is done.** A5 remains, and is days of wall time for the low-activity leg.
 Neither should be re-run until the sled mass is settled, or the same staleness recurs; that
 argues for closing the rib-stiffened-chassis question (P5, E2) **first**.
 
@@ -591,34 +589,78 @@ project has measured nothing. `docs/BENCHTOP_TESTS.md` already specified the ans
 **B-2**; what was added on 2026-07-30 is that their bands are now **derived** from an error budget
 rather than chosen, by `validation/bench/bench_predict.py`. See E4.
 
-### P23. A coursework assignment was presented as a publication: HIGH, NEW 2026-07-30
-Not a defect in the paper. A defect in the **portfolio artifacts generated from this repository**,
-which are held to the same provenance rule as everything else here, and this one broke it.
+### P23. The stroke time is stale in six places, and A8's band was set at the old one: MEDIUM, NEW 2026-07-30
+Found while building the shot animation, which draws its time axis from `motor_model.shot()`
+and came out at **157.3 ms** against the **127.7 ms** printed everywhere else.
 
-`paper/cv/cv.tex` listed under **"Education & publications"**:
+127.7 ms is the superseded figure. Under constant acceleration the stroke time is `2s/v`:
 
-> Co-author, *"Language and AI: Navigating the Impact on Linguistic Diversity in Advanced Language
-> Models"*
+| Operating point | 2s/v over the 1.30 m accel zone |
+|---|---|
+| 20.370 m/s, the pre-P15 point | 127.6 ms |
+| 16.537 m/s, current | 157.2 ms |
 
-**It is coursework.** Its title page reads *Course Name: Communication Skills · Instructor: Apurva
-Joshi-Deshpande · 20 November 2023*, co-written with a classmate.
+So it belongs to the 4.86 kg parametric sled and survived the P8/P15 propagation in six
+places: `README.md` twice, this file's E23 entry, `validation/A8_pulse_spice.md` twice, the
+`CHANGELOG` record of A8's bands, and `docs/VALIDATION_REPORT.md`.
 
-**How it got in.** Four of my existing resumes file it under "Research & Publications", and
-that framing was copied into the generated CV **without opening the source PDF.** Exactly the failure
-this repository's central rule exists to prevent, a claim taken from a downstream document instead
-of from the thing itself. The rule is that scripts are authoritative over the paper; the CV
-equivalent is that the artifact is authoritative over the résumé line, and it was not applied.
+**The part that matters is not the typo.** `validation/A8_pulse_spice.md` declared a band of
+**127.7 ms +/-10 %**, so 114.9 to 140.5 ms, and `VALIDATION_REPORT.md` records A8 passing it at
+127.66 ms. At the current operating point the value is 157.3 ms, which is **23 % above the band
+centre and outside the band entirely**. A8's recorded pass is a pass against a superseded
+target.
 
-**Why it matters more than a repository defect.** A reader can check it in ten seconds by opening the
-PDF. The repository's 46 published defects buy credibility precisely because they are hard to fake;
-one unverifiable publication claim on a CV spends more of that than the defect record earns.
+This is the concrete instance of what P19 says in general. It is not a new failure: A8 ran
+correctly against the operating point that existed when it ran. But "A8 passed" cannot be
+quoted without saying which operating point it passed at, and until it is re-run the row in
+`VALIDATION_REPORT.md` overstates what is known.
 
-**Fixed:** removed from the CV, with a comment in `make_cv.py` recording why and instructing that it
-must not be re-added as a publication. If it appears at all it belongs under coursework with the
-course named. The four source resumes still carry the error and need the same correction.
+**Done:** the four prose occurrences corrected to 157.3 ms.
 
-**Generalised, because one instance is not the problem:** `docs/SKILLS.md` now carries a
-provenance rule for CV claims, and every entry in the coursework section names its course.
+**Closed 2026-07-30 by A8-R.** The original band and its recorded result are left exactly as they
+were, marked as belonging to the superseded point, because rewriting a declared band after the
+fact to fit a new number is the one move that would make the whole validation record worthless.
+Fresh bands were written and committed before the deck was touched, and the re-run passes the
+pulse-duration row at 157.26 ms against 157.3. It failed a different row, which is P24.
+
+### P24. No script carries a bank ESR, and the placeholder standing in for it is a factor of two high: HIGH, NEW 2026-07-30
+Found by A8-R, the re-run of the pulse-power simulation at the current operating point
+(`validation/A8_pulse_spice.md`). Five of six bands passed. Energy closure failed at **97.0 %**
+against a declared 98-102 %.
+
+The simulated draw exceeds the analytic accounting by **86.6 J**. That gap is bank ESR
+dissipation, which the circuit deck models and the analytic ledger has no term for:
+
+| | |
+|---|---|
+| I^2 dt over the shot, integrated by ngspice | 7126.2 A^2 s |
+| Bank ESR, per `sizing.py` | 0.012 ohm |
+| Product | **85.5 J**, against an 86.6 J gap, agreeing to 98.7 % |
+
+**The ledger is internally consistent and still understates the bank.** `energy_closure()` has no
+ESR term, and the `E_DRAWN = 2795.6 J` it closes against comes from `motor_model.py`, which has no
+ESR either. Both sides of the equation omit the same term, so the closure reads 100.0 % while the
+real draw is about **2881 J**, 3 % higher.
+
+**Three things move if the term is carried, and one of them is not cosmetic:**
+
+1. **The bank goes undersized.** `capacitor_sizing()` at the true draw wants **6.18 F** against the
+   **6.0 F selected**, and its own `consistent` flag turns False. At 2795.6 J it wants 5.97 F and
+   the selection covers it. The selected bank is chosen against a draw that omits a loss the bank
+   itself causes.
+2. **`thermal_campaign()` carries `Q_esr = 160 J`** as a literal default. Against 85.5 J that is
+   1.9x high, and the twelve-shot campaign falls from 28.9 to 28.0 kJ. It was flagged as unsourced
+   during the P2 review and has had no second number against it until now.
+3. **The per-shot energy headline, 2.80 kJ**, is the analytic draw and appears on the front pages.
+
+**Not propagated, deliberately.** This is an error correction, which `docs/BASELINE.md`'s
+change-control rule permits to move the Phase I baseline, but the capacitor result means the fix is
+a sizing decision and not a constant edit: either the bank grows or the draw comes down. Propagating
+the ESR term without settling that would leave `sizing.py` self-reporting as inconsistent. It goes
+in one pass, with the bank selection resolved in the same pass.
+
+**This is a simulation result, not a measurement.** It gives a placeholder its first independent
+number, which is what E17 asked for, and it is still one model checking another.
 
 ## E: Unsolved engineering
 
@@ -792,6 +834,15 @@ peak current +5.98 %, sag +0.18 points, energy +3.59 %. Two findings came out of
 The 12 mohm itself appears only in `docs/EMOCD_Computation_Results_C1-C10.md`, which is
 superseded, **no current script defines a bank ESR**, which is the underlying gap.
 
+> **Re-run 2026-07-30 (A8-R), at the current operating point.** Five of six bands met; the
+> pulse-duration row that P23 is about now passes at 0.03 %. Energy closure failed at 97.0 %,
+> and the cause is the same gap this item names: 7126.2 A^2 s at 12 mohm is **85.5 J of ESR
+> dissipation per shot** that the analytic ledger has no term for. That is the second number
+> against `Q_esr = 160 J` this item asked for, and it is 1.9x lower. It also puts the selected
+> 6.0 F bank below its own required capacitance once the true draw is used. **P24** carries the
+> propagation, which is a sizing decision rather than a constant edit. The sag finding above is
+> untouched by the re-run.
+
 Original item follows.
 
 ### E17 (as originally written). The pulse-power chain has never left the analytic model
@@ -916,7 +967,7 @@ running frequency. At the as-drawn 9.445 kg sled (a = 105 m/s^2):
 | 6th harmonic through the 109 Hz fixed mode | 0.87 m/s | 8.3 ms | 3.6 mm |
 | fundamental through 109 Hz | 5.23 m/s | 49.8 ms | 130 mm |
 
-So both modes are crossed inside the first 4-50 ms of a 127.7 ms stroke, twelve times per
+So both modes are crossed inside the first 4-50 ms of a 157.3 ms stroke, twelve times per
 campaign, and the crossings happen in the first few millimetres of travel where the sled is
 still adjacent to the breech and the launch-lock hardware.
 
