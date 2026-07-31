@@ -62,21 +62,24 @@
     "within_rating": true
   },
   "thermal": {
-    "campaign_kJ": 28.0,
-    "bulk_rise_K": 2.1,
+    "campaign_kJ": 24.4,
+    "bulk_rise_K": 1.8,
     "fin_mass_kg": 0.86,
-    "fin_adiabatic_dT_K": 4.0,
+    "fin_adiabatic_dT_K": 3.0,
     "radiator_m2": 0.32
   },
   "energy_closure": {
     "KE_payload_J": 547.0,
     "KE_sled_J": 1291.0,
-    "copper_J": 828.0,
-    "esr_J": 86.0,
-    "converter_J": 97.0,
-    "aux_J": 31.0,
-    "accounted_J": 2880.0,
-    "drawn_J": 2881.2,
+    "KE_to_brake_J": 952.0,
+    "regen_recovered_J": 297.0,
+    "copper_J": 843.0,
+    "esr_J": 94.0,
+    "converter_J": 113.0,
+    "aux_J": 35.0,
+    "accounted_J": 2583.0,
+    "drawn_gross_J": 2881.2,
+    "drawn_net_J": 2584.6,
     "closure_pct": 100.0
   },
   "pole_pitch": {
