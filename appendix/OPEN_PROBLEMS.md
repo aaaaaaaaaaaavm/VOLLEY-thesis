@@ -942,6 +942,40 @@ energised at once, then `motor_model.py` computing `vol_cu` from that rather tha
 `ACCEL_ZONE`, with the paper's redundancy sentence and the drive description made to agree.
 Both numbers then follow from one stated fact instead of two unstated ones.
 
+### P30. An acceptance band was set at the easier of two available comparators: MEDIUM, NEW 2026-07-31
+**A defect in how a band was chosen, not in a number.** This repository has no other entry of that
+kind, which is the reason to write it down.
+
+`validation/A7_separation_chrono.md` declared its tip-off band as **≤ 5 °/s/axis**, citing the
+NanoRacks NRCSD-E interface document. Three other files — E7 above, `docs/KILL_CRITERIA.md` §4 and
+PII-1's entry criterion in `docs/PHASE_II.md` — carried a standing flag that this "conflicts" with
+a sibling NRCSD ICD quoting 2 °/s, and that the conflict had to be resolved before the band meant
+anything. PII-1, the best available velocity lever, was gated on it.
+
+**There is no conflict. They are two different deployers and both numbers are right:**
+
+| | Tip-off target | |
+|---|---|---|
+| **NRCSD**, internal, ISS airlock | **< 2 °/s/axis** | flown hundreds of times |
+| **NRCSD-E**, external, Cygnus-mounted | < 5 °/s/axis | *"additional testing and analysis are being completed... to refine and verify this value"* — its own publisher |
+
+**What that leaves is worse than the flag it replaces.** The band was set at the looser of the two
+comparators, taken from the document whose publisher describes the figure as provisional, with
+nothing recorded about the tighter flown number existing. Nobody chose the easy number on purpose;
+it is what happens when a band cites one source and no one asks what else the source set contains.
+**That is the failure mode acceptance bands exist to prevent, occurring inside the band-setting
+step itself.**
+
+**Fixed 2026-07-31.** A7's band is now **2 °/s/axis** with NRCSD-E retained as a secondary
+reference and labelled provisional. **A7 has never run**, so this is a band tightened before
+results rather than after — the distinction the whole validation record depends on, and the sheet
+states it above the table. The cost is real: A7 is now **2.5x harder to pass**, on a release path
+with no multibody model behind it and a payload centre of mass 70 mm off the thrust line.
+
+**The general rule this implies**, added to `validation/README.md`: *when a band cites an external
+document, record which document, which revision, and whether a tighter comparator exists in the
+same family.* One line, and it would have caught this.
+
 > **Not all of these weigh the same.** Three of the entries below are threats to whether the
 > machine has a reason to exist rather than engineering work, and they are hard to see in a
 > numbered list. [`docs/KILL_CRITERIA.md`](docs/KILL_CRITERIA.md) separates them, with the value
@@ -1038,7 +1072,11 @@ agreeing is weaker than a model reproducing a flown decay, and the flight data i
 The 0.027 m/s (3σ) result is a closed-loop simulation using an assumed 8 mm/s sensor
 sigma and assumed tolerance distributions. No sensor has been selected or characterised.
 The separation side of this is specified in `validation/A7_separation_chrono.md`, whose
-tip-off band is taken from a flown deployer (NRCSD-E, < 5 °/s/axis) rather than chosen.
+tip-off band is taken from a flown deployer rather than chosen. **Tightened 2026-07-31 from
+5 to 2 °/s/axis**: the band cited NRCSD-E, the external Cygnus deployer, whose 5 °/s its own
+publisher calls provisional, while the internal NRCSD that has flown hundreds of times specifies
+**< 2 °/s/axis**. Two deployers, not a contradiction, and the band had been set at the easier of
+them. See **P30**.
 
 ### E8. Brake energy is thrown away
 ~1.0 kJ per shot dissipated in the fin. Whether any of it is worth recovering (and what
@@ -1312,3 +1350,32 @@ trigger, and the settling time to reach it**, and neither number exists anywhere
 against the campaign's inter-shot interval. Cheap (it is bookkeeping, not a new solver) and it
 belongs with the recoil analysis in `sizing.py` rather than with the motor model. Explicitly *not*
 claimed to be negligible until that is done.
+
+> ## Done 2026-07-31 as A13. **Verdict FAIL, and this entry was worried about the wrong mass.**
+>
+> **Indexing is negligible**, exactly as the paragraph above guessed: 0.208 N·s, **0.31 % of the
+> shot impulse**, 0.007 °/s at a 500 kg host.
+>
+> **The sled return is not, and it appears nowhere in this entry or anywhere else.** 9.445 kg
+> travelling 1.5 m back to the breech is **4.723 N·s, 7.14 % of the shot, 23x the indexing
+> momentum** — the largest unbudgeted term in the host interaction by a wide margin.
+>
+> | Band | Result | |
+> |---|---|---|
+> | peak rate below 0.05 °/s at a 500 kg host | **0.161 °/s** | **FAIL, 3.2x over** |
+> | peak rate below 0.2 °/s at 200 kg | **0.740 °/s** | **FAIL, 3.7x over** |
+> | settle to 0.01 °/s in under 2 s at 0.1 N·m | **8.2 s** | **FAIL, 4x over** |
+>
+> Four of seven bands; the three that failed are the three that mattered. **Nothing inside the
+> 10–20 s cadence passes** — the bands are only met at a 30 s sled return, which does not fit.
+>
+> **The velocity servo cannot see this.** It measures position along the track, not the track's
+> orientation, so residual attitude rate at trigger is a pointing error the 0.027 m/s dispersion
+> figure neither includes nor can detect.
+>
+> **Why this entry missed it is worth keeping.** E24 came from reading Xu et al., whose deployer
+> moves satellites and does not return a sled — so the competitor's problem was the indexing, and
+> this design's problem is in a place their paper never had to look. **Reading someone else's
+> problem statement finds their gaps, not yours.**
+>
+> Full working, the three fixes and what each costs: [`validation/A13_indexing_disturbance.md`](validation/A13_indexing_disturbance.md).

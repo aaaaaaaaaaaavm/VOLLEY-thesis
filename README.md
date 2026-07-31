@@ -4,7 +4,7 @@
 > `tools/export_companion.py`. Nothing here is authored, and any edit made here will be
 > destroyed the next time it is regenerated.
 >
-> **Source:** [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit `811ab7b`
+> **Source:** [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit `60ccc7f`
 > **Found a mistake?** Fix it in the flagship. This repository will pick it up.
 >
 > The flagship is the authoritative engineering record. Where this repository and the
