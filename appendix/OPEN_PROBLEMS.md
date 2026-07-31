@@ -39,6 +39,22 @@ probability of collision via NASA's CARA tools, which integrates over the covari
 instead of sampling one geometry. The test is whether Pc stays stable across the velocity
 sweep that moves minimum distance by an order of magnitude.
 
+> **A6 ran 2026-07-31 in a reduced form and P1 stays open.** Without GMAT, CARA or
+> Space-Track there is no real covariance, so a 2-D Pc was computed against `astro.py`'s own
+> propagator with an assumed one. **The stability test came back void**: at 14 to 63 km miss
+> distances against a hundreds-of-metres covariance, Pc underflows double precision, and a
+> spread of zeros is not a number.
+>
+> **What the run found instead is better than what it was looking for.** Pc has a maximum over
+> covariance scale — a covariance wide enough to reach a 14.5 km miss is too diffuse to put
+> probability inside a 5 m disc — and that maximum is **3.7e-8, some 2700x below the 1e-4
+> anyone would act on, for any covariance whatsoever.** So Pc is not *robust* where distance is
+> fragile; it is **irrelevant**, bounded far below any action threshold.
+>
+> **This does not close P1**, because a bound is not a probability. It does say the paper's
+> current position — the 9.9-day realignment period plus mandatory per-shot COLA, and no
+> minimum-distance claim — is the right one, and is now supported rather than merely honest.
+
 **Fix:** stop quoting a specific minimum distance as a safety result. Reframe around
 what IS robust: the ~8.1-day phase realignment period, and the mitigation of disposing
 of the host stage before the first realignment. State plainly that per-shot COLA is
@@ -103,7 +119,7 @@ Original item follows for the audit trail.
 > designed (rib-stiffened), not assumed. Combined with P15's measured 9.445 kg, the decision
 > rule's ≥6.80 kg branch stands and the machine as it exists delivers **16.53 m/s**.
 The first-pass Fusion sled (6 mm Ti-6Al-4V chassis, stiffness-driven by the ±0.05 mm gap
-tolerance under 3.7 kN inter-array attraction, **no structural FEA behind it**) implies a
+tolerance under 3.7 kN inter-array attraction — 2.69 kN since A12 — **no structural FEA behind it**) implies a
 sled mass of **~7.50 kg**. `analysis/mass_properties.py` assumes **4.86 kg**, which
 `motor_model.py` hard-codes as `M_SLED` and which sets the headline exit velocity. Both
 are estimates (one CAD-geometric, one parametric-solid) and neither is FEA-verified. Do
@@ -401,7 +417,17 @@ parameterisation cannot express the effect being claimed. The fix is either a va
 atmosphere in the script or dropping the invariance claim and keeping the point value,
 that is a judgement, not a patch. Paper edits batch with P11/P12.
 
-### P17. The inter-array attraction feeding the A4 FEA is 37 % high: HIGH, NEW 2026-07-29
+### P17. The inter-array attraction feeding the A4 FEA is 37 % high: **RESOLVED 2026-07-31 by A12**
+> **Closed by [`validation/A12_inter_array_force.md`](validation/A12_inter_array_force.md), five
+> of five declared bands.** A second numerical method — a Maxwell stress tensor integrated over
+> the mid-gap plane, sharing only the block model of the magnets — gives **2627.6 N** against
+> magpylib's **2686.6 N**, 2.2 % apart. `sizing.py` adopted 2686.6 N under an adoption rule
+> declared before the run: attraction 3.68 → **2.69 kN**, plate stress 33 → **24 MPa**, margin
+> 20.2 → **28.1**. A4 is not re-run; it was loaded 37 % heavy, so it was conservative and its
+> verdict stands.
+>
+> **The number below was right and the mechanism below is wrong**, which is why the entry is
+> corrected in place rather than deleted. See the correction at the end.
 `analysis/sizing.py::inter_array_attraction()` computes the force between the two opposed
 Halbach faces from a flat-plate Maxwell-stress formula, a uniform pressure
 `B_face**2 / (2*mu0)` at a mean face field of 0.55 T over the 340 x 90 mm footprint,
@@ -427,10 +453,30 @@ Converged (successive deltas halve (-8.3, -4.3, -2.5 N)) and insensitive to the
 finite-difference step across four orders of magnitude (1e-5 to 1e-8, identical to 0.1 N).
 **The analytic formula is high by 36.7 %.**
 
-**The mechanism is understood, which is why this is a defect and not a disagreement.**
+~~**The mechanism is understood, which is why this is a defect and not a disagreement.**
 Maxwell stress needs the mean of `B**2`; the analytic form uses the square of the mean `B`;
 and `mean(B**2) >= mean(B)**2` for any non-uniform field, by Jensen. A Halbach face field is
-strongly non-uniform along the wavelength, so the analytic form must overestimate. It does.
+strongly non-uniform along the wavelength, so the analytic form must overestimate. It does.~~
+
+> **CORRECTED 2026-07-31 by A12. The inequality is right and the conclusion drawn from it is
+> the wrong way round.** If `mean(B^2) >= mean(B)^2`, a one-point form evaluated at the *true*
+> mean field **under**estimates. Jensen cannot be why the analytic value is high.
+>
+> A12 decomposed it against M2's own field statistics on the stress plane:
+>
+> | | Force | |
+> |---|---|---|
+> | Analytic, `B_face = 0.550 T` assumed | 3683 N | as published |
+> | Same one-point form at the **actual** mean, 0.4127 T | 2073 N | **x1.776 from the assumed field** |
+> | Full integral, `mean(B_y^2)` | 2628 N | **x1.267 back the other way, from Jensen** |
+>
+> Net x1.402 against an observed x1.402. **The cause is the input, not the formula:** 0.55 T is
+> not the mean normal field on the plane where the stress acts. The flat-plate form's own Jensen
+> error is 27 % and in the *safe* direction; it was fed a field 0.33x too high, which swamps it.
+>
+> **A right number with a wrong explanation attached is worse than an open question**, because
+> it survives review and then misleads whoever picks it up next. That is why this is struck
+> through and left visible rather than quietly rewritten.
 
 **What this does and does not damage.** The real force is *lower*, so A4's structural
 results are conservative, not wrong: 0.0194 mm airgap closure and 33.7 MPa were computed
@@ -445,8 +491,12 @@ magpylib 5.2.3 is already in `requirements.txt`).
 was declared for it, which inverts this project's own rule. It is therefore logged as a
 discrepancy, not as a validated result. Proper closure needs a run sheet with a band declared
 in advance, and a decision about whether `sizing.py` adopts a corrected formula, which would
-move `plate_stress_MPa`, the retention-gate sizing, and the A4 load together. **Do not edit
+move `plate_stress_MPa`, ~~the retention-gate sizing,~~ and the A4 load together. **Do not edit
 `sizing.py` on the strength of this entry.**
+
+> **Done 2026-07-31.** A12 declared the bands and the adoption rule first, then ran. The
+> retention gate is struck above because it does not depend on this: `retention_gate()` is sized
+> from a 24 kg ascent stack at 25 g. This entry was wrong about its own blast radius.
 
 ### P18. Four physical effects are absent from the model, not merely unvalidated: MEDIUM, NEW 2026-07-29
 Distinct from the E-items, which record analyses not yet run. These are terms that no script
@@ -473,7 +523,7 @@ them currently validates the design as it stands:
 |---|---|---|
 | **A5** GMAT lifetime | dv = 20.37 m/s | **No.** Both baseline and boosted orbits change; the multiplier the scripts now give is x1.62, not x1.80. The *falsification* of the invariance claim (P16) survives, because that is about the shape of the model and not the velocity, but the numbers do not. |
 | **A8** ngspice pulse chain | F = 1413.4 N, m = 8.86 kg, 2630 J | **Re-run 2026-07-30 as A8-R** against fresh bands, at 16.537 m/s. Five of six met; the closure row failed and produced P24. This half of the item is closed. |
-| **A4** CalculiX chassis | 3672 N Maxwell attraction | **Yes, structurally.** The load is magnetostatic and does not depend on sled mass or velocity. Separately 37 % high, see P17. |
+| **A4** CalculiX chassis | 3672 N Maxwell attraction | **Yes, structurally.** The load is magnetostatic and does not depend on sled mass or velocity. **37 % heavy**, corrected to 2686.6 N by A12 — so A4 is conservative and is deliberately not re-run. |
 
 **What this costs.** The validation table on the front pages says four of nine analyses have
 run (A1 added 2026-07-29, and A1 alone is at the current operating point). Strictly, three have run *against a superseded design*. That is not the same claim, and
@@ -852,6 +902,45 @@ second."* The same applies to hand-editing one to match a packaging wish. `sizin
 authority rather than on heat, checked against the 200 g deceleration cap and the ring-spring
 handover below 1.5 m/s. It is mechanical design, and it is the reason A11 says plainly that it
 answers the electromagnetic question only.
+
+### P29. The paper says the winding is segmented; the model charges copper for all 1.3 m: MEDIUM, NEW 2026-07-31
+Found while pricing a longer track, and it is a question about the machine as built rather than
+about any proposal.
+
+`paper/paper.tex` §VII states, under redundancy: *"the winding is segmented so a shorted coil
+degrades thrust rather than ending the campaign."* `motor_model.shot()` computes copper loss as
+`RHO_CU * J^2 * vol_cu` with `vol_cu = ACCEL_ZONE * DEPTH * WIND_THICK * FILL`, that is, **the
+whole 1.30 m winding carrying full current density for the entire 157 ms stroke**.
+
+Those are not consistent with each other. A segmented long-stator machine energises the section
+under the mover — roughly the sled's 340 mm active length — and switches segments as it passes.
+
+**What it is worth.** Energising 340 mm rather than 1300 mm takes copper loss from **827.9 J to
+about 217 J**, and electrical-to-payload efficiency from 21.2 % to roughly **24.4 %**, with no
+design change whatsoever. It also drops peak current from 347 to about 296 A, which raises the
+A10 bank ESR ceiling from 66 to about 79 mohm — relevant to P26, though not enough to reach a
+single commercial string at 116.
+
+**Three possibilities and this repository cannot currently distinguish them.**
+
+1. The winding is segmented for *fault tolerance* but driven as one, in which case the model is
+   right and the paper's sentence is about failure modes only. Then nothing is wrong and the
+   distinction needs stating, because a reader will assume block commutation.
+2. The winding is block-commutated and the model is deliberately conservative. Then the
+   conservatism is real engineering judgement and **it is written down nowhere**, which is the
+   same defect class as the 12 mohm ESR (E17): a value with no provenance.
+3. It is simply inconsistent, and `Q_copper` is overstated by a factor of about 3.8.
+
+**Why this is logged rather than fixed.** Changing `vol_cu` moves a baseline number, and which
+way it should move depends on a design decision nobody has recorded. Guessing in either direction
+would put an unsourced value into the baseline, which is exactly what P24 and E17 exist to stop.
+`cad/parameters.json` `groups.stator` records conductor counts and belt geometry but says nothing
+about drive segmentation, so the CAD cannot settle it either.
+
+**What would close it.** A recorded decision on how many stator segments exist and how many are
+energised at once, then `motor_model.py` computing `vol_cu` from that rather than from
+`ACCEL_ZONE`, with the paper's redundancy sentence and the drive description made to agree.
+Both numbers then follow from one stated fact instead of two unstated ones.
 
 > **Not all of these weigh the same.** Three of the entries below are threats to whether the
 > machine has a reason to exist rather than engineering work, and they are hard to see in a
