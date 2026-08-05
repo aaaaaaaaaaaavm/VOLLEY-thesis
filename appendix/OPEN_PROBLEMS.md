@@ -3,7 +3,7 @@
 Two categories: **P-items are errors in the currently published paper** and should be
 fixed first. **E-items are genuinely unsolved engineering.**
 
-Last reviewed 2026-07-30.
+Last reviewed 2026-08-05.
 
 ---
 
@@ -23,7 +23,7 @@ own rated velocity of **20.37 m/s**, `analysis/astro.py` gives **4.6 km**.
 
 Worse, the quantity is fragile. Sweeping ejection velocity:
 
-| Δv (m/s) | min approach (km) |
+| Î”v (m/s) | min approach (km) |
 |---|---|
 | 20.00 | 37.5 |
 | 20.37 (rated) | **4.6** |
@@ -102,7 +102,7 @@ radiation between shots relieves. Same correction applies to the coil: 0.28 K pe
 > `analysis/*.py` or `paper/paper.tex` has been changed** on the strength of the CAD.
 
 ### P5. CAD sled mass contradicts the parametric assumption: RESOLVED 2026-07-29
-> **RESOLVED.** `motor_model.M_SLED` and `sizing.M_SLED` now carry the measured **9.445 kg**
+> **RESOLVED.** `motor_model.M_SLED` and `sizing.M_SLED` now carry the CAD-derived **9.445 kg**
 > (P15), not the 4.86 kg parametric estimate. A4 ran, the drawn plate passed all three
 > structural bands, and the measurement fell in the decision rule's ≥ 6.80 kg branch, so the
 > rule resolved this rather than a judgement call. **Caveat carried forward:** 9.445 kg is
@@ -116,7 +116,7 @@ Original item follows for the audit trail.
 > passes every declared band: 0.0194 mm airgap closure against a 0.025 mm per-plate budget,
 > 33.7 MPa against 587 allowable, first mode 3408 Hz against >200. So there is **no
 > structural argument for the chassis being lighter than drawn**, a lighter one has to be
-> designed (rib-stiffened), not assumed. Combined with P15's measured 9.445 kg, the decision
+> designed (rib-stiffened), not assumed. Combined with P15's CAD-derived 9.445 kg, the decision
 > rule's ≥6.80 kg branch stands and the machine as it exists delivers **16.53 m/s**.
 The first-pass Fusion sled (6 mm Ti-6Al-4V chassis, stiffness-driven by the ±0.05 mm gap
 tolerance under 3.7 kN inter-array attraction — 2.69 kN since A12 — **no structural FEA behind it**) implies a
@@ -142,7 +142,7 @@ extend past release, which drives the envelope length (see P9). Source:
 
 ### P8. Exit velocity provisionally 17.88 m/s pending sled structural FEA: RESOLVED 2026-07-29
 > **RESOLVED, and not at 17.88 m/s.** That figure came from the 7.50 kg CAD estimate. The
-> measured mass is 9.445 kg, so the rated velocity is **16.537 m/s at 10.7 g**, now
+> CAD-derived mass is 9.445 kg, so the rated velocity is **16.537 m/s at 10.7 g**, now
 > propagated into `analysis/`, `paper/paper.tex`, the figures and every front page. The
 > machine is no longer acceleration-limited: at 10.7 g against a 25 g cap it is
 > thrust-and-mass limited, which changes what recovering velocity means (mass or current,
@@ -203,7 +203,7 @@ the outcome here. If the submitted build was in fact compiled from the corrected
 
 ### P12. The paper contradicts the CAD in two places: RESOLVED 2026-07-29
 > **RESOLVED in `paper/paper.tex`.** The Limitations section no longer says masses derive
-> from a parametric model rather than detailed CAD; it states what the CAD measured and what
+> from a parametric model rather than detailed CAD; it states what the CAD solid-volume calculation gives and what
 > that costs. The ESPA-Grande envelope is no longer asserted as a capability, the
 > requirement statement, the Fig. 2 caption and the accommodation section now record 1839 mm
 > against the ~1270 mm class and name it an open packaging problem (P9). The mounting-interface
@@ -302,7 +302,7 @@ from `sizing.py`).
 |---|---|---|
 | `mass_properties.py` parametric | 4.86 kg | 20.37 m/s |
 | P5's CAD figure | 7.50 kg | 17.87 m/s |
-| **Gen3 geometry, measured** | **9.445 kg** | **16.53 m/s** at 10.7 g, 19.0 % efficiency |
+| **Gen3 geometry, CAD solid-volume result** | **9.445 kg** | **16.53 m/s** at 10.7 g, 19.0 % efficiency |
 
 The method reproduces P8 exactly when fed 7.50 kg, it returns 17.87 m/s against P8's stated
 17.88, so the discrepancy is in the mass, not the method. Dominated by two chassis plates
@@ -515,7 +515,7 @@ analysis has not been run".
 ---
 
 ### P19. Every validation run predates the operating point they validate: HIGH, NEW 2026-07-29
-Adopting the measured 9.445 kg sled moved the rated velocity from 20.37 to 16.537 m/s. The
+Adopting the CAD-derived 9.445 kg sled moved the rated velocity from 20.37 to 16.537 m/s. The
 three analyses that have actually been run were all executed at the **old** point, so none of
 them currently validates the design as it stands:
 
@@ -1005,6 +1005,79 @@ either irrelevant or dominant depending on a number nobody has written down.**
 answer is 1200 s, A13's bands 3–5 should be re-declared against it and re-run; **that is a band
 change and belongs declared and dated, not quietly applied to an existing failure.**
 
+### P32. The working Gen4 geometry has no corresponding operating point: HIGH, NEW 2026-08-03
+
+The published Phase I result assumes a uniform 1.30 m active stator and release at 1500 mm.
+`EMOCD_Gen4_Open v7` instead places the same 488 mm sled at s = 300 mm stowed and s = 1200 mm
+release, a 900 mm acceleration stroke. Its 340 mm Halbach array is fully over the stator only
+through s = 1051.5 mm. The final 148.5 mm is a finite-edge region, and 191.5 mm of the array
+remains over the stator at release.
+
+The current 16.388 m/s, 10.53 g, 2851 J gross and 20.99% net values are still reproducible for
+the frozen Phase I geometry. They are not Gen4 results. No public document may attach them to
+the open assembly, and a constant-thrust calculation shortened to 900 mm would not repair the
+mismatch because it would ignore the changing overlap.
+
+The provisional stationing does resolve one geometry conflict: release is at s = 1200 mm and
+the fin enters the brake at s = 1222 mm, leaving 22 mm between the two events. The fin then has
+330 mm of travel through the brake before its trailing edge clears at s = 1552 mm. Those are
+kinematic envelope results, not an arrest or thermal validation.
+
+**What would close it:** E27's position-dependent force calculation, followed by one controlled
+propagation through power, energy, thermal, braking, orbit, paper and validation records. Until
+then the Gen4 export gate stays closed and the Phase I baseline remains the only rated point.
+
+### P33. The paper credits a winding inductance nobody had computed: MEDIUM, NEW 2026-08-05
+
+`paper/paper.tex` says the drive switches at 20-40 kHz, "high enough that the current ripple is
+filtered by the winding inductance and low enough to keep switching loss within the converter's
+97 J/shot budget." **There was no inductance anywhere in this repository.** No henry in
+`analysis/`, and no phase current either: `motor_model.shot()` integrates in *sheet* current
+(A/m), and the `I_peak` it reports is the **DC-link current drawn from the bank**, not the
+current in a conductor. Every "peak current" figure in this project, including the lever table in
+`docs/DESIGN_OPTIONS_exit_velocity.md` and A10's ESR ceiling, is that DC-link number.
+
+The gap is structural rather than clerical. A sheet-current model is turns-invariant: the same
+126 kA/m can be wound as many turns at low current or few at high current, L scales as N², phase
+current as 1/N, and the stored field energy is the same either way. **So the model cannot
+produce an inductance, and the claim above could not have been checked when it was written.**
+
+`analysis/drive_electrical.py` closes it on the one constraint that does fix the turns count:
+the inverter has to synthesise the phase voltage the machine demands at rated speed, out of a
+96 V bus sagged to 90.9 V. The required volt-amps are invariant under the turns count, so the
+design point follows without a new winding assumption.
+
+| | |
+|---|---|
+| Armature-reaction field energy | **2.058 J** (harmonic sum over the belt distribution) |
+| Peak phase current | **373.2 A**, against the 338.8 A DC-link figure quoted everywhere |
+| Phase inductance | **19.70 µH** |
+| Phase resistance | **25.18 mΩ** |
+| Electrical time constant | **0.782 ms**, fast against the 158.6 ms stroke |
+| Modulation index at exit | **1.00**, by construction |
+| Ripple at 20 kHz | **60.9 A pp, 16.3 % of peak** |
+| Ripple at 40 kHz | **30.5 A pp, 8.2 % of peak** |
+
+**Half the paper's sentence survives and half does not.** The loss half is fine: the ripple adds
+**3.71 J to an 834.7 J** copper budget at 20 kHz, four tenths of one percent, so nothing in the
+thermal or energy record moves. The filtering half does not: **16 % peak-to-peak ripple at
+20 kHz is not a filtered current**, and the sentence asserts it of the whole 20-40 kHz range.
+Only the top of that range is defensible.
+
+**Two consequences that are not in any document.** First, the SiC devices carry the phase
+current, so they are being selected against **373 A** and the repository only ever wrote down
+339 A; the paper specifies the 1200 V rating and never a current rating. Second, exit velocity
+and phase current are locked together through the bus: more velocity means more back-EMF, which
+means fewer turns, which means more current, which lands on the bank ESR ceiling **P26** already
+tracks. That coupling is real but it is **not a new velocity ceiling** — the machine can be
+rewound for any speed, it just pays in current — and it should not be written up as one.
+
+**What would close it:** a winding layout with an actual turns count, conductor cross-section
+and end-turn geometry, at which point L stops being inferred from an energy balance and becomes
+a property of drawn hardware. The 2-D energy method here omits end turns entirely, so 19.70 µH
+is a **lower bound** and the ripple figures are upper bounds. `docs/PHASE_II.md` PII-7 and the
+segmentation decision in **P29** both move it: energising less stator cuts L and R together.
+
 > **Not all of these weigh the same.** Three of the entries below are threats to whether the
 > machine has a reason to exist rather than engineering work, and they are hard to see in a
 > numbered list. [`docs/KILL_CRITERIA.md`](docs/KILL_CRITERIA.md) separates them, with the value
@@ -1335,7 +1408,7 @@ running frequency. At the as-drawn 9.445 kg sled (a = 105 m/s^2):
 | 6th harmonic through the 109 Hz fixed mode | 0.87 m/s | 8.3 ms | 3.6 mm |
 | fundamental through 109 Hz | 5.23 m/s | 49.8 ms | 130 mm |
 
-So both modes are crossed inside the first 4-50 ms of a 157.3 ms stroke, twelve times per
+So both modes are crossed inside the first 4-50 ms of a 158.6 ms stroke, twelve times per
 campaign, and the crossings happen in the first few millimetres of travel where the sled is
 still adjacent to the breech and the launch-lock hardware.
 
@@ -1408,3 +1481,46 @@ claimed to be negligible until that is done.
 > problem statement finds their gaps, not yours.**
 >
 > Full working, the three fixes and what each costs: [`validation/A13_indexing_disturbance.md`](validation/A13_indexing_disturbance.md).
+
+### E25. A13 now leaves attitude restoration and structural settling open: CORRECTED 2026-08-03
+
+The corrected rigid-body budget does not leave a residual angular rate after an internal mass
+starts and stops. It leaves a transient rate and an attitude offset. At the assumed 166 mm
+lever arm, the 500 kg example reaches about 0.136 deg/s during sled return and finishes about
+0.42 deg from its initial attitude. The 200 kg example reaches about 0.443 deg/s and 1.37 deg.
+
+The declared transient-rate rows remain FAIL. The ideal residual-rate row passes, but that does
+not establish structural settling. No controller, thruster geometry, wheel/RCS authority,
+flexible-body mode, damping ratio, or firing schedule closes the attitude offset before the next
+trigger. The previous 8.2 s rate-null and 18.1 s cadence floor are superseded. P31's 10--20 s
+versus 1200 s cadence contradiction remains unresolved.
+
+### E26. Brake-fin transient temperature across a campaign is not modelled: NEW 2026-08-03
+
+The thermal calculation previously used a 300 x 80 x 4 mm copper fin. The Gen3 STEP and the
+validation mass table specify 120 x 80 x 4 mm, 0.344 kg. Correcting that input raises the
+adiabatic increment from about 3 K to about 7 K per shot and the twelve-shot no-cooling bound
+to about 85 K.
+
+The former statement that each transient decays before the next 10--20 s shot had no transient
+conduction or radiation model behind it and is removed. A thermal network, contact conductance,
+surface properties, and the resolved P31 cadence are required. The 0.32 m2 radiator number remains
+an assumed 130 W steady rejection case, not a demonstrated campaign transient.
+
+### E27. Gen4 finite-stator force and energy are not modelled: NEW 2026-08-03
+
+The Gen4 working assembly exposes an end effect that the Phase I periodic/uniform-stator model
+does not contain. The array is fully overlapped for 751.5 mm of the 900 mm acceleration stroke,
+then progressively leaves the stator over the final 148.5 mm. At release, the remaining overlap
+is 191.5 mm of a 340 mm array.
+
+An overlap fraction alone is not an accepted force law. End fields, phase progression, winding
+termination, current control and force ripple all matter in the edge region. The Phase I
+regenerative section is also absent from the declared Gen4 operational selection, so its 291.4 J
+credit cannot be carried into a Gen4 efficiency result.
+
+**What would close it:** a position-dependent electromagnetic calculation using the recorded
+Gen4 body bounds and stations, with the implementation, tool version, input hash, numerical
+settings, tolerances and output hash retained. Compare it with the existing periodic result only
+over the fully overlapped interval. Then integrate the force/current trajectory and rerun every
+dependent result before exporting or publishing Gen4 performance.

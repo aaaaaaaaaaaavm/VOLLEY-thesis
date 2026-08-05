@@ -52,7 +52,16 @@ traction exceeds 150 m/s) and inverts every cost: high drive efficiency, continu
 servo control instead of fire-and-commit timing, and (decisively) a **reusable sled**
 that carries the magnets so the customer satellite carries nothing.
 
-Verified outcome: 32 % electrical-to-payload efficiency against the coilgun's 1-2 %.
+Verified outcome: **20.99 %** electrical-to-payload efficiency, net of regeneration, at the
+2026-08-03 operating point. **This line used to read "32 % against the coilgun's 1-2 %" and both
+halves were dead.** The 1-2 % comparator was struck four lines above on 2026-07-30 and never
+removed from here; the 32 % predates the sled-mass adoption and the quadrature correction. The
+efficiency comparison is **not** a reason this decision was made and is not restated as one:
+Feng et al. report 14.9-19.9 % for a multi-stage coilgun, which is this design's own range.
+
+The reasons that were load-bearing, and the ones my 2021-2025 notebooks actually give, are
+acceleration and the electromagnetic environment at the payload. See
+[`HISTORY.md`](HISTORY.md#why-the-coilgun-was-actually-dropped) and ADR-003.
 
 ## 2025: Iron-core to ironless stator
 An iron-core double-sided stator computed to roughly 65 kg of laminations plus 32 kg of
@@ -142,3 +151,25 @@ Concept and results released via LinkedIn and this repository. Detailed operatin
 was deliberately withheld from the public post but **is** disclosed by publishing these
 scripts. See `OPEN_PROBLEMS.md` E14, this is irreversible and was not preceded by a
 provisional filing.
+
+### 2026-08-03 correction to the regeneration addendum
+
+The decision to recover energy before the eddy brake remains accepted. At the corrected
+operating point the same model returns **291.4 J**, 23.0% of the sled's 1268.3 J, leaving
+**934.7 J** to the brake and giving **20.99%** net electrical-to-payload efficiency.
+
+## 2026-08: Gen4 is an open mechanism before it is a new operating point
+
+The working Fusion assembly now has a separate open configuration, with the enclosure retained
+only for envelope and interface checks. This is the useful public view because the stator, sled,
+feed path, release station and brake remain visible.
+
+The geometry also changes the calculation. The sled moves from s = 300 to 1200 mm, and its
+340 mm Halbach array reaches the end of the finite stator at s = 1051.5 mm. The final 148.5 mm
+of acceleration therefore occurs under partial overlap. I will not apply the Phase I uniform-
+stator result to that assembly, and I will not replace it with a 900 mm constant-thrust estimate.
+
+The Phase I / Gen3 baseline stays frozen and reproducible while Gen4 is analysed separately.
+STEP, STL and public-render export remain gated on the position-dependent force result and a
+checked operational occurrence selection. Recorded formally in ADR-019 and
+[`GEN4_STATUS.md`](GEN4_STATUS.md).
