@@ -1,8 +1,8 @@
 # Validation plan
 
-Independent cross-checks of the claims in `analysis/`. **Nine of the eleven below have run.**
-**Two of them failed**, one returned three rows that could not be evaluated at all, and one found
-a published number 37 % high.
+Independent cross-checks of the claims in `analysis/`. **Ten of the twelve below have run.**
+**Two of them failed**, two are partial, one returned three rows that could not be evaluated at
+all, and one found a published number 37 % high.
 
 ## Why it exists
 
@@ -27,12 +27,13 @@ another model (E4). Each analysis closes a specific named item.
 | A5 | Orbital lifetime and seeding | GMAT R2022a | E6, hardens x1.80 | **RUN**, verdict **FAIL** on invariance. See [`../docs/RESULTS.md`](../docs/RESULTS.md) |
 | A9 | Decay rate against flown CubeSats (TLE history) | Space-Track + numpy | **E6, against reality rather than another model** | **NOT RUN**, blocked by network policy here and re-tested 2026-07-31. **Candidate objects now shortlisted** in the sheet, so this is an afternoon elsewhere |
 | A6 | Conjunction probability | scipy 2-D Pc (CARA substituted) | P1 — **not closed** | **CORRECTED 2026-08-03**: fixed-shape claim retracted; current slab bound 4.4e-5, two of five bands, three **VOID**, P1 open |
-| A7 | Separation and tip-off | Project Chrono | E7-adjacent | specified, not run |
+| A7 | Separation and tip-off | Project Chrono | E7-adjacent | **still specified, not run.** **A7-R RUN 2026-08-05** instead: Chrono is unavailable and the release mechanism is undefined, so the tolerance was computed rather than the rate — the full push may act unbalanced for only **50.7 µs** before the 2 °/s band breaks |
 | A8 | Pulse-power chain | ngspice / PySpice | E17 | **RUN 2026-07-30** as A8-R; now superseded by the 2026-08-03 quadrature correction and not rerun in ngspice |
 | A10 | Shot against a realistic bank ESR | `motor_model.shot()` | nothing; **opened P26** | **RERUN 2026-08-03**: hard ceiling 68 mohm, five of six bands, one VOID |
 | A11 | Regenerative recovery of sled energy | `motor_model.regen_brake()` | nothing; asks what R5 did not | **RERUN 2026-08-03**: 291.4 J recovered, eight of eight bands |
 | A12 | Inter-array attraction, two numerical methods | magpylib + surface Maxwell stress | **P17** | **CORRECTED 2026-08-03**: extended stress plane 2680.0 N vs 2686.6 N volume force; five of five bands |
 | A13 | Indexing and sled-return attitude disturbance | momentum bookkeeping | **E24** | **CORRECTED 2026-08-03**: transient-rate rows 3/4 FAIL, row 7 VOID; ideal residual rate is zero and the cadence conclusion is superseded |
+| A14 | EMI scoping: payload coupling and comms | `drive_electrical` + magpylib | advances **E12**; **opened P34** | **RUN 2026-08-05**, verdict **PARTIAL**: six of eight bands, band 4 **FAIL** at 611x, band 5 VOID. The dominant term is the static magnet field, not the drive |
 
 A10 and A11 are cross-checks of the model against its own physics rather than against an
 external tool, which is a weaker class of check and is labelled as one. They are here because each
