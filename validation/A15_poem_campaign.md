@@ -3,16 +3,112 @@
 **Closes:** nothing on its own. **Exercises** the ConOps adopted in ADR-020 and tests whether the
 deployment story this project tells survives an independent propagator.
 
-> ## BANDS DECLARED 2026-08-05. NOT RUN — and it cannot be run here.
+> ## BANDS DECLARED 2026-08-05. GMAT INSTALLED AND SCRIPTS EXECUTING 2026-08-06.
 >
 > Everything below the "Acceptance bands" heading was committed **before**
 > `validation/gmat/poem_campaign.script.tmpl` existed.
 >
-> **GMAT is not installed in this environment.** The script is generated and cross-checked
-> against `analysis/astro.py` here; the GMAT execution happens elsewhere and the reports come
-> back to `parse_reports.py`. Until they do, this sheet says **generated and cross-checked, not
-> executed**, and it must not be described as a run. A1 spent a day mislabelled in
-> `validation/README.md` for exactly this reason.
+> ### The scripts did not run on first delivery, and I said they were cross-checked
+>
+> **They were rejected by GMAT's interpreter.** `ReportFile` has no `ReportStepSize` field —
+> that belongs to `EphemerisFile` — and every one of the three scripts died on it at parse time:
+>
+> ```
+> **** ERROR **** Interpreter Exception: The field name "ReportStepSize" on object
+> "repsat01" is not permitted in line:
+>    " 260: GMAT repsat01.ReportStepSize = 3600;"
+> ```
+>
+> **My "generated and cross-checked" label was true and misleading.** The cross-check verified
+> the *physics* against `astro.py` — semi-major axis to 0.0000 %, which it did correctly — and
+> verified that no `@@PLACEHOLDER@@` survived. It never verified that GMAT would accept the
+> syntax, because nothing here could. I wrote a caveat about not calling it a run and then let
+> "cross-checked" carry more weight than it had earned.
+>
+> **GMAT R2022a is now installed in this environment** (`/opt/gmat/GMAT/R2022a`), the field is
+> removed, and a one-day propagation of R1 returns **"Mission run completed."** with twelve
+> report files whose epoch state matches the prediction: SMA 6857.586 km against a predicted
+> 6857.59, inclination 51.6°, and RAAN regressing 4.84 °/day against a predicted 4.875.
+>
+> The integrator was loosened from 1e-11 to **1e-9** with `MinStep` 30 s, because at 1e-11 the
+> report step was ~35 s and a 90-day run would emit 222 000 rows per satellite. The question
+> A15 asks is secular J2 drift, which does not need that resolution. **That is a change to the
+> analysis and it is recorded here rather than made quietly.**
+
+## Result, all three cases, 2026-08-06
+
+GMAT R2022a, 90 days, twelve satellites per case, ~60 000 rows each. Bands at `e067da8`.
+
+| | R1 450/51.6 | R2 350/55.2 | R3 350/9.6 | Band |
+|---|---:|---:|---:|---|
+| 1 max inclination change | 0.1229° | 0.1220° | 0.1220° | ≤ 0.13° **PASS** |
+| 2 altitude extent | 117.2 km | 114.6 km | 114.6 km | ≥ 100 km **PASS** |
+| 3 max RAAN change at epoch | 0.1568° | 0.1486° | 0.7315° | ≤ 0.75° **PASS** |
+| 4 RAAN spread at 90 d | 367.0° | 364.8° | 366.2° | ≥ 5° **PASS** |
+| 5 SMA vs `astro.boosted_elements` | 0.0000 % | 0.0000 % | 0.0000 % | ≤ 0.5 % **PASS** |
+| 6 min inter-object separation | 2.275 km | 3.763 km | 22.578 km | **NOT RELIABLY EVALUATED** |
+
+**R3 exercises band 3 hardest**, reaching 0.7315° against a 0.75° limit — the low-inclination
+case gives the largest RAAN change per cross-track shot, as predicted, and very nearly fails.
+
+### Band 6 is not a pass and is not recorded as one
+
+The minimum separations above are **sampled**, and the sampling is far too coarse to mean
+anything: 4031 samples over 90 days is one point every **1929 s against a 5560 s orbital
+period — 2.9 samples per orbit.** Two objects closing at kilometres per second can pass each
+other entirely between samples.
+
+So 2.275 km is *a distance seen at three arbitrary points per orbit*, not a minimum. **Band 6
+remains unevaluated**, and the honest statement is that A15 has not established inter-object
+safety. Closing it needs a real conjunction screen with adaptive refinement near candidate
+minima — which is what `astro.py`'s `conjunction()` already does at 0.25 s sampling, and what
+**A6** exists for. A6 returned three VOID rows and **P1 is still open**.
+
+**This matters because of band 4.** 367° of nodal spread means the planes wrap and pairs
+re-align during the campaign, so close approaches are plausible rather than hypothetical, and
+band 6 was the band written to catch exactly that.
+
+## Result, R1 detail: **band 4's prediction was wrong by 28x**
+
+GMAT R2022a, 90 days, twelve satellites, 60 474 rows each. Bands committed at `e067da8`.
+
+| # | Question | Band | Predicted | GMAT | Verdict |
+|---|---|---|---:|---:|---|
+| 1 | Max inclination change, any one satellite | ≤ 0.13° | 0.1229° | **0.1229°** | **PASS** |
+| 2 | Altitude extent | ≥ 100 km | 117.2 km | **117.2 km** | **PASS** |
+| 3 | Max RAAN change at epoch | ≤ 0.75° | 0.1568° | **0.1568°** | **PASS** |
+| 4 | RAAN spread after 90 days | ≥ 5° | 13.2° | **367.0°** | **PASS** |
+| 5 | GMAT SMA vs `astro.boosted_elements` | ≤ 0.5 % | — | **0.0000 %** | **PASS** |
+
+Bands 6, 7 and 8 were **not evaluated**: band 6 needs Cartesian positions the report set does not
+carry, band 7 is a property of the script rather than a GMAT output, band 8's Case B is not
+generated. They are open, not passed.
+
+### Band 4 passed, and my prediction of it was badly wrong
+
+**367° against 13.2°.** The analytic prediction assumed nodal regression at a *fixed* semi-major
+axis, so the differential was frozen at the 0.147 °/day the initial 59 km spread produces. GMAT
+propagates with drag, and drag makes the spread **grow**: the satellites left with lower perigees
+decay faster, the semi-major axes diverge, and the RAAN rate difference widens with them. The
+final SMA range is **6770 to 6848 km, a 78 km spread against the 59 km it started with.**
+
+So the mechanism is not differential J2 at fixed altitude. It is **drag-amplified differential
+J2**, and it is roughly 28 times stronger over 90 days than the frozen-altitude estimate.
+
+**This is a pass that should be read carefully.** The band asked for ≥ 5° and got 367°, but a
+number that far from prediction means the model behind the prediction was incomplete, not that
+the design is 28 times better than thought. Two consequences follow and neither is comfortable:
+
+- **367° is more than a full revolution of relative nodal position.** The planes do not simply
+  spread — they wrap, so pairs of satellites re-align in RAAN at some point during the campaign.
+  A15 band 6 was the one that would have caught whether that matters, and it could not be
+  evaluated.
+- **The spread is a decay artefact as much as a design feature.** Satellites separating in plane
+  because they are falling at different rates is not the same product claim as satellites placed
+  in different planes, and `SUMMARY.md` and the paper should not conflate them.
+
+`docs/RESULTS.md` and the deployment framing need this distinction before either quotes a plane
+spread.
 
 ## The question, and the thing it is easy to get wrong
 
