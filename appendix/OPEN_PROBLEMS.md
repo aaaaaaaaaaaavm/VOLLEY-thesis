@@ -1571,6 +1571,25 @@ most likely qualification failure"*; **it is now a predicted failure rather than
 against the random-vibration case, or isolate the cassette stack so the mode does not drive the
 pins. **This is analysis only -- T-1 closes the test half of E10 and nothing here substitutes.**
 
+> **RESIZED 2026-08-10 by A22, and the fix is eleven grams.** The gates go from **2 x D6 to
+> 2 x D9 A-286 pins**: capacity 18.2 -> **41.0 kN**, and the margin of safety at Q = 30 goes
+> **-0.36 to +0.45**. Across the whole sweep it stays positive, **+0.45 at Q = 30 to +1.51 at
+> Q = 10**, so **the design no longer depends on where Q lands** -- which is the entire point,
+> since A19 found Q was the only assumed input moving a margin through zero.
+>
+> **No architecture change was needed.** Splitting the stack across two gates was in the allowed
+> space and is not required, so the magazine is untouched. The quasi-static case improves as
+> well, MoS 1.21 -> 3.98, and **pin shear still governs** over bearing at 41.0 against 52.2 kN,
+> so resizing pins was the right fix rather than the wrong one.
+>
+> **A definitional discrepancy fell out of it.** A18 quotes this margin as **-0.10**, computed as
+> capacity/load - 1; `sizing.py` applies a **1.4 design factor** and gives **-0.36** for the same
+> hardware. Both are correct and they are different quantities. **The factored form is used**,
+> because dropping a design factor while resizing would be a silent relaxation -- so the figure
+> quoted in this entry above is the kinder of the two readings.
+>
+> **The test half is untouched.** T-1 still closes E10, and Q is still unmeasured.
+
 ### P38. The paper claimed a payload magnetic environment its own validation had already falsified: MEDIUM, NEW 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done
 
@@ -1673,6 +1692,49 @@ the stated price.
 **Why this is numbered under the freeze.** [ADR-021](docs/adr/021-freeze-the-register.md) admits
 two of the three categories here at once: it is a defect that made a published Phase I deliverable
 wrong, and it is a validation band miss. Both were live within hours of each other.
+
+### P41. The payload slams into its cradle at the start of every shot, and nothing modelled it: HIGH, NEW 2026-08-10
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found by A23 band 3**, which was declared as a `REPORT` row precisely because nobody knew what
+it would return.
+
+**The payload CoM sits 70 mm off the thrust line**, so the 413.2 N push produces a **28.92 N·m**
+moment about it and an angular acceleration of **688 rad/s²** if the payload is free to rotate.
+The cradle holds it **with clearance**. It is therefore not free for long — but it is free for
+long enough:
+
+| Cradle clearance | Time to cross | **Arrival rate** | vs the 2 °/s tip-off band |
+|---:|---:|---:|---:|
+| 0.05 mm | 0.92 ms | **36.5 °/s** | **18×** |
+| 0.50 mm | 2.92 ms | **115.3 °/s** | **58×** |
+| 2.00 mm | 5.84 ms | **230.6 °/s** | **115×** |
+
+**No clearance in that range is benign**, including one tighter than the sled's own 0.05 mm
+gap-shim tolerance.
+
+**Two consequences, and the second is worse than the first.**
+
+1. **It is an unsized load case.** The payload arrives with rotational energy into its own CDS
+   corner rails, twelve times per campaign, and nothing in this repository has sized the rails,
+   the cradle or the seat for it.
+2. **It may set the tip-off rate instead of the release mechanism.** After impact the payload
+   rebounds, re-crosses the gap and rattles. **Whether that has settled by release, 158 ms later,
+   depends on a restitution and damping model this project does not have.** If it has not, tip-off
+   is governed by a rattle at 18–115× the band rather than by the mechanism A23 specified.
+
+**Tightening the clearance does not fix it.** Arrival rate goes as √(clearance), so a factor of
+ten tighter buys √10 — 115 °/s becomes 36 °/s, still 18× the band.
+
+**What would close it:** **preload the cradle** so there is no gap to accelerate across. A23 band
+4 measured the couple reaction the preload must exceed at **85.0 N per contact**, which is modest
+and achievable. The alternative is geometric — A23 band 5 prices it — and needs the CoM offset
+cut from **70 mm to 3.5 mm**, which is aligning the payload CoM with the thrust line rather than
+trimming it. **Preload is the cheap route and the redesign is the expensive one.**
+
+**This is analysis only.** The rattle question is exactly what the multibody run **A7** was
+specified for and has never had, and **T-5** is the test that would settle it on hardware.
 
 ### E28. Campaign mission life at a real POEM altitude is about a month, and is not modelled: NEW 2026-08-06
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -1859,7 +1921,11 @@ cassette, or structural design exists for larger classes.
 
 > **ANALYSIS HALF CLOSED 2026-08-06 by A18, and it FAILED.** Miles' equation on the GEVS
 > spectrum gives 11.7-20.2 kN through the retention pins against the 5.9 kN they were sized for.
-> Opened as **P37**. T-1 closes the test half and nothing here substitutes for it.Retention gate pin sizing exists (two D6 A-286, margin 1.2) and the breech launch-lock
+> Opened as **P37**. T-1 closes the test half and nothing here substitutes for it.
+> **RESIZED 2026-08-10 by A22: two D9 pins, 41.0 kN, margin +0.45 at Q = 30 and positive across
+> the whole range. The analysis half now passes; the test half is still T-1's.**
+
+Retention gate pin sizing exists (**two D9 A-286 since 2026-08-10**, quasi-static margin 3.98) and the breech launch-lock
 blocks are now modelled in CAD (`cad/parameters.json` `track`: `launch_lock`, x = 30-50
 mm, 2 off). The rest, escapement caging, cam lock, tolerance stack-up under vibration,
 is drawn or described, not analysed.
