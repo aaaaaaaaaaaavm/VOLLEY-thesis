@@ -1,6 +1,6 @@
 # Validation plan
 
-Independent cross-checks of the claims in `analysis/`. **Fourteen of the sixteen below have run.**
+Independent cross-checks of the claims in `analysis/`. **Fifteen of the seventeen below have run.**
 **Two of them failed**, two are partial, one returned three rows that could not be evaluated at
 all, and one found a published number 37 % high.
 
@@ -37,6 +37,7 @@ another model (E4). Each analysis closes a specific named item.
 | A16 | Gen4 finite-stator thrust vs sled station | magpylib | **E27** | **RUN 2026-08-05**: full-overlap thrust reproduces `F_cmd` to 0.000 %; Gen4 reaches **13.390 m/s, 81.7 % of Phase I**, an upper bound |
 | A17 | Ripple chirp through the track modes | scipy SDOF | **E23**; **opened P36** | **RUN 2026-08-05**, verdict **FAIL**: 8.18x amplification at the fundamental crossing of the 109 Hz mode, and Q is not the variable that saves it |
 | A18 | Brake, magnet eddy, fin transient, launch restraint, standoff | numpy + Miles | **E20, E19, E26, E22**, and E10's analysis half; **opened P37** | **RUN 2026-08-06**: E19/E26/E22 pass, E20 passes only for a 0.4-0.5 T pole field, **E10 FAILS at every Q** |
+| A19 | Sensitivity ranking of nine assumed inputs | numpy + the real pipeline | nothing; **ranks** the assumptions behind P29, P28, `STRUCTURAL_GAP` | **RUN 2026-08-10**, verdict **band 1 FAIL**: net efficiency has two different leaders depending on the metric, so both rankings are published. `v_exit` does not respond to bank ESR at all — nil, then total |
 
 A10 and A11 are cross-checks of the model against its own physics rather than against an
 external tool, which is a weaker class of check and is labelled as one. They are here because each
@@ -71,6 +72,21 @@ sheet can no longer function as a test and is marked superseded. The replacement
 they predated the P3 correction, and was fixed on 2026-07-27.
 
 When a band is missed, the outcome is a new P-item, not a quietly widened band.
+
+**A field band must name which field, at which plane, as which quantity.** Added 2026-08-10 from
+**P20**, and it is aimed at **A2** in particular. A1's array-surface band was declared against
+`analytic_B0_surface_T` = 0.7714 T, the fundamental amplitude of a **single** array's ideal wave
+at its own surface. Any measurement at that plane in a **double-sided** machine includes the
+opposing array, worth `B0·exp(-k·GAP)` = 0.160 T there, so the correct double-sided reference is
+**0.9317 T** — and the FEM's fundamental is 0.9312 T, a ratio of 0.9994. **The row failed as
+declared and the model was right.** A raw peak at that plane reads 1.4641 T and is a third
+quantity again, mesh-dependent, because the plane sits on the magnet face where block-corner
+harmonics dominate and the field is formally singular at the corners.
+
+So a band at a magnet surface needs **two references named, not one**: single-sided or
+double-sided, and fundamental or raw peak. A1's sheet is left exactly as written — a band is
+never edited after its run — and this is where the correction lives instead, so the next sheet
+meets it without having to know to search the register for it.
 
 **And when a band cites an external document, record which document, which revision, and whether
 a tighter comparator exists in the same family.** Added 2026-07-31 after **P30**: A7's tip-off

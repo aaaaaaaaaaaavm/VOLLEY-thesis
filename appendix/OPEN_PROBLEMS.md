@@ -5,15 +5,15 @@ fixed first. **E-items are genuinely unsolved engineering.**
 
 > ## How to read the counts
 >
-> **65 numbered entries, of which 32 are live.** Every entry carries a `Status:` line written by
+> **67 numbered entries, of which 29 are live.** Every entry carries a `Status:` line written by
 > `tools/register_status.py`, which also derives the headline counts, so this file and the numbers
 > quoted elsewhere cannot drift apart again.
 >
 > | Status | Count | Meaning |
 > |---|---:|---|
-> | `LIVE` | **32** (16 P, 16 E) | open engineering; something still has to be done |
-> | `CORRECTED` | **8** | found, fixed and propagated — **retained as the published record, not as debt** |
-> | `CLOSED` | **25** | resolved, with the closer named in the entry |
+> | `LIVE` | **29** (15 P, 14 E) | open engineering; something still has to be done |
+> | `CORRECTED` | **9** | found, fixed and propagated — **retained as the published record, not as debt** |
+> | `CLOSED` | **29** | resolved, with the closer named in the entry |
 >
 > **This distinction did not exist until 2026-08-06** and its absence was itself a defect: a
 > reader could not separate live engineering debt from published history, so "37 defects" counted
@@ -184,14 +184,35 @@ Resolved via the rail interface: the 3U payload now models the four CubeSat Desi
 Specification corner rails (8.5 mm, `cad/parameters.json` `payload_3u`), which fix seating
 and orientation against the sled cradle. No further action.
 
-### P7. Brake sits past the release point: geometry / ConOps
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P7. Brake sits past the release point: geometry / ConOps — CLOSED 2026-08-10
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
 
 The eddy brake occupies **x = 1530-1740 mm**, beyond the **1500 mm** satellite release
 point, on an 1800 mm longeron. The sled runs on into the brake after the payload departs
 consistent with the fire-then-arrest ConOps, but it forces the track and enclosure to
 extend past release, which drives the envelope length (see P9). Source:
 `cad/parameters.json` (brake, track).
+
+**Closed 2026-08-10 by the Gen4 layout, geometrically.** `docs/GEN4_STATUS.md` moves release to
+**s = 1200 mm** on a 900 mm acceleration stroke and puts brake-fin entry at **s = 1222 mm**, so
+the release station sits **22 mm before** the fin reaches x = 1530 mm. The fin then occupies the
+brake interval over 330 mm of sled travel, s = 1222 to 1552 mm. **The release-into-brake overlap
+is gone, and it is gone without adding track length.** Recorded against **A16**, which computed
+the Gen4 finite-stator thrust on this layout, and **P32**.
+
+**The second half of this entry was never P7's to carry.** "It forces the track and enclosure to
+extend past release, which drives the envelope length" is true and still true — Gen4 keeps the
+track at 1800 mm and the brake at 1530–1740 mm. **That is the envelope problem, and the envelope
+problem is P9**, which is a kill-criterion item with an owner decision attached. P7 asked whether
+the *overlap* was a defect. It was, Gen4 resolves it, and nothing is gained by keeping a second
+entry pointed at P9's problem.
+
+> **What this close is worth, stated plainly.** Gen4 is a CAD configuration record and **has not
+> been exported into this repository** — `GEN4_STATUS.md` says so in its own first paragraph, and
+> the committed STEP, analyses and baseline remain the Gen3 record. So this closes a **geometry
+> question against a geometry that is not yet committed**. It is closed because the layout
+> resolves it and the layout is recorded, not because anything was measured. If the Gen4 export
+> lands with a different release station, this reopens.
 
 ### P8. Exit velocity provisionally 17.88 m/s pending sled structural FEA: RESOLVED 2026-07-29
 > **Status:** `CLOSED` — resolved; see the entry for what closed it
@@ -352,6 +373,40 @@ and left in place there with a note rather than edited:
 
 The sled fix **is** verifiable: Gen2 chassis half-length measures 180 mm (360 mm plate),
 Gen3 measures 244 mm (488 mm plate), so G2-D1 is genuinely closed.
+
+> ### Audited against Gen4, 2026-08-10: two of the six are answered, four carry
+>
+> Each defect read against the Gen4 configuration recorded in
+> [`docs/GEN4_STATUS.md`](docs/GEN4_STATUS.md). **The standard of evidence is the same one P7
+> closes under and it is weaker than it looks:** Gen4 exists in Fusion and **has not been
+> exported into this repository**, its own status file says the committed STEP, analyses and
+> baseline remain the Gen3 record, and the export gate is deliberately closed until the
+> finite-stator result is recorded. So "answered by Gen4" means *the successor layout does not
+> have this defect*, not *the repository no longer has it*.
+>
+> | ID | Against Gen4 | Verdict |
+> |---|---|---|
+> | **G3-D5** Halbach arrays not re-centred after the chassis grew 360 → 488 mm | Gen4 states the arrays explicitly in the 488 mm chassis local frame, x = −96 to +244 against a chassis of −180 to +308. The inherited `halbach_array_x_start = 230 mm` no longer governs, and **A16 computed the Gen4 finite-stator thrust on this layout**, reproducing `F_cmd` to 0.000 % at full overlap | **Answered.** The array position is now stated rather than inherited, and has been used in an analysis |
+> | **G3-D12** Assembly extends 156 mm aft of the recorded envelope | Gen4 puts the stowed sled at s = 300 mm, where the **backstop clears the aft enclosure skin by 24 mm** in the envelope check — a clearance where Gen3 had a 156 mm protrusion | **Answered.** And it removes the ~57 % ESPA overrun this defect implied, back to P9's ~44 % |
+> | **G3-D1** Cassette height 640 mm in CAD against `parameters.json` 690 mm | Gen4 records nothing about cassette height | **Carries** |
+> | **G3-D2** Track has no roller channels, guide flanges or cross-tie outriggers | Gen4 lists the track as "existing source geometry", unchanged, and states in its own limitations that **"the roller-span discrepancy remains open"** | **Carries, explicitly** |
+> | **G3-D4** Stator layer count still open, 1 vs 2 layers | Gen4 lists the stator as "existing source geometry". The decision that sits upstream of K<sub>t</sub> is untouched | **Carries** |
+> | **G3-D6** No payload-on-sled rigid joint in any generation | Gen4 completes the twelve **stowed** payload occurrences in the cassettes, which is a different thing, and says they are "not independently checked as a mass, mechanism, or interference closure" | **Carries** |
+>
+> The two `cad/CHANGELOG_CAD.md`-versus-export discrepancies above are **unaffected by Gen4**:
+> they are disagreements between the CAD change log and the Gen2/Gen3 exports already committed,
+> and a new configuration does not resolve what an old export does or does not contain.
+>
+> **The one that matters most is G3-D4**, and it is worth saying why it is not a bookkeeping
+> item at all. One stator layer or two is roughly ×2 force for the same sheet current against ×2
+> copper mass, **it has never been computed**, and it sits upstream of K<sub>t</sub> and
+> therefore of the headline velocity. It is filed here as a CAD defect and it is really an
+> unmade design decision, in the same class as the four in `docs/PHASE_I_CLOSURE.md` §10.
+
+**What would close it:** the four carried defects corrected in CAD and re-exported, which the
+Gen4 export gate already blocks on. **P14 does not close on this audit** — two of six are
+answered by a configuration that is not yet in the repository, and the remaining four are
+untouched.
 
 ### P15. The Gen3 sled as drawn is 9.45 kg, above BOTH existing estimates: RESOLVED 2026-07-29
 > **Status:** `CLOSED` — resolved; see the entry for what closed it
@@ -645,6 +700,29 @@ correction belongs in the *next* run sheet.
 **Fix:** when A2 (3-D) is specified, declare the array-surface band against the double-sided
 value and against the **fundamental**, not a raw peak. Two references need naming, not one.
 
+> **Reviewed 2026-08-10, and the sheet was deliberately NOT edited.**
+>
+> The obvious reading of this item is "the run sheet is wrong, so fix the run sheet". **That is
+> the one action this project forbids.** `validation/A1_field_femm.md` declared its band on
+> 2026-07-27 and A1 ran against it; editing that band now — even to a value that is provably
+> more correct — is editing an acceptance band after its result is known, which is the move
+> `validation/README.md` exists to prevent and which this entry already ruled out in its own
+> second paragraph. **A band may be corrected before a run, dated, with the original stated. It
+> may never be touched after one.** P30 is the precedent for the permitted case; this is not it.
+>
+> **So the fix is forward-only, and it now lives somewhere a future run sheet will actually
+> meet it.** The requirement has been added to the conventions in
+> [`validation/README.md`](validation/README.md), because a correction recorded only in the
+> defect register is a correction the next sheet's author has to already know to look for. That
+> is the same failure mode as A1's result living only in `OPEN_PROBLEMS.md` while
+> `validation/README.md` said "not run".
+>
+> **P20 stays open, and it stays open for a reason that is not work anyone is avoiding.** It
+> closes when **A2** is specified and declares the array-surface band correctly. A2 does not
+> exist — it needs a 3-D solver, it is A-8 in `docs/PHASE_I_CLOSURE.md`, and it is the heaviest
+> remaining analysis. Marking this closed while the only thing that can close it has not been
+> written would be closing by assertion.
+
 ### P21. Stray field at 50 mm: 2-D cannot test the far field: LOW, NEW 2026-07-29
 > **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 
@@ -748,8 +826,8 @@ project has measured nothing. `docs/BENCHTOP_TESTS.md` already specified the ans
 **B-2**; what was added on 2026-07-30 is that their bands are now **derived** from an error budget
 rather than chosen, by `validation/bench/bench_predict.py`. See E4.
 
-### P23. The stroke time is stale in six places, and A8's band was set at the old one: MEDIUM, NEW 2026-07-30
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P23. The stroke time is stale in six places, and A8's band was set at the old one: MEDIUM, NEW 2026-07-30 — CLOSED 2026-08-10
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
 
 Found while building the shot animation, which draws its time axis from `motor_model.shot()`
 and came out at **157.3 ms** against the **127.7 ms** printed everywhere else.
@@ -783,6 +861,22 @@ were, marked as belonging to the superseded point, because rewriting a declared 
 fact to fit a new number is the one move that would make the whole validation record worthless.
 Fresh bands were written and committed before the deck was touched, and the re-run passes the
 pulse-duration row at 157.26 ms against 157.3. It failed a different row, which is P24.
+
+**Swept and confirmed 2026-08-10, which is what this entry was still open for.** The entry
+recorded the substance as closed but had never been checked against the file tree, so it stayed
+`LIVE` on a bookkeeping technicality. Every surviving occurrence of 127.7 / 127.6 ms was read:
+
+| Where | What it is | Correct as it stands? |
+|---|---|---|
+| this entry, ×4 | the record of the defect itself | **yes** — it is the account of the stale value |
+| `validation/A8_pulse_spice.md` line 16, 29 | **the band as declared on the day**, 127.7 ms ±10 % | **yes, and must not be touched.** Editing a declared band after its run is the one move the project forbids |
+| `validation/A8_pulse_spice.md` line 109 | A8-R's own note that the windows moved 127.7 → 157.3 ms | **yes** |
+| `docs/VALIDATION_REPORT.md` line 123 | A8's pass, annotated "**at the superseded operating point**, see P23. The current value is 157.3 ms, outside this band" | **yes** |
+
+**No stale prose survives.** The six places the entry named were four prose occurrences, since
+corrected, and two declared-band occurrences that are correct precisely because they were not.
+**The distinction between a stale number and a historical one is the whole of this item**, and
+every remaining instance is on the right side of it.
 
 ### P24. No script carries a bank ESR, and the placeholder standing in for it is a factor of two high: HIGH, NEW 2026-07-30
 > **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
@@ -959,7 +1053,7 @@ numbers move, though the ceiling at 65 mohm does not: that is set by this design
 demand and is independent of any datasheet.
 
 ### P27. A numerical guard hid the failure it was written next to: MEDIUM, NEW 2026-07-30
-> **Status:** `LIVE` — open engineering; something still has to be done
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 
 Found by A10 on its first run, before it found anything about the bank.
 
@@ -984,6 +1078,12 @@ other guard in this repository fails loudly: `_check_operating_point()` exits, `
 --check` exits, `bench_predict.py` raises on geometry drift. This one substituted a plausible
 value and continued. A guard that degrades silently is worse than no guard, because it converts
 a detectable failure into a credible wrong answer.
+
+**Corrected.** Marked 2026-08-10 after verifying the fix in the source rather than taking the
+entry's word for it: `analysis/motor_model.py` defines `BankLimitError` and `shot()` raises it on
+`disc <= 0`, naming the demanded power, the `V²/4R` ceiling and the stroke position. The silent
+`I = P/Vc` fallback is gone. Retained as the published record — the defect is worth keeping
+because the lesson about silently degrading guards is, not because anything remains to be done.
 
 ### P28. The regen stator and the eddy fin do not both fit the arrest section: MEDIUM, NEW 2026-07-31
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -1246,15 +1346,54 @@ figures, 0.463 and 0.341 mT, sit in the edge-effect tail that **P3** already rec
 getting wrong, so the *extent* of the affected volume is not established. A14's band 5 is VOID
 for that reason and for the absence of a materials list.
 
+> **NARROWED 2026-08-10. Step 1 is done, and the block behind it was stale.** Step 1 was written
+> as "resolve P3 first", and P3 and P21 are both `CORRECTED` — magpylib's Cuboid is an exact
+> analytic solution in free space, so the finite-array field was already three-dimensional and
+> correct, and `far_field_sensitivity.py` showed the 7-wavelength default converged to 0.64 % at
+> 10 mm. The far field has been trustworthy for some time and this entry went on citing a block
+> that had been lifted.
+>
+> The exposure is now published as [`docs/PAYLOAD_ENVIRONMENT.md`](docs/PAYLOAD_ENVIRONMENT.md),
+> a payload environment specification rather than a host keep-out, and attached to **ADR-010**
+> and the paper's interface section — the two places that previously specified only what VOLLEY
+> asks of a *host*.
+>
+> **Two things the profile shows that the single 61 mT figure did not.** The near face sits in a
+> steep exponential with a gradient of **−17 mT/mm**, so 10 mm of standoff is worth a factor of
+> eight and carries essentially all of the magnetic force, which goes as ∇(B²). Everything beyond
+> ~60 mm sits in a nearly uniform tail — 0.54 down to 0.34 mT — with a gradient three orders of
+> magnitude smaller. **Standoff fixes the near face and does nothing for the tail**, so one
+> mitigation does not cover both regimes.
+>
+> **And the exposure is not "one shot plus dwell".** The Halbach array is a permanent magnet: the
+> static field is present continuously from magazine loading onward, through ground handling and
+> launch, not only during the 158.6 ms shot. Cradle dwell is specified nowhere in this
+> repository, so the bound runs from one 1200 s cadence interval to the whole campaign plus
+> ground time. The original wording understated it and is corrected above.
+>
+> **P34 stays open.** The extent is established; the materials are not.
+
 **What would close it,** in the order that costs least:
 
-1. **State the exposure.** Compute the field over the payload envelope with a model whose far
-   field is trustworthy, which means resolving P3 first. Publish it as a payload environment
-   specification rather than a host keep-out.
-2. **Decide whether it is a constraint or a defect.** Exposure lasts one shot plus dwell time in
-   the cradle, so a saturated magnetometer recovers; **remanent magnetisation of soft-magnetic
-   parts does not.** That distinction needs a materials list and is the question worth answering.
-3. **T-6** measures it. Its priority rises on this result.
+1. ~~**State the exposure.**~~ **DONE 2026-08-10**, `docs/PAYLOAD_ENVIRONMENT.md`. The field is
+   published across the whole 3U envelope, z = 20 to 120 mm, against both comparators, with the
+   two-regime structure and the exposure duration stated. P3 no longer blocks it and had not for
+   some time.
+2. **Decide whether it is a constraint or a defect.** **This is now the whole of P34.** A
+   saturated magnetometer recovers and a magnetorquer becomes uncommandable but recovers;
+   **remanent magnetisation of soft-magnetic parts does not**, and only the third is a
+   modification. That distinction needs a **payload materials list**, which this project does not
+   have and will not invent — A14's band 5 was declared VOID-able in advance on exactly this
+   ground. It needs a customer or a stated reference payload. **Open.**
+3. **T-6** measures it. Its priority rises on this result. **Open.**
+
+**One thing the specification found that was not in the original entry.** The deployer's own load
+path contains soft-magnetic material: the magazine septum is **silicon steel**, 1.0 mm, between
+adjacent satellites (`cad/parameters.json` `groups.magazine.septum_material`). It will both shunt
+flux, which helps, and itself magnetise, which changes the field a neighbouring satellite sees.
+**Nothing has modelled that**, and it is a second reason the in-cassette field is not simply the
+sled field at greater distance. The cassette case remains unmodelled and is stated as such in the
+specification rather than left to be assumed benign.
 
 Shielding the payload is the option that should be resisted: it adds mass to the customer's
 satellite, which is the modification the architecture exists to avoid.
@@ -1334,6 +1473,78 @@ most likely qualification failure"*; **it is now a predicted failure rather than
 **What would close it:** a damping specification with measurement behind it, then resize the gates
 against the random-vibration case, or isolate the cassette stack so the mode does not drive the
 pins. **This is analysis only -- T-1 closes the test half of E10 and nothing here substitutes.**
+
+### P38. The paper claimed a payload magnetic environment its own validation had already falsified: MEDIUM, NEW 2026-08-10
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Corrected in the manuscript and the PDF rebuilt, 2026-08-10.** The EMC section stated that
+because the Halbach self-shielding weak side faces outward, *"a magnetometer-carrying customer
+payload sees a field comparable to a conventional reaction-wheel assembly at the same standoff"*.
+
+**A14 band 4 falsified that on 2026-08-05** at **611× magnetometer full scale**, and opened
+**P34** on the strength of it. The sentence survived for five days after the run that disproved
+it, in the published PDF, because A14's outcome was propagated into `OPEN_PROBLEMS.md` and
+`docs/KILL_CRITERIA.md` and not into `paper.tex`.
+
+**This is the P25 failure mode with a longer fuse.** P25 recorded a retracted claim staying live
+for a day; this is a falsified claim staying live for five, in the artifact most likely to be
+read by someone outside the project. The defect is not the original sentence — it was written
+before A14 existed and was a reasonable guess — it is that **nothing connects a failed validation
+band to the deliverables that repeat the claim it failed.** `tools/check_artifacts.py` catches a
+PDF older than its source; nothing catches a source older than its own validation result.
+
+**What would close it:** the correction is made, so the sentence itself is closed. The general
+case is not, and is the part worth keeping: a band that FAILS should name the documents that
+assert the thing it falsified, the way `docs/BASELINE.md` change control already requires a
+baseline change to *"state which validations it invalidates"*. That rule exists in one direction
+only. **Carried as the open half of this entry.**
+
+### P39. The companion repositories were not a function of the commit they claim: MEDIUM, NEW 2026-08-10
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Corrected 2026-08-10 in `tools/export_companion.py`.** Found while regenerating the companions
+from a clean clone, because the regeneration **deleted twelve files nobody had removed**.
+
+`copy()` walked the **working tree** with `shutil.copytree`, so every file sitting inside a
+manifest directory went into the companion whether or not the flagship tracked it. The published
+`VOLLEY-paper` and `VOLLEY-thesis` therefore carried `validation/fea/plate.inp`,
+`plate_clamped.frd`, `plate_clamped.dat`, `plate_modal.*` and the rest of A4's CalculiX
+input decks and solver output — **twelve paths that are in no VOLLEY commit at all.**
+`git log --all --diff-filter=A -- 'validation/fea/plate*'` returns nothing. The flagship tracks
+exactly one file in that directory, `build_deck.py`.
+
+**The stray files are not the defect. The provenance is.** Each companion carries a banner
+reading *"generated from VOLLEY flagship 45332a7"*, and that statement was false: the tree it
+described contained files that commit does not have. Worse, the output depended on **what
+happened to be lying around when the export ran** — a machine that had executed A4 produced a
+different companion from a clean clone of the identical commit.
+
+**A generated artifact that is not a function of its stated input is not generated. It is
+collected.** That is the same class as P19 and as the duplicate `results/sizing.json` that
+`motor_model.py`'s header records: a second copy of something, produced by a path nobody
+declared, that then disagrees with the original.
+
+**Fixed:** `copy()` now filters against `git ls-files`, so nothing untracked can enter a
+companion, and the export **names every path it skipped** rather than silently dropping it. On a
+clean clone the filter is a byte-for-byte no-op, which was verified rather than assumed — and it
+was verified to fire, by planting an untracked `plate_clamped.frd` and confirming it was excluded
+and reported.
+
+**What this does not fix, and it is the part worth arguing about.** `validation/README.md`'s own
+conventions say to *"commit input decks and result JSON, never vendored solver code"* — and the
+A4 decks are **not committed**. So the correct end state is probably that `plate*.inp` belongs in
+the flagship and the solver output does not, rather than that all of it disappears. **The
+companions have lost the input decks in this regeneration**, and they were the only published
+copy. Recorded here rather than quietly restored, because restoring them means committing them to
+the flagship first, and that is a decision about what the repository tracks.
+
+**What would close it:** decide whether `validation/fea/plate*.inp` belongs in the flagship. If
+it does, commit the decks — `build_deck.py` regenerates them and needs only `gmsh` — and the next
+export republishes them with real provenance. If it does not, `validation/README.md`'s convention
+about committing input decks should say so. **Either answer closes this; the current state
+answers it by accident**, which is what made the leak possible.
 
 ### E28. Campaign mission life at a real POEM altitude is about a month, and is not modelled: NEW 2026-08-06
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -1479,12 +1690,34 @@ publisher calls provisional, while the internal NRCSD that has flown hundreds of
 **< 2 °/s/axis**. Two deployers, not a contradiction, and the band had been set at the easier of
 them. See **P30**.
 
-### E8. Brake energy is thrown away
-> **Status:** `LIVE` — open engineering; something still has to be done
+### E8. Brake energy is thrown away — CLOSED 2026-08-10, into P28
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
 
 ~1.0 kJ per shot dissipated in the fin. Whether any of it is worth recovering (and what
 that would cost in mass and complexity) has not been examined since the efficiency
 correction.
+
+**It has been examined since, twice, and this entry did not notice.** The premise — "has not been
+examined since the efficiency correction" — was false by 2026-08-03.
+
+| | |
+|---|---:|
+| Sled energy at release | 1.27 kJ |
+| **Recovered by regeneration** (A11, eight of eight bands) | **291.4 J**, 23.0 % of sled KE |
+| **Reaching the fin** | **934.7 J** — the "~1.0 kJ" above, now exact |
+| Efficiency this credit is worth | 2.2 points, 20.99 % net |
+
+**A11 answered "is any of it worth recovering": yes, 291.4 J of it, and the machine already
+does.** What A11 could not answer is whether *more* of it can be, and that question is not open —
+it is **P28**, an owner decision with the geometry already priced: 240 mm of regenerative stator
+and a 300 mm fin do not both fit the 339 mm arrest section, and **A18 priced the fin side**, which
+needs a 0.4–0.5 T pole field to stay inside both the 200 g cap and the 210 mm envelope. Shortening
+the fin is not free and giving up regeneration costs the 291.4 J.
+
+**So the remaining question is a layout decision with a cost attached, not an unexamined
+possibility.** E8 closes into P28 rather than sitting beside it duplicating the question. The
+934.7 J the fin does absorb is not unaccounted for either: **A18 closed E26**, the fin's campaign
+transient, and it passes.
 
 ### E9. 6U/12U variants are force-limited, not designed
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -1565,14 +1798,30 @@ adjacent payloads are discussed but not calculated.
 > **E12 is not closed by this.** A14 is a scoping calculation from quantities already in
 > `analysis/results/`; nothing in it is measured, and E12 closes on T-6.
 
-### E13. Two numbers in source documents were never traced
-> **Status:** `LIVE` — open engineering; something still has to be done
+### E13. Two numbers in source documents were never traced — CLOSED 2026-08-10
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
 
 - The "780 deg/s" tumble rate from a third-party document. Falsified as
   implausible (would require a ~7.6 m line-of-action offset on a 1 m vehicle) but its
   origin was never found.
 - The "1,000+ G hardening" figure, whose context (ground-launch guns) does not apply
   to this design.
+
+**Closed 2026-08-10, on the ground that neither number is load-bearing anywhere.** Both were
+disposed of on their merits when they were logged — one falsified by a physical argument, one
+ruled inapplicable by context — and what stayed open was only the provenance question, "where did
+it come from".
+
+**That question cannot be answered from here and does not need to be.** A search of the tree finds
+**no current claim resting on either figure**: "780" survives only in this entry and in
+`docs/INVENTORY.md`, which already records it as *"Tumble-rate plausibility to 780 °/s falsified"*
+and points at this entry. "1,000+ G" survives only in this entry. Neither appears in `analysis/`,
+in any run sheet, or in `paper/paper.tex`.
+
+**An untraced number that nothing depends on is a resolved item, not an open one.** Tracing the
+origin of a figure this project has already falsified and does not use would buy nothing, and
+carrying it as live debt overstates the register. The falsifications themselves are retained
+above, which is the part with any value in it.
 
 ### E14. Patent / disclosure: the disclosure has now happened
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -1601,6 +1850,60 @@ comparator sources and tooling, **none of it retrieved and read either**, and it
 the same rule: fetch before citing. The differential-drag comparator (Foster et al. flown
 Planet Labs results) is the one worth chasing first, since the paper's 25-day baseline is
 currently a model output rather than a measurement.
+
+> **CHECKED 2026-08-10, and two of the three references do not exist in the paper any more.**
+> This entry was checked against the manuscript rather than taken at its word, which is the
+> whole point of it.
+>
+> **Yudintsev separation dynamics and the vibro-impact deployment paper are not in
+> `paper.tex`.** A search of the source returns **zero** matches for "Yudintsev", "vibro" or
+> "impact" in any form. They were removed from the bibliography at some point and **E16 went on
+> flagging them for verification** — the register was guarding citations the deliverable no
+> longer makes. **The reference numbers were stale too:** the bibliography now runs to 31 entries
+> and [15], [17], [18] are the POEM-4, Vallado and OAM references, none of which this entry is
+> about.
+>
+> **What is left is one reference, and it is now identified.** `\bibitem{eddy}` read
+> *"Eddy current damper modelling for space mechanisms, Actuators; CDA InterCorp flight-heritage
+> documentation"* — a paraphrased title with no author, volume, number, year or DOI, which is not
+> a locatable citation. The journal half resolves to **Diez-Jimenez, Alén-Cordero,
+> Alcover-Sánchez and Corral-Abad, "Modelling and Test of an Integrated Magnetic Spring–Eddy
+> Current Damper for Space Applications," *Actuators*, vol. 10, no. 1, art. 8, 2021,
+> doi:10.3390/act10010008**. The manuscript is corrected to that.
+>
+> ### The standard of evidence, stated exactly, because "verified" is doing work here
+>
+> **The citation was verified to exist and to have those bibliographic details, from four
+> independent indexes that agree. It was NOT read.** Full-text retrieval is blocked by this
+> environment's egress policy — `doi.org`, `www.mdpi.com` and `arxiv.org` all refuse at the
+> proxy, re-tested rather than assumed. So this is **bibliographic verification, not
+> substantive**, and the difference matters for what the reference is being asked to support.
+>
+> **And it is being asked to support something a bench paper cannot.** `paper.tex` cites it for
+> *"flight heritage in the damper class"*. What the retrievable metadata describes is a
+> laboratory device — three configurations designed, simulated, manufactured and tested, with
+> stiffness and damping coefficients measured on a bench. **A tested prototype is not flight
+> heritage.** The flight-heritage half of the claim rests entirely on the vendor documentation
+> bundled into the same `\bibitem`, which has not been retrieved and cannot be from here.
+>
+> **The paper's sentence is deliberately left alone.** Rewriting a published claim on the
+> strength of a title and an abstract I could not open would be the same error this entry
+> exists to prevent, in the opposite direction. It is recorded as a named, specific risk instead.
+>
+> **The two Foster references check out** at the same bibliographic standard:
+> `foster2` is confirmed as arXiv:1509.03270, *"Orbit Determination and Differential-drag Control
+> of Planet Labs Cubesat Constellations"*, Foster, Hallam and Mason, 2015, also circulated as
+> AAS 15-524; `foster` is confirmed as *"Constellation Phasing with Differential Drag on Planet
+> Labs Satellites"* in the *Journal of Spacecraft and Rockets*, doi:10.2514/1.A33927. Author
+> list, title and venue match what `paper.tex` prints. **Neither was read**, so the 25-day
+> differential-drag baseline is still a comparator this project has not checked against the
+> flown result it attributes it to.
+
+**What would close it:** full-text retrieval of `\bibitem{eddy}` and the two Foster papers on a
+machine without this egress restriction, and a decision on the flight-heritage claim once the
+vendor documentation is actually in hand. `docs/RELATED_WORK.md`'s wider list remains
+**unretrieved and is not claimed otherwise**. **This is narrowed, not closed** — from three
+unverified references to one substantively unverified claim and a reading list.
 
 ### E17. The pulse-power chain: PARTIALLY CLOSED 2026-07-28 by A8, with two findings
 > **Status:** `CLOSED` — resolved; see the entry for what closed it
