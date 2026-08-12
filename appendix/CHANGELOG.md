@@ -9,6 +9,65 @@ list these changes close) and `docs/DECISION_LOG.md` (why design choices were ma
 
 ---
 
+## 2026-08-10 (eighteenth pass): segmentation is real redundancy except at the breech, and neither breakdown mechanism is credible
+
+| ID | Item | Detail |
+|---|---|---|
+| **SEG-01** | **The segmented stator is genuine redundancy, and it was only ever an assertion** | `analysis/segment_redundancy.py`. A dead segment is a length the sled **coasts over**, not a stopped machine: at four segments a later failure still exits at **14.19 m/s — 86.6 % of nominal, and 1.41× a spring**. At twelve segments, 95.8 %. |
+| **SEG-02** | **Except at the breech, and that asymmetry is the finding** | **There is no force on a stationary sled**, so if the *first* segment dies the shot never starts. **The stator is two elements, not one** — three of four stator failures are survivable at four segments, eleven of twelve at twelve. `docs/FMEA.md`'s count of nine manifest-forfeiting elements becomes **eight and a fraction**. |
+| SEG-03 | **And it names a cheap design action** | Duplicate or overlap the **breech segment**, or provide any independent means of starting the sled. That converts the winding's last manifest-forfeiting mode into a degradation. |
+| **PAS-01** | **Review item 26 answered: neither mechanism is credible in normal use** | The 96 V bus is **3.41× below air's 327 V Paschen minimum**, and below a gas's minimum nothing breaks down at **any** pd. Multipaction is the wrong regime by **2.5 × 10⁴** — f × d = 40 Hz·m against ~10⁶ Hz·m. Both results are **geometry-independent**, which is why this is arithmetic. |
+| **E32** | **The fault case is not safe, and nothing inhibits it** | The winding stores **1.37 J per phase** at 19.70 µH and 373.2 A. An **unclamped** interruption induces **7,351 V in 1 µs** and 735 V in 10 µs, against a 327 V minimum — and for a 1 mm gap air reaches that minimum at **760 Pa**, which the vehicle transits on **every ascent**. **No requirement anywhere in this repository keeps the bank uncharged during ascent.** |
+| PAS-02 | **CFD was installed, and deliberately not used** | The conclusion turns on the bus sitting below a gas constant, which no venting model changes; a depressurisation time constant is orifice flow, not a Navier–Stokes solve. **Using a CFD solver here would have been theatre**, and is recorded as declined rather than omitted. |
+| CNT-11 | **Register 77 → 78, 34 → 35 live** | E32. Header propagated. E30 gains the segmentation result and stays LIVE — **r is still unmeasured**. |
+
+**What authorised it.** SEG closes a mitigation `docs/FMEA.md` explicitly declined to credit
+without analysis; E32 is unmodelled engineering raised in external review. **No operating point
+moved.**
+
+---
+
+## 2026-08-10 (seventeenth pass): the launch interface permits it, and the FMEA turns E30 into a requirement
+
+| ID | Item | Detail |
+|---|---|---|
+| **ICD-01** | **Review item 30 answered: the interface permits 16.388 m/s** | Rideshare Payload User's Guide **Version 10, September 2024, §3.3.2**, read in full: a 1.0 m/s cap exists and *"containerized deployments such as CubeSats may be deployed at a velocity greater than 1.0 m/s"*, with **no numeric ceiling anywhere in the document**. The question expected to be lethal is not. `docs/ICD_COMPLIANCE.md`. |
+| **E31** | **The same document found three worse problems** | **(1)** Deployments must be under **active attitude control** and are *"not allowed"* while tumbling — and **E29 puts wheel saturation at about shot four of twelve**, so the remainder are non-compliant, not merely degraded. **(2)** A **seven-day hold** on secondary deployments, which applies to the hosted ConOps ADR-024 adopted and costs **20–24 %** of the 29–36 day campaign window E28 measured. **(3)** An **exit-direction requirement** (+X face) that a radially-mounted deployer may not satisfy. |
+| ICD-02 | **Numbers to adopt, not previously in any analysis** | **10 g axial / 17 g lateral (RSS)** quasi-static for a CubeSat dispenser — **lateral is larger**, and the structural work in A18/A22 is random-vibration and axial-dominated. Launch vehicle rates before separation: **±2.0 °/s roll, ±1.0 °/s pitch and yaw**. |
+| ICD-03 | **A qualification gap that is paperwork, not physics** | NRCSD-E reportedly requires CubeSats to withstand **0.5–2.5 m/s** at ejection *(second-hand, not read in the primary document, and flagged as such)*. VOLLEY is **6.6×** that. Physically irrelevant — satellites are damaged by acceleration, not velocity, and 10.53 g sits inside the 25 g CDS cap — but a customer qualified "per NRCSD-E" has **no qualification basis** for 16.4 m/s. |
+| **FMEA-01** | **Nine of thirteen elements forfeit the remaining manifest on a single failure** | Against **zero** for a spring dispenser. **Nine shared elements over twelve cycles is 108 chances to fail.** `docs/FMEA.md`, `analysis/fmea.py`. **This answers review item 22 structurally**: a jammed sled is not a special case, it is one of nine. |
+| **FMEA-02** | **E30 becomes a requirement instead of a criticism** | To beat a 0.99-reliable spring **on delivered orbital life**, each element needs **r ≥ 0.99326 per cycle** — surviving the campaign with probability 0.922. **The first quantitative reliability requirement this project has had.** |
+| FMEA-03 | **And a claim the project should stop making** | Matching a spring **on satellite count** needs **r ≥ 0.99984**, which is not realistic for a twelve-cycle electromechanical system with no flight heritage. **VOLLEY should not be sold on satellite count**; the defensible claim is fewer satellites and more total mission value, above r ≈ 0.9933. |
+| FMEA-04 | **Two mitigations exist and are deliberately not credited** | The winding is **segmented** (P29 closed the modelling half) so losing a segment should degrade rather than stop — **never analysed as redundancy**, and crediting it without analysis would be the optimism this file exists to avoid. Gates are **per-cassette**, already in the model's structure. |
+| CNT-10 | **Register 76 → 77, 33 → 34 live** | E31. Header propagated. E30 stays LIVE: **r is unmeasured**, and cycle-life testing is metal, not computation. |
+
+**What authorised it.** `ICD_COMPLIANCE.md` is a document review and declares no band, which it
+says of itself; `FMEA.md` sweeps reliability as a parameter rather than asserting one. **No
+operating point moved.**
+
+---
+
+## 2026-08-10 (sixteenth pass): a reviewer's register, and the reliability arithmetic it forces
+
+| ID | Item | Detail |
+|---|---|---|
+| **REV-01** | **`docs/REVIEW_RESPONSES.md`** | Thirty-five reviewer questions, answered or conceded. **11 answered, 10 partial, 14 with no answer in this repository at all.** Each answer cites the analysis behind it or says "open" and names what would close it. |
+| REV-02 | **Three answers are losses, stated plainly** | A cold-gas module beats VOLLEY at 3U by **7.5×** (A21 band 5, declared as a loss *before* the run); the satellite **leaves permanently magnetised** by remanent magnetisation of soft-magnetic parts; and a payload's **magnetometer is unusable** inside the deployer at 611× full scale. All three predate the review and come from the project's own analyses. |
+| REV-03 | **Two of the four judged potentially lethal have nothing behind them** | **Item 22** — a jammed sled forfeits the manifest, not one satellite; `grep -ri jam` returns zero. **Item 30** — no launch-vehicle ICD has ever been checked for whether it permits separation at 16 m/s, and if one caps near 1–2 m/s the central number is non-compliant by 8× regardless of the physics. **Item 30 is also the cheapest question here to answer.** |
+| REV-04 | **A unit correction** | Review item 35 cites 18 kW. Peak is **32.5 kW** (96 V × 339 A); **16.1 kW** is the average over the 158.6 ms stroke. |
+| **E30** | **The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism** | A spring dispenser fails one satellite at a time. VOLLEY's sled, stator, bank, sequencer and brake serve every shot, so a failure at shot *k* forfeits shots *k*–12. **Arithmetic, not opinion.** |
+| E30-01 | **The risk/reward ratio, as two numbers** | Matching a 0.99-reliable spring **on satellites delivered** needs per-shot **p = 0.9985**; matching it **on delivered orbital life** needs **p = 0.9347**, because each delivered satellite is worth **1.495×** a spring-deployed one. **Break-even is p ≈ 0.935; below it the spring wins outright.** |
+| **E30-02** | **A correction to the project's own headline** | The **7.52× lifetime extension** is a ratio of *gains* (+61.8 % against +8.2 %). On **delivered orbital life** it is **1.495×**. Both are true, but the second governs any risk-weighted comparison, and **7.5× flatters in exactly the comparison a reviewer makes.** |
+| E30-03 | **And nothing estimates p** | No FMEA, no fault tree, no parts count, no cycle-life test for the escapement, gate or sled. **The project cannot say which side of 0.9347 it is on**, so it cannot presently claim to beat a spring at all. Two mitigations exist — segmented winding, per-cassette gates — and neither is credited, because there is no model to credit them in. |
+| CNT-09 | **Register 75 → 76, 32 → 33 live** | E30. Header propagated. |
+
+**What authorised it.** E30 is unmodelled engineering raised in external review.
+`REVIEW_RESPONSES.md` is triage and claims no analysis. **No operating point moved and no band
+was edited** — but E30-02 identifies a headline figure that overstates the case in the comparison
+that matters, and that correction is now on the record.
+
+---
+
 ## 2026-08-10 (fifteenth pass): the build-readiness position, stated subsystem by subsystem
 
 | ID | Item | Detail |

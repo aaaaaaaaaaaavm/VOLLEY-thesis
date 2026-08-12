@@ -5,12 +5,12 @@ fixed first. **E-items are genuinely unsolved engineering.**
 
 > ## How to read the counts
 >
-> **75 numbered entries, of which 32 are live.** Every entry carries a `Status:` line written by
+> **78 numbered entries, of which 35 are live.** Every entry carries a `Status:` line written by
 > `tools/register_status.py`, which derives the headline counts from the entries themselves.
 >
 > | Status | Count | Meaning |
 > |---|---:|---|
-> | `LIVE` | **32** (17 P, 15 E) | open engineering; something still has to be done |
+> | `LIVE` | **35** (17 P, 18 E) | open engineering; something still has to be done |
 > | `CORRECTED` | **11** | found, fixed and propagated — **retained as the published record, not as debt** |
 > | `CLOSED` | **32** | resolved, with the closer named in the entry |
 >
@@ -32,7 +32,7 @@ fixed first. **E-items are genuinely unsolved engineering.**
 > ## FROZEN 2026-08-10 — [ADR-021](docs/adr/021-freeze-the-register.md)
 >
 > **This register is closed to new entries except in three cases.** It remains authoritative and
-> nothing in it has been deleted, closed or downgraded — all 75 entries stand, and the 32 live
+> nothing in it has been deleted, closed or downgraded — all 78 entries stand, and the 35 live
 > ones still carry their named next steps. **A freeze is not a purge.**
 >
 > **A new numbered entry may be opened only for:**
@@ -2059,6 +2059,175 @@ cross-check — **was not run**, so 10.5386 is still magpylib, which is analytic
 E2's objection that nothing here *solves a field equation* in 3-D stands. Re-baselining onto a
 number that a different method has never checked would repeat the mistake this entry is about,
 one level down.
+
+### E30. The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism, and nothing estimates its reliability: NEW 2026-08-10
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Raised in review, 2026-08-10, and it is the strongest structural criticism this design has
+received.**
+
+A spring dispenser is **twelve independent one-shot mechanisms in parallel**. One failure costs
+**one** satellite. VOLLEY is **one mechanism in series with itself, cycled twelve times**: the
+sled, stator, bank, sequencer and brake serve every shot, and the escapement and retention gate
+cycle twelve times each. A failure at shot *k* forfeits shots *k* through 12.
+
+**That is a real and unfavourable structural change, and no amount of component quality removes
+it.** It is arithmetic, not opinion:
+
+| Per-shot p (or per-unit q) | VOLLEY satellites | Spring satellites | VOLLEY fleet-years | Spring fleet-years |
+|---:|---:|---:|---:|---:|
+| 0.99 | 11.25 | 11.88 | 23.74 | 16.78 |
+| 0.95 | **8.73** | 11.40 | 18.44 | 16.10 |
+| **0.935** | 7.96 | 11.22 | **16.81** | **15.84** — break-even |
+| 0.90 | **6.46** | 10.80 | 13.63 | 15.25 — **spring wins** |
+| 0.80 | 3.73 | 9.60 | 7.86 | 13.56 |
+
+**The two crossover numbers are the answer to "what is the risk/reward ratio":**
+
+- To match a 0.99-reliable spring **on satellites delivered**, VOLLEY needs per-shot
+  **p = 0.9985**. For a twelve-cycle electromechanical system with no flight heritage, that is
+  not a realistic target.
+- To match it **on delivered orbital life**, VOLLEY needs only **p = 0.9347** — because each
+  satellite it *does* deliver is worth **1.495×** a spring-deployed one (2.111 yr against
+  1.412 yr at 450 km).
+
+**The gap between 0.9347 and 0.9985 is the risk/reward ratio, and it is the whole argument.**
+VOLLEY can afford to lose satellites and still deliver more total mission value — but only above
+about **93.5 % per-shot reliability.** Below it, the spring wins outright.
+
+**And a correction the project should make to itself.** The headline **7.52× lifetime extension**
+is a ratio of *gains* (+61.8 % against +8.2 %). On **delivered orbital life** the ratio is
+**1.495×**. Both are true; the second is the one that governs a risk-weighted comparison, because
+a satellite that is never released delivers nothing. **The 7.5× figure flatters in exactly the
+comparison a reviewer will make.**
+
+**What is missing, and it is the finding.** **Nothing in this repository estimates p.** There is
+no FMEA, no fault tree, no parts count, and no cycle-life test for the escapement, the gate or
+the sled. `grep -ri "failure point"` returns nothing. **The project therefore cannot say which
+side of 0.9347 it is on**, which means it cannot presently answer whether it beats a spring at
+all.
+
+**What would close it:** a parts count and an FMEA to the level of naming every element whose
+failure forfeits the remaining manifest; a stated single-failure-loses-N figure; cycle-life tests
+for the three cycling mechanisms; and a per-shot p with the reasoning behind it. Adjacent to
+**P28** (brake), and it subsumes the specific jam case raised as review item 22.
+
+> **The FMEA half was done 2026-08-10** — [`docs/FMEA.md`](docs/FMEA.md),
+> `analysis/fmea.py`. **Nine of thirteen elements forfeit the remaining manifest on a single
+> failure, against zero for a spring dispenser, and nine shared elements over twelve cycles is
+> 108 chances to fail.**
+>
+> It converts this entry into a **requirement**: to beat a 0.99-reliable spring on delivered
+> orbital life, each element needs **r ≥ 0.99326 per cycle** (surviving the campaign with
+> probability 0.922). To match it on **satellite count** needs **r ≥ 0.99984**, which is not a
+> realistic target — **VOLLEY should not be sold on satellite count.**
+>
+> **Segmentation analysed 2026-08-10** (`analysis/segment_redundancy.py`): a dead segment is a
+> length the sled **coasts over**, not a stopped machine, so at four segments a later failure
+> still exits at **14.19 m/s — 86.6 % of nominal and 1.41× a spring**. **The breech segment is the
+> exception**: no force acts on a stationary sled, so if the first segment dies the shot never
+> starts. **The stator is therefore two elements, not one** — three of four stator failures are
+> survivable at four segments, eleven of twelve at twelve — and the cheap design action is to
+> duplicate or overlap the breech segment.
+>
+> **This entry stays LIVE because r is still unmeasured.** No cycle-life test exists for the
+> escapement, the gate or the sled, and that is metal rather than computation. The jam case of
+> review item 22 is answered structurally — it is one of nine ways to lose the manifest, not a
+> special case — but there is still no recovery mode and no accepted-risk statement.
+
+**Mitigations that exist but are unquantified:** the winding is segmented, so losing one segment
+degrades rather than stops (`paper.tex` §VII, and P29 closed the modelling half). The retention
+gates are per-cassette, so one gate failure forfeits six rather than twelve. **Neither has been
+credited in a reliability model because no reliability model exists.**
+
+### E31. The two ConOps have different launch-interface compliance positions, and nothing distinguishes them: NEW 2026-08-10
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found by the ICD survey, 2026-08-10.** See [`docs/ICD_COMPLIANCE.md`](docs/ICD_COMPLIANCE.md).
+
+The review question was whether a published rideshare interface permits deployment at 16.388 m/s.
+**It does** — §3.2.2 of the Rideshare Payload User's Guide, Version 10 (September 2024), caps
+separation at 1.0 m/s and then exempts containerised CubeSat deployments explicitly, with no
+numeric ceiling. **That question is closed and the premise survives.**
+
+**What the survey found instead is that VOLLEY's two configurations are not equally compliant, and
+the repository has always treated them as one product.**
+
+| | Dedicated: VOLLEY as a dispenser on the launch vehicle | Hosted: VOLLEY on a separated stage (ADR-024) |
+|---|---|---|
+| Deployment class | primary, from the launch vehicle | **secondary deployment** — a deployed object deploying sub-payloads |
+| Seven-day hold before first shot | **no** | **yes** |
+| Active attitude control required at every release | yes | yes |
+
+**The seven-day hold is the expensive one.** E28 found campaign mission life at a real POEM
+altitude is about a month — two GMAT runs at 350 km reentered at **36 and 29 days**. **Seven days
+is 20–24 % of the window, spent before the first satellite leaves**, and ADR-024 adopted the
+hosted configuration as the product framing without this cost in view.
+
+**And it compounds with E29.** The same document requires that *"all secondary deployments must be
+performed while under active attitude control. Deployments in uncontrolled directions or during
+Payload tumbling are not allowed."* E29 computes wheel saturation at roughly **shot four of
+twelve** for a 50 mm thrust-line-to-CoM offset. **After that point the remaining deployments are
+not merely degraded, they are non-compliant** — an engineering problem converted into an approval
+problem.
+
+**What would close it:** a compliance matrix per configuration, a campaign timeline for the hosted
+case that carries the seven-day hold against E28's reentry window, and the CoM-alignment
+requirement E29 already asks for — which is now a compliance requirement rather than an
+engineering preference.
+
+**Two further items from the same document, neither in any analysis here:**
+
+1. **A dispenser quasi-static case of 10 g axial and 17 g lateral (RSS).** The structural work in
+   A18 and A22 is random-vibration and axial-dominated; **lateral is the larger number** and the
+   retention gates are least studied in that axis.
+2. **An exit-direction requirement** that deployed payloads leave through the +X face of the
+   allowable payload volume. VOLLEY fires along its track axis, which on a radial ESPA port is not
+   the launch vehicle's +X. Whether the deployer's own volume is the governing frame is an
+   interface-review question and is unanswered.
+
+**The survey is one document deep.** No claim about the market should be made from it, only about
+this interface at this revision.
+
+### E32. Nothing inhibits the drive during the ascent pressure transit, and a fault there would break down: NEW 2026-08-10
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found answering review item 26, 2026-08-10.** `analysis/paschen_multipaction.py`.
+
+**Ordinary operation is safe, by a margin that does not depend on geometry.** The 96 V bus is
+**3.41× below air's 327 V Paschen minimum**, and below a gas's *minimum* no voltage breaks down at
+any pressure-distance product. Multipaction is the wrong regime by **2.5 × 10⁴** — the converter
+gives f × d = 40 Hz·m against a ~10⁶ Hz·m threshold. **Neither mechanism is credible in normal
+use, and review item 26 is answered.**
+
+**The fault case is not safe.** The winding is **19.70 µH at 373.2 A, storing 1.37 J per phase**.
+A healthy bridge freewheels through its antiparallel diodes and clamps near the bus; an
+**open-circuit fault has no such path**:
+
+| Interrupted in | Induced | vs air's 327 V minimum |
+|---:|---:|---|
+| 1 µs | **7,351 V** | **exceeds by 22×** |
+| 10 µs | **735 V** | **exceeds** |
+| 100 µs | 74 V | below |
+
+For a 1 mm gap, air reaches its Paschen minimum at **760 Pa (~5.7 Torr)**, a pressure the vehicle
+passes through on **every ascent**.
+
+**The defect is that nothing prevents the coincidence.** There is no requirement anywhere in this
+repository that the bank be uncharged or the winding unenergised during ascent. The machine has no
+reason to be energised then; the rideshare guide read for E31 calls out **power inhibits** as
+separately-verified testing; and **the requirement is simply not written down.**
+
+**What would close it:** a stated inhibit — *the bank shall be uncharged and the winding
+unenergised while the vehicle transits the Paschen-critical pressure band* — carried into the
+qualification plan as a verified inhibit, plus a clamping requirement on the bridge so that a
+fault during *operation* in vacuum has a defined current path. Neither exists.
+
+**What this does not need:** a CFD venting model. The conclusion turns on the bus sitting below a
+gas constant, which no depressurisation model changes.
 
 ### E28. Campaign mission life at a real POEM altitude is about a month, and is not modelled: NEW 2026-08-06
 > **Status:** `LIVE` — open engineering; something still has to be done
