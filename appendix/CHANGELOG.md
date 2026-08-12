@@ -9,6 +9,41 @@ list these changes close) and `docs/DECISION_LOG.md` (why design choices were ma
 
 ---
 
+## 2026-08-10 (twentieth pass): the magnets torque the host while idle, and the brake shakes eleven stowed satellites
+
+| ID | Item | Detail |
+|---|---|---|
+| **E33** | **Magnet tolerance leaves a residual dipole that saturates the host's wheel in days, with the machine idle** | Review item 11. **An ideal Halbach cancels exactly — 3.5 × 10⁻¹⁴ A·m² over seven whole wavelengths.** Tolerance does not: at ±2 % Br and ±2° axis over 56 blocks, the residual is **0.77 A·m² median, 1.92 at the 99th percentile** — at or above typical small-spacecraft magnetic cleanliness allocations. |
+| E33-01 | **And it needs no shot to do damage** | In a 30 µT field that is 2.3–5.8 × 10⁻⁵ N·m, **saturating a 15 N·m·s wheel in 3.0–7.5 days**. **Three independent paths now reach the same failure**: E29 (shot impulse, ~shot four), E33 (dipole, 3–7.5 days idle), and E31 (once attitude authority is gone, deployments are **not compliant**). Against E28's 29–36 day window and E31's seven-day hold, **the magnets alone can exhaust the wheel before the campaign ends.** |
+| E33-02 | **The fix is manufacturing, not design** | **Magnet screening and matched-set assembly** — measure each block on receipt, sort, place to cancel. **B-1 already buys a teslameter and eight blocks**, so the method could be demonstrated on the bench article at no extra hardware cost. Not specified anywhere. |
+| **E34** | **The brake dumps 18.5 kN into a structure holding eleven stowed satellites** | Review item 12. **Release is benign** — A23 puts it 12.2 ms into coast at **zero commanded force**. Brake arrest is not: the sled enters at **14.07 m/s carrying 935 J**, and at the `arrest_g_cap: 200` design cap that is **18.5 kN through the track in 7.2 ms**, with **eleven satellites still in the cassettes**. |
+| E34-01 | **And it is outside every qualification case the payload has** | A stowed 3U is qualified to the **25 g CDS cap and launch random vibration** — not a 200 g mechanical shock through its own dispenser, **repeated eleven times**. `grep -ri "shock spectrum"` returns nothing. Lowering the cap to 50 g costs **202 mm of run-out** the envelope may not have (P9). |
+| REV-05 | **Items 10 and 25 scoped, not answered** | Both are **qualification paths, not analyses**, and are recorded as such. **A27 made E21 worse**: the actuator trade screened out a rack *because* contacting drive in vacuum is unqualified, which only holds if the incumbent's own rollers, leadscrew and escapement are benign — never shown. `cad/BOM.md` carries **no outgassing spec at all**, and `QUALIFICATION_PLAN.md` does not mention radiation. |
+| REV-06 | **The review register, re-tallied** | **17 answered, 13 partial or scoped, 5 open**, from 11/10/14 at triage. **Seven new register entries came out of this review — E29 through E34 and P45 — more than the review found wrong.** |
+| CNT-12 | **Register 78 → 80, 35 → 37 live** | E33, E34. Header propagated. |
+
+**What authorised it.** E33 and E34 are unmodelled engineering raised in external review. **No
+operating point moved.**
+
+---
+
+## 2026-08-10 (nineteenth pass): the actuator trade nobody had made, and it narrows the case
+
+| ID | Item | Detail |
+|---|---|---|
+| **A27** | **Why a linear motor rather than a screw, rack or spring — criteria declared at `9857b3c` before the script** | Review item 18. **The repository had no recorded answer**: `DECISION_LOG.md` records the eddy brake and the ironless stator, never the choice of linear motor over every other way of pushing a satellite. |
+| A27-01 | **The ball screw is disqualified by kinematics, twice over** | 16.388 m/s on a 20 mm lead needs **49,164 rpm**. **DN = 1.23 × 10⁶ against a 1.5 × 10⁵ ceiling, 8.2× over**; **whirling critical speed 1,333 rpm, 37× under**. The two limits worsen in opposite directions — a fatter screw raises critical speed and worsens DN — so no geometry closes it. |
+| A27-02 | **The rack fails on vacuum contact, not on speed** | Pitch-line velocity **is** 16.4 m/s against ~10 m/s practice (1.64× over), and torque is a comfortable 69.4 N·m. **C4 screens it**: a contacting drive at full speed makes **E21**'s open tribology gap the load path rather than an incidental. |
+| **A27-03** | **The spring works, and that is the finding** | **537 J, 826 N peak, 21.1 g — inside the 25 g cap — from about 1.8 kg of spring steel.** No sled, no stator, no bank, no converter, no sequencer, and therefore almost none of the nine manifest-forfeiting elements in `docs/FMEA.md`. **It fails on exactly one criterion: C3, commandability.** And on C5, storing 537 J at rest. |
+| **A27-04** | **What that costs the argument** | **The linear motor is not chosen for performance; it is chosen for commandability, and that is the whole of the case.** Against a screw the choice is forced, against a rack well-founded, against a spring it rests on one criterion. **A four-stage spring giving four discrete velocities at ~2 kg is a real competitor** for any mission not needing continuous control, and no document here had acknowledged it. |
+| A27-05 | **A detail worth keeping** | A linear spring's force **peaks at release and falls to zero**, so its peak is twice its mean — **21.1 g against the motor's flat 10.5 g**. Inside the cap, with far less margin, which is why staging exists. |
+
+**What authorised it.** A trade study with screening criteria declared before the script, answering
+an external review item. **No operating point moved.** The outcome narrows the product argument and
+is recorded that way.
+
+---
+
 ## 2026-08-10 (eighteenth pass): segmentation is real redundancy except at the breech, and neither breakdown mechanism is credible
 
 | ID | Item | Detail |
