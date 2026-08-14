@@ -9,6 +9,97 @@ list these changes close) and `docs/DECISION_LOG.md` (why design choices were ma
 
 ---
 
+## 2026-08-14 (fortieth pass): ADR-032, and the nine vault entries it deletes the subject of
+
+| ID | Item | Detail |
+|---|---|---|
+| **ADR-032** | **Gen6 is a stage-integrated, payload-direct, gas-driven deployer** | Five runs on one day, **none of which set out to replace an architecture**: A35 attributed every kilogram, A36 closed the manifest route, A37 made the stage the machine, A38 showed tip-off does not bind, A39 replaced the spring with gas. **Four things are deleted rather than improved** — the mover, the pulse chain, the brake and the return stroke. |
+| SUPER-01 | **The Gen6 of ADR-029 is superseded, not refuted** | *A linear induction drive on a passive aluminium mover* was the target for one day. **Its nine measured bands stand as declared.** What retired it is A35: the mover it optimises is **11 % of dry mass**, so the synthesis is a careful, banded, correct optimisation of the wrong term. `GEN6_ARCHITECTURE.md` and `GEN6_RAIL_DRIVE.md` carry that at the top and are **not edited below it**. |
+| **VAULT-02** | **Nine entries stopped together, for a reason none anticipated** | PII-1, 2, 3, 4, 7, 11, 12, 17 and 18 all improve a subsystem ADR-032 deletes. **Not one was refuted.** **PII-1's own arithmetic is why the mover went** — Δv = √(2EM/(m(M+m))), and with no mover the lever is zero. **PII-7 was P26**, the largest live defect this project carried, and A39's answer is 25–131 W. |
+| VAULT-03 | **And one gains** | **PII-8**'s hardest problem was airgap straightness at 0.7–2 ppm over a deployed structure. ADR-032 has no airgap. |
+| **LAB-03** | **PII-19 written into `VOLLEY-lab`** | The induction-drive Gen6 as a long-form entry, carrying the two results that outlive it: **A30's 0.0253 edge factor**, which kills any future proposal to use a CubeSat's own rails as a secondary, and **A32 band 4's 30.1 % segment ripple**, which applies to any segmented long stator with a short secondary. |
+| STATE-01 | **The kill-criteria table restated, and it is weaker news than it looks** | **Three of seven were Gen5 problems ADR-032 deletes rather than solves.** Criterion 1 is **not declared met**: 1.608 kg added against 7.042 kg dry, both reported, threshold unmoved, **P59 stays LIVE**. Criterion 4 is **not declared passed** — A38 shows only that raising acceleration does not worsen it. |
+| D2-01 | **D2 narrows rather than closes** | It was *which payload class is the product*. It is now *which numerator a customer actually pays*, because A37 closes the criterion at 3U on added mass. Still an owner decision, still High. |
+| CONCEPT-01 | **`CONCEPT.md` stopped one step short and now takes it** | It already argued a spent stage is a waste rather than a necessity, then treated it as a **host**. ADR-032: **the stage is not the host, it is the machine.** |
+
+**What authorised it.** A35 through A39, and the fact that they compounded. **No band was edited,
+widened or moved, and no superseded document was rewritten** — both Gen6 files carry their notice
+at the top and stand unaltered below it. All four checks pass.
+
+---
+
+## 2026-08-14 (thirty-ninth pass): the store was the wrong store, and A35's falsifier passes
+
+| ID | Item | Detail |
+|---|---|---|
+| **A39** | **Seven of seven bands** | The store trade P60 asked for, declared against A37's window rather than around it, and carrying the gas option A37 deliberately excluded because inventing a pressure-vessel figure to win a trade is worse than leaving it out. |
+| **STORE-01** | **Gas wins by four times, and not on energy density** | At 32.7 m/s a steel spring is **11.41 kg** and busts the budget at **34.3 m/s**; **cold gas is 2.98 kg and busts it at 89.4.** A **1.71 litre** bottle runs **all twelve shots** — 15.8 mm bore, 1.00 mm wall, 0.84 kg of cylinder. |
+| **WHY-01** | **The spring's problem was never storing the energy** | It was **having to be cocked twelve times.** 7.13 kg of store needs **4.28 kg of mechanism** to re-arm; gas separates the store from the actuator, so re-arming is a valve. |
+| **P60** | **Closed. The store is no longer the binding constraint** | Gas fits the budget to 89.4 m/s, which at the 25 g cap needs **18.8 m of stroke** — more than any stage class in A37. **Mass has stopped constraining velocity and stage length has started**, which is the problem the host-integrated reframe was aimed at. |
+| **A35-FALSIFIER** | **Settled, and it passes** | A35 declared: *the falsifier is that C3's replacement weighs more than 60 % of what came out* — **14.26 kg of the 23.76 released.** The replacement weighs **2.98 kg. The mass did not relocate**, and A37 bands 4 and 8 failed against a store that was the wrong store. |
+| HONEST-01 | **Where this is most likely wrong, checked rather than asserted** | The reservoir vessel at 0.233 kg is **underestimated 4–6×** against real 1.7 L / 200 bar hardware; the 1.5 kg allowance is over half the total; the 1 mm cylinder wall must also serve as rail and take A38's 202 N preload, unmodelled. **Corrected for all three, gas lands near 6 kg and every band still passes.** |
+| RISK-01 | **What arithmetic cannot survive** | Filling a 0.43 litre swept volume in a **133 ms** stroke is roughly **3 L/s** through a regulator, and A39 models none of it. **Gas removes a mass problem and introduces a fluid-system problem.** That, and the seal, are where it will actually be decided. |
+
+**What authorised it.** P60, and A38 having established that tip-off does not bind. **No band was
+edited, widened or moved**; A39's seven were committed before `analysis/store_trade.py` existed.
+All four checks pass.
+
+---
+
+## 2026-08-14 (thirty-eighth pass): tip-off does not bind Gen6, and a run sheet was stale against its own script
+
+| ID | Item | Detail |
+|---|---|---|
+| **A38** | **Five of six bands, band 1 FAIL** | A34 closed kill criterion 4's open half well, and **every number in it was computed at Gen5.** A37 takes the payload's share of the push from 395 N to 981, a factor of **2.4 on the term driving the whole result.** Checking before adopting is the P19 and P53 pattern applied *before* the point moves rather than after. |
+| **TIPOFF-01** | **The closure does not merely survive — it improves** | Settling falls **27.88 → 17.69 ms** in a **133.3 ms** stroke, so it occupies **13 % instead of 19 %**. Critical restitution rises **0.9263 → 0.9462** against a published aluminium range of 0.3–0.7. **Residual at force removal is still exactly zero** for every clearance A23 tabulated. Arrival worsens to 355 °/s and stays what A34 established: transient, never a release rate. |
+| **CEILING-01** | **Tip-off is not the binding limit** | The ceiling it imposes is **30.9 g** against a **25 g** qualification cap, so **A37's 1.83–2.18 m window stands** and the store trade has its acceleration. |
+| COST-01 | **The cost lands on preload, as predicted** | **81.2 → 201.7 N per contact.** Band 5 passes at a 250 N limit, and passing it is not the same as the mechanism being easy: A34 already records that the cradle mechanism does not exist, and a 202 N preload releasing inside a 1 N residual is harder than an 81 N one. |
+| PRED-01 | **The prediction held** | Written before the script: arrival ~55–356 °/s (**355.1**), settling falling to ~18 ms (**17.69**), stroke ~134 ms (**133.3**), preload ~204 N (**201.7**). **The first prediction this session a band did not overturn.** |
+| **P61** | **A34's recorded figures are stale against its own script** | Band 1 drove A34's imported forms at the Gen5 point and got **27.88 ms** against a recorded **27.25**. A34 was recorded on 2026-08-13 at the point ADR-030 superseded **the same day**, and `cradle_restitution.py` reads `motor_model` live — **so the script tracked the correction and the record did not.** No verdict flips; all five of A34's bands still pass. |
+| RECORD-01 | **Annotated, not edited** | `validation/A*.md` is excluded from every propagation this project runs because each is a record of a run at its own point. A34 carries both columns side by side now, the treatment `CROSS_INDUSTRY.md` and `VALIDATION_REPORT.md` already have. |
+| GAP-02 | **And the general case is not fixed** | Every run sheet whose script reads `motor_model` live has the same exposure and **nothing checks it.** A regression band comparing recorded figures against current script output would catch the class; A38 band 1 caught this one by being aimed at it. **Recorded rather than built**, beside the cross-repository manuscript check P58 names. |
+
+**What authorised it.** A37's design point, checked before adoption rather than after. **No band was
+edited, widened or moved**; A38's six were committed before `analysis/tipoff_gen6.py` existed, and
+A34's five are untouched. All four checks pass.
+
+---
+
+## 2026-08-14 (thirty-seventh pass): the stage is the deployer, and the binding constraint moves to the store
+
+| ID | Item | Detail |
+|---|---|---|
+| **A37** | **Six of eight bands, 4 and 8 FAIL** | Bands 1–3 enforce the honesty rules mechanically: **the 2.0 kg threshold does not move**, added mass per satellite is never reported without dry mass per satellite beside it, and nothing is credited to the stage without naming the subsystem that provides it. All three pass. |
+| **SPLIT-02** | **Where 84.53 kg goes once the stage is the machine** | **29.75 kg deleted** by a design with no mover and no pulse; **43.33 kg provided** by stage structure, skin, avionics, thermal and harness, each naming its subsystem; **11.45 kg added.** The entire added base is cassette shells and gates — **the same 11.45 kg A36 measured as the containment floor, reached from the opposite direction.** |
+| **CRIT-01** | **Kill criterion 1 closes at 3U, on a second numerator argued on its merits** | **1.608 kg per satellite** on a small kick-stage class against the unchanged 2.0 kg threshold. **Dry mass per satellite still crosses at 7.044 kg and that is not withdrawn.** P59 stays LIVE: a second numerator is not the criterion being met, and D2 still decides which one a customer pays. |
+| **P60** | **The store scales as v², and it is now what binds** | 4.91 kg of spring at 1.5 m, 9.81 at 3.0, **26.16 at 8.0** — **78.5 % of everything added.** Band 4 was A35's own falsifier, declared and left open: the pulse released 23.76 kg and its replacement had to stay under 14.26. **Stage length is free; the spring that exploits it is not.** |
+| SELECT-01 | **And the selection rule was badly designed** | No declared class satisfied every band, so the script fell back to maximum velocity — the worst case for both failing bands. **At the small class the falsifier passes comfortably at 7.85 kg.** The bands are evaluated as declared and the failure stands; its proximate cause is recorded rather than glossed. |
+| WINDOW-01 | **The declared classes bracket the answer without containing it** | Derived after the run and **not a band**: every declared band is satisfied between **1.83 m and 2.18 m of stroke, 30.0–32.7 m/s, about 1.83 kg/satellite.** The classes declared were 1.5, 3.0 and 8.0 m. **No class was added after the run and none will be.** |
+| TENSION-01 | **Velocity and kill criterion 1 are now in direct tension, priced** | 27 m/s closes the criterion; 38 m/s does not. Where to sit on that curve is a product decision rather than an analysis. |
+
+**What authorised it.** A question about scale, and the arithmetic it prompted. **No band was
+edited, widened or moved**; A37's eight were committed before `analysis/host_integrated.py`
+existed. Two failed and produced **P60**. All four checks pass.
+
+---
+
+## 2026-08-14 (thirty-sixth pass): the last route to kill criterion 1 closes, and it is a market decision
+
+| ID | Item | Detail |
+|---|---|---|
+| **A36** | **Magazine density measured, six of seven bands, band 4 FAIL** | A35 named the divisor as the only lever reaching kill criterion 1. It reaches it at **N = 116**, not the **N ≤ 30** the band required. **The band is not widened; it produces P59.** |
+| SPLIT-01 | **Where the mass actually goes as the manifest grows** | Fixed **59.58 kg**, magazine skin **13.50 kg** growing as N^(2/3), and **0.954 kg per satellite** of containment read from A35's C6 tagging rather than restated. The split was declared in the run sheet **before the script existed** so it could not be tuned to pass. |
+| **ENV-01** | **N = 116 cannot be packaged at all** | Every factorisation puts the stack or the width outside the 1500 mm track length — 4 × 29 is a 3016 mm stack, 29 × 4 a 4814 mm width. The largest that fits is **N = 126** at **1.941 kg/satellite**, on a **244.6 kg** machine running a **42-hour** campaign. |
+| **CORR-01** | **A number reported from A35 was wrong by more than a factor of two** | A35's saturation figure was divided naively: 49.23 kg over 24 satellites, "2.05 kg each", allowed to be "near 2.5" if containment grew. **It is 4.330 kg** — the naive division held the machine constant while containment *and* skin grow with N. **Band 4 was written to test exactly that claim and caught it.** |
+| **P59** | **Two of the three routes to kill criterion 1 are now closed by measurement** | **Architecture**, by A35: 49.23 kg survives all 64 corners. **Manifest size**, by A36: reachable only outside the envelope or at its edge. **Smaller payloads is the only route left**, and it is a different market, a different customer and a different qualification campaign against a repository whose every CAD file is 3U. |
+| KILL-01 | **`KILL_CRITERIA.md` states it, and the threshold is not moved** | ~2 kg is what canisterised dispensers achieve; a threshold revised after a result is known is not a threshold. The honest options are recorded as: change the payload class (**D2**), or publish the criterion as crossed on the front page. |
+| WARN-01 | **And the flattering metric is named rather than adopted** | *Δv per kilogram per satellite* puts this design **5.4×** ahead of a dispenser and would rescue the criterion. It is recorded as exactly the sort of metric a project reaches for once the plain one has stopped being kind. |
+
+**What authorised it.** A35's own conclusion, tested. **No band was edited, widened or moved**;
+A36's seven were committed before `analysis/magazine_density.py` existed. All four checks pass.
+
+---
+
 ## 2026-08-14 (thirty-fifth pass): the phase claim was measured against the wrong thing
 
 | ID | Item | Detail |
