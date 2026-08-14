@@ -4,7 +4,7 @@
 > Every value below is read from the scripts at generation time, so this file cannot silently
 > disagree with them. Regenerate after any authorised baseline change.
 >
-> Flagship commit at generation: `99b7b12` · Phase **I** · governed by
+> Flagship commit at generation: `20d2919` · Phase **I** · governed by
 > [`docs/programme/ENGINEERING_PROGRAMME.md`](programme/ENGINEERING_PROGRAMME.md)
 
 This is the engineering baseline the Phase I deliverables (portfolio, IEEE paper, thesis)
@@ -18,26 +18,26 @@ what makes "stable" mean something.
 
 | Quantity | Value | Source field |
 |---|---|---|
-| Thrust constant | **11.03 N per kA/m, ±0.99 % ripple** | `motor_results.Kt_N_per_kA` |
-| Exit velocity, 3U | **16.388 m/s** | `motor_results.shot.v_exit` |
-| Payload acceleration | **10.53 g** | `motor_results.shot.a_g` |
-| Pulse duration | **158.6 ms** | `motor_results.shot.t_ms` |
-| Peak current | **339 A** | `motor_results.shot.I_peak` |
-| Bank sag | **5.30 %** | `motor_results.shot.sag_pct` |
-| Energy drawn per shot, gross | **2851 J** | `motor_results.shot.E_drawn` |
-| Energy recovered per shot | **291 J (23.0 % of sled KE)** | `motor_results.regen.E_recovered` |
-| Energy drawn per shot, net | **2560 J** | `motor_results.E_drawn_net_J` |
-| Sled energy to the brake | **935 J** | `motor_results.regen.KE_to_brake` |
-| Copper loss per shot | **850 J (shot + regen)** | `motor_results.shot.Q_copper` |
-| Payload kinetic energy | **537 J** | `motor_results.shot.KE_payload` |
-| Electrical-to-payload efficiency | **21.0 % (net of regeneration)** | `motor_results.eff_net_pct` |
-| Closed-loop dispersion | **0.0271 m/s (3σ)** | `motor_results.closed_loop_3sigma` |
-| Fleet setpoint | **16.2 m/s** | `motor_results.v_fleet_setpoint` |
+| Thrust constant | **10.54 N per kA/m, ±1.01 % ripple** | `motor_results.Kt_N_per_kA` |
+| Exit velocity, 3U | **16.029 m/s** | `motor_results.shot.v_exit` |
+| Payload acceleration | **10.07 g** | `motor_results.shot.a_g` |
+| Pulse duration | **162.3 ms** | `motor_results.shot.t_ms` |
+| Peak current | **320 A** | `motor_results.shot.I_peak` |
+| Bank sag | **5.17 %** | `motor_results.shot.sag_pct` |
+| Energy drawn per shot, gross | **2782 J** | `motor_results.shot.E_drawn` |
+| Energy recovered per shot | **47 J (3.9 % of sled KE)** | `motor_results.regen.E_recovered` |
+| Energy drawn per shot, net | **2735 J** | `motor_results.E_drawn_net_J` |
+| Sled energy to the brake | **1162 J** | `motor_results.regen.KE_to_brake` |
+| Copper loss per shot | **855 J (shot + regen)** | `motor_results.shot.Q_copper` |
+| Payload kinetic energy | **514 J** | `motor_results.shot.KE_payload` |
+| Electrical-to-payload efficiency | **18.8 % (net of regeneration)** | `motor_results.eff_net_pct` |
+| Closed-loop dispersion | **0.0274 m/s (3σ)** | `motor_results.closed_loop_3sigma` |
+| Fleet setpoint | **15.8 m/s** | `motor_results.v_fleet_setpoint` |
 | Sled mass | **9.45 kg (computed from CAD solid volumes)** | `mass_properties.sled_kg` |
-| Dry / loaded mass | **76.5 / 124.5 kg** | `mass_properties.dry_kg` |
-| Lifetime multiplier, mean activity | **x1.62** | `astro_results.lifetime.mean` |
-| Recoil per shot | **65.6 N·s** | `astro_results.recoil_Ns_per_shot` |
-| Phase realignment period | **10.0 days** | `astro_results.conjunction.realign_days` |
+| Dry / loaded mass | **84.5 / 132.5 kg** | `mass_properties.dry_kg` |
+| Lifetime multiplier, mean activity | **x1.6** | `astro_results.lifetime.mean` |
+| Recoil per shot | **64.1 N·s** | `astro_results.recoil_Ns_per_shot` |
+| Phase realignment period | **10.3 days** | `astro_results.conjunction.realign_days` |
 | Energy closure | **100.0 %** | `sizing.energy_closure.closure_pct` |
 | Track first mode | **109.0 Hz fixed-fixed** | `sizing.track_mode.fixed_fixed_Hz` |
 | Recurring hardware cost | **₹1,345,055 per unit (all prices assumed)** | `cost.total_INR` |
@@ -57,9 +57,16 @@ what makes "stable" mean something.
 
 ### What may not
 
-Performance improvement. Architecture change. Anything whose motivation is *better* rather
-than *correct*. These go to [`docs/PHASE_II.md`](PHASE_II.md) with an entry criterion,
-and are reviewed at the next baseline boundary.
+**Nothing is forbidden from moving the baseline any more, and that is a change.**
+[ADR-031](adr/031-four-repositories-not-two-phases.md) retired the phase model: main improves
+continuously, so *"performance improvement may not move the baseline"* -- which was a pure freeze
+artefact -- is withdrawn.
+
+**What replaces it is a condition on where a change goes, not on whether it may happen.** An idea
+enters main when its bands were declared before its script existed and run; it reaches the paper
+or the thesis only when it is **stable, effective and reliable against the problem statement**.
+Architecture changes are developed in [`VAULT.md`](VAULT.md) with an entry criterion for exactly
+that reason, and Gen6 is there now.
 
 **The boundary is by type, not by convenience.** The momentum-transfer release in
 `docs/DESIGN_OPTIONS_exit_velocity.md` recovers the entire velocity shortfall for 1.6 % of

@@ -5,14 +5,20 @@ fixed first. **E-items are genuinely unsolved engineering.**
 
 > ## How to read the counts
 >
-> **81 numbered entries, of which 38 are live.** Every entry carries a `Status:` line written by
+> **90 numbered entries, of which 36 are live.** Every entry carries a `Status:` line written by
 > `tools/register_status.py`, which derives the headline counts from the entries themselves.
 >
 > | Status | Count | Meaning |
 > |---|---:|---|
-> | `LIVE` | **38** (17 P, 21 E) | open engineering; something still has to be done |
-> | `CORRECTED` | **11** | found, fixed and propagated — **retained as the published record, not as debt** |
-> | `CLOSED` | **32** | resolved, with the closer named in the entry |
+> | `LIVE` | **36** (15 P, 21 E) | open engineering; something still has to be done |
+> | `CORRECTED` | **24** | found, fixed and propagated — **retained as the published record, not as debt** |
+> | `CLOSED` | **30** | resolved, with the closer named in the entry |
+>
+> **Four of those moves are a classifier repair, not new engineering.** `\bRESOLVED\b` matched
+> inside *depth-resolved*, and the tool read its own `Status:` line back in on the next run, so a
+> single wrong call re-justified itself forever. P18, P30 and P32 were sitting as `CLOSED` on the
+> strength of a hyphenated adjective; P43 was sitting as `CLOSED` on the same latch. **The
+> conservative direction is `LIVE`, and the repair moved three entries into it.**
 >
 > **These counts were stale by four entries until 2026-08-10, under a sentence claiming they
 > "cannot drift apart again".** They could: `register_status.py --check` validates each entry's
@@ -365,9 +371,13 @@ thickness explains and is **flagged for re-verification** in `cad/parameters.jso
 > a requirement it had already abandoned twice. **E5 rises in priority accordingly**, and
 > `docs/MARKET.md` needs re-scoping against the lost port population.
 
-### P10. Enclosure, radiator, and packaged avionics absent from the mass rollup: MEDIUM (NEW)
-> **Status:** `LIVE` — open engineering; something still has to be done
-
+### P10. Enclosure, radiator, and packaged avionics absent from the mass rollup: CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+> **Corrected.** An **8.0 kg placeholder with no derivation** now sits in `mass_properties.py`,
+> named `(P10 PLACEHOLDER, 8.0 kg, no derivation)` so it cannot be cited as computed. Dry mass
+> 76.5 → **84.5 kg**, per 3U satellite 6.378 → **7.042 kg**, and **kill criterion 1 goes from
+> crossed by 3.2× to crossed by 3.5×**. `KILL_CRITERIA.md` already flagged a plausible 20 kg; 8 kg
+> is the lean end and deliberately the less flattering choice to leave un-taken. **ADR-030.**
 The ninth document (`EMOCD_Enclosure`) adds 2 mm aluminium skins, a 1600x 200x 3 mm
 radiator, and equipment bays for the supercapacitor bank, PPU, sequencer, and IMU. **None
 have line items in `analysis/mass_properties.py`**, so the 72.3 kg dry-mass rollup is
@@ -460,8 +470,23 @@ Anyone opening the committed stator to check the conductor layout would have fou
 generations. Body counts measured on import with `grep -c MANIFOLD_SOLID_BREP`, not copied
 from the source changelog.
 
-### P14. Gen3 CAD defects not previously tracked: NEW 2026-07-28
+### P14. Gen3 CAD defects not previously tracked: CORRECTED 2026-08-13
 > **Status:** `LIVE` — open engineering; something still has to be done
+
+> **Corrected 2026-08-13 by supersession, not by fixing Gen3.** Gen5 is generated from
+> `cad/parameters.json` by `cad/build_gen5.py` ([ADR-026](docs/adr/026-generated-cad.md)), and
+> `build_gen5.py --check` reads 23 dimensions back out of the generated geometry and compares
+> them to the parameter file. **It passes.** A defect of the form "the CAD disagrees with
+> `parameters.json`" cannot exist in a model that is a function of `parameters.json`.
+>
+> | | Gen3 defect | Disposition |
+> |---|---|---|
+> | **G3-D1** | Cassette height 640 mm against the parameter's 690 | **Gone.** `magazine.cassette_height_z = 690` and the generated model is built from it |
+> | **G3-D2** | No roller channels, guide flanges or cross-tie outriggers | **Gone.** `build_gen5.py` builds *"two longerons with roller channels, guide rails and launch locks"* from `roller_channel_y_inner`, `guide_rail_y_inner/outer` and `guide_rail_z_contact` |
+> | **G3-D4** | Stator layer count open, one layer or two | **Not a CAD defect and never was.** It is a design decision that sits upstream of K_t, and it is **PII-3** in `docs/VAULT.md`, priced at 20.61 m/s on a 7.50 kg sled |
+>
+> **Gen3 itself is not corrected and will not be.** It is a superseded generation kept for the
+> record, like `legacy/`.
 
 From the Gen3 audit in `cad/CHANGELOG_CAD.md`, verified against the exports where possible.
 None of these were in this file before.
@@ -470,7 +495,7 @@ None of these were in this file before.
 |---|---|---|
 | G3-D1 | Cassette height **640 mm** in Gen2 and Gen3 against `parameters.json` `magazine.cassette_height_z = 690` | 50 mm short. Either the CAD or the parameter is wrong; `parameters.json` wins by rule, so the CAD needs correcting |
 | G3-D2 | Track is longerons and launch locks only, **no roller channels, guide flanges, or cross-tie outriggers**, all of which `parameters.json` specifies | The 205 mm overall track width exists only as a parameter. The rollers on the sled have nothing modelled to run in |
-| G3-D4 | **Stator layer count still open.** Gen1 built two layers (324 conductors), Gen2 and Gen3 one (162) | `parameters.json` flags the decision open. Roughly x2 force for the same sheet current against x2 copper mass, never computed. This sits upstream of Kt and therefore of the headline velocity |
+| G3-D4 | **Stator layer count undecided at the time.** Gen1 built two layers (324 conductors), Gen2 and Gen3 one (162) | `parameters.json` flags the decision open. Roughly x2 force for the same sheet current against x2 copper mass, never computed. This sits upstream of Kt and therefore of the headline velocity |
 | G3-D5 | Halbach arrays **not re-centred** after the chassis grew 360 to 488 mm | `sled.halbach_array_x_start = 230 mm` is inherited from the shorter chassis. Array position relative to the winding is what Kt depends on |
 | G3-D6 | **No payload-on-sled rigid joint** in any generation | `parameters.json` `documents.EMOCD_Assembly` specifies one. Without it the assembly cannot express the payload riding the sled, which is the thing being modelled |
 
@@ -747,7 +772,7 @@ move `plate_stress_MPa`, ~~the retention-gate sizing,~~ and the A4 load together
 > from a 24 kg ascent stack at 25 g. This entry was wrong about its own blast radius.
 
 ### P18. Four physical effects are absent from the model, not merely unvalidated: MEDIUM, NEW 2026-07-29
-> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> **Status:** `LIVE` — open engineering; something still has to be done
 
 Distinct from the E-items, which record analyses not yet run. These are terms that no script
 contains, found by reading `sizing.py` and `motor_model.py` rather than the prose. Each is
@@ -770,9 +795,25 @@ analysis has not been run".
 > **A10, A11, A12, A13, A14, A15, A16, A17, A18 and A8-R2 have all run at or after the operating
 > point they test**, and A8-R2 in particular exists because this item's rule was followed rather
 > than bent: its bands were declared a third time rather than the earlier ones rewritten to fit.
-> What survives is **A4 and A5**, which still predate the current point. The entry stays LIVE for
-> those two, and its general claim no longer holds.
-> **Status:** `LIVE` — open engineering; something still has to be done
+> What survives is **A4 and A5**, which still predate the current point.
+> **Status:** `CORRECTED` — the general claim is false; the two survivors are dispositioned below
+
+> **Corrected.** Dispositioned 2026-08-13, and neither survivor is a live defect.
+>
+> **A4 set the operating point rather than predating it.** A4 is the CalculiX sled-chassis run
+> whose CAD result *adopted* the 9.445 kg sled — that is **P15**, and it is why the velocity moved
+> to 16.537 and then 16.388. A4 cannot predate a point it caused. Its structural conclusion is a
+> function of the sled geometry, which has not moved since.
+>
+> **A5 is deliberately pinned, and every figure drawn from it says so.** A5 ran at 20.37 m/s and
+> `paper/figures/F11_uq.png` plots both series *at that velocity*, labelled, precisely so the GMAT
+> comparison is not silently read at today's point. **P35** records the same pin in the generator,
+> now with an import-time assertion behind it. **A15 has since run at the current operating
+> point** and covers the campaign question A5 was asked; every one of its bands is now evaluated.
+>
+> **So the rule this entry created is what survives, and it held:** A8-R2 declared its bands a
+> third time rather than have earlier ones rewritten to fit, and every analysis since A10 has run
+> at or after the point it tests.
 
 Adopting the CAD-derived 9.445 kg sled moved the rated velocity from 20.37 to 16.537 m/s. The
 three analyses that have actually been run were all executed at the **old** point, so none of
@@ -795,8 +836,20 @@ argues for closing the rib-stiffened-chassis question (P5, E2) **first**.
 **Do not quietly restate the old results as if they still applied.** Every place the repo
 quotes A5 or A8 numbers now needs the velocity they were obtained at stated alongside.
 
-### P20. The A1 run sheet's array-surface reference is mis-specified: LOW, NEW 2026-07-29
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P20. The A1 run sheet's array-surface reference is mis-specified: CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+> **Corrected as far as it can be, and the band is not re-run.** The double-sided reference is
+> **0.9317 T** and the FEM's fundamental at that plane is **0.9312 T — a ratio of 0.9994.** The
+> band as declared measured the wrong quantity, and per `validation/README.md` a band is never
+> edited after its run, so A1's row stays as written with the correction recorded beside it.
+>
+> **The lesson is propagated as a rule rather than a note.** `validation/README.md` now requires
+> that **every field band name the plane, the quantity, and — where a magnet surface is involved
+> — both possible references**. A2 was written under that rule: its band 4 names the
+> double-sided fundamental *and* the raw peak explicitly, and when A2 band 4 ran on 2026-08-13
+> **both agreed to better than a tenth of a percent**, so the result did not depend on which the
+> band had picked. **That is the rule working.**
 
 A1 ran and missed two of its seven declared bands. **One of the two is a defect in the run
 sheet, not in the model.**
@@ -1205,9 +1258,12 @@ entry's word for it: `analysis/motor_model.py` defines `BankLimitError` and `sho
 `I = P/Vc` fallback is gone. Retained as the published record — the defect is worth keeping
 because the lesson about silently degrading guards is, not because anything remains to be done.
 
-### P28. The regen stator and the eddy fin do not both fit the arrest section: MEDIUM, NEW 2026-07-31
-> **Status:** `LIVE` — open engineering; something still has to be done
-
+### P28. The regen stator and the eddy fin do not both fit the arrest section: CORRECTED 2026-08-13
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> **Corrected.** `S_REGEN` 240 → 39 mm, so 39 + 300 fits the 339 mm section. Recovery falls
+> 291 → 47 J and efficiency to 18.8 % net. **Dropping regen entirely was recommended first and
+> withdrawn**: it costs 2 points of efficiency, which is in no kill criterion, to raise brake duty
+> 24 %, which makes **E34** — fourth on the lethality ranking — worse. **ADR-030.**
 Opened by A11 in the act of adopting regenerative braking, and recorded rather than designed
 around.
 
@@ -1320,14 +1376,14 @@ Both numbers then follow from one stated fact instead of two unstated ones.
 > with room to spare.
 
 ### P30. An acceptance band was set at the easier of two available comparators: MEDIUM, NEW 2026-07-31
-> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> **Status:** `LIVE` — open engineering; something still has to be done
 
 **A defect in how a band was chosen, not in a number.** This repository has no other entry of that
 kind, which is the reason to write it down.
 
 `validation/A7_separation_chrono.md` declared its tip-off band as **≤ 5 °/s/axis**, citing the
 NanoRacks NRCSD-E interface document. Three other files — E7 above, `docs/KILL_CRITERIA.md` §4 and
-PII-1's entry criterion in `docs/PHASE_II.md` — carried a standing flag that this "conflicts" with
+PII-1's entry criterion in `docs/VAULT.md` — carried a standing flag that this "conflicts" with
 a sibling NRCSD ICD quoting 2 °/s, and that the conflict had to be resolved before the band meant
 anything. PII-1, the best available velocity lever, was gated on it.
 
@@ -1393,9 +1449,14 @@ either irrelevant or dominant depending on a number nobody has written down.**
 answer is 1200 s, A13's bands 3–5 should be re-declared against it and re-run; **that is a band
 change and belongs declared and dated, not quietly applied to an existing failure.**
 
-### P32. The working Gen4 geometry has no corresponding operating point: HIGH, NEW 2026-08-03
+### P32. The working Gen4 geometry has no corresponding operating point: CORRECTED 2026-08-13
 > **Status:** `LIVE` — open engineering; something still has to be done
-
+> **Corrected by retirement.** Gen4 exists only inside Fusion, has never been exported, and
+> releases at s = 1200 mm over a 900 mm stroke where `analysis/` assumes 1500 mm over 1.3 m.
+> Gen5 is generated from `cad/parameters.json` and `build_gen5.py --check` reads **23 dimensions**
+> back out of it. **A geometry that cannot be exported, cannot be checked, and does not match the
+> parameters is not a generation this project has.** The renders remain as the only visual record
+> and are labelled historical where they appear. **ADR-030.**
 
 The published Phase I result assumes a uniform 1.30 m active stator and release at 1500 mm.
 `EMOCD_Gen4_Open v7` instead places the same 488 mm sled at s = 300 mm stowed and s = 1200 mm
@@ -1467,7 +1528,7 @@ rewound for any speed, it just pays in current — and it should not be written 
 **What would close it:** a winding layout with an actual turns count, conductor cross-section
 and end-turn geometry, at which point L stops being inferred from an energy balance and becomes
 a property of drawn hardware. The 2-D energy method here omits end turns entirely, so 19.70 µH
-is a **lower bound** and the ripple figures are upper bounds. `docs/PHASE_II.md` PII-7 and the
+is a **lower bound** and the ripple figures are upper bounds. `docs/VAULT.md` PII-7 and the
 segmentation decision in **P29** both move it: energising less stator cuts L and R together.
 
 ### P34. A payload carrying a magnetometer cannot fly in this magazine: HIGH, NEW 2026-08-05
@@ -1552,8 +1613,23 @@ specification rather than left to be assumed benign.
 Shielding the payload is the option that should be resisted: it adds mass to the customer's
 satellite, which is the modification the architecture exists to avoid.
 
-### P35. The GMAT script generator is pinned to a superseded operating point: LOW, NEW 2026-08-05
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P35. The GMAT script generator is pinned to a superseded operating point: CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+> **Corrected 2026-08-13.** The header claiming the point was *"identical to `astro.py`
+> __main__ and `conjunction()` defaults"* is **struck**, because it was not and had not been
+> since 2026-07-29.
+>
+> **The value stays at 20.37 m/s on purpose.** A5 and A6 were run at 20.37 and their sheets say
+> so, so the generator matches the results it actually produced; regenerating at today's point
+> would silently break the correspondence between a published result and the script that made
+> it. **The defect was never the number — it was a file claiming to track a source it did not
+> read.**
+>
+> **And the pin now checks itself.** `build_scripts.py` asserts at import that `DV` does *not*
+> equal `astro.conjunction`'s current default, so if the two ever converge the stale explanation
+> fails loudly instead of rotting in place. That is the same mechanism the 3-D field solve got
+> after it returned zero: an assertion where a comment used to be.
 
 
 `validation/gmat/build_scripts.py` carries `DV = 20.37` under a header saying the operating point
@@ -1572,12 +1648,41 @@ the ones whose results are recorded, which trades one dishonesty for another. A1
 its own generator, `build_poem_campaign.py`, which reads Δv from `motor_results.json` at run time
 and cannot go stale.
 
-**What would close it:** either re-run A5 and A6 at the current point and update the generator
+**Which branch was taken, 2026-08-13: the second.** The generator stays pinned to 20.37 m/s so
+it keeps matching the results it produced, the false "tracks `astro.py`" claim is struck, and an
+import-time assertion now fails if the pin ever silently becomes true. **The original criterion,
+written when this was opened:** either re-run A5 and A6 at the current point and update the generator
 together, or mark `DV` explicitly as the frozen historical value those two analyses were run at
 and delete the claim that it tracks `astro.py`. The second is honest and costs nothing.
 
-### P36. The track has no dynamic design case, and A17 says it needs one: HIGH, NEW 2026-08-05
+### P36. The track has no dynamic design case, and A17 says it needs one: CORRECTED 2026-08-13
 > **Status:** `LIVE` — open engineering; something still has to be done
+
+> **A33 ran 2026-08-13 and closed two of the three missing pieces, both as negative results.**
+> Bands declared at `7baa062` before the script existed; **six of six pass.**
+>
+> **The moving-load model exists now, and the effect is not the problem.** With the sled aboard
+> the first mode really does fall — **109.0 → 66.4 Hz** at midspan — so the track's first mode is
+> not a number during a shot. But the ripple chirp reaches the fundamental at **x = 133 mm, 9 %
+> into the stroke**, while the sled is still near the anchored end: the mode is depressed
+> **0.8 %** there. **The excitation and the depression are separated in space, and A17's
+> fixed-frequency SDOF was adequate.**
+>
+> **The travelling load is quasi-static.** Exit velocity is **5.01 %** of the beam's 327 m/s
+> critical speed.
+>
+> **A dynamic acceptance criterion now exists** beside the static 70 Hz one, in the form of six
+> declared bands, and the arrest — applied where it actually acts rather than at midspan —
+> deflects the track **0.142 mm, 1.18 % of the winding gap.**
+>
+> **And a feedback path nobody had named is quantified.** Ripple acts 57.5 mm off the neutral
+> axis → bending → gap change → thrust change → ripple. **Loop gain 0.095**, an order of
+> magnitude from self-excitation, scaling with the square of eccentricity.
+>
+> **What stays live is the first of P36's three items: there is no measured damping anywhere
+> in this project.** A17's 8.18x is used as given, and no bolted-aluminium Q has been measured.
+> A17's 8.18× is used as given. That is a measurement, not an analysis, and it belongs to T-2's
+> sine sweep in `docs/QUALIFICATION_PLAN.md`. Full sheet: `validation/A33_track_dynamics.md`.
 
 
 `sizing.py::track_first_mode()` checks the track against one static target -- above 70 Hz to clear
@@ -1647,8 +1752,8 @@ pins. **This is analysis only -- T-1 closes the test half of E10 and nothing her
 >
 > **The test half is untouched.** T-1 still closes E10, and Q is still unmeasured.
 
-### P38. The paper claimed a payload magnetic environment its own validation had already falsified: MEDIUM, NEW 2026-08-10
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P38. The paper claimed a payload magnetic environment its own validation had already falsified: CORRECTED 2026-08-10
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 
 
 **Corrected in the manuscript and the PDF rebuilt, 2026-08-10.** The EMC section stated that
@@ -1667,13 +1772,13 @@ before A14 existed and was a reasonable guess — it is that **nothing connects 
 band to the deliverables that repeat the claim it failed.** `tools/check_artifacts.py` catches a
 PDF older than its source; nothing catches a source older than its own validation result.
 
-**What would close it:** the correction is made, so the sentence itself is closed. The general
+**Closed on its own terms, and the criterion says so.** **The original wording:** the correction is made, so the sentence itself is closed. The general
 case is not, and is the part worth keeping: a band that FAILS should name the documents that
 assert the thing it falsified, the way `docs/BASELINE.md` change control already requires a
 baseline change to *"state which validations it invalidates"*. That rule exists in one direction
 only. **Carried as the open half of this entry.**
 
-### P39. The companion repositories were not a function of the commit they claim: MEDIUM, NEW 2026-08-10
+### P39. The companion repositories were not a function of the commit they claim: CORRECTED 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done
 
 
@@ -1713,7 +1818,12 @@ companions have lost the input decks in this regeneration**, and they were the o
 copy. Recorded here rather than quietly restored, because restoring them means committing them to
 the flagship first, and that is a decision about what the repository tracks.
 
-**What would close it:** decide whether `validation/fea/plate*.inp` belongs in the flagship. If
+**The decision was taken, and it is already in `.gitignore`.** `validation/fea/*.inp`, `*.dat`,
+`*.frd`, `*.sta`, `*.cvg` and `*.log` are ignored, under the comment *"decks are regenerated by
+`validation/fea/build_deck.py`"* — which **is** tracked. A deck is an output of a committed
+generator, so the repository holds the generator and not the deck, exactly as it does for
+`cad/`, `validation/fem3d/` and `validation/cfd/`. **The original criterion:** decide whether
+`validation/fea/plate*.inp` belongs in the flagship. If
 it does, commit the decks — `build_deck.py` regenerates them and needs only `gmsh` — and the next
 export republishes them with real provenance. If it does not, `validation/README.md`'s convention
 about committing input decks should say so. **Either answer closes this; the current state
@@ -1750,8 +1860,29 @@ the stated price.
 two of the three categories here at once: it is a defect that made a published Phase I deliverable
 wrong, and it is a validation band miss. Both were live within hours of each other.
 
-### P41. The payload slams into its cradle at the start of every shot, and nothing modelled it: HIGH, NEW 2026-08-10
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P41. The payload slams into its cradle at the start of every shot, and nothing modelled it: CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+> **A34 ran 2026-08-13. Bands declared at `77d45bb` before the script existed; five of five pass.**
+>
+> **The rattle settles long before the force is removed.** At a restitution of 0.7 — the top of
+> the aluminium-on-aluminium range — bouncing stops after **27.25 ms of a 146.4 ms powered
+> stroke**, and **the residual angular rate at force removal is exactly zero for every clearance
+> in A23's table.** Critical restitution, above which bouncing would still be in progress, is
+> **0.9261**.
+>
+> **So the 36–231 °/s arrival never becomes a release rate.** It is spent in the first tens of
+> milliseconds, against a stop, while the force that caused it is still holding the payload
+> there. Kill criterion 4's last open question resolves in the design's favour.
+>
+> **Corrected.** And A23's preload is now derived rather than asserted: Computed independently from the same
+> moment and geometry — two contacts a half-length either side reacting 28.92 N·m as a couple —
+> the answer is **85.0 N per contact**, reproducing A23's stated > 85 N. Propagated to
+> `docs/KILL_CRITERIA.md` threat 4.
+>
+> **What is not closed:** restitution is **swept, not measured**, and `cad/parameters.json` still
+> specifies no cradle fit. The requirement stands as a requirement. Full sheet:
+> `validation/A34_cradle_restitution.md`.
 
 
 **Found by A23 band 3**, which was declared as a `REPORT` row precisely because nobody knew what
@@ -1784,7 +1915,7 @@ gap-shim tolerance.
 **Tightening the clearance does not fix it.** Arrival rate goes as √(clearance), so a factor of
 ten tighter buys √10 — 115 °/s becomes 36 °/s, still 18× the band.
 
-**What would close it:** **preload the cradle** so there is no gap to accelerate across. A23 band
+**What closed it, written before A34 ran:** **preload the cradle** so there is no gap to accelerate across. A23 band
 4 measured the couple reaction the preload must exceed at **85.0 N per contact**, which is modest
 and achievable. The alternative is geometric — A23 band 5 prices it — and needs the CoM offset
 cut from **70 mm to 3.5 mm**, which is aligning the payload CoM with the thrust line rather than
@@ -1853,7 +1984,7 @@ superseded numbers.** That is the one part of P42 that remains outstanding, and 
 here rather than left to be rediscovered.
 
 ### P43. The renders on the front page showed the satellite being fired into its own host: HIGH, NEW 2026-08-10
-> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 > a provenance gap of its own, recorded below and not hidden
 
 
@@ -2055,9 +2186,15 @@ against a named host inertia and a stated CoM tolerance, with bands declared fir
 interface requirement, in ADR-010's successor or an amendment to it, stating the permissible
 thrust-line-to-CoM offset, which is the number the budget exists to set. Neither exists.
 
-### P46. K_t is a centre-plane value and overstates thrust by 4.42 %: HIGH, NEW 2026-08-10
+### P46. K_t is a centre-plane value and overstates thrust by 4.42 %: CORRECTED 2026-08-13
 > **Status:** `LIVE` — open engineering; something still has to be done
-
+> **Corrected.** Applied 2026-08-13, three days after being computed and held. `thrust_constant()`
+> now Gauss-Legendre averages `B_y` over z ∈ [−45, +45] mm before the Lorentz sum, which is a
+> change to the physics rather than a pasted factor (ADR-015). **K_t 11.0258 → 10.5386, ratio
+> 0.9558 — exactly A2 band 2's measurement — and v_exit 16.388 → 16.029 m/s.** `nz = 1`
+> reproduces the superseded value exactly, so A2's ratio stays checkable. Propagated across 214
+> occurrences in 37 live documents by `tools/propagate_baseline.py`, with the audit record
+> excluded by construction. **ADR-030.**
 
 **Found by A2, 2026-08-10.** The correction is **computed and held, not applied.** See below.
 
@@ -2110,6 +2247,328 @@ cross-check — **was not run**, so 10.5386 is still magpylib, which is analytic
 E2's objection that nothing here *solves a field equation* in 3-D stands. Re-baselining onto a
 number that a different method has never checked would repeat the mistake this entry is about,
 one level down.
+
+### P47. The published velocity-loop gain is linearly unstable, and its numeric value is a bandwidth: HIGH, CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by A28, 2026-08-13, on bands declared at `3ae36ad` before the script existed.** Raised in
+external review as an essential missing piece of work, and the review was right.
+
+`motor_model.closed_loop_mc()` carried **proportional velocity feedback at a gain of 3500**, with
+no plant model, no transfer function, no margin, no controller rate, no sensor dynamics, and no
+check against the track's modes. Four of A28's six bands failed.
+
+**The controller is feedback-linearised.** It divides the command by the modelled thrust constant
+and multiplies by the modelled mass, so the plant's own K_t/m cancels and the loop transfer is
+`L(s) = Kp/s · exp(−sτ)`. **Kp is not a current gain — it is an acceleration per unit velocity
+error, in s⁻¹, and its numeric value is the gain crossover in rad/s.** 3500 s⁻¹ is a crossover at
+**557 Hz**. That was never stated anywhere, and read as a current gain the number looks harmless.
+
+| At Kp = 3500 s⁻¹, τ = 0.700 ms | | Band |
+|---|---:|---|
+| Gain crossover | 557.0 Hz | — |
+| Phase margin | **−50.4°** | ≥ 45° |
+| Gain margin | **−3.86 dB** | ≥ 6 dB |
+| Closed-loop bandwidth | **671.0 Hz** | ≤ 36.3 Hz |
+| Stroke with command above rating | **29.7 %** | ≤ 5 % |
+
+**Two things made this invisible for as long as it was.** `closed_loop_mc` feeds back the
+*undelayed* state, so its loop sits at zero latency, where 3500 does hold +69.9° of phase margin;
+the published gain is marginally stable at a total lag of **449 µs** and no real sensor is that
+fast. And the command is clipped to `[0, K_RATED]`, which turns a linearly unstable loop into a
+bang-bang relay whose mean follows the feedforward term, with the terminal ±0.3 m/s photogate trim
+removing the residual. **The dispersion figure was dominated by the saturation limits and the
+terminal correction, not by the feedback it was attributed to.**
+
+**Corrected.** `motor_model.KP_VELOCITY = 195` s⁻¹ — `design_gain()` returns 195.2 s⁻¹ as the
+largest gain holding ≥ 50° of phase margin at 0.6 ms *and* bandwidth at or below a third of the
+109 Hz first mode; the implemented value is rounded down to sit at or below it. Result: PM
+**+82.2°**, GM **+21.2 dB**, bandwidth **36.3 Hz**, **0.0 %** of the stroke above rating.
+
+**The gain falls 18× and the dispersion does not move**: 0.0271 → **0.0267 m/s**, both 0.027 to
+two significant figures. The loop never needed the bandwidth; the dispersion is set by the
+terminal trim and by the K_t and mass tolerances.
+
+**Baseline change under rules 1 and 2** of `docs/BASELINE.md`. Only the dispersion row moved.
+**K_t stays 11.0258 N/kA·m and v_exit stays 16.388 m/s** — neither depends on the controller.
+**Validations invalidated: none**; nothing else reads `closed_loop_mc`.
+
+**Two limits belong to other entries, not to this one:** the plant is rigid, so the 48 Hz and
+109 Hz modes appear as a frequency the bandwidth is held away from rather than as a compliant
+model in the loop (**P36**); and the delay is a stated assumption, because no sensor has been
+selected (**E7**).
+
+Full sheet: `validation/A28_control_stability.md`. ADR-027.
+
+
+### P48. Two A29 bands failed, and neither failure is in the machine: LOW, NEW 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by A29, 2026-08-13**, on bands declared at `949fdf4` before `validation/cfd/` existed.
+Numbered under [ADR-021](docs/adr/021-freeze-the-register.md) case 3: **a missed band produces a
+numbered defect, never a widened band.**
+
+**Band 2 — drag coefficient in 0.7 ≤ C_d ≤ 2.5. Result 0.523.**
+
+The floor of 0.7 came from a rectangular bluff body normal to the flow, which sits near 1.05–1.2.
+**The assembly is a stepped body, not a solid one:** the 3U payload leads with a 100 × 100 mm
+face and the sled behind it is 172 × 140 mm, so a large part of the reference frontal area lies
+in the payload's own wake. A coefficient referenced to a partly shadowed area is below the
+textbook value for the shape the band compared it against.
+
+**Band 1 settles that this is not a mesh artefact:** 6.3× the cells (92,774 → 581,779) moves
+C_d by **4.86 %**, to 0.5497 — still far below the 0.7 floor. Refining does not recover the
+missing drag. Three further checks say the solve is sound: peak C_p on the body is **0.975**
+where stagnation should approach 1.000; the meshed wetted area is **0.4173 m² of 0.5612 m²** of raw STL, the difference
+being the interior payload–sled interface; and the drag splits as forward faces **+0.233**, base
+suction **+0.156**, sides **+0.001**, which is the classic bluff-body signature.
+
+**Band 5 — the stator channel raises C_d by ≥ 10 %. Result −12.7 %.**
+
+The plates **lower** drag, from 0.523 to 0.457, and tighten the spread from ±8.3 % to ±3.5 %.
+The plate sits in the mid-plane the sled straddles and is acting as a **splitter**, not a wall —
+a splitter plate in the near wake suppresses wake oscillation and raises base pressure, which is
+what the tighter spread reports. **The consequence is useful: the free-stream figure is the
+conservative one**, so the ground-test correction is quoted from the free case.
+
+**Corrected.** What changes is the practice, not a number: no result moved and no band was edited.
+**A drag band must name its reference area and the shape it is being compared against**, because
+a drag coefficient without its reference area is not a number. This is the same class as A2's
+band 3, which passed while measuring numerical cancellation on a symmetry axis: **a band can be
+satisfiable and still be the wrong question.**
+
+Full sheet: `validation/A29_ground_test_air_drag.md`.
+
+### P49. A Gen6 proposal was sized on an assumption wrong by 22x, and the band declared to kill it did: CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by A30 band 1, 2026-08-13**, on bands declared at `7df75ac` before
+`analysis/edge_effect.py` existed. Numbered under [ADR-021](docs/adr/021-freeze-the-register.md)
+case 3.
+
+**PII-16 proposed driving a linear induction motor on the CubeSat Design Specification's own
+aluminium corner rails** — the interface every deployer already touches, on every satellite,
+requiring nothing to be added. `analysis/rail_drive.py` sized it at **513 N, 18.26 m/s on 1182 J**
+and it looked better than Gen5 on every axis.
+
+**It rested on a transverse edge-effect derating assumed at 0.55.** The file declared that at the
+top as its dominant assumption; `docs/GEN6_RAIL_DRIVE.md` named 0.20 as the value at which the
+idea would be dead. **The measured figure is 0.0253.**
+
+| | |
+|---|---:|
+| Assumed | 0.55 |
+| **Measured** | **0.0253** |
+| Thrust, four rails at a generous 0.60 T | **41.9 N** |
+| Required to reproduce Gen5's 10.5 g on a 3U | 413 N |
+
+**No pole pitch rescues it**, and the reason is a contradiction rather than a shortfall: the edge
+factor wants the secondary wide against the pole pitch, the airgap wants the pole pitch large
+against the gap, and an 8.5 mm conductor in a 10.5 mm effective gap demands both at once. For a
+narrow secondary the factor collapses as **(πc/τ)²/3** — quadratically, not gradually.
+
+**Band 2 caught a bug in the solver before any of that was read off it.** The first run returned
+**exactly 0.0000 for every geometry**, including one Russell–Norsworthy puts at 0.66. The imposed
+field had been written as a real `cos(kx)`, which puts the stream function 90° out of phase and
+integrates the thrust to zero for every width. With the travelling wave carried as a phasor the
+solver agrees with the closed form to **1.0 %**. Fourth time a declared band has caught a defect
+in an analysis rather than in the design; second time a solver has returned identically zero and
+reported success.
+
+**Corrected.** `rail_drive.py`'s `EDGE` is set to the measured 0.0253, so the file now reports
+the rejection instead of the proposal, with the original assumption recorded rather than deleted.
+`docs/GEN6_RAIL_DRIVE.md` carries a rejection header. **Nothing in Gen5 was ever changed on the
+strength of the proposal**, which is why this is a corrected defect and not a baseline event.
+
+**What survives, and it is the reason band 4 was declared in advance.** The same solver puts a
+**90 mm flat plate** — the widest that fits inside a 3U's own section — at **0.6691**, 26× the
+rail, making **1652 N at only 0.45 T** for **0.248 kg** of aluminium. **The drive is sound; the
+rail is the wrong conductor.** Those are different findings and the band structure exists to keep
+them apart.
+
+### P50. The plate drive's thrust was quoted at the magnetic-pressure ceiling, and it reaches 23 % of it: CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by A31 band 5, 2026-08-13**, on bands declared at `f3b73d6` before
+`analysis/plate_normal_force.py` existed. The figure has been corrected wherever it appeared and
+propagated.
+
+`validation/A30_rail_drive.md` reported that a 90 mm × 340 mm × 3 mm aluminium plate makes
+**1652 N at 0.45 T**, obtained by taking the magnetic-pressure ceiling **B²/2μ₀** and applying
+A30's measured edge factor. **A layered-media solve of the actual double-sided geometry gives
+378 N** — a factor of **4.4**.
+
+| | |
+|---|---:|
+| Quoted in A30 | 1652 N |
+| **A31, layered solve, same 0.45 T and same geometry** | **378 N** |
+| Fraction of the magnetic-pressure ceiling actually reached | **22.9 %** |
+
+**The ceiling is not reached because the gap is not zero.** B²/2μ₀ is the ideal thin-sheet limit;
+with a 7 mm magnetic gap against a 48 mm pole pitch the field decays across the gap and the
+coupling falls well short of it. The error was to treat a bound as an estimate.
+
+**A30 band 4 is unaffected** — the edge factor is 0.6691 and that is a separate measurement, made
+with a separate solver, and it still stands.
+
+**Corrected in place, and the architecture still closes.** A31's design sweep puts the best point inside
+the 25 g payload qualification cap at **900 N, 21.6 g, 23.48 m/s** at 0.75 T, and a conservative
+**671 N, 16.1 g, 20.26 m/s** at 0.60 T — both on the same 0.248 kg plate, against Gen5's
+16.39 m/s from a 9.445 kg sled. **What changes is the flux density the stator has to produce**,
+from 0.45 T to 0.60–0.75 T, which is inside what an iron-cored stator gives.
+
+**Band 5 also caught two structural faults in the solver before any of this was readable.** The
+first run returned **705 % of the magnetic-pressure ceiling**: the model had one current sheet
+and a flux return, which is a single-sided machine rather than the double-sided one being
+designed; and the flux density was normalised on the **screened** field at the plate instead of
+the **open-gap** field. Fifth time a declared band has caught a defect in an analysis rather than
+in the design, and the second time in one day.
+
+Full sheets: `validation/A31_plate_drive_normal_force.md`, `validation/A30_rail_drive.md`.
+
+### P51. An A32 band tested a ratio where it should have tested an excursion: CORRECTED 2026-08-13
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by A32 band 3, 2026-08-13**, on bands declared at `0635b5c` before
+`analysis/entry_transient.py` existed. Numbered under
+[ADR-021](docs/adr/021-freeze-the-register.md) case 3.
+
+Band 3 required the transverse force on the plate during the entry transient not to exceed its
+own steady-state value. **It peaks at 2.73×.** But it never changes sign — it is **restoring
+throughout**, and the overshoot is *toward* centre.
+
+| | |
+|---|---:|
+| Steady-state transverse force at 0.5 mm offset | **0.824 N** |
+| Thrust at the same point | 611 N |
+| Transient peak | **~2.25 N**, for about 6 ms |
+
+**The band asked the wrong question.** What decides whether the plate touches a stator is the
+**excursion** across its 2 mm clearance, not a ratio to a steady state it is transiently
+overshooting. As written, the band fails on a harmless over-restoring transient and **would have
+passed a genuinely destabilising force that happened to be smaller than its own steady state.**
+
+**Corrected.** The change is to the practice, not to a number: no result moved and no band
+was edited. **A
+stability band must be on the excursion or on the absolute force.** Same class as A2 band 3,
+which passed while measuring numerical cancellation on a symmetry axis: **a band can be
+well-formed, falsifiable, and still not be the question.**
+
+### P52. The segmented stator puts a 30 % force ripple through the track's first mode: HIGH, NEW 2026-08-13
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found by A32 band 4, 2026-08-13.** This one is in the machine.
+
+Thrust ripple as the plate crosses a segment boundary is **30.1 % peak-to-peak** against a 20 %
+band. **It is not the joint gap:** closing the unenergised gap from 10 mm to zero leaves **25 %**.
+The cause is the **longitudinal truncation of the travelling field** at the edge of an energised
+section — the end effect of a segmented long stator with a short secondary, intrinsic to the
+topology rather than to the joint.
+
+**Why it matters.** With four segments over the 1.30 m acceleration zone, the segment-crossing
+frequency sweeps **0 → 61.5 Hz** across the stroke, and `analysis/sizing.py` puts the track's
+first two modes at **48 Hz and 109 Hz**. A 30 % force disturbance sweeping through 48 Hz is
+**A17's force-ripple chirp in a new place**, and **P36** already records that the track has no
+dynamic design case. It cannot be assumed clear.
+
+**What would close it.** Energising **overlapping** segments so the field under the plate is
+never truncated is the obvious candidate and is not computed. Longer segments lower the crossing
+frequency without removing the truncation. Either way this is a drive-and-track question that has
+to be answered before the plate architecture is adopted, and it is the first item found in three
+sheets that is a defect in the *machine* rather than in an analysis.
+
+### P53. The 2026-08-13 baseline change reached the documents and not the scripts: CRITICAL, NEW 2026-08-14
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+**Found by a consistency sweep, 2026-08-14.** [ADR-030](docs/adr/030-apply-the-depth-resolved-thrust-constant.md)
+moved the rated shot from 16.388 to **16.029 m/s**. `tools/propagate_baseline.py` carried that
+through the prose, and `sizing.py` and `motor_model.py` were edited by hand. **Eight other
+analysis scripts were not**, because the propagation tool walks `.md` and `.html` only and a
+number pasted into a `.py` is invisible to it:
+
+| Script | What it carried | What it fed |
+|---|---|---|
+| `astro.py` | `DV = 16.388` | **every astrodynamic headline in the repository** |
+| `attitude_budget.py` | `V_EXIT = 16.388` | recoil and campaign impulse |
+| `actuator_trade.py` | `V = 16.388` | the whole A27 trade |
+| `cell_manifest.py` | `V_EXIT_3U = 16.388` | A24 bands 5 and 6 |
+| `mover_separation.py` | `v_exit=16.388` default | the reeving study |
+| `reliability_architecture.py` | `16.388`, twice | delivered-life ratio |
+| `segment_redundancy.py` | `V_NOM = 16.388` | dead-segment velocities |
+| `sensitivity_ranking.py` | `pc.e19(16.388)` | the magnet-eddy elasticity |
+
+**And one more, of a different kind:** `payload_family.py` carried `DEPLOYER_DRY_KG = 76.5`
+under a comment reading *"mass_properties.json"*. Dry mass had moved to **84.5 kg**. So
+kg-per-satellite — **kill criterion 1's entire subject** — was computed **8 kg light** while the
+documents carried the corrected 7.042. A comment claiming a source is not reading the source.
+
+**What moved when they were re-run.**
+
+| Quantity | Published | Correct |
+|---|---|---|
+| Orbital lifetime multiplier | ×1.62 | **×1.60** |
+| Lifetime extension | +61.8 % | **+60.2 %** |
+| Lifetime ratio, fastest spring | 7.52× | **7.33×** |
+| Velocity ratio, fastest spring | 6.6× | **6.4×** |
+| Recoil per shot | 65.6 N·s | **64.1 N·s** |
+| Campaign impulse | 0.787 kN·s | **0.769 kN·s** |
+| Cold-gas mass loss at 3U | 7.5× | **8.3×** |
+| Conjunction minimum | 54.9 km | **42.2 km** |
+
+**No band verdict changed except A24 band 1** (**P54**). Every direction is unfavourable, which
+is the expected sign: the correction lowered the velocity and raised the mass.
+
+**Corrected.** No script holds a literal operating point any more. `motor_model.operating_point()`
+is the single source and the eight callers read it; `payload_family.py` reads
+`mass_properties.json`. A literal cannot fork if there is no literal.
+
+**What this does not fix.** `tools/propagate_baseline.py` still walks `.md` and `.html` only. The
+repair here removes the *literals it could not see*, rather than teaching it to see them — which
+is the stronger fix, but only for the values that were de-forked.
+
+### P54. A24 band 1 fails against a reference literal that has since been corrected: MEDIUM, NEW 2026-08-14
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+A24 band 1 requires the fixed-cell model to return deployer mass per satellite within ±1 % of
+`payload_family.py`'s figure, and encodes that figure as the literal **6.375 kg**. That literal
+was `payload_family.py`'s output when the band was declared. **P53** corrected the output to
+**7.042 kg**, so the band now reads `7.042 against 6.375` and **FAILS by 10.5 %**.
+
+**The model and its reference still agree.** Both return 7.042. What disagrees is the band's
+frozen snapshot of the reference.
+
+**The band is not being edited.** It stands as declared and it stands as failed, because the rule
+that bands are never adjusted after a result is known does not carry an exception for the times
+it is inconvenient — and a band that references a moving quantity by value is a real defect in
+the band, not a technicality.
+
+**What would close it.** A **re-declared A24-R band 1** stating the tolerance against
+`payload_family.py`'s *current* output rather than a snapshot of it, dated, with the original
+band quoted beside it, and committed **before** the re-run. Every other band in A24 is unaffected.
+
+### P55. `velocity_levers.py` prices every lever at the superseded centre-plane K<sub>t</sub>: MEDIUM, NEW 2026-08-14
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+`analysis/velocity_levers.py` drives `motor_model.shot()` with a per-row K<sub>t</sub>, and every
+row carries a value derived **before** [ADR-030](docs/adr/030-apply-the-depth-resolved-thrust-constant.md): the
+as-drawn rows at `11.0258e-3`, the thinner-magnet rows at `9.14e-3` and `8.02e-3`, the two-layer
+rows at `7.33e-3`. All four are **centre-plane** figures. The depth-resolved solve measured the
+as-drawn array at **0.9558** of its centre-plane value, so every row in the table is optimistic
+and `docs/DESIGN_OPTIONS_exit_velocity.md` inherits it.
+
+**Why it is not fixed by scaling.** Applying 0.9558 to the changed-geometry rows assumes the depth
+factor is independent of magnet thickness and airgap, and **nothing has measured that**. Scaling
+them would produce four numbers that look derived and are assumed.
+
+**What would close it.** Re-derive K<sub>t</sub> for each distinct magnetic geometry in the table
+with `thrust_constant(nz=9)`, the same way the as-drawn value was re-derived, and re-run. It is
+one solve per distinct geometry, four in total.
 
 ### E30. The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism, and nothing estimates its reliability: NEW 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -2481,17 +2940,21 @@ winding-resolved model and should not be used. **Nothing has been run.** A1 clos
 2-D half; the 3-D end effects still need a 3-D solver (Elmer or GetDP are the free
 options). Acceptance band declared in `validation/A1_field_femm.md`.
 
-### E2. No FEA confirmation of anything: PARTIALLY CLOSED
+### E2. No FEA confirmation of anything: CLOSED
 > **Status:** `CLOSED` — resolved; see the entry for what closed it
 
-> **Two FEA results now exist.** A4 (CalculiX, structural) ran 2026-07-28. **A1 (magnetostatic)
-> ran 2026-07-29** and is the one that matters most: K_t had only ever been checked
-> analytic-against-analytic, a closed-form wave model against magpylib, both superposing
-> analytic solutions for uniform blocks, neither solving a field equation. A1 solves the PDE on
-> a mesh and agrees to 0.07 %.
+> **Closed 2026-08-13 by A2 band 4.** A `getdp` 3-D magnetostatic solve — reduced scalar
+> potential, 274,105 degrees of freedom on a 315,370-node tetrahedral mesh, geometry imported
+> from `motor_model` — agrees with magpylib on the double-sided midgap fundamental to
+> **0.059 %** (0.70182 T against 0.70140 T). The objection this item raised was that the field
+> had only ever been checked analytic-against-analytic; it has now been checked against a
+> meshed PDE solve in three dimensions. `validation/fem3d/`.
 >
-> Still open: no FEA of the track, the brake, or the cassette structure; and no 3-D
-> electromagnetic solve (E1).
+> **Two earlier FEA results.** A4 (CalculiX, structural) ran 2026-07-28. **A1 (magnetostatic,
+> 2-D) ran 2026-07-29** and agreed to 0.07 %.
+>
+> **What is still not FEA-checked, tracked elsewhere:** no FEA of the track, the brake, or the
+> cassette structure. Those belong to the structural items, not to this one.
 The field cross-check is analytic-vs-analytic (both magpylib and the wave model assume
 ironless geometry, where superposition is exact). That is a genuine check of the wave
 model but is NOT independent confirmation from a different physical method. Two analyses

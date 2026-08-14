@@ -9,6 +9,227 @@ list these changes close) and `docs/DECISION_LOG.md` (why design choices were ma
 
 ---
 
+## 2026-08-14 (thirty-fourth pass): the sweep that found the propagation had stopped at the documents
+
+| ID | Item | Detail |
+|---|---|---|
+| **P53** | **Eight analysis scripts were still running at the superseded 16.388 m/s** | ADR-030 was carried through the prose by `propagate_baseline.py` and through `sizing.py` and `motor_model.py` by hand. The tool walks `.md` and `.html` only, so a number pasted into a `.py` was invisible to it, and nothing else had a fork guard. `astro.py` was one of the eight, which put **every astrodynamic headline in the repository** at the wrong operating point. |
+| **MASS-01** | **`payload_family.py` carried `DEPLOYER_DRY_KG = 76.5` under a comment reading "mass_properties.json"** | Dry mass had moved to 84.5. Kilograms per satellite — **kill criterion 1's entire subject** — was computed 8 kg light while the documents carried the corrected 7.042. A comment claiming a source is not reading the source; it now reads it. |
+| **FORK-01** | **`motor_model.operating_point()`, and no literal anywhere else** | Nine call sites read the rated shot instead of restating it. A literal cannot fork if there is no literal. `payload_family.py` reads `mass_properties.json` the same way. |
+| MOVED-01 | **What the corrected point actually changed** | Lifetime multiplier **×1.62 → ×1.60**; extension **+61.8 % → +60.2 %**; ratio against the fastest spring **7.52× → 7.33×** and **6.6× → 6.4×** on velocity; recoil **65.6 → 64.1 N·s**; campaign impulse **0.787 → 0.769 kN·s**; cold-gas loss at 3U **7.5× → 8.3×**; conjunction minimum **54.9 → 42.2 km**; loaded mass **124.5 → 132.5 kg**. **Every direction is unfavourable**, which is the expected sign. |
+| **P54** | **A24 band 1 now fails, and is not being edited** | It requires agreement within ±1 % of `payload_family.py` and encodes that figure as the literal **6.375**. The model and its reference still agree — both return 7.042 — but the band's frozen snapshot does not. It stands as declared and as failed. Closing it needs a **re-declared A24-R band 1**, committed before the re-run. |
+| **P55** | **`velocity_levers.py` prices every lever at the centre-plane K<sub>t</sub>** | All four distinct geometries in the table predate the depth-resolved solve. **Not fixed by scaling**: applying 0.9558 to the changed-geometry rows assumes the depth factor is independent of magnet thickness and airgap, and nothing has measured that. Four solves would close it. |
+| **REG-01** | **The register classifier was matching a hyphenated adjective, and then reading its own answer back** | `\bRESOLVED\b` matches inside *depth-resolved*, so an entry citing ADR-030 by filename was classified `CLOSED`; the `Status:` line it wrote then sat inside the window the next run scanned, carrying the note *"resolved; see the entry for what closed it"*. One wrong call re-justified itself forever. **P18, P30, P32 and P43 were sitting on that latch** and move to their correct statuses. Counts: **90 entries, 36 LIVE, 24 CORRECTED, 30 CLOSED**. |
+| SUPER-01 | **The superlinearity table is generated now** | `docs/REVIEW_RESPONSES.md` pasted it by hand, so it kept the operating point it was written at while `astro.py` moved underneath it. `comparators.py` emits it as a REPORT block; no band was touched. |
+| BANNER-01 | **The companion banner said "nothing here is authored"** | False since ADR-028 moved the manuscript into the companions. A banner telling a contributor every file will be overwritten, in a repository where some files never are, is wrong in the direction that loses work. It now names what is generated, what is authored, and the freeze rule from ADR-031. |
+| **LAB-01** | **`VOLLEY-lab`'s front page still described a Phase II research track** | Rewritten by hand — it is authored, never generated — to the vault role, with the one rule stated and each of the four long-form entries carrying **why it stopped**. |
+| LAB-02 | **`PII-14_cable_driven_gondola.md` was linked from `docs/VAULT.md` and did not exist** | Written from the record already held in `CHANGELOG.md` and `VAULT.md`: the +49.7 % headline assumed zero drivetrain inertia, `m_eff = I/r²` adds directly to moving mass, and at **7.4 kg** the entire gain is gone. |
+| LINK-01 | **`tools/lab-seed/` is exempt from link resolution, not from the block check** | Its relative links resolve in the repository it seeds. It stays inside the cross-link consistency check, which is the check it actually needs. |
+
+**What authorised it.** A consistency sweep, not a design change. **No acceptance band was edited,
+widened or moved.** One band verdict changed and it changed to FAIL (**P54**). All four checks pass.
+
+---
+
+## 2026-08-13 (thirty-third pass): four repositories, not two phases
+
+| ID | Item | Detail |
+|---|---|---|
+| **ADR-031** | **The two-phase model is retired; the programme is the four repositories and their roles** | The phase model measures **calendar position**; every decision that mattered turned on **evidence maturity**. "Phase I" needs a glossary before anything parses, and the gate needed administering — *"is this Phase I or Phase II?"* came up repeatedly on 2026-08-13 and cost judgement each time. |
+| **ROLE-01** | **The four roles, stated without roman numerals** | **lab** — ideas that never became a complete thing, and the evidence behind them. **main** — the authoritative record, improved continuously. **paper / thesis** — the same concept at its most reliable, **frozen when presented or published.** |
+| **FREEZE-01** | **The freeze is an external event now** | Paper and thesis may be improved until publication, **provided what enters them is stable, effective and reliable against the problem statement.** A submission date slips and a boundary is arguable; **publication is neither.** First hard external line this programme has had. |
+| GATE-01 | **What replaces the phase gate: three maturity tiers, each with a stated crossing condition** | **vault → main**: bands declared before the script existed, and run — *unchanged and not negotiable*. **main → paper/thesis**: stable, effective, reliable. **paper/thesis → frozen**: published. **Nothing crosses upward on enthusiasm**, which was the point of the phase gate and survives its retirement. |
+| VAULT-01 | **`docs/PHASE_II.md` → `docs/VAULT.md`**, retargeted in 21 files | Same eighteen entries, renamed to what it is, with **the one rule made explicit: every entry states why it stopped.** PII-16 carries the edge factor that killed it, PII-17 the mass arithmetic that declined it. **That is what makes it evidence rather than a pile.** |
+| BASE-07 | **`BASELINE.md` loses one clause and keeps the rest** | *"Performance improvement may not move the baseline"* was a pure freeze artefact and is withdrawn. **Naming the trigger, stating which validations it invalidates, propagating scripts → figures → paper, and recording it in an ADR all stay** — none of them was ever about phases. Edited in the generator, not the output. |
+| DOSSIER-04 | **Amendment 4 to the programme dossier** | Records the departure from §§2 and 10, what it keeps, and what is given up. **Phase I is not un-closed** — `PHASE_I_CLOSURE.md` keeps its name as the record of the event. |
+| **RISK-01** | **And the risk is named rather than hidden** | Main improving freely is exactly how the search becomes unbounded again. The protection is that **nothing reaches paper or thesis without being reliable**. If a year from now main carries three architectures and the paper carries none, this decision failed and ADR-029's stopping rule should be reinstated as a date. |
+
+**What authorised it.** A programme decision by the sole author. **No script value, no band, no
+operating point and no baseline moved.** All four checks pass.
+
+---
+
+## 2026-08-13 (thirty-second pass): Phase I closed
+
+| ID | Item | Detail |
+|---|---|---|
+| **CLOSE-03** | **Phase I is closed on Gen5** | Measured against `PHASE_I_CLOSURE.md` §9's own 2026-08-05 definition — *categories A, B and C closed; D, E and E4 open with named owners* — and that state is now reached. §10d records it. |
+| CLOSE-04 | **Category A closed by A33, A34 and A15 band 7** | The track's dynamic case, the cradle restitution model, and the one band that could only ever be closed by reading a generator. |
+| CLOSE-05 | **Category B closed** | P14 superseded by generated CAD, P19's general claim shown false, P20's lesson made a standing rule that A2 band 4 was then written under, P35's false header struck and given an assertion, P38 and P39 closed on their own criteria. |
+| CLOSE-06 | **Category C closed by ADR-030** | All four decisions taken together rather than piecemeal. |
+| **CLOSE-07** | **What stays open, with owners** | **E4** — nothing measured, owner **B-1** at ₹22,000, still unordered. Category D to hardware and external parties. Category E blocked, not open. **P36's damping half** to T-2's sine sweep. **Kill criteria 1, 2 and 3 remain crossed** at the 3U design point. |
+| CLOSE-08 | **Register at close: 87 entries, 31 live** | 10 P-items, 21 E-items, of which **E4, E5, E14 and E15 are permanent caveats rather than debt.** |
+| FRONT-04 | **The front door says so** | README opens with the closure, the four corrections and what they cost, and points at the Phase II target and at B-1. |
+
+**What Phase I is:** a design that is frozen, internally consistent, and knows what is wrong with
+it — four verification tools passing on every commit, a baseline generated from the scripts, and
+**twelve missed acceptance bands published as numbered defects rather than widened.**
+
+**What it is not:** a design that has been shown to work. **Nothing has been measured.**
+
+---
+
+## 2026-08-13 (thirty-first pass): the baseline moves, and every number moves the wrong way
+
+| ID | Item | Detail |
+|---|---|---|
+| **ADR-030** | **Four decisions taken together; the baseline moves** | P46, P28, P10 and P32, taken at a boundary rather than piecemeal because **propagation is the expensive part and doing it once is cheaper than twice.** |
+| **P46** | **The thrust integral is depth-resolved** | `thrust_constant()` now Gauss-Legendre averages `B_y` over z ∈ [−45, +45] mm before the Lorentz sum — **a change to the physics, not a pasted factor** (ADR-015). **K_t 11.0258 → 10.5386**, ratio **0.9558, exactly A2 band 2's measurement**; **v_exit 16.388 → 16.029 m/s**. `nz = 1` reproduces the superseded value exactly, so A2's ratio stays checkable. Computed and held for three days before being applied. |
+| **BASE-06** | **And it dropped the ceiling below the fleet setpoint** | 16.2 m/s against a new ceiling of 16.029 is **101.07 % of it** — the exact condition **ADR-014** forbids, because a setpoint the machine cannot reach makes the dispersion figure a measure of shortfall rather than of sensing noise. **`V_FLEET` 16.2 → 15.8 m/s**, holding ADR-014's *fraction* rather than its number. **The rule survived contact with the correction.** |
+| P28 | **Regen section 240 → 39 mm** | 39 + 300 fits the 339 mm arrest section. Recovery 291 → **47 J**. **Dropping regen entirely was recommended first and withdrawn**: 2 points of efficiency, which is in no kill criterion, against **+24 % brake duty**, which worsens **E34**, fourth on the lethality ranking. |
+| P10 | **Packaging enters the rollup as a labelled placeholder** | **8.0 kg, no derivation**, named `(P10 PLACEHOLDER, 8.0 kg, no derivation)` so it cannot be cited as computed. Dry **76.5 → 84.5 kg**, per 3U **6.378 → 7.042 kg**. |
+| P32 | **Gen4 retired** | Never exported, releases at s = 1200 mm over a 900 mm stroke where `analysis/` assumes 1500 over 1.3 m. **A geometry that cannot be exported, cannot be checked, and does not match the parameters is not a generation this project has.** |
+| **SYNC-01** | **`sizing.py`'s fork guard walked the propagation through eleven coupled constants** | `_check_operating_point` refused the run at each one — V_EXIT, E_DRAWN, F_CMD, T_PULSE, Q_COPPER, Q_ESR, SAG_FRAC, E_RECOVERED, KE_TO_BRAKE, S_REGEN and four regen loss terms — until every one matched `motor_model`. **It also caught a unit error I introduced**: `T_PULSE` is in seconds and a blind substitution set it to 162.3 instead of 0.1623. |
+| PROP-01 | **`tools/propagate_baseline.py`: 214 occurrences across 37 live documents** | A whitelist, not a `sed`. **Most occurrences of `16.388` in this repository are historical and must not change**, so `CHANGELOG.md`, `OPEN_PROBLEMS.md`, `HISTORY.md`, `DECISION_LOG.md`, `CHANGELOG_CAD.md`, `RESULTS.md`, the ADRs and every `validation/A*.md` run sheet are excluded **by construction**. |
+| **COST-01** | **Every headline number moved the wrong way** | Efficiency **21.0 → 18.8 %**, brake duty **977 → 1162 J**, kg per 3U **6.378 → 7.042**, lifetime multiplier 1.618 → 1.602. **Kill criterion 1 goes from crossed by 3.2× to crossed by 3.5×.** Nothing improved. That is what taking these decisions costs, and it is why they were deferred. |
+| VALID-01 | **Validations invalidated: none, and it was checked** | Every run sheet records the point it ran at. **A28 is unaffected because the loop is feedback-linearised and K_t cancels out of the loop transfer entirely** — the fact P47 turned on. A4 and A5 already predate the point and say so (P19). |
+| CNT-16 | **Register 34 → 31 live** | P46, P28, P10, P32 corrected or closed. 10 P-items live, 21 E-items. |
+
+**What authorised it.** `docs/BASELINE.md` change-control rules 1 and 2, and an explicit owner
+decision on all four after the composite cost was put in front of them. **Propagated in the
+required order: scripts, then results, then figures, then the baseline.** All four checks pass.
+
+---
+
+## 2026-08-13 (thirtieth pass): Phase I closes on Gen5, and the exploration stops
+
+| ID | Item | Detail |
+|---|---|---|
+| **ADR-029** | **Phase I closes on Gen5. Gen6 is the Phase II design target and is not built** | Gen6 beats Gen5 on every axis that has been measured, and is **nine measured bands against a hundred analyses**. Re-baselining would move K_t, v_exit, the mass rollup, the cost model, the CAD and the manuscript — to replace an architecture with a hundred analyses by one with nine bands. **The cost is stated plainly: Phase I closes on an architecture its own author now believes is second-best.** |
+| **STOP-01** | **And the reason is that the exploration demonstrated ADR-021's failure mode** | Six register entries opened in one day; **two are defects in the machine** (P47, P52) and **four are defects in analyses written that day** (P48–P51). That is the apparatus generating its own workload, which is the sentence ADR-021 froze the register over. Meanwhile **B-1 — one measurement, ₹22,000 — is still unordered.** |
+| STOP-02 | **No further architecture exploration before B-1** | Exploration does not terminate on its own. The ADR's own validation test is measurable: **if B-1 is still unordered in a month, the stopping rule did not bind and this decision bought nothing.** |
+| **CLOSE-01** | **`PHASE_I_CLOSURE.md` §10c — distance to close, measured** | Against §9's own 2026-08-05 definition rather than against an empty register: **three analyses** (P36 the only substantial one, plus P41 and A15 band 7), **a handful of bookkeeping records**, and **four decisions, none of which is engineering work** (D3 the held K_t correction, D8 retiring Gen4, P28, P10). Categories D, E and E4 stay open with named owners, as they were always meant to. |
+| CLOSE-02 | **P52 is not a Phase I blocker, and the reason is on the record** | Gen5's winding is segmented for fault isolation and driven as one section (**ADR-022**), so it has no segment handover. P52 is a property of the Gen6 drive and travels with it. |
+| PII-TGT | **`VAULT.md` names Gen6 as the design target** | With its nine bands and its unsized remainder both stated, and the gate untouched: a target is not a promotion, and Gen6's entry criteria are not all written yet, let alone met. |
+
+**What authorised it.** A programme decision by the sole author, recorded as ADR-029. **No script
+value, no band, no operating point and no baseline moved.** All four checks pass.
+
+---
+
+## 2026-08-13 (twenty-ninth pass): the Phase II items interact, and two of them cancel
+
+| ID | Item | Detail |
+|---|---|---|
+| **PRIOR-01** | **The operational shipboard electromagnetic launcher, cited for the first time** | The only electromagnetic launch system in routine service anywhere, and `PRIOR_ART.md` had never mentioned it. **Three of its architectural choices are choices this project reached independently**: linear induction with a passive armature, a segmented stator energised only under the shuttle (**ADR-022**), and flywheel pulsed storage (**A25**). Three convergences with a flown system is a stronger credibility argument than anything in `VALIDATION_REPORT.md`, and it was not being made. |
+| **PII-18** | **The plate does not have to be on the satellite** | As a **reusable shuttle** it is 0.398 kg against the Gen5 sled's 9.445, so the arrest falls from **1938 J to 82 J**. The satellite is **unmodified** again — no consumable, no interface to publish, no adopters to recruit — which **dissolves decision D2**, because every payload class works. The geometry that decides it is **twin fins straddling the satellite**, which puts the thrust line through its own axis and removes **P41**'s centre-of-mass offset. Nobody has drawn it. |
+| **SYN-01** | **PII-1 is superseded, and the reason is arithmetic** | The momentum-transfer release is the project's self-declared strongest idea, and its lever **is the mover's mass**: Δv = √(2EM/(m(M+m))). On a 0.6 kg shuttle the same 41.8 J buys **1.65 m/s instead of 3.83**, and matching the original costs **225 J**. PII-18 reaches the same velocity by not putting the energy into a sled, and **adds no mechanism to the release path** — which is PII-1's own stated reason for deferring. |
+| **SYN-02** | **PII-15 is superseded by margin nobody is spending** | Gen5 runs at **10.5 g of a 25 g budget**, which was never a choice — it is where thrust over mass landed with a 9.445 kg sled aboard. At **16.1 g the stroke is 850 mm instead of 1300**. PII-15's 2:1 reeving was "the only lever found that shortens the machine"; the margin does it for free and **without a cable over a sheave**, which `REV-07` records cannot claim the exemption that screened out the rack. |
+| **SYN-03** | **And together they close kill criterion 2** | Brake run-out **240 → 105 mm**. Closed envelope **1839 → 1254 mm** at Gen5's own exit velocity — **inside ESPA-Grande's ~1270 mm**, with 3.9 g of qualification margin still unspent. That criterion has been crossed or unevaluable since the envelope was first drawn, and **ADR-023's re-scope could be reversed on evidence** rather than defended. |
+| SYN-04 | **Mass, as a labelled sketch** | Scaling `mass_properties.py`'s own lumps to an 850 mm machine with a 0.6 kg shuttle, **plus** 3 kg of LIM stator iron: dry **76.5 → 59.6 kg**, per 3U satellite **6.378 → 4.967 kg**. **Kill criterion 1 still does not close at 3U** and no version of this architecture makes it — but at PocketQube 1P it is **0.207 kg, passing by 10×**, and those classes are reachable because the satellite is unmodified. |
+| SYN-05 | **What the combination does not touch** | **E4** — nothing measured. **P52** — the 30 % segment-handover ripple is topology-level and applies to every variant. **P36** — a shorter, stiffer track has different modes, so that analysis is redone rather than inherited. |
+
+**What authorised it.** Phase II analysis, recorded as interactions rather than promotions:
+`VAULT.md`'s gate is untouched and **no item's status was changed**. **Nothing in Gen5 moved.**
+All four checks pass.
+
+---
+
+## 2026-08-13 (twenty-eighth pass): the plate drive, tested where it could have died
+
+| ID | Item | Detail |
+|---|---|---|
+| **A31** | **The plate centres itself, with no bearing** | Layered-media solve, Maxwell stress on planes either side of the plate. **The transverse force is restoring at every offset inside ±1 mm** — the nearer stator induces the larger eddy current and eddy forces are repulsive. **0.1 % of thrust** against a 20 % band. Thrust is blind to alignment: **0.10 %** over half a millimetre of gap error, **1.69 %** over three laterally. This keeps **E21**'s fretting and cold-welding problem — what screened out the screw drive in A27 — out of the architecture entirely. |
+| **P50** | **And A30's thrust figure was 4.4× optimistic** | A30 reported **1652 N at 0.45 T** by taking the magnetic-pressure ceiling **B²/2μ₀** and applying the edge factor. The layered solve gives **378 N**: the ceiling is the zero-gap limit and a 7 mm magnetic gap falls far short of it. **The error was treating a bound as an estimate.** Corrected in place; A30 band 4's edge factor of 0.6691 is a separate measurement and stands. |
+| A31-01 | **The architecture still closes, at a higher flux density** | Design sweep, kept separate from the bands: **900 N, 21.6 g, 23.48 m/s** at 0.75 T inside the qualification cap, or a conservative **671 N, 16.1 g, 20.26 m/s** at 0.60 T — both on the same **0.248 kg** plate, against Gen5's 16.39 m/s from a 9.445 kg sled. |
+| **A32** | **Entry is a non-event** | Time-domain thin-sheet solve, a different model from A31 on purpose. Plate diffusion time **3.198 ms**; thrust reaches 90 % after **0.679 mm** of travel — **0.05 %** of the acceleration zone. The concern that motivated the sheet does not survive contact with the time constant. |
+| A32-01 | **And the thrust figure is no longer single-sourced** | Band 1: the time-domain solver agrees with A31's frequency-domain layered solve to **−9.0 %**. Different domain, different implementation, same answer. |
+| **P52** | **The segmented stator puts a 30 % force ripple through the track's first mode** | Band 4: **30.1 %** peak-to-peak at a segment boundary against a 20 % band, and **closing the joint gap to zero leaves 25 %** — so it is the longitudinal **truncation** of the travelling field at the edge of an energised section, not the joint. The segment-crossing frequency sweeps **0 → 61.5 Hz** and the track modes are at **48 and 109 Hz**. **A17's chirp problem in a new place**, against a track **P36** says has no dynamic design case. First defect in three sheets that is in the machine rather than in an analysis. |
+| P51 | **And one band asked the wrong question** | Band 3 required the transient transverse force not to exceed its steady-state value; it peaks at **2.73×** — but **restoring throughout**, and the absolute peak is ~2.25 N against 611 N of thrust. **A stability band must be on the excursion or the absolute force, never on the ratio to the steady state it is overshooting.** As written it fails on a harmless over-restoring transient and would have passed a destabilising force that was smaller than its own steady state. Band left as declared. |
+| **PROC-01** | **Three new solvers, three first runs wrong, three caught by their own verification bands** | A30 returned **exactly zero** for every geometry (travelling wave written as a real cosine). A31 returned **705 % of physics** (single-sided model; flux normalised on the screened field). A32 returned **+304 %** against A31 (thrust as K × B_imposed rather than K × B_total). **Every one would have been published as a result.** In all three the band that caught it was the *verification* band — the one that adds no new physics and is the easiest to leave out. |
+
+**What authorised it.** Two validation outcomes against bands declared before their scripts
+existed, verified by `git show --stat` returning nothing at each band commit. **Nothing in Gen5
+moved** — no band edited, no operating point, no baseline. All four checks pass.
+
+---
+
+## 2026-08-13 (twenty-seventh pass): the interface has been on every CubeSat since 2003
+
+| ID | Item | Detail |
+|---|---|---|
+| **PII-16** | **Gen6 proposal: the satellite's own CDS corner rails as the motor secondary** | The CubeSat Design Specification has mandated four hard-anodised aluminium corner rails since 2003. Every deployer built since — P-POD, NRCSD, this project's own cassette — treats them as a **bearing surface**. They are also **116 cm² of standardised, structural, conductive, axially symmetric induction-motor armature that every customer already owns and already qualifies.** Nobody has driven on them. |
+| A30-00 | **Sizing, and it clears the requirement** | `analysis/rail_drive.py`, goodness-factor sheet secondary, double-sided stators straddling each rail, holding G·s = 1. At a modest **0.45 T**, a realistic **2 mm** clearance and the **worse** of the two rail alloys: **513 N, 13.1 g, 18.26 m/s in 142 ms on 1182 J** — faster than Gen5 on **2.4× less energy**, because the moving mass is 4 kg instead of 13.45 kg. Rails warm **1.7 K**. |
+| **PII-16-01** | **What stops existing rather than being solved** | No sled → no brake → no arrest section → no sled return → no cradle. That removes the source of **E34** (18.5 kN through eleven stowed satellites), **E24** (the attitude budget's dominant term), **P28**, **P41** and the 339 mm of envelope behind **kill criterion 2**. No permanent magnets anywhere removes **E33** and **E35**. |
+| PII-16-02 | **And "unmodified" stops being a claim** | It becomes a property of the topology: nothing is attached, added or left behind. The contradiction between the abstract and **E35** dissolves rather than being qualified. |
+| **PII-16-03** | **What would kill it, stated first** | The **transverse edge-effect derating is the whole result** — assumed at **0.55** and declared as an assumption at the top of the file. At 0.2 the design point falls to 187 N and the idea is dead. **A30 band 1 is a 3-D transient eddy-current solve**, and it is the cheapest possible way to find out. |
+| PII-16-04 | **The tension that better engineering does not fix** | The drive works only on classes carrying CDS rails, and kill criterion 1 fails at 3U and closes only at PocketQube, which has a different rail standard. That is decision **D2**, unmade. |
+| PII-17 | **The mover-departs family, considered and not recommended in its naive form** | A fin or keel carrying the Halbach array weighs **6.04 kg at the full array, 3.20 kg at 170 mm**, against a COTS cold-gas module at 0.5–1.2 kg for the same Δv — so VOLLEY would compete with cold gas on its own ground and lose 3–6×, forfeiting kill criterion 1's only escape clause. Recoil rises 74 %. **What the idea is right about** is that dropping "unmodified" re-opens the topology trade; taken to its conclusion that is PII-16. |
+
+**What authorised it.** Phase II is where candidate architectures are recorded with entry
+criteria, not adopted. **Nothing in Gen5 moved** — no band, no operating point, no baseline.
+All four checks pass.
+
+---
+
+## 2026-08-13 (twenty-sixth pass): no LaTeX in the engineering record
+
+| ID | Item | Detail |
+|---|---|---|
+| **ADR-028** | **The flagship holds no LaTeX, no `.cls`, and no compiled PDF** | `paper.tex`, `IEEEtran.cls`, the built PDF, `archive/` and `cv/` are now **authored** in `VOLLEY-paper`; the thesis carries its own copy in `source/`. A `.tex` file is not a derived artefact — it is written, submitted, reviewed and revised, and it acquires a copyright status the flagship cannot license, which is why `PAPER_MANIFEST` already carried a deliberate licence hold. |
+| MOVE-01 | **`paper/figures/` → `figures/`; the generators → `tools/`** | A figure is a **result**: drawn from `analysis/`, indexed by `docs/FIGURE_INDEX.md`. It belongs in the engineering record whether or not a paper cites it. `tools/make_figures.py` and `tools/make_animation.py` regenerate at the new location and were re-run to prove it. |
+| **MOVE-02** | **`export_companion.py` no longer wipes the companion** | It called `shutil.rmtree(dest)` and now removes only the paths in its own manifest. **Run unchanged after this move, it would have deleted the paper.** ADR-017's "delete and regenerate" rule now applies to the manifest paths only, and the ADR says so. |
+| MOVE-03 | **What the flagship stops having to carry** | `check_artifacts.py` loses the two pairs it could verify only by page count. `env-setup.sh`'s LaTeX dependency now exists for nothing in this repository. |
+| **FRONT-01** | **The front page leads with results, and shows the ones that were missing** | README gains a **Results** section: the shot, lifetime, **both A28 control figures**, the **full A29 CFD report** and the air-drag result, each captioned with what it shows and what it cost. Opens by stating that every image is a script output and pointing at the figure index. |
+| FRONT-02 | **`docs/index.html` gains two sections** | *Control stability, and a gain that was never designed* and *CFD: what air costs a ground test* — the second showing the convergence history and the surface-pressure distribution, not only the answer. |
+| FRONT-03 | **Historical paths are not rewritten** | `CHANGELOG.md` and `OPEN_PROBLEMS.md` describe edits made to `paper/paper.tex` on dates when that path existed. They are the audit record; the paths in them are historical facts, not links. |
+
+**What authorised it.** A structural decision by the sole author, recorded as ADR-028. **No
+script value, no band and no operating point moved** — all four checks pass unchanged.
+
+---
+
+## 2026-08-13 (twenty-fifth pass): the machine flies in vacuum, the test happens in a room
+
+| ID | Item | Detail |
+|---|---|---|
+| **A29** | **What air costs a ground test, computed for the first time** | Every velocity in this repository is computed with no aerodynamic term. The TRL-5 step fires a mass simulator down a full 1.5 m track **at sea level**, and nothing said what the air was worth. Steady RANS (`simpleFoam`, k-ω SST) on the **Gen5 sled and payload as generated**, meshed by `snappyHexMesh` from `cad/stl` — not an idealised box. |
+| **A29-01** | **The answer, and why it is the comparison that matters** | C_d **0.523** on a 201.6 cm² projected frontal area at Re 7.0 × 10⁵ → **1.734 N** at exit velocity → **1.127 J** over the 1.30 m stroke → deficit **5.116 mm/s (0.0312 %)**. Small against the design point; **19.2 % of the 3σ dispersion the test exists to resolve.** No vacuum chamber needed; an air correction on every measured velocity is. |
+| A29-02 | **Open loop and closed loop are different tests** | Open-loop the deficit is 5.1 mm/s of velocity; closed-loop the servo nulls it and it appears as **1.734 N of extra command, 0.125 % of the shot**. `QUALIFICATION_PLAN.md` does not currently say which the full-scale test is. |
+| **A29-03** | **The solve does not converge, and that is reported** | Velocity residuals fall three orders then **plateau near 5 × 10⁻² and oscillate** — what a steady solver does on a massively separated wake. The drag is a **windowed mean, 1.734 ± 0.144 N (8.3 %)**. The first attempt read a single iteration, 1.946 N, **12 % high**. |
+| A29-04 | **Two OpenFOAM function objects abort in this build, and the workaround is stronger than the tool** | `forceCoeffs` and `wallShearStress` both fail with an IOstream error before the first iteration. Pressure drag is integrated in `validation/cfd/forces.py` as **F = ρ Σ p S_f** directly from `constant/polyMesh` and the solved field, so every step from solve to coefficient is inspectable. Viscous drag is a **flat-plate bound**, 17.7 % of the total, labelled as one everywhere. |
+| A29-05 | **The sign convention was inverted and produced a negative drag** | OpenFOAM boundary normals point out of the **fluid**, i.e. into the body, so the body's outward normal is −S_f and the force is +Σ p S_f. `forces.py` now **asserts** drag is positive: a bluff body in a uniform stream does not produce thrust. |
+| **P48** | **Two of five bands fail, and neither failure is in the machine** | **Band 2** (0.7 ≤ C_d ≤ 2.5) fails at 0.523 — the band was declared against a *solid* bluff body and the assembly is a **stepped** one, so part of the reference frontal area sits in the payload's own wake. Three checks say the solve is sound: peak C_p **0.975** where stagnation should approach 1; meshed wetted area **0.4173 of 0.5612 m²** of raw STL, the difference being the interior payload–sled interface; drag splitting as forward **+0.233**, base **+0.156**, sides **+0.001**. |
+| P48-01 | **Band 5 fails in the opposite direction to the one predicted** | The stator plates were expected to **raise** C_d by ≥ 10 % through confinement. They **lower** it by **12.7 %** and tighten the spread from ±8.3 % to ±3.5 % — the plate acts as a **wake splitter**, not a wall. **The consequence is useful: the free-stream figure is the conservative one**, so the correction is quoted from it. |
+| P48-02 | **What is corrected is the practice** | **A drag band must name its reference area and the shape it is being compared against**, because a drag coefficient without its reference area is not a number. Same class as A2 band 3, which passed while measuring numerical cancellation on a symmetry axis: **a band can be satisfiable and still be the wrong question.** No band edited, no result moved. |
+| **PAPER-10** | **§VI-E added; the manuscript is 14 → 15 pages** | With `F14_airdrag.png`. Reports the plateau and the viscous bound in the body text rather than in a footnote. Zero undefined references. |
+| FIG-07 | **The figure stamp now carries A29 too** | `BUILD.json` gained the drag and the deficit, because F14 is drawn from them and a stamp that cannot see a figure's source cannot police it. |
+| **INDEX-01** | **`docs/FIGURE_INDEX.md`** — every figure with its generator, its source, and its class of evidence | Five classes, and the count that matters is that **class D — something physically observed — has zero members.** Records the Gen4 render mismatch where the renders appear rather than only in the register. |
+| CNT-15 | **Register 82 → 83, 12 → 13 corrected** | P48. Header propagated. Live count unchanged at 38. |
+
+**What authorised it.** A validation outcome against bands declared before the case directory
+existed, verified by `git show --stat 949fdf4 -- validation/cfd` returning nothing. **Two bands
+failed and produced a numbered defect, not a widened band.** All four checks pass.
+
+---
+
+## 2026-08-13 (twenty-fourth pass): the velocity loop was never designed, and the 3-D solve lands
+
+| ID | Item | Detail |
+|---|---|---|
+| **A2-04** | **Band 4 runs and E2 closes** | A `getdp` 3-D magnetostatic solve — reduced scalar potential, **274,105 DoF** on a **315,370-node** tetrahedral mesh, geometry imported from `motor_model` — agrees with magpylib on the double-sided midgap fundamental to **0.059 %** (0.70182 T against 0.70140 T). Band was ≤ 5 %. Both of the two named references agree to better than a tenth of a percent, so the result does not turn on which the band picked. |
+| A2-05 | **The first solve of it returned exactly zero and reported success** | Residual 150.2 → 4 × 10⁻¹³, clean log, **zero field at every sampled point**. `gmsh.model.getBoundary()` on the air volume returns the six outer faces *and* all twenty-four magnet–air interfaces; tagging them all as the outer boundary pinned φ = 0 on every magnet surface and the source-free air then gave φ ≡ 0 by uniqueness. Caught by checking the value against physical expectation, not by any tool. The fix selects faces by bounding box and **asserts exactly six are found**. |
+| A2-06 | **Periodic endpoint dropped before projection** | `getdp`'s `OnLine` includes both ends; x = ±λ/2 are the same point of a periodic field, so keeping both weighted one phase twice. Moves the result 0.084 % → **0.059 %**. |
+| **P47** | **The published velocity-loop gain is linearly unstable** | A28, bands declared at `3ae36ad` before the script existed. **Four of six bands fail.** The controller is feedback-linearised, so `L(s) = Kp/s·exp(−sτ)` and **Kp is the crossover in rad/s, not a current gain** — a fact stated nowhere. 3500 s⁻¹ is a crossover at **557 Hz**, above both track modes, with **−50.4°** phase margin and **−3.86 dB** gain margin at 0.7 ms of total lag. |
+| P47-01 | **Why it was invisible** | `closed_loop_mc` feeds back the **undelayed** state, so its own loop sits at zero latency where 3500 does hold +69.9°. And the command is clipped to `[0, K_RATED]`, turning an unstable loop into a **bang-bang relay** whose mean follows the feedforward term, with the terminal ±0.3 m/s trim removing the residual. **The dispersion figure was set by the saturation limits and the terminal correction, not by the feedback.** |
+| **P47-02** | **Corrected: `motor_model.KP_VELOCITY = 195` s⁻¹** | `design_gain()` returns 195.2 s⁻¹ as the largest gain holding ≥ 50° phase margin at 0.6 ms **and** bandwidth ≤ one third of the 109 Hz first mode; implemented value rounded **down**. Result: PM **+82.2°**, GM **+21.2 dB**, bandwidth **36.3 Hz**, **0.0 %** of stroke above rating. |
+| **BASE-05** | **Baseline: dispersion 0.0271 → 0.0267 m/s** | Change-control rules 1 and 2. **The gain falls 18× and the dispersion does not move** — both are 0.027 to two significant figures — because dispersion is set by the terminal trim and the K_t and mass tolerances, not by loop gain. **K_t stays 11.0258 N/kA·m, v_exit stays 16.388 m/s.** **Validations invalidated: none**; nothing else reads `closed_loop_mc`. |
+| ADR-027 | **The loop is designed against a named constraint set** | Phase margin ≥ 50°, bandwidth ≤ f_mode/3, command within rating. Alternatives recorded and rejected: keep 3500 and declare zero latency; raise the controller rate; notch at 109 Hz (deferred to Phase II — a notch commits to a mode frequency `STRUCTURAL_GAP.md` says is unmeasured); design to the 45° band exactly. |
+| FIG-06 | **Two figures added, both generated** | `F12_bode.png` — open-loop Bode at both gains with the 48–109 Hz mode band shaded and both crossovers marked. `F13_latency.png` — phase margin against transport delay, with the stability floor. Both import `analysis/control_design.py`; nothing re-derived in the figure script. |
+| CNT-14 | **Register 81 → 82, 11 → 12 corrected** | P47. Header propagated. Live count unchanged at 38. |
+| **PAPER-09** | **§IV-D *Velocity-Loop Stability* added; the manuscript is 13 → 14 pages** | States the fact the repository had never written down — the loop is feedback-linearised, so Kp is the crossover in rad/s — reports the earlier gain as what it was, and gives the designed gain with its margins. **No other body text moved**: the 0.027 m/s in the abstract, §V-A, §V-E, §VIII and the conclusion is 0.027 to two significant figures before and after. Zero undefined references. |
+| PAGES-02 | **`docs/index.html` carries the margins and the correction** | Dispersion row to 0.0267 m/s, plus a velocity-loop-margins row naming P47 and the superseded gain. The public page is an artifact of the results under the P42 rule, so it moves with them. |
+| **STATE-01** | **`docs/STATE_OF_THE_PROJECT.md`** — the disposition layer the repository did not have | Four sections: **ten decisions nobody has taken**, every live weakness grouped by *kind* rather than by number, the crossed thresholds and **the seven places a published claim contradicts the project's own evidence**, and a four-tier fix list. Adds no evidence: every figure is carried from a file that already holds it. |
+| STATE-02 | **The decisions layer is genuinely new** | `OPEN_PROBLEMS.md` holds defects, `KILL_CRITERIA.md` holds thresholds, `VAULT.md` holds deferred work — **none of them holds a decision only the author can take.** B-1 unordered, the payload class unchosen, P46 held, the provisional's 2027 date, the bank, the envelope, the wiki, Gen4. |
+| **STATE-03** | **And it names the most reviewable weakness as a writing problem** | Every contradiction in the table is disclosed *somewhere* — but several only in a limitations section while the abstract states the unqualified version. **Three of the seven close with an editing pass and no new analysis.** |
+| **STAMP-01** | **Three build stamps could not see this change, and now can** | `paper/figures/BUILD.json`, `BUILD_anim.json` and the generated `cv.tex` each recorded a hand-picked subset of the operating point. **The velocity-loop gain changed, F03 was redrawn, and every field in all three stayed identical** — the exact blind spot the stamps exist to close. Each now also carries the sha256[:16] of `motor_results.json`, so any change to the results moves the stamp. |
+
+**What authorised it.** Two validation outcomes against bands declared before their scripts
+existed. **A2 band 4 passed; A28 bands 2, 3, 4 and 5 failed and produced a numbered defect, not a
+widened band.** All four checks pass.
+
+---
+
 ## 2026-08-10 (twenty-third pass): CC BY 4.0 across the repository, and the front matter raised
 
 | ID | Item | Detail |
@@ -610,7 +831,7 @@ machine**, and three separate lines of enquiry arrived at it independently.
 | PL-02 | **A payload-class subsection in the paper** | Velocity is flat across the family because the sled is most of the moving mass; deployer mass per satellite moves by a factor of thirty. That is the answer to the cold-gas comparison and it turns on payload class, not on any machine parameter. Its three qualifications are in the section rather than beneath it. |
 | MK-01 | **`docs/MARKET.md`** | Kept out of the paper deliberately. The number it turns on is not a forecast: of the 4,800-odd nanosatellites catalogued as of January 2026, about **222 carry propulsion**. The other 92 % did not decline propulsion because they had no use for orbital control. The CubeSat market projections are third-party research and the file tabulates five firms disagreeing — 15.6 to 18.3 % CAGR, USD 1.65 to 1.98 B, same market, same year — rather than picking one. Section 5 is where VOLLEY loses. Two sourced sentences and two references into the paper's introduction. |
 | LV-01 | **`analysis/velocity_levers.py`, and the ranking inverts** | The lever table was hand-computed on 2026-07-28, before anything modelled bank ESR. The new column is the **highest bank ESR at which each lever's shot still completes**, bisected on the real integrator because the ceiling is set at the sagged voltage, not at 96 V. Two-layer stator draws **597 A and needs 39 mohm**; raised sheet current **749 A and 31 mohm**; as drawn, 347 A and 66 mohm. A single commercial string is 116–185. **No row in the table clears it.** |
-| LV-02 | **PII-3 gated behind PII-7, in the entry criterion rather than in prose** | The two levers with the best electromagnetic case are the two that make the bank hardest to buy. `PHASE_II.md` now says PII-3 may not be reviewed before PII-7 closes. |
+| LV-02 | **PII-3 gated behind PII-7, in the entry criterion rather than in prose** | The two levers with the best electromagnetic case are the two that make the bank hardest to buy. `VAULT.md` now says PII-3 may not be reviewed before PII-7 closes. |
 | LV-03 | **A modelling error in the old table, found by generating it** | The two-layer rows were reported at 42 A/mm² because nothing told the model the winding got thicker. It runs at 21, the same as today. The 2026-07-28 prose had this right and the arithmetic did not. |
 | PI1-01 | **PII-1 re-modelled, and it compounds with regeneration** | Regeneration takes a fixed ~296 J over 240 mm of stator whatever speed the sled enters at, so the spring moves energy to the payload and regeneration takes its slice of what remains. Together: efficiency **21.2 to 31.6 %**, brake duty **1291 to 711 J**. Past what the superseded 4.86 kg design claimed, on a sled twice the mass. **It still defers**, and the file now states why the risk is not comparable to regeneration's. |
 | LIT-01 | **The pulsed-power cluster, 2 entries to 29** | PII-7's entry criterion names this gap. Filled by database search rather than reference harvesting, and marked as a **different provenance** inside its own section: where the search did not return volume, issue or pagination, the fields are marked unverified rather than filled in plausibly. Two findings already sharpen P26 — end of life for these parts is a **two-fold ESR increase**, and −40 °C can **double ESR without shortening life**. |
@@ -1128,7 +1349,7 @@ it must not become the pattern. The next work is A1.
 | GOV-03 | **`docs/BASELINE.md`, generated, not typed** | `tools/make_baseline.py` reads 20 values from `analysis/results/*.json`. A hand-typed baseline is a set of numbers that can silently disagree with the scripts, which is the defect class this repo logs twice (P16, P19). `git diff --exit-code BASELINE.md` after regeneration is now a real check. |
 | GOV-04 | **The change-control rule** | What may move the baseline: error correction, a validation outcome against a pre-declared band, a defect that makes a deliverable wrong. What may not: anything motivated by *better* rather than *correct*. **The boundary is by type, not convenience**: the momentum-transfer release is the most interesting idea here and defers; P17 is tedious and does not. |
 | GOV-05 | **Seventeen ADRs at the time** | `docs/adr/`. `DECISION_LOG.md` is not superseded, its prose became the Context sections. 012-017 record decisions never written down anywhere, including the three second-order effects of the sled-mass change that were not obvious at the time. |
-| GOV-06 | **`docs/PHASE_II.md`, the gate** | Items reviewed **only at baseline boundaries**, each against an entry criterion **written when it was deferred**. Same discipline as declaring acceptance bands before a run: a criterion written afterwards is written by someone who already knows what they want the answer to be. |
+| GOV-06 | **`docs/VAULT.md`, the gate** | Items reviewed **only at baseline boundaries**, each against an entry criterion **written when it was deferred**. Same discipline as declaring acceptance bands before a run: a criterion written afterwards is written by someone who already knows what they want the answer to be. |
 | GOV-07 | **`docs/MANUFACTURING.md`, and a finding** | Three budgets were being conflated: 1.000 mm clearance, A4's 0.025 mm deflection band, and the 0.050 mm shim *setting* spec. **The build stack had never been computed.** RSS of seven contributors is 0.101 mm; with A4's deflection bias the total is 0.121 mm to **1.58 % thrust spread against the 0.65 % claimed, 2.4x.** Not a contact risk (12 % of clearance) but the paper's open-loop spread counted the shim and not the parts. **Not propagated**: the contributors are assumptions. Ranking is the deliverable: track straightness and plate flatness dominate, and tightening the shim is nearly worthless. |
 | GOV-08 | **Halbach assembly named as the largest manufacturability unknown** | 2.69 kN closing on brittle sinter, magnetisation order undecided, and absent from cost, schedule and the qualification plan. |
 | GOV-10 | **`docs/CROSS_INDUSTRY.md`, sourced, not asserted** | **E21 substantially retires by citation** (ESA Space Tribology Handbook; MoS₂; twelve cycles is trivial). **E19 characterised**: segmentation is the standard mitigation and it costs thrust, a design option this project lacked. **E11** gains external support for ADR-004. It cuts both ways: E23's cogging half retires, but its *sweep* half appears genuinely unusual, industrial stages do not chirp through their velocity range in 157 ms. **E20 was not searched and says so** rather than padding with a plausible citation. |
@@ -1136,7 +1357,7 @@ it must not become the pattern. The next work is A1.
 | GOV-12 | **Linkage prepared where it could not be pushed** | `bootstrap_repos.sh`, `seed_issues.sh` (14 issues, the roadmap and open HIGH defects, not all 42), `setup_project.sh`. **Found while testing: Issues are disabled on the repository** (API returns 410), a settings flag, now handled by the bootstrap. |
 | GOV-13 | **Validation chain positioned honestly** | Dossier §7's eight rungs added to `docs/ROADMAP.md`. The project is at **Simulation, one rung of eight**. **Repeatability has no rung, nothing has been run twice by anyone.** Manufacturability opened today but holds analysis *about* manufacturing, not manufacturing evidence. |
 | GOV-14 | **Literature review restructured** | `RELATED_WORK.md` was a leads list; it now carries five fields per source, claim, method, what VOLLEY takes, where it differs, verification status. Status is per-source, because the old blanket "none of this has been read" became untrue and a blanket statement that is wrong is worse than none. |
-| GOV-15 | `PROJECT_NOTES.md` de-staled | It claimed 32 % efficiency and listed P5/P8 as open, both wrong since the propagation. Now defers to `docs/BASELINE.md`, `docs/ROADMAP.md` and `PHASE_II.md` rather than competing with them. |
+| GOV-15 | `PROJECT_NOTES.md` de-staled | It claimed 32 % efficiency and listed P5/P8 as open, both wrong since the propagation. Now defers to `docs/BASELINE.md`, `docs/ROADMAP.md` and `VAULT.md` rather than competing with them. |
 
 **No value in `analysis/` changed.** `analysis/results/cost.json` is the only file added there,
 and every existing result field is untouched, verified, because this is governance work and a
