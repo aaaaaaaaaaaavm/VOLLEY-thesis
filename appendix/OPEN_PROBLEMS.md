@@ -5,13 +5,13 @@ fixed first. **E-items are genuinely unsolved engineering.**
 
 > ## How to read the counts
 >
-> **90 numbered entries, of which 36 are live.** Every entry carries a `Status:` line written by
+> **93 numbered entries, of which 38 are live.** Every entry carries a `Status:` line written by
 > `tools/register_status.py`, which derives the headline counts from the entries themselves.
 >
 > | Status | Count | Meaning |
 > |---|---:|---|
-> | `LIVE` | **36** (15 P, 21 E) | open engineering; something still has to be done |
-> | `CORRECTED` | **24** | found, fixed and propagated — **retained as the published record, not as debt** |
+> | `LIVE` | **38** (17 P, 21 E) | open engineering; something still has to be done |
+> | `CORRECTED` | **25** | found, fixed and propagated — **retained as the published record, not as debt** |
 > | `CLOSED` | **30** | resolved, with the closer named in the entry |
 >
 > **Four of those moves are a classifier repair, not new engineering.** `\bRESOLVED\b` matched
@@ -2569,6 +2569,118 @@ them would produce four numbers that look derived and are assumed.
 **What would close it.** Re-derive K<sub>t</sub> for each distinct magnetic geometry in the table
 with `thrust_constant(nz=9)`, the same way the as-drawn value was re-derived, and re-run. It is
 one solve per distinct geometry, four in total.
+
+### P56. The phase-spacing claim is compared against the wrong baseline: **CORRECTED 2026-08-14 by A21-R**
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+> **Corrected.** A21-R ran on 2026-08-14, six of six bands pass, and the claim has been restated
+> as orbit change in `README.md`, `SUMMARY.md`, `wiki/Home.md`, `docs/index.html`, `CONCEPT.md`,
+> `LANDSCAPE.md`, `MARKET.md`, `CASE_STUDY.md`, `REVIEW_RESPONSES.md`, `FIGURE_INDEX.md` and both
+> manuscripts, with release timing named as the free baseline for phase. **No band was edited:**
+> A21's seven stand as declared and A21-R's six were declared before `comparators.py` changed,
+> which changed by addition only. Measured: **468 s** by waiting against **1.38 days** commanded;
+> **+28.8 km** of semi-major axis against **0 m**; **×1.602** of lifetime against **×1.0000**.
+
+**Found by a literature check, 2026-08-14.** The front door, `SUMMARY.md`, `docs/CONCEPT.md`,
+`docs/LANDSCAPE.md` and the manuscript all carry a version of:
+
+> 30° of constellation phase spacing in **1.4–6.9 days**, against roughly **25 days** by
+> differential drag, and **not achievable by design** with a spring.
+
+**Differential drag is not the baseline a reviewer will use.** Satellites released at different
+times from the same host arrive at different true anomalies **in the same orbit**, at zero Δv. At
+450 km the in-track rate is **0.0641 °/s**, so:
+
+| | |
+|---|---|
+| 30° of in-track separation, by waiting | **468 s — 7.8 minutes** |
+| 30° by commanded differential velocity | 1.4 days |
+| 30° by differential drag | ~25 days |
+
+**And this project's own adopted cadence already does it.** [ADR-020](docs/adr/020-inter-shot-cadence.md)
+sets the inter-shot interval at **1200 s**, which is **76.9° of in-track separation per shot** —
+two and a half times the spacing the claim celebrates, for free, before the motor does anything.
+
+**A spring and a clock deliver 30° of phase. The claim that a spring cannot is false.**
+
+**What the two things actually do is different, and that difference is the fix.**
+
+| | Timed release | Commanded differential |
+|---|---|---|
+| Satellites end up in | **the same orbit**, different true anomaly | **different orbits**, different period |
+| Phase behaviour | **static — holds forever** | **drifts — never stops** |
+| Cost | zero | the whole machine |
+
+For a string-of-pearls constellation, **timed release is not merely cheaper, it is better**: it
+gives a spacing that holds. Commanded differential velocity passes *through* 30° at 1.4 days and
+keeps going, and a propulsion-less satellite cannot null it. **The design cannot hold a
+constellation it phases.**
+
+**What survives, and it is the stronger claim.** No amount of waiting changes an *orbit*. Raised
+apogee (450 → 507.6 km), **+60.2 % of orbital life** against a spring's +8.2 %, and placement into
+a chosen altitude shell are things only Δv buys. **The differentiator is orbit change, not phase
+change**, and the repository has been leading with the weaker of the two.
+
+**What would close it.** Restate the claim wherever it appears — front door, `SUMMARY.md`,
+`CONCEPT.md`, `LANDSCAPE.md`, `MARKET.md`, `REVIEW_RESPONSES.md` and the manuscript — as orbit
+change rather than phase spacing, with timed release named as the correct free baseline for phase.
+`analysis/comparators.py` band 3 asserts *"a spring's designed differential is zero"*, which is
+true and no longer sufficient; it needs a companion row for release timing. **The band is not
+edited** — it passed as declared. A re-declared A21-R adds the row.
+
+### P57. A voice-coil CubeSat deployer making this project's core claim has been on the reading list unread since 2026-07-30: HIGH, NEW 2026-08-14
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+[`RELATED_WORK.md`](docs/RELATED_WORK.md) already flags it: *"the nearest published neighbour to
+this design's topology that has turned up so far. It has not been read."* A search on 2026-08-14
+establishes what it claims, and it is this project's claim.
+
+**Zhao, Yue, F. Yang & Zhu (2022),** *IEEE Trans. Ind. Electron.* **69**, 13305 — a double
+magnetic-circuit voice coil actuator **for CubeSat deployers**, whose stated purpose is *to control
+precisely the separation velocity of CubeSats with different masses*, where *the separation speed
+of the CubeSat can be directly controlled by regulating the current value*. It is a **direct-drive
+linear machine with no moving magnet carrier** — the sled-free topology this project has been
+treating as an open design direction — and it is cited by **all three** Harbin papers.
+
+**Why this is a defect and not a reading task.** `docs/PROVENANCE.md` records **P22**: a literature
+check found published work on this exact concept that the paper did not cite, and two claims did
+not survive it. **This is the same failure, on the paper the project had already identified as the
+nearest neighbour and then did not retrieve for two weeks.** Any novelty claim about programmable
+separation velocity is unsupported until it is read.
+
+**What would close it.** Retrieve and read it in full; record thrust, stroke, actuator mass,
+velocity range, payload range and whether hardware was tested, in `PRIOR_ART.md` under the same
+five fields as the other five; then state explicitly what this project claims that it does not.
+IEEE Xplore is blocked from this environment, so this needs institutional access.
+
+### P58. The thesis manuscript was a stale fork of the conference manuscript: CORRECTED 2026-08-14
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+**Found while correcting P56.** [ADR-031](docs/adr/031-four-repositories-not-two-phases.md) states
+that paper and thesis carry **"the same concept … different scope … but not different designs."**
+They were different designs.
+
+`VOLLEY-thesis/source/paper.tex` and `VOLLEY-paper/paper/paper.tex` share every section heading,
+every figure path and 414 of 447 lines. **The 33 that differed were all superseded numbers** —
+K<sub>t</sub> 11.03 against 10.54, exit velocity 16.4 against 16.0, 10.5 g against 10.1, 2.85 kJ
+against 2.78, 240 mm of regen stator against 39, 76.5 kg against 84.5, efficiency 21.0 % against
+18.8 %, deployer mass per 3U satellite **6.38 kg against 7.04**, and the depth-averaging sentence
+[ADR-030](docs/adr/030-apply-the-depth-resolved-thrust-constant.md) added, which the thesis lacked
+entirely. **Not one difference was thesis-specific.**
+
+**Why it happened.** The manuscript moved into the companions under
+[ADR-028](docs/adr/028-no-latex-in-the-flagship.md) on 2026-08-13 and stopped being generated. The
+export tool that had kept the two in step no longer touches either, and nothing replaced it — so
+the baseline change reached the repository the author edited and not the one they did not. **The
+same shape as P53**: a propagation that stopped at the boundary of the tool that performed it.
+
+**Corrected.** The thesis manuscript is now byte-identical to the conference manuscript and rebuilt
+at fifteen pages with no undefined references.
+
+**What is not fixed.** Nothing checks this. Two authored manuscripts in two repositories can fork
+again the moment either is edited, and neither `check_links.py` nor `make_baseline.py` can see
+across a repository boundary. **A cross-repository manuscript check is the missing tool**, and
+until it exists this defect is one edit away from recurring.
 
 ### E30. The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism, and nothing estimates its reliability: NEW 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done
