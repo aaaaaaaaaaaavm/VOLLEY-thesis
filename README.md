@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `39a4699` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `d52b2c3` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -25,11 +25,16 @@
 
 ---
 
-# VOLLEY: thesis companion
+# VOLLEY: the thesis
 
-Final-year thesis submission material, generated from the VOLLEY flagship.
+**A final-year thesis on giving rideshare CubeSats an orbit their host was not going to — and
+the full record of what went wrong on the way there.**
 
 **[Read the manuscript](source/VOLLEY_IEEE_Conference.pdf)**
+
+The submission is here with its analyses, its acceptance tests and its defect register attached.
+The defects are deliberate: an examiner should be able to see what failed, when it was found, and
+what was done about it. Nothing in it has been built or measured.
 
 ## Layout
 
