@@ -5,7 +5,7 @@ fixed first. **E-items are genuinely unsolved engineering.**
 
 > ## How to read the counts
 >
-> **99 numbered entries, of which 40 are live.** Every entry carries a `Status:` line written by
+> **119 numbered entries, of which 51 are live.** Every entry carries a `Status:` line written by
 > `tools/register_status.py`, which derives the headline counts from the entries themselves.
 >
 > | Status | Count | Meaning |
@@ -371,8 +371,8 @@ thickness explains and is **flagged for re-verification** in `cad/parameters.jso
 > a requirement it had already abandoned twice. **E5 rises in priority accordingly**, and
 > `docs/MARKET.md` needs re-scoping against the lost port population.
 
-### P10. Enclosure, radiator, and packaged avionics absent from the mass rollup: CORRECTED 2026-08-13
-> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+### P10. Enclosure, radiator, and packaged avionics absent from the mass rollup: RESOLVED 2026-08-16 by A46
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
 > **Corrected.** An **8.0 kg placeholder with no derivation** now sits in `mass_properties.py`,
 > named `(P10 PLACEHOLDER, 8.0 kg, no derivation)` so it cannot be cited as computed. Dry mass
 > 76.5 → **84.5 kg**, per 3U satellite 6.378 → **7.042 kg**, and **kill criterion 1 goes from
@@ -383,6 +383,14 @@ radiator, and equipment bays for the supercapacitor bank, PPU, sequencer, and IM
 have line items in `analysis/mass_properties.py`**, so the 72.3 kg dry-mass rollup is
 incomplete. Add line items once masses are estimated (do not alter existing items without
 cause). Source: `cad/parameters.json` (`enclosure.mass_note`).
+
+> **Closed 2026-08-16 by [A46](validation/A46_enclosure_buildup.md).** The placeholder is gone and
+> five derived line items stand in its place, each tracing to a dimension in `cad/parameters.json`:
+> **skins 32.82, frames 8.20, radiator 2.59, bay boxes 1.87, fasteners 4.55 — 50.04 kg.** The
+> placeholder was **low by 6.3×**. Dry mass 84.5 → **126.6 kg**, per 3U satellite 7.042 →
+> **10.547 kg**, kill criterion 1 from crossed 3.5× to **crossed 5.3×**. A honeycomb sandwich
+> gives 29.98 kg for the same five lines; **adopting one is a design decision and is not taken
+> here**, so the rollup carries the monolithic 2 mm skins the parameter file specifies.
 
 ### P11. The corrections may never have reached the submitted paper: RESOLVED 2026-07-29
 > **Status:** `CLOSED` — resolved; see the entry for what closed it
@@ -474,7 +482,7 @@ from the source changelog.
 > **Status:** `LIVE` — open engineering; something still has to be done
 
 > **Corrected 2026-08-13 by supersession, not by fixing Gen3.** Gen5 is generated from
-> `cad/parameters.json` by `cad/build_gen5.py` ([ADR-026](docs/adr/026-generated-cad.md)), and
+> `cad/parameters.json` by `cad/build_gen5.py` ([ADR-026](docs/adr/026-cad-built-from-parameters.md)), and
 > `build_gen5.py --check` reads 23 dimensions back out of the generated geometry and compares
 > them to the parameter file. **It passes.** A defect of the form "the CAD disagrees with
 > `parameters.json`" cannot exist in a model that is a function of `parameters.json`.
@@ -2005,9 +2013,9 @@ project's most-viewed artifact for the whole time they were wrong.
 **Cause.** The renders were produced as illustration and were never checked against the
 requirement they illustrate. Nothing in `tools/` looks at an image, so no check could have caught
 it; `check_artifacts.py` guards numbers against their sources and has no notion of a picture
-being wrong about the thing it depicts. The render brief in `cad/FUSION_RENDER_BRIEF.md` was
-written *after* the defective set existed, which is why it now specifies the departure direction
-explicitly.
+being wrong about the thing it depicts. The render specification was written *after* the
+defective set existed, which is why the departure direction is now stated explicitly wherever
+the renders are described.
 
 **Fixed.** The seven-shot Gen4 set replaces them: `hero_open`, `espa_interface`, `track_stator`,
 `brake`, `sled_detail`, `envelope_closed`, `magazine_feed`. In every one the payload leaves along
@@ -2185,6 +2193,17 @@ Driving it toward zero is **cradle geometry, not new hardware, and not an archit
 against a named host inertia and a stated CoM tolerance, with bands declared first — and an
 interface requirement, in ADR-010's successor or an amendment to it, stating the permissible
 thrust-line-to-CoM offset, which is the number the budget exists to set. Neither exists.
+
+
+> **Answered 2026-08-16 by [A52](validation/A52_gen6_recoil.md), and the requirement now exists.**
+> The angular impulse is **117.32 N·s × the CoM offset** per shot, accumulating across twelve
+> because the magazine fires one way. **The thrust line must pass within 10.7 mm of the host centre
+> of mass** to keep a 15 N·m·s wheel unsaturated over a campaign; Gen5's equivalent was 19.5 mm.
+>
+> **This entry's complaint was that no such requirement existed. It does now** — and it is
+> demanding, because it is 10.7 mm to the centre of mass of a spent stage whose mass properties are
+> not public (**E5**). **Momentum management is not optional at Gen6:** either the alignment is
+> met, or the host dumps momentum between shots, and ADR-020's 1200 s cadence is enough time to.
 
 ### P46. K_t is a centre-plane value and overstates thrust by 4.42 %: CORRECTED 2026-08-13
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -2832,6 +2851,18 @@ this project quotes the realignment period as the robust quantity.
 **This is P58 and P61's class.** Every check here walks tracked files; the wiki is tracked, so it
 was corrected. **It is published across a repository boundary no check can see.**
 
+> **Still unpublished as of 2026-08-16, and the reason is now precise rather than vague.**
+> `tools/publish_wiki.sh` clones, diffs and dry-runs correctly from any environment — reading
+> `VOLLEY.wiki.git` works — but the push is refused: *the wiki is not in the session's authorized
+> repository set, so no credential is injected for it.* **A wiki cannot be added to that set
+> either, because GitHub does not expose wiki repositories through its API**, which is what this
+> script's own header warned. **There is no automated route; the script has to be run from an
+> ordinary clone with ordinary push credentials.**
+>
+> The live page is now **seventeen days and six corrections behind**: it still says *emocd*, still
+> reports a **×1.62** lifetime multiplier against the current ×1.60, and predates the enclosure
+> buildup entirely. The pending change is **92 insertions and 37 deletions**.
+
 **Corrected.** `tools/publish_wiki.sh` publishes the source and `--dry-run` shows the delta first;
 `wiki/README.md` states that committing `Home.md` changes nothing a reader sees until it is
 published. **The publish itself is not done** — GitHub does not expose wiki content through its
@@ -2892,8 +2923,8 @@ ceiling while gas grows linearly with chamber volume**, so 2 L to 4 L buys 1.0 m
 orifice reproduces A39's case. It does not — it reproduces the *unregulated* 200 bar case, which is
 **100 g** on this piston. The band stands as failed; what it exposed is this entry.
 
-### P64. A41's reservoir is sized on gas the bottle cannot give back: HIGH, NEW 2026-08-14
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P64. A41's reservoir is sized on gas the bottle cannot give back: HIGH, RESOLVED 2026-08-16 by A43
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
 
 **A42 band 3 missed.** [A41](validation/A41_precharged_chamber.md) sized the reservoir by dividing
 total charge by storage pressure — **6 L at 200 bar for twelve 100 bar·L charges.** That assumes
@@ -2921,6 +2952,703 @@ one, and say that it is.
 
 **And the cheap repair if the reservoir ever needs to shrink:** the fired chamber vents **43 bar of
 a 2 L volume every shot** and A41 models no recovery of it at all.
+
+> **Closed 2026-08-16 by [A43](validation/A43_reservoir_thermal.md), and the answer is the opposite
+> of the one this entry expected.** A thermal model of the reservoir between shots gives a
+> conduction-only time constant of **17 460 s against a 1200 s cadence** — the bottle does not
+> re-equilibrate, because nitrogen is transparent in the infrared and free fall removes convection.
+> **The design number is 9.55 L**, the no-relaxation case, against the 11.25 L this entry carried.
+> The sentence above reading *"the truth sits nearer the isothermal figure"* is **withdrawn**; it
+> sits at the other end. Added mass per satellite is **1.403 kg** at the conservative end and
+> **1.384 kg** at the physical one, against a 2.0 kg threshold that has not moved.
+
+### P66. Both ends of P64's bracket are unreproducible, and they are in the parameter file: MEDIUM, NEW 2026-08-16
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by [A43](validation/A43_reservoir_thermal.md) band 1**, which was declared to check that the
+new formulation reproduced A42's isothermal figure before anything else in the run was believed. It
+does not, and neither does the other end.
+
+| | A42 carried | A43 computes | |
+|---|---:|---:|---|
+| Isothermal | **7.65 L** | **8.25 L** | 7.8 % low |
+| Adiabatic | **11.25 L** | **9.55 L** | 17.8 % high |
+
+**The two errors have different causes and only one of them is arithmetic.**
+
+**The isothermal figure was never computed by a script.** `analysis/fill_window.py` contains no
+isothermal path; 7.65 L appears in A42's result table, in `cad/parameters.json` as
+`reservoir_volume_isothermal_l`, and in ADR-032, without a generator. It is the only number in the
+Gen6 store that no file produces.
+
+**The adiabatic figure is a bookkeeping error.** A42 carried *pressure* across shots and recomputed
+mass at each shot start as `p·V/(R·T₀)`. Gas that has cooled adiabatically is denser than that at
+the same pressure, so the model **discarded mass that was really there** and asked for a bigger
+bottle than the physics does.
+
+**Corrected.** `cad/parameters.json` now carries **9.55 L** as the design reservoir with the
+conduction estimate and the isothermal limit beside it, each naming A43 as its source; the Gen6 CAD
+is regenerated against it; and ADR-032 and A42's result table are annotated rather than rewritten,
+because A42's bands stand as declared and its result is the record of what that run found.
+
+**What it does not change.** The *direction* of A42's correction was right — A41's 6 L bottle is
+undersized and runs out at shot seven. Band 3 fails at 8.25 L just as it failed at 11.25.
+
+### P65. `register_status.py --check` never checked the generated result it was written to guard: MEDIUM, NEW 2026-08-16
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found on 2026-08-16 by a working-tree check, not by any tool here.** `analysis/results/register_status.json`
+still read **98 entries, 39 live** after **P64** was added on 2026-08-14. The four checks were run
+repeatedly across that window and every one of them passed.
+
+**The cause is two lines of control flow.** `--check` verified that every entry carried a `Status:`
+line and then returned — *before* the code that builds the JSON. The generated result was written
+only by a bare run, and nothing anywhere compared the committed file against a fresh one. The
+tool's own docstring said `--check` "verifies that every entry has one and that the headline counts
+match"; the second half of that sentence was never true.
+
+**Why it is worth numbering rather than quietly regenerating.** This is the same failure as
+**P63** — a generated artifact whose currency was assumed rather than demonstrated — and the same
+repair: prove it by rebuilding and comparing, never by inspecting a timestamp or trusting a
+docstring. Two guards in this repository had the defect they exist to prevent.
+
+**Corrected.** The payload is now built by one function used by both paths, `--check` rebuilds it
+and compares against the committed file, and it names the fields that differ so the failure says
+what moved. Verified by reverting the file and confirming a non-zero exit. The stale counts are
+propagated to the front page, the register header and the wiki source.
+
+### P67. Gen6's precision rests on a seal friction nobody has measured, and its rated velocity excludes it: HIGH, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A44](validation/A44_gen6_dispersion.md) bands 4 and 6 failed, and both failed on the same term.**
+
+| Term | 3σ alone | Share of variance |
+|---|---:|---:|
+| **Seal friction**, ±20 % of A41's allowance | **0.3115 m/s** | **93.4 %** |
+| Payload mass, ±0.5 % | 0.0725 m/s | 5.1 % |
+| Charge pressure, ±0.25 % FS | 0.0399 m/s | 1.5 % |
+
+**Two separate defects, and the second is the one that will be quoted wrongly.**
+
+**The precision claim.** Gen5 commanded velocity through a designed loop at **0.0274 m/s (3σ)**.
+Gen6 has no loop — the shot is a 133 ms open-loop expansion — so its spread is whatever the
+hardware's repeatability is, and **93.4 % of it is a seal friction that has never been measured,
+specified or designed.** A41 band 8 computed an *allowance* of **83.4 N**, meaning the machine
+tolerates that much; no run has ever said what the friction *is*. **A fivefold better pressure
+transducer moves the answer by 0.008 %**, so there is no instrumentation route to the claim.
+Dispersion is also worst where the setpoint is lowest — **2.290 % at 20 m/s** against 1.041 % at
+30 — which is exactly where a customer asking for a small trim would use it.
+
+**The rated velocity.** **30.535 m/s is a zero-friction number.** It is what `cad/parameters.json`
+carries as `exit_velocity_m_s` and what ADR-032 quotes. At A41's own full tolerable friction the
+same charge gives **29.009 m/s**, 5.00 % lower. Both are real — a ceiling and a floor — and
+neither should appear alone. The parameter file now carries both with its source naming this run;
+**the value is not silently changed**, because which of the two is the design point is a decision
+and not a correction.
+
+**What would close it.** A measured or supplier-bounded seal friction, with a shot-to-shot spread,
+for the actual piston seal at 50 bar in vacuum. That is a bench test on a component, not a
+calculation, and it is the second item after `docs/B1_ORDER.md` that changes the category of
+evidence rather than its degree.
+
+**What it does not touch.** Bands 1, 2, 3, 7 and 8 all pass. The architecture is not in question
+and the store is not affected.
+
+### P68. ADR-032's first falsifier fires, and the largest piece of the stage credit is a mass P10 says was never itemised: CRITICAL, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A45](validation/A45_stage_credit.md) bands 4, 5 and 6 failed.** ADR-032 records that the design
+is wrong if the 43.33 kg stage credit is optimistic by more than 30 %. **The real break-even is
+16.5 %**, and the credit does not survive being read by someone who does not want to believe it.
+
+| | Added mass per satellite |
+|---|---:|
+| Full credit, as A37 assigned it | **1.403 kg** |
+| **Removing the P10 lump alone** | **2.069 kg** — *crosses* |
+| Hostile reading of all seven items | **3.108 kg** — *crosses by 55 %* |
+
+**Two of the three findings do not depend on anyone's judgement.**
+
+**The break-even is arithmetic.** With A43's store settled at 5.38 kg, the credit may fail by
+**7.17 kg** before added mass per satellite reaches 2.0 — **16.5 %, not 30 %.** ADR-032 was not
+wrong when written; it predates A43. It is wrong now, and it is the number a reviewer checks first.
+
+**The biggest item in the credit is one this repository already calls unmodelled.** The 8.00 kg
+*enclosure, radiator and packaged avionics* line is **P10** — no line items in
+`mass_properties.py`, and the dry mass recorded as *a floor, not a total*. **Crediting it to the
+stage converts an admitted unknown into a saving.** At **18.5 % of the credit against a 16.5 %
+break-even, that one line fires the falsifier on its own**, with no hostile reading required.
+
+**What this does and does not say.** **A37's band 5 is not edited and its result stands as
+declared** — it asked whether the credit closes the criterion on the assignment A37 made, and for
+that assignment its answer is right. What fails is the assignment's robustness. **Kill criterion 1
+is now crossed on both numerators rather than one**, and the threshold has not moved.
+
+> **Re-run 2026-08-16 as [A45-R](validation/A45R_stage_credit_rerun.md), after A46 closed P10.
+> The situation is worse, not better.** Itemising the enclosure removed this entry's sharpest
+> argument — a mass never itemised cannot be credited — so every enclosure fraction was re-argued
+> upward, to 0.50–0.85 from zero. **The hostile figure still lands at 3.271 kg per satellite**, and
+> the break-even **halved again to 8.4 %** because the credit grew to 85.36 kg while the 7.17 kg
+> allowance did not. **The five enclosure lines are 58.6 % of the credit**, so the Gen6 mass case
+> now rests, majority-wise, on one assumption about somebody else's skin. ADR-032's 30 % threshold
+> is wrong by 3.6 times.
+
+**What would close it.** **~~Close P10~~** — done 2026-08-16, and it made this entry worse. That replaces the largest guess in the
+credit with a number, and it is computation rather than metal. Until then the honest figure to
+publish is the range **1.403 – 3.108 kg per satellite**, not the lower end alone.
+
+### P69. Mass parity with a canisterised dispenser is withdrawn: HIGH, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A21](validation/A21_comparators.md) band 4 failed on 2026-08-16.** The band asked for parity
+within 15 %; the ratio is **1.758**.
+
+| | |
+|---|---:|
+| Deployer mass per 3U satellite | **10.547 kg** |
+| Canisterised dispenser class, 3U-equivalent slot | ~6 kg |
+| **Ratio** | **1.758** — was 1.062 |
+
+**Nothing about the comparison changed. The rollup did.** [A46](validation/A46_enclosure_buildup.md)
+replaced P10's 8.00 kg enclosure placeholder with 50.04 kg of derived line items, and parity did
+not survive it.
+
+**The band is not widened.** It was declared before `comparators.py` existed and it stands as
+declared; what changes is that VOLLEY now fails it.
+
+**This costs the project one of its two surviving competitive arguments.** `LANDSCAPE.md` led with
+*"a magazine-fed electromagnetic launcher lands in the same mass class as a canister of springs"*,
+and it no longer does — it is **1.76× heavier per satellite**, and against a cold-gas module on the
+satellite it is about **12×**. **The argument that survives is the commanded differential**: a
+spring's designed differential between satellites is exactly zero, which is categorical rather than
+a ratio, and no mass correction touches it.
+
+**What would close it.** Either a lighter enclosure — the honeycomb sandwich A46 costed at 29.98 kg
+would give **8.87 kg per satellite**, ratio 1.48, still failing — or a smaller payload class, which
+`PAYLOAD_CLASSES.md` and **P59** already identify as the only route that moves this criterion at
+all. **No enclosure change reaches parity.**
+
+### P70. The register classifier read a status keyword out of a title: LOW, CORRECTED 2026-08-16
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+
+
+**P69 was classified `CLOSED` on the day it was opened.** Its heading reads *"Mass parity with a
+canisterised dispenser **is withdrawn**: HIGH, NEW 2026-08-16"* — and `CLOSED_RE` matches
+`WITHDRAWN` anywhere in the heading. **The claim was withdrawn. The defect was not.**
+
+**This is the third time the same mistake has been made in this one tool**, and the pattern is now
+clear enough to name: **it keys on a word appearing anywhere rather than on where status actually
+lives.**
+
+| | |
+|---|---|
+| First | `\bRESOLVED\b` matched inside *depth-resolved* |
+| Second | the classifier read back its own written `Status:` line and latched its own verdict |
+| **Third** | a status keyword used as ordinary English in a title |
+
+**Corrected.** An entry is titled `<what is wrong>: <STATUS>, <date>`, so the close scan now reads
+the **status suffix after the final colon** rather than the whole heading. One entry reclassified —
+**P69, CLOSED → LIVE** — and the live count goes 41 → 42. No other entry moved.
+
+**Found by cross-checking the register against the GitHub issue list**, not by any check here. The
+tool cannot detect a misclassification, because a wrong verdict is a well-formed one.
+
+### P71. Every generated Gen5 sled had both rollers outside their channels: MEDIUM, CORRECTED 2026-08-16
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by building the same machine a second time, in a different CAD kernel, and comparing.**
+
+`cad/build_gen5.py` placed the sled rollers with `Workplane("XZ").circle(r).extrude(rw)` and a
+`sgn*ry - rw/2` offset, as though the extrude were symmetric about the plane. **It is not —
+`Workplane("XZ")` extrudes towards −Y** — so the offset moved the roller instead of centring it.
+
+| | y extent | Its channel |
+|---|---|---|
+| **+y roller** | **54.0 → 70.0** | 70.0 → 86.0 |
+| **−y roller** | **−102.0 → −86.0** | −86.0 → −70.0 |
+
+**Neither roller was in its channel.** One sat entirely inboard, in the stator gap; the other
+entirely outboard. **The sled was asymmetric about y = 0**, which a machine symmetric by
+construction cannot be, and `roller_y_inner` / `roller_y_outer` had no effect on the result.
+
+**Corrected.** `extrude(rw/2, both=True)` translated to `sgn*ry` gives 70.0 → 86.0 and
+−86.0 → −70.0. Gen5 STEP and STL regenerated; `build_gen5.py --check` passes, as it did before —
+**the check verifies extents and station positions, and a part in the wrong place inside an
+unchanged overall envelope passes it.**
+
+**What it does not change.** No number moves. `mass_properties.py` takes the sled at **9.445 kg
+from the Gen3 solids** (P15), not from Gen5, and nothing in `analysis/` reads a Gen5 STEP. This is
+a geometry defect in a published model, not a performance correction.
+
+**What it does change** is what the published Gen5 STEP showed: a sled that could not run in its
+own track. Anyone importing it to check clearances would have found the rollers fouling the stator
+on one side and outside the longeron on the other.
+
+**Why no check here caught it.** Every guard in this repository compares a generated artifact
+against `parameters.json` or against a rebuild of itself. **Both agreed, because both descend from
+the same script.** `parameters.json` had been checked against exactly one model built from it since
+the geometry was written. A second implementation is the only thing that could have found this,
+and it found it on the first run.
+
+### P72. The published renders advertised a velocity withdrawn twice: MEDIUM, CORRECTED 2026-08-16
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found by asking why a new render looked unlike the published set.**
+
+`cad/tools/prepare_renders.py` hardcoded **"16.388 m/s"** in three places — the hero caption, the
+arrow label, and the text-width measurement that positions it. It stayed there through
+[ADR-030](docs/adr/030-apply-the-depth-resolved-thrust-constant.md), which moved exit velocity
+**16.388 → 16.029**, and through the propagation that corrected every document around it.
+
+**So the most-viewed artifact in this repository advertised a figure the repository had already
+withdrawn twice, on the front page, while every sentence beside it was right.**
+
+**No propagation could have caught it.** `tools/propagate_baseline.py` and its successors walk
+prose; this number was baked into a PNG, and **nothing in `tools/` reads an image.** It is the same
+blind spot as **P43** — a picture being wrong about the thing it depicts — and the same class as the
+GitHub About text, the published wiki and the issue tracker: **a surface that is published from
+here but not readable from here.**
+
+**Corrected.** The value is now read from `analysis/results/motor_results.json` at render time, so
+the annotation cannot diverge from the shot it describes. The set is regenerated from the
+uncropped frames in `cad/renders/source/`, which is why regenerating was possible at all.
+
+**What it does not fix.** These remain **Gen4** frames — geometry no file in `cad/step/` matches,
+with an export gate deliberately closed (**P43**). The velocity on them is now current; the
+machine in them still is not.
+
+### P73. A35's shares are percentages of a rollup that has since moved: MEDIUM, CORRECTED 2026-08-16
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found while drawing the architecture evolution on the front page, by trying to put two of A35's
+figures in one sentence and noticing they had different denominators.**
+
+[A35](validation/A35_constraint_ledger.md) attributed every kilogram of the ledger to the
+requirement causing it and published the result as **percentages of dry mass** — the pulse at
+**28.1 %**, the mover at **13.6 %**, and **49.23 kg, 58.2 %,** surviving every deletion.
+[A46](validation/A46_enclosure_buildup.md) then moved the rollup from **84.53 to 126.56 kg**.
+
+**Every one of those percentages fell without a single kilogram moving.**
+
+| Requirement | Attributed | Share of the old rollup | Share of the new |
+|---|---:|---:|---:|
+| **C3**, the energy arrives during the shot | **26.35 kg** | 28.1 % | **20.8 %** |
+| **C2**, a reusable mover carries the magnets | **11.54 kg** | 13.6 % | **9.1 %** |
+| C5, the deployer carries its own store | 6.50 kg | — | 5.1 % |
+
+**The argument is unharmed and slightly stronger.** The pulse is still the largest single driver
+and still the reason Gen6 exists; the ratio it beats the mover by went from **2.07× to 2.28×**.
+What is wrong is only the *form* the result was published in.
+
+**Corrected.** Where this is being newly written, the front page quotes **kilograms**, which are what
+A35 measured and which do not move when the denominator does.
+
+**Not rewritten where it is a record.** [ADR-032](docs/adr/032-gen6-stage-integrated-gas-store.md)
+and `docs/VAULT.md` keep the percentages they were decided against, each now annotated with the
+rollup they were computed at. A decision records the numbers it was taken on.
+
+**The general lesson, and it is not specific to A35.** *A share is two numbers pretending to be
+one.* Any figure published as a percentage of a rollup goes stale when the rollup moves, silently,
+without the analysis being re-run and without any check firing — `make_baseline.py` guards the 23
+values it knows, and a derived percentage sitting in prose is not one of them.
+
+### P74. No Fusion document is committed for any generation built in Fusion: MEDIUM, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found by building the generation archive and filling in a "source document" row six times.**
+
+Four generations were built in Fusion — Gen1, Gen2, Gen3 and Gen4 — and **not one `.f3d` is
+committed anywhere in this repository.**
+
+| | Committed | Source |
+|---|---|---|
+| Gen1 | 11 STEP | Fusion hub. **Not here** |
+| Gen2 | 9 STEP | Fusion hub. **Not here** |
+| Gen3 | 10 STEP, 2 STL | Fusion hub. **Not here** |
+| **Gen4** | **nothing at all** | Fusion hub. **Not here** |
+| Gen5 | 8 STEP, 8 STL | `cad/build_gen5.py`, **here** |
+| Gen6 | 6 STEP, 6 STL | `cad/build_gen6.py`, **here** |
+
+**STEP is a result of the model, not the model.** It carries geometry and no parameters, no
+sketches, no constraints and no feature tree, so a STEP export cannot be edited back into the
+design it came from. **For Gen1–Gen3 the repository holds the output and not the source; for Gen4
+it holds neither.**
+
+**This is a single point of failure outside version control.** `cad/parameters.json` opens with a
+warning that Fusion user parameters are document-scoped and *"will silently drift across the nine
+documents"* — and the documents that would let anyone check that are not in the repository. **If
+the Fusion hub is lost, Gen1 through Gen4 are lost with it.**
+
+**Gen5 and Gen6 do not have this problem, and that is the entire argument of
+[ADR-026](docs/adr/026-cad-built-from-parameters.md).** Their source is a script here, and their
+geometry is a function of a parameter file that is also here.
+
+**What would close it.** Export each Fusion document as `.f3d` and commit it, largest first: Gen4,
+because nothing of it exists here at all, then Gen3, because every mass in the project descends
+from its solids. **This cannot be done from inside the repository** — it is a manual export from
+Fusion, and no tool here can perform or verify it.
+
+**What it does not affect.** No number moves. This is an archival gap, not a technical error, and
+the exports that do exist have not been shown to be wrong.
+
+### P75. Gen6 improves reliability incidentally, and E30 is not answered by it: HIGH, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A47](validation/A47_gen6_fmea.md) scored Gen6 on Gen5's own model, imported unchanged.**
+
+| | Elements | Manifest-forfeiting | Required *r* | Delivered at *r* = 0.99 |
+|---|---:|---:|---:|---:|
+| Gen5 | 13 | **9** | 0.99326 | **6.620** |
+| **Gen6** | 12 | **8** | 0.99252 | **6.992** |
+| Gen6 + per-cell ejector | 8 | **3** | 0.98388 | **9.261** |
+| *a spring dispenser* | 12 | **0** | — | **11.880** |
+
+**ADR-032 deletes six of the nine and the count falls by one.** It adds the reservoir, both
+valves, the piston and seals, and the chamber — **and one Gen5 never had at all: a host stage kept
+alive past passivation, which no launch provider has agreed to and which forfeits the manifest
+exactly as a bank failure did.**
+
+**The failure modes changed discipline. The structure barely moved.**
+
+**The number that matters is the comparison, not either figure.** An entire architecture change is
+worth **+0.37 satellites**. A spring in every cell is worth **+2.27** — **six times more** — because
+deleting subsystems changes the *count* of shared elements and a per-cell mechanism changes the
+*structure*.
+
+**E30 says the architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series
+mechanism. Gen6 is still one twelve-cycle series mechanism.** The criticism stands against it
+essentially undiminished, and **this entry exists so that is written down rather than assumed
+away by an architecture change that did not address it.**
+
+**What would close it.** Design the per-cell ejector — mass, volume, its own failure rate, and
+whether it fits the cell the magazine already uses. **Zero manifest-forfeiting elements is not
+available to any architecture sharing a magazine**, so the target is the ejector's +2.27, not a
+spring's 11.880.
+
+### P76. A48 band 5 compared a charging budget against an instantaneous power: LOW, CORRECTED 2026-08-16
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**My declaration error, recorded as one.** [A48](validation/A48_trim_stage.md) band 5 required the
+trim stage's peak electrical power to stay inside **200 W**, citing A37. **A37's 200 W is a
+*charging* budget** — power drawn from the host across a sixty-second indexing window. **The trim
+stage's figure is instantaneous mechanical power during a 1.4 ms correction.** Different
+quantities; the comparison was never meaningful.
+
+**The band was also unreachable by construction, which I should have seen before declaring it.**
+At 29 m/s, power is force times velocity. 200 W needs **6.9 N**, and delivering 37.7 J at 6.9 N
+takes **5.5 m** — longer than the 2.18 m stroke. **No trim stage of any design could have passed
+it.**
+
+**Corrected.** The band stands as failed and is not edited; what is corrected is the record of
+why it was wrong. Precedent: A40 band 1, where the same class of error was logged the same way.
+
+**What survives is the real finding underneath it.** The trim stage is **pulse power** — 37.7 J at
+**28 kW** — which is requirement **C3**, *the energy arrives during the shot*, at 1/50th of Gen5's
+energy. Whether that store weighs grams or kilograms **is not answered by A48**, because pulse
+hardware scales with current rather than energy. That is the question that decides the idea and it
+needs its own bands.
+
+### P77. The trim stage is adopted with its pulse store unweighed: HIGH, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[ADR-033](docs/adr/033-gen6-trim-stage.md) falsifier 1, recorded here so it is a defect and not
+only a caveat inside a decision.**
+
+The trim stage corrects **±0.323 m/s** for **37.7 J**, delivered over **39.7 mm** in **1.4 ms** —
+which is **28 kW**. That is requirement **C3**, *the energy arrives during the shot*, the one A35
+prices at **26.35 kg** and ADR-032 deleted.
+
+**At a fiftieth of Gen5's shot energy. But pulse hardware scales with current, not energy**, and
+the current is set by the 948 N the section develops, which is Gen5's sheet current. **Nothing
+has weighed the store, the switch or the conductors.**
+
+| | |
+|---|---:|
+| Trim section, weighed | **0.340 kg** |
+| Pulse store feeding it | **unweighed** |
+| `cad/parameters.json` → `gen6_trim.pulse_store_kg` | **null**, deliberately |
+
+**Why this is a defect rather than a to-do.** [A39](validation/A39_store_trade.md) chose gas over
+a spring while assuming 50 bar held at the piston throughout — **a regulator it never named** —
+and [A40](validation/A40_blowdown_transient.md) killed that implementation at **14.16 m/s against
+a 30 m/s band**. **Adopting a store before pricing its hardware is a mistake this project has
+already made once**, and ADR-033 makes it knowingly because the claim is being made now.
+
+**What would close it.** Size the pulse chain for 37.7 J at 28 kW — store, switch, conductors —
+and weigh it. **If it exceeds the 0.340 kg section it feeds, the trim stage costs more than it
+corrects** and ADR-033 should be reversed.
+
+**And a cheaper outcome that would close it for free.** **P67** — measure the seal friction. If it
+is small, the dispersion the stage exists to correct is not there, and neither the stage nor its
+store is needed.
+
+### P78. Stroke buys velocity and gentleness together, and makes the worst defect worse: HIGH, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A49](validation/A49_design_surface.md) swept the surface A37 never asked about, and found a
+better design point — with one cost that lands squarely on the defect that already matters most.**
+
+**The win.** Holding Gen6's exit velocity and spending stroke instead of pressure:
+
+| | Gen6 today | **8 m recommended** |
+|---|---:|---:|
+| Stroke | 2.18 m | **8.00 m** |
+| Charge | 50.00 bar | **22.73 bar** |
+| **Peak acceleration** | **25.00 g** | **11.36 g** |
+| Gas per shot | 112.3 g | **51.0 g — 54.5 % less** |
+| Added mass per satellite | 1.403 kg | **1.296 kg** |
+
+**Fourteen of sixty-three surface points beat the current design on velocity, peak acceleration and
+gas simultaneously.** The best on velocity-per-g is 8 m at 25 bar: **30.97 m/s at 12.50 g on 56.2 g
+of gas.**
+
+**The cost, and A49 band 6 failed to catch it because I declared the band on backwards reasoning.**
+
+| | 1.3 m | 2.18 m | 8.0 m |
+|---|---:|---:|---:|
+| Constant-pressure ceiling realised | 91.9 % | 87.2 % | **65.9 %** |
+| **Friction share of the shot** | 9.25 % | 9.75 % | **12.90 %** |
+
+**Friction work scales linearly with stroke. Shot work saturates.** So a longer tube gives friction
+a growing share of the energy — **9.25 % to 12.90 %** — and **P67**, the seal friction that already
+owns 93.4 % of the velocity dispersion, becomes *more* load-bearing as the machine gets longer, not
+less.
+
+**Why this is one entry and not two.** The velocity, the gentleness and the gas saving are all the
+same physics as the rising friction share: a fixed charge expanding down a longer tube extracts
+more work while the pressure falls, and falling pressure is exactly when a constant friction force
+costs proportionally more. **The benefit and the cost cannot be separated, and a design point that
+takes one takes the other.**
+
+**What would close it.** **P67** — measure the seal friction. At 9.25 % it is a rounding error and
+the long stroke is free; at 12.90 % of a shot it is a design driver; and if the real friction is
+several times A41's *allowance*, the long-stroke direction inverts. **The same measurement decides
+this, ADR-033's trim stage and P77's pulse store.** One bench test governs three open decisions.
+
+### P79. The decay model is optimistic by about two against the runs that raised E28: HIGH, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A50](validation/A50_campaign_altitude.md) band 1 was declared as a calibration against E28's own
+GMAT runs, and it failed.**
+
+| | 350 km satellite lifetime |
+|---|---:|
+| E28's GMAT runs, observed | **29 and 36 days** |
+| `astro.py`, modelled | **70.6 days** |
+
+**Roughly a factor of two, at the altitude where campaign duration actually binds.**
+
+**The cause is a defect this project already carries.** `astro.py` uses a **static** atmosphere.
+**P16** records what that cost once before: a uniform density scaling preserves a lifetime *ratio*
+by construction, so the invariance claim in the paper's abstract was tested by a sweep that could
+not have falsified it. **The same property is now producing durations a real atmosphere does not
+support.**
+
+**What it affects.** Every campaign duration in A50 is an **upper bound**, and the honest reading
+of that run is *"450 km buys months"* rather than any day count. It does **not** affect A50's Δv
+figures, its monotonicity findings, or its central result that spread is nearly
+altitude-independent while life is not.
+
+**What would close it.** Re-run the decay model against a variable-density atmosphere — or against
+GMAT directly, which is what produced the numbers it disagrees with. **The GMAT runs already
+exist**: `validation/gmat/` carries the campaign that stopped early. Until then **E28 stays open**,
+and it stays open *because* a model disagreeing with its own evidence is not a closure.
+
+### P80. Gen6's charging power is a spring's, quoted for a machine that has no spring: MEDIUM, CORRECTED 2026-08-16
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**[ADR-032](docs/adr/032-gen6-stage-integrated-gas-store.md) states Gen6's charging as
+"25 to 131 W, which is solar". It is not Gen6's figure.**
+
+It is `analysis/host_integrated.py`'s **`charge_W_60s = e / 60.0`**, where *e* is **the spring
+option's** shot energy — the power needed to wind a spring across a sixty-second indexing window.
+**Gen6 has no spring. Its reservoir is filled on the ground to 200 bar and nothing in the
+architecture recompresses gas on orbit.**
+
+**[A51](validation/A51_gen6_power.md) computed the real figure from a named component list:**
+
+| | |
+|---|---:|
+| Electrical energy per shot | **311.76 J** |
+| **Average power over the 1200 s cadence** | **≈ 0.26 W** |
+| Peak instantaneous | **36.0 W** |
+| The claim it replaces | 25–131 W |
+
+**About a hundredth of what was being claimed, and the error was in the conservative direction** —
+Gen6 asks the host for far less than the record says, which is unusual enough to note.
+
+**How far it spread.** ADR-032 originally, then repeated on 2026-08-16 in
+[ADR-033](docs/adr/033-gen6-trim-stage.md), `docs/GENERATIONS.md`, `docs/LINEAGE.md` and the front
+page — **four times in one day, by me, from a source I did not check.**
+
+**Corrected.** Every live occurrence now carries A51's figures; ADR-032 keeps the number it was
+decided against with an annotation, as decision records do.
+
+**The lesson, and it is not new here.** *A number inherited from an adjacent analysis is not a
+result.* The spring option and the gas option were priced side by side in the same script, and the
+wrong column was carried forward. **No check could catch it: both figures are real outputs of a
+real run, and only their applicability differs.**
+
+### P81. The backup ejector cannot get the payload out of the tube: HIGH, NEW 2026-08-16
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A53](validation/A53_backup_ejector.md) band 7 failed by a factor of forty, and it takes the
+highest-value reliability change in the record with it.**
+
+[A47](validation/A47_gen6_fmea.md) priced a per-cell ejector at **+2.27 satellites** delivered at
+*r* = 0.99, against **+0.37** for the entire Gen5 → Gen6 architecture change — **six times more**,
+because a mechanism in every cell makes the drive satellite-forfeiting instead of
+manifest-forfeiting, which is the only move that touches **E30**.
+
+**A47 priced the effect. A53 designed the thing, and it does not fit the architecture.**
+
+| | |
+|---|---:|
+| Spring for a clean 1.5 m/s departure | **4.5 J** |
+| Pushing the payload 2.18 m along a sealed tube at A41's friction allowance | **181.8 J** |
+| **Shortfall** | **40.4×** |
+| **At ADR-034's 8.0 m stroke, 2026-08-19** | **667.2 J — a 148× shortfall** |
+
+**In Gen5 the payload sat in an open cell. In Gen6 it is inside a tube with a piston behind it**,
+and if the drive is dead something must move both the length of the stroke.
+
+> **[ADR-034](docs/adr/034-gen6-long-stroke-design-point.md) made this worse by 3.67×, 2026-08-19.**
+> The stroke is now **8.0 m** and the friction work to traverse it is **667.2 J**. The masses below
+> are the 2.18 m case and are no longer the governing ones. **A53 has not been re-run**, and at
+> 8.0 m the "clearing the tube" row cannot plausibly stay under the threshold. *The two unpriced
+> escapes — venting the tube, disengaging the piston — are now the only routes this entry has.*
+
+**Sizing the spring to actually do that costs the mass argument:**
+
+| | × 12 | Added per satellite |
+|---|---:|---:|
+| Clearance only — *cannot clear the tube* | 1.620 kg | 1.538 kg |
+| **Clearing the tube** | **8.713 kg** | **2.129 kg — crosses the 2.0 threshold** |
+
+**So the change is either ineffective or it re-crosses the one kill-criterion numerator Gen6
+currently passes.**
+
+**What survives, and the distinction matters.** Bands 1 through 6 all pass. **The failure is
+architectural, not conceptual** — the ejector works wherever the payload does not traverse a sealed
+tube. Two escapes are unpriced: **venting the tube** and **disengaging the piston**.
+
+**And P67 decides this as well.** The 181.8 J uses A41's friction *allowance*, which has never been
+measured. At a genuinely small friction the light ejector works and this entry closes. **One bench
+test now governs four open decisions** — this, A49's long-stroke design point, ADR-033's trim
+stage, and **P77**'s pulse store.
+
+### P82. The Gen6 reservoir is still sized for a charge pressure the design no longer uses: MEDIUM, NEW 2026-08-19
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[ADR-034](docs/adr/034-gen6-long-stroke-design-point.md) dropped the charge pressure from 50 bar
+to 22.73 bar and cut gas per shot by 54.55 %. The reservoir did not move.**
+
+`cad/parameters.json` still carries **9.55 L at 200 bar**, which
+[A43](validation/A43_reservoir_thermal.md) sized around a thermal argument at 50 bar refills:
+conduction through stagnant nitrogen gives a **17 460 s** time constant against a **1200 s**
+cadence, so the vessel never warms back up and the no-relaxation figure is the physically right
+one. **That argument has to be re-run at the new refill mass before the volume can move.**
+
+| | |
+|---|---:|
+| Store mass ADR-034 quotes | **≈ 4.10 kg** |
+| What it actually is | **[A49](validation/A49_design_surface.md)'s gas-ratio scaling of A43's 5.38 kg** |
+| Reservoir scaling factor applied | **45.45 %** |
+| Tube mass, which is real and grew | **0.311 → 1.140 kg** |
+
+**Why this matters more than a bookkeeping note.** The reservoir saving is the whole of ADR-034's
+mass argument — the tube itself gains 0.829 kg. **If A43 re-run at 22.73 bar does not recover the
+saving, ADR-034 buys gentleness and pays mass for it**, and the added-mass-per-satellite figures in
+`docs/generations/GEN6.md`, `docs/GENERATIONS.md` and the front page are optimistic by up to
+0.829 kg spread over twelve.
+
+**What would close it:** re-run A43 at 22.73 bar refills, with its bands re-declared before the
+script is touched, and write the sized volume into `parameters.json`. **The current 9.55 L is
+conservative rather than wrong**, which is why this is MEDIUM.
+
+### P83. The trim stage's authority was sized against a friction share that has since tripled: HIGH, NEW 2026-08-19
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[ADR-033](docs/adr/033-gen6-trim-stage.md) exists because Gen6 cannot command velocity
+open-loop.** [A44](validation/A44_gen6_dispersion.md) measured **1.113 % at 3σ** with **93.4 % of
+the variance in seal friction**, and [A48](validation/A48_trim_stage.md) sized a 39.7 mm stator
+carrying **±0.323 m/s** to cover it.
+
+**[ADR-034](docs/adr/034-gen6-long-stroke-design-point.md) tripled the term that dominates that
+variance.**
+
+| | Gen6 at ADR-033 | Gen6 at ADR-034 |
+|---|---:|---:|
+| Friction work per shot | 181.8 J | **667.2 J** |
+| **As a fraction of shot work** | **9.75 %** | **28.39 %** |
+| Trim authority | ±0.323 m/s | **unchanged, and unverified** |
+
+**Neither A44 nor A48 has been re-run.** If dispersion scales with the friction share — which is
+what A44's own variance attribution implies — the correction the stage must make grows with it,
+and **0.323 m/s may not cover ±3σ at the adopted design point.**
+
+**This is HIGH because of what it feeds.** A48's section length and mass scale with the authority
+required, and **ADR-033 falsifier 1 is that the pulse store weighs more than the 0.340 kg stage it
+feeds** — a store that has never been weighed at *any* authority. **A larger authority makes the
+project's most likely falsifier more likely.**
+
+**What would close it:** re-run A44 at ADR-034's stroke and friction, re-declare A48's bands
+against the result, and either confirm 39.7 mm or resize it. **P67 governs this too** — the whole
+chain rests on a seal coefficient measured on nothing.
+
+### P84. ADR-034 moved the parameter file and the documents, and left the analysis scripts at the old design point: HIGH, NEW 2026-08-19
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**`analysis/precharged.py` still declares `STROKE = 2.18` and `G_CAP = 25.0`.**
+[ADR-034](docs/adr/034-gen6-long-stroke-design-point.md) took the stroke to **8.0 m** and the
+charge pressure to **22.73 bar**, and propagated that into `cad/parameters.json`, the CAD, the
+renders and eleven documents. **It did not propagate into the scripts.**
+
+| Reads the stale constant | Consequence |
+|---|---|
+| `analysis/gen6_dispersion.py` — `w_net = w - friction_N * pc.STROKE` | **A44's dispersion is computed over 2.18 m.** It is the input to ADR-033's whole justification |
+| `analysis/trim_stage.py` — `STROKE = pc.STROKE` | **A48's section length and authority are sized against that dispersion** |
+| `analysis/precharged.py::store_mass` | Uses `P_MAX`, the charge pressure at the **25 g** cap — the point ADR-034 replaced |
+
+**A44 and A48 are currently answering a superseded question**, which is the same finding as
+**P83** arriving by a second route: P83 says the friction *share* tripled, and this says the
+scripts never saw it.
+
+> **Why the checks did not catch it, which is the part worth keeping.** `make_baseline.py --check`
+> compares the scripts against **their own outputs**, and `build_gen6.py --check` compares the CAD
+> against **`parameters.json`**. **Nothing in this repository compares the parameter file against
+> the analysis scripts**, so a design point can move in one and not the other and every gate stays
+> green. That is a hole in the verification, not just a stale constant.
+
+**What would close it.** `precharged.py` reads the design point from `cad/parameters.json` rather
+than declaring it — ADR-015's *derive, never paste*, which
+[`cad/tools/make_scad_params.py`](cad/tools/make_scad_params.py) already cites for the CAD side.
+A41's own declared values stay in the file under their own names so **A41 continues to reproduce**;
+the Gen6 scripts read the current point. **And a check that fails when the two disagree**, which is
+the thing that is actually missing. Scheduled with **A55** and **A56**.
+
+**This is a defect in work done three days ago, and it was found by reading rather than by any
+gate.** It is recorded here rather than quietly fixed, which is the rule the register exists to
+enforce.
 
 ### E30. The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism, and nothing estimates its reliability: NEW 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -3227,7 +3955,7 @@ with its field recomputed at the real payload station, or — if separation prov
 ADR-010 covers mechanical mounting only, and **E29 already asks for that same document for an
 unrelated reason.**
 
-### E28. Campaign mission life at a real POEM altitude is about a month, and is not modelled: NEW 2026-08-06
+### E28. Campaign mission life at a real POEM altitude is about a month, and is not modelled: MODELLED 2026-08-16 by A50, STILL OPEN
 > **Status:** `LIVE` — open engineering; something still has to be done
 
 
@@ -3261,6 +3989,26 @@ in a run sheet. The GMAT runs already contain the data for 350 and 450 km.
 > at which each becomes fatal.
 
 ## E: Unsolved engineering
+
+
+> **Modelled 2026-08-16 by [A50](validation/A50_campaign_altitude.md), and it stays open because
+> the model disagrees with the runs that raised this entry.** A50 gives **70.6 days at 350 km**
+> against the **29 and 36** these GMAT runs observed — **optimistic by roughly two**, for the
+> reason **P16** already names: `astro.py` uses a *static* atmosphere and cannot represent the
+> solar-activity variation that actually kills a satellite at that altitude.
+>
+> **What A50 does establish, as upper bounds:** satellite life is **476.6 days at 450 km** and
+> repositioning three 50 km shells costs **≈ 55 m/s**, inside every host budget A20 swept. **Days,
+> weeks and months are all purchasable from 450 km up.**
+>
+> **And it collapses this entry's central trade.** E28 framed altitude as a choice between plane
+> spread and mission life. Across 350 → 450 km the 90-day spread moves **47.1° → 44.6°, about 5 %,
+> while satellite life changes by 6.7×.** At the shell spacing this architecture uses, **spread is
+> nearly altitude-independent and life is not — so there is no trade, and the design rule is
+> simply to go higher.**
+>
+> **This entry closes when the decay model is checked against a variable atmosphere**, not before.
+
 
 ### E1. Three-dimensional field closure: 2-D HALF CLOSED 2026-07-29 by A1
 > **Status:** `CLOSED` — resolved; see the entry for what closed it

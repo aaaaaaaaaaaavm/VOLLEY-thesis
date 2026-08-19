@@ -1,5 +1,5 @@
 """
-VOLLEY | Gen6: the CAD, generated from parameters.
+VOLLEY | Gen6: the CAD, built from parameters.
 
 WHY THIS EXISTS
 ---------------
@@ -9,7 +9,7 @@ Gen5 carries forward except the part that survives every architecture: the conta
 
 Every dimension here is a run result, not a choice:
 
-    bore 15.805 mm, stroke 2180 mm     A39, sized on the 25 g payload cap
+    bore 15.805 mm, stroke 8000 mm     A49, the host stage's whole acceleration length
     chamber 2 L at 50 bar              A41, the point where velocity saturates and gas does not
     reservoir 11.25 L at 200 bar       A42, the ADIABATIC figure -- see below
     cradle preload 201.7 N             A38, at 2.4x the Gen5 offset moment
@@ -51,6 +51,7 @@ STL_DIR = os.path.join(HERE, "stl")
 P = json.load(open(os.path.join(HERE, "parameters.json")))
 D = P["groups"]["gen6_drive"]
 S = P["groups"]["gen6_store"]
+T = P["groups"]["gen6_trim"]
 MAG = P["groups"]["magazine"]
 PAY = P["groups"]["payload_3u"]
 
@@ -88,6 +89,26 @@ def drive_tube():
     bore, wall, L = D["bore_mm"], D["tube_wall_mm"], D["stroke_mm"]
     return (cq.Workplane("YZ").circle(bore / 2 + wall).circle(bore / 2)
             .extrude(L + 60.0).translate((-30.0, 0, 0)))
+
+
+
+def trim_stator():
+    """ADR-033. A short stator at the muzzle end that corrects rather than throws.
+
+    It is energised only after the gas has finished, and its length is set by the +-3 sigma
+    authority A44 measured -- not by a force target. The magnet set it acts on rides the
+    carriage, which is why P34 and E35 come back with it.
+
+    The pulse store that feeds this is NOT modelled and NOT weighed: 37.7 J at 28 kW is
+    requirement C3 at a fiftieth of Gen5's energy, and ADR-033 falsifier 1 is that it weighs
+    more than the 0.340 kg section it serves.
+    """
+    bore, wall = D["bore_mm"], D["tube_wall_mm"]
+    L, x0 = T["section_length_mm"], T["section_start_mm"]
+    belt_t = 6.0                      # radial depth of the winding, over the tube wall
+    return (cq.Workplane("YZ")
+            .circle(bore / 2 + wall + belt_t).circle(bore / 2 + wall)
+            .extrude(L).translate((x0, 0, 0)))
 
 
 def carriage():
@@ -150,9 +171,10 @@ def magazine_cassette():
             .faces(">Z").shell(-4.0))
 
 
-PARTS = [("Drive_Tube", drive_tube, True), ("Carriage", carriage, True),
+PARTS = [("Drive_Tube", drive_tube, True), ("Trim_Stator", trim_stator, True),
+         ("Carriage", carriage, True),
          ("Chamber", chamber, True), ("Reservoir", reservoir, True),
-         ("Stage_Rail", stage_rail, False), ("Magazine_Cassette", magazine_cassette, False)]
+         ("Stage_Rail", stage_rail, True), ("Magazine_Cassette", magazine_cassette, True)]
 
 
 def check():
@@ -160,6 +182,8 @@ def check():
     fails = []
     v_ch = math.pi * 60.0 ** 2 * (S["chamber_volume_l"] * 1e6 / (math.pi * 60.0 ** 2)) / 1e6
     v_res = math.pi * 90.0 ** 2 * (S["reservoir_volume_l"] * 1e6 / (math.pi * 90.0 ** 2)) / 1e6
+    v_trim = math.pi * ((D["bore_mm"] / 2 + D["tube_wall_mm"] + 6.0) ** 2
+                        - (D["bore_mm"] / 2 + D["tube_wall_mm"]) ** 2) * T["section_length_mm"]
     checks = [
         ("chamber volume", v_ch, S["chamber_volume_l"], 1e-6),
         ("reservoir volume", v_res, S["reservoir_volume_l"], 1e-6),
@@ -169,8 +193,12 @@ def check():
          D["commanded_force_N"], 1.0),
         ("acceleration from force", D["commanded_force_N"] / 4.0 / 9.81,
          D["acceleration_g"], 0.05),
-        ("velocity from force and stroke",
-         math.sqrt(2 * D["commanded_force_N"] / 4.0 * D["stroke_mm"] / 1e3), 32.7, 0.6),
+        # The constant-pressure bound, sqrt(2*p0*A*L/m), was written here as a bare 32.7 --
+        # correct at 2.18 m and 50 bar, and silently wrong at any other design point. It is a
+        # derived quantity, so it now reads the parameter it is derived from. ADR-034.
+        ("constant-pressure velocity bound",
+         math.sqrt(2 * D["commanded_force_N"] / 4.0 * D["stroke_mm"] / 1e3),
+         D["exit_velocity_m_s_constant_pressure_bound"], 0.6),
     ]
     for name, got, want, tol in checks:
         ok = abs(got - want) <= tol

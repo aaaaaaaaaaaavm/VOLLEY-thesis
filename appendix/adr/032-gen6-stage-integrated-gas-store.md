@@ -4,6 +4,13 @@
 [ADR-029](029-phase-one-closes-on-gen5.md) and [`../GEN6_ARCHITECTURE.md`](../GEN6_ARCHITECTURE.md) ·
 **Rests on:** A35, A36, A37, A38, A39
 
+> ## Design point moved 2026-08-19 by [ADR-034](034-gen6-long-stroke-design-point.md)
+>
+> **The architecture below is unchanged. Its numbers are not.** The stroke went from 2.18 m to
+> **8.0 m** and the charge pressure from 50 bar to **22.73 bar**, holding exit velocity while peak
+> acceleration and gas per shot each fell **54.5 %**. Read every stroke, pressure, acceleration and
+> store figure in this file as the point ADR-032 adopted, not the current one.
+
 ## Context
 
 **Gen6 has meant something different since 2026-08-13.** ADR-029 set the target as *a linear
@@ -15,7 +22,7 @@ different question and the answers compounded:
 
 | | | |
 |---|---|---|
-| **A35** | Every kilogram attributed to the requirement causing it | **49.23 kg — 58.2 % — survives every requirement deletion in all 64 corners.** The pulse is the largest single driver at 28.1 %, the mover second at 13.6 %, and an unmodified satellite costs **nothing** |
+| **A35** *(shares below are of the 84.53 kg rollup this decision was taken against; A46 moved it to 126.56 kg on 2026-08-16 and every share fell without a kilogram moving — the attributed masses are 26.35 kg for the pulse and 11.54 for the mover. **P73**)* | Every kilogram attributed to the requirement causing it | **49.23 kg — 58.2 % — survives every requirement deletion in all 64 corners.** The pulse is the largest single driver at 28.1 %, the mover second at 13.6 %, and an unmodified satellite costs **nothing** |
 | **A36** | Magazine density, the divisor A35 named | **Band 4 FAIL.** 2 kg is reached at N = 116, which does not package. The containment floor is **0.954 kg/satellite** |
 | **A37** | The stage as the deployer rather than its mounting surface | **29.75 kg deleted, 43.33 kg becomes stage structure, 11.45 kg added.** Added mass per satellite **1.608 kg** on a small kick-stage class |
 | **A38** | Does A34's cradle closure survive 2.4× the moment? | **It improves.** Settling 27.88 → 17.69 ms, residual still zero, and tip-off's ceiling is **30.9 g** against a 25 g cap |
@@ -104,7 +111,7 @@ launch multiplies the interface problem rather than solving it, and keeping a st
 manoeuvring past passivation is a regulatory conversation this project has not had.
 
 **And the honest reading of the propellant.** The residuals a stage carries are its disposal burn.
-**Gen6 does not spend them** — A39's charge budget is 25–131 W, which is solar — and the
+**Gen6 does not spend them** — A39's charge budget is 25–131 W *(**corrected 2026-08-16**: that figure is A37's `charge_W_60s` for the **spring** option, not this architecture's. [A51](../../validation/A51_gen6_power.md) measures Gen6 at **0.26 W average, 36 W peak**. The decision stands; the number was never Gen6's — **P80**)*, which is solar — and the
 altitude-shell repositioning in [ADR-024](024-last-mile-delivery-conops.md) is therefore an option
 a host may decline without Gen6 failing.
 
@@ -118,7 +125,7 @@ will not.
 **Kill criterion 4 is not declared passed.** A38 establishes that raising the acceleration does not
 make tip-off worse. It remains *modelled, not demonstrated*, on a mechanism that does not exist.
 
-**Nothing here is measured.** Thirty-nine analyses, ninety-six register entries, and no hardware.
+**Nothing here is measured.** Forty-six analyses, one hundred and sixteen register entries, and no hardware.
 `docs/PROVENANCE.md` says so and continues to.
 
 ## Alternatives, and why not
@@ -141,8 +148,18 @@ the moat, and BOLLEY is the evidence for that rather than the alternative to it.
 
 **This decision is wrong if any of these turns out true:**
 
-1. **The 43.33 kg stage credit is optimistic by more than 30 %.** Then added mass per satellite
-   exceeds 2.0 kg and A37 band 5 fails retrospectively.
+1. ~~**The 43.33 kg stage credit is optimistic by more than 30 %.**~~ **This falsifier has fired,
+   2026-08-16, and its threshold was wrong.** [A45](../../validation/A45_stage_credit.md) put the
+   real break-even at **16.5 %** — the 30 % figure predates A43 settling the store at 5.38 kg.
+   **The credit's largest single item, 8.00 kg of enclosure, radiator and packaged avionics, is
+   P10 — a mass this repository records as never itemised — and at 18.5 % of the credit it fires
+   the falsifier on its own.** A hostile reading of all seven items gives **3.108 kg per
+   satellite** against 1.403 at the full credit. **A37 band 5 fails retrospectively and is not
+   edited; kill criterion 1 is crossed on both numerators.** The honest figure to publish is the
+   range, not its lower end. **P68.**
+   **Re-run as A45-R after A46 itemised the enclosure: the break-even halved again to 8.4 %**,
+   because the credit grew to **85.36 kg — 67.4 % of the machine** — while the 7.17 kg allowance
+   did not. **The enclosure alone is 58.6 % of the credit.**
 2. ~~**The blowdown transient needs a regulator that weighs more than the store it feeds.**~~
    **Retired 2026-08-14 by A41.** There is no regulator: a pre-charged chamber removes the
    flow-rate problem by construction. The store is **4.66 kg**, not the 2.98 A39 estimated, and it
@@ -151,6 +168,12 @@ the moat, and BOLLEY is the evidence for that rather than the alternative to it.
    1 mm orifice, against a 10 s window. Not the constraint.** What A42 found instead is that
    A41's reservoir is sized on gas the bottle cannot give back — **P64**, a store correction of
    about 1.3 kg that leaves added mass per satellite at 1.34–1.46 kg.
+   **Amended 2026-08-16 by [A43](../../validation/A43_reservoir_thermal.md), which closed P64 and
+   moved it the other way.** Conduction through stagnant nitrogen gives a **17 460 s** time
+   constant against a **1200 s** cadence, so the bottle does not re-equilibrate: infrared passes
+   straight through a homonuclear diatomic and free fall removes convection. **The design
+   reservoir is 9.55 L and added mass per satellite is 1.403 kg.** Both of A42's bracket
+   endpoints proved unreproducible — **P66**.
 3. **No launch provider will keep a stage alive past passivation** on terms that do not require
    spending its disposal propellant.
 4. **The unread voice-coil deployer (P57)** already claims the programmable-velocity result on a
