@@ -79,10 +79,15 @@ analyses in the main repository replaced the design target: **Gen6 is the payloa
 directly, by cold gas, along a rail a spent upper stage provides** (ADR-032). No mover, no
 pulse-power chain, no brake, no return stroke.
 
-**Nothing in Gen6 is measured**, its fluid system is unsized, its cradle mechanism does not exist,
-and no launch provider has agreed to lend a stage — which is exactly why the manuscript still
-carries Gen5. A paper reports what has been analysed to a declared standard, not what looks best
-this week.
+**Nothing in Gen6 is measured.** Its cradle mechanism does not exist, no launch provider has agreed
+to lend a stage, and the seal that owns **98.7 %** of its dispersion has never been on a bench —
+which is exactly why the manuscript still carries Gen5. A paper reports what has been analysed to a
+declared standard, not what looks best this week.
+
+*Its fluid system is no longer unsized: A56 sized the store at 3.4573 L and 3.1216 kg, ADR-035 chose
+the tube material, and A61 specified the seal at 17.8 N. **ADR-036 then suspended the trim stage
+rather than building it**, because a seal meeting its own thermal requirement makes the stage
+unnecessary — and that decision, like the rest of Gen6, rests on a friction nobody has measured.*
 
 **The main repository carries both**, and the failures at the same standard as the results.
 
