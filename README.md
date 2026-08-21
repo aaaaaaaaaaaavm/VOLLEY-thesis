@@ -27,6 +27,18 @@
 
 # VOLLEY: the thesis
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aaaaaaaaaaaavm/VOLLEY/main/cad/renders/gen5/hero_open.png" alt="VOLLEY Gen5, enclosure removed" width="100%">
+</p>
+
+<p align="center">
+  <img src="source/figures/A35_ledger.png" alt="Constraint ledger and the 64-corner floor" width="49%">
+  <img src="source/figures/A29_wake.png" alt="OpenFOAM mid-plane pressure and speed" width="49%">
+</p>
+
+<p align="center"><sub><b>Left:</b> every kilogram attributed to the requirement causing it, then every requirement deleted in all <b>64 corners</b> &mdash; <b>88.67 kg survives all of them</b>, which is why kill criterion 1 is not reachable by architecture. <b>Right:</b> the converged external-aerodynamics solution, with its viscous term <b>bounded rather than solved</b> and said so.</sub></p>
+
+
 **A final-year thesis on giving rideshare CubeSats an orbit their host was not going to — and
 the full record of what went wrong on the way there.**
 
