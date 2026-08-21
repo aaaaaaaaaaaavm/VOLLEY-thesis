@@ -18,7 +18,7 @@
 | Repository | Role | You are here |
 |---|---|---|
 | [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) | Main: the authoritative engineering record. Improved continuously |  |
-| [VOLLEY-paper](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) | The concept at its most reliable, as a conference contribution. **Frozen when published** |  |
+| [VOLLEY-paper](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) | The concept at its most reliable, as an IEEE-formatted manuscript. **Frozen when published** |  |
 | **[VOLLEY-thesis](https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis)** | The same concept as a full submission. **Frozen when presented** | ← |
 | [VOLLEY-lab](https://github.com/aaaaaaaaaaaavm/VOLLEY-lab) | The vault: ideas that never became a complete thing, and why each stopped |  |
 <!-- PROGRAMME-HEADER-END -->
@@ -74,7 +74,8 @@ enters it has to be stable, effective and reliable against the problem statement
 ## The manuscript describes Gen5, and the design target has moved
 
 **This is deliberate and worth stating plainly.** Everything reproduced here is **Gen5** — the
-measured baseline, and the record of what a self-contained deployer costs. On 2026-08-14 five
+analysed baseline -- a frozen computational one, with no hardware behind it -- and the record of
+what a self-contained deployer costs. On 2026-08-14 five
 analyses in the main repository replaced the design target: **Gen6 is the payload accelerated
 directly, by cold gas, along a rail a spent upper stage provides** (ADR-032). No mover, no
 pulse-power chain, no brake, no return stroke.
