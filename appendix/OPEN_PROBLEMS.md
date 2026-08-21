@@ -5,14 +5,14 @@ fixed first. **E-items are genuinely unsolved engineering.**
 
 > ## How to read the counts
 >
-> **119 numbered entries, of which 51 are live.** Every entry carries a `Status:` line written by
+> **127 numbered entries, of which 53 are live.** Every entry carries a `Status:` line written by
 > `tools/register_status.py`, which derives the headline counts from the entries themselves.
 >
 > | Status | Count | Meaning |
 > |---|---:|---|
-> | `LIVE` | **40** (19 P, 21 E) | open engineering; something still has to be done |
-> | `CORRECTED` | **29** | found, fixed and propagated — **retained as the published record, not as debt** |
-> | `CLOSED` | **30** | resolved, with the closer named in the entry |
+> | `LIVE` | **53** (32 P, 21 E) | open engineering; something still has to be done |
+> | `CORRECTED` | **41** | found, fixed and propagated — **retained as the published record, not as debt** |
+> | `CLOSED` | **35** | resolved, with the closer named in the entry |
 >
 > **Four of those moves are a classifier repair, not new engineering.** `\bRESOLVED\b` matched
 > inside *depth-resolved*, and the tool read its own `Status:` line back in on the next run, so a
@@ -2711,7 +2711,7 @@ Two runs have now closed two of the three routes to this criterion by measuremen
 
 | Route | |
 |---|---|
-| **Architecture** | **Closed by [A35](validation/A35_constraint_ledger.md).** 49.23 kg — 58.2 % of dry mass — survives every deletion of every requirement in all 64 corners. The deletable fraction caps at 41.8 % |
+| **Architecture** | **Closed by [A35](validation/A35_constraint_ledger.md).** **88.67 kg — 70.06 %** of dry mass survives every deletion of every requirement in all 64 corners; the deletable fraction caps at **29.90 %**. *A35's run sheet still reads 49.23 / 58.2 / 41.8 at the pre-A46 dry mass — [P95](#p95-a35s-headline-survives-everything-figure-is-pre-a46-and-correcting-it-reverses-a35s-own-escape-route-critical-new-2026-08-20)* |
 | **Manifest size** | **Closed by [A36](validation/A36_magazine_density.md) band 4.** The N → ∞ limit is a healthy 0.954 kg/satellite, but 2.0 kg is first reached at **N = 116**, and no factorisation of 116 packages inside the 1500 mm track length. The largest manifest that fits is **N = 126**, at **1.941 kg/satellite** on a **244.6 kg** machine running a **42-hour** campaign |
 | **Smaller payloads** | **Open.** `docs/PAYLOAD_CLASSES.md` already puts PocketQube at 0.266 kg/satellite |
 
@@ -3057,6 +3057,20 @@ evidence rather than its degree.
 **What it does not touch.** Bands 1, 2, 3, 7 and 8 all pass. The architecture is not in question
 and the store is not affected.
 
+> ### This entry now decides an architecture, 2026-08-20 — [ADR-036](docs/adr/036-seal-specification-and-the-trim-stage.md)
+>
+> **It has a threshold to be measured against, in the unit seal data is quoted in.**
+>
+> | Measured friction | Consequence |
+> |---|---|
+> | **≤ 17.8 N** (4.00 %) | **P88** closes, and the trim stage is unnecessary. ADR-033 is amended out |
+> | **17.8 – 22.3 N** | The stage is still unnecessary, but the seal does not survive its own heat — **P88 stays open** |
+> | **> 22.3 N** (5.00 %) | **The trim stage is needed.** ADR-036 falsifier 1 fires, ADR-033 stands, and **P92** becomes the next run |
+>
+> **Every published Gen6 dispersion figure descends from A41's 83.4 N ceiling, which is 4.68× the
+> specification.** *This is no longer one measurement among several. It is the measurement that
+> chooses between two architectures*, and ADR-036 suspended a subsystem rather than guess which.
+
 ### P68. ADR-032's first falsifier fires, and the largest piece of the stage credit is a mass P10 says was never itemised: CRITICAL, NEW 2026-08-16
 > **Status:** `LIVE` — open engineering; something still has to be done
 
@@ -3082,6 +3096,33 @@ wrong when written; it predates A43. It is wrong now, and it is the number a rev
 `mass_properties.py`, and the dry mass recorded as *a floor, not a total*. **Crediting it to the
 stage converts an admitted unknown into a saving.** At **18.5 % of the credit against a 16.5 %
 break-even, that one line fires the falsifier on its own**, with no hostile reading required.
+
+> ### Re-run at A56's store, 2026-08-20 — [A45-R2](validation/A45R2_stage_credit_resized_store.md). **Still CRITICAL.**
+>
+> **Every number above descends from A43's 5.38 kg store.** [A56](validation/A56_reservoir_resized.md)
+> sized the store at ADR-034's charge pressure rather than scaling it and got **3.1216 kg — 42 %
+> lighter** — and nothing that depends on it had been re-run.
+>
+> | Store | Source | kg/satellite | Hostile | Break-even |
+> |---:|---|---:|---:|---:|
+> | 5.3800 | A43, from a 9.55 L reservoir | 1.4027 | 3.2709 | **8.4 %** |
+> | 4.1000 | ADR-034, gas-ratio scaled | 1.2961 | 3.1642 | 9.9 % |
+> | **3.1216** | **A56, sized** | **1.2145** | **3.0827** | **11.0 %** |
+>
+> **A45-R found that the allowance never moves and only the credit does. This is the exception** —
+> and it is the only lever the design has. **Sizing the store bought 2.6 points of break-even.**
+> *ADR-032 declared 30 %.* **The falsifier fires by less and it still fires.**
+>
+> **A 42 % lighter store moved the hostile reading by 5.7 %.** *The store is not what is wrong with
+> the mass case.* The enclosure is still **58.6 %** of the credit, crediting it alone still gives
+> **5.384 kg per satellite**, and the largest single loss is still the skins at 4.92 kg.
+>
+> **Two figures in this entry are superseded**: **1.403 → 1.2145** and **3.108 → 3.0827**. **And the
+> 16.5 % quoted below is against the 43.33 kg credit [A46](validation/A46_enclosure_buildup.md)
+> replaced** — on A45-R's 85.36 kg credit the same allowance reads 8.4 %, and at A56's store 11.0 %.
+> *A break-even percentage means nothing without the credit it is a fraction of.*
+>
+> **This entry does not close.** *A CRITICAL entry improving is not a CRITICAL entry resolved.*
 
 **What this does and does not say.** **A37's band 5 is not edited and its result stands as
 declared** — it asked whether the credit closes the criterion on the assignment A37 made, and for
@@ -3233,7 +3274,7 @@ figures in one sentence and noticing they had different denominators.**
 
 [A35](validation/A35_constraint_ledger.md) attributed every kilogram of the ledger to the
 requirement causing it and published the result as **percentages of dry mass** — the pulse at
-**28.1 %**, the mover at **13.6 %**, and **49.23 kg, 58.2 %,** surviving every deletion.
+**28.1 %**, the mover at **13.6 %**, and **88.67 kg, 70.06 %,** surviving every deletion (**P95**; A35 published 49.23 kg at the pre-A46 dry mass).
 [A46](validation/A46_enclosure_buildup.md) then moved the rollup from **84.53 to 126.56 kg**.
 
 **Every one of those percentages fell without a single kilogram moving.**
@@ -3359,8 +3400,8 @@ energy. Whether that store weighs grams or kilograms **is not answered by A48**,
 hardware scales with current rather than energy. That is the question that decides the idea and it
 needs its own bands.
 
-### P77. The trim stage is adopted with its pulse store unweighed: HIGH, NEW 2026-08-16
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P77. The trim stage is adopted with its pulse store unweighed: HIGH, CORRECTED 2026-08-19
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 
 
 **[ADR-033](docs/adr/033-gen6-trim-stage.md) falsifier 1, recorded here so it is a defect and not
@@ -3386,13 +3427,27 @@ and [A40](validation/A40_blowdown_transient.md) killed that implementation at **
 a 30 m/s band**. **Adopting a store before pricing its hardware is a mistake this project has
 already made once**, and ADR-033 makes it knowingly because the claim is being made now.
 
-**What would close it.** Size the pulse chain for 37.7 J at 28 kW — store, switch, conductors —
-and weigh it. **If it exceeds the 0.340 kg section it feeds, the trim stage costs more than it
-corrects** and ADR-033 should be reversed.
+**What closed it.** [A54](validation/A54_pulse_chain.md) sized the pulse chain on 2026-08-19 and
+**it exceeds the section it feeds by 19 to 30 times.**
 
-**And a cheaper outcome that would close it for free.** **P67** — measure the seal friction. If it
-is small, the dispersion the stage exists to correct is not there, and neither the stage nor its
-store is needed.
+> **Corrected.** Priced as an EDLC bank from A10's ESR × C bracket, sized so its ESR takes at most
+> 10 % of the delivered energy: **23.44 to 37.36 kg against the 1.2328 kg section**, holding
+> **723× to 1152×** the energy the correction needs. **The store is power-limited, not
+> energy-limited**, exactly as this entry alleged.
+>
+> **The requirement A55 resized it to is 136.59 J at 28 606 W — 93.3 % of the peak power and
+> 93.3 % of the peak current of the whole chain ADR-032 deleted.** The energy fell twenty times
+> and the current fell seven percent.
+>
+> **No sheet current rescues it**: the section/store trade bottoms out at **10.755 kg**, 5.4× the
+> band. **Every figure is a lower bound** — the switch and the conductors are still unpriced.
+
+**This entry closes and [P86](OPEN_PROBLEMS.md) opens in its place**, because what remains is not
+"weigh the store" but "decide what to do now that it is weighed" — and that is the owner's, between
+finding a **23.2 kW/kg** store, shortening the stroke, or withdrawing the stage.
+
+**And the cheaper outcome still stands.** **P67** — measure the seal friction. If it is small, the
+dispersion the stage exists to correct is not there, and neither the stage nor its store is needed.
 
 ### P78. Stroke buys velocity and gentleness together, and makes the worst defect worse: HIGH, NEW 2026-08-16
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -3544,6 +3599,30 @@ and if the drive is dead something must move both the length of the stroke.
 **So the change is either ineffective or it re-crosses the one kill-criterion numerator Gen6
 currently passes.**
 
+> ### The energy verdict is withdrawn, 2026-08-20 — [A65](validation/A65_pyrotechnic_ejector.md)
+>
+> **A53 closed this as architectural. It was a store choice.** *The same mistake A54 made about the
+> pulse store, and [A64](validation/A64_pulse_store_technology.md) corrected the same way — by
+> changing technology class rather than design.*
+>
+> **A solid-propellant gas generator of the automotive restraint class delivers 2331.6 J** at the
+> smallest charge in the published range, **after** being cooled to the tube's own 473 K material
+> ceiling. **Against 667.2 J needed: 3.49×, where the spring was short by 148×.**
+>
+> **And the mass argument inverts.** A53's tube-clearing spring re-crossed the kill criterion at
+> **2.129 kg per satellite**. The pyrotechnic version is **1.6496 kg** — *under it, with 0.35 kg to
+> spare* — and A47's re-run still returns **9.261 satellites**.
+>
+> **What remains open is 185 g, not an architecture.** A65 band 4 missed A53's inherited 0.25 kg
+> per-cell threshold at **0.4350 kg**, and **46.6 % of that is a minimum-gauge steel plenum**, not
+> the pyrotechnic parts. **That miss is [P91](#p91-a65-band-4-misses-a53s-per-cell-mass-threshold-and-the-mass-is-in-the-pressure-vessel-medium-new-2026-08-20).**
+>
+> **Unpriced and named, not counted as a pass:** range safety, ordnance handling, shelf life,
+> hazard classification for twelve initiators in one magazine, and the fact that **a fired
+> generator cannot be proof-tested before flight where a spring could have been.**
+>
+> **This entry remains open** on P91's mass and on every unpriced cost above.
+
 **What survives, and the distinction matters.** Bands 1 through 6 all pass. **The failure is
 architectural, not conceptual** — the ejector works wherever the payload does not traverse a sealed
 tube. Two escapes are unpriced: **venting the tube** and **disengaging the piston**.
@@ -3553,8 +3632,8 @@ measured. At a genuinely small friction the light ejector works and this entry c
 test now governs four open decisions** — this, A49's long-stroke design point, ADR-033's trim
 stage, and **P77**'s pulse store.
 
-### P82. The Gen6 reservoir is still sized for a charge pressure the design no longer uses: MEDIUM, NEW 2026-08-19
-> **Status:** `LIVE` — open engineering; something still has to be done
+### P82. The Gen6 reservoir is still sized for a charge pressure the design no longer uses: MEDIUM, CORRECTED 2026-08-19
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 
 
 **[ADR-034](docs/adr/034-gen6-long-stroke-design-point.md) dropped the charge pressure from 50 bar
@@ -3579,12 +3658,32 @@ saving, ADR-034 buys gentleness and pays mass for it**, and the added-mass-per-s
 `docs/generations/GEN6.md`, `docs/GENERATIONS.md` and the front page are optimistic by up to
 0.829 kg spread over twelve.
 
-**What would close it:** re-run A43 at 22.73 bar refills, with its bands re-declared before the
-script is touched, and write the sized volume into `parameters.json`. **The current 9.55 L is
-conservative rather than wrong**, which is why this is MEDIUM.
+**What closed it:** [A56](validation/A56_reservoir_resized.md) re-ran A43 at 22.73 bar with its
+bands declared first, and wrote the sized volume into `parameters.json`.
 
-### P83. The trim stage's authority was sized against a friction share that has since tripled: HIGH, NEW 2026-08-19
-> **Status:** `LIVE` — open engineering; something still has to be done
+> **Corrected.** **3.460 L, and a store of 3.1216 kg.** Band 1 reproduced A43's 9.550 L and its
+> 17 460 s time constant exactly, so the two are the same model at two pressures.
+>
+> **The reservoir falls further than the gas does** — 63.8 % against 54.55 % — because a lower
+> target pressure lets the bottle be drawn further down before it can no longer fill the chamber.
+> **A favourable nonlinearity nobody had claimed.**
+>
+> **So ADR-034's ≈ 4.10 kg was pessimistic, not optimistic.** A sized store comes in **24 % below**
+> the scaled estimate, and **falsifier 2 does not fire.** *This entry alleged the mass argument
+> might not be there; it is there, with 0.98 kg to spare.*
+>
+> **And A43's central finding survives the resizing.** Conduction gives **8873 s against the 1200 s
+> cadence — 7.39×** where it was 14.55×. A smaller bottle relaxes faster and the margin halves,
+> **but the no-relaxation figure remains the physically right end** and is not pressure-dependent
+> above 20 bar.
+>
+> **One new boundary.** Minimum reservoir temperature falls 201.9 → **161.3 K** against A43's
+> declared 150 K floor, and at 15 bar it fails at 143.7 K. **The floor sits between 15 and 20 bar**,
+> which constrains how far a future design point can lower the charge pressure — relevant to
+> **P86**.
+
+### P83. The trim stage's authority was sized against a friction share that has since tripled: HIGH, CORRECTED 2026-08-19
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 
 
 **[ADR-033](docs/adr/033-gen6-trim-stage.md) exists because Gen6 cannot command velocity
@@ -3610,12 +3709,36 @@ required, and **ADR-033 falsifier 1 is that the pulse store weighs more than the
 feeds** — a store that has never been weighed at *any* authority. **A larger authority makes the
 project's most likely falsifier more likely.**
 
-**What would close it:** re-run A44 at ADR-034's stroke and friction, re-declare A48's bands
-against the result, and either confirm 39.7 mm or resize it. **P67 governs this too** — the whole
-chain rests on a seal coefficient measured on nothing.
+**What closed it:** [A55](validation/A55_trim_authority.md) re-ran A44 at ADR-034's stroke and
+friction, re-declared A48's bands against the result, and **resized the section rather than
+confirming it.** **P67 governs the result** — the whole chain still rests on a seal coefficient
+measured on nothing.
 
-### P84. ADR-034 moved the parameter file and the documents, and left the analysis scripts at the old design point: HIGH, NEW 2026-08-19
-> **Status:** `LIVE` — open engineering; something still has to be done
+> **Corrected.** [A55](validation/A55_trim_authority.md) ran on 2026-08-19 and **the allegation
+> holds, by more than this entry estimated.**
+>
+> | | A48 as built | A55, resized |
+> |---|---:|---:|
+> | 3σ dispersion | 1.113 % | **3.980 %** |
+> | Authority | 0.323 m/s | **1.1543 m/s — 3.57× short** |
+> | Section | 39.7 mm | **144.01 mm** |
+> | Mass | 0.340 kg | **1.2328 kg** |
+>
+> **The section is resized in `cad/parameters.json` and ADR-033 is amended rather than reversed.**
+> Added mass per satellite goes to **1.3987 kg** against an unmoved 2.0 kg threshold, so no
+> kill-criterion numerator moves and ADR-034 stands.
+>
+> **And the falsifier this entry expected to aggravate does not move.** ADR-033's own argument is
+> that pulse hardware scales with *current*, not energy — and **peak power goes 27 820 → 28 606 W,
+> 2.8 %**, because the force per metre is fixed. The section gets longer, not harder to drive.
+> **P77 is not made worse.**
+>
+> **What replaces this entry is band 9's sweep**: the section crosses a kilogram somewhere between
+> a **20 % and a 28 %** friction share, so **P67's bench measurement now sets a section length as
+> well as a dispersion.**
+
+### P84. ADR-034 moved the parameter file and the documents, and left the analysis scripts at the old design point: HIGH, CORRECTED 2026-08-19
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
 
 
 **`analysis/precharged.py` still declares `STROKE = 2.18` and `G_CAP = 25.0`.**
@@ -3639,16 +3762,863 @@ scripts never saw it.
 > the analysis scripts**, so a design point can move in one and not the other and every gate stays
 > green. That is a hole in the verification, not just a stale constant.
 
-**What would close it.** `precharged.py` reads the design point from `cad/parameters.json` rather
+**What closed it.** `precharged.py` reads the design point from `cad/parameters.json` rather
 than declaring it — ADR-015's *derive, never paste*, which
 [`cad/tools/make_scad_params.py`](cad/tools/make_scad_params.py) already cites for the CAD side.
 A41's own declared values stay in the file under their own names so **A41 continues to reproduce**;
 the Gen6 scripts read the current point. **And a check that fails when the two disagree**, which is
-the thing that is actually missing. Scheduled with **A55** and **A56**.
+the thing that was actually missing. **Landed with A55 on 2026-08-19.**
 
 **This is a defect in work done three days ago, and it was found by reading rather than by any
 gate.** It is recorded here rather than quietly fixed, which is the rule the register exists to
 enforce.
+
+> ### A third live instance, found 2026-08-20
+>
+> **This entry named A44 and A48 as "answering a superseded question" and repaired neither
+> script.** `gen6_dispersion.py` — A44's — now has **one leg in each design point**:
+>
+> | | |
+> |---|---|
+> | `P_NOMINAL = 50e5` | **hard-coded**, A41's charge pressure |
+> | `pc.STROKE` | **live**, and P84's own fix made it 8.0 m on 2026-08-19 |
+>
+> **So it computes a shot at 50 bar over 8.0 m, which is not a design point this project has ever
+> adopted.** Re-run today it returns **1.504 % and 96.3 %** against A44's published **1.113 % and
+> 93.4 %** — *and 1.504 is not the corrected number either, because the pressure is still A41's.*
+>
+> **Nothing surfaced it because the stored artefact was never regenerated.**
+> `analysis/results/gen6_dispersion.json` still holds 1.113 %, last written **2026-08-16** with the
+> script; `precharged.py` changed underneath it on **2026-08-19**. **`trim_stage.py` band 1 asserts
+> against that stored file**, so it passes today and **fails the moment anyone runs
+> `gen6_dispersion.py`.**
+>
+> **This is the hole this entry already identified, one level down.** P84 found that nothing
+> compares the parameter file against the scripts and fixed that. **Nothing compares a script
+> against the run sheet it produced**, so a dated result can stop reproducing and every gate stays
+> green.
+>
+> **What closed the scripts, 2026-08-20.** `gen6_dispersion.py` now freezes **`STROKE_A44 = 2.18`**
+> and `trim_stage.py` **`STROKE_A48 = 2.18`**, the way `precharged.py` freezes `STROKE_A41` — *the
+> pattern already existed in this repository and had not been applied here.* Both reproduce their
+> run sheets again: **1.1133466932586118 %** and **93.4 %**, and A48 band 3 is back to **1.822 %**
+> from the 0.497 % the live stroke had silently made it.
+>
+> ### The last sentence of this block was wrong when it was written, and is corrected here
+>
+> It said Gen6's dispersion at ADR-034's design point *"is not known"*. **It was known, and had been
+> for a day.** [A55](validation/A55_trim_authority.md) computed **3.9798 %** on 2026-08-19 with its
+> bands declared first, and [A61](validation/A61_seal_class.md) reproduced it independently on
+> 2026-08-20. **No further run is needed and none should be written.**
+>
+> **The defect was never a missing number. It was that the number never propagated** — four
+> documents still carried A44's 1.113 % as Gen6's, which is what this entry's correction now fixes
+> everywhere. *A stale figure with a correct replacement sitting one file away is a worse failure
+> than an unknown one, because nothing about it looks unfinished.*
+
+> **Corrected 2026-08-19, with A55.** `precharged.py::design_point()` reads the stroke,
+> acceleration and charge pressure from `cad/parameters.json`, and
+> **`check_against_parameters()` is the gate that did not exist** — it also verifies that the force
+> and acceleration the parameter file records actually follow from the pressure it records, so the
+> three cannot drift apart silently.
+>
+> **A41's own point is frozen as `STROKE_A41` and `G_CAP_A41`, and `main()` asserts A41 still
+> reproduces**: 30.54 m/s at 25.00 g on a 4.66 kg store. *A refactor that breaks a dated result is
+> worse than a stale constant, so it fails loudly.*
+>
+> **The consequence was real and is now measured.** A44 and A48 had been answering a superseded
+> question for three days; [A55](validation/A55_trim_authority.md) re-ran them and found the trim
+> stage **under-authority by 3.57×** — see **P83**.
+>
+> ### That correction was partial, and the second instance was found the same day
+>
+> **`analysis/fill_window.py` declared `P_CHARGE = 50e5` and was not touched by the first
+> repair** — which is the same defect in a second file, feeding **A42, A43 and A45**. It was found
+> while starting [A56](validation/A56_reservoir_resized.md) and repaired the same way, with A42's
+> own point frozen as `P_CHARGE_A42` and `V_CHAMBER_A42`.
+>
+> **The lesson is the one this entry already stated and I did not act on fully: the hole was never
+> that one constant was stale. It was that nothing compares the parameter file against the
+> analysis.** *Fixing the instance I had in front of me, and closing the entry on that basis, was
+> the same mistake at one remove.* **`check_against_parameters()` covers `precharged.py` only, and
+> a repository-wide version of it does not exist.***
+
+### P85. Nobody has said what the drive tube is made of, and the two candidates differ by 2.15 kg: MEDIUM, CORRECTED 2026-08-20
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**[A59](validation/A59_tube_structure.md) band 9 went looking for the tube's material and could
+not find it stated anywhere in this repository.**
+
+| | |
+|---|---|
+| [`analysis/design_surface.py`](analysis/design_surface.py) | `RHO_AL = 2700.0`, and A49's `tube_kg` is computed from it |
+| [`analysis/precharged.py`](analysis/precharged.py) | sizes the chamber — **the same pressure boundary** — at **7800 kg/m³** with a 500 MPa allowable and a safety factor of 2 |
+| `cad/parameters.json` | carries `tube_wall_mm` and now `tube_mass_kg`, and **names no material** |
+| [`cad/build_gen6.py`](cad/build_gen6.py) | says the wall "is set by handling and by carrying A38's 201.7 N cradle preload — neither of which is modelled here" |
+
+**The difference is larger than everything else A59 computed put together.**
+
+| | Aluminium | Steel |
+|---|---:|---:|
+| Tube over 8.0 m | **1.140 kg** | **3.294 kg** |
+| Tube + the 7 supports A59 found necessary | **1.240 kg** | **3.394 kg** |
+| Against A49 band 7's declared 2.0 kg limit | **passes** | **fails by 1.7×** |
+
+**A49 band 7 passed at 1.140 kg. In steel it fails**, and A49 did not know it was choosing.
+
+> **This is not a structural problem and stiffness will not settle it.** A59 found the unsupported
+> first mode is **1.67 Hz in aluminium and 1.68 Hz in steel** — E/ρ is nearly identical for both
+> metals, so the material buys no stiffness per kilogram. **It is purely a mass and compatibility
+> decision, and it has never been taken.**
+
+**What actually decides it.** The tube is a sliding seal bore, so surface hardness, thermal
+expansion against the piston, and galling behaviour matter more than modulus.
+
+> ### And [A58](validation/A58_chamber_thermal.md) measured the thermal half on 2026-08-19
+>
+> **The expansion takes the bore to −35.2 °C every shot, a 62.1 K swing.** Across it:
+>
+> | | Clearance change |
+> |---|---:|
+> | **Matched** piston and bore materials | **0.00 µm** |
+> | **Dissimilar** — steel in aluminium, or the reverse | **10.79 µm** |
+>
+> **On a 15.805 mm bore that is a real fraction of any sensible seal clearance, and the repository
+> specifies neither part.** A58 band 6 failed on it.
+>
+> **This is the cheap half of the decision.** Nothing about the mass argument forces the piston and
+> the tube to differ, and **matching them removes 10.79 µm for free.** The mass question — 1.140 kg
+> against 3.294 — is the one that still needs deciding.
+
+**What closed it:** [ADR-035](docs/adr/035-drive-tube-material.md), 2026-08-20.
+
+> **Corrected. The tube is hard-anodised aluminium and the piston is the same alloy.**
+>
+> **Only mass discriminated.** A59 found strength (13.9× margin), stiffness (1.67 against 1.68 Hz)
+> and buckling (both fail unsupported, both fine at 1.0 m) **indifferent between the metals**, and
+> A58 found it is **matching** the piston and bore that removes the 10.79 µm differential, not which
+> metal is chosen. **So the decision fell to 2.154 kg — 0.18 kg per satellite against the project's
+> tightest threshold.**
+>
+> **The functional requirement nobody had stated is that the tube is a sliding seal bore**, which
+> makes it a surface question rather than a strength one — and **hard anodising is what makes
+> aluminium available.** *The duty is far lighter than it looks: the carriage is not recovered, so
+> **every seal makes exactly one 8.0 m pass** and the tube sees **96 m across an entire campaign.***
+>
+> **A49 band 7's 1.140 kg stands, and it now stands on a stated choice.**
+>
+> **What it costs is steam.** The 473 K ceiling forecloses it — [A63](validation/A63_steam_design_point.md)
+> found **none of 108 steam design points reaches it**. ADR-035 falsifier 4 names that, and it is
+> the first decision in this project that closes a door rather than opening one.
+
+### P86. The trim stage cannot be fed by any store this repository has data for: HIGH, CORRECTED 2026-08-20
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**[ADR-033](docs/adr/033-gen6-trim-stage.md)'s first falsifier has fired, and it fired on the
+argument the ADR itself used to name it.**
+
+> *"Pulse hardware scales with current, not energy, and nothing has weighed it. This is the
+> falsifier most likely to fire, and it is being adopted before it is answered."*
+
+**[A54](validation/A54_pulse_chain.md) weighed it. One of eight bands passes.**
+
+| | The chain [ADR-032](docs/adr/032-gen6-stage-integrated-gas-store.md) deleted | The trim stage that replaced it |
+|---|---:|---:|
+| Peak power | 30 674 W | **28 606 W — 93.3 %** |
+| Peak current at 96 V | 319.5 A | **298.0 A — 93.3 %** |
+| Energy per shot | 2782 J | **136.6 J — 4.9 %** |
+
+**The energy fell twenty times and the current fell seven percent.** ADR-032 deleted a pulse chain
+and ADR-033 asked for 93 % of it back.
+
+**Priced as an EDLC bank from [A10](validation/A10_bank_esr.md)'s ESR × C bracket and the 6.50 kg
+string `mass_properties.py` carries**, sized so its ESR takes at most 10 % of the delivered energy:
+
+| | |
+|---|---:|
+| ESR required | **≤ 32.2 mΩ** |
+| Capacitance | **21.4 – 34.2 F**, 3.6 – 5.7 strings |
+| **Store mass** | **23.44 – 37.36 kg**, against the **1.2328 kg** section it feeds |
+| Energy it would hold | **98.7 – 157.3 kJ** for a **136.6 J** correction — **723× to 1152×** |
+
+**And no sheet current rescues it.** Peak power scales with sheet current and section length
+inversely, so the trade has a minimum — **the minimum is 10.755 kg**, 5.4× the 2.0 kg band, with
+added mass per satellite at **2.4313 kg**, which **re-crosses the one kill-criterion numerator Gen6
+passes.**
+
+> **What it proves is narrower than "impossible", and more useful.** Any store that fits inside the
+> section it feeds must deliver **23.20 kW/kg** — against the **4.72 kW/kg** Gen5's own bank
+> achieves. **4.92× on the axis that binds**, and specific energy is not the constraint at all
+> (110.8 J/kg required, against thousands available).
+>
+> **Every mass above is a lower bound**: the switch and the conductors are not priced and no figure
+> for either is in this repository.
+
+> ### Two of the three routes first named here do not exist, checked 2026-08-19
+>
+> **Raising the bus voltage does nothing.** The store reduces to
+> **m ≥ ½·(ESR×C)·P/(f · specific energy)** — **V cancels exactly.** A 300 V bank needs a tenth the
+> capacitance at ten times the voltage: same stored energy, same cells, same mass.
+>
+> **Shortening the stroke does nothing either.** Peak power is force-per-metre × exit velocity,
+> force per metre is set by sheet current and the velocity is held — **stroke appears nowhere.** At
+> A48's own 2.18 m point the store would have been **22.8–36.3 kg.**
+>
+> **So ADR-033 was never affordable at any stroke, and this entry is not a consequence of ADR-034.**
+> *Both escapes were checked after the run rather than before, which is the wrong order.*
+
+**What the levers actually are.** **ESR × C** — the store technology — needs **≤ 36.3 ms** against
+an EDLC's **690–1100 ms**, **19–30× better**, and it is the only lever with that range; a film or
+pulse capacitor flips the binding constraint from power to energy and **no figure for either is in
+the record.** **Sheet current** bottoms the trade at **10.755 kg**. **P67** takes that to
+**6.68 kg** at a 9.75 % friction share, since the total scales as √energy. **The loss budget** gives
+7.81–12.45 kg at 30 %, and 41 J of heat per shot. **Or withdraw the trim stage and accept 3.980 %
+open-loop** — **which deletes the commanded-velocity claim the product is sold on**, and is the one
+route that survives unchanged.
+
+**What closed it:** the source this entry's own title named as missing.
+
+> **Corrected.** **[A64](validation/A64_pulse_store_technology.md), six of six**, priced the store
+> against published pulsed-power capacitor technology — **2000 to 2680 J/kg**, metallised
+> polypropylene with extended-foil electrodes.
+>
+> | | EDLC | **Pulsed-power capacitor** |
+> |---|---:|---:|
+> | Energy needed to *source the current* | 98.7 – 157.3 kJ | **0.14 – 143 J** |
+> | Binds on | **power, by 723×** | **energy** |
+> | **Store mass** | **23.44 – 37.36 kg** | **0.051 – 0.072 kg** |
+> | Specific power | 4.72 kW/kg | **400 – 561 kW/kg** |
+>
+> **522× lighter, and 17× the specific power A54 said was required. The store is about 70 grams.**
+>
+> **ADR-033's falsifier 1 does not fire**: the store weighs **6 %** of the section it feeds.
+> Added mass per satellite is **1.4047 kg** against an unmoved 2.0 kg threshold.
+>
+> **A54 was correct in every calculation and wrong in its scope.** It priced an EDLC because A10's
+> bracket and the 6.50 kg string were **the only store data in this repository**, and it flagged the
+> alternative as NEEDS SOURCE rather than guessing. **The defect was not in the analysis. It was
+> that the repository had one technology in it.**
+
+**[A61](validation/A61_seal_class.md)'s route is still cheaper** — a specified seal may *delete* the
+trim stage rather than feed it — **but it is no longer the only one.**
+
+### P87. The last fill of the campaign does not fit the window, and never did: MEDIUM, NEW 2026-08-19
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A42](validation/A42_fill_window.md) established that filling is *not* the constraint** — 4.14 s
+through a 1 mm orifice, against the 10 s of index-plus-return already inside the cadence.
+
+**That is the *first* fill, from a full bottle. Nothing had looked at the last one.**
+
+[A56](validation/A56_reservoir_resized.md) computed the whole twelve-shot sequence and band 7
+failed:
+
+| | Last fill |
+|---|---:|
+| At A43's 50 bar sizing, 9.55 L | **14.391 s** |
+| At ADR-034's 22.73 bar, 3.46 L | **11.516 s** |
+| Window | **10 s** |
+
+**By shot twelve the bottle is depleted, the pressure ratio across the orifice has collapsed, and
+the same hole takes roughly three times as long.** *The resizing improves it — a smaller bottle at
+the same storage pressure holds its ratio better — but does not fix it.*
+
+**This is a defect in the fill design rather than in the store sizing, and it is not ADR-034's.**
+It was present at A43's point and would have been found by anyone who looked past the first shot.
+
+> **The escape is arithmetic rather than architectural.** [A43](validation/A43_reservoir_thermal.md)
+> band 8 measured that the orifice moves the required reservoir by **0.00 %** across 0.5 to 2.0 mm.
+> **A larger orifice buys fill time for no mass at all.** What it costs instead is fill-rate
+> controllability, which is what commands the charge pressure and therefore the exit velocity —
+> and that trade has not been run.
+
+**What would close it:** size the orifice against the *last* fill rather than the first, and check
+what the larger hole does to the pressure-setting resolution [A44](validation/A44_gen6_dispersion.md)
+depends on. **Neither the cadence nor the store needs to change.**
+
+### P88. The seal cannot absorb its own friction, and P67 is a harder measurement than it has been described as: HIGH, NEW 2026-08-19
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A58](validation/A58_chamber_thermal.md) band 5 failed across the whole swept range.**
+
+**667.2 J arrives in the seal in about five milliseconds**, at **2419 W** where it is moving
+fastest. Adiabatic rise per shot:
+
+| Seal mass | 0.5 g | 1 g | 2 g | 5 g | 10 g |
+|---|---:|---:|---:|---:|---:|
+| **Rise per shot** | **889.6 K** | **444.8 K** | **222.4 K** | **89.0 K** | **44.5 K** |
+
+**Only the 10 g end clears 50 K, and only if nothing else is true.** The requirement that follows
+is band 8's, and it is the useful part:
+
+> **For a 2 g seal to stay within 50 K, 77.52 % of its friction heat must leave it during the
+> stroke.**
+
+**That is a design requirement on a component that exists in no file.** No seal is drawn, no
+material is named, and its friction coefficient — the thing generating the heat — has never been
+measured. [A39](validation/A39_store_trade.md) states it designs *"no cylinder, valve, seal or
+latch"*; [A40](validation/A40_blowdown_transient.md) the same.
+
+### What this does to P67
+
+**[P67](OPEN_PROBLEMS.md) has been described throughout as a bench measurement of a friction
+coefficient. It is a harder measurement than that.**
+
+| | |
+|---|---|
+| **Temperature** | the gas is at **237.9 K, −35.2 °C**, every shot ([A58](validation/A58_chamber_thermal.md) band 1) |
+| **Self-heating** | the seal dissipates **667.2 J per stroke at 2419 W peak** |
+| **Stroke** | **8.0 m**, not a short rig |
+| **Repeats** | **twelve**, and the shot-to-shot spread is the quantity wanted |
+
+**A room-temperature coefficient on a short rig would not answer the question the design asks.**
+
+### And the coupling nobody has modelled
+
+**Friction heats the seal; a hotter seal has different friction; that changes the shot.**
+[A55](validation/A55_trim_authority.md) found the seal owns **98.7 %** of the dispersion, so a
+thermal-friction loop feeds straight into the one number this architecture is sold on. **A58 names
+it and does not compute it.**
+
+**What would close it:** a seal specification — material, section, mass and a conduction path out —
+and P67 run at temperature, over a representative stroke, with the spread reported. **Until a seal
+exists, the 83.4 N in `gen6_dispersion.py` is an allowance A41 declared rather than a property of
+anything.**
+
+### P89. The seal has a specification now, and `parameters.json` still carries no seal: HIGH, CLOSED 2026-08-20
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+
+
+**[A61](validation/A61_seal_class.md) inverted the question A41 left open.** Rather than asking what
+a seal would give, it asked what the loosest seal is that the design can tolerate — **and the answer
+is a number, in the unit seal data is quoted in.**
+
+> ### **17.8 N — 4.00 % of the piston's pressure force. The thermal case sets it.**
+
+| Requirement | Maximum friction |
+|---|---:|
+| **A 2 g seal stays within 50 K** — A58 band 5, **P88** | **4.00 % = 17.8 N** |
+| The trim stage becomes unnecessary — below A48's ±0.323 m/s | 5.00 % = 22.3 N |
+| Section + store ≤ 2.0 kg — A54 band 5, **P86** | **not reachable at any friction** |
+
+**A61 band 6 failed, and that is the finding: the binding requirement on this component is not the
+control loop, it is that the seal must survive its own friction.**
+
+### What the design has actually been assuming
+
+**A41's 83.4 N allowance is 18.71 % of the pressure force**, which A61 band 2 confirmed sits inside
+the **elastomer O-ring** range. **The project has been sized since A41 against the worst common seal
+class, and nobody ever chose it.** [A55](validation/A55_trim_authority.md)'s dispersion,
+[A54](validation/A54_pulse_chain.md)'s store, [A58](validation/A58_chamber_thermal.md)'s seal
+heating and [A49](validation/A49_design_surface.md)'s band 6 failure all descend from it.
+
+**The specification is 4.7× tighter than the allowance.**
+
+### What meeting it would do
+
+| | A41's allowance | At 5.00 % |
+|---|---:|---:|
+| Friction work per shot | 667.2 J | **178.4 J** |
+| **3σ dispersion** | **3.9798 %** | **0.9051 %** |
+| Authority needed | 1.1543 m/s | **0.2982 m/s** |
+| 2 g seal rise | 222.4 K | **59.5 K** |
+
+**P88 closes at 4.00 %. P86 becomes deletable at 5.00 %** — the trim stage is unnecessary rather
+than affordable. **But A61 band 5 found no friction in 1–30 % makes the store itself affordable:
+4.23 kg even at 1 %.** *Seal choice cannot solve P86; it can only make it irrelevant.*
+
+> ### Closed 2026-08-20 by [ADR-036](docs/adr/036-seal-specification-and-the-trim-stage.md)
+>
+> **`cad/parameters.json` now carries a `gen6_seal` group.** It holds **both** numbers and says
+> which is which: **`friction_max_N` 17.8 as the specification**, and **`friction_allowance_N`
+> 83.40371375447981 as A41's retained ceiling** — *4.68× apart, with every published Gen6
+> dispersion figure descending from the ceiling rather than from the specification.*
+>
+> **The allowance was not deleted and that is deliberate.** [P67](#p67-gen6s-precision-rests-on-a-seal-friction-nobody-has-measured-and-its-rated-velocity-excludes-it-high-new-2026-08-16)
+> has measured neither, so the ceiling remains the only honest number for a worst-case argument.
+> **`measured` is recorded in the group as `NO`.**
+>
+> **What this entry asked for is done: the specification is a design parameter rather than a
+> finding in a run sheet.** *What it does not do is make the number true* — and ADR-036 turns that
+> into a decision by suspending the trim stage rather than building or deleting it.
+
+> ### The specification is fluid-dependent and A61 did not say so
+>
+> **[A62](validation/A62_steam_working_fluid.md), 2026-08-20**, found the seal specification only
+> holds for the fluid it was computed against. **A61 assumed the seal runs at −35 °C, which is what
+> cold nitrogen gives.** A steam working fluid needs **550 K** to keep its expansion dry, and at
+> that temperature **filled PTFE is past its 533 K limit** — so the 17.8 N figure would not survive
+> a change of working fluid.
+>
+> **The specification is therefore conditional on the gas, and that condition belongs in it.**
+
+**What would close this entry:** a seal in `cad/parameters.json` — section, material class, mass, a
+friction figure **and the temperature range it is specified at** — and **[P67](OPEN_PROBLEMS.md)
+measured against the 17.8 N specification rather than against nothing.** *A61 measured nothing and
+names no product; its class ranges are handbook and flagged as such.*
+
+### P90. A62 screened steam at nitrogen's design point, not at steam's: HIGH, CORRECTED 2026-08-20
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**[A62](validation/A62_steam_working_fluid.md)'s conclusion does not hold, and the defect is in how
+the run was set up rather than in anything it computed.**
+
+**Every figure in A62 was computed at a 2.0 L chamber** — the volume [A41](validation/A41_precharged_chamber.md)
+sized for **cold nitrogen**, carried into `cad/parameters.json` and then into a run about a
+different fluid. **The chamber was never re-optimised for steam, and it is the variable steam is
+most sensitive to.**
+
+| Chamber | Expansion ratio | **Temperature to stay dry** | Work |
+|---:|---:|---:|---:|
+| 2.0 L — **A62's, and A41's** | 0.5603 | **550 K** | 2397 J |
+| 4.0 L | 0.7182 | **523 K** | 2851 J |
+| 8.0 L | 0.8360 | **508 K** | 3163 J |
+| 20.0 L | 0.9272 | **498 K** | 3392 J |
+
+**A larger chamber lowers the dry temperature and raises the work at the same time.** The floor is
+**T_sat(p₀) itself — 492 K at 22.73 bar** — approached from above.
+
+### What that does to A62's verdict
+
+**A62 band 7 failed because 550 K exceeds filled PTFE's 533 K limit, and that failure was the
+reason [A61](validation/A61_seal_class.md)'s seal specification was said not to survive steam.**
+
+**At 4.0 L the charge is 523 K — inside PTFE's limit — and the shot delivers 2851 J and 37.75 m/s
+against nitrogen's 2350 J and 34.28.** *More work, more velocity, and the seal specification holds.*
+
+**Band 8's net −1.285 kg is equally suspect**: it charged a steel tube against a store saving
+computed at the wrong chamber, and did not count the chamber growth a larger volume costs.
+
+### What still stands
+
+**Band 4's aluminium limit.** Every point found so far sits above **473 K** — the best is 478 K at
+16 bar and 32 L — so **the tube is steel regardless**, and P85 keeps its heavy answer. *That part of
+A62 survives its own correction.*
+
+**And the heating.** Bands 5, 6 and 9 are about the sun, not the design point: **α/ε ≥ 7.6, a 23 cm
+absorber, and it survives eclipse.** Those hold at any chamber.
+
+**What closed it:** [A63](validation/A63_steam_design_point.md) swept 108 points with its bands
+declared first.
+
+> **Corrected.** **A62's seal failure was an artefact and is withdrawn** — 43 points sit inside
+> filled PTFE's limit, so **A61's specification survives steam.**
+>
+> **A62's aluminium failure was not** — **zero of 108 points reach 473 K**, because the floor is
+> T_sat(p₀) and every charge pressure that makes 2350 J sits above it. **The tube is steel at every
+> steam design point.**
+>
+> **And that settles the verdict A62 reached for the wrong reason.** The steel penalty is
+> **2.154 kg — larger than everything steam removes** — so the best point is **−1.813 kg** and
+> **none of the 43 is a saving.** *The correction made it worse than A62 found, because a chamber
+> chosen for steam is larger and chamber mass rises with it.*
+>
+> **One conditional survives, and it is not a mass argument.** If **P85** chooses steel for reasons
+> independent of the fluid — hardness and galling at a sliding bore, and A59 found the material
+> barely moves the beam mode — steam stops paying for the tube and becomes **+0.341 kg**. *That is
+> less than the absorber hardware A63 charges nothing for.*
+
+### P91. A65 band 4 misses A53's per-cell mass threshold, and the mass is in the pressure vessel: MEDIUM, NEW 2026-08-20
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[A65](validation/A65_pyrotechnic_ejector.md) band 4 failed at 0.4350 kg against 0.25 kg.** Nine of
+its ten bands passed, including the one that governs — **1.6496 kg per satellite against the 2.0 kg
+kill criterion** — so this is a numbered band miss, not a dead architecture.
+
+| Per cell, smallest charge in the class | | |
+|---|---:|---:|
+| Solid generant | 0.0200 kg | 4.6 % |
+| **Plenum pressure vessel** | **0.2025 kg** | **46.6 %** |
+| Heat sink to the 473 K tube ceiling | 0.0926 kg | 21.3 % |
+| Housing, initiator, gas path — **declared guess, no derivation** | 0.1200 kg | 27.6 % |
+| **Total** | **0.4350 kg** | |
+
+**The pyrotechnic parts are not what fails the band.** The generant is 20 g and the sink is 92.6 g.
+**The vessel is 202.5 g and it is minimum-gauge limited, not pressure limited**: at 0.3933 L the
+hoop wall the pressure needs is **0.909 mm** against `precharged.chamber_kg`'s **1.0 mm** floor, and
+that function builds in steel at 7800 kg/m³.
+
+**Three routes exist and none has been run:**
+
+1. **The vessel material.** The same shell in the aluminium [ADR-035](docs/adr/035-drive-tube-material.md)
+   chose for the tube is **70.1 g**, taking the cell to **0.3031 kg** — *still over, so this alone
+   does not close it.*
+2. **The housing guess.** 0.1200 kg is carried from A53 unchanged with **no derivation**, so that
+   the two runs compare. It is the largest unexamined term left.
+3. **The threshold itself.** 0.25 kg is A53's band 1, **set for a spring**. It is a proxy for the
+   2.0 kg per-satellite kill criterion, which A65 passes. *A band is never widened after a result
+   is known — but a new run may declare its own threshold, argued from the criterion rather than
+   inherited from a different device.*
+
+**What would close it:** a run declaring its bands first that brings the cell under a threshold it
+argues for, with the vessel material and the housing allowance both derived rather than assumed.
+
+### P92. The trim stator has to reach its magnets through a conducting tube, and nothing has computed what that costs: HIGH, NEW 2026-08-20
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[ADR-033](docs/adr/033-gen6-trim-stage.md) puts the stator outside the tube and the magnets
+inside it.** `cad/build_gen6.py` draws the section as an annulus running from `bore/2 + wall` to
+`bore/2 + wall + 6.0`, and the ADR's own words are *"a magnet set carried by the carriage"*. **The
+travelling field therefore crosses the drive tube on its way to the thing it acts on.**
+
+**[ADR-035](docs/adr/035-drive-tube-material.md) made that tube aluminium on 2026-08-20**, four days
+after ADR-033 was adopted. **A conducting sleeve between a travelling-field stator and its secondary
+is a shorted turn**, and **no file in this repository computes the attenuation, the induced loss, or
+the heating.**
+
+| | |
+|---|---|
+| `gen6_drive.tube_wall_mm` | **1.0 mm** |
+| `gen6_drive.tube_material` | **aluminium 6061-T6, hard anodised** |
+| `stator.pole_pitch` | **24 mm** |
+| Carriage speed through the section | **34.28 m/s**, `exit_velocity_m_s_zero_friction` |
+| Aluminium conductivity already in the repository | **3.5 × 10⁷ S/m**, `analysis/phase1_closeout.py` |
+
+**Every input exists and the calculation has never been done.** The governing comparison is the wall
+thickness against the skin depth at the excitation frequency the pole pitch and the carriage speed
+set between them.
+
+### Why this was not caught
+
+**Three runs examined this tube in 2026 and none of them looked at it electromagnetically.**
+[A59](validation/A59_tube_structure.md) took it structurally and found the metals barely
+distinguishable. [A58](validation/A58_chamber_thermal.md) took it thermally. [A61](validation/A61_seal_class.md)
+took it tribologically. **ADR-035 then chose on mass alone** — and mass was the right tie-breaker
+among the questions that had been asked.
+
+> **The defect is in the sequencing, not in any one decision.** ADR-033 chose where the stator sits;
+> ADR-035 chose what stands between it and its magnets; **and no document owns the interaction.**
+> *ADR-033's cost table lists what the magnets bring back — P34, E35, the cradle, a velocity sensor,
+> one more shared element — and the tube is not on it, because when that table was written the tube
+> had no stated material.*
+
+**What would close it:** a run with its bands declared first, comparing the 1.0 mm wall against the
+skin depth at the section's own excitation frequency, and reporting the thrust attenuation, the
+induced loss and the resulting wall temperature against **ADR-035's 473 K ceiling**. If the
+attenuation is material, [A55](validation/A55_trim_authority.md)'s **1.1543 m/s** of authority and
+[ADR-033](docs/adr/033-gen6-trim-stage.md)'s **28 606 W** are both optimistic, and the section grows
+again — which is **P83**'s failure mode a second time.
+
+**A cheaper answer may exist and is not this entry's to choose:** a non-conducting liner, a slotted
+or non-conducting section of tube local to the stator, or the passive-secondary route
+[`docs/VAULT.md`](docs/VAULT.md) records under **PII-19**, which removes the magnets from the moving
+part rather than reaching them through metal.
+
+> ### Deferred, not dropped, 2026-08-20 — [ADR-036](docs/adr/036-seal-specification-and-the-trim-stage.md)
+>
+> **A66 is not being written yet, and the reason is not that this entry got smaller.**
+> [A61](validation/A61_seal_class.md) band 3 showed that a seal meeting its own **thermal**
+> requirement makes the trim stage unnecessary, so **ADR-036 suspends the stage** rather than
+> building or deleting it. *Computing how well a stator couples through a conducting tube is only
+> worth doing for a stator that is going to exist.*
+>
+> **This entry stays LIVE precisely so that it is not forgotten.** If **P67** measures friction
+> above **22.3 N**, the stage is needed, and **A66 becomes the next run with nothing else in front
+> of it.**
+
+### P93. The paper's system mass is 50 % low, in the abstract, and A46 never propagated into it: CRITICAL, CLOSED 2026-08-20
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+
+
+**Found while closing Gen5, which is the only reason it was found at all.**
+
+| Source | Dry mass | Loaded |
+|---|---:|---:|
+| `analysis/results/mass_properties.json`, and [`BASELINE.md`](docs/BASELINE.md) | **126.6 kg** | **174.6 kg** |
+| `paper.tex` **abstract** and **conclusion** | **84.5 kg** | 132.5 kg |
+| `paper.tex` **Table \ref{tab:family} caption** | **76.5 kg** | — |
+
+**Three figures for one quantity, two of them in the published deliverable.**
+
+### The arithmetic identifies the cause exactly
+
+**[A46](validation/A46_enclosure_buildup.md) itemised the enclosure on 2026-08-16.** It had been an
+**8.00 kg placeholder**; built up from the geometry it is **50.04 kg**.
+
+> **84.5 − 8.00 + 50.04 = 126.54.** The repository says **126.6**.
+>
+> **And 84.5 − 8.00 = 76.5**, which is the table caption — *the same total with the placeholder
+> removed and nothing put back.*
+
+**So both paper figures are pre-A46, and neither is a different scope or a rounding.** The paper
+was last built **2026-08-19**, three days after A46 landed. **The correction propagated to
+`BASELINE.md`, to the README and to the register, and stopped at the paper.**
+
+### Why this is worse than a stale number
+
+**The 76.5 kg figure is not decorative — it is an input.** The Table caption reads *"Deployer mass
+per satellite uses the 76.5 kg dry mass and a packing model calibrated so the 3U case returns the
+twelve the magazine is laid out for."* **Every per-satellite mass in the payload-family table
+descends from it**, and at 126.6 kg they all move by **65 %**.
+
+**This is therefore a re-run, not a find-and-replace**, and it is recorded as such rather than
+patched. *Editing the abstract alone would leave the table inconsistent with its own caption and
+the caption inconsistent with the repository — three numbers instead of two.*
+
+### What would close it
+
+**What closed it, 2026-08-20.** *And it was not a re-run — this entry was wrong about its own
+cost.* `payload_family.py` **already reads `dry_kg` live**; its docstring records this exact failure
+mode — *"It was pasted, at 76.5 kg, and it stayed at 76.5 when mass_properties moved to 84.5"* — and
+`payload_family.json` already carried **`deployer_dry_kg: 126.6`** with all nine class rows. **The
+analysis was current the whole time. Only the manuscript was stale.**
+
+**And it was worse than this entry described.** Fixing it exposed two things the mass audit had not:
+
+| | |
+|---|---|
+| **A third stale mass** | The mechanical section also read **84.5 kg** (loaded 132.5, CoG 0.44 m). Now **126.6 / 174.6 / 0.46 m** |
+| **The family table was stale in *every* column, not just mass** | Its velocities and accelerations were at the **pre-ADR-030** operating point — the 3U row read **16.4 m/s at 10.5 g** against the paper's own rated point of **16.0 at 10.1**, stated two paragraphs earlier. **The table contradicted its own paper** |
+| **And it was internally inconsistent** | Seven rows were 76.5-based; the 3U row alone was 84.5-based. *One row had been updated and the others had not* |
+
+**All eight rows are now regenerated from `payload_family.json`.** 3U reads **10.550 kg/satellite**,
+and the *"varies by a factor of thirty across the family"* claim — which is invariant in dry mass and
+was therefore always checkable — is corrected to **109×**.
+
+**Both PDFs rebuilt and verified**: `126.6` present, `84.5` and `76.5` absent from both.
+
+> **The audit that opened this entry checked thirteen headline scalars in prose and passed eleven.
+> It could not see the table**, because the prose carries 16.0 and the table carried 16.4 — *the
+> right number in the wrong place hides the wrong number in the right one.* **`check_paper.py`
+> must read tables, not just prose.**
+
+> **The register's own first sentence says P-items are errors in the currently published paper and
+> should be fixed first.** This one sat through four passes that touched the paper's companions
+> because **nothing compares the paper against `BASELINE.md`** — the same shape of gap as P84, one
+> deliverable further out.
+
+### P94. A13 band 5 passes on a host control authority that E5 says does not exist: HIGH, NEW 2026-08-20
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found by a provenance audit of every module-level constant in the analysis scripts, 2026-08-20.**
+
+`analysis/attitude_budget.py` carried, with no units, no comment and no source:
+
+```python
+RCS_TORQUE = 0.1
+```
+
+**It is a host reaction-control torque in N·m, and [A13](validation/A13_indexing_disturbance.md)
+band 5 passes on it:** *"Settling to below 0.01 °/s with a 0.1 N·m RCS authority — under 2 s at
+500 kg."* **The run sheet states the value twice and justifies it nowhere.**
+
+> **And [`EXTERNAL_EVIDENCE.md`](docs/EXTERNAL_EVIDENCE.md) records E5 as:
+> *"no host propellant or control authority figure exists."***
+
+**So this project simultaneously records that it has no host control-authority figure, and uses one
+to pass a validation band.** *That is not a stale number or a rounding choice. It is a claim resting
+on a quantity the register elsewhere declares absent.*
+
+### What has been done, and what has not
+
+**The constant is now labelled a declared assumption in the script**, pointing at this entry and at
+E5. **A13 band 5's verdict is not changed and not re-declared** — it is annotated with what it rests
+on. *Whether 0.1 N·m is a reasonable authority for a spent stage is a separate question from whether
+it was ever declared, and only the second was answerable here.*
+
+**No source was invented.** An assumption that cannot be sourced is labelled as an assumption.
+
+**What would close it:** a published host control-authority figure — the same data exchange **E5**
+already names as the one that converts this analysis from parametric to specific — or a re-run of
+A13 band 5 as a *required* authority rather than an assumed one, in the shape
+[A54](validation/A54_pulse_chain.md) used when it stated a required specific power instead of
+guessing a store.
+
+> **The audit that found it was looking for undocumented constants and this was the only genuine
+> contradiction in 126.** [A46](validation/A46_enclosure_buildup.md)'s seven assumed enclosure
+> inputs — which drive the **50.04 kg** that is **58.6 % of the stage credit** — are every one of
+> them declared, and its band 7 says so: *"Every line item traces to a parameter or a declared
+> input — zero undeclared."* **The discipline works. This slipped through it.**
+
+### P95. A35's headline survives-everything figure is pre-A46, and correcting it reverses A35's own escape route: CRITICAL, NEW 2026-08-20
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found while drawing the A35 ledger for the front page. The figure would not agree with the text,
+and the figure was right.**
+
+`analysis/results/constraint_ledger.json` was **regenerated on 2026-08-16** in the commit *"Apply
+A46: the enclosure is 50 kg, and mass parity does not survive it."* `validation/A35_constraint_ledger.md`
+**was last touched on 2026-08-14.** *The script ran at the new dry mass and the run sheet was never
+re-read.*
+
+| | A35 as published | At the ledger's own current output |
+|---|---:|---:|
+| Dry mass | 84.59 kg (implied) | **126.56 kg** |
+| Survives every deletion in all 64 corners | **49.23 kg — 58.2 %** | **88.67 kg — 70.06 %** |
+| Best corner, deleting C2 and C3 | — | removes 37.89 kg, **29.90 %** |
+| **Per satellite at twelve** | **4.10 kg** | **7.39 kg** |
+| **Per satellite at twenty-four** | **2.05 kg** | **3.69 kg** |
+
+**49.23 / 0.582 = 84.59 kg**, which is the pre-A46 dry mass. **The arithmetic identifies the cause
+exactly, the same way it did for [P93](#p93-the-papers-system-mass-is-50--low-in-the-abstract-and-a46-never-propagated-into-it-critical-closed-2026-08-20).**
+
+### The part that is not just a stale number
+
+**A35's section 4 offers the only escape route the whole ledger found:**
+
+> *"At twenty-four satellites the same 49.23 kg is **2.05 kg each, and the criterion closes** — even
+> allowing the containment lines to grow with the manifest, it lands near 2.5 kg. **Magazine density
+> is the only lever in this run that reaches the criterion.**"*
+
+**At the current ledger it is 3.69 kg each. The criterion does not close at twenty-four.** *A35's
+one route out of kill criterion 1 was an artefact of a dry mass that A46 superseded two days later.*
+
+**A35's harder finding is unchanged and is now harder still**: no combination of requirement
+deletions closes kill criterion 1 — and the irreducible remainder is **1.8× larger** than published.
+
+### Where the stale pair is quoted
+
+**`README.md`, `docs/GEN5_CLOSURE.md`, `docs/KILL_CRITERIA.md` and `P59`** carry
+*"49.23 kg — 58.2 % — survives the deletion of every requirement in all 64 corners."*
+
+> **Corrected 2026-08-21: the manuscripts do not.** This entry named them and it was wrong.
+> Neither `VOLLEY-paper/paper/paper.tex` nor `VOLLEY-thesis/source/paper.tex` cites A35 at all —
+> no ledger figure, no corner count, no per-satellite survivor mass. **The stale pair was never
+> propagated into the manuscripts, so there is nothing there to correct**, and the four repository
+> locations above are the whole of it. Checked by grep for `49.23`, `58.2`, `64 corners` and
+> `ledger` across both `.tex` files, all returning nothing.
+
+**What would close it:** propagate **88.67 kg / 70.06 % / 7.39 kg per satellite** everywhere, and
+**withdraw the twenty-four-satellite escape** rather than restating it at a number that no longer
+closes anything. **A35's bands are not re-declared and its verdict is not edited** — the run sheet
+gets a dated block, as A45-R2 and P84 did.
+
+> **This is the sixth place A46 had to be chased to**, after `BASELINE.md`, the register, the
+> paper's abstract, its conclusion, its family table and `mass_properties.py`'s own docstring.
+> *A46 landed on 2026-08-16 and the project is still finding what it moved.*
+
+### P96. The manuscript argued mass-per-satellite from pre-A46 numbers against its own post-A46 table, and still priced phase against drag: HIGH, CORRECTED 2026-08-21
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found while preparing a printed carry copy of the manuscript, which is the first time anyone
+had read Section V straight through since [A46](validation/A46_enclosure_buildup.md) landed.**
+
+**Three defects, all of them the same propagation failing in a different place.**
+
+**1. The table was regenerated and the prose was not.** Table~\ref{tab:family} was rebuilt at the
+current operating point on 2026-08-20 and gives **10.550 kg of deployer per 3U satellite**. The
+paragraph immediately below it still argued from **7.04 kg**, the pre-A46 figure, and drew three
+conclusions from it: *"by a factor of thirty"*, *"loses to a cold-gas module by roughly a factor
+of eight"*, and *"at PocketQube it spends 0.24 kg and wins by two to five"*. **A reader comparing
+the paragraph to the table directly above it would have caught this.**
+
+| | As printed | Current |
+|---|---:|---:|
+| Deployer mass per 3U satellite | 7.04 kg | **10.550 kg** |
+| Spread across the class column | ×30 | **×27** 3U against PocketQube 1P, **×109** across the full column |
+| Loss to a cold-gas module | ×8 | **×9 to ×21**, and **×12.4** at the 0.85 kg mid-class figure |
+| PocketQube 1P per satellite | 0.24 kg | **0.388 kg**, winning by 1.3 to 3.1 rather than 2 to 5 |
+
+**2. Section V-C still priced in-track phase against differential drag.** The abstract and the
+conclusion both carry [P56](#p56)'s correction — that release timing delivers 30° of phase for
+468 s of waiting at zero Δv — and **the body section making the claim did not**. It compared
+commanded splits at 1.4 days against drag at 25 days and stopped there. *The correction was
+propagated to the two places a reader looks first and not to the place the claim actually lives.*
+`F05_dragvs.png`'s caption now states what the figure omits; the figure is not redrawn, because
+the drag comparison it makes is still correct.
+
+**3. The limitations section said the depth-resolved thrust constant was "computed and
+deliberately not applied here"** — [ADR-030](docs/adr/030-apply-the-depth-resolved-thrust-constant.md)
+applied it on 2026-08-13, and every figure in the paper, including the abstract's, is quoted after
+it. **The paper contradicted itself on the provenance of its own headline.** The replacement text
+states the adoption date, the reason it was held for three days, and the limit of the
+three-dimensional check: A2 band 4 tests the field model at midgap to 0.059 %, **not** the depth
+average, and no three-dimensional check of the integrated thrust constant exists.
+
+### What else the same read found
+
+**`tab:tier` carried 125 kg loaded** — pre-A46. Now 126.6 dry, 174.6 loaded.
+**The array-length sweep in V-A carried 4.95 N per kA/m and 13.3 m/s** for a 150 mm array, against
+`docs/PAYLOAD_CLASSES.md`'s current **4.65** and **12.9 m/s** — the same ADR-030 propagation.
+**Four overfull lines ran into the page margin**, three of them predating this pass; all four are
+now zero.
+
+**And the comparison the paper had never stated at all is now stated**: VOLLEY is **1.758× heavier
+per 3U satellite** than a canisterised dispenser, A21 band 4 fails, and kill criterion 1 is crossed
+at **5.3×** on dry mass. [P69](#p69) recorded that on 2026-08-16 and the manuscript did not carry
+it. *A paper that omits its own failed comparator band is a brochure.*
+
+> **A46 landed on 2026-08-16. This is the seventh place it had to be chased to**, after
+> `BASELINE.md`, the register, the paper's abstract, its conclusion, its family table and
+> `mass_properties.py`'s docstring — and P95 found the eighth in A35 the day before this one.
+> *The lesson is not that the propagation was careless. It is that a rollup change touches prose
+> that no gate reads, and there is no gate that reads prose.*
+
+### P97. ADR-030 shortened the regenerative section from 240 mm to 39 mm and the recovery figure never moved with it: HIGH, CORRECTED 2026-08-21
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found while checking the manuscript's energy chain against `motor_results.json` for a printed
+copy. The paper and the front page both reported a recovery that the current design cannot
+produce.**
+
+[ADR-030](docs/adr/030-apply-the-depth-resolved-thrust-constant.md) took four decisions on
+2026-08-13. The one everything chased was the depth-resolved thrust constant. **The second one was
+that the regenerative section shortens from 240 mm to 39 mm**, because 240 mm of regenerative
+stator plus a 300 mm eddy fin were oversubscribed in a 339 mm airgap ([P28](#p28)). *Only the
+first was propagated.*
+
+| | As published | At the 39 mm section |
+|---|---:|---:|
+| Regenerative section | 240 mm | **39 mm** |
+| Energy recovered | 291 J | **47.0 J** |
+| **As a fraction of the sled's energy** | **23 %** | **3.9 %** |
+| Sled kinetic energy at release | 1268 J | **1213 J** |
+| **To the eddy brake** | **935 J** | **1162 J** |
+| Braking pulse | 15.8 ms | **2.46 ms** |
+| Copper burnt braking | 15 J | **0.39 J** |
+| Speed reaching the brake | 14.1 m/s | **15.68 m/s** |
+| Peak current during recovery | 219 A | **212 A** |
+| Brake-fin adiabatic rise per shot | 7.1 K | **9.0 K** |
+| Twelve-shot no-cooling bound | 85 K | **108 K** |
+| Campaign thermal total | 24.3 kJ | **26.6 kJ** |
+| Bulk rise over a campaign | 1.8 K | **2.0 K** |
+
+**Everything in the right-hand column was already committed.** `motor_results.json`'s `regen`
+block and `sizing.json`'s `energy_closure` and `thermal` blocks have carried these values since
+the ADR; `make_baseline.py --check` passed throughout, because none of the twenty-three values it
+guards is a recovery figure. **The gate was green and the prose was wrong.**
+
+### The shape of the error is worth naming
+
+**The brake got 24 % more energy and nobody noticed**, because the number that moved was the one
+nothing quotes. Every document quoted the *recovery*, which is the flattering half. The fin
+transient going 7.1 K to 9.0 K, and the twelve-shot bound 85 K to 108 K, are the consequences,
+and they sat unstated in a section titled *Thermal Analysis*.
+
+**And the efficiency was quoted at the wrong figure in the other direction.** `SUMMARY.md`, the
+wiki and `README.md` all published **18.5 %**, which is `shot.eff_pct` — the *gross* figure, before
+any recovery credit — while describing it as net of regeneration. `BASELINE.md` has published the
+correct **18.8 %** (`eff_net_pct`) the whole time. *Three front-door documents disagreed with the
+gate-checked baseline and with themselves.*
+
+### What was corrected
+
+`SUMMARY.md`, `wiki/Home.md`, `README.md` — including its energy pie, which was drawn with the
+pre-ADR-030 closure — `validation/README.md`'s A11 row, `analysis/velocity_levers.py`'s docstring,
+and both manuscripts. **`docs/RESULTS.md` and `docs/PROJECT_NOTES.md` carried a 2026-08-03 audit
+banner that had itself gone stale**; each gets a superseding banner rather than an edit.
+
+**[A11](validation/A11_regen_braking.md) is not touched.** Its eight bands were declared before
+`regen_brake()` was written, they passed, and 291.4 J was the right answer for the section it
+integrated over. *A decision taken ten days later removed that section.* The 500 mm and 1 m
+comparison points in the manuscript were recomputed from `motor_model.regen_brake` at the current
+operating point — 540 J and 727 J against the 570 J and 783 J published — and the 39 mm case
+reproduces the committed 47.0 J exactly, which is what makes the other two trustworthy.
+
+> **This is what a validation run looks like when an architectural decision outruns it.** A11 is
+> not wrong and its bands are not widened. It simply answers a question about a machine that
+> stopped existing on 2026-08-13, and for eight days nothing in the repository said so.
 
 ### E30. The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism, and nothing estimates its reliability: NEW 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done

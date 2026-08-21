@@ -1,14 +1,78 @@
 # ADR-033: Gen6 gains a motor that steers, and it is adopted on a number nobody has weighed
 
-**Status:** Accepted · **Date:** 2026-08-16 · **Phase:** I · **Extends:** [ADR-032](032-gen6-stage-integrated-gas-store.md)
+**Status:** Accepted, **suspended 2026-08-20 by [ADR-036](036-seal-specification-and-the-trim-stage.md)** · **Date:** 2026-08-16 · **Phase:** I · **Extends:** [ADR-032](032-gen6-stage-integrated-gas-store.md)
 
-> ## Amended 2026-08-19 by [ADR-034](034-gen6-long-stroke-design-point.md)
+> ## Falsifier 1 fired, 2026-08-19 — [A54](../../validation/A54_pulse_chain.md)
 >
-> **The trim section now sits at x = 7960.3 on an 8.0 m stroke, where it is 0.496 % of the stroke
-> rather than 1.822 %.** More importantly, **its 0.323 m/s of authority was sized against A44's
-> dispersion at a 9.75 % friction share, and ADR-034 runs at 28.39 %.** Neither A44 nor A48 has
-> been re-run. **The stage may be under-authority against the dispersion the long stroke creates —
-> P83**, which feeds falsifier 1 below.
+> **This ADR named the pulse store as the falsifier most likely to fire and adopted the decision
+> before answering it. It has been answered.**
+>
+> | | The chain [ADR-032](032-gen6-stage-integrated-gas-store.md) deleted | This trim stage |
+> |---|---:|---:|
+> | Peak power | 30 674 W | **28 606 W — 93.3 %** |
+> | Peak current at 96 V | 319.5 A | **298.0 A — 93.3 %** |
+> | Energy per shot | 2782 J | **136.6 J — 4.9 %** |
+>
+> **The energy fell twenty times and the current fell seven percent** — which is this ADR's own
+> sentence, *"pulse hardware scales with current, not energy"*, measured. **An EDLC store sized to
+> source it weighs 23.44 to 37.36 kg against the 1.2328 kg section it feeds**, and no sheet current
+> rescues the trade: its minimum is **10.755 kg**.
+>
+> **ANSWERED 2026-08-20 by [A64](../../validation/A64_pulse_store_technology.md), and falsifier 1 does not
+> fire.** Priced against pulsed-power capacitor technology rather than the EDLC that was the only store data
+> in the repository, **the store is ~70 g — 6 % of the 1.2328 kg section it feeds**, at **400 kW/kg**
+> against the 23.20 A54 said was required. **P86 closed.** *A cheaper answer may still exist: A61 found a
+> specified seal could delete this stage rather than feed it.*
+>
+> **A54 band 5's declared FAIL text says this ADR reverses. It is not reversed here**, because
+> deleting the trim stage deletes the commanded-velocity claim the product is sold on, and choosing
+> the replacement is a design decision rather than an analysis result. **The decision is open and
+> stated as open — P86.**
+>
+> **And the store was never affordable at any stroke.** Peak power is force-per-metre × exit
+> velocity, so the stroke does not enter it: at A48's own 2.18 m point the store would have been
+> **22.8–36.3 kg**. *This ADR's falsifier would have fired the day it was adopted.* The surviving
+> lever is the store technology — **ESR × C ≤ 36.3 ms against an EDLC's 690–1100** — or withdrawal.
+>
+> **Read this ADR as adopted, measured, and awaiting that decision.**
+
+> ## Amended 2026-08-19 by [ADR-034](034-gen6-long-stroke-design-point.md), and resized the same day by [A55](../../validation/A55_trim_authority.md)
+>
+> **The dispersion this stage exists to correct is 3.9798 %, not the 1.113 % quoted below.**
+> *Added to this banner 2026-08-20: dispersion was not on its list of amended quantities, so the
+> 1.113 % in the Context section stayed uncorrected for a day after A55 superseded it.* **1.113 %
+> is [A44](../../validation/A44_gen6_dispersion.md)'s figure for A44's 2.18 m machine.** At
+> ADR-034's adopted point [A55](../../validation/A55_trim_authority.md) measures **3.9798 %**, and
+> [A61](../../validation/A61_seal_class.md) reproduces it. **Friction's share rises with it, 93.4 %
+> to 98.68 %** — the long stroke concentrates the variance in the one term nobody has measured.
+>
+> **The section is 144.01 mm at x = 7855.99, not 39.7 mm at x = 7960.3, and it carries 1.1543 m/s
+> rather than 0.323.** A48 sized it against A44's dispersion at a **9.75 %** friction share;
+> ADR-034 runs at **28.39 %**, and A55 re-ran both. **The stage was under-authority by 3.57× —
+> P83, confirmed and closed.** Mass goes **0.340 → 1.2328 kg**, and added mass per satellite to
+> **1.3987 kg** against an unmoved 2.0 kg threshold.
+>
+> **The decision below stands and only its size changed.** Read every section length, energy and
+> mass figure in this file as A48's, not the current one.
+>
+> **Falsifier 1 is not made worse, which is the opposite of what was expected.** It rests on pulse
+> hardware scaling with *current*, and **peak power moves 27 820 → 28 606 W, 2.8 %** — the force
+> per metre is fixed by A2 and A1, so the section gets longer rather than harder to drive. **The
+> store still has not been weighed. P77.**
+
+> ## Suspended 2026-08-20 — [ADR-036](036-seal-specification-and-the-trim-stage.md)
+>
+> **[A61](../../validation/A61_seal_class.md) band 3 found that a seal meeting its own thermal
+> requirement makes this stage unnecessary** — the dispersion it exists to correct falls to
+> **0.9051 %** and the authority needed to **0.2982 m/s**, below the ±0.323 A48 sized for.
+>
+> **The stage is not deleted.** Deleting it on a specification would repeat what this ADR itself
+> did in the other direction — *adopting before the falsifier was answered.* **Work on it stops
+> until [P67](../../OPEN_PROBLEMS.md) measures the friction**, and the section stays in
+> `parameters.json` at A55's 144.01 mm as the worst-case sizing.
+>
+> **Read everything below as the worst-case architecture**, sized against A41's 83.4 N ceiling —
+> which is **4.68× looser** than the seal specification ADR-036 adopted.
 
 ## Context
 
@@ -69,6 +133,11 @@ an excellent servo.
    there, and the whole section is mass spent on a problem that did not exist. **P67** is the
    measurement.
 3. **The velocity sensor cannot resolve what the loop must correct** in the 1.4 ms available.
+5. **The stator cannot reach its magnets.** *Added 2026-08-20.* This decision puts the stator
+   outside the tube and the magnets inside it; [ADR-035](035-drive-tube-material.md) then made that
+   tube **aluminium**, and **nothing has computed what a conducting sleeve does to the coupling.**
+   **[P92](../../OPEN_PROBLEMS.md).** *If the attenuation is material, A55's 1.1543 m/s of authority
+   and the 28 606 W above are both optimistic.*
 4. **P34 proves binding** — if a magnetometer-carrying payload is a real customer rather than a
    hypothetical, the magnets cannot come back at any mass.
 

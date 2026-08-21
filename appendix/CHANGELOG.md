@@ -9,6 +9,85 @@ list these changes close) and `docs/DECISION_LOG.md` (why design choices were ma
 
 ---
 
+## 2026-08-20 (fifty-third pass): the visuals reach the front pages, and A35 turns out to be stale
+
+| ID | Item | Detail |
+|---|---|---|
+| **P95** | **CRITICAL. A35's headline figure is pre-A46, and correcting it reverses A35's own escape route** | **Found while drawing the ledger for the front page: the figure would not agree with the text, and the figure was right.** `constraint_ledger.json` was regenerated on 2026-08-16 in the *"Apply A46"* commit; the run sheet was last touched on the 14th. **49.23 kg / 58.2 % → 88.67 kg / 70.06 %**, and per satellite **4.10 → 7.39 kg**. *A35's one route out of kill criterion 1 — "at twenty-four satellites the same 49.23 kg is 2.05 kg each, and the criterion closes" — is **3.69 kg each** and does not close.* **Propagated to seven documents; A35 annotated with a dated block, no band re-declared.** |
+| **A2/A3** | **The field map, drawn for the first time** | `analysis/make_field_map.py`, from `field_3d.halbach_pair()` — **extracted from `kt_depth_resolved` so the picture and the thrust integral build the same geometry.** Kt verified unchanged at **10.5386**. Centre-plane **0.5041 T** against a depth mean of **0.4759 T**, the assumption A2 corrected. |
+| **A35** | **The ledger, drawn** | `analysis/make_ledger_figure.py`. Three of the six requirements carry no mass on their own; no corner of the 64 reaches the criterion. |
+| **Blender** | **An exploded view, and the renderer learned to do them** | `build_scene()` now accepts `(name, (dx,dy,dz))` as well as a bare name, so **every view written before exploded views existed behaves identically**. Two framings were discarded before one read as a stack rather than scattered parts. |
+| **Front pages** | **Four pages had no images at all** | `VOLLEY-lab` contained **no image file of any kind**; the paper and thesis each had **17 figures in their own directory and referenced none**. All four now lead with something, by `raw.githubusercontent.com` URL where the repo holds no binaries — **one copy of each render in the programme.** Every raw URL verified against a file already pushed. |
+| **VOLLEY** | **README Results and the Pages site** | Both gain the flow field, the field map, the exploded stack and the ledger. **Captions carry the caveats**: the CFD pressure term is solved, **the viscous term is bounded and not**. |
+
+---
+
+## 2026-08-20 (fifty-second pass): a provenance audit of every constant
+
+| ID | Item | Detail |
+|---|---|---|
+| **P94** | **A13 band 5 passes on a host control authority E5 says does not exist** | `RCS_TORQUE = 0.1` sat in `attitude_budget.py` with **no units, no comment and no source**, and A13 band 5 passes on it: *"settling below 0.01 °/s with a 0.1 N·m RCS authority."* **`EXTERNAL_EVIDENCE.md` records E5 as "no host propellant or control authority figure exists."** *The project recorded that it had no such figure and used one to pass a band.* **Labelled a declared assumption in script and run sheet, cross-linked to E5, verdict annotated rather than re-declared. No source was invented.** |
+| **A13** | **The deployer inertia was 40 % low, and correcting it improved the result** | `M_DEPLOYER` was the literal **124.5 kg** — `mass_properties`' **loaded** figure *before* A46. `deployer_inertia()` is added to the host's, so the rotating body is the loaded deployer: **174.6 kg**, now read live from the results file. At 500 kg host: inertia **329.7 → 345.0 kg·m²**, return peak **0.13625 → 0.13021 °/s**, offset **0.42074 → 0.40209 °**. At 200 kg the return peak falls **0.44323 → 0.38512**. **Rows 3 and 4 still FAIL** — *a correction that improves numbers is reported like one that damages them.* Propagated to both manuscripts and both PDFs rebuilt. |
+| **P93** | **A fifth instance, inside the script that computes the right answer** | `mass_properties.py`'s docstring still read **76.5 / 124.5 / 0.44**. Its own JSON says **126.6 / 174.6 / 0.46**. Six lines below sits the line *"A docstring is the first thing anyone reads about a script, so it is worth as much as the code under it."* Corrected, with the A46 history recorded in the style the docstring already used. |
+| **Audit** | **126 scalar constants scanned; 14 labelled** | Every module-level scalar in all 68 analysis scripts, excluding universal constants and sweep ranges. **The declaration discipline held**: A46's seven assumed enclosure inputs — driving the 50.04 kg that is 58.6 % of the stage credit — are all declared, and its band 7 says *"zero undeclared."* **`RCS_TORQUE` was the only genuine contradiction in 126.** `BEARING_KG`, `CONVERTER_KG_PER_KW`, `Q_DESIGN`, `MOS_TARGET`, `M_DIST`, `ECC`, `M_STOWED`, `SIGMA`, `TAU`, `MAG_FULL_SCALE`, `SEAL_CP` and `ASSUMED_ARM` now name themselves as declared assumptions beside the code. **The remaining 112 are design choices and named cross-run imports, not unsourced claims.** |
+| **Satellites** | **Clean** | `pulsed-linear-motor-design-lab`, `orbital-deployment-trade-study` and `engineering-evidence-toolkit` carry no superseded VOLLEY figures outside their `reference/` copies. The only hits are unit-test fixtures passing `16.388` as a function argument — **inputs under test, not claims.** |
+| **Scope** | **This audited code, not prose** | A full trace of every asserted number in `docs/` back to a results file is a larger job. **P93 is the proof it is needed**, and `tools/check_paper.py` is the right shape for it. |
+
+---
+
+## 2026-08-20 (fifty-first pass): Gen5 closes
+
+| ID | Item | Detail |
+|---|---|---|
+| **P93** | **CLOSED — and the entry was wrong about its own cost** | It called for a re-run. `payload_family.py` **already read `dry_kg` live** and `payload_family.json` already carried **126.6** with all nine rows. *The analysis was current the whole time; only the manuscript was stale.* |
+| **P93** | **Fixing it exposed two things the audit had missed** | **A third stale mass** in the mechanical section (84.5 / 132.5 / CoG 0.44 m → **126.6 / 174.6 / 0.46**), and **the family table stale in every column** — its velocities were at the **pre-ADR-030** point, so the 3U row read **16.4 m/s at 10.5 g** against the paper's own rated **16.0 at 10.1** two paragraphs earlier. **The table contradicted its own paper**, and seven rows were 76.5-based while the 3U row alone was 84.5-based. |
+| **Family table** | **Regenerated from `payload_family.json`** | All eight rows, all five columns. 3U is **10.550 kg/satellite**. The *"factor of thirty across the family"* claim — invariant in dry mass, therefore always checkable — is **109×**. |
+| **A29** | **The flow field, at last** | `validation/cfd/fields.py` parses the committed case in **pure Python** — `postProcess` aborts in this OpenFOAM 1912 build with an IOstream error, the same class of failure A29 recorded for `wallShearStress`. 721 781 points, 1 884 060 faces, **581 779 cells**. The mid-plane slice shows stagnation at the nose, separation at the shoulders and a wake unrecovered by x = 2.2 m — **A29's "classic bluff-body split", visible for the first time.** |
+| **Figures** | **`A29_cfd_report.png` was an orphan in both manuscripts** | Present in `figures/` since it was generated and referenced by neither `paper.tex`. **The paper had never once shown its CFD work.** Rescued, and the new wake figure placed beside it. **Unreferenced-figure count in both repos is now zero.** |
+| **Captions** | **Both CFD captions state the bound** | The pressure term is integrated from the solved field; **the viscous term is not solved** and is bounded by a flat-plate correlation. *A picture of a result must not imply more than the result claims.* |
+
+---
+
+## 2026-08-20 (fiftieth pass): Gen5 closes, and the paper does not
+
+| ID | Item | Detail |
+|---|---|---|
+| **P93** | **CRITICAL. The paper's system mass is 50 % low, in its own abstract** | `mass_properties.py` and `BASELINE.md` give **126.6 kg dry**; `paper.tex` says **84.5 kg** in the abstract and conclusion and **76.5 kg** in the payload-family table caption. **The arithmetic names the cause**: A46 itemised the enclosure on 2026-08-16, an 8.00 kg placeholder becoming **50.04 kg**, and **84.5 − 8.00 + 50.04 = 126.54**; **84.5 − 8.00 = 76.5** is the caption. Both figures are pre-A46 and the paper was built three days after it landed. **It is a re-run, not a patch** — the caption states per-satellite mass *uses* 76.5 kg, so every row of that table moves by 65 %. **Nothing compares the paper against `BASELINE.md`**: P84's shape, one deliverable further out. |
+| **A7** | **Superseded, and the closure document said otherwise** | A7 was specified and **correctly never run** — Chrono unavailable, and the release mechanism it would simulate is undefined. A7-R gave the budget (**1.465 mN·m·s**), **A23** modelled three rigid-body stages with mechanism properties as swept axes (**ideal release 0 °/s**, skew tolerance 50.6 µs, cradle reaction 85.0 N against 200 N), **A34** closed the impact **five of five** (settles in 27.25 ms of a 146.4 ms stroke, **exactly zero residual rate**). **`PHASE_I_CLOSURE.md` listed A7 as unrun Category A work until today**, ten days after A23 answered it — *a stale gap inside the closure document itself.* |
+| **GEN5_CLOSURE** | **New: `docs/GEN5_CLOSURE.md`** | The whole Phase I case on one page — what Gen5 is, every headline number against its source, what was cross-checked and by what tool, **what failed**, the seven kill criteria with three crossed and unmoved, the permanent caveats (E4, A9 re-tested at 403 today, T-1…T-8, B-1…B-4), and the handoff to hardware. **It states that all four specified benchtop tests validate subsystems ADR-032 deleted**, so the benchtop programme is Gen5's closure rather than Gen6's start. |
+| **P16** | **README's description was stale, not the paper** | `paper.tex` withdrew the invariance claim in the abstract, §V-B, the sensitivity and limitations sections, **and the built PDF carries it**. The README said the opposite. *The source was fixed and the summary was not.* What remains open is the replacement claim, which needs **A9** — still 403 at CONNECT, re-tested. |
+| **Paper / thesis** | **Gen6 added as future work; both PDFs rebuilt from source** | A bounded section: the architecture change, what it deletes, that nothing in it is measured, that its trim stage is suspended, and that it is reported in the repository rather than the paper *for the same reason the 3-D field correction is computed and deliberately not applied.* **Both PDFs now demonstrably rebuild** — the check that would have caught the stale P16 description. |
+| **CFD** | **Flow-field visualisation not produced, and why** | The converged fine free-stream case is committed and reconstructed at t = 1800. `postProcess` aborts in this OpenFOAM 1912 build with an IOstream error — **the same class of failure A29 already documented for `wallShearStress`**. Not forced, and recorded rather than worked around. |
+
+---
+
+## 2026-08-20 (forty-ninth pass): the stage credit at the store that was actually sized
+
+| ID | Item | Detail |
+|---|---|---|
+| **A45-R2** | **The stage credit re-run at A56's store — four of eight, all five predictions held** | A45 and A45-R both read the store as A43's **5.38 kg**. A56 sized it at ADR-034's charge pressure and got **3.1216** — 42 % lighter — and nothing depending on it had been re-run. **The allowance moves for the first time**: A45-R's finding was *"the allowance never moved, the credit did"*, and sizing the store takes it **7.17 → 9.43 kg**, break-even **8.4 % → 11.0 %**. |
+| **P68** | **Still CRITICAL** | Full credit **1.4027 → 1.2145 kg/satellite**, hostile **3.2709 → 3.0827**. **ADR-032's falsifier fires by a third less and still fires**, at 11.0 % against a declared 30 %. *A CRITICAL entry improving is not a CRITICAL entry resolved.* The 16.5 % the entry quotes is against the 43.33 kg credit A46 replaced — **a break-even percentage means nothing without the credit it is a fraction of.** |
+| **MASS-01** | **The project was publishing three figures for one quantity** | **1.403** (A45/A45-R/P68, at 5.38 kg), **1.296** (README, index.html, GENERATIONS, at ADR-034's scaled 4.10 kg) and **1.324** (GEN6.md, same store *plus* the trim stage). **None was wrong for its own scope and no page said which scope it was using** — the front page's hostile 3.164 is the 4.10 row while P68's 3.108 is A45's at 5.38. A45-R2 band 8 reconciles all five readings and names **1.2145 kg/satellite** canonical: A56's sized store, **without** the trim stage, because ADR-036 suspended it. Any page quoting **1.3173** must say it includes a section that may not be built. |
+| **A45 / A45-R** | **Frozen against drift** | `stage_credit.py` gains **`STORE_KG_A43 = 5.38`** and reads the live store from `cad/parameters.json`; `main()` raises if the A43 helper stops reproducing. **Band 1 re-evaluates the whole model at the frozen store** and must return 85.36 / 1.403 / 3.271. *A44 and A48 drifted silently because nothing did this.* |
+| **Propagation** | Six documents | `README.md` (twice), `docs/index.html`, `docs/GENERATIONS.md`, `docs/generations/GEN6.md`, `docs/KILL_CRITERIA.md`, `docs/GEN6_CLOSURE.md`, and a dated block on **ADR-032**'s falsifier 1. ADR-034's own table keeps 1.296 — it is that decision's record of what it decided. |
+
+---
+
+## 2026-08-20 (forty-eighth pass): the seal is specified, and the trim stage stops
+
+| ID | Item | Detail |
+|---|---|---|
+| **ADR-036** | **The seal is specified at 17.8 N and the trim stage is suspended** | **No new analysis.** [A61](validation/A61_seal_class.md) band 3 had already run it: a seal meeting its own **thermal** requirement — 4.00 %, set by A58 band 5 — is tighter than the **5.00 %** at which the trim stage stops earning its mass, so **one strictly implies the other**. The stage is **not deleted**: deleting on a specification would repeat ADR-033's own error of adopting before the falsifier was answered. Work stops until **P67**. |
+| **P89** | **Closed** | `cad/parameters.json` gains a `gen6_seal` group carrying **both** numbers and saying which is which — `friction_max_N` **17.8** as the specification, `friction_allowance_N` **83.40371375447981** as A41's retained ceiling, **4.68× apart** — plus `measured: NO`. |
+| **P84** | **Two dated scripts frozen at their own design points** | `gen6_dispersion.py` gains **`STROKE_A44 = 2.18`** and `trim_stage.py` **`STROKE_A48 = 2.18`**, the pattern `precharged.py` already used for `STROKE_A41` and that had not been applied here. A44 was computing a shot at **50 bar over 8.0 m** — a point never adopted — and returning **1.504 %** against its published **1.113 %**. A48 band 3 was reporting **0.497 %** where A48 declared **1.822 %**. Both reproduce exactly again. |
+| **P84** | **Its own closing sentence corrected** | It claimed Gen6's dispersion at ADR-034's point *"is not known"*. **It was known**: A55 computed **3.9798 %** on 2026-08-19 and A61 reproduced it. *The defect was never a missing number — it was that the number never propagated.* |
+| **DISP-01** | **3.9798 % propagated into four documents** | `ADR-033`, `docs/GENERATIONS.md`, `docs/BUILD_READINESS.md` and `docs/generations/GEN6.md` all carried A44's **1.113 %** as Gen6's figure — **3.6× low**. Every surviving instance is now explicitly attributed to A44's 2.18 m machine. Friction's variance share rises with it, **93.4 % → 98.68 %**. |
+| **P92** | **Deferred, not dropped** | A66 is not written: computing how well a stator couples through a conducting tube is only worth doing for a stator that will exist. **Stays LIVE.** If P67 measures above **22.3 N**, it becomes the next run with nothing in front of it. |
+| **P67** | **Now decides an architecture** | It has a threshold in the unit seal data is quoted in: **≤ 17.8 N** closes P88 and retires the stage; **> 22.3 N** fires ADR-036 falsifier 1 and ADR-033 stands. |
+| **CAD-07** | **`unit_for()` asserted "mm" for every physical quantity Gen6 added** | Not numbered — a `tools/` defect under ADR-021. `cad/DIMENSIONS.md` rendered **200 bar as "200.0 mm"**, a 473 K ceiling as "473.0 mm", a 3.1216 kg store as "3.1216 mm", and `first_fill_s` as dimensionless because "fill" appears in the name. The suffix table now covers kg, bar, K, J, W, A, Hz, L, s, m/s, m², m³, kg/m³ and N/kA·m, with a containment pass for qualified names like `exit_velocity_m_s_zero_friction`. **Geometry keys are unchanged.** *This is the document whose stated purpose is to be read instead of the JSON by whoever is cutting metal.* |
+
+---
+
 ## 2026-08-19 (forty-sixth pass): the stroke becomes the stage
 
 | ID | Item | Detail |
