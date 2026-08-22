@@ -5373,7 +5373,7 @@ is recorded here rather than claimed closed.*
 
 ### P108. Gen6's exit angular rate misses the tip-off band by 7.4x, and the input that decides it is bore straightness: CRITICAL, NEW 2026-08-22
 > **Status:** `LIVE` — open engineering; something still has to be done
-> **Scope:** `GEN6` · **Next step:** `COMPUTATION` — the solver now COMPLETES on the corrected centreline and does not CONVERGE; get a converged exit state (implicit integrator, smooth contact regularisation, or a compliant piston), then price the land-separation trade against its 400 mm admissibility ceiling
+> **Scope:** `GEN6` · **Next step:** `COMPUTATION` — A71 posed the convergence problem properly and did not solve it: raise the penalty stiffness until peak penetration is under 10 % of the clearance and re-converge in tolerance, or replace the penalty with a stabilised constraint formulation, or make the piston compliant so the contact stiffness is physical
 
 
 **[A67](validation/A67_guided_contact.md) ran on 2026-08-22 — six of nine — and band 5 is the
@@ -5663,6 +5663,54 @@ identification is a fitting step and is now labelled as one.*
 and 8.954 °/s** on the same VOLLEY case. **The conclusion — that the magnitude of Gen6's tip-off
 problem is model-form-limited and unresolved — is unchanged.** What changes is that it now rests
 on three formulations that are named for what they are.
+
+### P112. The guided-contact model wrapped the rear piston land to the far end of the tube: HIGH, CORRECTED 2026-08-22
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found while building [A71](validation/A71_guided_contact_converged.md)'s implicit solver, by
+asking why the contact penetration was larger than the clearance.**
+
+`guided_contact.bore_shape()` located each land on the bore centreline with
+
+```
+xq = np.mod(x + shift, xs[-1])
+```
+
+**The rear land sits at `x − s_half`.** For the first half-separation of travel that is
+**negative**, and the modulo wrapped it to **`8.0 m − s_half` — the far end of the tube**, where
+the 1 m overhang carries the largest deflection in the whole member. **The model asked the rear
+land to follow a centreline it was nowhere near.**
+
+| At the nominal point | |
+|---|---:|
+| Peak penetration, as published | **1192 % of the radial clearance** |
+| Peak penetration, corrected | **45 %** |
+
+**Corrected. Propagated 2026-08-22.** A tube ends; it does not wrap. The lookup now clamps at both ends, and the piston is seated
+with its rear land at `x = 0` so neither land is ever outside the member.
+
+> ### This is where A70's megaNewton forces came from
+>
+> [A70](validation/A70_guided_contact_derived.md) recorded peak contact forces of **1.6 MN** and
+> called them penalty excursions. **They were a geometry error**: a land driven against a wall
+> 8 m from where it actually was. *The entry was right that the number was not physical and wrong
+> about why.*
+
+**A second, smaller fault in the same lines.** The second lateral axis was the *same* centreline
+shifted by a quarter of the length, so y and z were perfectly correlated. **They are now
+independently seeded solves** — a real bore has no reason to be identically shaped in two axes.
+
+### What it does and does not change
+
+**It does not rescue any conclusion.** [A67](validation/A67_guided_contact.md)'s numbers were on
+an assumed sinusoid, where the wrap put the rear land at a *different phase* rather than at a
+different structure — the fault was present but far less severe. **A70's dynamics were never
+evaluated into a band**, and stay NOT EVALUABLE.
+
+**It does change what "not converged" means.** A71's tolerance sweep now runs at penetrations of
+tens of percent of clearance rather than twelve times it, and **the remaining
+non-convergence is a genuine numerical-method problem rather than a masked geometry error.**
 
 ### E30. The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism, and nothing estimates its reliability: NEW 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done
