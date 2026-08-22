@@ -3054,6 +3054,22 @@ for the actual piston seal at 50 bar in vacuum. That is a bench test on a compon
 calculation, and it is the second item after `docs/B1_ORDER.md` that changes the category of
 evidence rather than its degree.
 
+> **It has an order now, 2026-08-22: [`docs/B2_ORDER.md`](docs/B2_ORDER.md).** Written the same way
+> B-1 was and for the same reason — *a procedure invites more analysis, a purchase order invites a
+> purchase.* A stock ISO 6432 16 mm cylinder, which [A61](validation/A61_seal_class.md) band 7
+> already showed costs **0.00 %** against the drawn bore; a logging load cell, where the binding
+> requirement is sample rate rather than accuracy because breakaway is a transient; three units,
+> because the spread is half the question. **₹8,000–26,000, all of it estimated and none of it
+> quoted.**
+>
+> **Its bands are declared in the order file, before the cylinder is bought**, and **band 8 is the
+> one that constrains the author**: it requires an explicit answer to *"does this discriminate, or
+> only bound?"* **before** the thresholds are quoted anywhere. An air-side, low-speed, possibly
+> unpressurised pull is a *different* measurement from a PTFE seal at 22.73 bar and 17 m/s in
+> vacuum — **not a cheaper version of the right one** — and the order says so. *Landing between
+> 17.8 and 22.3 N is declared in advance as a real outcome that answers nothing*, so it cannot be
+> argued into an answer afterwards.
+
 **What it does not touch.** Bands 1, 2, 3, 7 and 8 all pass. The architecture is not in question
 and the store is not affected.
 
@@ -4816,6 +4832,420 @@ the campaign still exceeds A52's wheel, at 1.17× instead of 18×.
 **The Gen5 arm is still unsourced.** `ASSUMED_ARM` remains a declared assumption with no derivation
 behind it, and A13's numbers still rest on it. This entry corrects where Gen6 got its arm; it does
 not give Gen5 one.
+
+### P101. The payload ladder D2 turns on was three rollup generations stale, and the rung the project was leaning on does not close: HIGH, CORRECTED 2026-08-22
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found while writing [`docs/D2_DECISION.md`](docs/D2_DECISION.md)**, which needed the one table
+the decision actually turns on and could not quote it.
+
+**D2 asks which payload class is the product.** The answer is a ladder of deployer kilograms per
+satellite against a ~2 kg threshold, and there are two of them:
+[`payload_family.py`](analysis/payload_family.py)'s *volumetric* ladder and
+[A24](validation/A24_fixed_cell_manifest.md)'s *designed-cell* ladder, which
+[`docs/PAYLOAD_CLASSES.md`](docs/PAYLOAD_CLASSES.md) says in its own words supersedes it: *"Read
+A24 and ADR-025 before quoting anything above."*
+
+**The superseding table was the stale one.** Three vintages of the same ladder were in the
+repository at once, and they disagreed about every rung:
+
+| Where | Dry mass it divides | 1U | PocketQube 3P |
+|---|---:|---:|---:|
+| `PAYLOAD_CLASSES.md`, the A24 blockquote | **76.5 kg** | 2.125 | 0.797 |
+| `analysis/results/cell_manifest.json`, committed | **84.5 kg** | 2.347 | 0.880 |
+| **`mass_properties.py`, the rollup since A46** | **126.6 kg** | — | — |
+
+**The script was never wrong.** `cell_manifest.py` line 47 reads
+`DEPLOYER_DRY_KG = pf.DEPLOYER_DRY_KG`, and `payload_family.py` reads `dry_kg` out of the rollup
+at import. Nothing in either file hardcodes a mass. **Only the committed results file and a
+hand-typed blockquote were stale**, and re-running the script is the entire repair — the same
+shape as the commit that last touched this file, whose message was *"the baseline change reached
+the documents and stopped at the scripts."* This time it reached the scripts and stopped at their
+outputs.
+
+### Re-run 2026-08-22, at the rollup A46 produced
+
+| Class | Per load, designed cell | Was, at 84.5 kg | **Now, at 126.6 kg** | Against 2.0 kg |
+|---|---:|---:|---:|:--|
+| ChipSat / femtosat | 8640 | 0.010 | **0.015** | closes |
+| **PocketQube 1P** | 288 | 0.293 | **0.440** | **closes** |
+| **PocketQube 3P** | 96 | 0.880 | **1.319** | **closes** |
+| 1U CubeSat | 36 | 2.347 | **3.517** | **crosses** |
+| TubeSat | 24 | 3.521 | **5.275** | crosses |
+| 3U CubeSat | 12 | 7.042 | **10.550** | crosses, 5.3× |
+| ThinSat, 6U, 12U | — | — | — | not accommodated |
+
+**Two band verdicts move, and the bands are not edited.**
+
+**Band 1 fails.** It tests that the cell model reproduces the machine that exists, against a
+reference of **6.375 kg/satellite written into the script** at a rollup two corrections old. The
+cell model reproduces the machine exactly — 12 per load, and 10.55 kg/satellite is the rollup
+divided by twelve. **What band 1 is now detecting is its own hardcoded reference**, not a defect in
+the cell model. It is recorded as failing because that is what it does at the current inputs; it is
+not re-declared, and A24's original verdict stands as run.
+
+**Band 3 still passes, on two rungs instead of four.** It asks whether *some* designed class closes
+kill criterion 1, and PocketQube 1P and 3P both do. **1U does not**, and 1U is the rung this
+repository had been leaning on — `PAYLOAD_CLASSES.md` already recorded A24 taking it from 1.913 to
+2.125 and over the threshold, and at the current rollup it is **3.517 kg**, over by 76 %.
+
+Band 6 fails as it did at A24, for the reason [P44](#p44) records. Bands 2, 4 and 5 pass unchanged.
+
+### What it changes for D2
+
+**It does not change the shape of the answer and it removes the ambiguity from it.** The only
+designed classes that close kill criterion 1 on dry mass are the two PocketQube rungs and ChipSat,
+which [`payload_family.py`](analysis/payload_family.py) marks *beyond the mechanism*. Every ladder
+figure quoted in a decision document must now come from the re-run file.
+
+### Why it was not caught
+
+**[`tools/check_crossrefs.py`](tools/check_crossrefs.py) was written the same day and this pair was
+not one of the nine it declared.** It fails when two committed results files disagree about the
+same quantity, which is exactly this: `cell_manifest.json` published a `deployer_dry_kg` of 84.5
+while `mass_properties.json` published 126.6, in the same repository, for four commits' worth of
+work. **It is declared now**, and the gate reproduces the failure when the old value is restored.
+
+### Corrected. Propagated 2026-08-22
+
+`cell_manifest.py` was re-run with **no edit to the script** — it read the rollup live and always
+did — and the four documents that quoted the ladder were re-quoted from the re-run file:
+[`docs/PAYLOAD_CLASSES.md`](docs/PAYLOAD_CLASSES.md) in two places,
+[`docs/KILL_CRITERIA.md`](docs/KILL_CRITERIA.md)'s route table, which had one row at 126.6 kg and
+four at 76.5, and [A24](validation/A24_fixed_cell_manifest.md), which gets a dated correction block
+with its bands not re-declared and its 2026-08-10 verdict not edited.
+[`docs/D2_DECISION.md`](docs/D2_DECISION.md) is written against the re-run file only.
+**Two cross-references are declared in `tools/check_crossrefs.py`** — the rollup against
+`cell_manifest.deployer_dry_kg`, and the 3U rung of the two ladders against each other, which must
+agree because at 3U a designed cell holds exactly one satellite. **Restoring 84.5 kg reproduces the
+failure and the gate exits 1.**
+
+**One thing is corrected and one is not.** The multiplier `PAYLOAD_CLASSES.md` quoted for
+PocketQube against a cold-gas module was derived from the stale figure; it is **removed rather than
+re-derived**, with a NEEDS SOURCE line in its place, because re-computing it here would put a
+number in a document that no results file holds.
+
+### P102. The only Gen6 tip-off run was left at A37's window when ADR-034 moved the stroke, and its run sheet predicted exactly this: HIGH, CORRECTED 2026-08-22
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**Found while reconciling a sweep of the outside separation literature against the record.** Its
+strongest claim is that a long guided interface makes contact and geometry matter more than the
+energy path, and that tip-off is the term to watch. **Checking whether this project had answered
+that at 8 m found that it had answered it at 2.18 m.**
+
+[A38](validation/A38_tipoff_at_gen6.md) is the only run that takes tip-off to Gen6.
+`analysis/tipoff_gen6.py` held its operating point as two module constants:
+
+| | A38, hardcoded | `gen6_drive`, since [ADR-034](docs/adr/034-gen6-long-stroke-design-point.md) |
+|---|---:|---:|
+| Acceleration | **25.0 g** | **11.362895 g** |
+| Acceleration length | **2.18 m** | **8.0 m** |
+
+**2.18 m was the long end of [A37](validation/A37_host_integrated.md)'s feasible window**, and
+ADR-034 replaced that window with the host stage's whole usable length on 2026-08-19. **The script
+was never re-run and nothing pointed at it.**
+
+> ### The run sheet wrote the warning and then became the example
+>
+> A38's own opening, and `tipoff_gen6.py`'s docstring, both say:
+>
+> > *"This is the P19 and P53 pattern, which this project has now recorded twice: an analysis that
+> > closed at one operating point, left standing while the point moved underneath it. **The
+> > difference here is that the point has not moved yet.** Checking before adopting is the whole
+> > discipline."*
+>
+> **The point moved three days later.** The run that was written to demonstrate checking before
+> adopting is the run that was not re-checked after.
+
+### Corrected. Re-run 2026-08-22, and no band verdict moves
+
+`tipoff_gen6.py` now reads `acceleration_g` and `stroke_mm` from `cad/parameters.json` at import,
+the same repair [P84](#p84) applied to `precharged.py`. **`G_CAP` stays at 25.0** — it is the
+payload qualification cap and **band 6's declared threshold**, not the design point, and lowering
+it to the design point would have widened a band.
+
+| | A37 window | **Design point** | |
+|---|---:|---:|---|
+| Powered stroke | 133.3 ms | **378.9 ms** | band 3 gains margin |
+| Worst cradle arrival | 355.1 °/s | **239.4 °/s** | improves |
+| Settling at e = 0.7 | 17.69 ms | **26.24 ms** | still inside the stroke |
+| Residual at release | 0.0000 °/s | **0.0000 °/s** | unchanged |
+| Critical restitution | 0.9462 | **0.9712** | improves |
+| **Preload per contact** | **201.7 N** | **91.7 N** | **the one that propagated** |
+| Tip-off ceiling | 30.9 g | **30.9 g** | preload-limited, so the stroke does not enter it |
+
+**Every published figure moved and every verdict stayed.** Band 1 fails as it already did
+([P61](#p61)); bands 2–6 pass, four of them with more margin. **The correction rescues nothing and
+damages nothing — it corrects the record**, which is the outcome an entry like this should
+usually have.
+
+**[P61](#p61) named the missing tool and this is the same class again.** It asked for *"a
+regression band comparing a run sheet's recorded figures against its script's current output"* and
+recorded it as not built. `tools/check_crossrefs.py` now does the results-file half of that, and
+**the pair that would have caught this is declared in it** — the design point in
+`cad/parameters.json` against the point `tipoff_gen6.json` says it ran at. Restoring 25 g and
+2.18 m makes the gate exit 1.
+
+### Two things it leaves open, and neither is bookkeeping
+
+**1. `cad/parameters.json` carries 201.7 N and the design point needs 91.7.**
+`gen6_drive.cradle_preload_N_per_contact` is A38's figure at 25 g, and `cad/build_gen6.py` says in
+its own docstring that the tube wall is set partly by *"carrying A38's 201.7 N cradle preload"*.
+**The parameter is not being changed here.** It is conservative by 2.2×, no script reads it as a
+driver, and lowering a retention requirement on the strength of a re-run is a design decision
+rather than a correction. **It is recorded as one.**
+
+**2. The model is constant-acceleration, and at 8 m that is the constant-pressure bound.**
+`point()` takes `v = sqrt(2 a L)` and returns **42.23 m/s**, which is exactly
+`gen6_drive.exit_velocity_m_s_constant_pressure_bound`. **The delivered figure is 29.01 m/s** and
+the shot is a blowdown, not a constant push.
+
+**The conservatism this buys is one scalar wide.** A lower delivered exit velocity over the same
+8.0 m means a longer powered stroke, so **band 3's settling-time-against-time-available comparison
+is understated**. It does **not** follow that the contact trajectory or the angular response is
+conservative under the real pressure–time history: under blowdown the acceleration is time-varying,
+the angular forcing from force-line eccentricity varies with it, and contact timing, arrival rate
+and rebound timing all move. **A38's Gen6 answer is a bound on one comparison, not a bound on the
+motion.** *Narrowed here on the same day it was written; the first version of this paragraph
+claimed the direction was safe without qualifying what it was safe about.* **Contained in
+[P103](#p103), which owns the trajectory, rather than opened as a separate entry.**
+
+### What this does not touch, and it is the larger gap
+
+**A38 models the payload rattling across its cradle clearance at the start of the stroke. Nothing
+in this repository models the other 8 metres.** There is no contact state along the bore, no
+straightness or roundness input, no force-line eccentricity, no payload centre-of-mass offset, and
+no lateral or angular state carried through the stroke — and `docs/EXTERNAL_EVIDENCE.md` records
+that the nearest published work makes exactly those the dominant terms. **P67 measures a force;
+what that force is a property of has never been modelled.**
+
+### P103. Gen6 has no model of the payload's guided contact state through the 8 m bore, so its exit angular and lateral state is not established: HIGH, NEW 2026-08-22
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**[P102](#p102) found this while correcting something smaller and did not own it.** That entry is a
+propagation defect and it is closed. **This one is the engineering, and it is open.**
+
+**The chain Gen6 models is chamber pressure → axial force → exit velocity.** The chain that decides
+whether a customer's satellite arrives usable is **contact state → lateral impulse and torque →
+release pose and rate**, and no file in this repository contains it.
+
+[A34](validation/A34_cradle_restitution.md) and [A38](validation/A38_tipoff_at_gen6.md) model the
+payload crossing its **cradle clearance** in the first tens of milliseconds and answer it well —
+the rattle settles, the residual rate at force removal is exactly zero. **Then the payload travels
+another eight metres inside a tube and nothing follows it.**
+
+### What is missing
+
+**Necessary for a first-order answer.** Without these there is no exit angular or lateral state at
+all, only an axial one:
+
+| Term | Where it stands today |
+|---|---|
+| **Local clearance**, bore against carriage, as a distribution | Not stated anywhere. `gen6_drive.bore_mm` is a nominal 15.805 |
+| **Bore straightness over 8.0 m** | Not stated. [A59](validation/A59_tube_structure.md) needs **seven supports at 1.0 m** and models no resulting shape |
+| **Force-line eccentricity** — gas thrust axis against bore axis | No tolerance exists. [A52](validation/A52_gen6_recoil.md) publishes a **10.65 mm** requirement against the *stage* centre of mass, which is a different quantity |
+| **Payload CG eccentricity** | `cradle_restitution.COM_OFFSET` exists for the cradle moment and nothing sweeps it |
+| **Friction law** — breakaway and sliding, with spread | **[P67](#p67).** [`docs/B2_ORDER.md`](docs/B2_ORDER.md) is the order |
+| **Contact stiffness and damping** | Only as a restitution coefficient, swept not measured, inside A34 |
+| **Lateral translation and pitch/yaw integrated through the stroke** | **Does not exist** |
+| **Exit lateral velocity, exit angular rate** | **Does not exist.** Kill criterion 4's Gen6 answer is the cradle result and says nothing about the other 8 m |
+| **Peak contact load and contact impulse count** | **Does not exist**, and nothing in the record states what either may be |
+
+**Second order, and explicitly not required for the first model.** Adding these before the
+first-order terms are swept would be false precision:
+
+bore **roundness**; friction **pressure**, **velocity** and **temperature** dependence — B-2 bands
+7, 6 and 12 respectively; **stick-slip** within a stroke — B-2 band 11; **payload inertia
+variation** across the manifest; **tube structural compliance**, which A59 says is real enough to
+need seven supports; **seal preload** as distinct from the friction it produces.
+
+### Why it is not owned by anything already open
+
+**Checked before this entry was written.** [P67](#p67) is a *measurement* and B-2 is its order —
+it produces one input to the model below and is not the model. [P78](#p78) is the **energy** cost
+of stroke, friction's growing share of shot work, and says nothing about geometry or attitude.
+[P88](#p88) is the seal's own thermal survival. [P89](#p89) is closed. [P41](#p41) is corrected and
+is the cradle. **No live entry carries the guided-contact problem, and until this one it had no
+owner at all.**
+
+### What the outside literature contributes, and what it does not
+
+[`docs/EXTERNAL_EVIDENCE.md`](docs/EXTERNAL_EVIDENCE.md) records the nearest published work:
+guided ejection of a CubeSat-class body along an anodised aluminium rail, analysed in a multibody
+contact model for **release attitude**, with **fit clearance found to have an optimum rather than a
+minimum**. **It supplies the shape of the problem and the modelling method. It supplies no number
+this repository may use** — its clearance, its rail length and its tolerances belong to its
+mechanism, and importing them is the failure this project has recorded twice.
+
+### What would close it
+
+**Ordered. Step 1 is not optional and steps 2 and 3 cannot substitute for it.**
+
+1. **[P67](#p67) is measured** — B-2 — giving a friction force with its spread, its direction
+   dependence and its force–time character rather than a scalar allowance.
+2. **A reduced multibody contact model propagates the payload across the full 8.0 m**, carrying
+   lateral and angular state, driven by the design point read live from `cad/parameters.json` and
+   **not** by a constant acceleration. *Its acceptance bands are declared before its script exists,
+   as every run here is; none is declared in this entry.*
+3. **The reduced model is checked** — against a higher-fidelity contact solve at selected points,
+   or against a representative guided-ejection article, and the disagreement is quoted.
+4. **A sweep over the necessary terms above** returns, as distributions: exit axial velocity, exit
+   lateral velocity, exit angular rate, peak contact load, and contact impulse count and timing.
+5. **The results are checked against thresholds that already exist** — the **2.0 °/s** residual
+   rate A38 band 2 was declared against and A23 quotes as the tighter flown deployer figure, and
+   the exit-velocity dispersion chain [A44](validation/A44_gen6_dispersion.md) publishes.
+   **For peak contact load and contact impulse there is no threshold in this repository**, and the
+   run that produces them will have to say against what they are being judged before it judges them.
+
+**No numerical tolerance is declared here**, because a tolerance declared in a register entry is a
+band chosen outside the discipline that makes bands worth anything.
+
+> **Nothing here says the machine fails.** It says the quantity that decides kill criterion 4 for
+> Gen6 has not been computed, and that **the cradle settling result must stop being quoted as
+> though it had been.**
+
+### P104. B-2 as first written measures a pneumatic cylinder and would have been recorded as measuring the Gen6 seal: HIGH, CORRECTED 2026-08-22
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**[`docs/B2_ORDER.md`](docs/B2_ORDER.md) was written on 2026-08-22 and this was found the same
+day, before anything was ordered.** *That is the only good thing about it.*
+
+**The order specified a stock ISO 6432 cylinder, a logging load cell, and twelve bands about what
+to do with the reading. It never asked what the load cell is attached to.**
+
+| | |
+|---|---:|
+| Threshold — [A61](validation/A61_seal_class.md)'s seal-thermal specification, 4.00 % | **17.8352 N** |
+| Threshold — trim-unnecessary fraction, 5.00 % | **22.294 N** |
+| **The decision window between them** | **under 4.5 N** |
+
+**A rod on a stock cylinder carries four friction paths and VOLLEY has one.**
+[ADR-035](docs/adr/035-drive-tube-material.md) records that the carriage is not recovered and that
+**every seal makes exactly one 8.0 m pass** — the Gen6 interface is **a free piston in a bore**,
+with no rod, no rod seal, no wiper and no rod bearing. **A pull on a cylinder rod measures all
+four, plus a return spring if one is fitted**, and §1.1 as first written permitted *"spring-return
+or double-acting"*. A return spring on a 16 mm bore develops a force of the same order as **the
+whole of the lower threshold**.
+
+**So the parasitic terms are plausibly the size of the gap the measurement exists to resolve, and
+in the spring case the size of the thresholds themselves.**
+
+> **Band 1 asked for breakaway. Band 2 asked for running friction. Band 5 asked for unit-to-unit
+> spread. Band 8 asked whether the measurement discriminates.** *Every one of them is a question
+> about a number the rig could not produce.* **Band 8 was written to catch exactly this class of
+> self-deception and it looked at speed, pressure and vacuum — not at what the sensor was in series
+> with.**
+
+### Corrected. Propagated 2026-08-22, before purchase
+
+**Bands 1–12 are not edited and no threshold moves.** Two bands are added, declared before the
+cylinder is ordered and before any data exists, and both are **prerequisites on bands 3 and 4** in
+the way band 8 already is:
+
+- **Band 13** requires the non-target force to be measured **on the same hardware**: each unit
+  pulled twice, complete and with **the piston seal removed**, everything else unchanged. **The
+  deliverable is the difference**, not a load-cell reading.
+- **Band 14** requires the result to **classify**: the difference, with its combined 3σ spread,
+  must lie wholly below 17.8352 N, wholly above 22.294 N, or wholly between them. **If it straddles
+  a boundary, P67 is not answered** and band 8's third outcome applies.
+
+**Band 14 declares no new number.** Both bounds are A61's, already in
+`analysis/results/seal_class.json`, and both were declared before this order existed.
+
+**Spring-return is excluded from the purchase.** Double-acting only.
+
+### What is still not representative, and it is not this entry's to fix
+
+The rod stays in the fixture, so its side load acts on the piston seal in **both** configurations
+and lives inside the difference rather than being subtracted. And the difference is a piston seal
+**in a rod cylinder at ambient**, not a free piston at **22.73 bar and 17 m/s in vacuum**.
+**Band 8 governs that and always did.** *What changed is that the quantity band 8 is judging is now
+the seal rather than the assembly.*
+
+### P105. The companion reproducibility payloads went four commits stale and no gate in the project could see it: HIGH, CORRECTED 2026-08-22
+> **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
+
+
+**`VOLLEY-paper` and `VOLLEY-thesis` publish the analysis, the results and the run sheets as a
+reproducibility payload, generated by `tools/export_companion.py`.** Both were sitting at flagship
+commit **`28bfaba`** while the flagship stood at **`ef8f07b`** — four commits, carrying P100's
+propagation, [P101](#p101) and [P102](#p102).
+
+**Both companions were therefore publishing `validation/A38_tipoff_at_gen6.md` with no correction
+block on it**, at 25 g over 2.18 m, under a banner that names a flagship commit and says *"where a
+generated file disagrees with VOLLEY, VOLLEY is right and this copy is stale."* **The banner was
+telling the truth and nothing was listening.**
+
+### Why no gate caught it
+
+**The provenance was never missing.** The export has stamped the flagship commit into each
+companion's README since it was written. **The problem is where that stamp lives**: in the other
+repository, which no gate in this one opens. `check_links.py`, `register_status.py`,
+`make_baseline.py`, `check_artifacts.py`, `check_public.py` and `check_crossrefs.py` all read the
+flagship and all passed.
+
+> **This is P84, P100, P101 and P102 across a repository boundary.** A value moved and something
+> that restates it did not — except that here the restatement is an entire published tree, and the
+> thing that moved was the correction record itself.
+
+### Corrected. Propagated 2026-08-22
+
+**`tools/check_companions.py`**, a sixth gate. `export_companion.py` now writes
+`tools/companion_export.json` recording the flagship commit it ran at and the manifest source
+paths; the gate fails when **any commit since has touched a manifest source**, which git answers
+offline. Where the companion working copies are on disk it also requires their README banner
+commit to match, and it says which copies it could not check rather than passing silently.
+
+**It lives in `tools/` rather than `analysis/results/` because `analysis` is itself a manifest
+source** — a record written there would have been a payload file whose own commit made the payload
+look stale, and the gate would have tripped on the act of recording that it had not.
+
+**Both payloads were regenerated and pushed.** The gate is offline by construction, like the other
+six: it asks git about this repository and reads files that happen to be present. It never reaches
+the network, because none of the others do either.
+
+### P106. VOLLEY-paper's LICENSE is the MIT text while its own NOTICE and LICENSING.md say the payload is CC BY 4.0 and point at that file: MEDIUM, NEW 2026-08-22
+> **Status:** `LIVE` — open engineering; something still has to be done
+
+
+**Found while checking, before running the export, that nothing authored would be overwritten.**
+
+`VOLLEY-paper/LICENSING.md`, in its own table: *the reproducibility payload is* **CC BY 4.0. Full
+text in `LICENSE`**. `VOLLEY-paper/NOTICE`: *"This work is licensed under the Creative Commons
+Attribution 4.0 International License. The full licence text is in LICENSE."*
+
+**`VOLLEY-paper/LICENSE` is the MIT licence**, and it is that on purpose.
+`PAPER_MANIFEST` maps **`LICENSE-MIT-superseded` → `LICENSE`** with the reason written beside it:
+
+> *"LICENCE HELD, 2026-08-10. The flagship is CC BY 4.0; this companion deliberately is not …
+> Relicensing the IEEE manuscript sets terms that an IEEE copyright transfer on acceptance would
+> supersede, and this repository cannot license rights it has transferred."*
+
+**So the hold is deliberate, documented, and mechanically enforced — and two files added to that
+repository afterwards assert the opposite, on its front page.** `NOTICE` and `LICENSING.md` are not
+in the manifest, so the export does not touch them and the contradiction survives every run.
+**Every export re-asserts the MIT text under a notice that says it is CC BY.**
+
+### What this is not
+
+**It is not a stale generated file** — the export is behaving exactly as specified.
+**It is not a correction** either, and it is not being fixed here. Which licence the payload
+carries is **[D4](docs/STATE_OF_THE_PROJECT.md)** — *submit to IEEE, or publish openly* — an owner
+decision that has been open since 2026-08-10, and *a correction is not a design decision*.
+
+### What would close it
+
+**Either half, and the choice is D4's.** If the hold stands, `NOTICE` and `LICENSING.md` in that
+companion say so and stop pointing at `LICENSE` for a CC BY text it does not contain. If the hold
+is released, `PAPER_MANIFEST` already documents the one-line change in a comment — five mapping
+lines that `THESIS_MANIFEST` carries today — and the export does the rest.
+
+**Until then the two statements disagree in public**, and the flagship's own licence is not in
+question: it is CC BY 4.0 and always has been.
 
 ### E30. The architecture trades twelve parallel one-shot mechanisms for one twelve-cycle series mechanism, and nothing estimates its reliability: NEW 2026-08-10
 > **Status:** `LIVE` — open engineering; something still has to be done
