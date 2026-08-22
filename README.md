@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `83d56e1` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `c1c131b` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -35,6 +35,34 @@ the full record of what went wrong on the way there.**
 The submission is here with its analyses, its acceptance tests and its defect register attached.
 The defects are deliberate: an examiner should be able to see what failed, when it was found, and
 what was done about it. Nothing in it has been built or measured.
+
+## The design evolution this thesis is about
+
+**One mission, held constant. One architecture, changed repeatedly.** That is the shape of the
+work, and it is worth stating before the chapters.
+
+**The mission — last-mile orbital distribution.** After the primary spacecraft separates, the
+launch vehicle's final stage can continue, where host capability allows, as a temporary controlled
+orbital delivery platform. **The host does the coarse orbital repositioning. VOLLEY produces each
+secondary satellite's individually commanded release condition.** That was decided in **2023**, by
+the second architectural decision the project ever took.
+
+**The architecture, in four steps:**
+
+| | |
+|---|---|
+| **Free-flyer** | VOLLEY is its own spacecraft, carrying attitude control, power and recoil mass. **Rejected in 2023** — *"which is most of a spacecraft"* |
+| **Hosted deployer** | The spent upper stage supplies all three. VOLLEY becomes a payload rather than a mission |
+| **Self-contained electromagnetic system aboard the platform — Gen5** | Its own track, linear synchronous drive, sled, supercapacitor bank, eddy brake and magazine. **This is the machine the manuscript reports** |
+| **Stage-integrated system — Gen6** | The stage's own structure and 8 m of length become part of the machine; cold gas replaces the drive. **Same mission, far less duplicated hardware** |
+
+> **The interesting claim is not that the objective changed. It is that it did not.** What the
+> generations record is a steadily better answer to *how much of this does VOLLEY need to build
+> for itself* — and the honest cost of each answer, including the one that made Gen5's enclosure
+> **50.04 kg** of skin the stage already had.
+>
+> **Host capability stays parametric in every generation.** No launch provider has supplied stage
+> propulsion, restart or control-authority data, and the thesis says so wherever it matters.
 
 ## Layout
 
