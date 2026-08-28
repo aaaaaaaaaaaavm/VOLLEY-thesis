@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `5b970f6` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `55a8732` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -29,6 +29,12 @@
 
 A final-year thesis on giving rideshare CubeSats an orbit their host was not going to, and
 the full record of what went wrong on the way there.
+
+<p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission chain and the evidence boundary between Gen5 and Gen6" width="100%"></p>
+
+<p align="center"><sub>The thesis preserves the analysed Gen5 baseline while the engineering
+record develops Gen6. This generated overview shows both without letting the newer target inherit
+evidence it does not have.</sub></p>
 
 [Read the manuscript](source/VOLLEY_IEEE_Conference.pdf)
 
