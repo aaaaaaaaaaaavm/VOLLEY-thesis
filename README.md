@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `55a8732` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `59b3661` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -35,6 +35,15 @@ the full record of what went wrong on the way there.
 <p align="center"><sub>The thesis preserves the analysed Gen5 baseline while the engineering
 record develops Gen6. This generated overview shows both without letting the newer target inherit
 evidence it does not have.</sub></p>
+
+<p align="center">
+  <img src="cad/renders/gen5/exploded.png" alt="Exploded Gen5 electromagnetic drive stack" width="32%">
+  <img src="source/figures/A29_cfd_report.png" alt="Gen5 CFD convergence, force history and surface pressure" width="32%">
+  <img src="cad/renders/gen6/hero_open.png" alt="Gen6 stage-integrated gas architecture target" width="32%">
+</p>
+
+<p align="center"><sub>The thesis keeps the analysed Gen5 machine, its numerical evidence, and
+the less mature Gen6 direction visually separate.</sub></p>
 
 [Read the manuscript](source/VOLLEY_IEEE_Conference.pdf)
 
