@@ -1721,9 +1721,9 @@ Not a kill criterion. A17's displacement estimate -- 49 % of the +/-0.05 mm gap 
 rests on an assumed effective mass and the unmodelled moving load, so it shows the coupling
 matters without establishing that it breaks anything.
 
-### P37. The retention gates were sized against a quasi-static load, not the launch environment: HIGH, NEW 2026-08-06
-> **Status:** `LIVE` — open engineering; something still has to be done
-> **Scope:** `GEN5` · **Next step:** `COMPUTATION` — size the gates against the launch environment
+### P37. The retention gates were sized against a quasi-static load, not the launch environment: CLOSED 2026-09-06, disposition reconciled
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> Closure review, 2026-09-06: A22 resized the retention pins to two D9 pins and bounded the Q=10..30 sweep using the original 1.4 design factor. The computation is complete; T-1 qualification remains under E10 and E4.
 
 
 Found by A18 band 9, against a band declared before the run. `sizing.py` sizes the retention
@@ -1767,6 +1767,7 @@ pins. This is analysis only -- T-1 closes the test half of E10 and nothing here 
 > quoted in this entry above is the kinder of the two readings.
 >
 > The test half is untouched. T-1 still closes E10, and Q is still unmeasured.
+
 
 ### P38. The paper claimed a payload magnetic environment its own validation had already falsified: CORRECTED 2026-08-10
 > **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
@@ -2141,9 +2142,9 @@ rejecting the flywheel than mass ever was. Neither is the launch restraint for a
 0.175 N·m·s residual also assumes the controller holds two rotors to 1 % speed match, against
 a single-rotor store of 17.5 N·m·s, five times the shot disturbance it sits beside.
 
-### E29. Nothing computes the shot's angular impulse about the host, and a reaction wheel saturates in about four shots: NEW 2026-08-10
-> **Status:** `LIVE` — open engineering; something still has to be done
-> **Scope:** `GEN5` · **Next step:** `COMPUTATION` — the shot's angular impulse about the host
+### E29. Nothing computes the shot's angular impulse about the host, and a reaction wheel saturates in about four shots: CLOSED 2026-09-06, disposition reconciled
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> Closure review, 2026-09-06: A52 supplies both the Gen5 comparison and the Gen6 campaign angular-momentum budget and alignment requirement. Host mass properties and authority remain E5; this closes the missing-budget question only.
 
 
 Found 2026-08-10 while pricing momentum management, not by any check.
@@ -2218,9 +2219,10 @@ thrust-line-to-CoM offset, which is the number the budget exists to set. Neither
 > not public (E5). Momentum management is not optional at Gen6: either the alignment is
 > met, or the host dumps momentum between shots, and ADR-020's 1200 s cadence is enough time to.
 
-### P46. K_t is a centre-plane value and overstates thrust by 4.42 %: CORRECTED 2026-08-13
-> **Status:** `LIVE` — open engineering; something still has to be done
-> **Scope:** `GEN5` · **Next step:** `DECISION` — apply the K_t correction or hold it -- D3
+
+### P46. K_t is a centre-plane value and overstates thrust by 4.42 %: CLOSED 2026-09-06, disposition reconciled
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> Closure review, 2026-09-06: ADR-030 applied the depth-resolved thrust integral and propagated it to the operating point. The baseline gate verifies the adopted numbers. D3 is no longer an unmade decision; independent depth-integral validation remains outside this correction.
 > Corrected. Applied 2026-08-13, three days after being computed and held. `thrust_constant()`
 > now Gauss-Legendre averages `B_y` over z ∈ [−45, +45] mm before the Lorentz sum, which is a
 > change to the physics rather than a pasted factor (ADR-015). K_t 11.0258 to 10.5386, ratio
@@ -2280,6 +2282,7 @@ cross-check, was not run, so 10.5386 is still magpylib, which is analytic superp
 E2's objection that nothing here *solves a field equation* in 3-D stands. Re-baselining onto a
 number that a different method has never checked would repeat the mistake this entry is about,
 one level down.
+
 
 ### P47. The published velocity-loop gain is linearly unstable, and its numeric value is a bandwidth: HIGH, CORRECTED 2026-08-13
 > **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
@@ -2566,9 +2569,9 @@ What this does not fix. `tools/propagate_baseline.py` still walks `.md` and `.ht
 repair here removes the *literals it could not see*, rather than teaching it to see them, which
 is the stronger fix, but only for the values that were de-forked.
 
-### P54. A24 band 1 fails against a reference literal that has since been corrected: MEDIUM, NEW 2026-08-14
-> **Status:** `LIVE` — open engineering; something still has to be done
-> **Scope:** `GEN5` · **Next step:** `COMPUTATION` — the band is against a superseded literal; the run is A24
+### P54. A24 band 1 fails against a reference literal that has since been corrected: CLOSED 2026-09-06 by a separately declared rerun
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> A24-R uses the unchanged 1 percent tolerance against the current payload-family 3U reference. The new comparison passes; A24 original bands 1 and 6 remain failed and are preserved in its result. This closes the stale-reference comparison only.
 
 A24 band 1 requires the fixed-cell model to return deployer mass per satellite within ±1 % of
 `payload_family.py`'s figure, and encodes that figure as the literal 6.375 kg. That literal
@@ -2587,9 +2590,10 @@ What would close it. A re-declared A24-R band 1 stating the tolerance against
 `payload_family.py`'s *current* output rather than a snapshot of it, dated, with the original
 band quoted beside it, and committed before the re-run. Every other band in A24 is unaffected.
 
-### P55. `velocity_levers.py` prices every lever at the superseded centre-plane K<sub>t</sub>: MEDIUM, NEW 2026-08-14
-> **Status:** `LIVE` — open engineering; something still has to be done
-> **Scope:** `GEN5` · **Next step:** `COMPUTATION` — re-price the levers at the depth-resolved K_t
+
+### P55. `velocity_levers.py` prices every lever at the superseded centre-plane K<sub>t</sub>: CLOSED 2026-09-06 by a separately declared rerun
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> A2-R derived all four magnetic geometries through 9-point depth quadrature and checked each against 15 points. Every depth difference is below 0.004 percent, against the declared 0.5 percent band. All ten levers were rerun and the current table regenerated. The original result remains in analysis/results/history/velocity_levers_pre_depth.json.
 
 `analysis/velocity_levers.py` drives `motor_model.shot()` with a per-row K<sub>t</sub>, and every
 row carries a value derived before [ADR-030](docs/adr/030-apply-the-depth-resolved-thrust-constant.md): the
@@ -2605,6 +2609,7 @@ them would produce four numbers that look derived and are assumed.
 What would close it. Re-derive K<sub>t</sub> for each distinct magnetic geometry in the table
 with `thrust_constant(nz=9)`, the same way the as-drawn value was re-derived, and re-run. It is
 one solve per distinct geometry, four in total.
+
 
 ### P56. The phase-spacing claim is compared against the wrong baseline: CORRECTED 2026-08-14 by A21-R
 > **Status:** `LIVE` — open engineering; something still has to be done
@@ -4609,9 +4614,9 @@ guessing a store.
 > them declared, and its band 7 says so: *"Every line item traces to a parameter or a declared
 > input, zero undeclared."* The discipline works. This slipped through it.
 
-### P95. A35's headline survives-everything figure is pre-A46, and correcting it reverses A35's own escape route: CRITICAL, NEW 2026-08-20
-> **Status:** `LIVE` — open engineering; something still has to be done
-> **Scope:** `GEN5` · **Next step:** `COMPUTATION` — A35's run sheet against the post-A46 rollup
+### P95. A35's headline survives-everything figure is pre-A46, and correcting it reverses A35's own escape route: CLOSED 2026-09-06, disposition reconciled
+> **Status:** `CLOSED` — resolved; see the entry for what closed it
+> Closure review, 2026-09-06: A35 already contains the dated post-A46 correction and withdraws the 24-satellite escape. README, GEN5_CLOSURE and KILL_CRITERIA carry the corrected 88.67 kg / 70.06 percent floor. Historical bands and the failed economic criterion remain unchanged.
 
 
 Found while drawing the A35 ledger for the front page. The figure would not agree with the text,
@@ -4667,6 +4672,7 @@ gets a dated block, as A45-R2 and P84 did.
 > This is the sixth place A46 had to be chased to, after `BASELINE.md`, the register, the
 > paper's abstract, its conclusion, its family table and `mass_properties.py`'s own docstring.
 > *A46 landed on 2026-08-16 and the project is still finding what it moved.*
+
 
 ### P96. The manuscript argued mass-per-satellite from pre-A46 numbers against its own post-A46 table, and still priced phase against drag: HIGH, CORRECTED 2026-08-21
 > **Status:** `CORRECTED` — found, fixed and propagated. Retained as the published record
