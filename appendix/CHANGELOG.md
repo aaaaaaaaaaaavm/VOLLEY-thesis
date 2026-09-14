@@ -1,5 +1,25 @@
 # Change log / audit record
 
+## 2026-09-14: isolate artifact rebuilds (P119)
+
+I reproduced an artifact-check defect: a CAD rebuild changed the working reference and a later
+comparison could report agreement with that replacement. Rebuilds now run in temporary copies,
+compare the complete file set and reuse one verdict per artifact. Four injected regressions pass.
+Runtime-dependent CAD differences remain failures to reproduce, not automatic geometry changes.
+
+## 2026-09-14: current review routes and prototype completion programme
+
+I replaced the long README with a configuration-specific review route and current Gen5/Gen6
+images. The previous front page remains accessible at its exact revision. I replaced the stale
+BUILD_READINESS snapshot, which still described answered items such as A52's angular-impulse
+calculation as absent. No physical result, acceptance band or register disposition changes.
+
+PROTOTYPE_READINESS.md defines the intended completion programme for VOLLEY and BOLLEY:
+mission requirements, model credibility, coupled dynamics/electrics, tolerances, installed
+budgets, controls, manufacturing and experiment design. The packages are planned, not claimed
+complete. The current audit also found the companion payloads stale after 67939b7; they must be
+regenerated before this batch is published.
+
 ## 2026-09-06: register headline gate
 
 The register's opening table still carried superseded totals while its result JSON and other
@@ -20,6 +40,23 @@ read the current mass. It now reads the same source. The offline gate checks ban
 source identity and that mass description. Fault injections and properties exercise the original
 strict boundaries, changed inputs and unavailable settling evidence. These checks do not
 establish the host inertia, flexible-body behaviour or control authority.
+
+## 2026-09-07: the single-author claim is now enforced rather than asserted
+
+This repository states on its front page, in `CITATION.cff` and on every companion that the work
+is mine. Nothing checked it, and on 2026-08-31 a sibling repository was found carrying one commit
+written under a different identity. VOLLEY escaped only because its clone happened to hold a local
+`user.name` override, which is luck rather than a control.
+
+| ID | Item | Detail |
+|---|---|---|
+| Gate | `tools/check_authorship.py` | Every commit reachable from HEAD must carry an author **and** a committer from a two-entry allowed set spelled out in the file rather than read from `git config` -- the configuration is exactly what failed, so reading it back would test nothing. Both fields are checked, because an identity can be laundered through the committer, which a casual `git log` does not show |
+| Gate | Wired into CI and `verify_all.sh`, ahead of the link check | CI fetches full history for `check_companions`, so the gate sees every commit rather than a shallow tail |
+| Verification | It passes here and it catches the case it was written for | 409 commits, every author and committer clean. Run against the sibling repository's pre-repair history it names the offending commit and the identity, which is the injected-fault standard the rest of the gate set is held to |
+| Cause | The container default, not the repository | A fresh clone in that working environment inherits a machine identity as `user.name`, and only a per-repository override prevents it. The gate's failure message says to check `git config user.email` before committing, because the next occurrence will look identical |
+
+A provenance claim nobody checks is not provenance, in the same way a band nobody computes is not
+a verdict. `check_bands.py` exists for the second reason; this exists for the first.
 
 ## 2026-09-06: BSX evidence and closure audit
 
