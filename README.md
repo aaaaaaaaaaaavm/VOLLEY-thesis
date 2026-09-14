@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `b5d03d7` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `989a3cf` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -13,6 +13,10 @@
 > **This repository may be improved until the work is presented, and freezes at that
 > moment.** What enters it has to be stable, effective and reliable against the problem
 > statement -- not merely newer.
+
+Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/989a3cf/docs/CAMPAIGN_ALLOCATION.md)
+and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/989a3cf/docs/PROGRAMME_EXECUTION.md).
+These extend the engineering record; the authored manuscript remains Gen5.
 
 <!-- PROGRAMME-HEADER-START -->
 | Repository | Role | You are here |
