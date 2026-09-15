@@ -1,14 +1,14 @@
-> ## What is generated here, and what is not
+> ## What is synchronized here, and what is not
 >
-> **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `1e22704` by `tools/export_companion.py`: the analysis scripts and their results, the
-> validation run sheets, the figures, and the reference records. Any edit to those is
-> destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
+> **Synchronized** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
+> `1e22704`: the analysis scripts and their results, the validation run sheets, the figures,
+> and the reference records. Any edit to those is replaced by the next companion export.
+> **Fix them in VOLLEY and this repository picks the fix up.**
 >
 > **Authored here, and never overwritten:** the manuscript and its figures under `source/`, and everything under `university/`. VOLLEY is an engineering
 > record and holds no manuscript source.
 >
-> Where a generated file disagrees with VOLLEY, VOLLEY is right and this copy is stale.
+> Where a synchronized file disagrees with VOLLEY, VOLLEY is right and this copy is stale.
 >
 > **This repository may be improved until the work is presented, and freezes at that
 > moment.** What enters it has to be stable, effective and reliable against the problem
@@ -38,20 +38,20 @@ the authored manuscript remains Gen5.
 A final-year thesis on giving rideshare CubeSats an orbit their host was not going to, and
 the full record of what went wrong on the way there.
 
-<p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission chain and the evidence boundary between Gen5 and Gen6" width="100%"></p>
+<p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission chain and the evidence boundary between Gen5 and later architecture work" width="100%"></p>
 
 <p align="center"><sub>The thesis preserves the analysed Gen5 baseline while the engineering
-record develops Gen6. This generated overview shows both without letting the newer target inherit
-evidence it does not have.</sub></p>
+record continues beyond it. The existing gas-guide Gen6 remains a comparator and clean-sheet
+mechanism selection is open; newer directions do not inherit Gen5 evidence.</sub></p>
 
 <p align="center">
   <img src="cad/renders/gen5/exploded.png" alt="Exploded Gen5 electromagnetic drive stack" width="32%">
   <img src="source/figures/A29_cfd_report.png" alt="Gen5 CFD convergence, force history and surface pressure" width="32%">
-  <img src="cad/renders/gen6/hero_open.png" alt="Gen6 stage-integrated gas architecture target" width="32%">
+  <img src="cad/renders/gen6/hero_open.png" alt="Existing Gen6 stage-integrated gas-guide study" width="32%">
 </p>
 
 <p align="center"><sub>The thesis keeps the analysed Gen5 machine, its numerical evidence, and
-the less mature Gen6 direction visually separate.</sub></p>
+the less mature gas-guide investigation visually separate.</sub></p>
 
 [Read the manuscript](source/VOLLEY_IEEE_Conference.pdf)
 
@@ -77,10 +77,10 @@ The architecture, in four steps:
 | Free-flyer | VOLLEY is its own spacecraft, carrying attitude control, power and recoil mass. Rejected in 2023, *"which is most of a spacecraft"* |
 | Hosted deployer | The spent upper stage supplies all three. VOLLEY becomes a payload rather than a mission |
 | Self-contained electromagnetic system aboard the platform, Gen5 | Its own track, linear synchronous drive, sled, supercapacitor bank, eddy brake and magazine. This is the machine the manuscript reports |
-| Stage-integrated system, Gen6 | The stage's own structure and 8 m of length become part of the machine; cold gas replaces the drive. Same mission, far less duplicated hardware |
+| Stage-integrated gas-guide study, existing Gen6 | The stage's own structure and roughly 8 m of length become part of the machine; cold gas replaces the drive. This remains an investigated comparator while clean-sheet selection is reopened |
 
 > What is worth noticing is that the objective never changed. What the generations record is a
-> steadily better answer to how much of this VOLLEY needs to build for itself, and the honest cost
+> series of answers to how much of this VOLLEY needs to build for itself, and the honest cost
 > of each answer, including the one that made Gen5's enclosure 50.04 kg of skin the stage already
 > had.
 >
@@ -122,21 +122,20 @@ This repository may be improved until the thesis is presented, and freezes at th
 enters it has to be stable, effective and reliable against the problem statement.
 
 
-## The manuscript describes Gen5, and the design target has moved
+## The manuscript describes Gen5, and the programme has moved beyond it
 
-This is deliberate and worth stating plainly. Everything reproduced here is Gen5, the
-analysed baseline -- a frozen computational one, with no hardware behind it -- and the record of
-what a self-contained deployer costs. On 2026-08-14 five
-analyses in the main repository replaced the design target: Gen6 is the payload accelerated
-directly, by cold gas, along a rail a spent upper stage provides (ADR-032). No mover, no
-pulse-power chain, no brake, no return stroke.
+This is deliberate and worth stating plainly. Everything reproduced in the manuscript is Gen5,
+the analysed baseline -- a frozen computational one, with no hardware behind it -- and the record
+of what a self-contained deployer costs. On 2026-08-14 the main repository introduced the
+stage-integrated cold-gas guide as Gen6 (ADR-032). Later contact/release and trim work exposed
+limits in that architecture, and the flagship has since reopened mechanism selection.
 
-Nothing in Gen6 is measured, its fluid system is unsized, its cradle mechanism does not exist,
-and no launch provider has agreed to lend a stage, which is exactly why the manuscript still
-carries Gen5. A paper reports what has been analysed to a declared standard, not what looks best
-this week.
+Nothing in the existing gas-guide Gen6 is measured, and no launch provider has agreed to lend a
+stage. That is exactly why the manuscript still carries Gen5. A paper reports what has been
+analysed to a declared standard, not whichever architecture is currently being investigated.
 
-The main repository carries both, and the failures at the same standard as the results.
+The main repository carries Gen5, the existing gas-guide comparator and the clean-sheet selection
+work, with failures kept at the same standard as results.
 
 ## Before citing
 
