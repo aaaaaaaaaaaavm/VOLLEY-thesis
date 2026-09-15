@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `2a6cfa9` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `1e22704` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -14,10 +14,12 @@
 > moment.** What enters it has to be stable, effective and reliable against the problem
 > statement -- not merely newer.
 
-Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/2a6cfa9/docs/CAMPAIGN_ALLOCATION.md)
-and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/2a6cfa9/docs/PROGRAMME_EXECUTION.md).
-[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/2a6cfa9/docs/TERMINAL_TIMING.md)
-extends the single-payload benchmark. These studies extend the engineering record;
+Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/1e22704/docs/CAMPAIGN_ALLOCATION.md)
+and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/1e22704/docs/PROGRAMME_EXECUTION.md).
+[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/1e22704/docs/TERMINAL_TIMING.md)
+extends the single-payload benchmark.
+[Two-payload manifest timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/1e22704/docs/MANIFEST_TIMING.md)
+adds shared-host coupling while P113/E5 remain open. These studies extend the engineering record;
 the authored manuscript remains Gen5.
 
 <!-- PROGRAMME-HEADER-START -->
