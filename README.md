@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `989a3cf` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `cf8d88b` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -14,9 +14,11 @@
 > moment.** What enters it has to be stable, effective and reliable against the problem
 > statement -- not merely newer.
 
-Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/989a3cf/docs/CAMPAIGN_ALLOCATION.md)
-and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/989a3cf/docs/PROGRAMME_EXECUTION.md).
-These extend the engineering record; the authored manuscript remains Gen5.
+Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/cf8d88b/docs/CAMPAIGN_ALLOCATION.md)
+and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/cf8d88b/docs/PROGRAMME_EXECUTION.md).
+[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/cf8d88b/docs/TERMINAL_TIMING.md)
+extends the single-payload benchmark. These studies extend the engineering record;
+the authored manuscript remains Gen5.
 
 <!-- PROGRAMME-HEADER-START -->
 | Repository | Role | You are here |
