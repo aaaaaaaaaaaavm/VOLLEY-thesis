@@ -1,0 +1,49 @@
+name: s4-sync
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/s4_sync.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fetch companion
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q origin main
+          git checkout -q -B main origin/main
+      - name: copy S4 evidence from flagship
+        run: |
+          base="https://raw.githubusercontent.com/aaaaaaaaaaaavm/VOLLEY/1e22704454c1452a81275318a3b4bdec5c8d8cda"
+          mkdir -p analysis/results validation figures
+          curl -fsSL "$base/analysis/manifest_timing.py" -o analysis/manifest_timing.py
+          curl -fsSL "$base/analysis/results/manifest_timing.json" -o analysis/results/manifest_timing.json
+          curl -fsSL "$base/validation/P113_S4_manifest_timing.md" -o validation/P113_S4_manifest_timing.md
+          curl -fsSL "$base/figures/manifest_timing.svg" -o figures/manifest_timing.svg
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          p = Path('README.md')
+          s = p.read_text()
+          s = re.sub(r'(at commit\n> `)[0-9a-f]+(`)', r'\g<1>1e22704\2', s, count=1)
+          if 'MANIFEST_TIMING.md' not in s:
+              anchor = '[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/2a6cfa9/docs/TERMINAL_TIMING.md)\nextends the single-payload benchmark.'
+              replacement = '[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/1e22704/docs/TERMINAL_TIMING.md)\nextends the single-payload benchmark.\n[Two-payload manifest timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/1e22704/docs/MANIFEST_TIMING.md)\nadds shared-host coupling while P113/E5 remain open.'
+              s = s.replace(anchor, replacement)
+          s = s.replace('/blob/2a6cfa9/docs/CAMPAIGN_ALLOCATION.md', '/blob/1e22704/docs/CAMPAIGN_ALLOCATION.md')
+          s = s.replace('/blob/2a6cfa9/docs/PROGRAMME_EXECUTION.md', '/blob/1e22704/docs/PROGRAMME_EXECUTION.md')
+          p.write_text(s)
+          PY
+      - name: commit synchronized payload
+        run: |
+          git add README.md analysis/manifest_timing.py analysis/results/manifest_timing.json validation/P113_S4_manifest_timing.md figures/manifest_timing.svg
+          git config user.name "Adityavardhan Mishra"
+          git config user.email "adityavardhanmishr@gmail.com"
+          git commit -m "Synchronize S4 manifest timing evidence"
+          git push origin HEAD:main
