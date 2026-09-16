@@ -1,0 +1,36 @@
+name: refresh flagship payload
+
+on:
+  push:
+    paths:
+      - .github/workflows/refresh_payload.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fetch companion
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q origin main
+          git checkout -q -B main origin/main
+      - name: fetch flagship
+        run: |
+          rm -rf /tmp/VOLLEY
+          git clone -q https://github.com/aaaaaaaaaaaavm/VOLLEY.git /tmp/VOLLEY
+          git -C /tmp/VOLLEY checkout -q 3807f1bb868a275f742608c05cb7e5df9c85464b
+      - name: regenerate
+        run: python3 /tmp/VOLLEY/tools/export_companion.py --out "$(dirname "$PWD")" --only thesis
+      - name: publish
+        run: |
+          git config user.name "Adityavardhan Mishra"
+          git config user.email "adityavardhanmishr@gmail.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Refresh evidence payload from VOLLEY 3807f1b"
+          git push origin HEAD:main
