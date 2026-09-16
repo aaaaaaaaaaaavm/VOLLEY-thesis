@@ -1,0 +1,50 @@
+name: gen6-reference-sync
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/gen6_reference_sync.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fetch companion
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q origin main
+          git checkout -q -B main origin/main
+      - name: copy reference evidence from flagship
+        run: |
+          base="https://raw.githubusercontent.com/aaaaaaaaaaaavm/VOLLEY/68c26ae1d3c5b258b212fcba57777ce1cc690154"
+          mkdir -p analysis/results validation source/figures
+          curl -fsSL "$base/analysis/reference_architecture.py" -o analysis/reference_architecture.py
+          curl -fsSL "$base/analysis/results/reference_architecture.json" -o analysis/results/reference_architecture.json
+          curl -fsSL "$base/validation/P92_reference_architecture.md" -o validation/P92_reference_architecture.md
+          curl -fsSL "$base/figures/gen6_reference_cell.svg" -o source/figures/gen6_reference_cell.svg
+          curl -fsSL "$base/figures/V00_system_overview.svg" -o source/figures/V00_system_overview.svg
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          p=Path('README.md'); s=p.read_text()
+          s=re.sub(r'(at commit\n> `)[0-9a-f]+(`)', r'\g<1>68c26ae\2', s, count=1)
+          s=re.sub(r'/blob/[0-9a-f]+/docs/CAMPAIGN_ALLOCATION.md', '/blob/68c26ae/docs/CAMPAIGN_ALLOCATION.md', s)
+          s=re.sub(r'/blob/[0-9a-f]+/docs/PROGRAMME_EXECUTION.md', '/blob/68c26ae/docs/PROGRAMME_EXECUTION.md', s)
+          s=re.sub(r'/blob/[0-9a-f]+/docs/TERMINAL_TIMING.md', '/blob/68c26ae/docs/TERMINAL_TIMING.md', s)
+          s=re.sub(r'/blob/[0-9a-f]+/docs/MANIFEST_TIMING.md', '/blob/68c26ae/docs/MANIFEST_TIMING.md', s)
+          anchor='adds shared-host coupling while P113/E5 remain open. These studies extend the engineering record;'
+          if 'GEN6_REFERENCE_ARCHITECTURE.md' not in s:
+              s=s.replace(anchor, 'adds shared-host coupling while P113/E5 remain open.\n[Clean-sheet Gen6 reference](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/68c26ae/docs/GEN6_REFERENCE_ARCHITECTURE.md)\ncarries that bounded mission result into a compact reference cell while P92 remains open. These studies extend the engineering record;')
+          p.write_text(s)
+          PY
+      - name: commit synchronized payload
+        run: |
+          git add README.md analysis/reference_architecture.py analysis/results/reference_architecture.json validation/P92_reference_architecture.md source/figures/gen6_reference_cell.svg source/figures/V00_system_overview.svg
+          git config user.name "Adityavardhan Mishra"
+          git config user.email "adityavardhanmishr@gmail.com"
+          git commit -m "Synchronize clean-sheet Gen6 reference evidence"
+          git push origin HEAD:main
