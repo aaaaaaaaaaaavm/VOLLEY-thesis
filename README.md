@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `307b733` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `06ebd07` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -14,13 +14,13 @@
 > moment.** What enters it has to be stable, effective and reliable against the problem
 > statement -- not merely newer.
 
-Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/CAMPAIGN_ALLOCATION.md)
-and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/PROGRAMME_EXECUTION.md).
-[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/TERMINAL_TIMING.md)
+Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/CAMPAIGN_ALLOCATION.md)
+and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/PROGRAMME_EXECUTION.md).
+[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/TERMINAL_TIMING.md)
 extends the single-payload benchmark. These studies extend the engineering record;
 the authored manuscript remains Gen5.
 
-The latest [review and restart record](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/REVIEW_20260916.md)
+The latest [review and restart record](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/REVIEW_20260916.md)
 adds combined conditional release-error corners, reference-cell mechanics and the verification matrix.
 These bounded calculations do not close the full campaign or select flight hardware.
 
@@ -127,7 +127,7 @@ enters it has to be stable, effective and reliable against the problem statement
 
 ## The manuscript describes Gen5, and the design target has moved
 
-This is deliberate and worth stating plainly. Everything reproduced here is Gen5, the
+This is deliberate and worth stating plainly. The authored manuscript describes Gen5, the
 analysed baseline -- a frozen computational one, with no hardware behind it -- and the record of
 what a self-contained deployer costs. The main repository first moved the design target to an approximately 8 m stage-integrated
 cold-gas machine in August 2026, then reopened the mechanism after mission work showed that the
