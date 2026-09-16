@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `3807f1b` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `307b733` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -14,11 +14,15 @@
 > moment.** What enters it has to be stable, effective and reliable against the problem
 > statement -- not merely newer.
 
-Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/3807f1b/docs/CAMPAIGN_ALLOCATION.md)
-and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/3807f1b/docs/PROGRAMME_EXECUTION.md).
-[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/3807f1b/docs/TERMINAL_TIMING.md)
+Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/CAMPAIGN_ALLOCATION.md)
+and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/PROGRAMME_EXECUTION.md).
+[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/TERMINAL_TIMING.md)
 extends the single-payload benchmark. These studies extend the engineering record;
 the authored manuscript remains Gen5.
+
+The latest [review and restart record](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/307b733/docs/REVIEW_20260916.md)
+adds combined conditional release-error corners, reference-cell mechanics and the verification matrix.
+These bounded calculations do not close the full campaign or select flight hardware.
 
 <!-- PROGRAMME-HEADER-START -->
 | Repository | Role | You are here |
