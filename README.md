@@ -1,7 +1,7 @@
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `06ebd07` by `tools/export_companion.py`: the analysis scripts and their results, the
+> `b08beb9` by `tools/export_companion.py`: the analysis scripts and their results, the
 > validation run sheets, the figures, and the reference records. Any edit to those is
 > destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
 >
@@ -14,15 +14,19 @@
 > moment.** What enters it has to be stable, effective and reliable against the problem
 > statement -- not merely newer.
 
-Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/CAMPAIGN_ALLOCATION.md)
-and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/PROGRAMME_EXECUTION.md).
-[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/TERMINAL_TIMING.md)
+Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/b08beb9/docs/CAMPAIGN_ALLOCATION.md)
+and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/b08beb9/docs/PROGRAMME_EXECUTION.md).
+[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/b08beb9/docs/TERMINAL_TIMING.md)
 extends the single-payload benchmark. These studies extend the engineering record;
 the authored manuscript remains Gen5.
 
-The latest [review and restart record](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/REVIEW_20260916.md)
+The latest [review and restart record](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/b08beb9/docs/REVIEW_20260916.md)
 adds combined conditional release-error corners, reference-cell mechanics and the verification matrix.
 These bounded calculations do not close the full campaign or select flight hardware.
+
+The [S7 coupled campaign](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/b08beb9/docs/COUPLED_RELEASE_CAMPAIGN.md)
+adds 2,508 histories carrying first-release host errors into the second delivery.
+Exact navigation and ideal impulses remain study assumptions; N1 is partial.
 
 <!-- PROGRAMME-HEADER-START -->
 | Repository | Role | You are here |
