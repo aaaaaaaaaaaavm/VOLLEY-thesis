@@ -4,4 +4,4 @@ The generated evidence is exported from VOLLEY commit `8d84248440bb9516db7630b0a
 
 The paper repository also contains refreshed A4 and Letter print PDFs and the two-page VOLLEY brief and one-page selected-work handout. The handouts use the current register count (153 entries, 53 live), distinguish centre-plane and midgap field comparisons from an integrated thrust check, and retain the limits on hardware, host and payload compatibility.
 
-The authoritative closure status and next decisions are in [VOLLEY BSX review](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/docs/BSX_REVIEW.md). Gen5 is frozen with declared exceptions; Gen6 does not inherit hardware validation.
+The authoritative closure status and next decisions are in [VOLLEY BSX review](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/docs/BSX_REVIEW.md). Gen5 is frozen with declared exceptions; historical study does not inherit hardware validation.
