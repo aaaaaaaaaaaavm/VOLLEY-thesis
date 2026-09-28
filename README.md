@@ -1,3 +1,5 @@
+> **Programme status, 2026-09-28:** Gen6 is in development. No architecture or speed envelope is selected or validated. The independent spring-cell bank and the historical gas guide are unselected studies. This thesis preserves older model studies; it must not be read as a physical test or a current design specification.
+
 > ## What is generated here, and what is not
 >
 > **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
@@ -40,20 +42,17 @@ These bounded calculations do not close the full campaign or select flight hardw
 A final-year thesis on giving rideshare CubeSats an orbit their host was not going to, and
 the full record of what went wrong on the way there.
 
-<p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission chain and the evidence boundary between Gen5 and Gen6" width="100%"></p>
+<p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission chain and the evidence boundary between Gen5 and historical study" width="100%"></p>
 
-<p align="center"><sub>The thesis preserves the analysed Gen5 baseline while the engineering
-record develops Gen6. This generated overview shows both without letting the newer target inherit
-evidence it does not have.</sub></p>
+<p align="center"><sub>The thesis preserves the analysed Gen5 baseline while the next architecture remains open. Later studies do not inherit the Gen5 evidence.</sub></p>
 
 <p align="center">
   <img src="cad/renders/gen5/exploded.png" alt="Exploded Gen5 electromagnetic drive stack" width="32%">
   <img src="source/figures/A29_cfd_report.png" alt="Gen5 CFD convergence, force history and surface pressure" width="32%">
-  <img src="cad/renders/gen6/hero_open.png" alt="Historical stage-integrated gas Gen6 study" width="32%">
+  <img src="cad/renders/legacy_study/hero_open.png" alt="Historical stage-integrated gas study" width="32%">
 </p>
 
-<p align="center"><sub>The thesis keeps the analysed Gen5 machine, its numerical evidence, and
-the less mature Gen6 direction visually separate.</sub></p>
+<p align="center"><sub>The thesis keeps the analysed Gen5 machine and a historical gas study visually separate.</sub></p>
 
 [Read the manuscript](source/VOLLEY_IEEE_Conference.pdf)
 
@@ -79,8 +78,8 @@ The architecture, in four steps:
 | Free-flyer | VOLLEY is its own spacecraft, carrying attitude control, power and recoil mass. Rejected in 2023, *"which is most of a spacecraft"* |
 | Hosted deployer | The spent upper stage supplies all three. VOLLEY becomes a payload rather than a mission |
 | Self-contained electromagnetic system aboard the platform, Gen5 | Its own track, linear synchronous drive, sled, supercapacitor bank, eddy brake and magazine. This is the machine the manuscript reports |
-| Historical stage-integrated gas Gen6 | The stage's own structure and about 8 m of length become part of the machine; retained as a comparator after guide/contact and trim/tube problems were exposed |
-| Clean-sheet Gen6 reference | Independent retained cells use slowly charged mechanical storage, an independent latch, short guided pusher and local catcher; selected for the next calculations, not as flight hardware |
+| Historical stage-integrated gas study | The stage's own structure and about 8 m of length become part of the machine; retained as a comparator after guide/contact and trim/tube problems were exposed |
+| Independent spring-cell study | Separate retained cells use slowly charged mechanical storage, a latch, short guided pusher and local catcher. Withdrawn as the current architecture because they do not supply the shared reload path or broad commanded speed goal |
 
 > What is worth noticing is that the objective never changed. What the generations record is a
 > steadily better answer to how much of this VOLLEY needs to build for itself, and the honest cost
@@ -125,22 +124,20 @@ This repository may be improved until the thesis is presented, and freezes at th
 enters it has to be stable, effective and reliable against the problem statement.
 
 
-## The manuscript describes Gen5, and the design target has moved
+## The thesis describes Gen5; the next architecture is open
 
 This is deliberate and worth stating plainly. The authored manuscript describes Gen5, the
 analysed baseline -- a frozen computational one, with no hardware behind it -- and the record of
-what a self-contained deployer costs. The main repository first moved the design target to an approximately 8 m stage-integrated
-cold-gas machine in August 2026, then reopened the mechanism after mission work showed that the
-highest available release speed did not improve the best tested two-payload campaign. The current
-calculation reference is now a compact independent stored-energy release cell. The gas machine
-remains in the record as a historical comparator with its failures intact.
+what one self-contained deployer model costs. The long gas guide and compact independent spring
+cells were later investigated and remain unselected comparators. The best sampled two-payload
+campaign cannot select a product mechanism or speed ceiling; the later twelve-payload screens did
+not complete a full manifest. The next design must restore the reusable shared path and loading
+objective, then be compared under complete installed and mission accounting.
 
-Nothing in the current reference is measured, its detailed accumulator, latch, guide, catcher and
-structure are unselected, and no launch provider has supplied an accommodation. That is exactly
-why the manuscript still carries Gen5. A paper reports what has been analysed to a declared
-standard, not what looks best this week.
+No performance has been physically measured, and no launch provider has supplied an accommodation.
+The thesis retains Gen5 as a historical computational case, not a current product specification.
 
-The main repository carries both, and the failures at the same standard as the results.
+The main repository retains these studies and their recorded failures.
 
 ## Before citing
 

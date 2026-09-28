@@ -258,7 +258,7 @@
       "energy_control": "charge pressure/mass and valve timing",
       "independent_cell_compatible": true,
       "installed_mass_state": "UNKNOWN",
-      "known_failure_evidence": "existing Gen6 exposes seal, contact and gas-system uncertainties; compact geometry is not analysed",
+      "known_failure_evidence": "existing LegacyStudy exposes seal, contact and gas-system uncertainties; compact geometry is not analysed",
       "name": "compact gas pusher",
       "payload_modification": false,
       "peak_power": "stored pneumatic energy supplies the release pulse",
@@ -355,5 +355,5 @@
     "s4_report_path": "docs/MANIFEST_TIMING.md"
   },
   "status": "REFERENCE_SELECTED_P92_OPEN",
-  "study": "P92 clean-sheet Gen6 reference-architecture screen"
+  "study": "P92 clean-sheet LegacyStudy reference-architecture screen"
 }
