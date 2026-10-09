@@ -34,7 +34,7 @@ Gen5 is one specified system: a 1.5 m guide with a 1.3 m powered stroke, ironles
 | Rated 3U departure | **16.029 m/s at 10.07 g** | Coupled model, not a measured command range or payload qualification |
 | Energy draw | **2.78 kJ gross per shot** | Circuit model at the rated point |
 | Exit-speed dispersion | **0.0274 m/s (3σ)** | Simulation under assumed sensor uncertainty |
-| Dry / loaded design mass | **126.6 / 174.6 kg** | CAD-derived configuration, not a complete installed host mass |
+| Dry / loaded design mass | **126.6 / 174.6 kg** | Modeled rollup with historical Gen3 sled volumes and assumed components, not a complete installed host mass |
 | Mass per carried 3U | **10.547 kg** | **Fails** the approximately 2 kg/satellite economic screen |
 | Incumbent canister parity | **1.758×** a roughly 6 kg/3U canister | **Fails** the separate ±15% parity band |
 | One modeled 450 km orbit case | **28.8 km** semi-major-axis rise; **1.60×** lifetime | Conditional atmosphere and orbit assumptions; current lifetime point lacks an independent rerun |

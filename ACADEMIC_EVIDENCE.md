@@ -22,6 +22,8 @@ The thesis claim is narrow: **a fixed Gen5 system-level design was computational
 
 ## What “complete” means at this review
 
-The design configuration, analysis chain, captured results, negative mass decision, manuscript, final-review slides and explanatory material form a complete **computational academic study**. This is not hardware verification or a claim that all system requirements passed. A future product needs a provider and ICD, a complete installed-system and mission comparison, feeder/retention/recoil design, payload-specific loads, environmental qualification and repeatable calibrated releases.
+The design configuration, analysis chain, captured results, negative mass decision, manuscript, final-review slides and explanatory material form a documented **computational academic study** with a negative mass finding. Decisive model verification, full mission closure and installed-system validation remain open as stated in the local evidence register. This is not hardware verification or a claim that all system requirements passed. A future product needs a provider and ICD, a complete installed-system and mission comparison, feeder/retention/recoil design, payload-specific loads, environmental qualification and repeatable calibrated releases.
 
 The 23-slide deck is a concise presentation of the result. The manuscript and local analysis files carry the deeper evidence. A university-specific final report template was not provided; formatting compliance must be checked when the institution supplies one.
+
+**CAD/mass provenance:** the 9.445 kg sled input was measured from historical Gen3 CAD solid volumes and checked with the A4 chassis idealization. The current Gen5 STEP package is a geometry model. The 126.6 kg rollup includes assumed component masses and is not a mass extraction from a complete installed Gen5 assembly.

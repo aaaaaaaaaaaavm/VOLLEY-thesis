@@ -6,7 +6,7 @@
 
 This directory is the review pack for the computational Gen5 study. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
-**Presentation thesis:** the Gen5 system-level computational evaluation is complete. It predicts a conditional orbital benefit and finds that the complete Gen5 configuration fails the preset 3U mass criterion. Slides 1–19 tell that finished research story. Slides 20–21 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product.
+**Presentation thesis:** the Gen5 system-level computational evaluation is complete. It predicts a conditional orbital benefit and finds that the modeled Gen5 mass rollup fails the preset 3U mass criterion. Slides 1–19 tell that finished research story. Slides 20–21 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product.
 
 ## Bring to the review
 

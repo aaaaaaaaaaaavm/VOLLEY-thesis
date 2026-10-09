@@ -89,7 +89,7 @@ Show tangible completed deliverables: manuscript, CAD, system model, scripts, nu
 
 ## 12. Results — architecture
 
-Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled is driven along the 1.5 m track; the payload departs; the sled is arrested. The model includes a 9.45 kg CAD-derived sled. The large sled makes recovery, braking, power and mass central rather than ancillary details. No component in this image has been built for VOLLEY.
+Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled is driven along the 1.5 m track; the payload departs; the sled is arrested. The model adopts a 9.45 kg sled from historical Gen3 CAD solid volumes and A4 chassis analysis; the current Gen5 STEP set is a geometry package, not an independently mass-verified assembly. The large sled makes recovery, braking, power and mass central rather than ancillary details. No component in this image has been built for VOLLEY.
 
 ## 13. Results — rated shot
 
