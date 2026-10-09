@@ -2,7 +2,7 @@
 
 ### A fixed electromagnetic CubeSat deployer design, evaluated by computation
 
-This repository is the **standalone academic record** for VOLLEY Gen5. It holds the technical [manuscript](source/VOLLEY_IEEE_Conference.pdf), editable [source](source/paper.tex), model scripts and outputs, CAD, validation sheets, assumptions, defects, and the college [final-review presentation pack](university/final_review_2026_10_10/README.md). A professor can follow a slide claim to a result file and method without opening another repository.
+This repository is the **standalone academic record** for VOLLEY Gen5. For the 10 October review, start with [how to present the old numbers and known errors](university/final_review_2026_10_10/READ_THIS_FIRST.md), then download the [offline presentation and evidence pack](university/final_review_2026_10_10/TOMORROW_PRESENTATION_PACK.zip). The repository holds the technical [manuscript](source/VOLLEY_IEEE_Conference.pdf), editable [source](source/paper.tex), model scripts and outputs, CAD, validation sheets, assumptions, defects, and the college [final-review presentation pack](university/final_review_2026_10_10/README.md). A professor can follow a slide claim to a result file and method without opening another repository.
 
 > **Scope, October 2026:** Gen5 is the fixed computational configuration for academic review, with documented model cases and open verification items. It yields a modeled orbital benefit, a failed installed-mass criterion, and a failed side-fed CAD fit. The final academic freeze has not been declared; nothing has been built, fired, measured, qualified or flown. Gen6 is future research toward a 1 km/s-class release; it has no selected architecture or achieved speed.
 
@@ -85,7 +85,7 @@ The analysis and reference files began as a dated engineering snapshot and now i
 
 ## The academic boundary
 
-The result is a **finished analysis with a negative design decision on 3U mass**. The lack of a physical prototype is stated directly; published tests of other devices support context or parameters, not claims that VOLLEY itself was tested. The college rubric includes objectives, technical quality, results/validation, documentation, and presentation/viva. The supplied example deck gives a visual and section outline; it does not supply technical evidence for VOLLEY. [Review-pack rubric mapping](university/final_review_2026_10_10/README.md).
+The result is a **documented computational study with a negative selection screen for the evaluated 3U configuration**. Integrated thrust, the coupled shot chain, and other engineering closures remain open. The lack of a physical prototype is stated directly; published tests of other devices support context or parameters, not claims that VOLLEY itself was tested. The college rubric includes objectives, technical quality, results/validation, documentation, and presentation/viva. The supplied example deck gives a visual and section outline; it does not supply technical evidence for VOLLEY. [Review-pack rubric mapping](university/final_review_2026_10_10/README.md).
 
 The manuscript uses an IEEE conference layout. A university-specific full-thesis template has not been supplied, and no claim is made that this PDF satisfies an unprovided submission format. The review presentation and academic evidence record are ready for scrutiny of their stated computational scope.
 
