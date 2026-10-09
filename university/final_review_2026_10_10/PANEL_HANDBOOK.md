@@ -1,6 +1,6 @@
 ---
 title: "VOLLEY | Final B.Tech Project Review"
-subtitle: "Panel handbook: concept, method, results, limits, and next evidence"
+subtitle: "Panel handbook: completed Gen5 study, findings, and future direction"
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
@@ -19,17 +19,17 @@ toc-depth: 2
 **Department:** Mechanical Engineering, Symbiosis Institute of Technology<br>
 **Review type:** Final Project Presentation & Demonstration
 
-> **Evidence note.** VOLLEY is an engineering design and computational research project. The Gen5 results in this handbook are model predictions, with numerical cross-checks where identified. No VOLLEY hardware has been built or tested, no CubeSat has been mechanically qualified for this launcher, and no launch provider has approved accommodation. The Gen6 speed range is a research envelope, not a demonstrated specification.
+> **Scope of the completed thesis.** VOLLEY is a system-level engineering design and computational research project. The Gen5 analysis, comparisons and decision record are complete for the stated models. The results are predictions, with numerical cross-checks where identified. Physical prototype testing, CubeSat qualification and provider accommodation belong to a later development phase. Gen6 is presented separately as future work.
 
 ![Analysed Gen5 electromagnetic deployer configuration. CAD render; no physical article exists.](<../../cad/renders/gen5/exploded.png>){width=88%}
 
 # Executive summary
 
-VOLLEY investigates a last-mile problem in rideshare launches: a secondary CubeSat reaches orbit but ordinarily receives the orbit selected for the primary payload. A spring deployer separates it safely, often at roughly 1–2 m/s, and the deployment time can change its in-track phase. A larger, deliberately commanded release velocity can also change orbital energy. The proposed mission splits responsibilities between a maneuvering host, which performs coarse repositioning, and a deployer, which supplies each satellite's commanded release condition.
+VOLLEY investigates a last-mile problem in rideshare launches: a secondary CubeSat reaches orbit but ordinarily receives the orbit selected for the primary payload. A spring deployer separates it safely, often at roughly 1–2 m/s, and the deployment time can change its in-track phase. A larger, deliberately commanded release velocity can also change orbital energy. The thesis evaluates whether that added capability justifies a complete deployer system. The mission model splits responsibilities between a maneuvering host, which performs coarse repositioning, and a deployer, which supplies each satellite's commanded release condition.
 
 The authored thesis analyses one Gen5 solution: a magazine-fed, linear synchronous motor driving a reusable magnetic sled. The rated 3U model predicts **16.0 m/s** exit speed at **10.07 g**. Its full dry system mass is **126.6 kg**, and the power model predicts **2.782 kJ** gross electrical draw per shot. A closed-loop simulation predicts **0.0274 m/s ($3\sigma$)** exit-speed dispersion at a 15.8 m/s setpoint. In a stated orbital case, a maximum-speed release raises semi-major axis by **28.8 km**, with a **1.60×** modelled lifetime multiplier at mean solar activity. The lifetime result is atmosphere-sensitive and has not been independently rerun at the exact current operating point.
 
-Gen5 also produced a decisive negative result. With twelve 3U satellites, its deployer mass is **10.55 kg per customer**, versus about **6 kg** for the spring canister comparator used in the thesis. This is **1.76×** as much hardware per 3U payload and fails the preset 15% mass-parity band. Physical payload loads, magnetic cleanliness, cycle life, and provider interfaces remain unresolved. Gen5 is therefore presented as a documented computational design study, not a selected current product.
+Gen5 also produced a decisive negative result. With twelve 3U satellites, its deployer mass is **10.55 kg per customer**, versus about **6 kg** for the spring canister comparator used in the thesis. This is **1.76×** as much hardware per 3U payload and fails the preset 15% mass-parity band. The study therefore reaches a decision: the modelled orbital benefit does not make this Gen5 configuration a defensible 3U selection. The result completes the analytical comparison; it does not require a prototype to know that the modelled mass criterion failed. Physical payload loads, magnetic cleanliness, cycle life, and provider interfaces remain questions for a different evidence phase.
 
 The later Gen6 programme retains the hosted sequential-deployment mission while reopening mechanism choice. It investigates an approximately **1–2 m/s to 1 km/s** release-speed envelope across electromagnetic, mechanical, stored-energy, gas/fluid, hybrid, BOLLEY and conventional options. The high end is a requirement to examine and may prove infeasible. The near-term goal is one named, reproducible, independently reviewable test-article configuration with a corresponding build/test release decision.
 
@@ -64,15 +64,15 @@ The thesis addresses that gap by constructing a complete Gen5 computational conf
 
 # 4. Objectives and outcome
 
-| Presentation objective | Evidence achieved | Remaining condition |
+| Analytical research objective | Completed outcome | Interpretation |
 |:--|:--|:--|
-| Define a commandable 3U deployment architecture | Gen5 CAD, magazine, sled, motor, arrest and power architecture | No manufactured system or qualified payload interface |
-| Quantify the release | Rated shot, circuit and closed-loop simulations | Measure actual thrust, power, timing, acceleration and dispersion |
-| Quantify orbital value | Orbit models and some independent numerical cross-checks | Bind atmosphere, mission cases and host control resources |
-| Test whether the whole system is competitive | Mass rollup, spring/alternatives comparison and failure criteria | Gen5 fails the 3U mass target; compare Gen6 candidates fairly |
-| Define a next test-article path | PLAN-R2 gates N0–N5 and evidence requirements | Choose a configuration and obtain independent build/test review |
+| Model a commandable 3U system | Gen5 CAD, magazine, sled, motor, arrest and power architecture | System-level design record, not manufactured hardware |
+| Quantify the release | Rated shot, circuit and closed-loop simulations | Predicted performance under stated assumptions |
+| Evaluate orbital value | Orbit model and selected independent numerical cross-checks | Conditional energy and lifetime benefit |
+| Test whole-system competitiveness | Mass rollup, spring/alternatives comparison and preset criteria | Gen5 fails the 3U mass target |
+| Challenge model credibility | Numerical verification, defect corrections and provenance record | Scope and remaining physical uncertainties made explicit |
 
-These objectives summarize the research for this final-review presentation. The table reports results and unfinished work separately; it is not a claim that a university approved this exact list in advance.
+These objectives summarize the completed analytical research for this final-review presentation. They are a presentation synthesis, not a claim that the university approved this exact list in advance. The physical development tasks are shown later under future work.
 
 # 5. Research methodology
 
@@ -103,15 +103,15 @@ The magnetic field was compared across an analytical representation, magpylib, a
 | Mid-2025 | Coilgun concept shifted toward a linear synchronous motor | Approximate historical milestone |
 | 2025–July 2026 | CAD generations and mass model developed | Some dates reconstructed/approximate |
 | July–September 2026 | Gen5 analysis, numerical checks, defects and thesis record | Dated repository/analysis records |
-| September 2026 onward | Gen6 mission and mechanism choice reopened | PLAN-R2 dated 29 September 2026 |
+| October 2026 | Gen5 findings and design decision presented for final review | Review package dated 10 October 2026 |
 
-The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The next research gates are ordered by dependency rather than by invented semester dates: N0 mission envelope, N1 coupled campaign evidence, N2 architecture trade, N3 installed burden/faults, N4 BOLLEY drive decision, and N5 first-test evidence package. Physical manufacture, integrated tests, qualification and flight are later milestones.
+The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the rated speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions are part of the completed study, not signs that the final numbers are placeholders. Gen6 research gates are described only in §10, Future work.
 
 # 7. Work progress
 
-The current review package includes an authored manuscript, CAD renders and model geometry, analysis scripts/results, validation run sheets, figures, a baseline record, a defect register, and a provenance statement. Numerical investigations cover the motor field, shot dynamics, bank/circuit, mass, orbit propagation, separation and selected structural, airflow and reliability issues. A key discipline is retaining failures and superseded results rather than silently replacing them.
+The thesis deliverables are in hand: an authored manuscript, CAD renders and model geometry, analysis scripts/results, numerical verification run sheets, figures, a baseline record, a defect register, and a provenance statement. Numerical investigations cover the motor field, shot dynamics, bank/circuit, mass, orbit propagation, separation and selected structural, airflow and reliability issues. The study closes by retaining failed criteria and superseded results rather than silently replacing them.
 
-Evidence is not evenly mature. Gen5 is well documented as a computational case but has no physical article. The later long gas-guide and independent spring-cell studies are historical comparators, neither a selected current architecture nor proof that Gen6 is closed. Gen6 has a mission direction and wide investigation envelope, with mechanism and exact payload/provider cases still to be selected. The published record must not be represented as a 1 km/s demonstrated launcher.
+The deliverable here is a completed computational thesis, not a flight article. The later long gas-guide and independent spring-cell studies are historical comparators. Gen6 has a mission direction and investigation envelope but is not a result of the Gen5 thesis. Its mechanism and exact payload/provider cases remain future choices.
 
 # 8. Results
 
@@ -152,15 +152,15 @@ The dry Gen5 rollup is **126.6 kg** and loaded mass **174.6 kg**. At twelve 3U c
 
 ![Constraint and mass-attribution analysis; mass is a model rollup.](<../../source/figures/A35_ledger.png>){width=100%}
 
-## Decision-critical uncertainty
+## Decision and evidence boundary
 
-The unresolved physical risks include the release mechanism's cycle reliability, shock and arrest loads transmitted to stowed satellites, field exposure and residual magnetisation near a customer payload, host attitude/control authority and provider approval. The known-problems register ranks several of these as potentially design-fatal. No amount of additional plotting converts those uncertainties into a measured qualification. The right next experiment is selected to discriminate a mechanism claim, not merely to improve presentation quality.
+The completed analytical result has three parts. The model supports a commandable release and conditional orbital-energy benefit; the full-system 3U mass criterion fails; and the physical behavior remains unverified. The last category includes release-cycle reliability, shock and arrest loads transmitted to stowed satellites, field exposure near a customer payload, host attitude/control authority and provider approval. The known-problems register ranks several as potentially design-fatal. Their existence limits product claims but does not undo the completed analytical finding.
 
 # 9. Conclusion
 
-The Gen5 computational study supports a narrow and useful conclusion: a commandable moderate-acceleration release is plausible enough to analyse as a system, and a modelled release can change a CubeSat's orbital energy. The same complete accounting shows Gen5 misses its 3U mass benchmark and leaves critical mechanical, magnetic and operational questions unmeasured. It cannot presently be described as flight-ready, provider-compatible or build-released.
+The Gen5 computational thesis reaches a complete engineering conclusion within its stated scope. Its system-level model predicts a commandable moderate-acceleration release and a conditional orbital-energy benefit. Complete installed-mass accounting then shows the configuration misses its preset 3U benchmark. The answer to the thesis trade question is therefore conditional benefit with an unfavourable 3U system cost. Hardware behavior and interfaces remain outside the tested evidence, so the result is a research conclusion rather than a flight-readiness claim.
 
-The thesis's strongest engineering contribution is the transparent decision record: the complete machine was modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. This record provides a defensible starting point for the next architecture trade.
+The thesis's strongest engineering contribution is the transparent decision record: the full machine was modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. That closes the Gen5 study and provides a defensible input to a separate future architecture trade.
 
 # 10. Future work
 
@@ -181,13 +181,3 @@ The near-term milestone is one named test-article configuration that can be inde
 9. D. A. Vallado, *Fundamentals of Astrodynamics and Applications*, 4th ed., 2013.
 10. A. Mishra, *VOLLEY-thesis*: authored manuscript, baseline, provenance, figures and validation records, repository head `b30ffdc`, 28 September 2026. Project record, not independent experimental evidence.
 11. VOLLEY/BOLLEY, *Current Plan and Status — PLAN-R2*, controlled working baseline, 29 September 2026. Project plan, not achieved performance.
-
-## Final-review marking crosswalk
-
-| Final-review criterion | Handbook sections and presentation evidence |
-|:--|:--|
-| Achievement of objectives (10 marks) | Objectives table; Results; Conclusion |
-| Technical quality and innovation (10 marks) | Literature review; Research gap; Methodology; system architecture |
-| Results, validation and analysis (5 marks) | Results tables and plots; numerical-check limits |
-| Project report and documentation (5 marks) | Manuscript, baseline, provenance, defects and cited source records |
-| Presentation, demonstration and viva (10 marks) | Main slides and reproducible simulation walkthrough; presenter reference book |
