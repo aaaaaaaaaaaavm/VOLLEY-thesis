@@ -1,0 +1,193 @@
+---
+title: "VOLLEY | Final B.Tech Project Review"
+subtitle: "Panel handbook: concept, method, results, limits, and next evidence"
+author:
+  - Adityavardhan Mishra
+  - Pratham Chawla
+date: "10 October 2026"
+geometry: margin=20mm
+papersize: a4
+fontsize: 10pt
+colorlinks: true
+linkcolor: teal
+toc: true
+toc-depth: 2
+---
+
+**Guide:** Vikas Gulia<br>
+**Student PRNs:** Adityavardhan Mishra — 23070125054; Pratham Chawla — 23070125029<br>
+**Department:** Mechanical Engineering, Symbiosis Institute of Technology<br>
+**Review type:** Final Project Presentation & Demonstration
+
+> **Evidence note.** VOLLEY is an engineering design and computational research project. The Gen5 results in this handbook are model predictions, with numerical cross-checks where identified. No VOLLEY hardware has been built or tested, no CubeSat has been mechanically qualified for this launcher, and no launch provider has approved accommodation. The Gen6 speed range is a research envelope, not a demonstrated specification.
+
+![Analysed Gen5 electromagnetic deployer configuration. CAD render; no physical article exists.](<../../cad/renders/gen5/exploded.png>){width=88%}
+
+# Executive summary
+
+VOLLEY investigates a last-mile problem in rideshare launches: a secondary CubeSat reaches orbit but ordinarily receives the orbit selected for the primary payload. A spring deployer separates it safely, often at roughly 1–2 m/s, and the deployment time can change its in-track phase. A larger, deliberately commanded release velocity can also change orbital energy. The proposed mission splits responsibilities between a maneuvering host, which performs coarse repositioning, and a deployer, which supplies each satellite's commanded release condition.
+
+The authored thesis analyses one Gen5 solution: a magazine-fed, linear synchronous motor driving a reusable magnetic sled. The rated 3U model predicts **16.0 m/s** exit speed at **10.07 g**. Its full dry system mass is **126.6 kg**, and the power model predicts **2.782 kJ** gross electrical draw per shot. A closed-loop simulation predicts **0.0274 m/s ($3\sigma$)** exit-speed dispersion at a 15.8 m/s setpoint. In a stated orbital case, a maximum-speed release raises semi-major axis by **28.8 km**, with a **1.60×** modelled lifetime multiplier at mean solar activity. The lifetime result is atmosphere-sensitive and has not been independently rerun at the exact current operating point.
+
+Gen5 also produced a decisive negative result. With twelve 3U satellites, its deployer mass is **10.55 kg per customer**, versus about **6 kg** for the spring canister comparator used in the thesis. This is **1.76×** as much hardware per 3U payload and fails the preset 15% mass-parity band. Physical payload loads, magnetic cleanliness, cycle life, and provider interfaces remain unresolved. Gen5 is therefore presented as a documented computational design study, not a selected current product.
+
+The later Gen6 programme retains the hosted sequential-deployment mission while reopening mechanism choice. It investigates an approximately **1–2 m/s to 1 km/s** release-speed envelope across electromagnetic, mechanical, stored-energy, gas/fluid, hybrid, BOLLEY and conventional options. The high end is a requirement to examine and may prove infeasible. The near-term goal is one named, reproducible, independently reviewable test-article configuration with a corresponding build/test release decision.
+
+# 1. Introduction
+
+## The deployment problem
+
+The primary mission determines the launch vehicle's delivered orbit. Secondary CubeSats may have limited onboard propulsion, mass, power, or programmatic freedom to correct that orbit. Standard canisterised spring systems are mature and effective at clearance and separation. Their release conditions, however, are governed by spring energy, payload mass, and the device rather than a separately commanded velocity profile for every satellite.
+
+The distinction between **release timing** and **release energy** is central. Waiting between launches can produce in-track phase spacing without spending a larger release impulse. A commanded velocity along or against orbital motion can change the satellite's orbital energy and semi-major axis. VOLLEY studies the latter capability while retaining a clear comparison with timed spring release and other alternatives. It does not claim that all constellation phasing requires a motor.
+
+The host is an active participant in the mission model. After its primary mission, a suitable hosted platform would need attitude control, available resources and permission to operate. It could perform coarse orbital repositioning; VOLLEY would assign each secondary payload a local release state. No specific upper stage has been selected or approved for that role.
+
+![Gen5 layout and mission hardware elements. Diagram from the thesis analysis.](<../../source/figures/D02_layout.png>){width=100%}
+
+# 2. Literature review
+
+| Approach | Established capability | Relevance and limit |
+|:--|:--|:--|
+| Spring deployers | Flight heritage and simple separation near the low-m/s range [1] | Strong benchmark for reliability and installed mass; release energy is largely built into the device. |
+| Timed release and differential drag | In-track spacing and gradual orbital adjustment [3] | Timing alone can phase satellites; drag is atmosphere- and attitude-dependent. |
+| Orbital transfer vehicles | Coarse orbital repositioning through a propulsive carrier | Valuable comparator for whole-mission delivery; greater spacecraft and integration burden must be counted. |
+| Electromagnetic CubeSat studies | Magazine transport and electromagnetic launch have already been studied [4–6] | Some configurations impose conductive armatures, high acceleration or different maturity; novelty cannot be claimed for electromagnetic deployment alone. |
+
+The most relevant high-speed electromagnetic comparison in the manuscript is Feng *et al.* [4], which models a 321.56 m/s launch of a 20 kg CubeSat but at acceleration on the order of thousands of g and with an armature/interface issue. Zhao *et al.* [5,6] study stacked CubeSat transfer and storage, including measured transport behavior in a related mechanism. These works establish that electromagnetic delivery and magazine transport are prior art. VOLLEY's more limited question is whether a **commandable** release can be delivered to an **unmodified** satellite at a much lower acceleration while accounting for the whole installed system. No universal CubeSat quasi-static acceleration qualification is assumed; the launch provider and payload-specific limits must govern a real design [2,8].
+
+# 3. Research gap
+
+The analytical gap is not “no one has considered electromagnetic deployment.” It is the coupled trade between: (i) commanded release, (ii) payload-side interface and acceleration, (iii) a reusable feed/release architecture, (iv) host reaction and mission utility, and (v) installed system mass and faults. A speed-only comparison can make a concept appear attractive while omitting its sled, power bank, brake, magazine, enclosure, control, and retained mass after each shot.
+
+The thesis addresses that gap by constructing a complete Gen5 computational configuration and testing its own claims against explicit comparisons. It also records when those tests weaken the concept. Physical viability remains a separate research gap: numerical model agreement cannot establish manufactured tolerances, actual force, payload cleanliness, cycle reliability or provider compatibility.
+
+# 4. Objectives and outcome
+
+| Presentation objective | Evidence achieved | Remaining condition |
+|:--|:--|:--|
+| Define a commandable 3U deployment architecture | Gen5 CAD, magazine, sled, motor, arrest and power architecture | No manufactured system or qualified payload interface |
+| Quantify the release | Rated shot, circuit and closed-loop simulations | Measure actual thrust, power, timing, acceleration and dispersion |
+| Quantify orbital value | Orbit models and some independent numerical cross-checks | Bind atmosphere, mission cases and host control resources |
+| Test whether the whole system is competitive | Mass rollup, spring/alternatives comparison and failure criteria | Gen5 fails the 3U mass target; compare Gen6 candidates fairly |
+| Define a next test-article path | PLAN-R2 gates N0–N5 and evidence requirements | Choose a configuration and obtain independent build/test review |
+
+These objectives summarize the research for this final-review presentation. The table reports results and unfinished work separately; it is not a claim that a university approved this exact list in advance.
+
+# 5. Research methodology
+
+The project follows an engineering evidence chain:
+
+1. **Mission/use-case framing:** specify the payload, host responsibilities, target orbital change, safety limits and competent conventional comparators.
+2. **Architecture trade:** examine force production, loading, restraint, guidance, arrest, reset and fault behavior, rather than only ideal acceleration.
+3. **Geometry and installed mass:** build CAD geometry and count the sled, arrays, enclosure, feed, power, controls and other installed parts.
+4. **Coupled models:** compute magnetic field and thrust, shot dynamics, power/circuit behavior, control dispersion, structural/flow responses and orbital consequences.
+5. **Challenge the claims:** use alternate numerical methods and acceptance bands, preserve misses and update the baseline only with a recorded reason.
+6. **Decision:** compare orbital benefit against mass, reliability, payload/host compatibility and the available alternatives.
+
+![Modelled shot: velocity, bank voltage and current at the rated point.](<../../source/figures/F01_shot.png>){width=100%}
+
+## Numerical checks and their limits
+
+The magnetic field was compared across an analytical representation, magpylib, and 2-D/3-D finite-element calculations. A 3-D midgap solve supports the field model at its tested location but does not independently measure the depth-integrated thrust constant. Shot and circuit predictions were compared with ngspice at stated assumptions. Structural calculations use CalculiX; airflow calculations use OpenFOAM. Orbital calculations include Cowell and GMAT cases. The independent orbit work rejected an earlier assertion that lifetime benefit was invariant across solar activity. Each check applies to its declared case and boundary conditions; none is a hardware test.
+
+![Representative magnetic-field model output. Source: thesis figure A02.](<../../source/figures/A02_field_map.png>){width=83%}
+
+# 6. Timeline
+
+## Documented evolution
+
+| Period | Milestone | Confidence in date |
+|:--|:--|:--|
+| 2023 | Free-flyer idea reframed around a host platform | Documented design decision |
+| Mid-2025 | Coilgun concept shifted toward a linear synchronous motor | Approximate historical milestone |
+| 2025–July 2026 | CAD generations and mass model developed | Some dates reconstructed/approximate |
+| July–September 2026 | Gen5 analysis, numerical checks, defects and thesis record | Dated repository/analysis records |
+| September 2026 onward | Gen6 mission and mechanism choice reopened | PLAN-R2 dated 29 September 2026 |
+
+The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The next research gates are ordered by dependency rather than by invented semester dates: N0 mission envelope, N1 coupled campaign evidence, N2 architecture trade, N3 installed burden/faults, N4 BOLLEY drive decision, and N5 first-test evidence package. Physical manufacture, integrated tests, qualification and flight are later milestones.
+
+# 7. Work progress
+
+The current review package includes an authored manuscript, CAD renders and model geometry, analysis scripts/results, validation run sheets, figures, a baseline record, a defect register, and a provenance statement. Numerical investigations cover the motor field, shot dynamics, bank/circuit, mass, orbit propagation, separation and selected structural, airflow and reliability issues. A key discipline is retaining failures and superseded results rather than silently replacing them.
+
+Evidence is not evenly mature. Gen5 is well documented as a computational case but has no physical article. The later long gas-guide and independent spring-cell studies are historical comparators, neither a selected current architecture nor proof that Gen6 is closed. Gen6 has a mission direction and wide investigation envelope, with mechanism and exact payload/provider cases still to be selected. The published record must not be represented as a 1 km/s demonstrated launcher.
+
+# 8. Results
+
+## Gen5 configuration
+
+The analysed system uses a double-sided Halbach-array linear synchronous motor to propel a reusable permanent-magnet sled along a 1.5 m track. Two transverse cassettes feed twelve 3U satellites. A capacitor-based bank supplies the pulse, and a brake arrests the sled after payload release. The sled mass, computed from detailed CAD solid volumes, is **9.45 kg**; this value reduced the exit speed relative to an earlier optimistic parametric estimate. The CAD render conveys the arrangement; it is not evidence that parts have been manufactured or assembled.
+
+## Rated 3U shot
+
+| Model output | Rated result | Interpretation |
+|:--|--:|:--|
+| Exit velocity | 16.029 m/s | Modelled 3U reference shot |
+| Payload acceleration | 10.07 g | Not a payload qualification claim |
+| Pulse duration | 162.3 ms | Modelled motor actuation |
+| Peak current | 320 A | Component implementation unverified |
+| Electrical energy drawn, gross | 2,782 J | Bank/circuit model |
+| Recovered after release | 47 J | 39 mm available recovery zone |
+| Sled energy to brake | 1,162 J | Major loss and arrest burden |
+| Electrical-to-payload efficiency, net | 18.8% | 514 J payload kinetic energy / net draw |
+
+The energy flow matters more than the velocity headline. The sled and its arrest hardware are the price of keeping the customer satellite unmodified. Regeneration returns only a small fraction of sled energy within the available length, so the contactless brake remains necessary. A design comparison that credits full sled recovery would misstate the system efficiency and installed burden.
+
+## Command precision
+
+The closed-loop Monte Carlo model predicts **0.0274 m/s ($3\sigma$)** exit-velocity dispersion around a **15.8 m/s** fleet setpoint. It uses assumed sensing and plant tolerances, with headroom below the open-loop ceiling. This is a simulated distribution, not a measured release repeatability.
+
+![Closed-loop simulation distribution at the fleet setpoint.](<../../source/figures/F03_mc.png>){width=84%}
+
+## Orbital utility
+
+For the stated orbit and mean-solar-activity case, one maximum-speed release predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. The more defensible message is conditional: a release impulse can change orbital energy, while absolute lifetime and lifetime gain depend on atmospheric density and the orbit model. A fresh independent run of the exact current 1.60 operating point remains outstanding. Timing alone can produce in-track phasing; it does not produce the same semi-major-axis change.
+
+![Modelled orbital-lifetime response. Absolute values depend on atmosphere.](<../../source/figures/F04_life.png>){width=87%}
+
+## Installed mass changes the decision
+
+The dry Gen5 rollup is **126.6 kg** and loaded mass **174.6 kg**. At twelve 3U customers, the deployer weighs **10.55 kg per customer**, compared with approximately **6 kg** for the spring canister comparator used in the analysis. The ratio is **1.758**; the preset acceptance band required parity within 15%. That band fails by a large margin. Replacing an **8 kg enclosure placeholder** with a **50.04 kg** geometry-derived buildup exposed much of the penalty. Even changing structure alone does not recover parity in the studied options. The result is a reason to reopen the architecture, not to conceal the comparison.
+
+![Constraint and mass-attribution analysis; mass is a model rollup.](<../../source/figures/A35_ledger.png>){width=100%}
+
+## Decision-critical uncertainty
+
+The unresolved physical risks include the release mechanism's cycle reliability, shock and arrest loads transmitted to stowed satellites, field exposure and residual magnetisation near a customer payload, host attitude/control authority and provider approval. The known-problems register ranks several of these as potentially design-fatal. No amount of additional plotting converts those uncertainties into a measured qualification. The right next experiment is selected to discriminate a mechanism claim, not merely to improve presentation quality.
+
+# 9. Conclusion
+
+The Gen5 computational study supports a narrow and useful conclusion: a commandable moderate-acceleration release is plausible enough to analyse as a system, and a modelled release can change a CubeSat's orbital energy. The same complete accounting shows Gen5 misses its 3U mass benchmark and leaves critical mechanical, magnetic and operational questions unmeasured. It cannot presently be described as flight-ready, provider-compatible or build-released.
+
+The thesis's strongest engineering contribution is the transparent decision record: the complete machine was modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. This record provides a defensible starting point for the next architecture trade.
+
+# 10. Future work
+
+Gen6's controlling objective is a reusable launch path that sequentially accepts different supported CubeSat sizes and commands each departure condition. The approximately 1–2 m/s to 1 km/s span is an investigation envelope; the upper end may force acceleration, energy, travel, payload or provider constraints that reject candidates. Electromagnetic systems are preferred for comparison but are not preselected. Competent springs, electromechanical/stored-energy, gas/fluid, hybrid, BOLLEY and conventional mission substitutes belong in the same comparison boundary.
+
+The near-term milestone is one named test-article configuration that can be independently reviewed. Its package needs controlled geometry and drawings, a bill of materials, host and payload interfaces, full installed mass/energy/thermal accounting, assembly and inspection instructions, instrumented procedures, predetermined pass/fail and stop criteria, uncertainty and model-credibility evidence, retained failures, and an explicit build/test release decision. A rejected candidate is a valid research outcome; it must not be presented as a build-ready survivor.
+
+# 11. References and project records
+
+1. JAXA, *JEM Payload Accommodation Handbook*, Vol. 8, small-satellite deployment interface control document, cited in the VOLLEY thesis.
+2. California Polytechnic State University, *CubeSat Design Specification*, Rev. 14, 2020.
+3. C. Foster *et al.*, “Constellation phasing with differential drag on Planet Labs satellites,” *Journal of Spacecraft and Rockets*, 55(2), 2018.
+4. H. Feng, Y. Yang and Y. Wu, “Design and reachable domain analysis of on-orbit electromagnetic launcher for CubeSats,” *International Journal of Aerospace Engineering*, art. 3000765, 2025.
+5. Y. Zhao *et al.*, “Design and analysis of a new deployer for the in-orbit release of multiple stacked CubeSats,” *Remote Sensing*, 14(17), 4205, 2022.
+6. Y. Zhao *et al.*, “Simulation analysis and experimental verification of the transport characteristics of a high-volume CubeSat storage device,” *Aerospace*, 12(6), 466, 2025.
+7. K. Halbach, “Design of permanent multipole magnets with oriented rare earth cobalt material,” *Nuclear Instruments and Methods*, 169, 1980.
+8. NASA, *General Environmental Verification Standard*, GSFC-STD-7000A, 2013.
+9. D. A. Vallado, *Fundamentals of Astrodynamics and Applications*, 4th ed., 2013.
+10. A. Mishra, *VOLLEY-thesis*: authored manuscript, baseline, provenance, figures and validation records, repository head `b30ffdc`, 28 September 2026. Project record, not independent experimental evidence.
+11. VOLLEY/BOLLEY, *Current Plan and Status — PLAN-R2*, controlled working baseline, 29 September 2026. Project plan, not achieved performance.
+
+## Final-review marking crosswalk
+
+| Final-review criterion | Handbook sections and presentation evidence |
+|:--|:--|
+| Achievement of objectives (10 marks) | Objectives table; Results; Conclusion |
+| Technical quality and innovation (10 marks) | Literature review; Research gap; Methodology; system architecture |
+| Results, validation and analysis (5 marks) | Results tables and plots; numerical-check limits |
+| Project report and documentation (5 marks) | Manuscript, baseline, provenance, defects and cited source records |
+| Presentation, demonstration and viva (10 marks) | Main slides and reproducible simulation walkthrough; presenter reference book |
