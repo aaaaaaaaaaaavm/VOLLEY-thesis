@@ -284,7 +284,7 @@ bullets(s, ["1.5 m linear-motor track and double-sided Halbach arrays",
             "FreeCAD STEP assembly: side-fed placement clashes"], 7.7, 2.0, 4.85, 4.3, 19, 17)
 
 # 13 Shot
-s = base("Results", "Rated 3U shot: performance predicted by the model",
+s = base("Results", "Historical periodic-model shot: challenged by finite geometry",
          "Thesis BASELINE.md; F01_shot.png; P117 energy audit", "GEN5 MODEL PREDICTION")
 image_fit(s, FIG / "F01_shot.png", 0.7, 1.85, 11.8, 3.25)
 metrics = [("16.0 m/s", "exit speed"), ("10.07 g", "acceleration"),
@@ -294,8 +294,17 @@ for i, (value, label) in enumerate(metrics):
     box(s, x, 5.28, 2.73, 1.2, PALE, None, True)
     txt(s, value, x + 0.08, 5.4, 2.56, 0.48, 25, True, NAVY, align=PP_ALIGN.CENTER)
     txt(s, label, x + 0.08, 5.92, 2.56, 0.33, 14, False, INK, align=PP_ALIGN.CENTER)
-txt(s, "Audit boundary: 124.5 J (4.47%) of gross draw is not itemized in the compact result ledger.",
+txt(s, "P118 finite geometry challenges 16.0 m/s; 124.5 J of gross draw is also unitemized.",
     0.85, 6.65, 11.9, 0.28, 13, False, MID)
+
+# 14 Finite force
+s = base("Results", "Finite-array force integration changes the speed verdict",
+         "P118 finite 3-D analytic force map and convergence; not independent FEM", "ADVERSE MODEL FINDING")
+image_fit(s, FIG / "gen5_finite_force_map.png", 0.55, 1.7, 7.65, 4.9)
+card(s, 8.45, 1.78, 4.1, 1.95, "1.042 kJ", "Ideal work from the finite 162-belt force map with optimized phase.", AMBER, 24, 16)
+card(s, 8.45, 3.95, 4.1, 1.95, "12.448 m/s", "Geometry-only speed before circuit and friction losses; historical model reports 16.029 m/s.", RED, 24, 15)
+txt(s, "Array/stator direct overlap ends after 1.066 m, before the 1.300 m powered stroke ends.",
+    0.8, 6.64, 11.75, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 14 Control
 s = base("Results", "Modelled command precision is narrow; it is unmeasured",
@@ -305,7 +314,7 @@ card(s, 8.54, 1.95, 3.95, 2.1, "0.0274 m/s", "3σ exit-velocity dispersion at a 
 card(s, 8.54, 4.32, 3.95, 2.0, "Evidence limit", "Monte Carlo under modelled sensing and plant tolerances; no measured dispersion.", AMBER, 21, 16)
 
 # 15 Orbit
-s = base("Results", "Rated orbit geometry now has a separate numerical check",
+s = base("Results", "Historical rated orbit input has a separate geometry check",
          "P115 Cartesian orbit check; manuscript Astrodynamic Utility", "GEN5 TWO-BODY CHECK")
 image_fit(s, FIG / "rated_orbit_crosscheck.png", 0.62, 1.8, 7.65, 4.67)
 card(s, 8.52, 1.94, 3.96, 1.95, "+28.8008 km", "Immediate two-body axis rise at the rated 16.029 m/s input.", TEAL, 25, 16)
@@ -335,6 +344,15 @@ card(s, 7.22, 1.92, 5.15, 1.85, "11 mm short", "537 mm of track and cassette wid
 card(s, 7.22, 4.02, 5.15, 1.85, "32,915 mm³", "Exact track/cassette clash on each side; CadQuery and FreeCAD agree.", AMBER, 23, 15)
 txt(s, "Reference placement only: a new feeder or enclosure would need a new configuration and rerun.", 0.88, 6.59, 11.55, 0.3, 14, True, NAVY, align=PP_ALIGN.CENTER)
 
+# Unselected R1 geometry
+s = base("Results", "R1 clears a scripted path; the feeder is not designed",
+         "FreeCAD R1 document and STEP; exact-solid route ledger", "UNSELECTED GEOMETRY")
+image_fit(s, ROOT / "figures" / "gen5_feeder_candidate_r1.png", 0.55, 1.75, 7.4, 4.9)
+card(s, 8.15, 1.88, 4.37, 1.94, "12 / 12", "Scripted 3U envelope routes and conservative fixed-part swept boxes clear.", TEAL, 25, 15)
+card(s, 8.15, 4.03, 4.37, 1.94, "570 mm", "Wider enclosure; lift actuator, retention, tolerance and new mass budget open.", AMBER, 25, 15)
+txt(s, "Separate R1 candidate; no change to evaluated Gen5 shot, mass or host-fit claims.",
+    0.8, 6.62, 11.8, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
+
 # 18 Demo
 s = base("Results", "Computational demonstration: from shot to orbit",
          "Thesis analysis/results; BASELINE.md; manuscript Astrodynamic Utility", "SIMULATION DEMONSTRATION")
@@ -348,13 +366,22 @@ txt(s, "→", 6.39, 3.65, 0.5, 0.55, 28, True, TEAL, align=PP_ALIGN.CENTER)
 txt(s, "Compare predicted orbital change and full installed mass with the spring baseline. Simulation, not physical demonstration.",
     0.86, 6.25, 11.62, 0.62, 17, True, NAVY, align=PP_ALIGN.CENTER)
 
+# Matched mission reference
+s = base("Results", "Matched reference mission finds no twelve-shot closure",
+         "Common-input spring/Gen5 study; 100 N host, 450 km, 12 × 4 kg payloads", "BOUNDED MISSION SCREEN")
+image_fit(s, FIG / "matched_mission_reference.png", 0.55, 1.7, 7.65, 4.9)
+card(s, 8.42, 1.83, 4.1, 1.94, "2.69 vs 0.83 kg", "Ideal host propellant for one matched inertial target: spring versus finite Gen5.", TEAL, 21, 15)
+card(s, 8.42, 4.0, 4.1, 1.94, "4 / 1 / 1", "Accepted twelve-shot prefixes: spring, finite Gen5, historical Gen5.", RED, 24, 15)
+txt(s, "Assumed host and devices; optimizer result is not an infeasibility proof or product advantage.",
+    0.8, 6.61, 11.8, 0.35, 14, True, NAVY, align=PP_ALIGN.CENTER)
+
 # 19 Conclusion
 s = base("Conclusion", "The research question has a completed answer",
          "Thesis manuscript, Conclusion; BASELINE.md; PROVENANCE.md")
-bullets(s, ["The Gen5 system-level model predicts 16.0 m/s 3U release and a conditional orbital benefit.",
-            "The model is 76% heavier per 3U customer and the side-fed CAD reference also clashes.",
-            "Independent numerical checks corrected the baseline and defined the limits of its claims.",
-            "Conclusion: the analytical objective is complete; Gen5 does not pass the 3U selection criterion."],
+bullets(s, ["Historical model reports 16.0 m/s; a finite force screen challenges that performance claim.",
+            "The modeled system is 76% heavier per 3U customer and the evaluated side-fed CAD clashes.",
+            "R1 geometry clears a scripted path, but has no lift or launch retention design.",
+            "No matched twelve-shot reference closes; Gen5 is a documented negative design study."],
         0.95, 1.9, 11.65, 4.8, 22, 21)
 
 # 20 Future Gen6

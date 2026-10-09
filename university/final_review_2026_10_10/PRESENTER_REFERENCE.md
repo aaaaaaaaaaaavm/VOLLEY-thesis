@@ -23,9 +23,9 @@ toc-depth: 1
 
 ## Rehearsed opening and close
 
-**Opening (about 35 seconds):** “Our thesis asks whether a hosted deployer can give each rideshare CubeSat a commanded release condition that improves its orbit enough to justify the whole machine. We completed a Gen5 computational evaluation. At the rated 3U point it predicts a 16.0 m/s release and an orbit benefit. The mass comparison fails, and a native CAD review identifies an 11 mm packaging shortfall in our side-fed reference layout. We will show those checks and the engineering decision.”
+**Opening (about 35 seconds):** “Our thesis asks whether a hosted deployer can give each rideshare CubeSat a commanded release condition that improves its orbit enough to justify the whole machine. We completed a Gen5 computational evaluation. The historical model predicts 16.0 m/s, while a finite geometry force screen challenges that performance claim. The mass comparison fails, the matched twelve-shot screen closes no case, and a native CAD review identifies an 11 mm packaging shortfall in our side-fed reference layout. We will show those checks and the engineering decision.”
 
-**Close (about 25 seconds):** “The research question now has an evidence-based answer. A commanded release has conditional orbital value in the model, but this Gen5 configuration is not competitive on the stated 3U mass criterion. That finding closes the Gen5 analytical study. Physical qualification and the Gen6 mechanism trade are future work.”
+**Close (about 25 seconds):** “The research question now has documented negative findings and an unresolved force-model discrepancy. A commanded release has conditional orbital value in the model, but this Gen5 configuration is not competitive on the stated 3U mass criterion. That finding closes the Gen5 analytical study. Physical qualification and the Gen6 mechanism trade are future work.”
 
 Aim for an 11-minute full route in rehearsal, then shorten to the key slides if the panel gives a tighter slot. The numerical claims and failure criterion should remain in either route.
 
@@ -39,7 +39,7 @@ Aim for an 11-minute full route in rehearsal, then shorten to the key slides if 
 
 ## Short route if time is limited
 
-Prioritize slides **1, 3, 5–7, 9–13, 15–16, 18–20**, keeping the literature and model tables brief. Lead with the thesis answer and close on the engineering decision. Keep the mass failure and evidence boundary. Slides 22–23 are references for questions. The full route follows all 23 slides in order.
+Prioritize slides **1, 3, 5–7, 9–14, 17–18, 19, 21–23**, keeping the literature and model tables brief. Lead with the thesis answer and close on the engineering decision. Keep the mass failure and evidence boundary. Slides 25–26 are references for questions. The full route follows all 26 slides in order.
 
 # Slide-by-slide speaking notes
 
@@ -95,39 +95,51 @@ Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable
 
 At the rated 3U operating point, the model predicts 16.029 m/s and 10.07 g. Gross electrical draw is 2,782 J, of which the payload receives about 514 J as kinetic energy. Only 47 J is recovered after release within the available 39 mm zone; 1,162 J of sled energy goes to the brake. Net electrical-to-payload efficiency is 18.8%. Peak current is 320 A over a 162.3 ms pulse. P117 independently checks simple mass, work and kinetic-energy identities but leaves **124.488 J of gross draw unitemized**. Do not call the energy loss budget closed, or say “tested,” “measured,” or “qualified.”
 
-## 14. Results — command precision
+## 14. Results — finite force discrepancy
+
+Explain that 16.029 m/s assumes periodic force through the whole 1.3 m. The CAD array loses direct stator overlap after 1.066 m. A 3-D analytic volume integral of the finite belts gives 1.042 kJ of ideal work and 12.448 m/s with phase optimized at every point; real circuit limits reduce this model result. This screen shares the earlier magnetic field law, so independent FEM force verification remains open. Do not call 12.448 m/s measured or an accepted replacement baseline.
+
+## 15. Results — command precision
 
 The closed-loop simulation produces a 0.0274 m/s ($3\sigma$) spread around a 15.8 m/s setpoint. It includes assumed sensor and plant tolerances, with control headroom. A panel member may ask whether that precision survives real contacts, thermal changes or payload variability. Answer: those are unmeasured and require an instrumented release test and model correlation.
 
-## 15. Results — orbit
+## 16. Results — orbit
 
 At the rated 16.029 m/s release point, an independent Cartesian two-body integration reproduces the immediate 28.800775 km semi-major-axis rise within the declared numerical band. This checks orbital mechanics for that state, not atmospheric lifetime. The model's 1.60× lifetime multiplier at mean solar activity remains unverified at this exact point; a prior invariance claim failed an independent propagator check. Spring impulse, differential drag or a host maneuver can create relative state and phase satellites; waiting alone cannot.
 
-## 16. Results — mass
+## 17. Results — mass
 
 This is the decisive negative result. Dry mass is 126.6 kg, loaded mass 174.6 kg. The twelve-3U configuration spends 10.55 kg of deployer per satellite, about 1.76 times the roughly 6 kg spring-canister comparison. The predeclared criterion was within 15%, so Gen5 fails. A modelled 50.04 kg enclosure replaced an 8 kg placeholder and exposed the penalty. Do not imply the full assembly is mass-competitive for 3U.
 
-## 17. Results — CAD packaging check
+## 18. Results — CAD packaging check
 
 Show the dimensioned section from the FreeCAD review assembly. Its 526 mm inner enclosure width cannot accommodate the 205 mm track and two 166 mm side cassettes: 537 mm total, an 11 mm shortfall before clearances. Both cassettes intersect the track by 32,915 mm³ in this exact placement. This fails the **side-fed reference layout**; it does not rule out every layout or determine a manufacturable tolerance stack. It is a real negative CAD check, not a rendering defect. P116 records the geometry and reproduction steps.
 
-## 18. Results — simulation demonstration
+## 19. Results — unselected R1 feeder
+
+The widened 570 mm enclosure clears twelve scripted 3U-envelope routes in exact-solid geometry. Show the native FreeCAD file and STEP set as review artifacts. The real lift/carriage and launch retention have not been designed, and R1 needs new mass, host and structural analyses. It is separate from the evaluated Gen5 configuration.
+
+## 20. Results — simulation demonstration
 
 Walk through four transparent steps: choose the modelled 3U case; show the shot figure and operating-point table; independently integrate its release state for two orbits; then inspect the rated-orbit plot, mass comparison and FreeCAD section. The panel can inspect the scripts, FreeCAD document and reports in this repository. If a script cannot run during review, the slide and handbook reproduce the model chain. Call this a **computational demonstration**.
 
-## 19. Conclusion
+## 21. Results — matched reference mission
 
-“We completed the Gen5 computational evaluation. It predicts an orbital-energy change, confirmed for the immediate two-body case. The modeled configuration fails our preset 3U mass criterion, and its side-fed reference geometry fails a CAD packaging check. Gen5 is a finished research result with recorded failures, not a selected flight configuration.” Future work follows separately.
+The comparison fixes one payload, host, start orbit and target. With assumed device masses, spring release needs 2.693 kg ideal host propellant for one matched target; finite Gen5 needs 0.827 kg. The common-input twelve-shot optimizer finds accepted prefixes 4/12 and 1/12 respectively; neither closes. The optimizer result and component masses are scenario assumptions, not a customer benefit or a proof of impossibility.
 
-## 20. Future work — Gen6
+## 22. Conclusion
+
+“We documented Gen5’s computational results and decisive checks. The finite-force screen challenges the historical speed prediction, the modeled configuration fails our 3U mass criterion, and the evaluated side-fed geometry clashes. None of the matched twelve-shot reference cases closes. Gen5 has recorded adverse results and open force closure, not a selected flight configuration.” Future work follows separately.
+
+## 23. Future work — Gen6
 
 Gen6 retains the mission and reopens hardware selection. One reusable path must sequentially accept different supported payload classes. The research envelope is about 1–2 m/s through 1 km/s. The high end is a study target, not a validated speed. Electromagnetic drive is interesting but not selected; compare it with mechanical, stored energy, gas/fluid, hybrid, BOLLEY and conventional paths using the same mission and installed-burden accounting.
 
-## 21. Future work — test article
+## 24. Future work — test article
 
 The target is one named, independently reviewable test-article configuration: controlled geometry, BOM, interfaces, mass/energy/thermal budgets, assembly and inspection, calibration and instrumentation, pass/fail and stop criteria, uncertainty and retained failures. A configuration may be rejected. Physical manufacture, testing and qualification are later milestones. Avoid calling N5 itself “the prototype complete.”
 
-## 22–23. References
+## 25–26. References
 
 Offer the panel handbook for the fuller bibliography. Distinguish published/agency sources from our own project manuscript and PLAN-R2. If a panel member asks for a numerical source, give the relevant baseline, figure and run sheet rather than citing “the internet.”
 
@@ -135,7 +147,8 @@ Offer the panel handbook for the fuller bibliography. Distinguish published/agen
 
 | Quantity | Defensible phrase |
 |:--|:--|
-| 16.029 m/s | “Gen5 modelled 3U exit velocity” |
+| 16.029 m/s | “Historical periodic-force model prediction, challenged by finite geometry” |
+| 12.448 m/s | “Finite analytic geometry-only speed under ideal phase and omitted circuit losses” |
 | 10.07 g | “Modelled payload acceleration, not payload qualification” |
 | 2,782 J | “Gross modelled bank draw per shot” |
 | 47 J | “Modelled recovered energy in available zone” |

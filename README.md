@@ -6,6 +6,12 @@ This repository is the **standalone academic record** for VOLLEY Gen5. It holds 
 
 > **Scope, October 2026:** Gen5 is the fixed computational configuration for academic review, with documented model cases and open verification items. It yields a modeled orbital benefit, a failed installed-mass criterion, and a failed side-fed CAD fit. The final academic freeze has not been declared; nothing has been built, fired, measured, qualified or flown. Gen6 is future research toward a 1 km/s-class release; it has no selected architecture or achieved speed.
 
+> **Finding for the examiner:** the finite 3-D analytic force screen gives **12.448 m/s only under ideal phase and omitted circuit losses**, challenging the earlier **16.029 m/s** periodic-model shot. The old value is retained for audit, not presented as established performance. [Method, convergence and limits](validation/P118_gen5_finite_force_map.md) · [affected-claim disposition](docs/GEN5_2026_10_09_FINDING_DISPOSITION.md).
+
+<p align="center"><img src="figures/gen5_finite_force_map.png" alt="Finite Gen5 force map" width="48%"> <img src="figures/matched_mission_reference.png" alt="Matched reference mission" width="48%"></p>
+
+*The matched reference uses assumed host and dispenser properties; none of its spring or Gen5 twelve-shot cases closes. [Exact assumptions](docs/MATCHED_MISSION_REFERENCE.md).*
+
 <p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission concept and Gen5 model chain" width="100%"></p>
 
 *Model and mission architecture. A host and provider interface have not been selected.*
@@ -14,7 +20,7 @@ This repository is the **standalone academic record** for VOLLEY Gen5. It holds 
 
 | Deliverable | Open it | Evidence route |
 |:--|:--|:--|
-| **23-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
+| **26-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
 | **Panel handbook** | [PDF](university/final_review_2026_10_10/PANEL_HANDBOOK.pdf) · [Markdown](university/final_review_2026_10_10/PANEL_HANDBOOK.md) | Detailed explanations and figures |
 | **Presenter reference** | [PDF](university/final_review_2026_10_10/PRESENTER_REFERENCE.pdf) · [Markdown](university/final_review_2026_10_10/PRESENTER_REFERENCE.md) | Slide notes and viva responses |
 | **Final-year project report** | [PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Markdown](university/GEN5_FINAL_YEAR_REPORT.md) | Chaptered academic review draft; college-specific format remains to be applied |
@@ -37,7 +43,7 @@ Gen5 is one specified system: a release station 1.5 m from the breech on 1.8 m s
 
 | Study question | Modeled Gen5 answer | Examiner's qualification |
 |:--|--:|:--|
-| Rated 3U departure | **16.029 m/s at 10.07 g** | Coupled model, not a measured command range or payload qualification |
+| Historical rated 3U departure | **16.029 m/s at 10.07 g** | Periodic model challenged by finite geometry; not a measured command range or payload qualification |
 | Energy draw | **2.78 kJ gross per shot** | Circuit model at the rated point |
 | Exit-speed dispersion | **0.0274 m/s (3σ)** | Simulation under assumed sensor uncertainty |
 | Dry / loaded design mass | **126.6 / 174.6 kg** | Modeled rollup with historical Gen3 sled volumes and assumed components, not a complete installed host mass |
@@ -56,6 +62,10 @@ Gen5 is one specified system: a release station 1.5 m from the breech on 1.8 m s
 <p align="center"><img src="figures/rated_orbit_crosscheck.svg" alt="Rated two-body orbit check" width="49%"> <img src="figures/gen5_packaging_section.svg" alt="Gen5 reference assembly interference" width="34%"></p>
 
 *The CAD finding is deliberately retained in the [native FreeCAD document](cad/native/Gen5_Review.FCStd) and [assembly STEP](cad/step/gen5/VOLLEY_Review_Assembly_FreeCAD_Gen5.step). The orbit check supports immediate two-body geometry only. [Methods and exact files](reports/GEN5_COMPUTATIONAL_REVIEW.pdf).*
+
+![Unselected R1 feeder geometry](figures/gen5_feeder_candidate_r1.png)
+
+*The [R1 FreeCAD and STEP geometry study](cad/FEEDER_CANDIDATE_R1.md) widens the enclosure and clears twelve scripted 3U envelope paths. Lift actuation, launch retention, tolerances, mass revision and provider compatibility remain open; R1 is not a selected Gen5 configuration.*
 
 <p align="center"><img src="source/figures/A02_field_map.png" alt="Calculated magnetic field" width="32%"> <img src="source/figures/F01_shot.png" alt="Modeled velocity, force and current" width="32%"> <img src="source/figures/A35_ledger.png" alt="Requirement-attributed mass floor" width="32%"></p>
 

@@ -6,13 +6,13 @@
 
 This directory is the review pack for the computational Gen5 study. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
-**Presentation thesis:** the Gen5 system-level computational evaluation reports a conditional orbital benefit, a failed 3U mass criterion, and a failed side-fed CAD reference fit. Slides 1–19 present the research and its limitations. Slides 20–21 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product or final design freeze.
+**Presentation thesis:** the Gen5 system-level computational evaluation reports a conditional orbital benefit, a failed 3U mass criterion, and a failed side-fed CAD reference fit. Slides 1–22 present the research and its limitations. Slides 23–24 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product or final design freeze.
 
 ## Bring to the review
 
 | Item | Present/print | Editable source |
 |:--|:--|:--|
-| Main presentation, 23 slides | [PPTX](VOLLEY_Final_Review_2026-10-10.pptx) · [PDF](VOLLEY_Final_Review_2026-10-10.pdf) | [Build script](build_presentation.py) |
+| Main presentation, 26 slides | [PPTX](VOLLEY_Final_Review_2026-10-10.pptx) · [PDF](VOLLEY_Final_Review_2026-10-10.pdf) | [Build script](build_presentation.py) |
 | Panel handbook, detailed explanation and figures | [PDF](PANEL_HANDBOOK.pdf) | [Markdown](PANEL_HANDBOOK.md) · [DOCX](PANEL_HANDBOOK.docx) |
 | Presenter reference, slide notes and viva answers | [PDF](PRESENTER_REFERENCE.pdf) | [Markdown](PRESENTER_REFERENCE.md) · [DOCX](PRESENTER_REFERENCE.docx) |
 
@@ -20,7 +20,7 @@ The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive sli
 
 Slide 3 and the handbook introduce the [audited market and spacecraft-fit report](../../MARKET_AND_CUSTOMER_FIT.md). They identify candidate buyer jobs without claiming customer interviews, qualified spacecraft or product-market fit. The source-linked report corrects the Drive material before it enters the review narrative.
 
-**Review corrections:** an earlier draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. A separate rated two-body run now checks the immediate 28.800775 km axis change, but not the 1.60× atmospheric lifetime. A native FreeCAD assembly review identifies the 11 mm side-fed width shortfall. The current PPTX, PDF, handbook and presenter notes include these findings.
+**Review corrections:** an earlier draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. A separate rated two-body run now checks the immediate 28.800775 km axis change, but not the 1.60× atmospheric lifetime. A native FreeCAD assembly review identifies the 11 mm side-fed width shortfall. The current PPTX, PDF, handbook and presenter notes include these findings and the new finite-force, R1 feeder and matched-mission screens.
 
 ## Evidence language
 
@@ -33,12 +33,12 @@ Slide 3 and the handbook introduce the [audited market and spacecraft-fit report
 
 | Criterion | Review evidence |
 |:--|:--|
-| Achievement of objectives (10 marks) | Slides 6, 11, 19; handbook §§4, 7–9 |
-| Technical quality and innovation (10 marks) | Slides 4–8, 12–17; handbook §§2–5, 8 |
-| Results, validation and analysis (5 marks) | Slides 13–18; handbook §8 and claim map |
+| Achievement of objectives (10 marks) | Slides 6, 11, 22; handbook §§4, 7–9 |
+| Technical quality and innovation (10 marks) | Slides 4–8, 12–19; handbook §§2–5, 8 |
+| Results, validation and analysis (5 marks) | Slides 13–21; handbook §8 and claim map |
 | Report and documentation (5 marks) | Manuscript, baseline, validation, provenance and this pack |
-| Presentation, demonstration and viva (10 marks) | Slide 18 computational demonstration; presenter reference |
+| Presentation, demonstration and viva (10 marks) | Slide 20 computational demonstration; presenter reference |
 
 ## Rebuild
 
-From this directory, run `python build_presentation.py` and `python render_review_pdf.py` to build the PPTX and matching 23-page PDF. The renderer checks text for overflow. The handbook and presenter PDFs and DOCXs can be rebuilt with Pandoc and XeLaTeX from their Markdown sources. All image references point to files already in this repository. The SIT logo in `assets/` was extracted from the user-provided university example PDF solely for this university-format review pack. Check [file hashes](CHECKSUMS.sha256) after copying the submission pack.
+From this directory, run `python build_presentation.py` and `python render_review_pdf.py` to build the PPTX and matching 26-page PDF. The renderer checks text for overflow. The handbook and presenter PDFs and DOCXs can be rebuilt with Pandoc and XeLaTeX from their Markdown sources. All image references point to files already in this repository. The SIT logo in `assets/` was extracted from the user-provided university example PDF solely for this university-format review pack. Check [file hashes](CHECKSUMS.sha256) after copying the submission pack.
