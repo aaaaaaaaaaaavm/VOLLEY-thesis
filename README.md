@@ -4,7 +4,7 @@
 
 This repository is the **standalone academic record** for VOLLEY Gen5. It holds the technical [manuscript](source/VOLLEY_IEEE_Conference.pdf), editable [source](source/paper.tex), model scripts and outputs, CAD, validation sheets, assumptions, defects, and the college [final-review presentation pack](university/final_review_2026_10_10/README.md). A professor can follow a slide claim to a result file and method without opening another repository.
 
-> **Scope, October 2026:** The Gen5 **computational design study is complete** for the cases reported. It yields both a modeled orbital benefit and a failed installed-mass criterion. The hardware product is not complete: nothing has been built, fired, measured, qualified or flown. Gen6 is future research toward a 1 km/s-class release; it has no selected architecture or achieved speed.
+> **Scope, October 2026:** Gen5 is the fixed computational configuration for academic review, with documented model cases and open verification items. It yields a modeled orbital benefit, a failed installed-mass criterion, and a failed side-fed CAD fit. The final academic freeze has not been declared; nothing has been built, fired, measured, qualified or flown. Gen6 is future research toward a 1 km/s-class release; it has no selected architecture or achieved speed.
 
 <p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission concept and Gen5 model chain" width="100%"></p>
 
