@@ -9,7 +9,7 @@ The college's supplied final-review rubric awards 10 marks for objectives, 10 fo
 | Earlier headline | Tomorrow's treatment | Why |
 |:--|:--|:--|
 | 16.029 m/s rated Gen5 release | **Historical periodic-force model output. Do not use as a demonstrated or selected rating.** Keep one slide so the correction is traceable. | P118's finite-position force integral challenges the assumption of constant periodic force across the stroke. |
-| 12.448 m/s finite-force result | **Ideal-phase analytic screen, not a replacement rated speed.** | A separate 2-D FEM gives 1.082 kJ ideal work, but omits magnet-depth end effects. No measured thrust or selected switching hardware exists. |
+| 12.448 m/s finite-force result | **Ideal-phase analytic screen, not a replacement rated speed.** | P121 independently reproduces 1.042 kJ ideal full-depth work under shared assumptions; P122 gives 0.907 kJ for an illustrative 14 mm gap. No measured thrust or selected switching hardware exists. |
 | 10.07 g, 2.782 kJ, 18.8%, 0.0274 m/s dispersion | **Conditional outputs of the historical shot/control model.** Do not carry them into a revised performance specification. | P117 reconciles the old 124.488 J remainder to model assumptions; P120 reruns finite force with an assumed bank and gives 2.099 kJ gross. Control, switching and contact remain open. |
 | +28.8008 km immediate orbit rise, 1.60× lifetime | **Historical 16.029 m/s orbit-input scenario.** The immediate two-body geometry is cross-checked; lifetime is not independently closed for the current case. | Orbital propagation can correctly use an assumed impulse without proving that Gen5 can produce that impulse. |
 | 126.6 kg dry; 10.55 kg per 3U versus ~6 kg spring canister | **Current modeled mass finding and clear adverse comparison.** | The installed system fails the stated 15% comparator band. A stricter historical 2 kg/3U screening target also fails; keep the distinct thresholds labeled. |
@@ -20,7 +20,7 @@ The college's supplied final-review rubric awards 10 marks for objectives, 10 fo
 
 ## What must be said before the results
 
-“The original 16 m/s operating point remains in the record as a historical model case. A finite-geometry check has since challenged its force assumption; a separate 2-D field solve supports the declining finite-force trend. The bank rerun still assumes ideal phase and unselected components, so we are not claiming a verified speed. The old orbit and energy plots are conditional inputs, while the mass and CAD failures drive the design decision.”
+“The original 16 m/s operating point remains in the record as a historical model case. A finite-geometry check has since challenged its force assumption; a separate 2-D FEM supports the declining trend and an independent 3-D surface-charge calculation reproduces ideal full-depth work. The bank rerun still assumes ideal phase and unselected components, so we are not claiming a verified speed. The old orbit and energy plots are conditional inputs, while the mass and CAD failures drive the design decision.”
 
 This sentence prevents the panel from discovering the correction before you mention it. Do not wait for Q&A to reveal it.
 

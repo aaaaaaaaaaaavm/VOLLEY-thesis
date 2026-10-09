@@ -298,12 +298,12 @@ txt(s, "P118 challenges 16.0 m/s; P117 reconciles 124.5 J to assumed model terms
     0.85, 6.65, 11.9, 0.28, 13, False, MID)
 
 # 14 Finite force
-s = base("Results", "Independent 2-D FEM confirms the finite-force decline",
-         "P118 3-D analytic; P119 2-D FEM; P120 assumed bank rerun", "COMPUTATIONAL CROSS-CHECK")
-image_fit(s, FIG / "gen5_finite_force_fem2d.png", 0.55, 1.7, 7.65, 4.9)
-card(s, 8.45, 1.78, 4.1, 1.95, "1.042 / 1.082 kJ", "Ideal work: 3-D analytic / 2-D FEM. The FEM omits magnet-depth end effects.", AMBER, 20, 15)
-card(s, 8.45, 3.95, 4.1, 1.95, "2.099 kJ", "P120 gross bank draw with assumed full winding and ideal phase; not a selected rating.", RED, 24, 15)
-txt(s, "Historical 16.029 m/s is challenged; no measured force or selected inverter exists.",
+s = base("Results", "Independent 3-D check confirms ideal finite-force work",
+         "P118 analytic; P119 2-D FEM; P121 3-D numerical; P122 gap sensitivity", "COMPUTATIONAL CROSS-CHECK")
+image_fit(s, FIG / "gen5_finite_force_sensitivity.png", 0.55, 1.7, 7.65, 4.9)
+card(s, 8.45, 1.78, 4.1, 1.95, "1.042 kJ", "Ideal 3-D work: independent surface-charge formulation agrees with P118 under shared inputs.", AMBER, 23, 15)
+card(s, 8.45, 3.95, 4.1, 1.95, "−13% work", "Illustrative 12-to-14 mm magnet gap change; not a measured tolerance or motor rating.", RED, 24, 15)
+txt(s, "No measured force, selected inverter or demonstrated release speed exists.",
     0.8, 6.64, 11.75, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 14 Control

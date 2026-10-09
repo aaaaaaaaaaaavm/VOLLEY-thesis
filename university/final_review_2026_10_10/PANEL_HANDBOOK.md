@@ -43,6 +43,10 @@ A separate **2-D finite-element magnetostatic solve** of the finite magnet array
 
 ![Independent 2-D finite-element force screen, not a measurement.](<../../figures/gen5_finite_force_fem2d.png>){width=96%}
 
+A separate **depth-resolved 3-D numerical surface-charge implementation** integrates the full 90 mm magnet depth and all 162 stator belts. It independently returns **1.042 kJ ideal work**, matching P118 under shared geometry, remanence and ideal-phase assumptions. Face quadrature refinement from 16 to 24 nodes changes work by 0.00002%; halving the station spacing changes work by 0.096%. This checks the numerical formulation, not a selected motor or physical thrust. An illustrative 14 mm face gap gives **0.907 kJ** rather than 1.042 kJ at 12 mm, a 13.0% ideal-work reduction. A 10 mm copper-depth offset gives 0.961 kJ. These are deterministic sensitivity cases, not tolerance specifications. See [P121](../../validation/P121_gen5_finite_force_surface3d.md) and [P122](../../validation/P122_gen5_finite_force_sensitivity.md).
+
+![Ideal gap/depth sensitivity; scenarios rather than measured tolerances.](<../../figures/gen5_finite_force_sensitivity.png>){width=96%}
+
 A **conditional finite-force bank/trajectory rerun** retains the historical 96 V, 6 F, 12 mΩ source and assumed converter. With the full 1.3 m winding energized it computes **2.099 kJ gross capacitor draw** and 927 J copper heat; an illustrative 0.34 m active-copper branch gives 1.394 kJ gross and 243 J copper heat. Both report 12.448 m/s because the force curve is imposed at ideal phase; no voltage-limited switching law or selected winding/inverter exists. The old 2.782 kJ, brake and control outputs are not revised ratings. [P120](../../validation/P120_gen5_finite_coupled_shot.md) gives the time history and energy ledger.
 
 ![Finite-force speed and assumed bank energy histories.](<../../figures/gen5_finite_coupled_shot.png>){width=96%}
@@ -119,7 +123,7 @@ The project follows an engineering evidence chain:
 
 ## Numerical checks and their limits
 
-The magnetic field was compared across an analytical representation, magpylib, and 2-D/3-D finite-element calculations. A 3-D midgap solve supports the field model at its tested location but does not independently measure the depth-integrated thrust constant. Shot and circuit predictions were compared with ngspice at stated assumptions. Structural calculations use CalculiX; airflow calculations use OpenFOAM. Orbital calculations include Cowell and GMAT cases. The independent orbit work rejected an earlier assertion that lifetime benefit was invariant across solar activity. Each check applies to its declared case and boundary conditions; none is a hardware test.
+The magnetic field was compared across an analytical representation, magpylib, and 2-D/3-D finite-element calculations. A 3-D midgap FEM solve supports the field model at its tested location; P121 separately checks the ideal depth-integrated thrust by numerical surface-charge integration. Neither is a motor measurement. Shot and circuit predictions were compared with ngspice at stated assumptions. Structural calculations use CalculiX; airflow calculations use OpenFOAM. Orbital calculations include Cowell and GMAT cases. The independent orbit work rejected an earlier assertion that lifetime benefit was invariant across solar activity. Each check applies to its declared case and boundary conditions; none is a hardware test.
 
 ![Representative magnetic-field model output. Source: thesis figure A02.](<../../source/figures/A02_field_map.png>){width=83%}
 

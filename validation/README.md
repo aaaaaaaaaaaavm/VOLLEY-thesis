@@ -1,9 +1,12 @@
 # Validation plan
 
-> **Current finite-force finding (P118–P120).** The finite-array/stator 3-D analytic integral gives 1.042 kJ ideal work and 12.448 m/s under ideal phase, challenging the historical 16.029 m/s periodic shot. A separate [2-D finite-element screen](P119_gen5_finite_force_fem2d.md) gives 1.082 kJ, without depth end effects. The [conditional bank/trajectory rerun](P120_gen5_finite_coupled_shot.md) gives 12.448 m/s and 2.099 kJ gross for the full-winding assumption; no selected winding, inverter or hardware validates this rating. See the [matched mission screen](../docs/MATCHED_MISSION_REFERENCE.md). The older run-sheet count below describes the historical A-series table.
+> **Current finite-force finding (P118–P122).** The finite-array/stator 3-D analytic integral gives 1.042 kJ ideal work and 12.448 m/s under ideal phase, challenging the historical 16.029 m/s periodic shot. A separate [2-D finite-element screen](P119_gen5_finite_force_fem2d.md) gives 1.082 kJ, without depth end effects. The [conditional bank/trajectory rerun](P120_gen5_finite_coupled_shot.md) gives 12.448 m/s and 2.099 kJ gross for the full-winding assumption; no selected winding, inverter or hardware validates this rating. See the [matched mission screen](../docs/MATCHED_MISSION_REFERENCE.md). The older run-sheet count below describes the historical A-series table.
 
-Independent cross-checks of the claims in `analysis/`. **73 run sheets, one row each, and every
-file in this directory has a row.** All but the last have run; A73 is declared and executing.
+> **P121–P122 follow-up.** [P121](P121_gen5_finite_force_surface3d.md) independently integrates full-depth finite-cuboid force with a surface-charge formulation and returns 1.042 kJ ideal work under shared inputs. [P122](P122_gen5_finite_force_sensitivity.md) records deterministic gap/depth scenarios, including 0.907 kJ at a 14 mm face gap. Neither selects hardware or measures physical tolerances.
+
+Independent cross-checks of the claims in `analysis/`. The historical A-series
+table below contains 73 rows; newer P-series review checks are linked above. A73 is
+declared and executing.
 
 > ### This index was nineteen rows short until 2026-08-30, and said so nowhere
 >

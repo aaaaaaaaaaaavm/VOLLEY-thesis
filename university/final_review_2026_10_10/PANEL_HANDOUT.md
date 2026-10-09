@@ -14,7 +14,7 @@ fontsize: 9pt
 
 | Finding | Result and evidence boundary |
 |:--|:--|
-| Release speed | 16.029 m/s belongs to a historical periodic-force model. P118's finite 3-D **analytic** force screen gives 12.448 m/s under ideal phase and omitted circuit losses. It is not an independently verified rating. |
+| Release speed | 16.029 m/s belongs to a historical periodic-force model. P118's finite 3-D **analytic** force screen gives 12.448 m/s under ideal phase and omitted circuit losses. P121 independently reproduces 1.042 kJ ideal full-depth work under shared inputs; a P122 illustrative 14 mm gap gives 0.907 kJ. No selected rating exists. |
 | Electrical chain | Historical gross draw is 2,782 J; its 124.488 J compact-output remainder resolves to assumed converter, auxiliary and numerical terms. A conditional finite-force full-winding bank rerun gives 2,099 J gross, without selected hardware. |
 | Installed mass | Modeled dry mass is 126.6 kg, or 10.55 kg per 3U customer, against an approximate 6 kg spring-canister comparator. The predeclared 15% parity band fails. |
 | CAD fit | The reference side-fed layout needs 537 mm within 526 mm clear width and overlaps the track by 32,915 mm³ per cassette. The separate widened R1 geometry clears twelve scripted routes; it lacks a selected feeder, retention and revised mass. |
@@ -25,4 +25,4 @@ fontsize: 9pt
 
 **Next gate.** Independently check finite integrated thrust; rerun the coupled circuit and trajectory; select a feasible feeder and reconcile its mass, clearances and loads; repeat the matched mission; then build an instrumented coupon or test article when resources and interfaces are available. Gen6 and 1 km/s are future trade targets, not results.
 
-**Source trail.** `P118_gen5_finite_force_map.md`; `P119_gen5_finite_force_fem2d.md`; `P120_gen5_finite_coupled_shot.md`; `P117_rated_energy_mass_audit.md`; `P116_gen5_assembly_packaging.md`; `P115_rated_orbit_cartesian.md`; `GEN5_COMPUTATIONAL_REVIEW.pdf`; `GEN5_CAD_REVIEW.pdf`; `CLAIM_EVIDENCE_MAP.md`. The complete pack is in the VOLLEY-thesis repository's `university/final_review_2026_10_10/` directory.
+**Source trail.** `P118_gen5_finite_force_map.md`; `P119_gen5_finite_force_fem2d.md`; `P120_gen5_finite_coupled_shot.md`; `P121_gen5_finite_force_surface3d.md`; `P122_gen5_finite_force_sensitivity.md`; `P117_rated_energy_mass_audit.md`; `P116_gen5_assembly_packaging.md`; `P115_rated_orbit_cartesian.md`; `GEN5_COMPUTATIONAL_REVIEW.pdf`; `GEN5_CAD_REVIEW.pdf`; `CLAIM_EVIDENCE_MAP.md`. The complete pack is in the VOLLEY-thesis repository's `university/final_review_2026_10_10/` directory.

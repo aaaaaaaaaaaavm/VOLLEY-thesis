@@ -8,6 +8,10 @@ This repository is the **standalone academic record** for VOLLEY Gen5. For the 1
 
 > **Finding for the examiner:** the finite 3-D analytic force screen gives **12.448 m/s under ideal phase**, challenging the earlier **16.029 m/s** periodic-model shot. A separate 2-D FEM screen finds **1.082 kJ** ideal work. A conditional finite-force bank calculation gives **2.099 kJ** gross for the assumed full winding. None establishes a selected motor rating. [3-D analytic screen](validation/P118_gen5_finite_force_map.md) · [2-D FEM](validation/P119_gen5_finite_force_fem2d.md) · [coupled bank case](validation/P120_gen5_finite_coupled_shot.md) · [affected-claim disposition](docs/GEN5_2026_10_09_FINDING_DISPOSITION.md).
 
+> **New cross-check and sensitivity:** an [independent depth-resolved 3-D surface-charge formulation](validation/P121_gen5_finite_force_surface3d.md) returns **1.042 kJ ideal work**, agreeing with the analytic finite-force screen under shared geometry and material assumptions. [Illustrative geometry cases](validation/P122_gen5_finite_force_sensitivity.md) reduce ideal work to **0.907 kJ at a 14 mm face gap** versus 12 mm nominal. These are computational screens, not measured tolerances or an accepted speed rating.
+
+<p align="center"><img src="figures/gen5_finite_force_surface3d.png" alt="Independent depth-resolved ideal-force check" width="48%"> <img src="figures/gen5_finite_force_sensitivity.png" alt="Deterministic magnet gap and depth scenarios" width="48%"></p>
+
 <p align="center"><img src="figures/gen5_finite_force_fem2d.png" alt="Finite 2-D FEM force comparison" width="48%"> <img src="figures/gen5_finite_coupled_shot.png" alt="Assumed finite-force bank trajectories" width="48%"></p>
 
 *The FEM omits magnet-depth end effects and the coupled shot retains assumed bank, converter and ideal phase. The [matched reference](docs/MATCHED_MISSION_REFERENCE.md) uses assumed host and dispenser properties; none of its spring or Gen5 twelve-shot cases closes.*

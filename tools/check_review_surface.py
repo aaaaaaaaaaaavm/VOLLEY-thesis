@@ -72,6 +72,8 @@ def check_captured_results() -> None:
     finite = json.loads((ROOT / "analysis/results/gen5_finite_force_map.json").read_text())
     fem = json.loads((ROOT / "analysis/results/gen5_finite_force_fem2d.json").read_text())
     bank = json.loads((ROOT / "analysis/results/gen5_finite_coupled_shot.json").read_text())
+    surface = json.loads((ROOT / "analysis/results/gen5_finite_force_surface3d.json").read_text())
+    sensitivity = json.loads((ROOT / "analysis/results/gen5_finite_force_sensitivity.json").read_text())
     energy = json.loads((ROOT / "analysis/results/rated_energy_mass_audit.json").read_text())
     mass = json.loads((ROOT / "analysis/results/mass_properties.json").read_text())
     mission = json.loads((ROOT / "analysis/results/matched_mission_reference.json").read_text())
@@ -82,6 +84,10 @@ def check_captured_results() -> None:
             "independent 2-D work changed; review text needs updating")
     require(abs(fem["mesh_work_change_fraction"]) < 0.01,
             "2-D work mesh change exceeds one percent")
+    require(abs(surface["runs"][-1]["ideal_work_J"] - finite["ideal_finite_stator_work_J"]) < 0.01,
+            "independent 3-D ideal-force check changed")
+    require(abs(sensitivity["cases"][1]["ideal_work_J"] - 906.7) < 1.0,
+            "illustrative 14 mm gap result changed")
     require(abs(bank["branches"][0]["result"]["gross_capacitor_draw_J"] - 2098.6) < 1.0,
             "finite-force bank draw changed; review text needs updating")
     require(abs(bank["branches"][0]["result"]["energy_ledger_residual_J"]) < 0.001,
