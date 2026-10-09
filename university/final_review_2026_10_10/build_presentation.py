@@ -148,7 +148,8 @@ txt(s, "Department of Mechanical Engineering", 0.7, 0.22, 11.93, 0.37, 22, True,
 txt(s, "B.Tech Project Presentation on", 0.7, 0.66, 11.93, 0.37, 19, True, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "VOLLEY: Controlled CubeSat Deployment", 0.7, 1.15, 11.93, 0.52, 29, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "from a Hosted Orbital Platform", 0.7, 1.72, 11.93, 0.5, 27, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
-image_fit(s, LOGO, 5.77, 2.35, 1.8, 1.8)
+txt(s, "Completed Gen5 system-level computational evaluation", 1.2, 2.19, 10.93, 0.36, 17, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
+image_fit(s, LOGO, 5.77, 2.6, 1.8, 1.5)
 txt(s, "Presented By", 2.4, 4.3, 8.5, 0.36, 17, False, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "Adityavardhan Mishra  ·  Pratham Chawla", 1.55, 4.67, 10.25, 0.44, 20, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "PRN 23070125054  ·  PRN 23070125029", 2.1, 5.12, 9.15, 0.34, 15, False, TEMPLATE_RED, align=PP_ALIGN.CENTER)
@@ -169,12 +170,12 @@ for i, item in enumerate(items):
     txt(s, f"{i + 1:02d}  {item}", x + 0.12, y + 0.10, 5.3, 0.4, 19, i in (0, 7, 8), NAVY)
 
 # 3 Introduction
-s = base("Introduction", "The deployment problem starts after rideshare reaches orbit",
+s = base("Introduction", "The thesis answers an orbital-delivery trade question",
          "Thesis manuscript, Introduction; JAXA J-SSOD; EXOpod documentation")
 card(s, 0.65, 1.82, 3.85, 3.48, "Shared destination", "Secondary CubeSats inherit the orbit chosen for the primary customer.")
 card(s, 4.75, 1.82, 3.85, 3.48, "Conventional release", "Spring deployers separate payloads at about 1–2 m/s; release timing helps in-track phasing.")
 card(s, 8.85, 1.82, 3.85, 3.48, "VOLLEY question", "Can commanded release provide useful orbital choice at an acceptable installed cost?", AMBER)
-txt(s, "Mission split: host = coarse orbital repositioning  •  deployer = each satellite's release condition", 0.8, 5.77, 11.75, 0.62, 22, True, NAVY, align=PP_ALIGN.CENTER)
+txt(s, "Study outcome: useful modelled orbital change, but an unfavourable 3U mass trade", 0.8, 5.77, 11.75, 0.62, 21, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 4 Literature
 s = base("Literature review", "Existing methods solve different parts of the problem",
@@ -196,18 +197,18 @@ card(s, 0.8, 3.47, 5.72, 2.35, "Contribution examined", "Gen5 reusable-sled line
 card(s, 6.8, 3.47, 5.72, 2.35, "Boundary", "Electromagnetic CubeSat deployment exists in prior work. Payload qualification and physical performance remain unproved.", AMBER, 19, 16)
 
 # 6 Objectives
-s = base("Objectives", "What was achieved, and what remains open",
-         "Thesis manuscript and PLAN-R2; objectives synthesized for this presentation")
-table(s, ["Objective", "Evidence at final review"], [
-    ("Architecture for an unmodified 3U", "Gen5 CAD/model; payload qualification open"),
-    ("Quantify shot and commanded speed", "Shot/circuit/control simulations; no measured shot"),
-    ("Quantify orbital utility", "Modelled benefit and numerical cross-checks; atmospheric limits"),
-    ("Compare full system burden", "Mass and alternatives analysed; 3U mass criterion fails"),
-    ("Define next test path", "Gen6 gates set; mechanism and build release open"),
+s = base("Objectives", "The analytical research objectives have outcomes",
+         "Thesis manuscript, BASELINE.md and PROVENANCE.md; presentation synthesis")
+table(s, ["Research objective", "Final thesis outcome"], [
+    ("Design a commandable 3U system", "Gen5 CAD and complete subsystem architecture documented"),
+    ("Calculate shot and control performance", "Rated shot, power and dispersion models completed"),
+    ("Evaluate orbital utility", "Predicted energy and lifetime benefit for stated cases"),
+    ("Count full installed burden", "Mass rollup completed; 3U parity criterion failed"),
+    ("Test credibility of key claims", "Numerical cross-checks and limits recorded"),
 ], [5.05, 7.2], row_h=0.82, font=16)
 
 # 7 Methodology pipeline
-s = base("Research methodology", "Requirements → model → challenge → revise",
+s = base("Research methodology", "A completed analysis chain from mission to decision",
          "Thesis manuscript, Models and Verification; validation register")
 steps = ["Mission &\npayload needs", "Architecture\ntrade", "CAD & mass\nmodel", "Shot, power &\norbit models", "Numerical\ncross-checks", "Sensitivity &\nacceptance bands"]
 for i, step in enumerate(steps):
@@ -217,11 +218,11 @@ for i, step in enumerate(steps):
     if i < 5:
         txt(s, "→", x + 1.83, 2.75, 0.3, 0.4, 22, True, TEAL, align=PP_ALIGN.CENTER)
 box(s, 1.5, 4.64, 10.3, 1.18, LIGHT, None, True)
-txt(s, "Numerical cross-checks verify particular models. Experimental validation has not yet begun.",
+txt(s, "Models were challenged and revised; hardware performance remains outside this thesis's evidence.",
     1.8, 4.92, 9.7, 0.62, 23, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 8 Methodology checks
-s = base("Research methodology", "The models answer specific questions, with specific limits",
+s = base("Research methodology", "Numerical checks strengthened the final baseline",
          "VOLLEY-thesis/appendix/PROVENANCE.md; validation run sheets")
 table(s, ["Question", "Method / cross-check", "Evidence limit"], [
     ("Field and thrust", "Analytic winding; magpylib; FEM", "No measured thrust constant"),
@@ -238,7 +239,7 @@ milestones = [
     ("Mid-2025*", "LSM direction", "Coilgun study gives way to a linear synchronous motor"),
     ("2025–26*", "CAD generations", "Geometry and mass models mature through Gen5"),
     ("Jul–Sep 2026", "Gen5 evidence", "Cross-checks, defect corrections and thesis record"),
-    ("Sep 2026 →", "Gen6 trade", "Mechanism choice and mission envelope reopened"),
+    ("Oct 2026", "Final review", "Gen5 results, failed criterion and thesis record presented"),
 ]
 for i, (date, head, body) in enumerate(milestones):
     y = 1.72 + i * 0.93
@@ -248,15 +249,15 @@ for i, (date, head, body) in enumerate(milestones):
     txt(s, body, 5.74, y + 0.1, 6.5, 0.45, 17, False, INK)
 txt(s, "* Approximate historical milestone; not a documented semester deadline.", 0.9, 6.55, 10.9, 0.3, 11, False, MID)
 
-# 10 Timeline forward
-s = base("Timeline", "Next work is gated by evidence, not an invented date",
-         "CURRENT PLAN AND STATUS — PLAN-R2, 29 Sep 2026", "GEN6 PLAN • NOT COMPLETED")
+# 10 Timeline of evidence corrections
+s = base("Timeline", "2026 findings were incorporated in the final baseline",
+         "HISTORY.md; PROVENANCE.md; thesis manuscript, Limitations")
 stages = [
-    ("N0", "Freeze mission, payload and host envelope"),
-    ("N1", "Run coupled multi-payload mission cases"),
-    ("N2", "Reject or select mechanisms on common criteria"),
-    ("N3–N4", "Close installed burden, faults and BOLLEY drive"),
-    ("N5", "Prepare first-test package and review"),
+    ("Jul", "CAD-derived sled mass replaced an optimistic parametric estimate"),
+    ("Aug", "Depth-resolved thrust calculation lowered the rated speed"),
+    ("Aug", "Enclosure buildup exposed the full 3U mass penalty"),
+    ("2026", "Independent orbit checks rejected a solar-invariance claim"),
+    ("Final", "Results and failures retained in the submitted thesis record"),
 ]
 for i, (tag, body) in enumerate(stages):
     y = 1.76 + i * 0.92
@@ -266,12 +267,12 @@ for i, (tag, body) in enumerate(stages):
     txt(s, body, 2.65, y + 0.1, 9.18, 0.49, 19, False, INK)
 
 # 11 Work progress
-s = base("Work progress", "A mature analytical record; physical evidence still needed",
-         "Thesis README; PROVENANCE.md; PLAN-R2")
-card(s, 0.7, 1.87, 3.83, 3.88, "Produced", "Manuscript, CAD, scripts and figures, validation sheets, provenance and defect register.", TEAL, 22, 19)
-card(s, 4.74, 1.87, 3.83, 3.88, "Analysed", "Gen5 shot, circuit, mass, thermal, structural and orbit cases. Failed criteria are retained.", AMBER, 22, 19)
-card(s, 8.78, 1.87, 3.83, 3.88, "Still open", "Hardware tests, provider interfaces, payload qualification, measured reliability and build release.", RED, 22, 19)
-txt(s, "The presentation does not assign a percentage complete from document count.", 0.85, 6.04, 11.7, 0.48, 18, True, NAVY, align=PP_ALIGN.CENTER)
+s = base("Work progress", "The thesis deliverables are complete and traceable",
+         "Thesis README; BASELINE.md; PROVENANCE.md; validation register")
+card(s, 0.7, 1.87, 3.83, 3.88, "Design delivered", "Gen5 CAD, magazine and release architecture, subsystem models and system mass rollup.", TEAL, 22, 19)
+card(s, 4.74, 1.87, 3.83, 3.88, "Analysis delivered", "Shot, control, circuit, structure, thermal, orbit and alternative-case results.", TEAL, 22, 19)
+card(s, 8.78, 1.87, 3.83, 3.88, "Evidence delivered", "Manuscript, figures, scripts, numerical checks, provenance and defect register.", TEAL, 22, 19)
+txt(s, "Scope: completed computational thesis; physical qualification belongs to a later development phase.", 0.85, 6.04, 11.7, 0.48, 18, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 12 Architecture
 s = base("Results", "Gen5: complete computational system configuration",
@@ -325,12 +326,12 @@ box(s, 0.85, 5.35, 11.75, 0.95, RGBColor(255, 240, 235), None, True)
 txt(s, "1.76× heavier per 3U payload; the preset 15% parity band fails.", 1.1, 5.6, 11.25, 0.48, 23, True, RED, align=PP_ALIGN.CENTER)
 
 # 17 Limitations
-s = base("Results", "The unresolved physical questions determine viability",
+s = base("Results", "The study ends with a clear engineering decision",
          "Thesis OPEN_PROBLEMS.md; PROVENANCE.md; manuscript Limitations", "EVIDENCE BOUNDARY")
-card(s, 0.68, 1.83, 3.85, 3.5, "Payload interface", "Arrest loads, contact and magnetic cleanliness need payload-specific evaluation.", RED, 20, 18)
-card(s, 4.74, 1.83, 3.85, 3.5, "Shared reliability", "A failed retention or reload element can affect the remaining manifest.", AMBER, 20, 18)
-card(s, 8.8, 1.83, 3.85, 3.5, "Host compatibility", "No launch provider has supplied an approved accommodation or operating interface.", RED, 20, 18)
-txt(s, "FEM, CFD and CAD are numerical evidence. No prototype has been built or tested.", 0.85, 5.84, 11.7, 0.72, 22, True, NAVY, align=PP_ALIGN.CENTER)
+card(s, 0.68, 1.83, 3.85, 3.5, "Supported", "Modelled commandable release and a conditional orbital-energy benefit.", TEAL, 20, 18)
+card(s, 4.74, 1.83, 3.85, 3.5, "Rejected for 3U", "The complete Gen5 configuration misses the preset spring-mass parity target.", RED, 20, 18)
+card(s, 8.8, 1.83, 3.85, 3.5, "Unverified", "Payload loads, magnetic cleanliness, cycle life and host interfaces require tests.", AMBER, 20, 18)
+txt(s, "Decision: retain the numerically checked model; do not select Gen5 as a 3U flight configuration.", 0.85, 5.84, 11.7, 0.72, 21, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 18 Demo
 s = base("Results", "Computational demonstration: from shot to orbit",
@@ -346,12 +347,12 @@ txt(s, "Compare predicted orbital change and full installed mass with the spring
     0.86, 6.25, 11.62, 0.62, 17, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 19 Conclusion
-s = base("Conclusion", "What this final review can defend",
+s = base("Conclusion", "The research question has a completed answer",
          "Thesis manuscript, Conclusion; BASELINE.md; PROVENANCE.md")
-bullets(s, ["Gen5 predicts commandable 16.0 m/s deployment for a 3U payload and a case-dependent orbital benefit.",
-            "The modelled full system is 76% heavier per 3U customer than the spring comparator.",
-            "Numerical checks strengthen specific models, while hardware behavior and interfaces remain unmeasured.",
-            "Gen5 is a documented design study; the next configuration must earn a test-article decision."],
+bullets(s, ["The Gen5 system-level model predicts 16.0 m/s 3U release and a conditional orbital benefit.",
+            "The complete modelled system is 76% heavier per 3U customer than the spring comparator.",
+            "Independent numerical checks corrected the baseline and defined the limits of its claims.",
+            "Conclusion: the analytical objective is complete; Gen5 does not pass the 3U selection criterion."],
         0.95, 1.9, 11.65, 4.8, 22, 21)
 
 # 20 Future Gen6

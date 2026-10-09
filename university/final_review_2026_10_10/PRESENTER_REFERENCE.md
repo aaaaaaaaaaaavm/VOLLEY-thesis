@@ -7,7 +7,7 @@ author:
 date: "10 October 2026"
 geometry: margin=18mm
 papersize: a4
-fontsize: 11pt
+fontsize: 10pt
 colorlinks: true
 linkcolor: teal
 toc: true
@@ -19,7 +19,15 @@ toc-depth: 1
 **Carry with:** main PPTX and panel handbook<br>
 **Purpose:** private cue book for both presenters; it is not a script to read word-for-word.
 
-> **One-line answer if asked what exists:** “We have a documented computational Gen5 design with numerical cross-checks. We have not built or experimentally validated it. The later Gen6 programme is an open architecture trade aimed at a reviewable first test article.”
+> **Opening thesis statement:** “We completed a system-level computational study of a commandable CubeSat deployer. It predicts an orbital benefit but fails our preset 3U mass comparison. The Gen5 research question has an answer; physical qualification and Gen6 belong to the next phase.”
+
+## Rehearsed opening and close
+
+**Opening (about 35 seconds):** “Our thesis asks whether a hosted deployer can give each rideshare CubeSat a commanded release condition that improves its orbit enough to justify the whole machine. We completed the Gen5 system design and computational evaluation. At the rated 3U point it predicts a 16.0 m/s release and an orbit benefit, but complete mass accounting fails the preset comparison with spring canisters. We will show the method, the numerical checks, and the decision that follows.”
+
+**Close (about 25 seconds):** “The research question now has an evidence-based answer. A commanded release has conditional orbital value in the model, but this Gen5 configuration is not competitive on the stated 3U mass criterion. That finding closes the Gen5 analytical study. Physical qualification and the Gen6 mechanism trade are future work.”
+
+Aim for an 11-minute full route in rehearsal, then shorten to the key slides if the panel gives a tighter slot. The numerical claims and failure criterion should remain in either route.
 
 # Before entering the room
 
@@ -27,17 +35,17 @@ toc-depth: 1
 - Confirm the projector can read the title, units, figure axes and footer caveats. Use the PDF export if animations or fonts shift in PowerPoint.
 - Open the model result files or screenshots for the simulation demonstration. Do not imply a live physical demo.
 - Decide which student covers each section. A natural handoff is after **Timeline** (slide 10) or after **Methodology** (slide 8); either student should be ready to answer questions across the whole project.
-- With an unknown time limit, begin with a brief introduction and ask the panel for their preferred duration before presenting. If they want a short version, use the route below.
+- If the review slot is still unknown on arrival, confirm it before starting and use the rehearsed full or short route accordingly.
 
 ## Short route if time is limited
 
-Prioritize slides **1, 3, 5–7, 9, 11–13, 15–21**, keeping the literature and model tables brief. Never skip the mass failure, evidence boundary, or conclusion. Slides 22–23 are references for questions. The full route follows all 23 slides in order.
+Prioritize slides **1, 3, 5–7, 9–13, 15–16, 18–20**, keeping the literature and model tables brief. Lead with the thesis answer and close on the engineering decision. Keep the mass failure and evidence boundary. Slides 22–23 are references for questions. The full route follows all 23 slides in order.
 
 # Slide-by-slide speaking notes
 
 ## 1. Title
 
-“We are Adityavardhan Mishra and Pratham Chawla, guided by Vikas Gulia. VOLLEY studies controlled release of CubeSats from a hosted orbital platform. Today we present the Gen5 analytical thesis results, then clearly separate the Gen6 direction and the evidence still needed.” Point to the image as a CAD render, not physical hardware.
+“We are Adityavardhan Mishra and Pratham Chawla, guided by Vikas Gulia. We completed a system-level computational evaluation of controlled CubeSat deployment. The study predicts useful orbital change but finds that our Gen5 design fails the 3U mass target. We will show the design, methods and result before briefly outlining Gen6 future work.” The cover image is the university logo; show the CAD render on slide 12 as a model, not physical hardware.
 
 ## 2. Outline
 
@@ -45,7 +53,7 @@ Follow the university-requested order exactly: introduction, literature, gap, ob
 
 ## 3. Introduction
 
-The central problem is that a rideshare CubeSat gets the primary mission's orbit. Springs provide essential clearance but generally only a small separation velocity. Timing can already create in-track phasing; VOLLEY's additional question is whether commandable release changes orbital energy enough to justify its mass. The host, if capable and permitted, makes coarse moves. VOLLEY would set the local release state of each satellite. There is no approved host.
+The central problem is that a rideshare CubeSat gets the primary mission's orbit. Springs provide essential clearance but generally only a small separation velocity. Timing can already create in-track phasing; VOLLEY's thesis question is whether commandable release changes orbital energy enough to justify its full installed mass. Say the finding early: the model predicts orbital benefit, but Gen5's 3U mass comparison fails. The host, if capable and permitted, makes coarse moves; VOLLEY sets the local release state. There is no approved host.
 
 ## 4. Literature review
 
@@ -57,27 +65,27 @@ Say: “Our contribution is the coupled, installed-system question: commandable 
 
 ## 6. Objectives
 
-Walk down the status column. Architecture is defined and modelled. Shot and orbit outcomes are predictions. Installed mass was counted and produced an unfavorable 3U result. The next-test path is specified but not completed. If asked whether objectives were “achieved,” distinguish the **research objectives** (study, quantify, compare) from **product maturity** (hardware performance and compatibility). Do not award yourself completion solely because documents exist.
+Walk down the outcome column as completed research tasks: the architecture was modelled; shot, circuit and orbital results were calculated; installed mass was counted; key numerical claims were challenged. The mass criterion failed, which is itself a finished result. If asked whether objectives were achieved, distinguish completing a research evaluation from proving hardware performance. The latter was outside this computational thesis's evidence.
 
 ## 7. Research methodology — flow
 
-Describe one example along the chain: choose the 3U case; size the geometry and magnet sled; calculate force, pulse and release state; propagate the orbit; compare its value against a spring and its burden against a spring canister; challenge the model with independent numerical checks. The process is iterative: findings changed the baseline, including the sled mass and magnetic thrust integral.
+Describe the completed chain in past tense: we chose the 3U case; sized geometry and magnet sled; calculated force, pulse and release state; propagated the orbit; compared orbital value and installed mass with springs; and challenged models through independent numerical checks. The checks changed the final baseline, including the sled mass and magnetic thrust integral.
 
 ## 8. Research methodology — evidence
 
-Field agreement at a tested location is not an independent thrust measurement. ngspice checks circuit behavior under assumed components. CalculiX checks a defined structural boundary case. OpenFOAM checks aerodynamic behavior, not vacuum release contact. GMAT and alternate propagation show that atmosphere matters. Use the words **numerical verification** or **cross-check** for these, and reserve **experimental validation** for physical measurements.
+Summarize what the completed checks established and their scope. Field agreement at a tested location is not an independent thrust measurement. ngspice checks circuit behavior under assumed components. CalculiX checks a defined structural boundary case. OpenFOAM checks aerodynamic behavior, not vacuum release contact. GMAT and alternate propagation show that atmosphere matters. Use **numerical verification** or **cross-check** for these, and reserve **experimental validation** for physical measurements.
 
 ## 9. Timeline — past
 
-Emphasize documented decisions rather than claiming all early dates were exact. The host concept is documented in 2023. The move toward a linear synchronous motor is approximately mid-2025. CAD and model development spans 2025–26. July–September 2026 focused on cross-checks, corrections and thesis preparation. The Gen6 trade reopened in September 2026.
+Emphasize documented decisions rather than claiming all early dates were exact. The host concept is documented in 2023. The move toward a linear synchronous motor is approximately mid-2025. CAD and model development spans 2025–26. July–September 2026 focused on cross-checks, corrections and the thesis record. The final review presents that completed Gen5 analysis.
 
-## 10. Timeline — future
+## 10. Timeline — corrections in the final baseline
 
-N0 through N5 are evidence gates, not a promise of completion by a particular calendar date. The sequence prevents choosing hardware before the mission/payload/host case and acceptance bands are fixed. N5 is a first-test evidence package; independent build/test release needs additional closure. The 1 km/s high end could be rejected by acceleration, energy, travel, payload or provider constraints.
+This is the strongest proof that the thesis is a finished analysis rather than an early proposal. CAD-derived sled mass displaced an optimistic parametric estimate; a depth-resolved thrust integral lowered the rated velocity; a real enclosure buildup exposed the mass failure; and an independent propagator check rejected an overbroad solar-activity claim. State that the reported numbers are the corrected baseline and that failed claims were retained in the record. Do not present these as physical validation.
 
 ## 11. Work progress
 
-Show the tangible record: manuscript, CAD, scripts, numerical run sheets, baseline, provenance and defect register. Distinguish it from what is absent: a built article, measured field/shot, qualified payload and host agreement. Avoid any percentage-complete claim. Acknowledge that the later gas and spring-cell studies are historical comparators, not selected Gen6 hardware.
+Show tangible completed deliverables: manuscript, CAD, system model, scripts, numerical run sheets, baseline, provenance and defect register. State that the thesis closes an analytical question; hardware tests, a qualified payload and host agreement are separate development milestones. Avoid a percentage-complete claim, since research completion and product readiness are different dimensions.
 
 ## 12. Results — architecture
 
@@ -101,7 +109,7 @@ This is the decisive negative result. Dry mass is 126.6 kg, loaded mass 174.6 kg
 
 ## 17. Results — limits
 
-The three major practical uncertainties are payload interface (contact, arrest load, magnetic cleanliness), shared reliability (a jam can affect later satellites), and host compatibility. These determine whether a modelled shot could become a safe product. Explain that a numerical result at a declared boundary is useful but narrower than physical evidence. A single well-designed discriminating coupon can be more decisive than many new plots.
+Give the three-part decision in order: (1) the system model supports a commandable release with conditional orbital-energy benefit, (2) the full 3U mass result fails the selection criterion, and (3) physical behavior remains unverified. Payload interface, shared reliability and host compatibility are future tests, not missing steps in the completed mass comparison. A numerical result at a declared boundary is narrower than physical evidence.
 
 ## 18. Results — simulation demonstration
 
@@ -109,7 +117,7 @@ Walk through four transparent steps: choose the modelled 3U case; show the shot 
 
 ## 19. Conclusion
 
-“The thesis establishes a coherent analytical case for commandable release and records a conditional orbital benefit. It also finds that Gen5 fails the 3U mass criterion and is not physically validated. The conclusion is to retain the evidence and reopen the mechanism trade.” End on the decision supported by results, not on an unsupported promise of flight use.
+“We completed the Gen5 system-level computational evaluation. It predicts a useful orbital-energy change, but the complete configuration fails our preset 3U mass criterion. Numerical checks made that conclusion more credible and defined its limits. Gen5 is therefore a finished research result, not a selected 3U flight configuration.” End on this decision. Future work follows as a separate section.
 
 ## 20. Future work — Gen6
 

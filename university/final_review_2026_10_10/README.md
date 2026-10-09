@@ -6,6 +6,8 @@
 
 This directory is the complete review pack. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
+**Presentation thesis:** the Gen5 system-level computational evaluation is complete. It predicts a conditional orbital benefit and finds that the complete Gen5 configuration fails the preset 3U mass criterion. Slides 1–19 tell that finished research story. Slides 20–21 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product.
+
 ## Bring to the review
 
 | Item | Present/print | Editable source |
@@ -18,7 +20,7 @@ The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive sli
 
 ## Evidence language
 
-- The Gen5 results are **computational predictions**. Numerical cross-checks apply to named models and cases. No VOLLEY hardware has been built or physically tested.
+- The Gen5 research **analysis and decision record are complete** for the stated computational cases. Results are predictions; numerical cross-checks apply to named models and cases. No VOLLEY hardware has been built or physically tested.
 - The modelled Gen5 3U system fails its preset mass-parity criterion against a spring canister. This negative finding is included in the presentation and handbook.
 - Gen6 is an **open architecture trade**. Its approximately 1–2 m/s to 1 km/s span is an investigation envelope. No 1 km/s performance, mechanism selection, payload qualification, host compatibility or build/test release is claimed.
 - The historical thesis manuscript is authored under Adityavardhan Mishra's name. This review pack credits both named presenters; it does not retroactively change manuscript authorship.
