@@ -22,7 +22,7 @@ The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive sli
 
 Slide 3 and the handbook introduce the [audited market and spacecraft-fit report](../../MARKET_AND_CUSTOMER_FIT.md). They identify candidate buyer jobs without claiming customer interviews, qualified spacecraft or product-market fit. The source-linked report corrects the Drive material before it enters the review narrative.
 
-**Review corrections:** an earlier draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. A separate rated two-body run now checks the immediate 28.800775 km axis change, but not the 1.60× atmospheric lifetime. A native FreeCAD assembly review identifies the 11 mm side-fed width shortfall. The current PPTX, PDF, handbook and presenter notes include these findings and the new finite-force, R1 feeder and matched-mission screens.
+**Review corrections:** an earlier draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. A separate historical-input two-body run now checks the immediate 28.800775 km axis change, but not the 1.60× atmospheric lifetime. A native FreeCAD assembly review identifies the 11 mm side-fed width shortfall. The current PPTX, PDF, handbook and presenter notes include these findings and the new finite-force, R1 feeder and matched-mission screens.
 
 ## Evidence language
 

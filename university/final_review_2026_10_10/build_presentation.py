@@ -254,7 +254,7 @@ s = base("Timeline", "2026 findings changed the review baseline",
          "HISTORY.md; PROVENANCE.md; thesis manuscript, Limitations")
 stages = [
     ("Jul", "CAD-derived sled mass replaced an optimistic parametric estimate"),
-    ("Aug", "Depth-resolved thrust calculation lowered the rated speed"),
+    ("Aug", "Depth-resolved thrust calculation lowered the historical model speed"),
     ("Aug", "Enclosure buildup exposed the full 3U mass penalty"),
     ("2026", "Independent orbit checks rejected a solar-invariance claim"),
     ("Final", "Results and failures retained in the submitted thesis record"),
@@ -314,11 +314,11 @@ card(s, 8.54, 1.95, 3.95, 2.1, "0.0274 m/s", "3σ exit-velocity dispersion at a 
 card(s, 8.54, 4.32, 3.95, 2.0, "Evidence limit", "Monte Carlo under modelled sensing and plant tolerances; no measured dispersion.", AMBER, 21, 16)
 
 # 15 Orbit
-s = base("Results", "Historical rated orbit input has a separate geometry check",
+s = base("Results", "Historical orbit input has a separate geometry check",
          "P115 Cartesian orbit check; manuscript Astrodynamic Utility", "GEN5 TWO-BODY CHECK")
 image_fit(s, FIG / "rated_orbit_crosscheck.png", 0.62, 1.8, 7.65, 4.67)
-card(s, 8.52, 1.94, 3.96, 1.95, "+28.8008 km", "Immediate two-body axis rise at the rated 16.029 m/s input.", TEAL, 25, 16)
-card(s, 8.52, 4.1, 3.96, 1.95, "1.60× open", "Lifetime remains atmosphere-dependent without a current rated independent rerun.", AMBER, 22, 16)
+card(s, 8.52, 1.94, 3.96, 1.95, "+28.8008 km", "Immediate two-body axis rise for an assumed historical 16.029 m/s input.", TEAL, 25, 16)
+card(s, 8.52, 4.1, 3.96, 1.95, "1.60× open", "Lifetime remains atmosphere-dependent and lacks an independent rerun for this input.", AMBER, 22, 16)
 txt(s, "Persistent phasing requires a relative state change; this result concerns orbital energy.", 0.8, 6.62, 11.75, 0.27, 13, True, NAVY)
 
 # 16 Mass

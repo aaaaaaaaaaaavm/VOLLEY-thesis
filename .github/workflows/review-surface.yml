@@ -1,0 +1,22 @@
+name: review-surface
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch checked revision without a marketplace action
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q origin "${{ github.sha }}"
+          git checkout -q --detach "${{ github.sha }}"
+      - name: Check current reader route and captured evidence
+        run: python3 tools/check_review_surface.py

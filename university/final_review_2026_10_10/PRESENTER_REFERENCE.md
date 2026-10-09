@@ -81,7 +81,7 @@ Emphasize documented decisions rather than claiming all early dates were exact. 
 
 ## 10. Timeline — corrections in the final baseline
 
-This is the strongest proof that the thesis is a finished analysis rather than an early proposal. CAD-derived sled mass displaced an optimistic parametric estimate; a depth-resolved thrust integral lowered the rated velocity; a real enclosure buildup exposed the mass failure; and an independent propagator check rejected an overbroad solar-activity claim. State that the reported numbers are the corrected baseline and that failed claims were retained in the record. Do not present these as physical validation.
+This is the strongest proof that the thesis is a finished analysis rather than an early proposal. CAD-derived sled mass displaced an optimistic parametric estimate; a depth-resolved thrust integral lowered the historical model velocity; a real enclosure buildup exposed the mass failure; and an independent propagator check rejected an overbroad solar-activity claim. State that the old shot numbers remain traceable, but the finite-force discrepancy prevents a final speed rating and that failed claims were retained in the record. Do not present these as physical validation.
 
 ## 11. Work progress
 
@@ -91,9 +91,9 @@ Show tangible completed deliverables: manuscript, CAD, system model, scripts, nu
 
 Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled moves to a release station 1.5 m from the breech along 1.8 m structural longerons; the payload departs; the sled is arrested. Eight STEP solids were imported into FreeCAD 1.0 and exported as a native 20-instance review assembly and STEP exchange files. The imported solids lack parametric feature history. This is an inspectable geometry study, not an independently mass-verified installed assembly. The mass model still adopts a 9.45 kg sled from historical Gen3 CAD and A4 chassis analysis. No component has been built for VOLLEY.
 
-## 13. Results — rated shot
+## 13. Results — historical modeled shot
 
-At the rated 3U operating point, the model predicts 16.029 m/s and 10.07 g. Gross electrical draw is 2,782 J, of which the payload receives about 514 J as kinetic energy. Only 47 J is recovered after release within the available 39 mm zone; 1,162 J of sled energy goes to the brake. Net electrical-to-payload efficiency is 18.8%. Peak current is 320 A over a 162.3 ms pulse. P117 independently checks simple mass, work and kinetic-energy identities but leaves **124.488 J of gross draw unitemized**. Do not call the energy loss budget closed, or say “tested,” “measured,” or “qualified.”
+At the historical modeled 3U point, the periodic-force model predicts 16.029 m/s and 10.07 g. Gross electrical draw is 2,782 J, of which the payload receives about 514 J as kinetic energy. Only 47 J is recovered after release within the available 39 mm zone; 1,162 J of sled energy goes to the brake. Net electrical-to-payload efficiency is 18.8%. Peak current is 320 A over a 162.3 ms pulse. P117 independently checks simple mass, work and kinetic-energy identities but leaves **124.488 J of gross draw unitemized**. Do not call the energy loss budget closed, or say “tested,” “measured,” or “qualified.”
 
 ## 14. Results — finite force discrepancy
 
@@ -105,7 +105,7 @@ The closed-loop simulation produces a 0.0274 m/s ($3\sigma$) spread around a 15.
 
 ## 16. Results — orbit
 
-At the rated 16.029 m/s release point, an independent Cartesian two-body integration reproduces the immediate 28.800775 km semi-major-axis rise within the declared numerical band. This checks orbital mechanics for that state, not atmospheric lifetime. The model's 1.60× lifetime multiplier at mean solar activity remains unverified at this exact point; a prior invariance claim failed an independent propagator check. Spring impulse, differential drag or a host maneuver can create relative state and phase satellites; waiting alone cannot.
+For the assumed historical 16.029 m/s release state, an independent Cartesian two-body integration reproduces the immediate 28.800775 km semi-major-axis rise within the declared numerical band. This checks orbital mechanics for that state, not atmospheric lifetime. The model's 1.60× lifetime multiplier at mean solar activity remains unverified at this exact point; a prior invariance claim failed an independent propagator check. Spring impulse, differential drag or a host maneuver can create relative state and phase satellites; waiting alone cannot.
 
 ## 17. Results — mass
 

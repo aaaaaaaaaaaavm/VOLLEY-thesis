@@ -38,7 +38,7 @@ This final-year project report evaluates a magazine-fed electromagnetic CubeSat 
 | Configuration | Gen5 twelve-3U side-fed reference; 1.5 m release station on 1.8 m structural longerons, 1.3 m powered stroke |
 | Report status | Academic review draft; negative criteria retained |
 | Evidence | Model outputs, selected independent numerical checks, native CAD import/export and prior literature |
-| Exclusions | Hardware measurements, payload qualification, provider ICD approval, lifetime cross-check at the exact rated point |
+| Exclusions | Hardware measurements, payload qualification, provider ICD approval, lifetime cross-check for the assumed historical input |
 | Build record | Reproduce PDF from this Markdown with Pandoc and XeLaTeX; inspect local source and run sheets |
 
 The supplied college documents define final-review criteria and a slide example. They do not supply a mandatory report template. This report therefore uses a conventional chapter structure; title/signature pages and institution-specific declarations should be added only from the official template. No unperformed test, approval or authorship certification is implied.
@@ -102,15 +102,15 @@ The most relevant high-speed electromagnetic comparison in the manuscript is Fen
 
 The analytical gap is not “no one has considered electromagnetic deployment.” It is the coupled trade between: (i) commanded release, (ii) payload-side interface and acceleration, (iii) a reusable feed/release architecture, (iv) host reaction and mission utility, and (v) installed system mass and faults. A speed-only comparison can make a concept appear attractive while omitting its sled, power bank, brake, magazine, enclosure, control, and retained mass after each shot.
 
-The thesis addresses that gap by constructing a complete Gen5 computational configuration and testing its own claims against explicit comparisons. It also records when those tests weaken the concept. Physical viability remains a separate research gap: numerical model agreement cannot establish manufactured tolerances, actual force, payload cleanliness, cycle reliability or provider compatibility.
+The thesis addresses that gap by constructing a documented Gen5 reference configuration and testing its own claims against explicit comparisons. It also records when those tests weaken the concept. Physical viability remains a separate research gap: numerical model agreement cannot establish manufactured tolerances, actual force, payload cleanliness, cycle reliability or provider compatibility.
 
 # 4. Objectives and outcome
 
 | Analytical research objective | Completed outcome | Interpretation |
 |:--|:--|:--|
-| Model a commandable 3U system | Gen5 CAD, magazine, sled, motor, arrest and power architecture | System-level design record, not manufactured hardware |
-| Quantify the release | Rated shot, circuit and closed-loop simulations | Predicted performance under stated assumptions |
-| Evaluate orbital value | Orbit model and selected independent numerical cross-checks | Conditional energy and lifetime benefit |
+| Model a commandable 3U system | Reference CAD, magazine concept, sled, motor, arrest and power architecture | Feed and release mechanics remain unresolved |
+| Quantify the release | Historical periodic shot, circuit and closed-loop simulations; adverse finite-force screen | No selected or verified speed rating |
+| Evaluate orbital value | Historical-input orbit model and selected numerical cross-checks | Conditional geometry; rated lifetime remains open |
 | Test whole-system competitiveness | Mass rollup, spring/alternatives comparison and preset criteria | Gen5 fails the 3U mass target |
 | Challenge model credibility | Numerical verification, defect corrections and provenance record | Scope and remaining physical uncertainties made explicit |
 
@@ -127,7 +127,7 @@ The project follows an engineering evidence chain:
 5. **Challenge the claims:** use alternate numerical methods and acceptance bands, preserve misses and update the baseline only with a recorded reason.
 6. **Decision:** compare orbital benefit against mass, reliability, payload/host compatibility and the available alternatives.
 
-![Modelled shot: velocity, bank voltage and current at the rated point.](<../source/figures/F01_shot.png>){width=100%}
+![Historical modeled shot: velocity, bank voltage and current.](<../source/figures/F01_shot.png>){width=100%}
 
 ## Numerical checks and their limits
 
@@ -147,13 +147,13 @@ The magnetic field was compared across an analytical representation, magpylib, a
 | July–September 2026 | Gen5 analysis, numerical checks, defects and thesis record | Dated repository/analysis records |
 | October 2026 | Gen5 findings and design decision presented for final review | Review package dated 10 October 2026 |
 
-The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the rated speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions are part of the completed study, not signs that the final numbers are placeholders. Gen6 research gates are described only in §10, Future work.
+The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the rated speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions are part of the review record; the historical 16.029 m/s shot remains traceable, but no final speed rating is selected. Gen6 research gates are described only in §10, Future work.
 
 # 7. Work progress
 
 The thesis deliverables are in hand: an authored manuscript, CAD renders and model geometry, analysis scripts/results, numerical verification run sheets, figures, a baseline record, a defect register, and a provenance statement. Numerical investigations cover the motor field, shot dynamics, bank/circuit, mass, orbit propagation, separation and selected structural, airflow and reliability issues. The study closes by retaining failed criteria and superseded results rather than silently replacing them.
 
-The deliverable here is a completed computational thesis, not a flight article. The later long gas-guide and independent spring-cell studies are historical comparators. Gen6 has a mission direction and investigation envelope but is not a result of the Gen5 thesis. Its mechanism and exact payload/provider cases remain future choices.
+The deliverable here is a documented computational feasibility study with adverse findings, not a flight article or an engineering release. The later long gas-guide and independent spring-cell studies are historical comparators. Gen6 has a mission direction and investigation envelope but is not a result of the Gen5 thesis. Its mechanism and exact payload/provider cases remain future choices.
 
 # 8. Results
 
@@ -161,11 +161,13 @@ The deliverable here is a completed computational thesis, not a flight article. 
 
 The analysed system uses a double-sided Halbach-array linear synchronous motor to propel a reusable permanent-magnet sled to a release station 1.5 m from the breech on 1.8 m structural longerons. Two transverse cassettes are intended to feed twelve 3U satellites, but the present side-fed placement fails the fit check. A capacitor-based bank supplies the modeled pulse, and a brake is intended to arrest the sled after payload release. The **9.45 kg** sled input comes from historical Gen3 CAD solid volumes; this value reduced the exit speed relative to an earlier optimistic parametric estimate. The CAD render conveys a concept, not manufactured or assembled hardware.
 
-## Rated 3U shot
+## Historical periodic-model 3U shot
 
-| Model output | Rated result | Interpretation |
+The table below preserves the older model run for traceability. Its constant periodic-force input is challenged by the finite-geometry screen above. These numbers cannot be promoted together as the current machine's demonstrated or independently verified operating point.
+
+| Model output | Historical result | Interpretation |
 |:--|--:|:--|
-| Exit velocity | 16.029 m/s | Modelled 3U reference shot |
+| Exit velocity | 16.029 m/s | Historical periodic-force input; finite geometry challenges it |
 | Payload acceleration | 10.07 g | Not a payload qualification claim |
 | Pulse duration | 162.3 ms | Modelled motor actuation |
 | Peak current | 320 A | Component implementation unverified |
@@ -184,7 +186,7 @@ The closed-loop Monte Carlo model predicts **0.0274 m/s ($3\sigma$)** exit-veloc
 
 ## Orbital utility
 
-For the stated orbit and mean-solar-activity case, one maximum-speed release predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. A separate Cartesian two-body integration of the current rated state returns **28.800775 km**, agreeing within the declared numerical band. This checks only the immediate orbital-energy result. The atmospheric lifetime multiplier has not been independently reproduced at the exact current point. Timing alone, with zero relative impulse and no host or drag difference, produces neither persistent phasing nor this semi-major-axis change.
+For the stated orbit and mean-solar-activity case, an **assumed historical 16.029 m/s release** predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. A separate Cartesian two-body integration of that assumed historical release state returns **28.800775 km**, agreeing within the declared numerical band. This checks only the immediate orbital-energy result. The atmospheric lifetime multiplier has not been independently reproduced at the exact current point. Timing alone, with zero relative impulse and no host or drag difference, produces neither persistent phasing nor this semi-major-axis change.
 
 ![Independent rated-state two-body orbit check. The lifetime claim is outside its scope.](<../figures/rated_orbit_crosscheck.png>){width=92%}
 
@@ -206,11 +208,11 @@ The side-fed reference assembly has **526 mm** clear enclosure width. Its **205 
 
 ## Decision and evidence boundary
 
-The analytical result has four parts. The model supports a commandable release and conditional orbital-energy benefit; the full-system 3U mass criterion fails; the stated side-fed layout fails its CAD width check; and physical behavior remains unverified. The latter includes release-cycle reliability, shock and arrest loads transmitted to stowed satellites, field exposure near a customer payload, host attitude/control authority and provider approval. The known-problems register ranks several as potentially design-fatal. These findings limit product claims and define the research conclusion.
+The analytical result has four parts. The historical model represents a proposed commandable release and a conditional orbital-energy benefit, but its speed is challenged by finite geometry; the full-system 3U mass criterion fails; the stated side-fed layout fails its CAD width check; and physical behavior remains unverified. The latter includes release-cycle reliability, shock and arrest loads transmitted to stowed satellites, field exposure near a customer payload, host attitude/control authority and provider approval. The known-problems register ranks several as potentially design-fatal. These findings limit product claims and define the research conclusion.
 
 # 9. Conclusion
 
-The Gen5 computational thesis reaches a research conclusion within its stated scope. Its model predicts a commandable moderate-acceleration release and a conditional orbital-energy benefit, with a separate check of the immediate two-body orbital change. Installed-mass accounting misses its preset 3U benchmark, and the side-fed reference CAD assembly fails its width check. The current configuration is therefore not a selected flight baseline. Hardware behavior and interfaces remain outside the tested evidence.
+The Gen5 computational thesis reaches a research conclusion within its stated scope. Its historical model predicts a moderate-acceleration release, but finite geometry challenges the speed; an independent two-body calculation checks only the immediate orbital change under that assumed release state. Installed-mass accounting misses its preset 3U benchmark, and the side-fed reference CAD assembly fails its width check. The current configuration is therefore not a selected flight baseline. Hardware behavior and interfaces remain outside the tested evidence.
 
 The thesis's strongest engineering contribution is the transparent decision record: the full machine was modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. That closes the Gen5 study and provides a defensible input to a separate future architecture trade.
 
