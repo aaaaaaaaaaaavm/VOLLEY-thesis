@@ -5,7 +5,7 @@ This map connects each review slide to the most detailed available record in thi
 | Slide | Claim or purpose | Detailed record | Evidence class / limit |
 |:--|:--|:--|:--|
 | 1–2 | Presenters, topic and required outline | `university/` review pack; user-supplied format and outline | Review metadata, not technical evidence |
-| 3 | Rideshare problem; host/deployer role split | [`source/paper.tex`](../../source/paper.tex), Introduction; [`README.md`](../../README.md) | Mission concept; no selected host |
+| 3 | Repeat-fleet context, candidate delivery buyer and same-mission trade | [Local market and spacecraft-fit audit](../../MARKET_AND_CUSTOMER_FIT.md); [`source/paper.tex`](../../source/paper.tex), Introduction | Industry context and buyer hypothesis; no confirmed customer, host or sale |
 | 4 | Spring release/differential drag, OTV and electromagnetic comparisons | `source/paper.tex`, Related Work and bibliography; [`appendix/RELATED_WORK.md`](../../appendix/RELATED_WORK.md); [`appendix/PRIOR_ART.md`](../../appendix/PRIOR_ART.md) | Literature synthesis; persistent phasing needs a relative state change; prior art narrows novelty |
 | 5 | Commandable release of an unmodified CubeSat at moderate acceleration, with installed burden | `source/paper.tex`, Abstract, Introduction and Limitations; [`appendix/PROVENANCE.md`](../../appendix/PROVENANCE.md) | Research proposition; payload qualification absent |
 | 6 | Objectives and status | `source/paper.tex`; [`appendix/BASELINE.md`](../../appendix/BASELINE.md); [`README.md`](../../README.md); [Gen6 direction](GEN6_DIRECTION.md) | Presentation synthesis; not a pre-approved university objective list |

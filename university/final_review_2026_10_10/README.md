@@ -18,6 +18,8 @@ This directory is the review pack for the computational Gen5 study. It follows t
 
 The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive slide to the manuscript, numerical result and/or project-plan source. The [Gen6 direction](GEN6_DIRECTION.md) records precisely what the forward-looking slides mean. The thesis's full technical detail remains in the [manuscript PDF](../../source/VOLLEY_IEEE_Conference.pdf) and [source](../../source/paper.tex), [`analysis/`](../../analysis/), [`validation/`](../../validation/), [`cad/`](../../cad/) and [`appendix/`](../../appendix/); these are the underlying record, rather than a claim that 23 slides reproduce every calculation.
 
+Slide 3 and the handbook introduce the [audited market and spacecraft-fit report](../../MARKET_AND_CUSTOMER_FIT.md). They identify candidate buyer jobs without claiming customer interviews, qualified spacecraft or product-market fit. The source-linked report corrects the Drive material before it enters the review narrative.
+
 **10 October correction:** the earlier review draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. The current deck, handbook, presenter notes and claim map require an actual relative-state change through release impulse, host maneuver or differential drag. Both PDF and PPTX above were rebuilt after this correction.
 
 ## Evidence language

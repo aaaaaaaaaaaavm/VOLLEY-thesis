@@ -53,7 +53,7 @@ Follow the university-requested order exactly: introduction, literature, gap, ob
 
 ## 3. Introduction
 
-The central problem is that a rideshare CubeSat gets the primary mission's orbit. Springs provide essential clearance but generally only a small separation velocity. Timing can already create in-track phasing; VOLLEY's thesis question is whether commandable release changes orbital energy enough to justify its full installed mass. Say the finding early: the model predicts orbital benefit, but Gen5's 3U mass comparison fails. The host, if capable and permitted, makes coarse moves; VOLLEY sets the local release state. There is no approved host.
+NASA documents the rideshare destination constraint; Planet and Spire show repeatable smallsat platforms. Those are market context, not VOLLEY customers. A carrier, rideshare integrator or fleet operator is only a candidate buyer for several useful release states from one host. Compare actual spring impulse, host manoeuvres, transport and onboard propulsion on the same mission. Waiting alone between zero-relative-impulse releases from an unchanged host creates no persistent phase separation. Say the finding early: modeled Gen5 orbital benefit is conditional, while its 3U mass comparison fails. There is no confirmed buyer or approved host. The local MARKET_AND_CUSTOMER_FIT.md audits the source reports and spacecraft classes.
 
 ## 4. Literature review
 

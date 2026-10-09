@@ -170,12 +170,12 @@ for i, item in enumerate(items):
     txt(s, f"{i + 1:02d}  {item}", x + 0.12, y + 0.10, 5.3, 0.4, 19, i in (0, 7, 8), NAVY)
 
 # 3 Introduction
-s = base("Introduction", "The thesis answers an orbital-delivery trade question",
-         "Thesis manuscript, Introduction; JAXA J-SSOD; EXOpod documentation")
-card(s, 0.65, 1.82, 3.85, 3.48, "Shared destination", "Secondary CubeSats inherit the orbit chosen for the primary customer.")
-card(s, 4.75, 1.82, 3.85, 3.48, "Conventional release", "Spring deployers provide a small relative impulse. Subsequent orbit or drag differences can produce phasing.")
-card(s, 8.85, 1.82, 3.85, 3.48, "VOLLEY question", "Can commanded release provide useful orbital choice at an acceptable installed cost?", AMBER)
-txt(s, "Study outcome: useful modelled orbital change, but an unfavourable 3U mass trade", 0.8, 5.77, 11.75, 0.62, 21, True, NAVY, align=PP_ALIGN.CENTER)
+s = base("Introduction", "Which missions might value orbital choice?",
+         "NASA 2026 Small Spacecraft SoA; Planet and Spire filings; local market audit")
+card(s, 0.65, 1.82, 3.85, 3.48, "Repeat fleets", "Configurable smallsat families and replenishment exist. That context does not establish demand for VOLLEY.")
+card(s, 4.75, 1.82, 3.85, 3.48, "Delivery buyer", "A carrier, rideshare integrator or fleet operator might need several distinct release states from one host.")
+card(s, 8.85, 1.82, 3.85, 3.48, "Gen5 test", "Compare commanded release with springs, host manoeuvres, transport and onboard propulsion on the same mission.", AMBER)
+txt(s, "No customer is confirmed; modeled Gen5 3U mass fails its preset criterion.", 0.8, 5.77, 11.75, 0.62, 21, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 4 Literature
 s = base("Literature review", "Existing methods solve different parts of the problem",
