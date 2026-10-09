@@ -45,7 +45,7 @@ Prioritize slides **1, 3, 5–7, 9–14, 17–18, 19, 21–23**, keeping the lit
 
 ## 1. Title
 
-“We are Adityavardhan Mishra and Pratham Chawla, guided by Vikas Gulia. We completed a system-level computational evaluation of controlled CubeSat deployment. The study predicts useful orbital change but finds that our Gen5 design fails the 3U mass target. We will show the design, methods and result before briefly outlining Gen6 future work.” The cover image is the university logo; show the CAD render on slide 12 as a model, not physical hardware.
+“We are Adityavardhan Mishra and Pratham Chawla, guided by Vikas Gulia. We completed a system-level computational evaluation of controlled CubeSat deployment. The study predicts useful orbital change but finds that our Gen5 design fails the 3U mass target. We will show the design, methods and result before briefly outlining Gen6 future work.” The cover image is the university logo. The STEP-derived views beginning on slide 3 are model geometry, not physical hardware.
 
 ## 2. Outline
 
@@ -53,7 +53,7 @@ Follow the university-requested order exactly: introduction, literature, gap, ob
 
 ## 3. Introduction
 
-NASA documents the rideshare destination constraint; Planet and Spire show repeatable smallsat platforms. Those are market context, not VOLLEY customers. A carrier, rideshare integrator or fleet operator is only a candidate buyer for several useful release states from one host. Compare actual spring impulse, host manoeuvres, transport and onboard propulsion on the same mission. Waiting alone between zero-relative-impulse releases from an unchanged host creates no persistent phase separation. Say the finding early: modeled Gen5 orbital benefit is conditional, while its 3U mass comparison fails. There is no confirmed buyer or approved host. The local MARKET_AND_CUSTOMER_FIT.md audits the source reports and spacecraft classes.
+NASA documents the rideshare destination constraint; Planet and Spire show repeatable smallsat platforms. Those are market context, not VOLLEY customers. A carrier, rideshare integrator or fleet operator is only a candidate buyer for several useful release states from one host. The image is the Gen5 STEP reference with its enclosure hidden; its side-fed fit fails. Compare actual spring impulse, host manoeuvres, transport and onboard propulsion on the same mission. Waiting alone between zero-relative-impulse releases from an unchanged host creates no persistent phase separation. Say the finding early: modeled Gen5 orbital benefit is conditional, while its 3U mass comparison fails. There is no confirmed buyer or approved host. The local MARKET_AND_CUSTOMER_FIT.md audits the source reports and spacecraft classes.
 
 ## 4. Literature review
 
@@ -85,11 +85,11 @@ This is the strongest proof that the thesis is a finished analysis rather than a
 
 ## 11. Work progress
 
-Show tangible completed deliverables: manuscript, CAD, system model, scripts, numerical run sheets, baseline, provenance and defect register. State that the thesis closes an analytical question; hardware tests, a qualified payload and host agreement are separate development milestones. Avoid a percentage-complete claim, since research completion and product readiness are different dimensions.
+Show tangible completed deliverables: manuscript, CAD, system model, scripts, numerical run sheets, baseline, provenance and defect register. The STEP-derived outer-envelope view conceals the documented internal clash; point that out before anyone mistakes it for an approved package. State that the thesis closes an analytical question; hardware tests, a qualified payload and host agreement are separate development milestones. Avoid a percentage-complete claim, since research completion and product readiness are different dimensions.
 
 ## 12. Results — architecture
 
-Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled moves to a release station 1.5 m from the breech along 1.8 m structural longerons; the payload departs; the sled is arrested. Eight STEP solids were imported into FreeCAD 1.0 and exported as a native 20-instance review assembly and STEP exchange files. The imported solids lack parametric feature history. This is an inspectable geometry study, not an independently mass-verified installed assembly. The mass model still adopts a 9.45 kg sled from historical Gen3 CAD and A4 chassis analysis. No component has been built for VOLLEY.
+Explain the intended chain in the STEP-derived view: cassettes would feed a 3U satellite; the reusable magnet sled moves to a release station 1.5 m from the breech along 1.8 m structural longerons; the payload would depart and the sled be arrested. The image shows the fixed reference placement, not a modeled working feed sequence; its enclosure is hidden and the side-fed solids clash. Eight source STEP B-reps were imported into FreeCAD 1.0 and exported as a native 20-instance review assembly and STEP exchange files. The imported solids lack parametric feature history. This is an inspectable geometry study, not an independently mass-verified installed assembly. The mass model still adopts a 9.45 kg sled from historical Gen3 CAD and A4 chassis analysis. No component has been built for VOLLEY.
 
 ## 13. Results — historical modeled shot
 
@@ -117,7 +117,7 @@ Show the dimensioned section from the FreeCAD review assembly. Its 526 mm inner 
 
 ## 19. Results — unselected R1 feeder
 
-The widened 570 mm enclosure clears twelve scripted 3U-envelope routes in exact-solid geometry. Show the native FreeCAD file and STEP set as review artifacts. The real lift/carriage and launch retention have not been designed, and R1 needs new mass, host and structural analyses. It is separate from the evaluated Gen5 configuration.
+The widened 570 mm enclosure clears twelve scripted 3U-envelope routes in exact-solid geometry. The slide's STEP-derived Blender view hides that enclosure; it is a candidate arrangement, not a moving simulation or FreeCAD GUI screenshot. Show the native FreeCAD file and STEP set as review artifacts. The real lift/carriage and launch retention have not been designed, and R1 needs new mass, host and structural analyses. It is separate from the evaluated Gen5 configuration.
 
 ## 20. Results — simulation demonstration
 

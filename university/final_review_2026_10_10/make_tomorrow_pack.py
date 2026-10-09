@@ -43,6 +43,13 @@ FILES = {
     "CAD/Feeder_Candidate_R1.FCStd": REPO / "cad/native/Feeder_Candidate_R1.FCStd",
     "CAD/VOLLEY_Review_Assembly_FreeCAD_Gen5.step": REPO / "cad/step/gen5/VOLLEY_Review_Assembly_FreeCAD_Gen5.step",
     "CAD/VOLLEY_Feeder_Assembly_FreeCAD_R1.step": REPO / "cad/step/feeder_candidate_r1/VOLLEY_Feeder_Assembly_FreeCAD_R1.step",
+    "CAD_VIEWS/gen5_reference_open.jpg": REPO / "cad/renders/step_review/gen5_reference_open.jpg",
+    "CAD_VIEWS/gen5_reference_closed.jpg": REPO / "cad/renders/step_review/gen5_reference_closed.jpg",
+    "CAD_VIEWS/gen5_fit_plan.jpg": REPO / "cad/renders/step_review/gen5_fit_plan.jpg",
+    "CAD_VIEWS/gen5_drive_detail.jpg": REPO / "cad/renders/step_review/gen5_drive_detail.jpg",
+    "CAD_VIEWS/r1_candidate_open.jpg": REPO / "cad/renders/step_review/r1_candidate_open.jpg",
+    "CAD_VIEWS/r1_candidate_plan.jpg": REPO / "cad/renders/step_review/r1_candidate_plan.jpg",
+    "EVIDENCE/STEP_VIEW_PROVENANCE.json": REPO / "cad/renders/step_review/PROVENANCE.json",
 }
 
 

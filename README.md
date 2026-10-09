@@ -6,6 +6,10 @@ This repository is the **standalone academic record** for VOLLEY Gen5. For the 1
 
 > **Scope, October 2026:** Gen5 is the fixed computational configuration for academic review, with documented model cases and open verification items. It yields a modeled orbital benefit, a failed installed-mass criterion, and a failed side-fed CAD fit. The final academic freeze has not been declared; nothing has been built, fired, measured, qualified or flown. Gen6 is future research toward a 1 km/s-class release; it has no selected architecture or achieved speed.
 
+![Gen5 reference STEP assembly visualized in Blender](cad/renders/step_review/gen5_reference_open.jpg)
+
+*FreeCAD-linked STEP geometry, with the enclosure hidden. The evaluated side-fed reference assembly has a known track/cassette clash. [View provenance and source hashes](cad/renders/step_review/README.md); this is a model image, not hardware.*
+
 > **Finding for the examiner:** the finite 3-D analytic force screen gives **12.448 m/s under ideal phase**, challenging the earlier **16.029 m/s** periodic-model shot. A separate 2-D FEM screen finds **1.082 kJ** ideal work. A conditional finite-force bank calculation gives **2.099 kJ** gross for the assumed full winding. None establishes a selected motor rating. [3-D analytic screen](validation/P118_gen5_finite_force_map.md) · [2-D FEM](validation/P119_gen5_finite_force_fem2d.md) · [coupled bank case](validation/P120_gen5_finite_coupled_shot.md) · [affected-claim disposition](docs/GEN5_2026_10_09_FINDING_DISPOSITION.md).
 
 > **New cross-check and sensitivity:** an [independent depth-resolved 3-D surface-charge formulation](validation/P121_gen5_finite_force_surface3d.md) returns **1.042 kJ ideal work**, agreeing with the analytic finite-force screen under shared geometry and material assumptions. [Illustrative geometry cases](validation/P122_gen5_finite_force_sensitivity.md) reduce ideal work to **0.907 kJ at a 14 mm face gap** versus 12 mm nominal. These are computational screens, not measured tolerances or an accepted speed rating.
@@ -41,7 +45,7 @@ To rebuild the chaptered report from this repository, run `pandoc university/GEN
 
 Gen5 is one specified system: a release station 1.5 m from the breech on 1.8 m structural longerons, with a 1.3 m powered stroke, ironless double-sided Halbach linear motor, reusable permanent-magnet sled, pulse store, eddy-current arrest and two conceptual cassettes for twelve ordinary 3U CubeSats. The release load and mechanical/electrical compatibility of any actual CubeSat remain unqualified.
 
-<p align="center"><img src="cad/renders/gen5/hero_open.png" alt="Gen5 open CAD rendering" width="49%"> <img src="cad/renders/gen5/exploded.png" alt="Gen5 exploded CAD rendering" width="49%"></p>
+<p align="center"><img src="cad/renders/step_review/gen5_reference_closed.jpg" alt="Gen5 outer reference envelope from STEP; internal clash concealed" width="49%"> <img src="cad/renders/step_review/gen5_fit_plan.jpg" alt="Gen5 reference side-fed track and cassettes from STEP; enclosure and payloads hidden" width="49%"></p>
 
 *Gen5 CAD models. These depict the evaluated geometry; they are not built articles or manufacturing drawings. [Inspect local CAD](cad/).*
 
@@ -68,6 +72,8 @@ Gen5 is one specified system: a release station 1.5 m from the breech on 1.8 m s
 *The CAD finding is deliberately retained in the [native FreeCAD document](cad/native/Gen5_Review.FCStd) and [assembly STEP](cad/step/gen5/VOLLEY_Review_Assembly_FreeCAD_Gen5.step). The orbit check supports immediate two-body geometry only. [Methods and exact files](reports/GEN5_COMPUTATIONAL_REVIEW.pdf).*
 
 ![Unselected R1 feeder geometry](figures/gen5_feeder_candidate_r1.png)
+
+![STEP-derived widened R1 candidate with its enclosure hidden](cad/renders/step_review/r1_candidate_open.jpg)
 
 *The [R1 FreeCAD and STEP geometry study](cad/FEEDER_CANDIDATE_R1.md) widens the enclosure and clears twelve scripted 3U envelope paths. Lift actuation, launch retention, tolerances, mass revision and provider compatibility remain open; R1 is not a selected Gen5 configuration.*
 

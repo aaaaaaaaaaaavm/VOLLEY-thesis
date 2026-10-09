@@ -95,7 +95,7 @@ Field on stored satellites & pulsed, unshielded & Halbach self-shielded\\
 \end{table}
 
 \subsection{Layout and Firing Cycle}
-The model places the release station 1.5~m from the breech on 1.8~m structural longerons; the powered stroke is 1.3~m, followed by a 0.2~m coast-and-trim interval (Figs.~\ref{fig:block} and \ref{fig:layout}). The stator is a double-sided ironless three-phase winding. The modeled mover is a 9.445~kg sled carrying opposed Halbach arrays (48~mm wavelength, 8~mm N45SH blocks, four blocks per wavelength) across a 12~mm winding gap. The two six-satellite cassettes are conceptual feed elements. Their current side-fed reference placement fails the width and exact-solid interference checks reported in Sec.~\ref{sec:lim}.
+The model places the release station 1.5~m from the breech on 1.8~m structural longerons; the powered stroke is 1.3~m, followed by a 0.2~m coast-and-trim interval (Figs.~\ref{fig:block} and \ref{fig:layout}). The stator is a double-sided ironless three-phase winding. The modeled mover is a 9.445~kg sled carrying opposed Halbach arrays (48~mm wavelength, 8~mm N45SH blocks, four blocks per wavelength) across a 12~mm winding gap. The two six-satellite cassettes are conceptual feed elements. Their current side-fed reference placement fails the width and exact-solid interference checks reported in Sec.~\ref{sec:lim}. Figure~\ref{fig:cadreview} shows the STEP-derived reference placement with the enclosure hidden; its surface shading is a visualization rather than hardware evidence.
 
 The intended sequence is follower advance, restraint engagement, motor acceleration, sled braking and payload departure. Feed forces, contact transitions, retention during ascent, release timing and tip-off have not been verified for an actual satellite. The current model assumes that the payload remains seated against the aft backstop during acceleration and separates when the sled decelerates; that assumption requires moving-contact analysis and instrumented tests. The ideal internal mass-motion model gives no final rigid-body rate after the sled stops, but it predicts a transient return rate of 0.130~deg/s for the assumed 500~kg host and 0.385~deg/s at 200~kg; both declared peak-rate bands fail. The earlier 8.2~s rate-null and 18.1~s cadence floor are superseded. An assumed 166~mm lever arm gives a 0.40~deg attitude offset in the 500~kg example. Controller restoration time and structural ringing have not been established. The adopted mission-planning interval is 1200~s between shots; 10--20~s is only a modeled recharge floor, so twelve scheduled shots span approximately 4.0~h and 2.6 orbits if all other operations succeed.
 
@@ -109,6 +109,12 @@ The intended sequence is follower advance, restraint engagement, motor accelerat
 \centering\includegraphics[width=\columnwidth]{D02_layout.png}
 \caption{Plan-view layout against an ESPA-Grande-class envelope (not to scale), retained as a dimensional reference. The closed envelope exceeds that class in length by 44\%; ESPA-Grande port compliance is not a requirement of this design, and the target host class is discussed in Sec.~\ref{sec:lim}.}
 \label{fig:layout}
+\end{figure}
+
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{gen5_reference_open.jpg}
+\caption{Twenty-instance Gen5 reference assembly visualized in Blender after FreeCAD read-back of named STEP solids. The enclosure is hidden to expose the track and side cassettes. Their evaluated placement has a documented exact-solid interference; the image is geometry visualization, not a built or qualified mechanism.}
+\label{fig:cadreview}
 \end{figure}
 
 \subsection{Restraint, Inhibits, and Abort}

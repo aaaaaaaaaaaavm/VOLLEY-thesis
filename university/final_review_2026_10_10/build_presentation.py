@@ -17,6 +17,7 @@ from pptx.util import Inches, Pt
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 FIG = ROOT / "source" / "figures"
+STEP_VIEWS = ROOT / "cad" / "renders" / "step_review"
 OUT = HERE / "VOLLEY_Final_Review_2026-10-10.pptx"
 LOGO = HERE / "assets" / "sit-logo.jpg"
 
@@ -171,11 +172,14 @@ for i, item in enumerate(items):
 
 # 3 Introduction
 s = base("Introduction", "Which missions might value orbital choice?",
-         "NASA 2026 Small Spacecraft SoA; Planet and Spire filings; local market audit")
-card(s, 0.65, 1.82, 3.85, 3.48, "Repeat fleets", "Configurable smallsat families and replenishment exist. That context does not establish demand for VOLLEY.")
-card(s, 4.75, 1.82, 3.85, 3.48, "Delivery buyer", "A carrier, rideshare integrator or fleet operator might need several distinct release states from one host.")
-card(s, 8.85, 1.82, 3.85, 3.48, "Gen5 test", "Compare commanded release with springs, host manoeuvres, transport and onboard propulsion on the same mission.", AMBER)
-txt(s, "No customer is confirmed; modeled Gen5 3U mass fails its preset criterion.", 0.8, 5.77, 11.75, 0.62, 21, True, NAVY, align=PP_ALIGN.CENTER)
+         "NASA 2026 Small Spacecraft SoA; local market audit; STEP-derived Gen5 CAD")
+card(s, 0.65, 1.78, 5.18, 1.82, "Repeat fleets", "Configurable satellite fleets exist; demand for VOLLEY is unconfirmed.", TEAL, 20, 16)
+card(s, 0.65, 3.79, 5.18, 1.82, "Delivery buyer", "A carrier or fleet operator might seek several release states from one host.", TEAL, 20, 16)
+image_fit(s, STEP_VIEWS / "gen5_reference_open.jpg", 6.1, 1.78, 6.68, 3.78)
+txt(s, "STEP-derived Gen5 reference; side-fed placement fails its fit check.",
+    6.25, 5.63, 6.35, 0.44, 13, True, NAVY, align=PP_ALIGN.CENTER)
+txt(s, "Test on one matched mission against springs, host manoeuvres, transport and onboard propulsion.",
+    0.8, 6.38, 11.75, 0.45, 17, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 4 Literature
 s = base("Literature review", "Existing methods solve different parts of the problem",
@@ -225,7 +229,7 @@ txt(s, "Models were challenged and revised; hardware performance remains outside
 s = base("Research methodology", "Numerical checks changed the review baseline",
          "VOLLEY-thesis/appendix/PROVENANCE.md; validation run sheets")
 table(s, ["Question", "Method / cross-check", "Evidence limit"], [
-    ("Field and thrust", "Analytic field; field-point FEM; finite force screen", "No independent integrated-thrust FEM or measurement"),
+    ("Field and thrust", "Analytic; 2-D FEM; independent 3-D numerical force", "Shared ideal inputs; no motor measurement"),
     ("Shot and power", "Dynamics; Monte Carlo; ngspice", "Assumed components and interfaces"),
     ("Structure and flow", "CAD; CalculiX; OpenFOAM", "No payload qualification"),
     ("Orbital change", "Orbit model; Cowell / GMAT cases", "Lifetime depends on atmosphere"),
@@ -268,20 +272,24 @@ for i, (tag, body) in enumerate(stages):
 
 # 11 Work progress
 s = base("Work progress", "The current review package is assembled and traceable",
-         "Thesis README; BASELINE.md; PROVENANCE.md; validation register")
-card(s, 0.7, 1.87, 3.83, 3.88, "Design documented", "Gen5 reference CAD, magazine and release concepts, subsystem models and system mass rollup.", TEAL, 22, 19)
-card(s, 4.74, 1.87, 3.83, 3.88, "Analysis delivered", "Shot, control, circuit, structure, thermal, orbit and alternative-case results.", TEAL, 22, 19)
-card(s, 8.78, 1.87, 3.83, 3.88, "Evidence delivered", "Manuscript, figures, scripts, numerical checks, provenance and defect register.", TEAL, 22, 19)
-txt(s, "Scope: fixed computational study with failed design gates; no physical qualification claim.", 0.85, 6.04, 11.7, 0.48, 18, True, NAVY, align=PP_ALIGN.CENTER)
+         "Thesis README; validation register; STEP view provenance")
+image_fit(s, STEP_VIEWS / "gen5_reference_closed.jpg", 0.68, 1.82, 5.45, 3.91)
+txt(s, "FreeCAD-linked STEP envelope; internal interference is concealed.",
+    0.72, 5.79, 5.37, 0.42, 13, True, NAVY, align=PP_ALIGN.CENTER)
+card(s, 6.34, 1.83, 6.2, 1.82, "Analysis delivered", "Shot, circuit, structural, thermal, orbit and alternative-case models.", TEAL, 20, 16)
+card(s, 6.34, 3.88, 6.2, 1.82, "Evidence delivered", "Manuscript, STEP, scripts, numerical checks and defect register.", TEAL, 20, 16)
+txt(s, "Fixed computational study with failed design gates; no physical qualification claim.",
+    0.85, 6.41, 11.7, 0.39, 17, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 12 Architecture
 s = base("Results", "Gen5: fixed reference geometry, feeder fit still open",
-         "Thesis manuscript, System Architecture; CAD render", "GEN5 MODEL STUDY")
-image_fit(s, ROOT / "cad" / "renders" / "gen5" / "exploded.png", 0.5, 1.7, 7.0, 4.9)
+         "FreeCAD Gen5 STEP reference; view provenance and P116", "GEN5 MODEL STUDY")
+image_fit(s, STEP_VIEWS / "gen5_reference_open.jpg", 0.5, 1.7, 7.0, 4.9)
 bullets(s, ["1.3 m powered stroke; 1.5 m release station",
             "Reusable 9.45 kg magnet sled",
             "Two cassettes; twelve 3U satellites",
             "FreeCAD STEP assembly: side-fed placement clashes"], 7.7, 2.0, 4.85, 4.3, 19, 17)
+txt(s, "Enclosure hidden for visibility; no fabricated article.", 0.7, 6.62, 6.75, 0.31, 12, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 13 Shot
 s = base("Results", "Historical periodic-model shot: challenged by finite geometry",
@@ -346,8 +354,8 @@ txt(s, "Reference placement only: a new feeder or enclosure would need a new con
 
 # Unselected R1 geometry
 s = base("Results", "R1 clears a scripted path; the feeder is not designed",
-         "FreeCAD R1 document and STEP; exact-solid route ledger", "UNSELECTED GEOMETRY")
-image_fit(s, ROOT / "figures" / "gen5_feeder_candidate_r1.png", 0.55, 1.75, 7.4, 4.9)
+         "FreeCAD R1 STEP candidate; exact-solid route ledger", "UNSELECTED GEOMETRY")
+image_fit(s, STEP_VIEWS / "r1_candidate_open.jpg", 0.55, 1.75, 7.4, 4.9)
 card(s, 8.15, 1.88, 4.37, 1.94, "12 / 12", "Scripted 3U envelope routes and conservative fixed-part swept boxes clear.", TEAL, 25, 15)
 card(s, 8.15, 4.03, 4.37, 1.94, "570 mm", "Wider enclosure; lift actuator, retention, tolerance and new mass budget open.", AMBER, 25, 15)
 txt(s, "Separate R1 candidate; no change to evaluated Gen5 shot, mass or host-fit claims.",
@@ -377,12 +385,15 @@ txt(s, "Assumed host and devices; optimizer result is not an infeasibility proof
 
 # 19 Conclusion
 s = base("Conclusion", "This Gen5 configuration does not pass selection",
-         "Thesis manuscript, Conclusion; BASELINE.md; PROVENANCE.md")
+         "Thesis conclusion; P116; matched mission; STEP view provenance")
 bullets(s, ["Historical model reports 16.0 m/s; a finite force screen challenges that performance claim.",
             "The modeled system is 76% heavier per 3U customer and the evaluated side-fed CAD clashes.",
             "R1 geometry clears a scripted path, but has no lift or launch retention design.",
             "No matched twelve-shot reference closes; Gen5 is a documented negative design study."],
-        0.95, 1.9, 11.65, 4.8, 22, 21)
+        0.75, 1.82, 6.2, 4.85, 19, 18)
+image_fit(s, STEP_VIEWS / "gen5_reference_open.jpg", 7.1, 1.9, 5.6, 3.9)
+txt(s, "STEP reference, enclosure hidden; fit fails. No physical test.",
+    7.12, 5.96, 5.55, 0.48, 13, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 20 Future Gen6
 s = base("Future work", "Gen6 reopens the mechanism and installed-system trade",

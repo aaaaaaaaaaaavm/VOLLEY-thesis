@@ -23,7 +23,7 @@ mainfont: DejaVu Sans
 
 > **Scope of this report.** VOLLEY is a system-level engineering design and computational research project. The Gen5 evaluated configuration and adverse numerical findings are documented; decisive force and mission closure remain open. The results are predictions, with numerical cross-checks where identified. Physical prototype testing, CubeSat qualification and provider accommodation belong to a later development phase. Gen6 is presented separately as future work.
 
-![Analysed Gen5 electromagnetic deployer configuration. CAD render; no physical article exists.](<../cad/renders/gen5/exploded.png>){width=88%}
+![Gen5 reference FreeCAD/STEP assembly visualized in Blender with enclosure hidden. Known side-fed clash remains; no physical article exists.](<../cad/renders/step_review/gen5_reference_open.jpg>){width=88%}
 
 # Abstract
 

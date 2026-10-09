@@ -6,6 +6,7 @@ import hashlib
 import json
 import math
 import re
+import runpy
 from pathlib import Path
 from urllib.parse import unquote
 from zipfile import ZipFile, is_zipfile
@@ -129,6 +130,7 @@ def main() -> None:
     local_links = check_links()
     figures = check_manuscript_figures()
     check_captured_results()
+    runpy.run_path(str(ROOT / "cad/tools/check_step_views.py"))["main"]()
     artifacts = check_manifest()
     check_containers()
     print(f"PASS: {local_links} current local links, {figures} manuscript figures, "
