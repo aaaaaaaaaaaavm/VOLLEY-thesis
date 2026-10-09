@@ -50,6 +50,10 @@ FILES = {
     "CAD_VIEWS/r1_candidate_open.jpg": REPO / "cad/renders/step_review/r1_candidate_open.jpg",
     "CAD_VIEWS/r1_candidate_plan.jpg": REPO / "cad/renders/step_review/r1_candidate_plan.jpg",
     "EVIDENCE/STEP_VIEW_PROVENANCE.json": REPO / "cad/renders/step_review/PROVENANCE.json",
+    "VISUALS/gen5_operations_hero.png": REPO / "cad/renders/sequence/gen5_operations_hero.png",
+    "VISUALS/gen5_intended_sequence.mp4": REPO / "cad/renders/sequence/gen5_intended_sequence.mp4",
+    "VISUALS/README.md": REPO / "cad/renders/sequence/README.md",
+    "VISUALS/PROVENANCE.json": REPO / "cad/renders/sequence/PROVENANCE.json",
 }
 
 

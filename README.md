@@ -6,9 +6,11 @@ This repository is the **standalone academic record** for VOLLEY Gen5. For the 1
 
 > **Scope, October 2026:** Gen5 is the fixed computational configuration for academic review, with documented model cases and open verification items. It yields a modeled orbital benefit, a failed installed-mass criterion, and a failed side-fed CAD fit. The final academic freeze has not been declared; nothing has been built, fired, measured, qualified or flown. Gen6 is future research toward a 1 km/s-class release; it has no selected architecture or achieved speed.
 
-![Gen5 reference STEP assembly visualized in Blender](cad/renders/step_review/gen5_reference_open.jpg)
+![Four-stage STEP-derived Blender storyboard of intended Gen5 storage, handoff, acceleration and departure](cad/renders/sequence/gen5_operations_hero.png)
 
-*FreeCAD-linked STEP geometry, with the enclosure hidden. The evaluated side-fed reference assembly has a known track/cassette clash. [View provenance and source hashes](cad/renders/step_review/README.md); this is a model image, not hardware.*
+*The intended order of operations, shown with local FreeCAD-linked STEP solids. The enclosure and near cassette shell are hidden. The evaluated reference assembly has a known track/cassette clash; feed, contact and brake motion are unverified. [Watch the eight-second sequence](cad/renders/sequence/gen5_intended_sequence.mp4) · [view animation provenance](cad/renders/sequence/README.md) · [inspect the static geometry audit](cad/renders/step_review/README.md). This is a model visualization, not hardware.*
+
+<p align="center"><img src="cad/renders/sequence/gen5_intended_sequence.gif" alt="Gen5 intended-operations concept animation, not a tested mechanism" width="70%"></p>
 
 > **Finding for the examiner:** the finite 3-D analytic force screen gives **12.448 m/s under ideal phase**, challenging the earlier **16.029 m/s** periodic-model shot. A separate 2-D FEM screen finds **1.082 kJ** ideal work. A conditional finite-force bank calculation gives **2.099 kJ** gross for the assumed full winding. None establishes a selected motor rating. [3-D analytic screen](validation/P118_gen5_finite_force_map.md) · [2-D FEM](validation/P119_gen5_finite_force_fem2d.md) · [coupled bank case](validation/P120_gen5_finite_coupled_shot.md) · [affected-claim disposition](docs/GEN5_2026_10_09_FINDING_DISPOSITION.md).
 
