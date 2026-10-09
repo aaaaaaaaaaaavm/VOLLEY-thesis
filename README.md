@@ -1,150 +1,66 @@
-> **Programme status, 2026-09-28:** Gen6 is in development. No architecture or speed envelope is selected or validated. The independent spring-cell bank and the historical gas guide are unselected studies. This thesis preserves older model studies; it must not be read as a physical test or a current design specification.
+# VOLLEY Gen5 — final-year thesis and review
 
-> ## What is generated here, and what is not
->
-> **Generated** from [aaaaaaaaaaaavm/VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) at commit
-> `06ebd07` by `tools/export_companion.py`: the analysis scripts and their results, the
-> validation run sheets, the figures, and the reference records. Any edit to those is
-> destroyed on the next export. **Fix them in VOLLEY and this repository picks the fix up.**
->
-> **Authored here, and never overwritten:** the manuscript and its figures under `source/`, and everything under `university/`. VOLLEY is an engineering
-> record and holds no manuscript source.
->
-> Where a generated file disagrees with VOLLEY, VOLLEY is right and this copy is stale.
->
-> **This repository may be improved until the work is presented, and freezes at that
-> moment.** What enters it has to be stable, effective and reliable against the problem
-> statement -- not merely newer.
+### A fixed electromagnetic CubeSat deployer design, evaluated by computation
 
-Live programme studies at this export: [sequential campaign allocation](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/CAMPAIGN_ALLOCATION.md)
-and [architecture decision gates](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/PROGRAMME_EXECUTION.md).
-[Terminal-state timing](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/TERMINAL_TIMING.md)
-extends the single-payload benchmark. These studies extend the engineering record;
-the authored manuscript remains Gen5.
+This repository is the **standalone academic record** for VOLLEY Gen5. It holds the technical [manuscript](source/VOLLEY_IEEE_Conference.pdf), editable [source](source/paper.tex), model scripts and outputs, CAD, validation sheets, assumptions, defects, and the college [final-review presentation pack](university/final_review_2026_10_10/README.md). A professor can follow a slide claim to a result file and method without opening another repository.
 
-The latest [review and restart record](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/06ebd07/docs/REVIEW_20260916.md)
-adds combined conditional release-error corners, reference-cell mechanics and the verification matrix.
-These bounded calculations do not close the full campaign or select flight hardware.
+> **Scope, October 2026:** The Gen5 **computational design study is complete** for the cases reported. It yields both a modeled orbital benefit and a failed installed-mass criterion. The hardware product is not complete: nothing has been built, fired, measured, qualified or flown. Gen6 is future research toward a 1 km/s-class release; it has no selected architecture or achieved speed.
 
-<!-- PROGRAMME-HEADER-START -->
-| Repository | Role | You are here |
-|---|---|---|
-| [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY) | Main: the authoritative engineering record. Improved continuously |  |
-| [VOLLEY-paper](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) | The concept at its most reliable, as an IEEE-formatted manuscript. **Frozen when published** |  |
-| **[VOLLEY-thesis](https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis)** | The same concept as a full submission. **Frozen when presented** | ← |
-| [VOLLEY-lab](https://github.com/aaaaaaaaaaaavm/VOLLEY-lab) | The vault: ideas that never became a complete thing, and why each stopped |  |
-<!-- PROGRAMME-HEADER-END -->
+<p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission concept and Gen5 model chain" width="100%"></p>
 
----
+*Model and mission architecture. A host and provider interface have not been selected.*
 
-# VOLLEY: the thesis
+## Bring this to the final review
 
-A final-year thesis on giving rideshare CubeSats an orbit their host was not going to, and
-the full record of what went wrong on the way there.
+| Deliverable | Open it | Evidence route |
+|:--|:--|:--|
+| **23-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
+| **Panel handbook** | [PDF](university/final_review_2026_10_10/PANEL_HANDBOOK.pdf) · [Markdown](university/final_review_2026_10_10/PANEL_HANDBOOK.md) | Detailed explanations and figures |
+| **Presenter reference** | [PDF](university/final_review_2026_10_10/PRESENTER_REFERENCE.pdf) · [Markdown](university/final_review_2026_10_10/PRESENTER_REFERENCE.md) | Slide notes and viva responses |
+| **Technical manuscript** | [PDF](source/VOLLEY_IEEE_Conference.pdf) · [LaTeX](source/paper.tex) | [Local evidence guide](ACADEMIC_EVIDENCE.md) |
 
-<p align="center"><img src="source/figures/V00_system_overview.svg" alt="VOLLEY mission chain and the evidence boundary between Gen5 and historical study" width="100%"></p>
+The presentation pack credits **Adityavardhan Mishra and Pratham Chawla**, with guide **Vikas Gulia**. The existing technical manuscript names Adityavardhan Mishra; the review pack does not retroactively change its authorship. [Pack instructions and checksums](university/final_review_2026_10_10/README.md).
 
-<p align="center"><sub>The thesis preserves the analysed Gen5 baseline while the next architecture remains open. Later studies do not inherit the Gen5 evidence.</sub></p>
+## The result to defend
 
-<p align="center">
-  <img src="cad/renders/gen5/exploded.png" alt="Exploded Gen5 electromagnetic drive stack" width="32%">
-  <img src="source/figures/A29_cfd_report.png" alt="Gen5 CFD convergence, force history and surface pressure" width="32%">
-  <img src="cad/renders/legacy_study/hero_open.png" alt="Historical stage-integrated gas study" width="32%">
-</p>
+Gen5 is one specified system: a 1.5 m guide with a 1.3 m powered stroke, ironless double-sided Halbach linear motor, reusable permanent-magnet sled, pulse store, eddy-current arrest and two conceptual cassettes for twelve ordinary 3U CubeSats. The release load and mechanical/electrical compatibility of any actual CubeSat remain unqualified.
 
-<p align="center"><sub>The thesis keeps the analysed Gen5 machine and a historical gas study visually separate.</sub></p>
+<p align="center"><img src="cad/renders/gen5/hero_open.png" alt="Gen5 open CAD rendering" width="49%"> <img src="cad/renders/gen5/exploded.png" alt="Gen5 exploded CAD rendering" width="49%"></p>
 
-[Read the manuscript](source/VOLLEY_IEEE_Conference.pdf)
+*Gen5 CAD models. These depict the evaluated geometry; they are not built articles or manufacturing drawings. [Inspect local CAD](cad/).*
 
-The submission is here with its analyses, its acceptance tests and its defect register attached.
-The defects are deliberate: an examiner should be able to see what failed, when it was found, and
-what was done about it. Nothing in it has been built or measured.
+| Measured question in the study | Modeled Gen5 answer | Examiner's qualification |
+|:--|--:|:--|
+| Rated 3U departure | **16.029 m/s at 10.07 g** | Coupled model, not a measured command range or payload qualification |
+| Energy draw | **2.78 kJ gross per shot** | Circuit model at the rated point |
+| Exit-speed dispersion | **0.0274 m/s (3σ)** | Simulation under assumed sensor uncertainty |
+| Dry / loaded design mass | **126.6 / 174.6 kg** | CAD-derived configuration, not a complete installed host mass |
+| Mass per carried 3U | **10.547 kg** | **Fails** the approximately 2 kg/satellite economic screen |
+| Incumbent canister parity | **1.758×** a roughly 6 kg/3U canister | **Fails** the separate ±15% parity band |
+| One modeled 450 km orbit case | **28.8 km** semi-major-axis rise; **1.60×** lifetime | Conditional atmosphere and orbit assumptions; current lifetime point lacks an independent rerun |
 
-## The design evolution this thesis is about
+[Frozen numerical baseline](appendix/BASELINE.md) · [Claim provenance](appendix/PROVENANCE.md) · [Study limits and viva questions](ACADEMIC_EVIDENCE.md) · [Defect register](appendix/OPEN_PROBLEMS.md)
 
-One mission, held constant. One architecture, changed repeatedly. That is the shape of the
-work, and it is worth stating before the chapters.
+<p align="center"><img src="source/figures/A02_field_map.png" alt="Calculated magnetic field" width="32%"> <img src="source/figures/F01_shot.png" alt="Modeled velocity, force and current" width="32%"> <img src="source/figures/A35_ledger.png" alt="Requirement-attributed mass floor" width="32%"></p>
 
-The mission is last-mile orbital distribution. After the primary spacecraft separates, the
-launch vehicle's final stage can continue, where host capability allows, as a temporary controlled
-orbital delivery platform. The host does the coarse orbital repositioning. VOLLEY produces each
-secondary satellite's individually commanded release condition. That was decided in 2023, by
-the second architectural decision the project ever took.
+*Field → shot → mass decision. Independent numerical methods check specific model quantities; none is an experimental Gen5 validation.*
 
-The architecture, in four steps:
+## Method and traceability
 
-| | |
-|---|---|
-| Free-flyer | VOLLEY is its own spacecraft, carrying attitude control, power and recoil mass. Rejected in 2023, *"which is most of a spacecraft"* |
-| Hosted deployer | The spent upper stage supplies all three. VOLLEY becomes a payload rather than a mission |
-| Self-contained electromagnetic system aboard the platform, Gen5 | Its own track, linear synchronous drive, sled, supercapacitor bank, eddy brake and magazine. This is the machine the manuscript reports |
-| Historical stage-integrated gas study | The stage's own structure and about 8 m of length become part of the machine; retained as a comparator after guide/contact and trim/tube problems were exposed |
-| Independent spring-cell study | Separate retained cells use slowly charged mechanical storage, a latch, short guided pusher and local catcher. Withdrawn as the current architecture because they do not supply the shared reload path or broad commanded speed goal |
+| Evidence layer | What is here | What it does not establish |
+|:--|:--|:--|
+| [Analysis](analysis/) | Executable electromagnetic, shot, mass and orbit models with captured result JSON | Correctness of unknown material, sensor or host inputs |
+| [Validation](validation/) | Predeclared acceptance bands, numerical solver cross-checks, failed bands | Hardware repeatability or flight qualification |
+| [CAD](cad/) | Gen5 geometry, STEP parts and mass properties | Fabrication readiness, fit to an approved host or full tolerance stack |
+| [Appendix](appendix/) | Baseline, prior art, literature, provenance, decisions, defects | External endorsement |
+| [Final-review claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) | Each slide's local evidence and caveat | Replacement for the underlying run sheet |
 
-> What is worth noticing is that the objective never changed. What the generations record is a
-> steadily better answer to how much of this VOLLEY needs to build for itself, and the honest cost
-> of each answer, including the one that made Gen5's enclosure 50.04 kg of skin the stage already
-> had.
->
-> Host capability stays parametric in every generation. No launch provider has supplied stage
-> propulsion, restart or control-authority data, and the thesis says so wherever it matters.
+The copied analysis and reference files are a dated engineering snapshot from source revision `06ebd07`. The manuscript, review pack and this examiner-facing guide are authored here. The snapshot must be evaluated on its own terms; a later change in another repository does not silently alter these academic claims.
 
-## Layout
+## The academic boundary
 
-| | |
-|---|---|
-| `source/` | Manuscript and figures |
-| `analysis/` | The scripts producing every number in the work |
-| `validation/` | The analyses, each with its acceptance bands declared before the run |
-| `cad/` | The CAD generations, with the defect audit for each |
-| `appendix/` | Baseline, defect ledger, validation report, provenance, prior art, literature, decision records |
+The result is a **finished analysis with a negative design decision on 3U mass**. The lack of a physical prototype is stated directly; published tests of other devices support context or parameters, not claims that VOLLEY itself was tested. The college rubric includes objectives, technical quality, results/validation, documentation, and presentation/viva. The supplied example deck gives a visual and section outline; it does not supply technical evidence for VOLLEY. [Review-pack rubric mapping](university/final_review_2026_10_10/README.md).
 
-## For an examiner, in reading order
+The manuscript uses an IEEE conference layout. A university-specific full-thesis template has not been supplied, and no claim is made that this PDF satisfies an unprovided submission format. The review presentation and academic evidence record are ready for scrutiny of their stated computational scope.
 
-1. `appendix/PROVENANCE.md`, which says what stands behind each claim and what does not.
-2. `appendix/BASELINE.md`, the frozen values, and the rule for changing any of them.
-3. `appendix/adr/`, the decision records. Each states the alternatives considered and the
-   consequences accepted. ADR-003 carries its own amendment showing an argument it got wrong.
-4. `appendix/OPEN_PROBLEMS.md`, every known defect, including the ones that damage the work's own
-   claims, and the ones found by checking this work against itself rather than by anyone asking.
-5. `appendix/PRIOR_ART.md`, the nearest published work, and the two claims retracted after reading
-   it.
-
-The decision records are the part most worth reading. They are where the reasoning lives, and
-several of them record the alternative that was rejected and why.
-
-## What is authored here
-
-`source/` holds the manuscript, which is written in this repository, the main record is an
-engineering record and carries no manuscript source. `university/` holds submission forms,
-formatting mandates and viva material, which are university-specific and do not belong upstream.
-Neither is ever touched by the export. Everything else is regenerated and will be overwritten.
-
-The [10 October 2026 final-review pack](university/final_review_2026_10_10/README.md)
-contains the university-format slides, panel handbook, presenter reference and a
-slide-by-slide map to the detailed calculations and validation limits in this repository.
-
-This repository may be improved until the thesis is presented, and freezes at that moment. What
-enters it has to be stable, effective and reliable against the problem statement.
-
-
-## The thesis describes Gen5; the next architecture is open
-
-This is deliberate and worth stating plainly. The authored manuscript describes Gen5, the
-analysed baseline -- a frozen computational one, with no hardware behind it -- and the record of
-what one self-contained deployer model costs. The long gas guide and compact independent spring
-cells were later investigated and remain unselected comparators. The best sampled two-payload
-campaign cannot select a product mechanism or speed ceiling; the later twelve-payload screens did
-not complete a full manifest. The next design must restore the reusable shared path and loading
-objective, then be compared under complete installed and mission accounting.
-
-No performance has been physically measured, and no launch provider has supplied an accommodation.
-The thesis retains Gen5 as a historical computational case, not a current product specification.
-
-The main repository retains these studies and their recorded failures.
-
-## Before citing
-
-Every number here is a model output. Nothing has been built or measured. The defect ledger is
-published deliberately rather than tidied away, and it is the honest measure of how far the work
-has actually got.
+**Beyond Gen5:** [Gen6 direction](university/final_review_2026_10_10/GEN6_DIRECTION.md) frames 1 km/s as a research objective. A named host and ICD, complete installed-system model, payload-specific structural and release testing, repeated shots and full mission closure are future gates. [VOLLEY engineering](https://github.com/aaaaaaaaaaaavm/VOLLEY) and [paper companion](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) offer optional context; this repository contains the evidence needed to review this thesis.

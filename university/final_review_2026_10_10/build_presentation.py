@@ -52,7 +52,7 @@ def box(slide, x, y, w, h, fill=LIGHT, line=None, radius=False):
 
 
 def txt(slide, text, x, y, w, h, size=20, bold=False, color=INK,
-        align=PP_ALIGN.LEFT, valign=MSO_ANCHOR.TOP, margin=0.06):
+        align=PP_ALIGN.LEFT, valign=MSO_ANCHOR.TOP, margin=0.015):
     shape = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
     tf = shape.text_frame
     tf.clear()
@@ -173,7 +173,7 @@ for i, item in enumerate(items):
 s = base("Introduction", "The thesis answers an orbital-delivery trade question",
          "Thesis manuscript, Introduction; JAXA J-SSOD; EXOpod documentation")
 card(s, 0.65, 1.82, 3.85, 3.48, "Shared destination", "Secondary CubeSats inherit the orbit chosen for the primary customer.")
-card(s, 4.75, 1.82, 3.85, 3.48, "Conventional release", "Spring deployers separate payloads at about 1–2 m/s; release timing helps in-track phasing.")
+card(s, 4.75, 1.82, 3.85, 3.48, "Conventional release", "Spring deployers provide a small relative impulse. Subsequent orbit or drag differences can produce phasing.")
 card(s, 8.85, 1.82, 3.85, 3.48, "VOLLEY question", "Can commanded release provide useful orbital choice at an acceptable installed cost?", AMBER)
 txt(s, "Study outcome: useful modelled orbital change, but an unfavourable 3U mass trade", 0.8, 5.77, 11.75, 0.62, 21, True, NAVY, align=PP_ALIGN.CENTER)
 
@@ -182,7 +182,7 @@ s = base("Literature review", "Existing methods solve different parts of the pro
          "JAXA; Foster et al. 2018; Feng et al. 2025; Zhao et al. 2022/2025")
 table(s, ["Approach", "Strength", "Limit for this thesis"], [
     ("Spring deployer", "Flight heritage; compact; simple", "Limited tailored release speed"),
-    ("Timed release / drag", "In-track phase without a high impulse", "Does not quickly change orbital energy"),
+    ("Spring release / drag", "Relative state or drag can create phasing", "Timing alone, with no relative state change, cannot"),
     ("Orbital transfer vehicle", "Larger orbit changes", "Greater bus, mass and integration burden"),
     ("Electromagnetic research", "Commandable acceleration studied", "Armature, high-g or maturity constraints vary"),
 ], [2.5, 4.1, 5.65], row_h=0.92, font=17)
@@ -308,7 +308,7 @@ s = base("Results", "Commanded velocity can change orbital energy",
 image_fit(s, FIG / "F04_life.png", 0.62, 1.8, 7.65, 4.67)
 card(s, 8.52, 1.94, 3.96, 1.95, "+28.8 km", "Predicted semi-major-axis rise for one maximum-velocity release.", TEAL, 27, 16)
 card(s, 8.52, 4.1, 3.96, 1.95, "1.60×", "Predicted lifetime at stated mean solar activity; atmosphere-dependent.", AMBER, 27, 16)
-txt(s, "Timing alone can create in-track phase; this result concerns orbital energy.", 0.8, 6.62, 11.75, 0.27, 13, True, NAVY)
+txt(s, "Persistent phasing requires a relative state change; this result concerns orbital energy.", 0.8, 6.62, 11.75, 0.27, 13, True, NAVY)
 
 # 16 Mass
 s = base("Results", "Gen5 fails its 3U mass comparison",
@@ -359,7 +359,7 @@ bullets(s, ["The Gen5 system-level model predicts 16.0 m/s 3U release and a cond
 s = base("Future work", "Gen6 reopens the mechanism and installed-system trade",
          "CURRENT PLAN AND STATUS — PLAN-R2, 29 Sep 2026", "GEN6 PLAN • NOT ACHIEVED")
 box(s, 0.8, 1.8, 11.7, 1.17, PALE, None, True)
-txt(s, "One reusable path • sequential supported CubeSat sizes • individually commanded release", 1.0, 2.1, 11.35, 0.55, 22, True, NAVY, align=PP_ALIGN.CENTER)
+txt(s, "One shared path • sequential feed • commanded release for each CubeSat", 1.0, 2.1, 11.35, 0.55, 22, True, NAVY, align=PP_ALIGN.CENTER)
 bullets(s, ["Investigate approximately 1–2 m/s through 1 km/s across mission cases.",
             "Compare electromagnetic, stored-energy, gas/fluid, hybrid, BOLLEY and conventional options.",
             "Count feeder, retention, arrest, control, energy, thermal, host loads and shared faults."],

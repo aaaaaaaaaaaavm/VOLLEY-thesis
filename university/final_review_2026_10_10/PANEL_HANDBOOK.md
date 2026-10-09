@@ -25,7 +25,7 @@ toc-depth: 2
 
 # Executive summary
 
-VOLLEY investigates a last-mile problem in rideshare launches: a secondary CubeSat reaches orbit but ordinarily receives the orbit selected for the primary payload. A spring deployer separates it safely, often at roughly 1–2 m/s, and the deployment time can change its in-track phase. A larger, deliberately commanded release velocity can also change orbital energy. The thesis evaluates whether that added capability justifies a complete deployer system. The mission model splits responsibilities between a maneuvering host, which performs coarse repositioning, and a deployer, which supplies each satellite's commanded release condition.
+VOLLEY investigates a last-mile problem in rideshare launches: a secondary CubeSat reaches orbit but ordinarily receives the orbit selected for the primary payload. A spring deployer separates it safely, often at roughly 1–2 m/s; that relative impulse, later drag differences, or host maneuvering can change its in-track phase. Deployment time by itself does not create persistent phase separation from an otherwise unchanged co-orbital host. A larger, deliberately commanded release velocity can also change orbital energy. The thesis evaluates whether that added capability justifies a complete deployer system. The mission model splits responsibilities between a maneuvering host, which performs coarse repositioning, and a deployer, which supplies each satellite's commanded release condition.
 
 The authored thesis analyses one Gen5 solution: a magazine-fed, linear synchronous motor driving a reusable magnetic sled. The rated 3U model predicts **16.0 m/s** exit speed at **10.07 g**. Its full dry system mass is **126.6 kg**, and the power model predicts **2.782 kJ** gross electrical draw per shot. A closed-loop simulation predicts **0.0274 m/s ($3\sigma$)** exit-speed dispersion at a 15.8 m/s setpoint. In a stated orbital case, a maximum-speed release raises semi-major axis by **28.8 km**, with a **1.60×** modelled lifetime multiplier at mean solar activity. The lifetime result is atmosphere-sensitive and has not been independently rerun at the exact current operating point.
 
@@ -39,7 +39,7 @@ The later Gen6 programme retains the hosted sequential-deployment mission while 
 
 The primary mission determines the launch vehicle's delivered orbit. Secondary CubeSats may have limited onboard propulsion, mass, power, or programmatic freedom to correct that orbit. Standard canisterised spring systems are mature and effective at clearance and separation. Their release conditions, however, are governed by spring energy, payload mass, and the device rather than a separately commanded velocity profile for every satellite.
 
-The distinction between **release timing** and **release energy** is central. Waiting between launches can produce in-track phase spacing without spending a larger release impulse. A commanded velocity along or against orbital motion can change the satellite's orbital energy and semi-major axis. VOLLEY studies the latter capability while retaining a clear comparison with timed spring release and other alternatives. It does not claim that all constellation phasing requires a motor.
+The distinction between **release timing** and **relative-state change** is central. Waiting alone between zero-relative-impulse releases from an unchanged host does not produce persistent in-track phase spacing. Spring impulse, differential drag or a host maneuver can produce a relative state; a commanded velocity along or against orbital motion can change the satellite's orbital energy and semi-major axis. VOLLEY studies the latter capability while retaining a clear comparison with spring release and other alternatives. It does not claim that all constellation phasing requires a motor.
 
 The host is an active participant in the mission model. After its primary mission, a suitable hosted platform would need attitude control, available resources and permission to operate. It could perform coarse orbital repositioning; VOLLEY would assign each secondary payload a local release state. No specific upper stage has been selected or approved for that role.
 
@@ -50,7 +50,7 @@ The host is an active participant in the mission model. After its primary missio
 | Approach | Established capability | Relevance and limit |
 |:--|:--|:--|
 | Spring deployers | Flight heritage and simple separation near the low-m/s range [1] | Strong benchmark for reliability and installed mass; release energy is largely built into the device. |
-| Timed release and differential drag | In-track spacing and gradual orbital adjustment [3] | Timing alone can phase satellites; drag is atmosphere- and attitude-dependent. |
+| Spring release and differential drag | In-track spacing and gradual orbital adjustment [3] | A relative impulse or drag difference creates the separation; waiting alone from an unchanged co-orbital host does not. |
 | Orbital transfer vehicles | Coarse orbital repositioning through a propulsive carrier | Valuable comparator for whole-mission delivery; greater spacecraft and integration burden must be counted. |
 | Electromagnetic CubeSat studies | Magazine transport and electromagnetic launch have already been studied [4–6] | Some configurations impose conductive armatures, high acceleration or different maturity; novelty cannot be claimed for electromagnetic deployment alone. |
 
@@ -142,7 +142,7 @@ The closed-loop Monte Carlo model predicts **0.0274 m/s ($3\sigma$)** exit-veloc
 
 ## Orbital utility
 
-For the stated orbit and mean-solar-activity case, one maximum-speed release predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. The more defensible message is conditional: a release impulse can change orbital energy, while absolute lifetime and lifetime gain depend on atmospheric density and the orbit model. A fresh independent run of the exact current 1.60 operating point remains outstanding. Timing alone can produce in-track phasing; it does not produce the same semi-major-axis change.
+For the stated orbit and mean-solar-activity case, one maximum-speed release predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. The more defensible message is conditional: a release impulse can change orbital energy, while absolute lifetime and lifetime gain depend on atmospheric density and the orbit model. A fresh independent run of the exact current 1.60 operating point remains outstanding. Timing alone, with zero relative impulse and no host or drag difference, produces neither persistent phasing nor this semi-major-axis change.
 
 ![Modelled orbital-lifetime response. Absolute values depend on atmosphere.](<../../source/figures/F04_life.png>){width=87%}
 

@@ -57,7 +57,7 @@ The central problem is that a rideshare CubeSat gets the primary mission's orbit
 
 ## 4. Literature review
 
-Do not describe springs as “obsolete” or “unable to change orbit.” Every impulse changes the orbit. Springs are the benchmark for simplicity and heritage. Timed release and differential drag address some phasing needs. A transfer vehicle addresses larger moves but carries its own burden. Electromagnetic work predates VOLLEY: Feng *et al.* models high-speed on-orbit launch, and Zhao *et al.* studies stacked CubeSat transfer/storage. These works narrow the novelty claim.
+Do not describe springs as “obsolete” or “unable to change orbit.” Every impulse changes the orbit. Springs are the benchmark for simplicity and heritage. Spring impulse and differential drag address some phasing needs. Waiting alone between zero-relative-impulse releases from an unchanged host does not. A transfer vehicle addresses larger moves but carries its own burden. Electromagnetic work predates VOLLEY: Feng *et al.* models high-speed on-orbit launch, and Zhao *et al.* studies stacked CubeSat transfer/storage. These works narrow the novelty claim.
 
 ## 5. Research gap
 
@@ -101,7 +101,7 @@ The closed-loop simulation produces a 0.0274 m/s ($3\sigma$) spread around a 15.
 
 ## 15. Results — orbit
 
-The model predicts a 28.8 km semi-major-axis rise and a 1.60× lifetime multiplier at mean solar activity for one maximum-velocity release. The exact multiplier is not universal. A prior invariance claim failed an independent propagator check, and the current 1.60 result has not been independently rerun at its precise updated operating point. Timing alone can phase satellites; the energy change is the reason to consider a larger release impulse.
+The model predicts a 28.8 km semi-major-axis rise and a 1.60× lifetime multiplier at mean solar activity for one maximum-velocity release. The exact multiplier is not universal. A prior invariance claim failed an independent propagator check, and the current 1.60 result has not been independently rerun at its precise updated operating point. A relative state produced by spring impulse, drag or a host maneuver can phase satellites; the larger energy change is the reason to consider a commanded release impulse.
 
 ## 16. Results — mass
 
@@ -162,7 +162,7 @@ Offer the panel handbook for the fuller bibliography. Distinguish published/agen
 Not electromagnetic launch itself. The thesis's narrow contribution is a commandable moderate-acceleration release of an unmodified CubeSat with the whole magazine, power, brake, mass and orbital-use case analysed together. Prior art narrows even this, so it is a research proposition, not a proven patent claim.
 
 **Why not just release satellites at different times?**<br>
-That is a valid way to obtain in-track spacing and must be the baseline. Timing alone does not provide the same immediate semi-major-axis change that a directed impulse can supply.
+Different release times can matter if the host maneuvers, spring impulses differ, or differential drag accumulates. Waiting alone between zero-relative-impulse releases from an unchanged host does not create persistent in-track spacing. A conventional spring release is the baseline; a larger directed impulse may change semi-major axis more quickly.
 
 **Why not put propulsion on each CubeSat?**<br>
 That is a competent alternative, especially at 3U. The thesis mass comparison even shows Gen5's per-customer deployer mass is unfavorable for 3U. The value proposition may vary by payload class and mission; it is not assumed.

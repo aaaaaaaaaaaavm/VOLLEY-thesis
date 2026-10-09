@@ -4,7 +4,7 @@
 **Guide:** Vikas Gulia<br>
 **Institution:** Symbiosis Institute of Technology, Pune
 
-This directory is the complete review pack. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
+This directory is the review pack for the computational Gen5 study. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
 **Presentation thesis:** the Gen5 system-level computational evaluation is complete. It predicts a conditional orbital benefit and finds that the complete Gen5 configuration fails the preset 3U mass criterion. Slides 1–19 tell that finished research story. Slides 20–21 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product.
 
@@ -17,6 +17,8 @@ This directory is the complete review pack. It follows the user's eleven-part ou
 | Presenter reference, slide notes and viva answers | [PDF](PRESENTER_REFERENCE.pdf) | [Markdown](PRESENTER_REFERENCE.md) · [DOCX](PRESENTER_REFERENCE.docx) |
 
 The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive slide to the manuscript, numerical result and/or project-plan source. The [Gen6 direction](GEN6_DIRECTION.md) records precisely what the forward-looking slides mean. The thesis's full technical detail remains in the [manuscript PDF](../../source/VOLLEY_IEEE_Conference.pdf) and [source](../../source/paper.tex), [`analysis/`](../../analysis/), [`validation/`](../../validation/), [`cad/`](../../cad/) and [`appendix/`](../../appendix/); these are the underlying record, rather than a claim that 23 slides reproduce every calculation.
+
+**10 October correction:** the earlier review draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. The current deck, handbook, presenter notes and claim map require an actual relative-state change through release impulse, host maneuver or differential drag. Both PDF and PPTX above were rebuilt after this correction.
 
 ## Evidence language
 
@@ -37,4 +39,4 @@ The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive sli
 
 ## Rebuild
 
-From this directory, run `python build_presentation.py`, then convert the resulting PPTX to PDF with LibreOffice/PowerPoint. The Markdown files can be exported to PDF and DOCX with Pandoc. All image references point to files already in this repository. The SIT logo in `assets/` was extracted from the user-provided university example PDF solely for this university-format review pack.
+From this directory, run `python build_presentation.py` and `python render_review_pdf.py` to build the PPTX and matching 23-page PDF. The renderer checks text for overflow. The handbook and presenter PDFs and DOCXs can be rebuilt with Pandoc and XeLaTeX from their Markdown sources. All image references point to files already in this repository. The SIT logo in `assets/` was extracted from the user-provided university example PDF solely for this university-format review pack. Check [file hashes](CHECKSUMS.sha256) after copying the submission pack.
