@@ -120,6 +120,10 @@ engineering record and carries no manuscript source. `university/` holds submiss
 formatting mandates and viva material, which are university-specific and do not belong upstream.
 Neither is ever touched by the export. Everything else is regenerated and will be overwritten.
 
+The [10 October 2026 final-review pack](university/final_review_2026_10_10/README.md)
+contains the university-format slides, panel handbook, presenter reference and a
+slide-by-slide map to the detailed calculations and validation limits in this repository.
+
 This repository may be improved until the thesis is presented, and freezes at that moment. What
 enters it has to be stable, effective and reliable against the problem statement.
 
