@@ -39,6 +39,14 @@ The 16.029 m/s shot result assumes periodic thrust throughout a 1.3 m powered st
 
 ![Finite-array/stator model force versus position; no physical measurement.](<../../figures/gen5_finite_force_map.png>){width=96%}
 
+A separate **2-D finite-element magnetostatic solve** of the finite magnet array gives **1.082 kJ ideal work** on its finest 1 mm mesh, compared with the 3-D analytic screen's 1.042 kJ. The 2-to-1 mm mesh change is 0.59%; a larger air boundary changes the 2 mm work by 0.0004%. The solver uses a different field formulation but omits magnet-depth end effects, so the two absolute results must not be combined into an achieved speed. [P119](../../validation/P119_gen5_finite_force_fem2d.md) records meshes, convergence and assumptions.
+
+![Independent 2-D finite-element force screen, not a measurement.](<../../figures/gen5_finite_force_fem2d.png>){width=96%}
+
+A **conditional finite-force bank/trajectory rerun** retains the historical 96 V, 6 F, 12 mΩ source and assumed converter. With the full 1.3 m winding energized it computes **2.099 kJ gross capacitor draw** and 927 J copper heat; an illustrative 0.34 m active-copper branch gives 1.394 kJ gross and 243 J copper heat. Both report 12.448 m/s because the force curve is imposed at ideal phase; no voltage-limited switching law or selected winding/inverter exists. The old 2.782 kJ, brake and control outputs are not revised ratings. [P120](../../validation/P120_gen5_finite_coupled_shot.md) gives the time history and energy ledger.
+
+![Finite-force speed and assumed bank energy histories.](<../../figures/gen5_finite_coupled_shot.png>){width=96%}
+
 An **unselected R1 geometry candidate** uses a 570 mm wide enclosure. Its native FreeCAD document and STEP parts pass exact-solid static fit and twelve scripted 3U envelope transfer paths with conservative fixed-part swept boxes. It lacks the actual lift/carriage, launch restraint, actuation, tolerances, fault recovery and revised installed mass. Its increased envelope has no approved host. This candidate does not alter the evaluated Gen5 configuration or repair the performance discrepancy. See [R1 CAD record](../../cad/FEEDER_CANDIDATE_R1.md).
 
 ![R1 candidate section; geometry drawing, not a qualified mechanism.](<../../figures/gen5_feeder_candidate_r1.png>){width=90%}
@@ -154,7 +162,7 @@ The analysed system uses a double-sided Halbach-array linear synchronous motor t
 | Sled energy to brake | 1,162 J | Major loss and arrest burden |
 | Electrical-to-payload efficiency, net | 18.8% | 514 J payload kinetic energy / net draw |
 
-The energy flow matters more than the velocity headline. The sled and its arrest hardware are part of the modeled price of avoiding a payload-side drive armature. Regeneration returns only a small fraction of sled energy within the available length. [P117](../../validation/P117_rated_energy_mass_audit.md) separately checks the reported mass and energy identities and finds **124.488 J (4.47%) of gross draw unitemized** after the reported kinetic, copper and bank-ESR terms. That is an accounting gap, not proof of a specific additional loss. Full electrical closure and an installed bank are still open.
+The energy flow matters more than the velocity headline. The sled and its arrest hardware are part of the modeled price of avoiding a payload-side drive armature. Regeneration returns only a small fraction of sled energy within the available length. [P117](../../validation/P117_rated_energy_mass_audit.md) separately checks the reported mass and energy identities and reconciles the historical **124.488 J (4.47%) compact-output remainder** to 90.964 J assumed converter loss, 32.460 J auxiliary draw and 1.064 J of forward-Euler step excess, with a rounded residual below 0.001 J. This closes historical model arithmetic only. Selected hardware, switching and installed power verification remain open.
 
 ## Command precision
 

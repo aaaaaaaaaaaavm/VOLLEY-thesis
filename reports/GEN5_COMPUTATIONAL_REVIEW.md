@@ -9,7 +9,7 @@ header-includes:
 
 # Abstract
 
-Gen5 is a fixed computational study of a sequential electromagnetic deployer for twelve 3U CubeSats. At its rated modeled point the machine gives 16.029 m/s exit speed and 10.068 g peak acceleration, with a 126.6 kg dry mass estimate. This report gathers the electromagnetic, power, dynamics, orbit, mass, CAD and mission evidence into a claim-by-claim review. It records both favorable numerical outputs and decisive failures: 10.547 kg of modeled deployer per 3U customer fails two mass comparisons; a side-fed CAD reference arrangement has an 11 mm width shortfall and exact-solid interference; and none of six sampled finite-burn twelve-payload campaigns delivers all twelve. The current rated immediate two-body orbit change has an independent Cartesian check, while the current 1.60 lifetime multiplier has no independent rated-case rerun. Published tests of related devices support assumptions and context; **VOLLEY itself has no built, fired, measured, qualified or flown hardware**.
+Gen5 is a computational study of a sequential electromagnetic deployer for twelve 3U CubeSats. Its historical periodic-force model gives 16.029 m/s and 10.068 g, but a finite-array calculation challenges that speed; no current motor rating is selected. This report gathers the electromagnetic, power, dynamics, orbit, mass, CAD and mission evidence into a claim-by-claim review. It records decisive failures: 10.547 kg of modeled deployer per 3U customer fails two mass comparisons; a side-fed CAD reference arrangement has an 11 mm width shortfall and exact-solid interference; and no sampled twelve-shot option closes. Independent 2-D finite-element force analysis confirms the finite-stator force decline while leaving depth and circuit effects open. The immediate two-body orbit change has a Cartesian check for an assumed historical 16.029 m/s release; the 1.60 lifetime multiplier has no independent rerun at that input. **VOLLEY itself has no built, fired, measured, qualified or flown hardware**.
 
 # 1. Configuration and evidence classes
 
@@ -17,17 +17,25 @@ Gen5 is a fixed computational study of a sequential electromagnetic deployer for
 
 ![Finite analytic force map](../figures/gen5_finite_force_map.png)
 
+An [independent 2-D finite-element solve](../validation/P119_gen5_finite_force_fem2d.md) uses a vector-potential PDE, finite seven-wavelength arrays and the drawn 162-belt stator. Its 1 mm mesh gives **1,081.6 J ideal in-plane work**, compared with 1,041.7 J from the 3-D analytic screen. The 2-to-1 mm mesh change is 0.59%. This supports the end-of-stator force decline by a different field method; the 2-D solve omits magnet-depth end effects and is not a 3-D motor validation.
+
+![Independent 2-D finite-element force comparison](../figures/gen5_finite_force_fem2d.png)
+
+The [P120 finite-force shot rerun](../validation/P120_gen5_finite_coupled_shot.md) interpolates P118's position-dependent force through the assumed historical 96 V/6 F/12 mΩ bank and converter equations. With the full 1.3 m winding energized it gives **12.448 m/s and 2,098.6 J gross draw**; with a hypothetical 0.34 m active-copper length it gives **1,394.4 J** at the same ideal speed. Those two electrical branches are not selected hardware. The old 2.782 kJ, 47 J recovered, brake and dispersion results cannot be carried across without new models and interfaces.
+
+![Conditional finite-force shot histories](../figures/gen5_finite_coupled_shot.png)
+
 ![Matched reference mission](../figures/matched_mission_reference.png)
 
 ![Unselected R1 geometry section](../figures/gen5_feeder_candidate_r1.png)
 
-The [configuration index](../docs/GEN5_CONFIGURATION_INDEX.json) hashes the eight source STEP parts, the FreeCAD exports and native document, geometry parameters, governing model code and result files. Its status is `COMPUTATIONAL_DESIGN_REVIEW_CANDIDATE`; identity of files is not proof that an equation or material assumption is correct. The reference host is a 450 km circular orbit with a tangential prograde impulse for the orbital comparison, not a provider-approved mission. No named flight CubeSat, provider ICD or full installed system exists.
+The local [artifact manifest](../ARTIFACT_MANIFEST.sha256) hashes the manuscript, selected CAD, model outputs and review files. The native FreeCAD assembly and eight source STEP parts are local. File identity is not proof that an equation or material assumption is correct. The reference host is a 450 km circular orbit with a tangential prograde impulse for the orbital comparison, not a provider-approved mission. No named flight CubeSat, provider ICD or full installed system exists.
 
-This report distinguishes **model output**, **independent numerical cross-check**, **prior-art support**, and **physical measurement**. The last class is empty for Gen5. A plot exported by a Python model is not a screenshot of a solver or an experimental trace. The CAD views are B-rep visualizations. The [figure evidence index](../docs/FIGURE_INDEX.md) and individual run sheets identify each image's source.
+This report distinguishes **model output**, **independent numerical cross-check**, **prior-art support**, and **physical measurement**. The last class is empty for Gen5. A plot exported by a Python model is not a screenshot of a solver or an experimental trace. The CAD views are B-rep visualizations. The local validation run sheets identify each current engineering image's source and limits.
 
-# 2. Rated machine and electrical result
+# 2. Historical machine and electrical result
 
-| Quantity | Rated model value | Boundary |
+| Quantity | Historical model value | Boundary |
 |:--|--:|:--|
 | Exit speed, 3U | 16.029 m/s | Historical periodic-model operating point, challenged by finite geometry |
 | Peak acceleration | 10.068 g | Payload load not qualified |
@@ -40,7 +48,7 @@ The shot trace below comes from `analysis/motor_model.py` and the checked-in mod
 
 \begin{center}
 \includegraphics[width=0.74\linewidth]{../figures/F01_shot.png}\\
-\small Figure 1. Modeled rated shot profile; source: motor model, evidence class M.
+\small Figure 1. Historical modeled shot profile; source: motor model, evidence class M.
 \end{center}
 
 \begin{center}
@@ -48,11 +56,11 @@ The shot trace below comes from `analysis/motor_model.py` and the checked-in mod
 \small Figure 2. Calculated Gen5 magnetic field; this does not measure integrated thrust.
 \end{center}
 
-A separate [rated energy and mass algebra audit](../validation/P117_rated_energy_mass_audit.md) reproduces the 4.000 kg/payload inference, 513.858 J payload kinetic energy, 1.30075 m constant-acceleration equivalent stroke, and rounded brake/recovery identities from the captured JSON. It also finds **124.488 J (4.47%) of gross draw unitemized** after the reported kinetic energies, copper heat and bank ESR are subtracted. That remainder is an unresolved accounting item, not an inferred new component loss; no claim of a fully closed electrical loss budget follows from these checks.
+A separate [historical energy and mass algebra audit](../validation/P117_rated_energy_mass_audit.md) reproduces the 4.000 kg/payload inference, 513.858 J payload kinetic energy, 1.30075 m constant-acceleration equivalent stroke, and rounded brake/recovery identities from the captured JSON. The old **124.488 J** compact-output remainder resolves into **90.964 J modeled converter loss, 32.460 J auxiliary draw and 1.064 J forward-Euler integration excess**, leaving less than 0.001 J after reported rounding. This closes the old model's arithmetic, not a supplier-backed source or a circuit-coupled finite-force shot.
 
 # 3. Orbit, timing and complete-manifest checks
 
-For a 450 km circular host reference, a 16.029 m/s instantaneous tangential impulse gives a **28.800775 km** semi-major-axis rise in the [separate Cartesian DOP853 propagation](../validation/P115_rated_orbit_cartesian.md). The two-body numerical band is 0.02 m and passes. This confirms immediate orbital geometry at the modeled release speed. It does not independently establish the stated **1.60 lifetime multiplier**, which depends on a static atmosphere at mean activity and has no current rated-case independent rerun. It does not establish thrust, finite release duration or host acceptability.
+For a 450 km circular host reference, an **assumed historical 16.029 m/s** instantaneous tangential impulse gives a **28.800775 km** semi-major-axis rise in the [separate Cartesian DOP853 propagation](../validation/P115_rated_orbit_cartesian.md). The two-body numerical band is 0.02 m and passes. This confirms immediate orbital geometry for that assumed state. It does not independently establish the stated **1.60 lifetime multiplier**, which depends on a static atmosphere at mean activity and has no independent rerun at that input. It does not establish thrust, finite release duration or host acceptability.
 
 \begin{center}
 \includegraphics[width=0.78\linewidth]{../figures/rated_orbit_crosscheck.png}\\
@@ -74,7 +82,7 @@ The [FreeCAD 1.0 CAD review](../cad/GEN5_CAD_REVIEW.pdf) releases a native `.FCS
 
 # 5. Evidence closure and review decision
 
-The [C-00–C-20 freeze register](../docs/GEN5_FREEZE_READINESS.md) is the authority for each unresolved question. A dated clean-snapshot gate run passed 148 tests and left tracked files clean; that gate does not rerun all native FEM, SPICE, GMAT or CAD studies, and companion files were unavailable inside that isolated snapshot. The present P115 and P116 checks reduce uncertainty on immediate two-body orbit geometry and expose a mechanical packaging failure. They do not close independent full-depth force, installed bank/inverter design, release contact, brake arrest/reset, moving-load structure, magnetic payload compatibility, thermal cycling, provider integration, disposal or complete mission delivery.
+The local [remaining-work matrix](../IEEE_AND_CAD_REMAINING_WORK.md) records the unresolved questions. A dated clean-snapshot gate run passed 148 tests and left tracked files clean; that gate does not rerun all native FEM, SPICE, GMAT or CAD studies, and companion files were unavailable inside that isolated snapshot. The present P115 and P116 checks reduce uncertainty on immediate two-body orbit geometry and expose a mechanical packaging failure. They do not close independent full-depth force, installed bank/inverter design, release contact, brake arrest/reset, moving-load structure, magnetic payload compatibility, thermal cycling, provider integration, disposal or complete mission delivery.
 
 The college rubric calls for achievement of objectives, technical quality, validation, documentation and demonstration. It offers special recognition for a working prototype; it does not make a prototype a stated prerequisite for all 40 final marks. A professional final review should demonstrate the reproducible models and native CAD, show the failed criteria prominently, and explain what a later physical programme must measure. A literature analogy or polished render must not be described as a Gen5 physical validation.
 

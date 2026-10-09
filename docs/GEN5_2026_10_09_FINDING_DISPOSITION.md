@@ -4,7 +4,7 @@
 
 ## P118 force discrepancy
 
-The historical rated shot uses a periodic thrust constant across 1.300 m of powered travel. The actual Gen5 CAD declares a 162-belt finite stator ending at 1.296 m, with a magnet array initially at 0.230–0.570 m. Direct array/stator overlap ends after 1.066 m of travel. The [finite analytic force map](../validation/P118_gen5_finite_force_map.md) gives 1.042 kJ ideal work and a 12.448 m/s geometry-only result under independently optimized phase at each station. It shares the earlier cuboid magnetic field law and is not independent FEM.
+The historical rated shot uses a periodic thrust constant across 1.300 m of powered travel. The actual Gen5 CAD declares a 162-belt finite stator ending at 1.296 m, with a magnet array initially at 0.230–0.570 m. Direct array/stator overlap ends after 1.066 m of travel. The [finite analytic force map](../validation/P118_gen5_finite_force_map.md) gives 1.042 kJ ideal work and a 12.448 m/s geometry-only result under independently optimized phase at each station. It shares the earlier cuboid magnetic field law and is not independent FEM. [P119](../validation/P119_gen5_finite_force_fem2d.md) now provides a separate 2-D finite-element field screen, while [P120](../validation/P120_gen5_finite_coupled_shot.md) couples the finite analytic force to an assumed bank. Neither establishes a selected motor rating.
 
 | Prior claim/output | Disposition | Required rerun before a performance claim |
 |:--|:--|:--|

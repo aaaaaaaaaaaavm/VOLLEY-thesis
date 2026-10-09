@@ -30,7 +30,7 @@ The spoken route is **13:55**, leaving **1:05** for slide changes and interrupti
 | 4:30–5:20 | 9–10 | Adityavardhan | 0:50 | Show evolution and corrections; dates marked approximate where reconstructed. |
 | 5:20–5:50 | 11 | Adityavardhan | 0:30 | State deliverables, then hand over: “Pratham will show the results that changed our design decision.” |
 | 5:50–6:35 | 12 | Pratham | 0:45 | Point out cassette, track, sled, release station and brake. It is a FreeCAD review assembly, not built hardware. |
-| 6:35–8:25 | 13–14 | Pratham | 1:50 | Historical periodic model: 16.029 m/s. Finite analytic 3-D integral: 1.042 kJ ideal work and 12.448 m/s geometry-only ideal-phase screen. Explain that this is not independent FEM or achieved speed; power/loss closure remains open. |
+| 6:35–8:25 | 13–14 | Pratham | 1:50 | Historical periodic model: 16.029 m/s. Finite analytic 3-D integral: 1.042 kJ ideal work. Independent 2-D FEM: 1.082 kJ ideal work, with omitted depth end effects. Conditional assumed-bank rerun: 2.099 kJ gross. None is an achieved or selected speed rating. |
 | 8:25–9:10 | 15–16 | Pratham | 0:45 | Precision and orbital lifetime are modeled. Immediate orbital geometry has a two-body cross-check; lifetime does not have the same independent check. |
 | 9:10–10:45 | 17–19 | Pratham | 1:35 | Decision slides: 126.6 kg dry / 10.55 kg per 3U fails the ~6 kg spring comparison; side-fed reference layout is 11 mm too narrow; R1 clears scripted routes but is an unselected candidate. |
 | 10:45–12:20 | 20–21 | Pratham | 1:35 | Demonstrate the computational chain on slide 20; one matched event needs modeled ideal host propellant of 2.693 kg spring / 0.827 kg finite Gen5, but no twelve-shot case closes. Hand back: “The system-level result is therefore a decision, not a performance claim.” |
@@ -58,7 +58,7 @@ Use the *same* deck and skip slides **2, 4, 8–11, 15–16, 19–20, 24–26** 
 
 **Why call it complete if it fails?** “The research question is answered for this defined Gen5 case. The installed 3U mass fails our criterion, the current side-fed layout clashes, and a more finite force treatment challenges the historical speed. We are not claiming design or product maturity.”
 
-**Is 12.448 m/s validated?** “No. It is an ideal-phase geometry-only result from a finite 3-D analytic force integral that shares the field law with the earlier model. It omits circuit losses and is not independent finite-element or physical validation. Its purpose is to expose the sensitivity of the 16.029 m/s historical prediction.”
+**Is 12.448 m/s validated?** “No. It is an ideal-phase result from a finite 3-D analytic force integral. A separate 2-D FEM supports the finite-force decline but omits depth end effects. The bank rerun assumes ideal phase and unselected electrical hardware. No thrust has been measured.”
 
 **Can the R1 STEP file solve the fit problem?** “It resolves the exact-solid route clearance for twelve scripted 3U envelopes after widening the enclosure from 530 to 570 mm. It does not yet supply a credible feed actuator, retention system, tolerance stack or revised mass. We did not silently substitute it for evaluated Gen5.”
 
@@ -77,7 +77,7 @@ Use the *same* deck and skip slides **2, 4, 8–11, 15–16, 19–20, 24–26** 
 | Finding | Correct description |
 |:--|:--|
 | 16.029 m/s | Historical periodic-force model prediction; challenged |
-| 12.448 m/s | Ideal-phase finite-geometry analytic screen; no independent FEM |
+| 12.448 m/s | Ideal-phase finite-geometry analytic screen; 2-D FEM supports force trend, but no selected motor rating |
 | 126.6 kg dry; 174.6 kg loaded | Modeled Gen5 installed mass |
 | 10.55 kg versus about 6 kg | Per-3U deployer mass; preset parity test fails |
 | 11 mm; 32,915 mm³ per cassette | Reference side-fed CAD width deficit and overlap |

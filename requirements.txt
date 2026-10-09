@@ -1,0 +1,31 @@
+# Pinned dependencies for the captured local model and figure set.
+# Pinned to what the published results were produced with, so a re-run that disagrees is a
+# finding rather than a version difference.
+numpy==2.4.6
+scipy==1.17.1
+matplotlib==3.11.1
+magpylib==5.2.3
+pymsis==0.13.0
+
+# A67's global sensitivity analysis. Sobol indices over the guided-contact model.
+SALib==1.5.2
+
+# Real-gas properties, for checking the closed-expansion model's ideal-gas assumption.
+CoolProp==8.0.0
+
+# Development and independent-check dependencies are in requirements-dev.txt.
+# This repository retains its own source, results and validation records; a reader
+# does not need another repository to inspect or rerun a cited model case.
+
+# --- optional, and separated on purpose ---------------------------------------------------
+# CAD generation only (cad/build_gen5.py, cad/build_legacy_study.py). NOT required by anything in
+# analysis/ or by any number in the repository -- install it only to regenerate the STEP files.
+# It pulls a large OCC stack, which is why it is optional rather than a hard dependency.
+# See ADR-026.
+#     pip install cadquery==2.8.0
+#
+# Meshing for the finite-element validation runs under validation/:
+#     pip install gmsh==4.15.2 scikit-fem
+#
+# System solvers, installed outside pip: CalculiX (ccx), GetDP, ngspice, GMAT R2022a.
+# tools/env-setup.sh is the record of how each was obtained.

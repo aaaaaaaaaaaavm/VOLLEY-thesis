@@ -10,7 +10,7 @@ This directory is the review pack for the computational Gen5 study. It follows t
 
 ## Bring to the review
 
-**Start with [How to present the old numbers and known errors](READ_THIS_FIRST.md)** and give the panel the [one-page evidence handout](PANEL_HANDOUT.pdf). The [15-minute two-speaker run sheet](TOMORROW_RUN_SHEET.pdf) assigns the handoff, timing and fallback route. The updated deck places the historical shot beside the adverse finite-force result and makes slide 20 a finite-force-to-mission computational demonstration. An offline presentation and core-evidence ZIP is provided as `TOMORROW_PRESENTATION_PACK.zip`; the complete reproducible source remains in this repository.
+**Start with [How to present the old numbers and known errors](READ_THIS_FIRST.md)** and give the panel the [one-page evidence handout](PANEL_HANDOUT.pdf). The [15-minute two-speaker run sheet](TOMORROW_RUN_SHEET.pdf) assigns the handoff, timing and fallback route. The deck places the historical shot beside the 3-D analytic force screen, independent 2-D FEM, and conditional bank rerun; slide 20 shows the computational force-to-mission chain. An offline presentation and core-evidence ZIP is provided as `TOMORROW_PRESENTATION_PACK.zip`; the reproducible source remains in this repository.
 
 | Item | Present/print | Editable source |
 |:--|:--|:--|
@@ -26,7 +26,7 @@ Slide 3 and the handbook introduce the [audited market and spacecraft-fit report
 
 ## Evidence language
 
-- The Gen5 research **analysis and decision record are complete** for the stated computational cases. Results are predictions; numerical cross-checks apply to named models and cases. No VOLLEY hardware has been built or physically tested.
+- The captured Gen5 computational cases and their negative 3U selection decision are documented. Results are predictions; numerical cross-checks apply to named models and cases. No VOLLEY hardware has been built or physically tested.
 - The modelled Gen5 3U system fails its preset mass-parity criterion against a spring canister. Its stated side-fed reference assembly also fails a width and exact-solid interference check. Both negative findings are in the presentation and handbook.
 - Gen6 is an **open architecture trade**. Its approximately 1–2 m/s to 1 km/s span is an investigation envelope. No 1 km/s performance, mechanism selection, payload qualification, host compatibility or build/test release is claimed.
 - The historical thesis manuscript is authored under Adityavardhan Mishra's name. This review pack credits both named presenters; it does not retroactively change manuscript authorship.

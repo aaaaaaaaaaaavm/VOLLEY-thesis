@@ -294,16 +294,16 @@ for i, (value, label) in enumerate(metrics):
     box(s, x, 5.28, 2.73, 1.2, PALE, None, True)
     txt(s, value, x + 0.08, 5.4, 2.56, 0.48, 25, True, NAVY, align=PP_ALIGN.CENTER)
     txt(s, label, x + 0.08, 5.92, 2.56, 0.33, 14, False, INK, align=PP_ALIGN.CENTER)
-txt(s, "P118 finite geometry challenges 16.0 m/s; 124.5 J of gross draw is also unitemized.",
+txt(s, "P118 challenges 16.0 m/s; P117 reconciles 124.5 J to assumed model terms.",
     0.85, 6.65, 11.9, 0.28, 13, False, MID)
 
 # 14 Finite force
-s = base("Results", "Finite-array force integration changes the speed verdict",
-         "P118 finite 3-D analytic force map and convergence; not independent FEM", "ADVERSE MODEL FINDING")
-image_fit(s, FIG / "gen5_finite_force_map.png", 0.55, 1.7, 7.65, 4.9)
-card(s, 8.45, 1.78, 4.1, 1.95, "1.042 kJ", "Ideal work from the finite 162-belt force map with optimized phase.", AMBER, 24, 16)
-card(s, 8.45, 3.95, 4.1, 1.95, "12.448 m/s", "Geometry-only speed before circuit and friction losses; historical model reports 16.029 m/s.", RED, 24, 15)
-txt(s, "Array/stator direct overlap ends after 1.066 m, before the 1.300 m powered stroke ends.",
+s = base("Results", "Independent 2-D FEM confirms the finite-force decline",
+         "P118 3-D analytic; P119 2-D FEM; P120 assumed bank rerun", "COMPUTATIONAL CROSS-CHECK")
+image_fit(s, FIG / "gen5_finite_force_fem2d.png", 0.55, 1.7, 7.65, 4.9)
+card(s, 8.45, 1.78, 4.1, 1.95, "1.042 / 1.082 kJ", "Ideal work: 3-D analytic / 2-D FEM. The FEM omits magnet-depth end effects.", AMBER, 20, 15)
+card(s, 8.45, 3.95, 4.1, 1.95, "2.099 kJ", "P120 gross bank draw with assumed full winding and ideal phase; not a selected rating.", RED, 24, 15)
+txt(s, "Historical 16.029 m/s is challenged; no measured force or selected inverter exists.",
     0.8, 6.64, 11.75, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 14 Control
@@ -355,15 +355,15 @@ txt(s, "Separate R1 candidate; no change to evaluated Gen5 shot, mass or host-fi
 
 # 18 Demo
 s = base("Results", "Computational demonstration: from force to mission decision",
-         "P118 finite-force run; matched-mission reference; thesis analysis/results", "SIMULATION DEMONSTRATION")
+         "P118–P120 finite-force/assumed bank; matched-mission reference", "SIMULATION DEMONSTRATION")
 box(s, 0.62, 1.78, 5.72, 4.25, LIGHT, None, True)
 box(s, 6.97, 1.78, 5.72, 4.25, LIGHT, None, True)
 txt(s, "1. Finite-force geometry screen", 0.84, 1.94, 5.26, 0.47, 19, True, NAVY)
 txt(s, "2. Matched mission screen", 7.18, 1.94, 5.21, 0.47, 19, True, NAVY)
-image_fit(s, FIG / "gen5_finite_force_map.png", 0.78, 2.5, 5.42, 3.2)
+image_fit(s, FIG / "gen5_finite_force_fem2d.png", 0.78, 2.5, 5.42, 3.2)
 image_fit(s, FIG / "matched_mission_reference.png", 7.14, 2.5, 5.4, 3.2)
 txt(s, "→", 6.39, 3.65, 0.5, 0.55, 28, True, TEAL, align=PP_ALIGN.CENTER)
-txt(s, "P118 challenges the shot; compare finite-force, installed mass and matched mission before any performance claim.",
+txt(s, "P119 checks force; P120 reruns bank assumptions; no twelve-shot mission case closes.",
     0.86, 6.25, 11.62, 0.62, 17, True, NAVY, align=PP_ALIGN.CENTER)
 
 # Matched mission reference

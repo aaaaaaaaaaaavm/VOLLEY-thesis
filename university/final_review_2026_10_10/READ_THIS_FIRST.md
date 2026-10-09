@@ -9,8 +9,8 @@ The college's supplied final-review rubric awards 10 marks for objectives, 10 fo
 | Earlier headline | Tomorrow's treatment | Why |
 |:--|:--|:--|
 | 16.029 m/s rated Gen5 release | **Historical periodic-force model output. Do not use as a demonstrated or selected rating.** Keep one slide so the correction is traceable. | P118's finite-position force integral challenges the assumption of constant periodic force across the stroke. |
-| 12.448 m/s finite-force result | **Ideal geometry-only analytic screen, not a replacement rated speed.** | It assumes ideal phase and omits circuit losses; its field law is shared with the earlier model and independent force FEM/measurement remains open. |
-| 10.07 g, 2.782 kJ, 18.8%, 0.0274 m/s dispersion | **Conditional outputs of the historical shot/control model.** Do not carry them into a revised performance specification. | The changed force profile requires a coupled circuit, trajectory and control rerun; 124.488 J of gross shot energy is also unitemized. |
+| 12.448 m/s finite-force result | **Ideal-phase analytic screen, not a replacement rated speed.** | A separate 2-D FEM gives 1.082 kJ ideal work, but omits magnet-depth end effects. No measured thrust or selected switching hardware exists. |
+| 10.07 g, 2.782 kJ, 18.8%, 0.0274 m/s dispersion | **Conditional outputs of the historical shot/control model.** Do not carry them into a revised performance specification. | P117 reconciles the old 124.488 J remainder to model assumptions; P120 reruns finite force with an assumed bank and gives 2.099 kJ gross. Control, switching and contact remain open. |
 | +28.8008 km immediate orbit rise, 1.60× lifetime | **Historical 16.029 m/s orbit-input scenario.** The immediate two-body geometry is cross-checked; lifetime is not independently closed for the current case. | Orbital propagation can correctly use an assumed impulse without proving that Gen5 can produce that impulse. |
 | 126.6 kg dry; 10.55 kg per 3U versus ~6 kg spring canister | **Current modeled mass finding and clear adverse comparison.** | The installed system fails the stated 15% comparator band. A stricter historical 2 kg/3U screening target also fails; keep the distinct thresholds labeled. |
 | 11 mm width deficit and 32,915 mm³ clash per cassette | **Reference side-fed placement fails the CAD check.** | Exact-solid check is a geometric finding for this placement, not a rejection of every possible feeder. |
@@ -20,13 +20,13 @@ The college's supplied final-review rubric awards 10 marks for objectives, 10 fo
 
 ## What must be said before the results
 
-“The original 16 m/s operating point remains in the record as a historical model case. A finite-geometry check has since challenged its force assumption, so we are not claiming a verified speed. This is why the following orbit and energy plots are conditional inputs, while the mass and CAD failures are used for the design decision.”
+“The original 16 m/s operating point remains in the record as a historical model case. A finite-geometry check has since challenged its force assumption; a separate 2-D field solve supports the declining finite-force trend. The bank rerun still assumes ideal phase and unselected components, so we are not claiming a verified speed. The old orbit and energy plots are conditional inputs, while the mass and CAD failures drive the design decision.”
 
 This sentence prevents the panel from discovering the correction before you mention it. Do not wait for Q&A to reveal it.
 
 ## What the final slide should mean
 
-**Defensible conclusion:** “For the defined 3U reference case, Gen5 as currently modeled does not pass selection. The analytical evidence points to a mass disadvantage and an invalid side-fed placement, while the speed chain needs independent force and power closure. The study produces a documented decision and a concrete experimental agenda.”
+**Defensible conclusion:** “For the defined 3U reference case, Gen5 as currently modeled does not pass selection. The evidence shows a mass disadvantage and an invalid side-fed placement; 2-D FEM and a conditional bank rerun narrow the speed question but do not establish a motor rating. The study produces a documented decision and a concrete experimental agenda.”
 
 **Avoid:** “Gen5 is complete and validated, and Gen6 only scales it.” The newer force, mass and CAD evidence does not support that statement. Gen6 should reopen mechanism selection rather than promise a scaled copy.
 

@@ -93,7 +93,7 @@ Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable
 
 ## 13. Results — historical modeled shot
 
-At the historical modeled 3U point, the periodic-force model predicts 16.029 m/s and 10.07 g. Gross electrical draw is 2,782 J, of which the payload receives about 514 J as kinetic energy. Only 47 J is recovered after release within the available 39 mm zone; 1,162 J of sled energy goes to the brake. Net electrical-to-payload efficiency is 18.8%. Peak current is 320 A over a 162.3 ms pulse. P117 independently checks simple mass, work and kinetic-energy identities but leaves **124.488 J of gross draw unitemized**. Do not call the energy loss budget closed, or say “tested,” “measured,” or “qualified.”
+At the historical modeled 3U point, the periodic-force model predicts 16.029 m/s and 10.07 g. Gross electrical draw is 2,782 J, of which the payload receives about 514 J as kinetic energy. Only 47 J is recovered after release within the available 39 mm zone; 1,162 J of sled energy goes to the brake. Net electrical-to-payload efficiency is 18.8%. Peak current is 320 A over a 162.3 ms pulse. P117 checks simple identities and reconciles **124.488 J of compact-output remainder** to assumed converter, auxiliary and integration terms. P119's 2-D FEM gives 1.082 kJ ideal work; P120's assumed full-winding bank case gives 2.099 kJ gross under the finite force curve. Neither selects hardware or verifies a release speed. Do not say “tested,” “measured,” or “qualified.”
 
 ## 14. Results — finite force discrepancy
 
@@ -121,7 +121,7 @@ The widened 570 mm enclosure clears twelve scripted 3U-envelope routes in exact-
 
 ## 20. Results — simulation demonstration
 
-Walk through the revised evidence chain on the slide: the finite-position force curve challenges the historical constant-force shot, then the common-input mission screen compares the assumed finite-force ideal upper speed with springs and the historical model. The accepted twelve-shot prefixes are limited and no case closes. The panel can inspect P118, the matched-mission result JSON, scripts, FreeCAD documents and reports in this repository. If a script cannot run during review, the slide and handbook reproduce the captured outputs. Call this a **computational demonstration**, never a motor test.
+Walk through the revised evidence chain on the slide: P118's finite-position force curve challenges the historical constant-force shot, P119 independently checks the 2-D field trend, and P120 reruns the bank trajectory conditionally. The common-input mission screen compares the assumed finite-force ideal upper speed with springs and the historical model. The accepted twelve-shot prefixes are limited and no case closes. The panel can inspect P118–P120, the matched-mission result JSON, scripts, FreeCAD documents and reports in this repository. If a script cannot run during review, the slide and handbook reproduce the captured outputs. Call this a **computational demonstration**, never a motor test.
 
 ## 21. Results — matched reference mission
 
@@ -206,7 +206,7 @@ First freeze the selected mission and configuration. Then use a discriminating i
 | Avoid | Say instead |
 |:--|:--|
 | “We built/tested VOLLEY” | “We designed and analysed Gen5; no hardware test has occurred.” |
-| “Validated 16 m/s” | “The Gen5 model predicts 16 m/s; selected numerical checks exist.” |
+| “Validated 16 m/s” | “The historical periodic model predicts 16 m/s; finite-force checks challenge it, and no selected speed rating exists.” |
 | “CubeSats can tolerate 10 g” | “Payload-specific qualification has not been done.” |
 | “VOLLEY is lighter than springs” | “Gen5 fails the 3U spring-canister mass comparison.” |
 | “Gen6 reaches 1 km/s” | “Gen6 must investigate up to 1 km/s; no mechanism is selected.” |

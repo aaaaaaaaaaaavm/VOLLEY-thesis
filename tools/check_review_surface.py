@@ -70,11 +70,24 @@ def check_manuscript_figures() -> int:
 
 def check_captured_results() -> None:
     finite = json.loads((ROOT / "analysis/results/gen5_finite_force_map.json").read_text())
+    fem = json.loads((ROOT / "analysis/results/gen5_finite_force_fem2d.json").read_text())
+    bank = json.loads((ROOT / "analysis/results/gen5_finite_coupled_shot.json").read_text())
+    energy = json.loads((ROOT / "analysis/results/rated_energy_mass_audit.json").read_text())
     mass = json.loads((ROOT / "analysis/results/mass_properties.json").read_text())
     mission = json.loads((ROOT / "analysis/results/matched_mission_reference.json").read_text())
     derived = math.sqrt(2 * finite["ideal_finite_stator_work_J"] / finite["moving_mass_kg"])
     require(abs(derived - finite["ideal_finite_stator_exit_upper_m_s"]) < 0.001,
             "finite work/mass/speed identity changed")
+    require(abs(fem["runs"][-1]["work_J"] - 1081.6) < 1.0,
+            "independent 2-D work changed; review text needs updating")
+    require(abs(fem["mesh_work_change_fraction"]) < 0.01,
+            "2-D work mesh change exceeds one percent")
+    require(abs(bank["branches"][0]["result"]["gross_capacitor_draw_J"] - 2098.6) < 1.0,
+            "finite-force bank draw changed; review text needs updating")
+    require(abs(bank["branches"][0]["result"]["energy_ledger_residual_J"]) < 0.001,
+            "finite-force bank energy ledger no longer closes")
+    require(abs(energy["derived"]["gross_residual_after_model_terms_J"]) < 0.001,
+            "historical energy arithmetic no longer closes")
     require(abs(mass["dry_kg"] / 12 - 10.547) < 0.02, "3U mass screen changed")
     require(all(not case["accepted_all_12"] for case in mission["finite_burn_campaign"]),
             "a twelve-shot campaign now closes; review text needs updating")
