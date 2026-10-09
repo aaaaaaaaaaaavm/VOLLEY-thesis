@@ -285,7 +285,7 @@ bullets(s, ["1.5 m linear-motor track and double-sided Halbach arrays",
 
 # 13 Shot
 s = base("Results", "Rated 3U shot: performance predicted by the model",
-         "Thesis BASELINE.md; F01_shot.png", "GEN5 MODEL PREDICTION")
+         "Thesis BASELINE.md; F01_shot.png; P117 energy audit", "GEN5 MODEL PREDICTION")
 image_fit(s, FIG / "F01_shot.png", 0.7, 1.85, 11.8, 3.25)
 metrics = [("16.0 m/s", "exit speed"), ("10.07 g", "acceleration"),
            ("2.782 kJ", "gross draw"), ("18.8%", "net efficiency")]
@@ -294,6 +294,8 @@ for i, (value, label) in enumerate(metrics):
     box(s, x, 5.28, 2.73, 1.2, PALE, None, True)
     txt(s, value, x + 0.08, 5.4, 2.56, 0.48, 25, True, NAVY, align=PP_ALIGN.CENTER)
     txt(s, label, x + 0.08, 5.92, 2.56, 0.33, 14, False, INK, align=PP_ALIGN.CENTER)
+txt(s, "Audit boundary: 124.5 J (4.47%) of gross draw is not itemized in the compact result ledger.",
+    0.85, 6.65, 11.9, 0.28, 13, False, MID)
 
 # 14 Control
 s = base("Results", "Modelled command precision is narrow; it is unmeasured",

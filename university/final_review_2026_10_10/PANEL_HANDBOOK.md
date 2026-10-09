@@ -125,7 +125,7 @@ The deliverable here is a completed computational thesis, not a flight article. 
 
 ## Gen5 configuration
 
-The analysed system uses a double-sided Halbach-array linear synchronous motor to propel a reusable permanent-magnet sled along a 1.5 m track. Two transverse cassettes feed twelve 3U satellites. A capacitor-based bank supplies the pulse, and a brake arrests the sled after payload release. The sled mass, computed from detailed CAD solid volumes, is **9.45 kg**; this value reduced the exit speed relative to an earlier optimistic parametric estimate. The CAD render conveys the arrangement; it is not evidence that parts have been manufactured or assembled.
+The analysed system uses a double-sided Halbach-array linear synchronous motor to propel a reusable permanent-magnet sled to a release station 1.5 m from the breech on 1.8 m structural longerons. Two transverse cassettes are intended to feed twelve 3U satellites, but the present side-fed placement fails the fit check. A capacitor-based bank supplies the modeled pulse, and a brake is intended to arrest the sled after payload release. The **9.45 kg** sled input comes from historical Gen3 CAD solid volumes; this value reduced the exit speed relative to an earlier optimistic parametric estimate. The CAD render conveys a concept, not manufactured or assembled hardware.
 
 ## Rated 3U shot
 
@@ -140,7 +140,7 @@ The analysed system uses a double-sided Halbach-array linear synchronous motor t
 | Sled energy to brake | 1,162 J | Major loss and arrest burden |
 | Electrical-to-payload efficiency, net | 18.8% | 514 J payload kinetic energy / net draw |
 
-The energy flow matters more than the velocity headline. The sled and its arrest hardware are the price of keeping the customer satellite unmodified. Regeneration returns only a small fraction of sled energy within the available length, so the contactless brake remains necessary. A design comparison that credits full sled recovery would misstate the system efficiency and installed burden.
+The energy flow matters more than the velocity headline. The sled and its arrest hardware are part of the modeled price of avoiding a payload-side drive armature. Regeneration returns only a small fraction of sled energy within the available length. [P117](../../validation/P117_rated_energy_mass_audit.md) separately checks the reported mass and energy identities and finds **124.488 J (4.47%) of gross draw unitemized** after the reported kinetic, copper and bank-ESR terms. That is an accounting gap, not proof of a specific additional loss. Full electrical closure and an installed bank are still open.
 
 ## Command precision
 

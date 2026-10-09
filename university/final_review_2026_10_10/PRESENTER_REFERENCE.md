@@ -89,11 +89,11 @@ Show tangible completed deliverables: manuscript, CAD, system model, scripts, nu
 
 ## 12. Results — architecture
 
-Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled is driven along the 1.5 m track; the payload departs; the sled is arrested. Eight STEP solids were imported into FreeCAD 1.0 and exported as a native 20-instance review assembly and STEP exchange files. The imported solids lack parametric feature history. This is an inspectable geometry study, not an independently mass-verified installed assembly. The mass model still adopts a 9.45 kg sled from historical Gen3 CAD and A4 chassis analysis. No component has been built for VOLLEY.
+Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled moves to a release station 1.5 m from the breech along 1.8 m structural longerons; the payload departs; the sled is arrested. Eight STEP solids were imported into FreeCAD 1.0 and exported as a native 20-instance review assembly and STEP exchange files. The imported solids lack parametric feature history. This is an inspectable geometry study, not an independently mass-verified installed assembly. The mass model still adopts a 9.45 kg sled from historical Gen3 CAD and A4 chassis analysis. No component has been built for VOLLEY.
 
 ## 13. Results — rated shot
 
-At the rated 3U operating point, the model predicts 16.029 m/s and 10.07 g. Gross electrical draw is 2,782 J, of which the payload receives about 514 J as kinetic energy. Only 47 J is recovered after release within the available 39 mm zone; 1,162 J of sled energy goes to the brake. Net electrical-to-payload efficiency is 18.8%. Peak current is 320 A over a 162.3 ms pulse. Do not say “tested,” “measured,” or “qualified.”
+At the rated 3U operating point, the model predicts 16.029 m/s and 10.07 g. Gross electrical draw is 2,782 J, of which the payload receives about 514 J as kinetic energy. Only 47 J is recovered after release within the available 39 mm zone; 1,162 J of sled energy goes to the brake. Net electrical-to-payload efficiency is 18.8%. Peak current is 320 A over a 162.3 ms pulse. P117 independently checks simple mass, work and kinetic-energy identities but leaves **124.488 J of gross draw unitemized**. Do not call the energy loss budget closed, or say “tested,” “measured,” or “qualified.”
 
 ## 14. Results — command precision
 

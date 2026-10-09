@@ -4,7 +4,9 @@ The thesis claim is narrow: **a fixed Gen5 system-level design was computational
 
 | Examiner question | Answer to present | Inspect here |
 |:--|:--|:--|
-| What exactly was designed? | A 1.5 m electromagnetic guide, 1.3 m powered stroke, reusable sled, energy store, arrest system and conceptual twelve-3U magazine. | [System manuscript](source/paper.tex), [Gen5 CAD](cad/step/gen5/) |
+| What exactly was designed? | A 1.5 m release station on 1.8 m structural longerons, 1.3 m powered stroke, reusable sled, energy store, arrest system and conceptual twelve-3U magazine. | [System manuscript](source/paper.tex), [Gen5 CAD](cad/step/gen5/) |
+| Does the native assembly fit? | The as-drawn side-fed reference does not: 11 mm shortfall and 32,915 mm³ track/cassette clash per side. | [FreeCAD document](cad/native/Gen5_Review.FCStd), [P116](validation/P116_gen5_assembly_packaging.md) |
+| Is the gross shot energy fully accounted? | No. Independent mass, kinetic-energy, work and recovery identities pass, but 124.488 J of gross draw is unitemized. | [P117](validation/P117_rated_energy_mass_audit.md), [audit JSON](analysis/results/rated_energy_mass_audit.json) |
 | Which values are predictions? | 16.029 m/s, 10.07 g, 2.78 kJ, 0.0274 m/s simulated 3σ and orbit outputs. None is a VOLLEY measurement. | [Baseline](appendix/BASELINE.md), [result JSON](analysis/results/), [provenance](appendix/PROVENANCE.md) |
 | Which checks are independent? | Named field, circuit, structure and orbital comparisons; each checks only its stated model aspect. Other outputs remain single-sourced. | [Validation register](validation/README.md), [provenance](appendix/PROVENANCE.md) |
 | Does it meet the economic objective? | **No.** 126.6 kg dry / 12 = 10.55 kg per satellite, above the approximately 2 kg/satellite criterion; it is also 1.758× a roughly 6 kg/3U canister against a ±15% parity band. | [Mass JSON](analysis/results/mass_properties.json), [payload family](analysis/results/payload_family.json), [manuscript comparison](source/paper.tex) |
@@ -26,4 +28,4 @@ The design configuration, analysis chain, captured results, negative mass decisi
 
 The 23-slide deck is a concise presentation of the result. The manuscript and local analysis files carry the deeper evidence. A university-specific final report template was not provided; formatting compliance must be checked when the institution supplies one.
 
-**CAD/mass provenance:** the 9.445 kg sled input was measured from historical Gen3 CAD solid volumes and checked with the A4 chassis idealization. The current Gen5 STEP package is a geometry model. The 126.6 kg rollup includes assumed component masses and is not a mass extraction from a complete installed Gen5 assembly.
+**CAD/mass provenance:** the 9.445 kg sled input was computed from historical Gen3 CAD solid volumes and checked with the A4 chassis idealization. The current Gen5 STEP and native FreeCAD packages are geometry models, including a recorded side-fed interference. The 126.6 kg rollup includes assumed component masses and is not a mass extraction from a complete installed Gen5 assembly.
