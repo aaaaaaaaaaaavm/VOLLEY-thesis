@@ -10,6 +10,8 @@ This directory is the review pack for the computational Gen5 study. It follows t
 
 ## Bring to the review
 
+**Start with [How to present the old numbers and known errors](READ_THIS_FIRST.md)** and give the panel the [one-page evidence handout](PANEL_HANDOUT.pdf). The [15-minute two-speaker run sheet](TOMORROW_RUN_SHEET.pdf) assigns the handoff, timing and fallback route. The updated deck places the historical shot beside the adverse finite-force result and makes slide 20 a finite-force-to-mission computational demonstration. An offline presentation and core-evidence ZIP is provided as `TOMORROW_PRESENTATION_PACK.zip`; the complete reproducible source remains in this repository.
+
 | Item | Present/print | Editable source |
 |:--|:--|:--|
 | Main presentation, 26 slides | [PPTX](VOLLEY_Final_Review_2026-10-10.pptx) · [PDF](VOLLEY_Final_Review_2026-10-10.pdf) | [Build script](build_presentation.py) |

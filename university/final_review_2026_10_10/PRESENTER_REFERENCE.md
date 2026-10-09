@@ -121,7 +121,7 @@ The widened 570 mm enclosure clears twelve scripted 3U-envelope routes in exact-
 
 ## 20. Results — simulation demonstration
 
-Walk through four transparent steps: choose the modelled 3U case; show the shot figure and operating-point table; independently integrate its release state for two orbits; then inspect the rated-orbit plot, mass comparison and FreeCAD section. The panel can inspect the scripts, FreeCAD document and reports in this repository. If a script cannot run during review, the slide and handbook reproduce the model chain. Call this a **computational demonstration**.
+Walk through the revised evidence chain on the slide: the finite-position force curve challenges the historical constant-force shot, then the common-input mission screen compares the assumed finite-force ideal upper speed with springs and the historical model. The accepted twelve-shot prefixes are limited and no case closes. The panel can inspect P118, the matched-mission result JSON, scripts, FreeCAD documents and reports in this repository. If a script cannot run during review, the slide and handbook reproduce the captured outputs. Call this a **computational demonstration**, never a motor test.
 
 ## 21. Results — matched reference mission
 

@@ -148,7 +148,7 @@ txt(s, "Department of Mechanical Engineering", 0.7, 0.22, 11.93, 0.37, 22, True,
 txt(s, "B.Tech Project Presentation on", 0.7, 0.66, 11.93, 0.37, 19, True, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "VOLLEY: Controlled CubeSat Deployment", 0.7, 1.15, 11.93, 0.52, 29, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "from a Hosted Orbital Platform", 0.7, 1.72, 11.93, 0.5, 27, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
-txt(s, "Completed Gen5 system-level computational evaluation", 1.2, 2.19, 10.93, 0.36, 17, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
+txt(s, "Gen5 computational feasibility review", 1.2, 2.19, 10.93, 0.36, 17, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 image_fit(s, LOGO, 5.77, 2.6, 1.8, 1.5)
 txt(s, "Presented By", 2.4, 4.3, 8.5, 0.36, 17, False, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "Adityavardhan Mishra  ·  Pratham Chawla", 1.55, 4.67, 10.25, 0.44, 20, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
@@ -200,15 +200,15 @@ card(s, 6.8, 3.47, 5.72, 2.35, "Boundary", "Electromagnetic CubeSat deployment e
 s = base("Objectives", "The analytical research objectives have outcomes",
          "Thesis manuscript, BASELINE.md and PROVENANCE.md; presentation synthesis")
 table(s, ["Research objective", "Final thesis outcome"], [
-    ("Design a commandable 3U system", "Gen5 CAD and complete subsystem architecture documented"),
-    ("Calculate shot and control performance", "Rated shot, power and dispersion models completed"),
-    ("Evaluate orbital utility", "Predicted energy and lifetime benefit for stated cases"),
+    ("Design a commandable 3U system", "Reference CAD and subsystem concepts documented; feed remains open"),
+    ("Calculate shot and control performance", "Historical model completed; finite force screen challenges its rating"),
+    ("Evaluate orbital utility", "Conditional orbit results; current lifetime not independently closed"),
     ("Count full installed burden", "Mass rollup completed; 3U parity criterion failed"),
     ("Test credibility of key claims", "Numerical cross-checks and limits recorded"),
 ], [5.05, 7.2], row_h=0.82, font=16)
 
 # 7 Methodology pipeline
-s = base("Research methodology", "A completed analysis chain from mission to decision",
+s = base("Research methodology", "The analysis chain from mission to decision",
          "Thesis manuscript, Models and Verification; validation register")
 steps = ["Mission &\npayload needs", "Architecture\ntrade", "CAD & mass\nmodel", "Shot, power &\norbit models", "Numerical\ncross-checks", "Sensitivity &\nacceptance bands"]
 for i, step in enumerate(steps):
@@ -222,10 +222,10 @@ txt(s, "Models were challenged and revised; hardware performance remains outside
     1.8, 4.92, 9.7, 0.62, 23, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 8 Methodology checks
-s = base("Research methodology", "Numerical checks strengthened the final baseline",
+s = base("Research methodology", "Numerical checks changed the review baseline",
          "VOLLEY-thesis/appendix/PROVENANCE.md; validation run sheets")
 table(s, ["Question", "Method / cross-check", "Evidence limit"], [
-    ("Field and thrust", "Analytic winding; magpylib; FEM", "No measured thrust constant"),
+    ("Field and thrust", "Analytic field; field-point FEM; finite force screen", "No independent integrated-thrust FEM or measurement"),
     ("Shot and power", "Dynamics; Monte Carlo; ngspice", "Assumed components and interfaces"),
     ("Structure and flow", "CAD; CalculiX; OpenFOAM", "No payload qualification"),
     ("Orbital change", "Orbit model; Cowell / GMAT cases", "Lifetime depends on atmosphere"),
@@ -250,7 +250,7 @@ for i, (date, head, body) in enumerate(milestones):
 txt(s, "* Approximate historical milestone; not a documented semester deadline.", 0.9, 6.55, 10.9, 0.3, 11, False, MID)
 
 # 10 Timeline of evidence corrections
-s = base("Timeline", "2026 findings were incorporated in the final baseline",
+s = base("Timeline", "2026 findings changed the review baseline",
          "HISTORY.md; PROVENANCE.md; thesis manuscript, Limitations")
 stages = [
     ("Jul", "CAD-derived sled mass replaced an optimistic parametric estimate"),
@@ -269,7 +269,7 @@ for i, (tag, body) in enumerate(stages):
 # 11 Work progress
 s = base("Work progress", "The current review package is assembled and traceable",
          "Thesis README; BASELINE.md; PROVENANCE.md; validation register")
-card(s, 0.7, 1.87, 3.83, 3.88, "Design delivered", "Gen5 CAD, magazine and release architecture, subsystem models and system mass rollup.", TEAL, 22, 19)
+card(s, 0.7, 1.87, 3.83, 3.88, "Design documented", "Gen5 reference CAD, magazine and release concepts, subsystem models and system mass rollup.", TEAL, 22, 19)
 card(s, 4.74, 1.87, 3.83, 3.88, "Analysis delivered", "Shot, control, circuit, structure, thermal, orbit and alternative-case results.", TEAL, 22, 19)
 card(s, 8.78, 1.87, 3.83, 3.88, "Evidence delivered", "Manuscript, figures, scripts, numerical checks, provenance and defect register.", TEAL, 22, 19)
 txt(s, "Scope: fixed computational study with failed design gates; no physical qualification claim.", 0.85, 6.04, 11.7, 0.48, 18, True, NAVY, align=PP_ALIGN.CENTER)
@@ -278,7 +278,7 @@ txt(s, "Scope: fixed computational study with failed design gates; no physical q
 s = base("Results", "Gen5: fixed reference geometry, feeder fit still open",
          "Thesis manuscript, System Architecture; CAD render", "GEN5 MODEL STUDY")
 image_fit(s, ROOT / "cad" / "renders" / "gen5" / "exploded.png", 0.5, 1.7, 7.0, 4.9)
-bullets(s, ["1.5 m linear-motor track and double-sided Halbach arrays",
+bullets(s, ["1.3 m powered stroke; 1.5 m release station",
             "Reusable 9.45 kg magnet sled",
             "Two cassettes; twelve 3U satellites",
             "FreeCAD STEP assembly: side-fed placement clashes"], 7.7, 2.0, 4.85, 4.3, 19, 17)
@@ -354,29 +354,29 @@ txt(s, "Separate R1 candidate; no change to evaluated Gen5 shot, mass or host-fi
     0.8, 6.62, 11.8, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 18 Demo
-s = base("Results", "Computational demonstration: from shot to orbit",
-         "Thesis analysis/results; BASELINE.md; manuscript Astrodynamic Utility", "SIMULATION DEMONSTRATION")
+s = base("Results", "Computational demonstration: from force to mission decision",
+         "P118 finite-force run; matched-mission reference; thesis analysis/results", "SIMULATION DEMONSTRATION")
 box(s, 0.62, 1.78, 5.72, 4.25, LIGHT, None, True)
 box(s, 6.97, 1.78, 5.72, 4.25, LIGHT, None, True)
-txt(s, "1. Simulate a 3U shot → 16.0 m/s", 0.84, 1.94, 5.26, 0.47, 19, True, NAVY)
-txt(s, "2. Model the orbital response", 7.18, 1.94, 5.21, 0.47, 19, True, NAVY)
-image_fit(s, FIG / "F01_shot.png", 0.78, 2.5, 5.42, 3.2)
-image_fit(s, FIG / "rated_orbit_crosscheck.png", 7.14, 2.5, 5.4, 3.2)
+txt(s, "1. Finite-force geometry screen", 0.84, 1.94, 5.26, 0.47, 19, True, NAVY)
+txt(s, "2. Matched mission screen", 7.18, 1.94, 5.21, 0.47, 19, True, NAVY)
+image_fit(s, FIG / "gen5_finite_force_map.png", 0.78, 2.5, 5.42, 3.2)
+image_fit(s, FIG / "matched_mission_reference.png", 7.14, 2.5, 5.4, 3.2)
 txt(s, "→", 6.39, 3.65, 0.5, 0.55, 28, True, TEAL, align=PP_ALIGN.CENTER)
-txt(s, "Compare predicted orbital change and full installed mass with the spring baseline. Simulation, not physical demonstration.",
+txt(s, "P118 challenges the shot; compare finite-force, installed mass and matched mission before any performance claim.",
     0.86, 6.25, 11.62, 0.62, 17, True, NAVY, align=PP_ALIGN.CENTER)
 
 # Matched mission reference
 s = base("Results", "Matched reference mission finds no twelve-shot closure",
          "Common-input spring/Gen5 study; 100 N host, 450 km, 12 × 4 kg payloads", "BOUNDED MISSION SCREEN")
 image_fit(s, FIG / "matched_mission_reference.png", 0.55, 1.7, 7.65, 4.9)
-card(s, 8.42, 1.83, 4.1, 1.94, "2.69 vs 0.83 kg", "Ideal host propellant for one matched inertial target: spring versus finite Gen5.", TEAL, 21, 15)
+card(s, 8.42, 1.83, 4.1, 1.94, "2.69 vs 0.83 kg", "Ideal one-event host propellant: spring versus Gen5's ideal finite-force upper screen.", TEAL, 21, 15)
 card(s, 8.42, 4.0, 4.1, 1.94, "4 / 1 / 1", "Accepted twelve-shot prefixes: spring, finite Gen5, historical Gen5.", RED, 24, 15)
 txt(s, "Assumed host and devices; optimizer result is not an infeasibility proof or product advantage.",
     0.8, 6.61, 11.8, 0.35, 14, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 19 Conclusion
-s = base("Conclusion", "The research question has a completed answer",
+s = base("Conclusion", "This Gen5 configuration does not pass selection",
          "Thesis manuscript, Conclusion; BASELINE.md; PROVENANCE.md")
 bullets(s, ["Historical model reports 16.0 m/s; a finite force screen challenges that performance claim.",
             "The modeled system is 76% heavier per 3U customer and the evaluated side-fed CAD clashes.",
