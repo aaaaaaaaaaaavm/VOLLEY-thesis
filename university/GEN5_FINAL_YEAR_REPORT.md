@@ -12,7 +12,8 @@ colorlinks: true
 linkcolor: teal
 toc: true
 toc-depth: 1
-titlepage: true
+classoption: titlepage
+mainfont: DejaVu Sans
 ---
 
 **Guide:** Vikas Gulia<br>

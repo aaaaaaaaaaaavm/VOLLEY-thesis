@@ -23,6 +23,8 @@ This repository is the **standalone academic record** for VOLLEY Gen5. It holds 
 
 The presentation pack credits **Adityavardhan Mishra and Pratham Chawla**, with guide **Vikas Gulia**. The existing technical manuscript names Adityavardhan Mishra; the review pack does not retroactively change its authorship. [Pack instructions and checksums](university/final_review_2026_10_10/README.md).
 
+To rebuild the chaptered report from this repository, run `pandoc university/GEN5_FINAL_YEAR_REPORT.md -o university/GEN5_FINAL_YEAR_REPORT.pdf --pdf-engine=xelatex --resource-path=university`. Its source includes the page format and font settings. The college supplied a final-review rubric and example slides, but no mandatory report template; the PDF is an academic review draft awaiting that format and final authorship confirmation.
+
 **Market context for the viva:** [audited customer and spacecraft fit](MARKET_AND_CUSTOMER_FIT.md). It checks the relevant Drive market report and independent business-case review against primary industry sources and the Gen5 result. Candidate buyers and satellite classes are hypotheses, not endorsed customers or qualified payloads.
 
 ## The result to defend
