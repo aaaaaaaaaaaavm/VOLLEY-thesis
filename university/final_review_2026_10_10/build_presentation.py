@@ -267,21 +267,21 @@ for i, (tag, body) in enumerate(stages):
     txt(s, body, 2.65, y + 0.1, 9.18, 0.49, 19, False, INK)
 
 # 11 Work progress
-s = base("Work progress", "The thesis deliverables are complete and traceable",
+s = base("Work progress", "The current review package is assembled and traceable",
          "Thesis README; BASELINE.md; PROVENANCE.md; validation register")
 card(s, 0.7, 1.87, 3.83, 3.88, "Design delivered", "Gen5 CAD, magazine and release architecture, subsystem models and system mass rollup.", TEAL, 22, 19)
 card(s, 4.74, 1.87, 3.83, 3.88, "Analysis delivered", "Shot, control, circuit, structure, thermal, orbit and alternative-case results.", TEAL, 22, 19)
 card(s, 8.78, 1.87, 3.83, 3.88, "Evidence delivered", "Manuscript, figures, scripts, numerical checks, provenance and defect register.", TEAL, 22, 19)
-txt(s, "Scope: completed computational thesis; physical qualification belongs to a later development phase.", 0.85, 6.04, 11.7, 0.48, 18, True, NAVY, align=PP_ALIGN.CENTER)
+txt(s, "Scope: fixed computational study with failed design gates; no physical qualification claim.", 0.85, 6.04, 11.7, 0.48, 18, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 12 Architecture
-s = base("Results", "Gen5: complete computational system configuration",
+s = base("Results", "Gen5: fixed reference geometry, feeder fit still open",
          "Thesis manuscript, System Architecture; CAD render", "GEN5 MODEL STUDY")
 image_fit(s, ROOT / "cad" / "renders" / "gen5" / "exploded.png", 0.5, 1.7, 7.0, 4.9)
 bullets(s, ["1.5 m linear-motor track and double-sided Halbach arrays",
             "Reusable 9.45 kg magnet sled",
             "Two cassettes; twelve 3U satellites",
-            "Pulse bank, restraint and eddy-current arrest"], 7.7, 2.0, 4.85, 4.3, 19, 17)
+            "FreeCAD STEP assembly: side-fed placement clashes"], 7.7, 2.0, 4.85, 4.3, 19, 17)
 
 # 13 Shot
 s = base("Results", "Rated 3U shot: performance predicted by the model",
@@ -303,11 +303,11 @@ card(s, 8.54, 1.95, 3.95, 2.1, "0.0274 m/s", "3σ exit-velocity dispersion at a 
 card(s, 8.54, 4.32, 3.95, 2.0, "Evidence limit", "Monte Carlo under modelled sensing and plant tolerances; no measured dispersion.", AMBER, 21, 16)
 
 # 15 Orbit
-s = base("Results", "Commanded velocity can change orbital energy",
-         "Thesis manuscript, Astrodynamic Utility and Limitations; F04_life.png", "GEN5 MODEL PREDICTION")
-image_fit(s, FIG / "F04_life.png", 0.62, 1.8, 7.65, 4.67)
-card(s, 8.52, 1.94, 3.96, 1.95, "+28.8 km", "Predicted semi-major-axis rise for one maximum-velocity release.", TEAL, 27, 16)
-card(s, 8.52, 4.1, 3.96, 1.95, "1.60×", "Predicted lifetime at stated mean solar activity; atmosphere-dependent.", AMBER, 27, 16)
+s = base("Results", "Rated orbit geometry now has a separate numerical check",
+         "P115 Cartesian orbit check; manuscript Astrodynamic Utility", "GEN5 TWO-BODY CHECK")
+image_fit(s, FIG / "rated_orbit_crosscheck.png", 0.62, 1.8, 7.65, 4.67)
+card(s, 8.52, 1.94, 3.96, 1.95, "+28.8008 km", "Immediate two-body axis rise at the rated 16.029 m/s input.", TEAL, 25, 16)
+card(s, 8.52, 4.1, 3.96, 1.95, "1.60× open", "Lifetime remains atmosphere-dependent without a current rated independent rerun.", AMBER, 22, 16)
 txt(s, "Persistent phasing requires a relative state change; this result concerns orbital energy.", 0.8, 6.62, 11.75, 0.27, 13, True, NAVY)
 
 # 16 Mass
@@ -326,12 +326,12 @@ box(s, 0.85, 5.35, 11.75, 0.95, RGBColor(255, 240, 235), None, True)
 txt(s, "1.76× heavier per 3U payload; the preset 15% parity band fails.", 1.1, 5.6, 11.25, 0.48, 23, True, RED, align=PP_ALIGN.CENTER)
 
 # 17 Limitations
-s = base("Results", "The study ends with a clear engineering decision",
-         "Thesis OPEN_PROBLEMS.md; PROVENANCE.md; manuscript Limitations", "EVIDENCE BOUNDARY")
-card(s, 0.68, 1.83, 3.85, 3.5, "Supported", "Modelled commandable release and a conditional orbital-energy benefit.", TEAL, 20, 18)
-card(s, 4.74, 1.83, 3.85, 3.5, "Rejected for 3U", "The complete Gen5 configuration misses the preset spring-mass parity target.", RED, 20, 18)
-card(s, 8.8, 1.83, 3.85, 3.5, "Unverified", "Payload loads, magnetic cleanliness, cycle life and host interfaces require tests.", AMBER, 20, 18)
-txt(s, "Decision: retain the numerically checked model; do not select Gen5 as a 3U flight configuration.", 0.85, 5.84, 11.7, 0.72, 21, True, NAVY, align=PP_ALIGN.CENTER)
+s = base("Results", "The current side-fed assembly fails a geometric fit check",
+         "FreeCAD Gen5 Review.FCStd; P116 assembly packaging report", "CAD INTERFERENCE • OPEN")
+image_fit(s, FIG / "gen5_packaging_section.png", 0.64, 1.78, 6.35, 4.92)
+card(s, 7.22, 1.92, 5.15, 1.85, "11 mm short", "537 mm of track and cassette width inside 526 mm of usable enclosure width.", RED, 25, 15)
+card(s, 7.22, 4.02, 5.15, 1.85, "32,915 mm³", "Exact track/cassette clash on each side; CadQuery and FreeCAD agree.", AMBER, 23, 15)
+txt(s, "Reference placement only: a new feeder or enclosure would need a new configuration and rerun.", 0.88, 6.59, 11.55, 0.3, 14, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 18 Demo
 s = base("Results", "Computational demonstration: from shot to orbit",
@@ -341,7 +341,7 @@ box(s, 6.97, 1.78, 5.72, 4.25, LIGHT, None, True)
 txt(s, "1. Simulate a 3U shot → 16.0 m/s", 0.84, 1.94, 5.26, 0.47, 19, True, NAVY)
 txt(s, "2. Model the orbital response", 7.18, 1.94, 5.21, 0.47, 19, True, NAVY)
 image_fit(s, FIG / "F01_shot.png", 0.78, 2.5, 5.42, 3.2)
-image_fit(s, FIG / "F04_life.png", 7.14, 2.5, 5.4, 3.2)
+image_fit(s, FIG / "rated_orbit_crosscheck.png", 7.14, 2.5, 5.4, 3.2)
 txt(s, "→", 6.39, 3.65, 0.5, 0.55, 28, True, TEAL, align=PP_ALIGN.CENTER)
 txt(s, "Compare predicted orbital change and full installed mass with the spring baseline. Simulation, not physical demonstration.",
     0.86, 6.25, 11.62, 0.62, 17, True, NAVY, align=PP_ALIGN.CENTER)
@@ -350,7 +350,7 @@ txt(s, "Compare predicted orbital change and full installed mass with the spring
 s = base("Conclusion", "The research question has a completed answer",
          "Thesis manuscript, Conclusion; BASELINE.md; PROVENANCE.md")
 bullets(s, ["The Gen5 system-level model predicts 16.0 m/s 3U release and a conditional orbital benefit.",
-            "The complete modelled system is 76% heavier per 3U customer than the spring comparator.",
+            "The model is 76% heavier per 3U customer and the side-fed CAD reference also clashes.",
             "Independent numerical checks corrected the baseline and defined the limits of its claims.",
             "Conclusion: the analytical objective is complete; Gen5 does not pass the 3U selection criterion."],
         0.95, 1.9, 11.65, 4.8, 22, 21)

@@ -6,7 +6,7 @@
 
 This directory is the review pack for the computational Gen5 study. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
-**Presentation thesis:** the Gen5 system-level computational evaluation is complete. It predicts a conditional orbital benefit and finds that the modeled Gen5 mass rollup fails the preset 3U mass criterion. Slides 1–19 tell that finished research story. Slides 20–21 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product.
+**Presentation thesis:** the Gen5 system-level computational evaluation reports a conditional orbital benefit, a failed 3U mass criterion, and a failed side-fed CAD reference fit. Slides 1–19 present the research and its limitations. Slides 20–21 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product or final design freeze.
 
 ## Bring to the review
 
@@ -16,16 +16,16 @@ This directory is the review pack for the computational Gen5 study. It follows t
 | Panel handbook, detailed explanation and figures | [PDF](PANEL_HANDBOOK.pdf) | [Markdown](PANEL_HANDBOOK.md) · [DOCX](PANEL_HANDBOOK.docx) |
 | Presenter reference, slide notes and viva answers | [PDF](PRESENTER_REFERENCE.pdf) | [Markdown](PRESENTER_REFERENCE.md) · [DOCX](PRESENTER_REFERENCE.docx) |
 
-The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive slide to the manuscript, numerical result and/or project-plan source. The [Gen6 direction](GEN6_DIRECTION.md) records precisely what the forward-looking slides mean. The thesis's full technical detail remains in the [manuscript PDF](../../source/VOLLEY_IEEE_Conference.pdf) and [source](../../source/paper.tex), [`analysis/`](../../analysis/), [`validation/`](../../validation/), [`cad/`](../../cad/) and [`appendix/`](../../appendix/); these are the underlying record, rather than a claim that 23 slides reproduce every calculation.
+The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive slide to the manuscript, numerical result and/or project-plan source. The [Gen6 direction](GEN6_DIRECTION.md) records precisely what the forward-looking slides mean. The full technical detail remains in the [manuscript PDF](../../source/VOLLEY_IEEE_Conference.pdf), [computational report](../../reports/GEN5_COMPUTATIONAL_REVIEW.pdf), [FreeCAD review report](../../cad/GEN5_CAD_REVIEW.pdf), [`analysis/`](../../analysis/), [`validation/`](../../validation/), [`cad/`](../../cad/) and [`appendix/`](../../appendix/). The reports include simulation plots and software-generated CAD views; none represents a physical test.
 
 Slide 3 and the handbook introduce the [audited market and spacecraft-fit report](../../MARKET_AND_CUSTOMER_FIT.md). They identify candidate buyer jobs without claiming customer interviews, qualified spacecraft or product-market fit. The source-linked report corrects the Drive material before it enters the review narrative.
 
-**10 October correction:** the earlier review draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. The current deck, handbook, presenter notes and claim map require an actual relative-state change through release impulse, host maneuver or differential drag. Both PDF and PPTX above were rebuilt after this correction.
+**Review corrections:** an earlier draft said release timing alone could create persistent in-track phase. That was wrong for zero-relative-impulse releases from an unchanged co-orbital host. A separate rated two-body run now checks the immediate 28.800775 km axis change, but not the 1.60× atmospheric lifetime. A native FreeCAD assembly review identifies the 11 mm side-fed width shortfall. The current PPTX, PDF, handbook and presenter notes include these findings.
 
 ## Evidence language
 
 - The Gen5 research **analysis and decision record are complete** for the stated computational cases. Results are predictions; numerical cross-checks apply to named models and cases. No VOLLEY hardware has been built or physically tested.
-- The modelled Gen5 3U system fails its preset mass-parity criterion against a spring canister. This negative finding is included in the presentation and handbook.
+- The modelled Gen5 3U system fails its preset mass-parity criterion against a spring canister. Its stated side-fed reference assembly also fails a width and exact-solid interference check. Both negative findings are in the presentation and handbook.
 - Gen6 is an **open architecture trade**. Its approximately 1–2 m/s to 1 km/s span is an investigation envelope. No 1 km/s performance, mechanism selection, payload qualification, host compatibility or build/test release is claimed.
 - The historical thesis manuscript is authored under Adityavardhan Mishra's name. This review pack credits both named presenters; it does not retroactively change manuscript authorship.
 

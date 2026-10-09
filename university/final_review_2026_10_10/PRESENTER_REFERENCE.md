@@ -23,7 +23,7 @@ toc-depth: 1
 
 ## Rehearsed opening and close
 
-**Opening (about 35 seconds):** “Our thesis asks whether a hosted deployer can give each rideshare CubeSat a commanded release condition that improves its orbit enough to justify the whole machine. We completed the Gen5 system design and computational evaluation. At the rated 3U point it predicts a 16.0 m/s release and an orbit benefit, but complete mass accounting fails the preset comparison with spring canisters. We will show the method, the numerical checks, and the decision that follows.”
+**Opening (about 35 seconds):** “Our thesis asks whether a hosted deployer can give each rideshare CubeSat a commanded release condition that improves its orbit enough to justify the whole machine. We completed a Gen5 computational evaluation. At the rated 3U point it predicts a 16.0 m/s release and an orbit benefit. The mass comparison fails, and a native CAD review identifies an 11 mm packaging shortfall in our side-fed reference layout. We will show those checks and the engineering decision.”
 
 **Close (about 25 seconds):** “The research question now has an evidence-based answer. A commanded release has conditional orbital value in the model, but this Gen5 configuration is not competitive on the stated 3U mass criterion. That finding closes the Gen5 analytical study. Physical qualification and the Gen6 mechanism trade are future work.”
 
@@ -89,7 +89,7 @@ Show tangible completed deliverables: manuscript, CAD, system model, scripts, nu
 
 ## 12. Results — architecture
 
-Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled is driven along the 1.5 m track; the payload departs; the sled is arrested. The model adopts a 9.45 kg sled from historical Gen3 CAD solid volumes and A4 chassis analysis; the current Gen5 STEP set is a geometry package, not an independently mass-verified assembly. The large sled makes recovery, braking, power and mass central rather than ancillary details. No component in this image has been built for VOLLEY.
+Explain the chain in the CAD render: cassettes feed a 3U satellite; the reusable magnet sled is driven along the 1.5 m track; the payload departs; the sled is arrested. Eight STEP solids were imported into FreeCAD 1.0 and exported as a native 20-instance review assembly and STEP exchange files. The imported solids lack parametric feature history. This is an inspectable geometry study, not an independently mass-verified installed assembly. The mass model still adopts a 9.45 kg sled from historical Gen3 CAD and A4 chassis analysis. No component has been built for VOLLEY.
 
 ## 13. Results — rated shot
 
@@ -101,23 +101,23 @@ The closed-loop simulation produces a 0.0274 m/s ($3\sigma$) spread around a 15.
 
 ## 15. Results — orbit
 
-The model predicts a 28.8 km semi-major-axis rise and a 1.60× lifetime multiplier at mean solar activity for one maximum-velocity release. The exact multiplier is not universal. A prior invariance claim failed an independent propagator check, and the current 1.60 result has not been independently rerun at its precise updated operating point. A relative state produced by spring impulse, drag or a host maneuver can phase satellites; the larger energy change is the reason to consider a commanded release impulse.
+At the rated 16.029 m/s release point, an independent Cartesian two-body integration reproduces the immediate 28.800775 km semi-major-axis rise within the declared numerical band. This checks orbital mechanics for that state, not atmospheric lifetime. The model's 1.60× lifetime multiplier at mean solar activity remains unverified at this exact point; a prior invariance claim failed an independent propagator check. Spring impulse, differential drag or a host maneuver can create relative state and phase satellites; waiting alone cannot.
 
 ## 16. Results — mass
 
 This is the decisive negative result. Dry mass is 126.6 kg, loaded mass 174.6 kg. The twelve-3U configuration spends 10.55 kg of deployer per satellite, about 1.76 times the roughly 6 kg spring-canister comparison. The predeclared criterion was within 15%, so Gen5 fails. A modelled 50.04 kg enclosure replaced an 8 kg placeholder and exposed the penalty. Do not imply the full assembly is mass-competitive for 3U.
 
-## 17. Results — limits
+## 17. Results — CAD packaging check
 
-Give the three-part decision in order: (1) the system model supports a commandable release with conditional orbital-energy benefit, (2) the full 3U mass result fails the selection criterion, and (3) physical behavior remains unverified. Payload interface, shared reliability and host compatibility are future tests, not missing steps in the completed mass comparison. A numerical result at a declared boundary is narrower than physical evidence.
+Show the dimensioned section from the FreeCAD review assembly. Its 526 mm inner enclosure width cannot accommodate the 205 mm track and two 166 mm side cassettes: 537 mm total, an 11 mm shortfall before clearances. Both cassettes intersect the track by 32,915 mm³ in this exact placement. This fails the **side-fed reference layout**; it does not rule out every layout or determine a manufacturable tolerance stack. It is a real negative CAD check, not a rendering defect. P116 records the geometry and reproduction steps.
 
 ## 18. Results — simulation demonstration
 
-Walk through four transparent steps: choose the modelled 3U case; show the shot figure and operating-point table; feed its release state into the orbit model; compare predicted orbital change and installed mass with the spring benchmark. The panel can inspect the scripts and records in the project archive. If the computer cannot run a script during the review, the slide and handbook reproduce the same model chain. Call this a **computational demonstration**.
+Walk through four transparent steps: choose the modelled 3U case; show the shot figure and operating-point table; independently integrate its release state for two orbits; then inspect the rated-orbit plot, mass comparison and FreeCAD section. The panel can inspect the scripts, FreeCAD document and reports in this repository. If a script cannot run during review, the slide and handbook reproduce the model chain. Call this a **computational demonstration**.
 
 ## 19. Conclusion
 
-“We completed the Gen5 system-level computational evaluation. It predicts a useful orbital-energy change, but the complete configuration fails our preset 3U mass criterion. Numerical checks made that conclusion more credible and defined its limits. Gen5 is therefore a finished research result, not a selected 3U flight configuration.” End on this decision. Future work follows as a separate section.
+“We completed the Gen5 computational evaluation. It predicts an orbital-energy change, confirmed for the immediate two-body case. The modeled configuration fails our preset 3U mass criterion, and its side-fed reference geometry fails a CAD packaging check. Gen5 is a finished research result with recorded failures, not a selected flight configuration.” Future work follows separately.
 
 ## 20. Future work — Gen6
 

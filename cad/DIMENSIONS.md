@@ -117,7 +117,7 @@ Fusion document: `EMOCD_Sled`
 | `payload_com_offset_above_thrust_line` | 70 | mm |
 | `gap_shim_tolerance` | 0.05 | mm |
 
-- `provisional_note`: The 6 mm chassis is a first-pass stiffness-driven design (0.0115 mm deflection under 3.7 kN inter-array attraction -- superseded, A12 gives 2.69 kN, so the deflection is conservative -- against a +/-0.05 mm gap budget) with NO structural FEA behind it. Sled mass from this geometry contradicts the 4.86 kg assumed by mass_properties.py and drives exit velocity. Open problems P5/P8. ANSYS analysis A4 must close this before any number downstream is locked.
+- `provisional_note`: The 6 mm chassis was the original first-pass stiffness design. A4 subsequently ran CalculiX 2.21 on the Gen3 chassis and passed its stated deflection, stress and first-mode bands at the conservative 3.68 kN attraction case; A12 later revised that attraction to 2.69 kN. The adopted 9.445 kg sled is from Gen3 solid volumes and is carried into Gen5 analysis, not independently measured from a complete Gen5 installed assembly. A lighter ribbed chassis, moving-load response and payload interface remain open. See validation/A4_sled_structural.md and docs/GEN5_FREEZE_READINESS.md.
 
 Status: `PROVISIONAL_PENDING_FEA`
 
@@ -270,12 +270,12 @@ Fusion document: `EMOCD_Enclosure`
 | `bays_verified_clear_of_track` | True | mm |
 | `skin_material` | aluminium | |
 
-- `mass_note`: The enclosure, radiator, and packaged avionics have NO line items in mass_properties.py. The dry-mass rollup is incomplete until they are added. Open problem P10.
+- `mass_note`: A46 replaced the earlier P10 enclosure placeholder with separate modeled enclosure, frame, radiator, equipment-bay and bracket line items in mass_properties.py. These are estimates; installed host-specific mass and supplier-backed component masses remain unclosed.
 
 Status: `authoritative_geometry`
 
 
-## historical study drive
+## legacy study drive
 
 Fusion document: `Built by cad/build_legacy_study.py. ADR-032: the payload is accelerated directly by cold gas along a rail the host stage provides. There is no mover, no stator, no brake and no return stroke. ADR-034: the stroke is the host stage's whole usable acceleration length, and the charge pressure fell to hold the exit velocity while the peak acceleration halved.`
 
@@ -301,7 +301,7 @@ Fusion document: `Built by cad/build_legacy_study.py. ADR-032: the payload is ac
 | `piston_material` | aluminium 6061-T6, matched to the tube | |
 
 
-## historical study store
+## legacy study store
 
 Fusion document: `Built by cad/build_legacy_study.py.`
 
@@ -317,7 +317,7 @@ Fusion document: `Built by cad/build_legacy_study.py.`
 | `store_mass_kg` | 3.1216 | kg |
 
 
-## historical study seal
+## legacy study seal
 
 Fusion document: `Built by cad/build_legacy_study.py. ADR-036: the seal is SPECIFIED, not allowed. A41 declared a tolerable friction and every figure downstream descended from that ceiling; A61 asked instead what the loosest seal is that the design can survive, and the THERMAL case sets it -- the seal must survive its own friction heating before it must satisfy any control requirement.`
 
@@ -332,7 +332,7 @@ Fusion document: `Built by cad/build_legacy_study.py. ADR-036: the seal is SPECI
 | `seal_temperature_rise_limit_K` | 50.0 | K |
 
 
-## historical study trim
+## legacy study trim
 
 Fusion document: `Built by cad/build_legacy_study.py. ADR-033: a short stator at the muzzle end, energised after the gas has finished, correcting the velocity the gas actually produced. It never throws the payload.`
 
