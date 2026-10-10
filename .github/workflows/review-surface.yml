@@ -20,3 +20,5 @@ jobs:
           git checkout -q --detach "${{ github.sha }}"
       - name: Check current reader route and captured evidence
         run: python3 tools/check_review_surface.py
+      - name: Recompute P123 one-event mass screen
+        run: python3 analysis/gen5_one_event_mass_screen.py --check
