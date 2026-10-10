@@ -20,6 +20,10 @@ jobs:
           git checkout -q --detach "${{ github.sha }}"
       - name: Check current reader route and captured evidence
         run: python3 tools/check_review_surface.py
+      - name: Recompute P126 R1 tolerance screen
+        run: python3 cad/screen_feeder_r1_tolerance.py --check
+      - name: Recompute P125 voltage screen
+        run: python3 analysis/gen5_voltage_limited_screen.py --check
       - name: Recompute P123 one-event mass screen
         run: python3 analysis/gen5_one_event_mass_screen.py --check
       - name: Recompute necessary Gen5 architecture bounds
