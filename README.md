@@ -22,6 +22,8 @@ This repository is the **standalone academic record** for VOLLEY Gen5. For the 1
 
 > **New examiner requirements screen, P124:** [orbit and stroke calculations](validation/P124_precision_delivery_design_space.md) show how a declared 450 km orbital-state tolerance becomes an ideal tangential velocity margin. They also give about **39,220 g** for 1 km/s over Gen5's 1.3 m stroke with a 4 kg payload. This is a kinematic screen, not a motor rating or qualified load. The report, manuscript and slide 23 now include the result. [Code](analysis/precision_delivery_design_space.py) · [result](analysis/results/precision_delivery_design_space.json).
 
+The [P127 release/arrest bounds](validation/P127_gen5_release_arrest_bounds.md) find 731.8 J of sled kinetic energy at the **ideal** finite-force speed. Over the provisional 210 mm brake corridor, stopping it needs at least 37.6 g mean sled deceleration; the first-order host reaction and net recoil are also bounded. Eddy-current peak force, payload contact, host attitude and repeated-shot thermal behavior remain unsolved.
+
 > **P125 drive feasibility screen:** A quasi-steady, three-phase voltage/current model uses the finite Gen5 force map and the historical **unselected** winding and 96 V source. The reference surrogate reaches 12.448 m/s; halving the current limit gives 8.802 m/s and halving the initial source voltage gives 10.794 m/s. These are conditional model outputs, **not a rated release speed or selected drive**. [Method and limits](validation/P125_gen5_voltage_limited_screen.md) · [source](analysis/gen5_voltage_limited_screen.py) · [result](analysis/results/gen5_voltage_limited_screen.json).
 
 

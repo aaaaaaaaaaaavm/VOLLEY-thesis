@@ -20,6 +20,8 @@ jobs:
           git checkout -q --detach "${{ github.sha }}"
       - name: Check current reader route and captured evidence
         run: python3 tools/check_review_surface.py
+      - name: Recompute P127 release and arrest bounds
+        run: python3 analysis/gen5_release_arrest_bounds.py --check
       - name: Recompute P126 R1 tolerance screen
         run: python3 cad/screen_feeder_r1_tolerance.py --check
       - name: Recompute P125 voltage screen
