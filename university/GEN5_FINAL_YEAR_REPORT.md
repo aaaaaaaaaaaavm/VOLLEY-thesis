@@ -69,9 +69,15 @@ An independent **depth-resolved 3-D numerical surface-charge implementation** in
 
 A **conditional finite-force bank/trajectory rerun** retains the historical 96 V, 6 F, 12 mΩ source and assumed converter. With the full 1.3 m winding energized it computes **2.099 kJ gross capacitor draw** and 927 J copper heat; an illustrative 0.34 m active-copper branch gives 1.394 kJ gross and 243 J copper heat. Both report 12.448 m/s because the force curve is imposed at ideal phase; no voltage-limited switching law or selected winding/inverter exists. The old 2.782 kJ, brake and control outputs are not revised ratings. [P120](../validation/P120_gen5_finite_coupled_shot.md) gives the time history and energy ledger.
 
+The [P125 conditional voltage/current screen](../validation/P125_gen5_voltage_limited_screen.md) adds a source-power check to the finite force map. Under the old, **unselected** 12 mΩ bank and periodic winding values, the quasi-steady reference still gives 12.448 m/s, while halving the phase-current limit gives 8.802 m/s. Under the older distributor-data 116–185 mΩ **single-string** ESR bound, the source-power quadratic fails at 0.612 m and 0.160 m respectively, before release. Ideal two- or three-parallel-string branches complete numerically only by multiplying capacitance, cell count and source mass. None is a manufacturer-rated, thermally checked switching design; the model assumes instantaneous q-axis current. The 12.448 m/s result must therefore not be presented as a sourceable release rating.
+
 ![Finite-force speed and assumed bank energy histories.](<../figures/gen5_finite_coupled_shot.png>){width=96%}
 
 An **unselected R1 geometry candidate** uses a 570 mm wide enclosure. Its native FreeCAD document and STEP parts pass exact-solid static fit and twelve scripted 3U envelope transfer paths with conservative fixed-part swept boxes. It lacks the actual lift/carriage, launch restraint, actuation, tolerances, fault recovery and revised installed mass. Its increased envelope has no approved host. This candidate does not alter the evaluated Gen5 configuration or repair the performance discrepancy. See [R1 CAD record](../cad/FEEDER_CANDIDATE_R1.md).
+
+The separate [P126 lateral tolerance screen](../cad/FEEDER_R1_TOLERANCE_SCREEN.md) uses R1's CAD-derived 5 mm nominal cassette-to-track gap. With declared 1 mm track placement, 1 mm cassette placement, 0.5 mm combined form and 0.2° angular error across a 340.5 mm payload proxy, worst-case residual is 1.31 mm; a 0.5° band overlaps by 0.47 mm. These are illustrative assumptions, not measured process capability or released GD&T.
+
+[P127 conservation bounds](../validation/P127_gen5_release_arrest_bounds.md) put 731.8 J of kinetic energy into the modeled 9.445 kg sled at the **ideal** finite-force speed. Across the provisional CAD brake's 210 mm length, stopping requires at least 37.6 g mean sled deceleration. Eddy-current peak force, repeated-shot heat, payload contact and host attitude remain unsolved; the mean bound is not a brake acceptance test.
 
 ![R1 candidate section; geometry drawing, not a qualified mechanism.](<../figures/gen5_feeder_candidate_r1.png>){width=90%}
 

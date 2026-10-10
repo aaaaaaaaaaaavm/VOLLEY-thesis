@@ -357,13 +357,13 @@ s = base("Results", "R1 clears a scripted path; the feeder is not designed",
          "FreeCAD R1 STEP candidate; exact-solid route ledger", "UNSELECTED GEOMETRY")
 image_fit(s, STEP_VIEWS / "r1_candidate_open.jpg", 0.55, 1.75, 7.4, 4.9)
 card(s, 8.15, 1.88, 4.37, 1.94, "12 / 12", "Scripted 3U envelope routes and conservative fixed-part swept boxes clear.", TEAL, 25, 15)
-card(s, 8.15, 4.03, 4.37, 1.94, "570 mm", "Wider enclosure; lift actuator, retention, tolerance and new mass budget open.", AMBER, 25, 15)
+card(s, 8.15, 4.03, 4.37, 1.94, "570 mm", "Wider enclosure; 0.5° assumed alignment stack fails its 5 mm gap; lift and retention still open.", AMBER, 25, 15)
 txt(s, "Separate R1 candidate; no change to evaluated Gen5 shot, mass or host-fit claims.",
     0.8, 6.62, 11.8, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 18 Demo
 s = base("Results", "Computational demonstration: from force to mission decision",
-         "P118–P120 finite-force/assumed bank; matched-mission reference", "SIMULATION DEMONSTRATION")
+         "P118–P127 finite force, source, tolerance and arrest; matched reference", "SIMULATION DEMONSTRATION")
 box(s, 0.62, 1.78, 5.72, 4.25, LIGHT, None, True)
 box(s, 6.97, 1.78, 5.72, 4.25, LIGHT, None, True)
 txt(s, "1. Finite-force geometry screen", 0.84, 1.94, 5.26, 0.47, 19, True, NAVY)
@@ -371,7 +371,7 @@ txt(s, "2. Matched mission screen", 7.18, 1.94, 5.21, 0.47, 19, True, NAVY)
 image_fit(s, FIG / "gen5_finite_force_fem2d.png", 0.78, 2.5, 5.42, 3.2)
 image_fit(s, FIG / "matched_mission_reference.png", 7.14, 2.5, 5.4, 3.2)
 txt(s, "→", 6.39, 3.65, 0.5, 0.55, 28, True, TEAL, align=PP_ALIGN.CENTER)
-txt(s, "P119 checks force; P120 reruns bank assumptions; no twelve-shot mission case closes.",
+txt(s, "P125: single-string source power fails at the older commercial ESR bound; no twelve-shot case closes.",
     0.86, 6.25, 11.62, 0.62, 17, True, NAVY, align=PP_ALIGN.CENTER)
 
 # Matched mission reference
@@ -386,9 +386,9 @@ txt(s, "Assumed host and devices; optimizer result is not an infeasibility proof
 # 19 Conclusion
 s = base("Conclusion", "This Gen5 configuration does not pass selection",
          "Thesis conclusion; P116; matched mission; STEP view provenance")
-bullets(s, ["Historical model reports 16.0 m/s; a finite force screen challenges that performance claim.",
+bullets(s, ["Historical 16.0 m/s is challenged; ideal 12.448 m/s lacks a sourceable single-string bank.",
             "The modeled system is 76% heavier per 3U customer and the evaluated side-fed CAD clashes.",
-            "R1 geometry clears a scripted path, but has no lift or launch retention design.",
+            "R1 paths clear nominally; an assumed 0.5° tolerance stack consumes the side gap.",
             "No matched twelve-shot reference closes; Gen5 is a documented negative design study."],
         0.75, 1.82, 6.2, 4.85, 19, 18)
 image_fit(s, STEP_VIEWS / "gen5_reference_open.jpg", 7.1, 1.9, 5.6, 3.9)

@@ -15,7 +15,7 @@ fontsize: 9pt
 | Finding | Result and evidence boundary |
 |:--|:--|
 | Release speed | 16.029 m/s belongs to a historical periodic-force model. P118's finite 3-D **analytic** force screen gives 12.448 m/s under ideal phase and omitted circuit losses. P121 independently reproduces 1.042 kJ ideal full-depth work under shared inputs; a P122 illustrative 14 mm gap gives 0.907 kJ. No selected rating exists. |
-| Electrical chain | Historical gross draw is 2,782 J; its 124.488 J compact-output remainder resolves to assumed converter, auxiliary and numerical terms. A conditional finite-force full-winding bank rerun gives 2,099 J gross, without selected hardware. |
+| Electrical chain | Historical gross draw is 2,782 J; its 124.488 J compact-output remainder resolves to assumed converter, auxiliary and numerical terms. A conditional finite-force full-winding bank rerun gives 2,099 J gross at an unselected 12 mΩ source. P125 finds that an older 116–185 mΩ single-string ESR band fails source power before release; ideal parallel strings add cells and mass. No selected drive rating exists. |
 | Installed mass | Modeled dry mass is 126.6 kg, or 10.55 kg per 3U customer, against an approximate 6 kg spring-canister comparator. The predeclared 15% parity band fails. |
 | CAD fit | The reference side-fed layout needs 537 mm within 526 mm clear width and overlaps the track by 32,915 mm³ per cassette. The separate widened R1 geometry clears twelve scripted routes; it lacks a selected feeder, retention and revised mass. |
 | Orbital value | +28.8008 km immediate two-body axis rise is checked **for an assumed historical 16.029 m/s release**, not as achieved Gen5 behavior. The 1.60× atmosphere-dependent lifetime figure remains open. |
