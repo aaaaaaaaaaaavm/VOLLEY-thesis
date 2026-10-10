@@ -59,6 +59,14 @@ A **matched reference comparison** uses twelve identical 4 kg payloads at 450 km
 
 ![Matched reference results; assumed host and device classes.](<../../figures/matched_mission_reference.png>){width=96%}
 
+## New installed-burden and precision-delivery screens
+
+[P123](../../validation/P123_gen5_one_event_mass_screen.md) resizes initial fuel to one ideal release plus an equal 2 kg reserve: despite saving 1.866 kg of host propellant in the fixed-fuel event, Gen5's device plus resized fuel is **52.717 kg heavier** than the spring reference. The mass penalty does not by itself price a tailored delivery service, but it sets a serious burden for a buyer-backed mission to justify.
+
+[P124](../../validation/P124_precision_delivery_design_space.md) converts an explicitly assumed 450 km orbit target into ideal tangential increment and load requirements. A 20 km immediate axis rise takes about 11.149 m/s; a ±0.1 km axis tolerance leaves about 0.0555 m/s for the entire tangential-error allocation on its smaller side. A real delivery accuracy budget must include host state, vector, timing, propagation and tracking. At 1 km/s over Gen5's 1.3 m stroke, an ordinary 4 kg 3U would face about **39,220 g** ideal mean acceleration and 2 MJ payload kinetic energy. The first Gen6 prototype should be scoped from a named payload and mission, with the 1 km/s objective held as separate research. None of these calculations measures VOLLEY precision.
+
+![Ideal stroke/load requirements, not a measured VOLLEY command envelope.](<../../figures/precision_delivery_design_space.png>){width=90%}
+
 # 1. Introduction
 
 ## The deployment problem
@@ -198,7 +206,7 @@ The side-fed reference assembly has **526 mm** clear enclosure width. Its **205 
 
 ## Decision and evidence boundary
 
-The analytical result has four parts. The model supports a commandable release and conditional orbital-energy benefit; the full-system 3U mass criterion fails; the stated side-fed layout fails its CAD width check; and physical behavior remains unverified. The latter includes release-cycle reliability, shock and arrest loads transmitted to stowed satellites, field exposure near a customer payload, host attitude/control authority and provider approval. The known-problems register ranks several as potentially design-fatal. These findings limit product claims and define the research conclusion.
+The analytical result has four parts. The historical model represents a proposed commandable release and a conditional orbital-energy benefit, but its speed is challenged by finite geometry; the full-system 3U mass criterion fails; the stated side-fed layout fails its CAD width check; and physical behavior remains unverified. The latter includes release-cycle reliability, shock and arrest loads transmitted to stowed satellites, field exposure near a customer payload, host attitude/control authority and provider approval. The known-problems register ranks several as potentially design-fatal. These findings limit product claims and define the research conclusion.
 
 # 9. Conclusion
 

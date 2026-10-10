@@ -125,7 +125,7 @@ Walk through the revised evidence chain on the slide: P118's finite-position for
 
 ## 21. Results — matched reference mission
 
-The comparison fixes one payload, host, start orbit and target. With assumed device masses, spring release needs 2.693 kg ideal host propellant for one matched target; finite Gen5 needs 0.827 kg. The common-input twelve-shot optimizer finds accepted prefixes 4/12 and 1/12 respectively; neither closes. The optimizer result and component masses are scenario assumptions, not a customer benefit or a proof of impossibility.
+The comparison fixes one payload, host, start orbit and target. With assumed device masses, spring release needs 2.693 kg ideal host propellant for one matched target; finite Gen5 needs 0.827 kg. **The P123 card now adds the installed comparison:** after resizing fuel for only that event and equal reserve, Gen5 device plus fuel is still 52.717 kg heavier. The common-input twelve-shot optimizer finds accepted prefixes 4/12 and 1/12 respectively; neither closes. The optimizer result and component masses are scenario assumptions, not a customer benefit or a proof of impossibility.
 
 ## 22. Conclusion
 
@@ -133,7 +133,7 @@ The comparison fixes one payload, host, start orbit and target. With assumed dev
 
 ## 23. Future work — Gen6
 
-Gen6 retains the mission and reopens hardware selection. One reusable path must sequentially accept different supported payload classes. The research envelope is about 1–2 m/s through 1 km/s. The high end is a study target, not a validated speed. Electromagnetic drive is interesting but not selected; compare it with mechanical, stored energy, gas/fluid, hybrid, BOLLEY and conventional paths using the same mission and installed-burden accounting.
+Gen6 retains the mission and reopens hardware selection. This slide now shows P124's **ideal stroke/load calculation**, not a motor test. Over Gen5's 1.3 m stroke, an ordinary 4 kg 3U would see about 39,220 g and carry 2 MJ of payload kinetic energy at 1 km/s; that high-end research objective cannot be the first prototype specification. Start with one delivered orbital state, tolerance, host and payload load limit, then compare mechanism options and choose a measurable lower-speed first article. No achieved command range is asserted.
 
 ## 24. Future work — test article
 

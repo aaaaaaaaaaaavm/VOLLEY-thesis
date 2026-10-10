@@ -378,7 +378,7 @@ txt(s, "P119 checks force; P120 reruns bank assumptions; no twelve-shot mission 
 s = base("Results", "Matched reference mission finds no twelve-shot closure",
          "Common-input spring/Gen5 study; 100 N host, 450 km, 12 × 4 kg payloads", "BOUNDED MISSION SCREEN")
 image_fit(s, FIG / "matched_mission_reference.png", 0.55, 1.7, 7.65, 4.9)
-card(s, 8.42, 1.83, 4.1, 1.94, "2.69 vs 0.83 kg", "Ideal one-event host propellant: spring versus Gen5's ideal finite-force upper screen.", TEAL, 21, 15)
+card(s, 8.42, 1.83, 4.1, 1.94, "+52.7 kg", "One-event device plus resized fuel: Gen5 exceeds spring despite an ideal 1.87 kg fuel saving (P123).", RED, 21, 15)
 card(s, 8.42, 4.0, 4.1, 1.94, "4 / 1 / 1", "Accepted twelve-shot prefixes: spring, finite Gen5, historical Gen5.", RED, 24, 15)
 txt(s, "Assumed host and devices; optimizer result is not an infeasibility proof or product advantage.",
     0.8, 6.61, 11.8, 0.35, 14, True, NAVY, align=PP_ALIGN.CENTER)
@@ -397,15 +397,12 @@ txt(s, "STEP reference, enclosure hidden; fit fails. No physical test.",
 
 # 20 Future Gen6
 s = base("Future work", "Gen6 reopens the mechanism and installed-system trade",
-         "CURRENT PLAN AND STATUS — PLAN-R2, 29 Sep 2026", "GEN6 PLAN • NOT ACHIEVED")
-box(s, 0.8, 1.8, 11.7, 1.17, PALE, None, True)
-txt(s, "One shared path • sequential feed • commanded release for each CubeSat", 1.0, 2.1, 11.35, 0.55, 22, True, NAVY, align=PP_ALIGN.CENTER)
-bullets(s, ["Investigate approximately 1–2 m/s through 1 km/s across mission cases.",
-            "Compare electromagnetic, stored-energy, gas/fluid, hybrid, BOLLEY and conventional options.",
-            "Count feeder, retention, arrest, control, energy, thermal, host loads and shared faults."],
-        1.15, 3.3, 11.0, 2.45, 21, 19)
-txt(s, "1 km/s is a research target, not demonstrated speed or payload/provider compatibility.",
-    0.92, 6.28, 11.55, 0.52, 17, True, RED, align=PP_ALIGN.CENTER)
+         "P124 ideal stroke screen; Gen6 prototype specification remains open", "GEN6 PLAN • NOT ACHIEVED")
+image_fit(s, ROOT / "figures/precision_delivery_design_space.png", 0.48, 1.55, 7.3, 4.4)
+card(s, 8.06, 1.8, 4.54, 1.88, "Start with the mission", "Specify a delivered state, tolerance, host and payload load before choosing release speed.", TEAL, 18, 15)
+card(s, 8.06, 3.9, 4.54, 1.88, "Separate the regimes", "1 km/s over 1.3 m implies ~39,220 g for 4 kg. It is not a first ordinary-3U prototype target.", RED, 18, 15)
+txt(s, "Ideal kinematics only; no commanded range, payload approval or motor rating established.",
+    0.9, 6.35, 11.55, 0.43, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 21 Future test
 s = base("Future work", "Next milestone: one reviewable first-test configuration",

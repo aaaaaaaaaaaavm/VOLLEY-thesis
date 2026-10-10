@@ -78,6 +78,16 @@ def check_captured_results() -> None:
     energy = json.loads((ROOT / "analysis/results/rated_energy_mass_audit.json").read_text())
     mass = json.loads((ROOT / "analysis/results/mass_properties.json").read_text())
     mission = json.loads((ROOT / "analysis/results/matched_mission_reference.json").read_text())
+    design_space_module = runpy.run_path(str(ROOT / "analysis/precision_delivery_design_space.py"))
+    design_space = design_space_module["build"]()
+    require(design_space == json.loads((ROOT / "analysis/results/precision_delivery_design_space.json").read_text()),
+            "P124 orbit and load snapshot changed")
+    require(design_space_module["report"](design_space) ==
+            (ROOT / "validation/P124_precision_delivery_design_space.md").read_text(),
+            "P124 report changed")
+    require(design_space_module["figure"](design_space) ==
+            (ROOT / "figures/precision_delivery_design_space.svg").read_text(),
+            "P124 figure changed")
     derived = math.sqrt(2 * finite["ideal_finite_stator_work_J"] / finite["moving_mass_kg"])
     require(abs(derived - finite["ideal_finite_stator_exit_upper_m_s"]) < 0.001,
             "finite work/mass/speed identity changed")

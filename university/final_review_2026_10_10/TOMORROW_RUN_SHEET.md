@@ -33,9 +33,9 @@ The spoken route is **13:55**, leaving **1:05** for slide changes and interrupti
 | 6:35–8:25 | 13–14 | Pratham | 1:50 | Historical periodic model: 16.029 m/s. Finite analytic 3-D integral: 1.042 kJ ideal work. Independent 2-D FEM: 1.082 kJ in-plane; separate 3-D numerical surface-charge check: 1.042 kJ ideal. A 14 mm gap gives 0.907 kJ in an illustrative scenario. Conditional assumed-bank rerun: 2.099 kJ gross. None is an achieved or selected speed rating. |
 | 8:25–9:10 | 15–16 | Pratham | 0:45 | Precision and orbital lifetime are modeled. Immediate orbital geometry has a two-body cross-check; lifetime does not have the same independent check. |
 | 9:10–10:45 | 17–19 | Pratham | 1:35 | Decision slides: 126.6 kg dry / 10.55 kg per 3U fails the ~6 kg spring comparison; side-fed reference layout is 11 mm too narrow; R1 clears scripted routes but is an unselected candidate. |
-| 10:45–12:20 | 20–21 | Pratham | 1:35 | Demonstrate the computational chain on slide 20; one matched event needs modeled ideal host propellant of 2.693 kg spring / 0.827 kg finite Gen5, but no twelve-shot case closes. Hand back: “The system-level result is therefore a decision, not a performance claim.” |
+| 10:45–12:20 | 20–21 | Pratham | 1:35 | Demonstrate the computational chain on slide 20. The finite Gen5 case saves 1.866 kg ideal host propellant in one matched event, yet its device plus resized fuel is 52.717 kg heavier; no twelve-shot case closes. Hand back: “The system-level result is therefore a decision, not a performance claim.” |
 | 12:20–13:00 | 22 | Adityavardhan | 0:40 | State the three adverse findings and what the study actually establishes. |
-| 13:00–13:45 | 23–24 | Adityavardhan | 0:45 | Gen6 is a future mechanism trade; 1 km/s is only an upper research target. The next gate is a selected, instrumented test article. |
+| 13:00–13:45 | 23–24 | Adityavardhan | 0:45 | P124 shows why 1 km/s over 1.3 m implies about 39,220 g for 4 kg; it is separate research. The first Gen6 article needs mission-derived speed, payload load and measured accuracy. |
 | 13:45–13:55 | 25–26 | Adityavardhan | 0:10 | Point to sources and invite questions. |
 
 **Handoff rule:** either student must be able to explain slides 13–14, 17–19 and 21. Those are likely to attract technical questions.

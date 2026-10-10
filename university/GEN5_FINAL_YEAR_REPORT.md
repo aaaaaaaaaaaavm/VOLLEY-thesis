@@ -79,6 +79,16 @@ A **matched reference comparison** uses twelve identical 4 kg payloads at 450 km
 
 ![Matched reference results; assumed host and device classes.](<../figures/matched_mission_reference.png>){width=96%}
 
+## What a precision-delivery product would have to prove
+
+The economic case is a **delivered orbital state at a specified epoch and tolerance**, not a high release speed by itself. [P123's reproducible one-event mass screen](../validation/P123_gen5_one_event_mass_screen.md) finds that, with the same assumed host and 10 kg initial fuel, an ideal finite-force Gen5 release saves 1.866 kg of host propellant relative to a 2.5 m/s spring release. Its modeled hardware is 54.562 kg heavier. If fuel is resized to the one event plus the same 2 kg reserve, Gen5 still carries 52.717 kg more device plus fuel. Even a hypothetical zero-burn release needs a device at or below 74.659 kg to tie this specific spring reference. This is a serious architecture requirement, although it is not a full twelve-shot economic result or a price for a tailored orbital state.
+
+[P124's independent orbit and stroke screen](../validation/P124_precision_delivery_design_space.md) works backward from ideal orbit targets. At 450 km circular altitude, a 20 km immediate semi-major-axis rise requires about 11.149 m/s of *inertial tangential* increment. A ±0.1 km axis band leaves roughly 0.0555 m/s on its smaller side **if every other error is zero**. A flight requirement must divide the error among host state, release direction and speed, timing, orbit propagation and tracking, and must include along-track, plane and disposal constraints. The old 0.0274 m/s modeled release dispersion is unmeasured and cannot be applied to P118's challenged finite-stator case.
+
+Over the evaluated 1.3 m powered stroke, an ideal 10 g constant-acceleration limit allows 15.97 m/s. At 1 km/s, the same stroke implies roughly 39,220 g and 2 MJ of payload kinetic energy for a 4 kg 3U; a 10 g stroke would be about 5.10 km. This makes the 1 km/s objective unsuitable as the specification for a first ordinary-3U Gen6 prototype. The first test article should instead inherit a **named mission, payload load limit and host interface**, and select a lower-speed command range only after a matched service comparison. This preserves the longer-range research goal while making prototype tests technically meaningful.
+
+![Ideal acceleration required by speed on a 1.3 m stroke; not a VOLLEY motor rating.](<../figures/precision_delivery_design_space.png>){width=95%}
+
 # 1. Introduction
 
 ## The deployment problem
