@@ -10,6 +10,8 @@
 
 The **16.029 m/s** printed in older material is a *common inertial mission target* in this comparison, not a demonstrated Gen5 release speed. The finite-force **12.448 m/s** is itself an optimistic ideal-field work-to-speed conversion, not a selected winding/inverter rating.
 
+An additional [necessary mass bound](../../analysis/results/gen5_architecture_bounds.json) makes the direction clear: even if a perfect release needed **zero** host preburn, the equal 2 kg fuel reserve would limit the Gen5 device to **74.659 kg** for one-event parity. The current model is 126.562 kg. A faster motor by itself cannot close this comparison.
+
 ## If the panel asks
 
 | Question | Defensible answer |
@@ -17,6 +19,7 @@ The **16.029 m/s** printed in older material is a *common inertial mission targe
 | “Is Gen5 finished?” | It is a controlled computational **review candidate** with reproducible models and explicit failed criteria. The final academic freeze, physical build and qualification are not complete. |
 | “Does the faster release save the mission?” | Not shown. This one-event fuel saving is smaller than the modeled installed-mass penalty; the sampled twelve-release campaigns also do not close. |
 | “What would you redesign?” | First close an actual drive circuit and credible feed/restraint/brake. The one-event parity screen requires about 52.630 kg less device mass at the same *ideal* conversion, about 41.6% of the current modeled 126.562 kg. No feasible redesign has demonstrated that cut. |
+| “Do you have a new design?” | The [H1 captive passive-armature concept](../../docs/GEN5_H1_INTEGRATED_DEPLOYER_HYPOTHESIS.md) is an unselected research hypothesis. It has no integrated CAD, power rating or mission result, and its component ideas have prior art. It is not part of the frozen Gen5 review claim. |
 | “Can you remove the enclosure?” | Its five listed related entries total 50.03 kg. Removing all would still miss the narrow parity threshold by about 2.60 kg, and would destroy containment, thermal and interface functions. A real revision needs a multi-subsystem trade and new analyses. |
 | “What validates this?” | The exact algebra is in [P123](../../validation/P123_gen5_one_event_mass_screen.md), with [Python source](../../analysis/gen5_one_event_mass_screen.py) and [committed JSON](../../analysis/results/gen5_one_event_mass_screen.json). It checks equations and assumptions only; no physical VOLLEY test exists. |
 | “What could the IEEE paper contribute?” | A bounded system-level feasibility result with independent model checks, convergence, installed burden and adverse findings, once full prior-art and reviewer checks are complete. |
