@@ -6,6 +6,8 @@
 
 This directory is the review pack for the computational Gen5 study. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
+**Final-submission format notice (12 October):** a later [departmental email and three attachments](../../SIT_2026_FINAL_SUBMISSION_REQUIREMENTS.md) prescribe a PPT format for the **31 October 2026** final presentation and require a working project model and additional report/Moodle deliverables. This dated review pack predates that instruction. It is **not yet certified as the accepted final-submission deck**, and its CAD animation is not a physical working model.
+
 **12 October post-review update:** Slides 23–24 and the report's future-work section now summarize P130–P132. They were prepared after the dated 10 October pack and must not be described as material delivered at that earlier review. The Gen5 result slides, which report the evaluated configuration and adverse findings, retain their original scope. [Go 3 release review](../../GO3_ACADEMIC_RELEASE_REVIEW.md) lists the exact academic and engineering gates still open.
 
 **Presentation thesis:** the Gen5 system-level computational evaluation reports a conditional orbital benefit, a failed 3U mass criterion, and a failed side-fed CAD reference fit. Slides 1–22 present the research and its limitations. Slides 23–24 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product or final design freeze.
