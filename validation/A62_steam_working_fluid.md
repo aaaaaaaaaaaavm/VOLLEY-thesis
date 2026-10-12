@@ -54,7 +54,7 @@ the mass, a selective absorber coating reaches the temperature without a concent
 absorber is small.
 
 **I expect band 4 to fail**, and for that failure to cascade: the charge must be superheated well
-past aluminium's useful limit, which forces the tube to steel and hands [P85](../OPEN_PROBLEMS.md)
+past aluminium's useful limit, which forces the tube to steel and hands [P85](../appendix/OPEN_PROBLEMS.md)
 its heavy answer, 2.15 kg, for a store saving of about one.
 
 **I expect band 7 to fail too**, and this is the one that would matter most: **A61 specified a seal

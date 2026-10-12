@@ -10,10 +10,10 @@ Verify with `git show --stat <this commit> -- analysis/pyro_ejector.py`, which m
 **[A53](A53_backup_ejector.md) failed on energy and nothing else.** Seven of its eight bands passed.
 Band 7 failed because a spring sized for a clean departure stores **4.5 J**, and pushing the payload
 the length of a sealed tube against [A41](A41_precharged_chamber.md)'s friction allowance costs
-181.8 J at 2.18 m and 667.2 J at [ADR-034](../docs/adr/034-legacy_study-long-stroke-design-point.md)'s
+181.8 J at 2.18 m and 667.2 J at [ADR-034](../appendix/adr/034-legacy_study-long-stroke-design-point.md)'s
 8.0 m, a 148x shortfall.
 
-[P81](../OPEN_PROBLEMS.md) carries the consequence, and it is the most expensive open entry in
+[P81](../appendix/OPEN_PROBLEMS.md) carries the consequence, and it is the most expensive open entry in
 the record: [A47](A47_legacy_study_fmea.md) priced a per-cell ejector at +2.27 satellites delivered at
 *r* = 0.99, against +0.37 for the entire Gen5 to historical study architecture change, six times more,
 because a mechanism in every cell makes the drive satellite-forfeiting instead of

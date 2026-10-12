@@ -53,7 +53,7 @@ aluminium 6061-T6, on seven supports at 1.0 m ([A59](A59_tube_structure.md)).
 
 It does not measure a tube, E4, and manufacturing straightness enters as a *declared
 tolerance*, not a computed one; what a real 8 m bore can hold is
-[`MANUFACTURING.md`](../docs/MANUFACTURING.md)'s to establish. It does not model the supports'
+`MANUFACTURING.md` (historical source path: `../docs/MANUFACTURING.md`)'s to establish. It does not model the supports'
 own stiffness beyond a declared value, and it does not couple to the carriage: that is
 [A70](A70_guided_contact_derived.md).
 
@@ -162,7 +162,7 @@ independently, and the bore grows 3.440 µm diametrally, 6.9 % of the nominal cl
 > "Not primarily manufacturing; thermal control and support alignment dominate" is withdrawn.
 > Manufacturing straightness was never in the ranking, so the ranking could not place it.
 > `orbital_centreline()` now accepts a declared `straightness_mm` and superposes it, but what an
-> 8 m bore can actually hold is not established here and is [`MANUFACTURING.md`](../docs/MANUFACTURING.md)'s.
+> 8 m bore can actually hold is not established here and is `MANUFACTURING.md` (historical source path: `../docs/MANUFACTURING.md`)'s.
 > *The honest statement is that the ranking excludes manufacturing straightness and therefore
 > cannot decide between it and thermal bow.*
 
@@ -194,5 +194,5 @@ independently, and the bore grows 3.440 µm diametrally, 6.9 % of the nominal cl
 > 8.5e-4 difference in the support-placement peak is the penalty solve's error, not this one's.
 >
 > Found because the gates workflow ran on a second machine for the first time and the freshness
-> comparison disagreed. [P115](../OPEN_PROBLEMS.md#p115) carries the full account, including the
+> comparison disagreed. [P115](../appendix/OPEN_PROBLEMS.md#p115) carries the full account, including the
 > first diagnosis of that disagreement, which was wrong and is withdrawn there.

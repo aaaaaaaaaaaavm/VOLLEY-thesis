@@ -7,7 +7,7 @@ Verify with `git show --stat <this commit> -- analysis/reservoir_resized.py`, wh
 
 ## Why this run exists
 
-[P82](../OPEN_PROBLEMS.md). [ADR-034](../docs/adr/034-legacy_study-long-stroke-design-point.md) dropped
+[P82](../appendix/OPEN_PROBLEMS.md). [ADR-034](../appendix/adr/034-legacy_study-long-stroke-design-point.md) dropped
 the charge pressure from 50 bar to 22.7258 bar and cut gas per shot by 54.55 %. The
 reservoir did not move: `cad/parameters.json` still carries 9.55 L at 200 bar, which
 [A43](A43_reservoir_thermal.md) sized around refills at 50 bar.
@@ -17,7 +17,7 @@ And the store mass ADR-034 quotes is not a sized store. It is
 says in its own falsifier 2. The reservoir saving is the whole of ADR-034's mass argument,
 because the tube itself grew 0.311 to 1.140 kg.
 
-A second instance of [P84](../OPEN_PROBLEMS.md) was found starting this run.
+A second instance of [P84](../appendix/OPEN_PROBLEMS.md) was found starting this run.
 `analysis/fill_window.py`, which `reservoir_thermal.py` imports, still declared
 `P_CHARGE = 50e5`. The first repair covered `precharged.py` and stopped there. *That is repaired
 in the commit before this one, with A42's own point frozen so its run sheet stays reproducible.*

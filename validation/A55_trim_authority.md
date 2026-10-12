@@ -7,15 +7,15 @@ Verify with `git show --stat <this commit> -- analysis/trim_authority.py`, which
 
 ## Why this run exists
 
-[P83](../OPEN_PROBLEMS.md). [A48](A48_trim_stage.md) sized a 39.7 mm stator carrying
+[P83](../appendix/OPEN_PROBLEMS.md). [A48](A48_trim_stage.md) sized a 39.7 mm stator carrying
 ±0.323 m/s against [A44](A44_legacy_study_dispersion.md)'s dispersion of 1.113 % at 3σ, of which
 93.4 % was seal friction. Both were computed over a 2.18 m stroke.
 
-[ADR-034](../docs/adr/034-legacy_study-long-stroke-design-point.md) took the stroke to 8.0 m and tripled
+[ADR-034](../appendix/adr/034-legacy_study-long-stroke-design-point.md) took the stroke to 8.0 m and tripled
 the friction share** — 9.75 % → **28.39 %** of shot work, [A49](A49_design_surface.md) band 6,
 recorded as P78. Friction scales with contact length while the work saturates.
 
-[P84](../OPEN_PROBLEMS.md) is why nobody noticed. `LEGACY_STUDY_dispersion.py` computes
+[P84](../appendix/OPEN_PROBLEMS.md) is why nobody noticed. `LEGACY_STUDY_dispersion.py` computes
 `w_net = w - friction_N * pc.STROKE`, and `pc.STROKE` was still 2.18 m three days after the design
 point moved. A44 and A48 have been answering a superseded question, and no gate caught it
 because nothing compared the parameter file against the scripts. *That repair is committed before
@@ -195,9 +195,9 @@ one for two separate reasons, only one of which is friction.
 
 ## Consequences
 
-- [ADR-033](../docs/adr/033-legacy_study-trim-stage.md) is amended, not reversed. The decision stands;
+- [ADR-033](../appendix/adr/033-legacy_study-trim-stage.md) is amended, not reversed. The decision stands;
   the section is 144.0 mm at x = 7856.0, not 39.7 mm at x = 7960.3.
-- **[ADR-034](../docs/adr/034-legacy_study-long-stroke-design-point.md) does not move.** Band 7 holds and
+- **[ADR-034](../appendix/adr/034-legacy_study-long-stroke-design-point.md) does not move.** Band 7 holds and
   no kill-criterion numerator changes. The stroke is not what needs re-selecting.
 - P83 closes as confirmed. The stage was under-authority by 3.57x, which is what it alleged.
 - P77 stands and is not aggravated, on the peak-current argument above.

@@ -107,7 +107,7 @@ restated 40 % to 32 %.
 >
 > The eddy brake stays. It still absorbs 952 J of every shot. This supplements the decision
 > above; it does not reverse it. Adopted into the Phase I baseline under
-> [`programme/ADOPTION.md`](programme/ADOPTION.md) Amendment 3, and it opened P28: the regen
+> `programme/ADOPTION.md` (historical source path: `programme/ADOPTION.md`) Amendment 3, and it opened P28: the regen
 > stator and the fin do not both fit the arrest section as currently sized.
 
 ## 2025: Abort claim corrected

@@ -84,7 +84,7 @@ It does not touch bands 2 through 6, which stand as declared. Band 6 still asks 
 question at the design point, at 10 %, and it is now the only band that asks it.
 
 It does not rescue band 3. The section as drawn delivers 0.9356 m/s of the 1.1543 m/s it was
-sized for, that band fails, and [P92](../../OPEN_PROBLEMS.md) is real.
+sized for, that band fails, and [P92](../OPEN_PROBLEMS.md) is real.
 
 It does not open a register entry. [ADR-021](021-freeze-the-register.md) admits a numbered entry
 for a model defect that changes hardware behaviour, a defect that makes a published deliverable

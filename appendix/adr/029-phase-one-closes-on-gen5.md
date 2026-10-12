@@ -67,7 +67,7 @@ that has been measured*. It does not need metal to be worth publishing.
 ## Consequences
 
 Phase I closes with a bounded remaining list rather than an empty register, which is what
-[`../PHASE_I_CLOSURE.md`](../PHASE_I_CLOSURE.md) §9 defined as a defensible end state on
+`../PHASE_I_CLOSURE.md` (historical source path: `../PHASE_I_CLOSURE.md`) §9 defined as a defensible end state on
 2026-08-05: categories A, B and C closed; D, E and E4 open with named owners.
 
 The paper describes Gen5 and does not mention historical study. A manuscript that hedges between two

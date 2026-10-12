@@ -86,10 +86,10 @@ peak deflection per load case, von Mises peak, first mode, plus `solver`, `versi
 
 ## Reproduction record, 2026-09-15
 
-[P39](../OPEN_PROBLEMS.md#p39) left one question open: whether the CalculiX input decks belong in
+[P39](../appendix/OPEN_PROBLEMS.md#p39) left one question open: whether the CalculiX input decks belong in
 the flagship. Answering it required establishing that the committed generator is the deck's
 provenance, so that was measured rather than assumed. This is also the first run sheet to carry
-the reproduction fields [`docs/PROTOTYPE_READINESS.md`](../docs/PROTOTYPE_READINESS.md) requires
+the reproduction fields `docs/PROTOTYPE_READINESS.md` (historical source path: `../docs/PROTOTYPE_READINESS.md`) requires
 of a controlling simulation.
 
 | Field | Value |

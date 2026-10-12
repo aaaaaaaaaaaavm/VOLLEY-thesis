@@ -168,7 +168,7 @@ primary sources for that, and the NRCSD-E document additionally quotes a tip-off
 
 ## Cross-industry sources (added 2026-07-29)
 
-Full analysis in [`CROSS_INDUSTRY.md`](CROSS_INDUSTRY.md); recorded here so the literature
+Full analysis in `CROSS_INDUSTRY.md` (historical source path: `CROSS_INDUSTRY.md`); recorded here so the literature
 record is in one place.
 
 ### ESA Space Tribology Handbook

@@ -161,7 +161,7 @@ rather than restating them. Results in `validation/results/A15_caseB_plane_chang
 **The closed form reproduces band 1's GMAT result exactly.** Band 1 measured a maximum
 inclination change of 0.1229° in the propagator; spending the entire shot on plane change is
 computed here as 0.1229°. Two independent routes to the same ceiling, and it is the same
-figure [`../docs/KILL_CRITERIA.md`](../docs/KILL_CRITERIA.md) §7 already carries as "plane
+figure `../docs/KILL_CRITERIA.md` (historical source path: `../docs/KILL_CRITERIA.md`) §7 already carries as "plane
 change 0.12°, effectively nil".
 
 ### The exchange rate, R1, against what the machine actually has

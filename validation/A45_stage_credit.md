@@ -7,7 +7,7 @@ Verify with `git show --stat <this commit> -- analysis/stage_credit.py`, which m
 
 ## Why this run exists
 
-[ADR-032](../docs/adr/032-legacy_study-stage-integrated-gas-store.md)'s first falsifier, and the only
+[ADR-032](../appendix/adr/032-legacy_study-stage-integrated-gas-store.md)'s first falsifier, and the only
 one of the four that nothing has ever bounded:
 
 > The 43.33 kg stage credit is optimistic by more than 30 %. Then added mass per satellite

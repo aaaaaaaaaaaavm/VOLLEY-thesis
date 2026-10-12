@@ -3,13 +3,13 @@
 A brief written to be read before modelling, from a link to this repository alone. It answers the questions a modeller has to answer before the first sketch,
 and it resolves, explicitly, every place where two files in this repository disagree.
 
-Everything here is derived from [`cad/parameters.json`](cad/parameters.json). Where this brief
+Everything here is derived from [`cad/parameters.json`](../cad/parameters.json). Where this brief
 and that file differ, `parameters.json` wins and this brief is wrong; report it.
 
 > Which machine are you modelling? Everything from here to *"What a good model would add"*
 > describes Gen5, nine Fusion documents around a sled, a stator and an eddy brake. That is the
 > analysed baseline and the brief for it is correct. It is not the current design target.
-> [ADR-032](docs/adr/032-legacy_study-stage-integrated-gas-store.md) moved that to historical study on 2026-08-14,
+> [ADR-032](adr/032-legacy_study-stage-integrated-gas-store.md) moved that to historical study on 2026-08-14,
 > which deletes all three. If you are modelling historical study, read
 > [that section](#legacy_study--what-exists-and-the-three-parts-that-do-not) first, six parts are
 > script-built, and the mechanism that pushes the satellite is not one of them.
@@ -153,7 +153,7 @@ contradictions. Every one below is real and known. The right-hand column is what
 
 ## Reference images
 
-In [`cad/renders/`](cad/renders/). All are Gen4 except `exploded_view.png`. Each carries a
+In [`cad/renders/`](../cad/renders). All are Gen4 except `exploded_view.png`. Each carries a
 drawn arrow showing which way the payload leaves.
 
 | File | View | Use it for |
@@ -177,13 +177,13 @@ generation; STL is derived from it.
 
 | File | What it holds |
 |---|---|
-| [`cad/parameters.json`](cad/parameters.json) | Single source of truth. Every dimension, per document, with status and provenance per group |
-| [`cad/DIMENSIONS.md`](cad/DIMENSIONS.md) | The same values as flat tables, built from the above, never hand-edited |
-| [`cad/BOM.md`](cad/BOM.md) | Parts, quantities, materials, masses, built from `analysis/mass_properties.py` |
-| [`cad/CHANGELOG_CAD.md`](cad/CHANGELOG_CAD.md) | Generation history, per-file inventories, defect IDs, cross-generation comparison |
-| [`docs/GEN4_STATUS.md`](docs/GEN4_STATUS.md) | Why Gen4 exists, and why its export gate is closed |
+| [`cad/parameters.json`](../cad/parameters.json) | Single source of truth. Every dimension, per document, with status and provenance per group |
+| [`cad/DIMENSIONS.md`](../cad/DIMENSIONS.md) | The same values as flat tables, built from the above, never hand-edited |
+| [`cad/BOM.md`](../cad/BOM.md) | Parts, quantities, materials, masses, built from `analysis/mass_properties.py` |
+| [`cad/CHANGELOG_CAD.md`](../cad/CHANGELOG_CAD.md) | Generation history, per-file inventories, defect IDs, cross-generation comparison |
+| [`docs/GEN4_STATUS.md`](GEN4_STATUS.md) | Why Gen4 exists, and why its export gate is closed |
 | [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) | Every known defect, live and corrected. The CAD-relevant ones are P5, P8, P9, P10, P12, P37, P39, P43 |
-| [`analysis/`](analysis/) | Authoritative for mass and performance. CAD is authoritative for geometry and fit |
+| [`analysis/`](../analysis) | Authoritative for mass and performance. CAD is authoritative for geometry and fit |
 
 Do not edit dimensions inside Fusion. User parameters there are document-scoped and will
 silently drift across the nine documents. Change `parameters.json`, then regenerate.
@@ -195,7 +195,7 @@ silently drift across the nine documents. Change `parameters.json`, then regener
 ## historical study, what exists, and the three parts that do not
 
 Added 2026-08-16. Everything above this line describes Gen5: nine Fusion documents built
-around a sled, a stator and an eddy brake. [ADR-032](docs/adr/032-legacy_study-stage-integrated-gas-store.md)
+around a sled, a stator and an eddy brake. [ADR-032](adr/032-legacy_study-stage-integrated-gas-store.md)
 moved the design target on 2026-08-14 and deletes all three. Gen5 remains the analysed
 baseline and the brief above remains correct for it; it is simply no longer the machine being
 designed. *Both sentences said "measured baseline" until 2026-08-22, P107. Nothing in this
@@ -226,8 +226,8 @@ source and the build regenerates byte-stably.
 | Stage rail | `VOLLEY_Stage_Rail_legacy_study.step` | the host-provided structure the rest mounts to |
 | Magazine cassette | `VOLLEY_Magazine_Cassette_legacy_study.step` | carried across from Gen5's cell geometry |
 
-The reservoir is sized, not bracketed. [A56](validation/A56_reservoir_resized.md) sized it at
-[ADR-034](docs/adr/034-legacy_study-long-stroke-design-point.md)'s charge pressure rather than scaling it,
+The reservoir is sized, not bracketed. [A56](../validation/A56_reservoir_resized.md) sized it at
+[ADR-034](adr/034-legacy_study-long-stroke-design-point.md)'s charge pressure rather than scaling it,
 and got 3.46 L, the bottle falls 63.8 % where the gas falls 54.55 %, because a lower target
 pressure lets it be drawn further down. P82 closed on it.
 
@@ -282,4 +282,4 @@ Stated plainly, because the gaps are the useful part of a brief:
 4. A pocketed sled, but only together with a re-run of `mass_properties.py` and
    `motor_model.py`, because the sled mass sets the exit velocity (conflict 7).
 5. Cassette classes other than 3U. No cassette, cradle or gate exists for any other class;
-   see [`docs/PAYLOAD_CLASSES.md`](docs/PAYLOAD_CLASSES.md).
+   see `docs/PAYLOAD_CLASSES.md` (historical source path: `docs/PAYLOAD_CLASSES.md`).

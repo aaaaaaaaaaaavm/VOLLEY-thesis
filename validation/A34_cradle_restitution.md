@@ -1,6 +1,6 @@
 # A34: does the rattle settle before release?
 
-Closes the analysis half of [P41](../OPEN_PROBLEMS.md), and with it kill criterion 4's last
+Closes the analysis half of [P41](../appendix/OPEN_PROBLEMS.md), and with it kill criterion 4's last
 open question.
 
 [A23](A23_tipoff_release.md) found the release itself comfortable, the payload coasts 12.2 ms
@@ -25,7 +25,7 @@ This sheet is that model.
 > ## Annotated 2026-08-14 by A38. Nothing below is edited.
 >
 > This run was recorded on 2026-08-13 at the operating point
-> [ADR-030](../docs/adr/030-apply-the-depth-resolved-thrust-constant.md) superseded the same day.
+> [ADR-030](../appendix/adr/030-apply-the-depth-resolved-thrust-constant.md) superseded the same day.
 > `analysis/cradle_restitution.py` computes its inputs live from `motor_model`, so the script
 > tracked the correction and this record did not.
 >

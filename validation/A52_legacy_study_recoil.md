@@ -7,8 +7,8 @@ Verify with `git show --stat <this commit> -- analysis/LEGACY_STUDY_recoil.py`, 
 
 ## Why this run exists
 
-Two of the four `NEEDS SOURCE` rows in [`KILL_CRITERIA.md`](../docs/KILL_CRITERIA.md), and
-[E29](../OPEN_PROBLEMS.md), which is live:
+Two of the four `NEEDS SOURCE` rows in `KILL_CRITERIA.md` (historical source path: `../docs/KILL_CRITERIA.md`), and
+[E29](../appendix/OPEN_PROBLEMS.md), which is live:
 
 > *"Nothing computes the shot's angular impulse about the host, and a reaction wheel saturates."*
 

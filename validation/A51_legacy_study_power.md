@@ -12,7 +12,7 @@ equivalent anywhere in the repository, because the energy arrives as compressed 
 current, and nobody has said what the corresponding measure is.
 
 And the power figure historical study does carry describes a different machine.
-[ADR-032](../docs/adr/032-legacy_study-stage-integrated-gas-store.md) states charging at 25-131 W,
+[ADR-032](../appendix/adr/032-legacy_study-stage-integrated-gas-store.md) states charging at 25-131 W,
 "which is solar". That number is [A37](A37_host_integrated.md)'s `charge_W_60s`, defined in
 `analysis/host_integrated.py` as:
 

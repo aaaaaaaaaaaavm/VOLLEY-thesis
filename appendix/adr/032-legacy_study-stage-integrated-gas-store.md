@@ -1,7 +1,7 @@
 # ADR-032: historical study is a stage-integrated, payload-direct, gas-driven deployer
 
 Status: Accepted, Date: 2026-08-14, Supersedes: the historical study definition in
-[ADR-029](029-phase-one-closes-on-gen5.md) and [`../LEGACY_STUDY_ARCHITECTURE.md`](../LEGACY_STUDY_ARCHITECTURE.md) ·
+[ADR-029](029-phase-one-closes-on-gen5.md) and `../LEGACY_STUDY_ARCHITECTURE.md` (historical source path: `../LEGACY_STUDY_ARCHITECTURE.md`) ·
 Rests on: A35, A36, A37, A38, A39
 
 > ## Design point moved 2026-08-19 by [ADR-034](034-legacy_study-long-stroke-design-point.md)
@@ -111,7 +111,7 @@ launch multiplies the interface problem rather than solving it, and keeping a st
 manoeuvring past passivation is a regulatory conversation this project has not had.
 
 And the honest reading of the propellant. The residuals a stage carries are its disposal burn.
-historical study does not spend them, A39's charge budget is 25-131 W *(corrected 2026-08-16: that figure is A37's `charge_W_60s` for the spring option, not this architecture's. [A51](../../validation/A51_LEGACY_STUDY_power.md) measures historical study at 0.26 W average, 36 W peak. The decision stands; the number was never historical study's, P80)*, which is solar, and the
+historical study does not spend them, A39's charge budget is 25-131 W *(corrected 2026-08-16: that figure is A37's `charge_W_60s` for the spring option, not this architecture's. A51 (historical source path: `../../validation/A51_LEGACY_STUDY_power.md`) measures historical study at 0.26 W average, 36 W peak. The decision stands; the number was never historical study's, P80)*, which is solar, and the
 altitude-shell repositioning in [ADR-024](024-last-mile-delivery-conops.md) is therefore an option
 a host may decline without historical study failing.
 

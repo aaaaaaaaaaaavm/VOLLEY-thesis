@@ -7,7 +7,7 @@ Verify with `git show --stat <this commit> -- analysis/steam_design.py`, which m
 
 ## Why this run exists
 
-[P90](../OPEN_PROBLEMS.md). [A62](A62_steam_working_fluid.md) computed every figure at a 2.0 L
+[P90](../appendix/OPEN_PROBLEMS.md). [A62](A62_steam_working_fluid.md) computed every figure at a 2.0 L
 chamber, the volume [A41](A41_precharged_chamber.md) sized for cold nitrogen, and concluded
 steam needs 550 K, exceeds filled PTFE's limit, breaks [A61](A61_seal_class.md)'s seal
 specification and costs 1.285 kg.
@@ -149,7 +149,7 @@ case.*
 
 ### The conditional, which is the useful part
 
-The 2.154 kg is charged to steam because the temperature forces it. But [P85](../OPEN_PROBLEMS.md)
+The 2.154 kg is charged to steam because the temperature forces it. But [P85](../appendix/OPEN_PROBLEMS.md)
 has not been decided, and there are reasons to choose steel that have nothing to do with the
 fluid, surface hardness and galling resistance at a sliding seal bore, and
 [A59](A59_tube_structure.md) found the material barely moves the beam mode (1.67 Hz aluminium

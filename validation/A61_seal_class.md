@@ -26,7 +26,7 @@ without ever choosing it, and four analyses now rest on that choice:
 
 It is not a comparison of seal products, and it does not claim any class achieves any number.
 Friction fractions for component classes are handbook ranges, no better sourced than A39's gas
-model, and they do not replace [P67](../OPEN_PROBLEMS.md).
+model, and they do not replace [P67](../appendix/OPEN_PROBLEMS.md).
 
 It inverts the question instead. Rather than asking *what would this seal give*, it asks:
 
@@ -131,7 +131,7 @@ elastomer O-ring range.** Band 2 was a check on the parameterisation and it land
 
 The requirement sits inside a filled-PTFE glide ring's handbook range of 2-10 %, but not at its
 loose end. *This run does not claim any class achieves 4.00 %, and it is not a substitute for
-[P67](../OPEN_PROBLEMS.md), which now has a number to be measured against.*
+[P67](../appendix/OPEN_PROBLEMS.md), which now has a number to be measured against.*
 
 ### What a specified seal would close, and what it would not
 

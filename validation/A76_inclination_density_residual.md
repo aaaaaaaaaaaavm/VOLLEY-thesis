@@ -1,6 +1,6 @@
 # A76, whether inclination through a variable atmosphere explains A75's residual
 
-**Closes, if it passes:** the named candidate in [P79](../OPEN_PROBLEMS.md#p79)'s remaining
+**Closes, if it passes:** the named candidate in [P79](../appendix/OPEN_PROBLEMS.md#p79)'s remaining
 residual. It does not close P79.
 
 [A75](A75_decay_density_calibration.md) inverted E28's two GMAT reentries into uniform density

@@ -32,7 +32,7 @@ Three signals that it has passed its useful point:
    record-keeping machinery then tracks, the loop has closed on itself.
 
 2. Analyses have started confirming rather than discovering. A19's headline output was
-   "measure structural Q first". [`../STRUCTURAL_GAP.md`](../STRUCTURAL_GAP.md) said exactly that
+   "measure structural Q first". `../STRUCTURAL_GAP.md` (historical source path: `../STRUCTURAL_GAP.md`) said exactly that
    on 2026-08-06, four days earlier, with no sweep behind it. A19's quantification is worth
    having and it changed no action.
 
@@ -71,7 +71,7 @@ barred from the register:
   superseded figure. Fix it and log it.
 - Observations about the register itself.
 - Anything whose motivation is *better* rather than *correct*, which already belongs in
-  [`../VAULT.md`](../VAULT.md) and `VOLLEY-lab`.
+  `../VAULT.md` (historical source path: `../VAULT.md`) and `VOLLEY-lab`.
 
 The headline counts stop being propagated. `OPEN_PROBLEMS.md` carries the count, derived by
 `tools/register_status.py`. `KILL_CRITERIA.md`, `ROADMAP.md` and `PHASE_I_CLOSURE.md` now point at
@@ -102,7 +102,7 @@ with hardware in it, the register that matters will be a different one anyway.
 ## Consequences
 
 - The effort released goes to measurement, in the order
-  [`../ROADMAP.md`](../ROADMAP.md) now carries: B-1 first, then the two owner decisions
+  `../ROADMAP.md` (historical source path: `../ROADMAP.md`) now carries: B-1 first, then the two owner decisions
   that block the most downstream work (P29 stator segmentation, P9 target host class),
   neither of which is waiting on analysis.
 - `PHASE_I_CLOSURE.md`'s framing is unaffected, Phase I still ends with E4 open, categories D

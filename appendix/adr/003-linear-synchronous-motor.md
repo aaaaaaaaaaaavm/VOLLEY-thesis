@@ -2,7 +2,7 @@
 
 Status: Accepted, Date: mid-2025, Phase: Load-bearing
 
-> ## ⚠ AMENDMENT, 2026-08-22, [P98](../../OPEN_PROBLEMS.md). One statement in this record is withdrawn.
+> ## ⚠ AMENDMENT, 2026-08-22, [P98](../OPEN_PROBLEMS.md). One statement in this record is withdrawn.
 >
 > This ADR contains the line *"A standard CubeSat qualifies to ~14 g quasi-static"*. It is not
 > supported and must not be quoted. The cited 14.1 g value is GEVS random-vibration
@@ -45,7 +45,7 @@ Ironless double-sided Halbach linear synchronous motor driving a reusable sled.
   > move as this project's reusable sled.
   >
   > So "a coilgun must touch the payload" is false, and a reader who finds both papers, and
-  > [`../SKILLS.md`](../SKILLS.md) points at both, can reasonably ask why VOLLEY rejected
+  > `../SKILLS.md` (historical source path: `../SKILLS.md`) points at both, can reasonably ask why VOLLEY rejected
   > coilguns for needing something the sibling paper shows they do not need.
   >
   > The decision is unaffected, because this was never the load-bearing argument. What
@@ -84,7 +84,7 @@ Ironless double-sided Halbach linear synchronous motor driving a reusable sled.
   > the energy per shot. Neither is a secondary payload on an upper stage, and neither is a defect in
   > their work, they are solving a different problem. It is why this one is not a coilgun.
 
-> # ⚠ AMENDMENT, 2026-08-22, [P98](../../OPEN_PROBLEMS.md): the qualification basis in the block above is withdrawn
+> # ⚠ AMENDMENT, 2026-08-22, [P98](../OPEN_PROBLEMS.md): the qualification basis in the block above is withdrawn
 >
 > ## The line *"A standard CubeSat qualifies to ~14 g quasi-static"* is not supported and must not be quoted.
 >
@@ -104,7 +104,7 @@ Ironless double-sided Halbach linear synchronous motor driving a reusable sled.
 > The decision it records, an LSM rather than a coilgun, does not depend on the withdrawn figure:
 > it rests on the payload interface (armature on the customer satellite versus magnets on a reusable
 > sled) and on an acceleration ratio between two computed numbers, which needs no external standard
-> to state. See [`docs/VELOCITY_CEILING.md`](../VELOCITY_CEILING.md) for the current statement.
+> to state. See `docs/VELOCITY_CEILING.md` (historical source path: `../VELOCITY_CEILING.md`) for the current statement.
 
 - Maglev-style rail. The 2021 framing left this open. Converged with the LSM choice.
 

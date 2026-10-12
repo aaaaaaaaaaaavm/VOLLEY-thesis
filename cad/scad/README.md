@@ -21,7 +21,7 @@ from the same script.
 
 **Two disagreements, and they were different kinds of thing.**
 
-**One was a real defect in the CadQuery model — [P71](../../OPEN_PROBLEMS.md).** The sled rollers
+**One was a real defect in the CadQuery model — [P71](../../appendix/OPEN_PROBLEMS.md).** The sled rollers
 were placed with a one-sided extrude and a half-width offset, as though the extrude were symmetric.
 It is not. The +y roller sat at y 54–70 against a channel at 70–86, entirely inboard, in the stator
 gap; the −y roller sat at −102 to −86, entirely outboard. **The sled was asymmetric about y = 0**,

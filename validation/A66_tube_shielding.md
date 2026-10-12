@@ -1,8 +1,8 @@
 # A66, what the drive tube costs the trim stator
 
-**Closes, if it passes:** [P92](../OPEN_PROBLEMS.md#p92). [ADR-033](../docs/adr/033-legacy_study-trim-stage.md)
+**Closes, if it passes:** [P92](../appendix/OPEN_PROBLEMS.md#p92). [ADR-033](../appendix/adr/033-legacy_study-trim-stage.md)
 puts the trim stator outside the drive tube and its magnets inside.
-[ADR-035](../docs/adr/035-drive-tube-material.md) then made that tube aluminium, four days later,
+[ADR-035](../appendix/adr/035-drive-tube-material.md) then made that tube aluminium, four days later,
 on mass alone. A conducting sleeve between a travelling-field stator and its secondary is a
 shorted turn at full slip, and no file in this repository has computed what it costs.
 
@@ -37,7 +37,7 @@ whole of the problem and it is why the wall is not a passive spacer.
 |---|---|---|
 | **1** | **Model verification.** The sheet model returns transmission 1.000 and zero induced loss at zero conductivity, and reproduces the analytic thin-sheet transmission for a travelling wave to **0.5 %** across at least two decades of sheet conductance | The model is wrong before any VOLLEY geometry enters it. This is A55 band 1's lesson applied again |
 | **2** | **REPORT, no pass/fail.** Skin depth at the section's own excitation frequency, and the wall expressed in skin depths | P92 names this as the governing comparison, and it has to be on the record whichever way it falls |
-| **3** | **The section as drawn still delivers its sized authority**, 1.1543 m/s, through the wall | The section is under-authority again and [P83](../OPEN_PROBLEMS.md#p83) reopens at the point A55 closed it |
+| **3** | **The section as drawn still delivers its sized authority**, 1.1543 m/s, through the wall | The section is under-authority again and [P83](../appendix/OPEN_PROBLEMS.md#p83) reopens at the point A55 closed it |
 | **4** | **The section length needed to restore 1.1543 m/s stays inside A55 band 5**, 15 % of the 8.0 m stroke | The correction has stopped being a trim and become a second drive, which is A48's own limit |
 | **5** | **Added mass per satellite, with the compensated section, stays ≤ 2.0 kg** | historical study re-crosses the one kill-criterion numerator it currently passes, A55 band 7 |
 | **6** | **An independent implementation agrees on the transmitted force fraction within 10 %** | One method is not a result. Two wrappers around the same expression are not two methods |
@@ -45,7 +45,7 @@ whole of the problem and it is why the wall is not a passive spacer.
 ## What this run will not do
 
 It does not choose the fix. A non-conducting liner, a slotted or non-conducting section local to
-the stator, and the passive-secondary route [`docs/VAULT.md`](../docs/VAULT.md) records under
+the stator, and the passive-secondary route `docs/VAULT.md` (historical source path: `../docs/VAULT.md`) records under
 PII-19 are all live options and none is this run's to pick.
 
 It does not re-open ADR-035. That decision was correct on the questions asked of it, and the
@@ -70,7 +70,7 @@ at first order across three decades — 1.487 % at 1.0 mm, 0.7665 at 0.5, 0.1571
 error at the wall this machine has, where `kd` = 0.131. A 0.5 % tolerance sits underneath a number
 the geometry fixes at 1.49 %, so no correct implementation could have passed it, and the only code
 that could have was code whose two routes shared an error, which is what band 6 exists to catch.
-[ADR-037](../docs/adr/037-a66-band-one-was-unsatisfiable.md) is the full argument.
+[ADR-037](../appendix/adr/037-a66-band-one-was-unsatisfiable.md) is the full argument.
 
 **The declared row above is not edited.** It stays in the words it was frozen in, and `af526a0`
 stays as it ran.
@@ -192,7 +192,7 @@ The cause is upstream and it is not A66's to fix. `analysis/trim_stage.py` sets 
 force as `KT * SHEET_A_PER_M / 1e3`, and A2 defines that thrust constant over
 `motor_model.SLED_ACTIVE_LEN` — **0.34 m of flat array, 0.09 m deep**. A55 applied it to 0.14401 m
 of annulus around a 15.805 mm bore, unrescaled for length or for area. That is
-[P117](../OPEN_PROBLEMS.md#p117).
+[P117](../appendix/OPEN_PROBLEMS.md#p117).
 
 ### The wall temperature, reported without a gate
 
@@ -214,7 +214,7 @@ the per-shot column is the part of it I would defend.
 face the aluminium wall for the whole 8.0 m stroke, energised stator or not, so the drag acts over
 the stroke and not over the section. The magnet array's own length is not in `cad/parameters.json`
 — only the stator section's is — so that integral cannot be closed here. It is
-[P118](../OPEN_PROBLEMS.md#p118) and it is the larger of the two.
+[P118](../appendix/OPEN_PROBLEMS.md#p118) and it is the larger of the two.
 
 The split of the drag reaction between the carriage and the stator mounting is modelled as
 overwhelmingly carriage-side on the field ratio above, and not computed.

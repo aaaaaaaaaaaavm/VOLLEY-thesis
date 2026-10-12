@@ -1,6 +1,6 @@
 # A67, the payload's guided contact state through the 8 m bore
 
-Closes, if it passes: the first-order half of [P103](../OPEN_PROBLEMS.md). historical study has an axial
+Closes, if it passes: the first-order half of [P103](../appendix/OPEN_PROBLEMS.md). historical study has an axial
 model and no lateral or angular one, so it has no exit attitude at all, only an exit speed.
 
 > ## BANDS DECLARED 2026-08-22, BEFORE `analysis/guided_contact.py` EXISTS.
@@ -13,9 +13,9 @@ model and no lateral or angular one, so it has no exit attitude at all, only an 
 
 ## Why this run exists, and why it is not waiting for B-2
 
-[P103](../OPEN_PROBLEMS.md) as first written put [P67](../OPEN_PROBLEMS.md)'s measurement first.
+[P103](../appendix/OPEN_PROBLEMS.md) as first written put [P67](../appendix/OPEN_PROBLEMS.md)'s measurement first.
 That was wrong about the order. A contact model's parameters are *identified*, not measured
-first and inserted, [`docs/EXTERNAL_EVIDENCE.md`](../docs/EXTERNAL_EVIDENCE.md) records three
+first and inserted, `docs/EXTERNAL_EVIDENCE.md` (historical source path: `../docs/EXTERNAL_EVIDENCE.md`) records three
 separation-dynamics papers that do exactly that, one of them by unscented Kalman filter against a
 finite-element collision solve. So the model is built now on a declared friction bracket, and
 B-2 replaces the bracket with a distribution when it lands.
@@ -141,11 +141,11 @@ says the sample is too small for the first-order split.* The total-order ranking
 enough to act on: straightness is first and land separation is second, and every quantity the seal
 contributes is below both.
 
-> This reverses the intuition the programme has been running on. [P67](../OPEN_PROBLEMS.md)
+> This reverses the intuition the programme has been running on. [P67](../appendix/OPEN_PROBLEMS.md)
 > owns 93.4 % of the *velocity* dispersion and is the highest-leverage measurement in the record,
 > and it is fourth here. The thing that decides whether the payload leaves straight is the
 > straightness of eight metres of tube, which is a manufacturing problem
-> ([`MANUFACTURING.md`](../docs/MANUFACTURING.md) does not yet contain it) and not a seal problem.
+> (`MANUFACTURING.md` (historical source path: `../docs/MANUFACTURING.md`) does not yet contain it) and not a seal problem.
 
 ### Band 8 passes, and the sweep is the design output the record did not have
 

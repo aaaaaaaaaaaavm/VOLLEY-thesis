@@ -349,14 +349,14 @@ s = base("Results", "The current side-fed assembly fails a geometric fit check",
          "FreeCAD Gen5 Review.FCStd; P116 assembly packaging report", "CAD INTERFERENCE • OPEN")
 image_fit(s, FIG / "gen5_packaging_section.png", 0.64, 1.78, 6.35, 4.92)
 card(s, 7.22, 1.92, 5.15, 1.85, "11 mm short", "537 mm of track and cassette width inside 526 mm of usable enclosure width.", RED, 25, 15)
-card(s, 7.22, 4.02, 5.15, 1.85, "32,915 mm³", "Exact track/cassette clash on each side; CadQuery and FreeCAD agree.", AMBER, 23, 15)
+card(s, 7.22, 4.02, 5.15, 1.85, "32,915 mm³", "Cassette/track clash per side. Full audit: 17 intersecting pairs, including sled/track and sled/stator.", AMBER, 23, 15)
 txt(s, "Reference placement only: a new feeder or enclosure would need a new configuration and rerun.", 0.88, 6.59, 11.55, 0.3, 14, True, NAVY, align=PP_ALIGN.CENTER)
 
 # Unselected R1 geometry
-s = base("Results", "R1 clears a scripted path; the feeder is not designed",
+s = base("Results", "R1 clears cassette width, but still has assembly clashes",
          "FreeCAD R1 STEP candidate; exact-solid route ledger", "UNSELECTED GEOMETRY")
 image_fit(s, STEP_VIEWS / "r1_candidate_open.jpg", 0.55, 1.75, 7.4, 4.9)
-card(s, 8.15, 1.88, 4.37, 1.94, "12 / 12", "Scripted 3U envelope routes and conservative fixed-part swept boxes clear.", TEAL, 25, 15)
+card(s, 8.15, 1.88, 4.37, 1.94, "12 / 12", "Selected scripted 3U paths clear; a whole-assembly audit still finds five intersecting solid pairs.", TEAL, 25, 15)
 card(s, 8.15, 4.03, 4.37, 1.94, "570 mm", "Wider enclosure; 0.5° assumed alignment stack fails its 5 mm gap; lift and retention still open.", AMBER, 25, 15)
 txt(s, "Separate R1 candidate; no change to evaluated Gen5 shot, mass or host-fit claims.",
     0.8, 6.62, 11.8, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
@@ -388,7 +388,7 @@ s = base("Conclusion", "This Gen5 configuration does not pass selection",
          "Thesis conclusion; P116; matched mission; STEP view provenance")
 bullets(s, ["Historical 16.0 m/s is challenged; ideal 12.448 m/s lacks a sourceable single-string bank.",
             "The modeled system is 76% heavier per 3U customer and the evaluated side-fed CAD clashes.",
-            "R1 paths clear nominally; an assumed 0.5° tolerance stack consumes the side gap.",
+            "R1 retains sled/track and sled/stator clashes; its assumed 0.5° gap stack fails.",
             "No matched twelve-shot reference closes; Gen5 is a documented negative design study."],
         0.75, 1.82, 6.2, 4.85, 19, 18)
 image_fit(s, STEP_VIEWS / "gen5_reference_open.jpg", 7.1, 1.9, 5.6, 3.9)
@@ -403,6 +403,15 @@ card(s, 8.06, 1.8, 4.54, 1.88, "Matched mission", "Two 1U + two 3U targets: both
 card(s, 8.06, 3.9, 4.54, 1.88, "First-article gap", "Two STEP envelopes exist; ~9.35 kg remains for all omitted hardware under a surrogate parity screen.", RED, 18, 15)
 txt(s, "1 km/s remains separate long-range research; no command range or motor rating established.",
     0.9, 6.35, 11.55, 0.43, 15, True, NAVY, align=PP_ALIGN.CENTER)
+
+# Future Gen6 four-cell packaging evidence
+s = base("Future work", "Paired cells improve the nominal acceleration path",
+         "FreeCAD/STEP R0 packaging comparison; no feeder mechanism selected", "GEN6 GEOMETRY • UNSELECTED")
+image_fit(s, ROOT / "cad/gen6_four_cell_r0/release_paired/Four_Cell_R0_Plan.png", 0.52, 1.52, 8.0, 4.7)
+card(s, 8.72, 1.78, 3.92, 1.77, "Staggered", "Last cell: 330 mm to brake; 5.56 g ideal mean for 6 m/s.", RED, 17, 14)
+card(s, 8.72, 3.74, 3.92, 1.77, "Paired", "At least 900 mm per cell; 2.04 g largest ideal mean at 6 m/s.", TEAL, 17, 14)
+txt(s, "26 nominal FreeCAD/STEP states pass represented-solid checks; locks, contact, docking and host fit remain open.",
+    0.8, 6.33, 11.9, 0.5, 13, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 21 Future test
 s = base("Future work", "Next milestone: close G0 and G1 before any build",

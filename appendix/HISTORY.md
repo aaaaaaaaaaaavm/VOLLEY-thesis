@@ -56,7 +56,7 @@ restartable stage.
 
 Everything after it moved the same way, from a deployer that rides a stage to a deployer that
 *is* one. That through-line, and what each CAD generation assumed about the vehicle underneath
-it, is [`LINEAGE.md`](LINEAGE.md).
+it, is `LINEAGE.md` (historical source path: `LINEAGE.md`).
 
 mid-2025, the pivotal change. Coilgun to linear synchronous motor. A coilgun cannot
 deliver a programmable exit velocity at the dispersion this application needs; a synchronous

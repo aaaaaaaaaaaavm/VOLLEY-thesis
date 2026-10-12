@@ -1,6 +1,6 @@
 # ADR-036: The seal is specified at 17.8 N, and the trim stage is suspended rather than built
 
-Status: Accepted, Date: 2026-08-20, Phase: I, Amends: [ADR-033](033-legacy_study-trim-stage.md), Closes: [P89](../../OPEN_PROBLEMS.md), Rests on: A55, A58, A61
+Status: Accepted, Date: 2026-08-20, Phase: I, Amends: [ADR-033](033-legacy_study-trim-stage.md), Closes: [P89](../OPEN_PROBLEMS.md), Rests on: A55, A58, A61
 
 ## Context
 
@@ -49,12 +49,12 @@ Three parts, and the third is the one that costs something.
 
 1. The seal specification is adopted: 4.00 % of p₀·A, 17.8 N, set by the thermal case. It
    enters `cad/parameters.json` as a real parameter group rather than living in a run sheet. This
-   closes [P89](../../OPEN_PROBLEMS.md) and is required whichever way part 3 goes.
+   closes [P89](../OPEN_PROBLEMS.md) and is required whichever way part 3 goes.
 2. The 83.4 N allowance is retained as the allowance it always was, and every figure derived
    from it is to be read as an upper bound. It is not deleted: until P67 returns, the bound
    is the only honest number for a worst-case argument.
 3. Work on the trim stage is suspended. No CAD, no pulse-store integration, no
-   [A66](../../OPEN_PROBLEMS.md). The section stays in `parameters.json` at A55's 144.01 mm as
+   [A66](../OPEN_PROBLEMS.md). The section stays in `parameters.json` at A55's 144.01 mm as
    the worst-case sizing, and nothing further is spent on it until P67 says whether it is needed.
 
 The stage is not deleted. Deleting it on a specification would repeat exactly what ADR-033 did
@@ -65,9 +65,9 @@ already recorded that as a defect once.
 
 | | |
 |---|---|
-| [P92](../../OPEN_PROBLEMS.md) does not need to be run now | A stator that may not be built does not need its coupling through a conducting tube computed. The entry stays live and A66 stays unwritten |
+| [P92](../OPEN_PROBLEMS.md) does not need to be run now | A stator that may not be built does not need its coupling through a conducting tube computed. The entry stays live and A66 stays unwritten |
 | The pulse store stays unintegrated | [A64](../../validation/A64_pulse_store_technology.md) sized it at ~70 g. It does not need to become hardware yet |
-| [P34](../../OPEN_PROBLEMS.md) and E35 stay in limbo | The magnets return *only if* the stage is built. Neither defect can be closed or dismissed until P67, and a magnetometer-carrying customer cannot be answered either way today |
+| [P34](../OPEN_PROBLEMS.md) and E35 stay in limbo | The magnets return *only if* the stage is built. Neither defect can be closed or dismissed until P67, and a magnetometer-carrying customer cannot be answered either way today |
 | The commanded-velocity claim is unresolved | At 0.9051 % the stage is unnecessary and the declared 0.5 % band is still missed. *Unnecessary and sufficient are different words and this ADR does not conflate them* |
 
 > That last row is the honest limit of this decision. A61 band 3 asked whether the stage beats

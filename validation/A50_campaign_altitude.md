@@ -10,7 +10,7 @@ Verify with `git show --stat <this commit> -- analysis/campaign_altitude.py`, wh
 Asked directly: the stage should be able to deploy on arrival, *or* stay up for days, weeks or
 months and deliver satellites into different orbits as it moves.
 
-[E28](../OPEN_PROBLEMS.md) is live and it is exactly this question, found by accident when two
+[E28](../appendix/OPEN_PROBLEMS.md) is live and it is exactly this question, found by accident when two
 GMAT runs stopped early:
 
 > *"R2 (350 km, 55.2 deg) and R3 (350 km, 9.6 deg) never reached the declared 90 days: their twelve

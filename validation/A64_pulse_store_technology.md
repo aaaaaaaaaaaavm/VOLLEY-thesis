@@ -91,7 +91,7 @@ Declared before the script. Not to be edited after the run.
 
 ## Result
 
-**RUN 2026-08-20. Six of six bands pass, and the prediction held exactly. [P86](../OPEN_PROBLEMS.md)
+**RUN 2026-08-20. Six of six bands pass, and the prediction held exactly. [P86](../appendix/OPEN_PROBLEMS.md)
 closes on a sourcing answer.
 
 | # | Band | Result | |
@@ -140,7 +140,7 @@ guessing.
 ## Consequences
 
 - P86 closes. The trim store is ~70 g, not 23-37 kg.
-- [ADR-033](../docs/adr/033-legacy_study-trim-stage.md)'s falsifier 1 is answered and does not fire. The
+- [ADR-033](../appendix/adr/033-legacy_study-trim-stage.md)'s falsifier 1 is answered and does not fire. The
   store weighs 6 % of the 1.2328 kg section it feeds, not more than it.
 - Added mass per satellite is 1.4047 kg against an unmoved 2.0 kg threshold. The design does
   not re-cross the numerator it passes.

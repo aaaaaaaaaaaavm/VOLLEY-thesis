@@ -1,7 +1,7 @@
 # A30: can an induction drive couple to what the satellite already has?
 
-Entry criterion for [PII-16](../docs/VAULT.md) and the whole of
-[`../docs/LEGACY_STUDY_RAIL_DRIVE.md`](../docs/LEGACY_STUDY_RAIL_DRIVE.md).
+Entry criterion for PII-16 (historical source path: `../docs/VAULT.md`) and the whole of
+`../docs/LEGACY_STUDY_RAIL_DRIVE.md` (historical source path: `../docs/LEGACY_STUDY_RAIL_DRIVE.md`).
 
 `analysis/rail_drive.py` sizes a linear induction drive coupling to the CubeSat Design
 Specification's four aluminium corner rails, and it clears the thrust requirement, but only

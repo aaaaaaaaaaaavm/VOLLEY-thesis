@@ -29,7 +29,7 @@ are not public (E5).
 > interface. A deployer has two interfaces, and only the outward one was ever written.
 >
 > The inward one is now specified in
-> [`../PAYLOAD_ENVIRONMENT.md`](../PAYLOAD_ENVIRONMENT.md): the payload envelope sits at
+> `../PAYLOAD_ENVIRONMENT.md` (historical source path: `../PAYLOAD_ENVIRONMENT.md`): the payload envelope sits at
 > 611x magnetometer full scale at its near face and 3.4x at its far face, the field does
 > not fall below Earth's own until z = 332 mm against an envelope ending at 120 mm, and the
 > exposure is continuous rather than per-shot because the array is a permanent magnet.

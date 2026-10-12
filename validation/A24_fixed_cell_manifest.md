@@ -1,8 +1,8 @@
 # A24: the payload ladder as a design, not a volume ratio
 
 Closes: the arithmetic-only status of every class except 3U in
-[`docs/PAYLOAD_CLASSES.md`](../docs/PAYLOAD_CLASSES.md), and tests whether a fixed-cell
-manifest closes [`KILL_CRITERIA.md`](../docs/KILL_CRITERIA.md) threat 1.
+`docs/PAYLOAD_CLASSES.md` (historical source path: `../docs/PAYLOAD_CLASSES.md`), and tests whether a fixed-cell
+manifest closes `KILL_CRITERIA.md` (historical source path: `../docs/KILL_CRITERIA.md`) threat 1.
 
 > ## BANDS DECLARED 2026-08-10, BEFORE `analysis/cell_manifest.py` EXISTS.
 >
@@ -47,12 +47,12 @@ manifest closes [`KILL_CRITERIA.md`](../docs/KILL_CRITERIA.md) threat 1.
 > designed class closes the 2.0 kg threshold. Two rungs do, PocketQube 1P and 3P. 1U does
 > not, at 3.517 kg, and this page's own text below calls 1U *"the rung this repository had been
 > leaning on"*. TubeSat does not either. Bands 2, 4 and 5 are geometric and pass unchanged; band 6
-> fails as it did, for the reason [P44](../OPEN_PROBLEMS.md) records.
+> fails as it did, for the reason [P44](../appendix/OPEN_PROBLEMS.md) records.
 >
 > One thing on this page has no committed record at all. The 6U row is produced by the script's
 > `multi_cell()` path, which prints and does not write, the results file records 6U as *not
 > accommodated*, with zero per load. The classes that consume whole cells are therefore
-> published here and stored nowhere. [`docs/D2_DECISION.md`](../docs/D2_DECISION.md) does not rest
+> published here and stored nowhere. `docs/D2_DECISION.md` (historical source path: `../docs/D2_DECISION.md`) does not rest
 > on that row.
 
 

@@ -92,11 +92,11 @@ kill-criterion numerator historical study currently passes. Recorded as P81.
 ### And P67 decides this too, which is now the fourth thing it decides
 
 The 181.8 J is A41's friction *allowance* over the full stroke, the pessimistic reading, and
-[P67](../OPEN_PROBLEMS.md) has never measured the real value. At a genuinely small friction the
+[P67](../appendix/OPEN_PROBLEMS.md) has never measured the real value. At a genuinely small friction the
 clearing energy collapses and the light ejector works.
 
 One bench test now governs four open decisions: this ejector, [A49](A49_design_surface.md)'s
-long-stroke design point, [ADR-033](../docs/adr/033-legacy_study-trim-stage.md)'s trim stage, and
+long-stroke design point, [ADR-033](../appendix/adr/033-legacy_study-trim-stage.md)'s trim stage, and
 P77's pulse store. Nothing else in this project has that reach.
 
 ### What survives

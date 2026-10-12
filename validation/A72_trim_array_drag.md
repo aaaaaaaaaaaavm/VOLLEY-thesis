@@ -1,6 +1,6 @@
 # A72, how long a magnet array the shot can afford to carry
 
-**Closes, if it passes:** the closable half of [P118](../OPEN_PROBLEMS.md#p118).
+**Closes, if it passes:** the closable half of [P118](../appendix/OPEN_PROBLEMS.md#p118).
 [A66](A66_tube_shielding.md) found that the wall's drag exceeds the stator's thrust above an
 air-gap field of 0.1500 T, and that the carriage magnets face the aluminium wall for the whole
 8.0 m stroke rather than only the 144.01 mm under the stator. A66 could not integrate that,
@@ -61,11 +61,11 @@ reaches 0.7539 at the muzzle, three quarters of the way to the peak of that curv
 
 ## What this run will not do
 
-It does not choose the fix, and it does not re-open [ADR-035](../docs/adr/035-drive-tube-material.md)
-or [ADR-033](../docs/adr/033-legacy_study-trim-stage.md). It computes what they cost together, which is
-the thing [P92](../OPEN_PROBLEMS.md#p92) said no document owns.
+It does not choose the fix, and it does not re-open [ADR-035](../appendix/adr/035-drive-tube-material.md)
+or [ADR-033](../appendix/adr/033-legacy_study-trim-stage.md). It computes what they cost together, which is
+the thing [P92](../appendix/OPEN_PROBLEMS.md#p92) said no document owns.
 
-It does not resolve [P117](../OPEN_PROBLEMS.md#p117). The 948.0 N it uses is the number A55
+It does not resolve [P117](../appendix/OPEN_PROBLEMS.md#p117). The 948.0 N it uses is the number A55
 specified, carried at face value so that this run's answer does not depend on the one A55 got
 wrong. If P117 lowers that force, `L_force` grows and this run's verdict gets worse, not better.
 
@@ -83,7 +83,7 @@ It measures nothing. E4 stands, and 3.5e7 S/m is a handbook value at room temper
 ## Correction, 2026-08-30, bands 3 and 4 are withdrawn as defective, before the script exists
 
 **No result has been produced. Nothing has been run.** Both defects are visible from the inputs
-alone, and both are the failure [ADR-037](../docs/adr/037-a66-band-one-was-unsatisfiable.md)
+alone, and both are the failure [ADR-037](../appendix/adr/037-a66-band-one-was-unsatisfiable.md)
 describes: a band that cannot discriminate is not a gate, whichever way it is stuck.
 
 **Band 4 could never fail.** The eddy drag is proportional to velocity at small `Rm` and vanishes
@@ -161,8 +161,8 @@ against 44.7× at the remanence. **The trade the ladder looks like it offers doe
 
 ### The two decisions are not expensive together, they are exclusive
 
-[ADR-033](../docs/adr/033-legacy_study-trim-stage.md) put the trim stator outside the tube and its magnets
-on the carriage. [ADR-035](../docs/adr/035-drive-tube-material.md) made that tube aluminium, four
+[ADR-033](../appendix/adr/033-legacy_study-trim-stage.md) put the trim stator outside the tube and its magnets
+on the carriage. [ADR-035](../appendix/adr/035-drive-tube-material.md) made that tube aluminium, four
 days later, on mass. Each is defensible on the questions asked of it. Together they put a
 permanent-magnet array and a stationary 35 000 S conducting sheet in relative motion at 34.28 m/s
 for eight metres, which is an eddy-current brake, and the brake is stronger than the gas gun.
@@ -170,12 +170,12 @@ for eight metres, which is an eddy-current brake, and the brake is stronger than
 > The magnets do not need the stator to be energised. They brake from the first millimetre of
 > travel, on every shot, whatever the trim stage is doing.
 
-That is what [P92](../OPEN_PROBLEMS.md#p92) meant by a defect in the sequencing rather than in
+That is what [P92](../appendix/OPEN_PROBLEMS.md#p92) meant by a defect in the sequencing rather than in
 either decision.
 
 **None of this touches Gen5.** The Phase I machine is a flat ironless stator with no tube, no
 sleeve and no conducting member between the winding and the array, and nothing in this run applies
-to it or to any number in [`docs/BASELINE.md`](../docs/BASELINE.md).
+to it or to any number in [`docs/BASELINE.md`](../appendix/BASELINE.md).
 
 ### Band 5 is the band that makes this hard to dismiss
 
@@ -195,7 +195,7 @@ A three per cent margin against a handbook conductivity is not a margin, the num
 room temperature for a wall that heats, and [A63](A63_steam_design_point.md) already priced steel
 at **+2.154 kg** — larger than everything the fluid trade was trying to save. A non-conducting
 liner or a non-conducting section is the other direction and this run does not choose between
-them. It is [P92](../OPEN_PROBLEMS.md#p92)'s trade and it now has a number in it.
+them. It is [P92](../appendix/OPEN_PROBLEMS.md#p92)'s trade and it now has a number in it.
 
 ### What was wrong on the way here, and is fixed
 
@@ -216,7 +216,7 @@ bisecting.
 ### What this run still does not resolve
 
 It does not choose between ADR-033 and ADR-035, and it does not fix
-[P117](../OPEN_PROBLEMS.md#p117). If P117 lowers the 948.0 N this run took at face value,
+[P117](../appendix/OPEN_PROBLEMS.md#p117). If P117 lowers the 948.0 N this run took at face value,
 `L_force` grows and every ratio above gets worse.
 
 It counts only the magnets' field. The stator's own contribution, `μ₀K/2` = 0.0566 T, is left out,

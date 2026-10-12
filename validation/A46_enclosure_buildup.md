@@ -7,9 +7,9 @@ Verify with `git show --stat <this commit> -- analysis/enclosure_buildup.py`, wh
 
 ## Why this run exists
 
-[P68](../OPEN_PROBLEMS.md). [A45](A45_stage_credit.md) found that ADR-032's first falsifier
+[P68](../appendix/OPEN_PROBLEMS.md). [A45](A45_stage_credit.md) found that ADR-032's first falsifier
 fires, and that the single largest item in the 43.33 kg stage credit is the 8.00 kg enclosure,
-radiator and packaged-avionics line, which is [P10](../OPEN_PROBLEMS.md), a mass this repository
+radiator and packaged-avionics line, which is [P10](../appendix/OPEN_PROBLEMS.md), a mass this repository
 records as never itemised. At 18.5 % of the credit against a 16.5 % break-even, that one line
 fires the falsifier on its own.
 
@@ -119,7 +119,7 @@ it at the lightest sandwich in the sweep.
 
 ### Why the placeholder was so far out
 
-It was never an estimate of anything. [P10](../OPEN_PROBLEMS.md) records it as *"an 8.0 kg
+It was never an estimate of anything. [P10](../appendix/OPEN_PROBLEMS.md) records it as *"an 8.0 kg
 placeholder with no derivation"*, entered on 2026-08-13 explicitly so a caveated number would be
 auditable where a hole was not, and chosen as *"the lean end"* of a range whose upper bound
 `KILL_CRITERIA.md` had already put at a plausible 20 kg.

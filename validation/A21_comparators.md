@@ -5,8 +5,8 @@
 > schedulability verdicts do not establish a matched twelve-payload mission.
 > The later A21-R timing-only phase claim is [withdrawn](A21R_release_timing.md).
 > Use the [same-epoch correction](P113_S16_phasing_correction.md), the
-> [finite-burn campaign](../docs/MANIFEST_FINITE_BURN.md) and the
-> [freeze-readiness matrix](../docs/GEN5_FREEZE_READINESS.md) for current scope.
+> finite-burn campaign (historical source path: `../docs/MANIFEST_FINITE_BURN.md`) and the
+> freeze-readiness matrix (historical source path: `../docs/GEN5_FREEZE_READINESS.md`) for current scope.
 
 > ## Forward note, 2026-08-21: the comparison table below is pre-A46 and pre-ADR-030
 >
@@ -16,11 +16,11 @@
 >
 > | Row | As run, 2026-08-10 | Current | Moved by |
 > |---|---:|---:|---|
-> | Δv | 16.388 m/s | 16.029 m/s | [ADR-030](../docs/adr/030-apply-the-depth-resolved-thrust-constant.md), the depth-resolved thrust constant |
+> | Δv | 16.388 m/s | 16.029 m/s | [ADR-030](../appendix/adr/030-apply-the-depth-resolved-thrust-constant.md), the depth-resolved thrust constant |
 > | Lifetime extension | +61.8 % | +60.2 % | the same |
 > | Ratio against the fastest published spring | 7.52x | 7.33x | the same |
 > | Deployer mass per 3U satellite | 6.375 kg | 10.547 kg | [A46](A46_enclosure_buildup.md), which replaced P10's 8.00 kg enclosure placeholder with 50.04 kg of derived line items |
-> | **Band 4, mass parity** | **pass at 1.062** | **FAIL at 1.758** | the same. **[P69](../OPEN_PROBLEMS.md)** |
+> | **Band 4, mass parity** | **pass at 1.062** | **FAIL at 1.758** | the same. **[P69](../appendix/OPEN_PROBLEMS.md)** |
 > | Cold-gas loss at 3U | 7.5x | 12.4x | the same |
 >
 > Current values from `analysis/results/comparators.json`, regenerated against the present rollup.

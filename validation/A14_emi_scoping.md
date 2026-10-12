@@ -104,14 +104,14 @@ Two separate facts put it here on the same day.
 The 2025 decision to drop the coilgun rested partly on this and never computed it. My
 2021–2025 notebooks give two reasons for abandoning the coilgun: the acceleration is enormous and
 "the EMI environment is awful", and either defeats the point of carrying an *unmodified* CubeSat
-([`../docs/HISTORY.md`](../docs/HISTORY.md#why-the-coilgun-was-actually-dropped)). The
+([`../docs/HISTORY.md`](../appendix/HISTORY.md#why-the-coilgun-was-actually-dropped)). The
 acceleration half is now a number in ADR-003. The electromagnetic half has no working behind it
 anywhere. An architecture was rejected on grounds that were never calculated, and the successor
 has never had its own calculated either.
 
 The same gap exists in my other electromagnetic launch paper, whose abstract lists
 "electromagnetic coupling" among challenges "identified and analyzed" while its body never
-returns to the subject ([`../docs/SKILLS.md`](../docs/SKILLS.md)). Two studies, no EMI
+returns to the subject (`../docs/SKILLS.md` (historical source path: `../docs/SKILLS.md`)). Two studies, no EMI
 calculation in either.
 
 And the question has now been asked from outside the project, by a systems engineer wanting
@@ -133,7 +133,7 @@ put a number against a nine-year-old judgement.
 It is not an EMC qualification. MIL-STD-461 RE102/CE102 limits are absolute field strengths
 at a specified distance with a specified antenna; reproducing them needs a radiating model this
 project does not have. Bands 6 and 7 below are therefore **relative** margins, which is what a
-scoping pass can honestly assert. T-6 in [`../docs/QUALIFICATION_PLAN.md`](../docs/QUALIFICATION_PLAN.md)
+scoping pass can honestly assert. T-6 in `../docs/QUALIFICATION_PLAN.md` (historical source path: `../docs/QUALIFICATION_PLAN.md`)
 remains the measurement and nothing here substitutes for it.
 
 It is model-to-model at best, and mostly model-to-comparator. E4 stands: nothing measured.

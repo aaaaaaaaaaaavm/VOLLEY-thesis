@@ -1,6 +1,6 @@
 # P92: clean-sheet historical study reference-architecture screen
 
-> **Architecture disposition, 2026-09-28:** The separate motor-charged spring-cell bank is withdrawn as VOLLEY's next architecture. It is retained here only as a dated study. Any selection or current-reference wording below describes the former decision and is superseded. A reusable shared launch path with sequential loading is the open design objective; no speed envelope is validated. See [current status](../docs/NEXT_GENERATION_STATUS.md).
+> **Architecture disposition, 2026-09-28:** The separate motor-charged spring-cell bank is withdrawn as VOLLEY's next architecture. It is retained here only as a dated study. Any selection or current-reference wording below describes the former decision and is superseded. A reusable shared launch path with sequential loading is the open design objective; no speed envelope is validated. See current status (historical source path: `../docs/NEXT_GENERATION_STATUS.md`).
 
 
 Declared 2026-09-16 before `analysis/reference_architecture.py` exists. P92 and P113 remain open.

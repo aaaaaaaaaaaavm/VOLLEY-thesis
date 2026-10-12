@@ -1,6 +1,6 @@
 # ADR-035: The drive tube is hard-anodised aluminium, and the piston matches it
 
-Status: Accepted, Date: 2026-08-20, Phase: I, Closes: [P85](../../OPEN_PROBLEMS.md), Rests on: A58, A59, A61, A63
+Status: Accepted, Date: 2026-08-20, Phase: I, Closes: [P85](../OPEN_PROBLEMS.md), Rests on: A58, A59, A61, A63
 
 ## Context
 
@@ -80,7 +80,7 @@ This decision is wrong if any of these turns out true.
 2. The coating cannot hold the bore tolerance. Hard anodising grows the surface, and an
    ISO H8 bore that is anodised after honing is not the bore that was honed. A dimension nobody
    has specified.
-3. [P89](../../OPEN_PROBLEMS.md)'s 17.8 N seal specification cannot be met against an anodised
+3. [P89](../OPEN_PROBLEMS.md)'s 17.8 N seal specification cannot be met against an anodised
    aluminium bore. A61 produced the number against no surface at all. *If a harder bore is needed
  to reach it, this reverses.*
 4. A fluid change is forced later. If P86 or a customer requirement pushes the design to a

@@ -26,4 +26,4 @@ Declared at commit `e0a3cf611824efe19d045cab4fc73dcdfaa7abca`. All declared cons
 | magnet_5mm | 7.848059 | 0.003496% |
 | two_layer | 6.627476 | 0.001489% |
 
-All ten lever rows were recomputed. The thin-magnet and widened-gap corrections are geometry-specific, not a shared scale factor. See [the new result](../analysis/results/velocity_levers_depth.json) and [current trade table](../docs/DESIGN_OPTIONS_exit_velocity.md). Baseline and hardware claims remain unchanged.
+All ten lever rows were recomputed. The thin-magnet and widened-gap corrections are geometry-specific, not a shared scale factor. See [the new result](../analysis/results/velocity_levers_depth.json) and current trade table (historical source path: `../docs/DESIGN_OPTIONS_exit_velocity.md`). Baseline and hardware claims remain unchanged.

@@ -41,7 +41,7 @@ Status: Accepted, suspended 2026-08-20 by [ADR-036](036-seal-specification-and-t
 > The dispersion this stage exists to correct is 3.9798 %, not the 1.113 % quoted below.
 > *Added to this banner 2026-08-20: dispersion was not on its list of amended quantities, so the
 > 1.113 % in the Context section stayed uncorrected for a day after A55 superseded it.* 1.113 %
-> is [A44](../../validation/A44_LEGACY_STUDY_dispersion.md)'s figure for A44's 2.18 m machine. At
+> is A44 (historical source path: `../../validation/A44_LEGACY_STUDY_dispersion.md`)'s figure for A44's 2.18 m machine. At
 > ADR-034's adopted point [A55](../../validation/A55_trim_authority.md) measures 3.9798 %, and
 > [A61](../../validation/A61_seal_class.md) reproduces it. Friction's share rises with it, 93.4 %
 > to 98.68 %, the long stroke concentrates the variance in the one term nobody has measured.
@@ -68,7 +68,7 @@ Status: Accepted, suspended 2026-08-20 by [ADR-036](036-seal-specification-and-t
 >
 > The stage is not deleted. Deleting it on a specification would repeat what this ADR itself
 > did in the other direction, *adopting before the falsifier was answered.* Work on it stops
-> until [P67](../../OPEN_PROBLEMS.md) measures the friction, and the section stays in
+> until [P67](../OPEN_PROBLEMS.md) measures the friction, and the section stays in
 > `parameters.json` at A55's 144.01 mm as the worst-case sizing.
 >
 > Read everything below as the worst-case architecture, sized against A41's 83.4 N ceiling,
@@ -77,7 +77,7 @@ Status: Accepted, suspended 2026-08-20 by [ADR-036](036-seal-specification-and-t
 ## Context
 
 [ADR-032](032-legacy_study-stage-integrated-gas-store.md) deleted the motor and bought a 50 % reduction
-in added mass per satellite with it. [A44](../../validation/A44_LEGACY_STUDY_dispersion.md) then priced
+in added mass per satellite with it. A44 (historical source path: `../../validation/A44_LEGACY_STUDY_dispersion.md`) then priced
 what that cost: 3σ dispersion of 1.113 % against Gen5's 0.0274 m/s, with 93.4 % of the
 variance a seal friction nobody has measured, and a fivefold better transducer moving it
 0.008 %. There is no instrumentation route to the product's central claim.
@@ -118,7 +118,7 @@ The magnets come back to the moving part, and the defects come with them.
 | E35 | The payload's field exposure is a design variable again |
 | The cradle | Must hold magnets in alignment as well as the payload, and it still does not exist |
 | A velocity sensor | historical study has no equivalent. The loop is only as good as what it measures |
-| [A47](../../validation/A47_LEGACY_STUDY_fmea.md) | One more element, shared across all twelve shots, in an architecture whose shared elements are what cost delivered satellites |
+| A47 (historical source path: `../../validation/A47_LEGACY_STUDY_fmea.md`) | One more element, shared across all twelve shots, in an architecture whose shared elements are what cost delivered satellites |
 
 ## Falsifiers
 
@@ -136,7 +136,7 @@ This decision is wrong if any of these turns out true.
 5. The stator cannot reach its magnets. *Added 2026-08-20.* This decision puts the stator
    outside the tube and the magnets inside it; [ADR-035](035-drive-tube-material.md) then made that
    tube aluminium, and nothing has computed what a conducting sleeve does to the coupling.
-   [P92](../../OPEN_PROBLEMS.md). *If the attenuation is material, A55's 1.1543 m/s of authority
+   [P92](../OPEN_PROBLEMS.md). *If the attenuation is material, A55's 1.1543 m/s of authority
    and the 28 606 W above are both optimistic.*
 4. P34 proves binding, if a magnetometer-carrying payload is a real customer rather than a
    hypothetical, the magnets cannot come back at any mass.
@@ -173,6 +173,6 @@ Exit velocity, store, reservoir and stroke are untouched. The trim stage adds no
 shot; it moves velocity within ±3σ of where the gas already put it.
 
 Kill criterion 1 is not met. 1.431 kg per satellite on added mass, 10.547 kg on dry mass,
-and 1.403-3.271 kg once the stage credit is read hostilely ([P68](../../OPEN_PROBLEMS.md)).
+and 1.403-3.271 kg once the stage credit is read hostilely ([P68](../OPEN_PROBLEMS.md)).
 
 Nothing is measured. Not the friction, not the store, not the sensor.

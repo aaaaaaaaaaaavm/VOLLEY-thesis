@@ -13,7 +13,7 @@ expansion cooling and twelve cycles of both are unmodelled.
 [A39](A39_store_trade.md) states it designs *"no cylinder, valve, seal or latch"*, and
 [A40](A40_blowdown_transient.md) that it does not model *"temperature drop in the chamber"*.
 
-[ADR-034](../docs/adr/034-legacy_study-long-stroke-design-point.md) made both halves of it worse and
+[ADR-034](../appendix/adr/034-legacy_study-long-stroke-design-point.md) made both halves of it worse and
 neither was checked.
 
 ## Two opposing effects, and both land on the same component
@@ -30,7 +30,7 @@ And the seal gets much hotter. Friction work is force x stroke, so it scales dir
 > material. *P67 is not a room-temperature friction measurement. It is a friction measurement at
 > −35 °C on a component dissipating two and a half kilowatts into itself.*
 
-And [P85](../OPEN_PROBLEMS.md) is in the middle of it. The tube's material is stated nowhere,
+And [P85](../appendix/OPEN_PROBLEMS.md) is in the middle of it. The tube's material is stated nowhere,
 so the differential expansion between piston and bore across a 62 K swing cannot be computed
 without choosing one, and the choice is worth about 11 µm of clearance on a 15.805 mm bore.
 
@@ -156,7 +156,7 @@ architecture is sold on. *Nothing in this repository models it.*
 | **Dissimilar** — steel piston in aluminium bore, or the reverse | **10.79 µm** |
 
 On a 15.805 mm bore that is a real fraction of any sensible seal clearance, and the
-repository specifies neither the piston nor the tube. [P85](../OPEN_PROBLEMS.md) recorded the
+repository specifies neither the piston nor the tube. [P85](../appendix/OPEN_PROBLEMS.md) recorded the
 material as a 2.15 kg mass question; it is also a 10.79 µm clearance question, and matching the
 two materials makes it disappear entirely.
 

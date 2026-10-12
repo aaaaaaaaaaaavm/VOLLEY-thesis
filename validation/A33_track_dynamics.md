@@ -1,6 +1,6 @@
 # A33: the track's dynamic case
 
-Closes the analysis half of [P36](../OPEN_PROBLEMS.md), open since 2026-08-05.
+Closes the analysis half of [P36](../appendix/OPEN_PROBLEMS.md), open since 2026-08-05.
 
 `sizing.py::track_first_mode()` checks the track against one static target, above 70 Hz to
 clear the launch primary band.** A17 showed that is necessary and not sufficient: every shot
@@ -188,7 +188,7 @@ the beam over about 16 ms, comparable to the mode period.
 - No damping specification. The project has no measured Q or loss factor for a bolted
   aluminium track, and this sheet does not produce one. A17's amplification is used as given.
   P36's first missing item stays missing, and T-2's sine sweep in
-  [`../docs/QUALIFICATION_PLAN.md`](../docs/QUALIFICATION_PLAN.md) is where it gets measured.
+  `../docs/QUALIFICATION_PLAN.md` (historical source path: `../docs/QUALIFICATION_PLAN.md`) is where it gets measured.
 - Beam model, not FEA. Two box longerons as an Euler, Bernoulli beam with a travelling point
   mass. No joints, no brackets, no stator shear lag, no torsion.
 - The eccentricity is a stated assumption. The offset between the stator plane and the

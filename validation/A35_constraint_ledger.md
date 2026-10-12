@@ -126,7 +126,7 @@ sibling result: deleting C1 and C2 together is worth 13.6 % here, and BOLLEY's p
 to 15.91 kg because it kept C3, which this run finds is the requirement that was costing the
 mass all along.
 
-> ### Superseded by A46, 2026-08-20, [P95](../OPEN_PROBLEMS.md). The verdict hardens; one escape route closes.
+> ### Superseded by A46, 2026-08-20, [P95](../appendix/OPEN_PROBLEMS.md). The verdict hardens; one escape route closes.
 >
 > Every figure in sections 3 and 4 below is at a dry mass of 84.59 kg.
 > [A46](A46_enclosure_buildup.md) itemised the enclosure on 2026-08-16 and the ledger's own

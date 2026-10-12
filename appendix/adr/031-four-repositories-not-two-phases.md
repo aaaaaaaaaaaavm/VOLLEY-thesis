@@ -1,7 +1,7 @@
 # ADR-031: four repositories by role, replacing the two-phase model
 
 Status: Accepted, Date: 2026-08-13, Supersedes: the phase model in
-[`../programme/ENGINEERING_PROGRAMME.md`](../programme/ENGINEERING_PROGRAMME.md) §§2, 10 ·
+`../programme/ENGINEERING_PROGRAMME.md` (historical source path: `../programme/ENGINEERING_PROGRAMME.md`) §§2, 10 ·
 Extends: [ADR-017](017-four-repositories.md)
 
 ## Context
@@ -67,7 +67,7 @@ is the only rule the lab has.
 
 ## What this changes in practice, and what it does not
 
-`docs/VAULT.md` becomes [`../VAULT.md`](../VAULT.md), the same eighteen entries, the same
+`docs/VAULT.md` becomes `../VAULT.md` (historical source path: `../VAULT.md`), the same eighteen entries, the same
 entry criteria, renamed to what it is.
 
 `docs/BASELINE.md`'s change control loses one clause and keeps the rest. The clause that goes

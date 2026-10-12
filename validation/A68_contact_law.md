@@ -21,7 +21,7 @@ relation is derived assuming most impact energy is stored elastically, which hol
 That is a claim about the law and it is testable. If it is right, a formulation built for the
 low-restitution regime will recover e where LN does not.
 
-The methodology is the one recorded in [`docs/EXTERNAL_EVIDENCE.md`](../docs/EXTERNAL_EVIDENCE.md):
+The methodology is the one recorded in `docs/EXTERNAL_EVIDENCE.md` (historical source path: `../docs/EXTERNAL_EVIDENCE.md`):
 contact parameters are *identified by inversion* against a reference, not assumed. Three
 formulations are implemented and the third is identified rather than derived.
 
@@ -102,7 +102,7 @@ component, not a number.*
 
 > **What does not move.** **Both laws put the exit angular rate far above the 2.0 °/s band** — 4.5×
 > at the friendlier one. The finding survives the model-form uncertainty; the precision of the
-> figure does not, and [P108](../OPEN_PROBLEMS.md) is restated accordingly rather than withdrawn.
+> figure does not, and [P108](../appendix/OPEN_PROBLEMS.md) is restated accordingly rather than withdrawn.
 
 ---
 

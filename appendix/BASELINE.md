@@ -5,7 +5,7 @@
 > disagree with them. Regenerate after any authorised baseline change.
 >
 > Flagship commit at generation: `12a2bda` · Phase **I** · governed by
-> [`docs/programme/ENGINEERING_PROGRAMME.md`](programme/ENGINEERING_PROGRAMME.md)
+> `docs/programme/ENGINEERING_PROGRAMME.md` (historical source path: `programme/ENGINEERING_PROGRAMME.md`)
 
 This is the engineering baseline the Phase I deliverables (portfolio, IEEE paper, thesis)
 are developed against. Dossier §2 requires it to be stable. The change-control rule below is
@@ -65,7 +65,7 @@ artefact -- is withdrawn.
 **What replaces it is a condition on where a change goes, not on whether it may happen.** An idea
 enters main when its bands were declared before its script existed and run; it reaches the paper
 or the thesis only when it is **stable, effective and reliable against the problem statement**.
-Architecture changes are developed in [`VAULT.md`](VAULT.md) with an entry criterion for exactly
+Architecture changes are developed in `VAULT.md` (historical source path: `VAULT.md`) with an entry criterion for exactly
 that reason, and historical study is there now.
 
 **The boundary is by type, not by convenience.** The momentum-transfer release in

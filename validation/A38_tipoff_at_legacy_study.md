@@ -91,7 +91,7 @@ still a closure at 2.4x the moment.
 >
 > This run took the historical study point to be 25 g over 2.18 m, the acceleration cap and the long end
 > of [A37](A37_host_integrated.md)'s feasible window, and `analysis/tipoff_legacy_study.py` held both as
-> module constants. [ADR-034](../docs/adr/034-legacy_study-long-stroke-design-point.md) replaced that
+> module constants. [ADR-034](../appendix/adr/034-legacy_study-long-stroke-design-point.md) replaced that
 > window with the host stage's whole usable length on 2026-08-19, three days later, and this run
 > was never pointed at again.
 >
@@ -100,7 +100,7 @@ still a closure at 2.4x the moment.
 > It moved.*
 >
 > The script now reads `acceleration_g` and `stroke_mm` from `cad/parameters.json` at import, the
-> repair [P84](../OPEN_PROBLEMS.md) applied to `precharged.py`. `G_CAP` stays at 25.0: it is
+> repair [P84](../appendix/OPEN_PROBLEMS.md) applied to `precharged.py`. `G_CAP` stays at 25.0: it is
 > the payload qualification cap and **band 6's declared threshold**, and lowering it to the design
 > point would have widened a band.
 >
@@ -143,7 +143,7 @@ still a closure at 2.4x the moment.
 > angular forcing from any force-line eccentricity is time-varying with it, and contact timing,
 > arrival rate and rebound timing all move. A closed form driven by a constant acceleration
 > cannot bound a trajectory whose forcing changes shape. This run's historical study answer is a bound on one
-> scalar comparison, not a bound on the motion. That is [P103](../OPEN_PROBLEMS.md)'s to settle,
+> scalar comparison, not a bound on the motion. That is [P103](../appendix/OPEN_PROBLEMS.md)'s to settle,
 > and it is why P103 step 2 requires the design point to be read live rather than a constant
 > acceleration to be assumed.
 >
@@ -151,7 +151,7 @@ still a closure at 2.4x the moment.
 > clearance at the start of the stroke. Nothing in this repository models the other eight
 > metres, no contact state along the bore, no straightness or roundness, no force-line
 > eccentricity, no payload centre-of-mass offset, no lateral or angular state carried through.
-> See [`docs/EXTERNAL_EVIDENCE.md`](../docs/EXTERNAL_EVIDENCE.md).
+> See `docs/EXTERNAL_EVIDENCE.md` (historical source path: `../docs/EXTERNAL_EVIDENCE.md`).
 
 
 **RUN 2026-08-14. Five of six bands pass. Band 1, the regression check, fails — and that is the

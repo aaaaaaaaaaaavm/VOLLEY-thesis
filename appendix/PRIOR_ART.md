@@ -5,7 +5,7 @@
 > shown. This file was first written from abstracts alone on 2026-07-29 and three of its
 > conclusions were wrong; the corrections are listed at the bottom rather than silently applied.
 
-What to do about all of it is in [`RESEARCH_POSITION.md`](RESEARCH_POSITION.md), organised
+What to do about all of it is in `RESEARCH_POSITION.md` (historical source path: `RESEARCH_POSITION.md`), organised
 by adopt / cite / avoid / replicate / concede. This file is the evidence; that one is the
 position.
 
@@ -117,7 +117,7 @@ limitations stated for extreme conditions.
 > measured is a slow transport mechanism, not an ejection. It is not a validated electromagnetic
 > launcher. But they built hardware and this project has built none, E4 has been open throughout,
 > and their willingness to report observed collisions is the standard
-> [`BENCHTOP_TESTS.md`](BENCHTOP_TESTS.md) is written to.
+> `BENCHTOP_TESTS.md` (historical source path: `BENCHTOP_TESTS.md`) is written to.
 
 ---
 

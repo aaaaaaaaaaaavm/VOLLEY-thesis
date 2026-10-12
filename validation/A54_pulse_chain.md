@@ -7,7 +7,7 @@ Verify with `git show --stat <this commit> -- analysis/pulse_chain.py`, which mu
 
 ## Why this run exists
 
-[P77](../OPEN_PROBLEMS.md), and [ADR-033](../docs/adr/033-legacy_study-trim-stage.md) named it as its own
+[P77](../appendix/OPEN_PROBLEMS.md), and [ADR-033](../appendix/adr/033-legacy_study-trim-stage.md) named it as its own
 falsifier 1 on the day it was adopted:
 
 > *"The pulse store weighs more than the 0.340 kg stage it feeds. The correction is 37.7 J at
@@ -211,7 +211,7 @@ Three routes exist and A54 cannot choose between them:
 | **Shorten the stroke** | dispersion tracks friction work, and friction work tracks stroke | **[A49](A49_design_surface.md)'s surface is already published** and [A55](A55_trim_authority.md) band 9 gives the authority at every friction share. *This is the route that needs no new data* |
 | **Withdraw the trim stage** | accept 3.980 % open-loop | **The commanded-velocity claim goes with it**, and that is what distinguishes VOLLEY from a spring |
 
-And [P67](../OPEN_PROBLEMS.md) still governs all three. The dispersion that sets the authority
+And [P67](../appendix/OPEN_PROBLEMS.md) still governs all three. The dispersion that sets the authority
 that sizes the store is 98.7 % a seal coefficient measured on nothing. *A bench measurement
 below a 20 % friction share moves every number on this page.*
 

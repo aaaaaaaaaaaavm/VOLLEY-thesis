@@ -7,7 +7,7 @@ Verify with `git show --stat <this commit> -- analysis/fill_window.py`, which mu
 
 ## Why this run exists
 
-[ADR-032](../docs/adr/032-legacy_study-stage-integrated-gas-store.md)'s replacement falsifier, written
+[ADR-032](../appendix/adr/032-legacy_study-stage-integrated-gas-store.md)'s replacement falsifier, written
 when A41 closed P63: *a 2 L chamber cannot be filled to 50 bar inside the inter-shot window.* A41
 specified the store and never checked that the store can be reloaded.
 
@@ -104,7 +104,7 @@ pressure. Below 50 bar it cannot fill a 50 bar chamber, and the last quarter of 
 
 The reservoir is modelled as adiabatic, so it cools as it empties and its pressure falls faster
 than mass alone would give. That is right for a fast blowdown and wrong for this cadence,
-[ADR-020](../docs/adr/020-inter-shot-cadence.md) puts twenty minutes between shots, ample for a
+[ADR-020](../appendix/adr/020-inter-shot-cadence.md) puts twenty minutes between shots, ample for a
 bottle to re-equilibrate with its surroundings.
 
 So the answer is bounded rather than single-valued:

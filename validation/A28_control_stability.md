@@ -149,7 +149,7 @@ Kt and mass tolerances, not by loop gain. Sensitivity to K<sub>p</sub> across th
 
 ### What moved in the baseline, and under which rule
 
-Change-control rule 2 in [`../docs/BASELINE.md`](../docs/BASELINE.md), *a validation outcome
+Change-control rule 2 in [`../docs/BASELINE.md`](../appendix/BASELINE.md), *a validation outcome
 against a band declared before its run* — and rule 1, error correction. Both apply.
 
 | | Before | After |

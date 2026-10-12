@@ -67,7 +67,7 @@ Declared before the script. Not to be edited after the run.
 | **3** | Full-credit added mass per satellite at the resized store is **reported against A45's 1.403** | — |
 | **4** | **Removing the P10 enclosure lines alone keeps added mass per satellite ≤ 2.0 kg** | A45 band 5's question, re-asked at the lighter store |
 | **5** | **The hostile reading keeps added mass per satellite ≤ 2.0 kg**, against the **unmoved** 2.0 threshold | ADR-032 falsifier 1 still fires. **The threshold does not move because the store got lighter** |
-| **6** | **The uniform break-even is ≥ 30 %, as [ADR-032](../docs/adr/032-legacy_study-stage-integrated-gas-store.md) states** | ADR-032's declared threshold is still wrong, and the decision record still overstates its own margin |
+| **6** | **The uniform break-even is ≥ 30 %, as [ADR-032](../appendix/adr/032-legacy_study-stage-integrated-gas-store.md) states** | ADR-032's declared threshold is still wrong, and the decision record still overstates its own margin |
 | **7** | Added mass per satellite is **monotone decreasing** in surviving fraction | The model is not behaving. A45 band 7, unchanged |
 | **8** | **The three published added-mass figures are reconciled** — each stated with the store and the scope that produces it, and **one named canonical** | The project keeps publishing three numbers for one quantity |
 | **9** | **REPORT**: break-even and per-satellite mass across the store masses this project has used — A43's 5.38, ADR-034's ≈ 4.10, A56's 3.1216 | — |
@@ -91,7 +91,7 @@ Declared before the script. Not to be edited after the run.
 ## Result
 
 **RUN 2026-08-20. Four of eight decidable bands pass. The verdict survives and the margin improves
-by a third, and it is still nowhere near the threshold [ADR-032](../docs/adr/032-legacy_study-stage-integrated-gas-store.md) declared.
+by a third, and it is still nowhere near the threshold [ADR-032](../appendix/adr/032-legacy_study-stage-integrated-gas-store.md) declared.
 
 All five predictions held.
 
@@ -144,7 +144,7 @@ front page's hostile figure of 3.164 is the 4.10 kg row; P68's 3.108 is A45's ar
 5.38. *Two different stores, two different runs, both published as "historical study".*
 
 > The canonical figure is 1.2145 kg per satellite, at A56's sized store, without the trim stage.
-> The trim stage is excluded because [ADR-036](../docs/adr/036-seal-specification-and-the-trim-stage.md)
+> The trim stage is excluded because [ADR-036](../appendix/adr/036-seal-specification-and-the-trim-stage.md)
 > suspended it, and any page quoting 1.3173 must say it includes a section that may not be
 > built.
 

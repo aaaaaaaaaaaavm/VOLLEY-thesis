@@ -6,7 +6,7 @@ This repository contains the Gen5 geometry needed to review its manuscript witho
 
 *FreeCAD-linked STEP solids visualized in Blender; the evaluated side-fed placement has a known clash. [Six labeled JPEGs, exact source hashes and rebuild commands](renders/step_review/README.md). No built hardware or GUI solver screenshot.*
 
-**Review decision:** the side-fed reference placement **fails**. Two 166 mm cassettes and the 205 mm track require 537 mm across a 526 mm internal enclosure width before clearance. CadQuery and FreeCAD exact-solid intersections both find 32,915 mm³ of track/cassette overlap per side. Inspect the [three-page CAD review PDF](GEN5_CAD_REVIEW.pdf), [source report](GEN5_CAD_REVIEW.md), [reference assembly JSON](REVIEW_ASSEMBLY.json), [FreeCAD read-back JSON](FREECAD_EXPORT.json), and [P116 run sheet](../validation/P116_gen5_assembly_packaging.md).
+**Review decision:** the side-fed reference placement **fails**. Two 166 mm cassettes and the 205 mm track require 537 mm across a 526 mm internal enclosure width before clearance. CadQuery and FreeCAD exact-solid intersections both find 32,915 mm³ of track/cassette overlap per side. The later [all-leaf audit](GEN5_FULL_INTERFERENCE_AUDIT_2026_10_12.md) finds 17 intersecting pairs, including sled/track and sled/stator. Inspect the [three-page CAD review PDF](GEN5_CAD_REVIEW.pdf), [source report](GEN5_CAD_REVIEW.md), [reference assembly JSON](REVIEW_ASSEMBLY.json), [FreeCAD read-back JSON](FREECAD_EXPORT.json), and [P116 run sheet](../validation/P116_gen5_assembly_packaging.md).
 
 | Local file group | Purpose |
 |:--|:--|
@@ -16,5 +16,6 @@ This repository contains the Gen5 geometry needed to review its manuscript witho
 | [Dimensions](DIMENSIONS.md), [BOM](BOM.md) | Geometric parameters and modeled mass ledger |
 | [STEP review images](renders/step_review/README.md) | Open, closed, top and drive-detail Gen5 views plus separate unselected R1 views |
 | [Build scripts](build_review_assembly.py), [FreeCAD export](freecad_export_review.py) | Reproduce the reference handover |
+| [Gen6 one-cell R2](gen6_integration_r2/README.md), [mixed-size four-cell R0](gen6_four_cell_r0/README.md) | Separate unselected future-work geometry and sampled nominal checks; neither revises Gen5 or defines hardware performance |
 
 The 126.6 kg modeled dry rollup is **not** a FreeCAD assembly weight. Its 9.445 kg sled uses historical Gen3 solid volumes, and other components are modeled or assumed. The host flange is a reference shape, not a provider-approved ICD; feeder motion, retention, fasteners, harness, tolerances, payload qualification and host integration remain open. Gen3 files, where included for traceability, are historical mass/FEA inputs, not the current geometry.

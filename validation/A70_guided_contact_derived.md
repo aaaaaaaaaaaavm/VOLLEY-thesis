@@ -29,7 +29,7 @@ sensitivity at S_T = 0.894.
 | # | Band | FAIL if |
 |---|---|---|
 | **1** | **The coupling is exact.** With A69's shape scaled to zero, the model reproduces A67's zero-straightness case to **0.5 %** on exit velocity | The centreline plumbing changed something it should not have |
-| **2** | **Exit angular rate at the orbital centreline ≤ 2.0 °/s** | historical study still misses tip-off with a derived shape and a verified law, and **[P108](../OPEN_PROBLEMS.md) survives every objection raised against A67** |
+| **2** | **Exit angular rate at the orbital centreline ≤ 2.0 °/s** | historical study still misses tip-off with a derived shape and a verified law, and **[P108](../appendix/OPEN_PROBLEMS.md) survives every objection raised against A67** |
 | **3** | **3σ over A69's orbital range ≤ 2.0 °/s** | Same, under the tolerance the structural model actually produces rather than an assumed bracket |
 | **4** | **Peak contact normal force ≤ 445.88 N** at the orbital centreline | The guide carries more than the drive pushes with |
 | **5** | **The A67 → A70 change in exit angular rate is ≤ 50 %** | The two runs disagree about the machine by more than model form should account for, and the earlier headline must be withdrawn rather than refined |
@@ -39,7 +39,7 @@ sensitivity at S_T = 0.894.
 
 It does not calibrate against hardware, E4. It does not model manufacturing
 straightness: A69 computes the *deflected* shape and declares manufacturing tolerance
-separately, and what an 8 m bore can actually hold is [`MANUFACTURING.md`](../docs/MANUFACTURING.md)'s
+separately, and what an 8 m bore can actually hold is `MANUFACTURING.md` (historical source path: `../docs/MANUFACTURING.md`)'s
 to establish. It does not redesign anything: no support pitch, land separation, clearance or
 bore is changed to make a band pass.**
 
@@ -110,7 +110,7 @@ clearance, a rigid two-land piston at 120 mm, seven supports at 1.0 m, at a 1 K 
 not admit its own piston. Every one of those is a design variable and none has been chosen
 against this constraint, because until now the constraint was not known.
 **No parameter is being changed here to make a band pass**, and the redesign
-[P109](../OPEN_PROBLEMS.md) names is deliberately left to be done as design rather than as a fix
+[P109](../appendix/OPEN_PROBLEMS.md) names is deliberately left to be done as design rather than as a fix
 inside a validation run.
 
 ### What is still open in this run
@@ -142,7 +142,7 @@ hardware, this run is recorded as not having answered them.
 >
 > At the nominal 120 mm land separation the piston clears at every gradient tested, including
 > 5 K, with a factor of 2 in hand. The claim that it did not was 15.6x of artificial kink.
-> [P109](../OPEN_PROBLEMS.md) is withdrawn as stated.
+> [P109](../appendix/OPEN_PROBLEMS.md) is withdrawn as stated.
 >
 > ### What survives, and it is much weaker than what was claimed
 >
@@ -196,10 +196,10 @@ hardware, this run is recorded as not having answered them.
 > **Nothing printed here moves.** The admissibility sagittas are dominated by the imposed thermal
 > curvature, which never passed through the penalty; the support-offset term they also carry is
 > small. The 0 K row moves by 5e-5 relative, below every digit shown, and the 2.39 um figure at
-> 120 mm and 1 K that [P110](../OPEN_PROBLEMS.md#p110) established moves by 5e-11. One pass and
+> 120 mm and 1 K that [P110](../appendix/OPEN_PROBLEMS.md#p110) established moves by 5e-11. One pass and
 > five not evaluable, as before.
 >
-> [P115](../OPEN_PROBLEMS.md#p115) also withdraws an explanation that named this run sheet: that
+> [P115](../appendix/OPEN_PROBLEMS.md#p115) also withdraws an explanation that named this run sheet: that
 > the three-point sagitta amplified A69's last-bit noise about 33,000x across machines. The
 > amplification is a real property of a sagitta and it was not what happened here. These sagittas
 > moved by less than their input, not more.

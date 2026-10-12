@@ -31,7 +31,7 @@ it as unreachable with a spring.
 
 Satellites released at different times from the same host arrive at different true anomalies in
 the same orbit, at zero Δv. The comparator was never declared and never computed, and this
-project's own adopted cadence, [ADR-020](../docs/adr/020-inter-shot-cadence.md), 1200 s between
+project's own adopted cadence, [ADR-020](../appendix/adr/020-inter-shot-cadence.md), 1200 s between
 shots, already produces phase separation before the motor does anything.
 
 Found by a literature check, not by a reviewer, which is the only reason it is being fixed
@@ -100,7 +100,7 @@ seven bands are provably untouched.
 | By differential drag | ~25 days |
 
 255x faster than the mechanism the repository sells, and free. And
-[ADR-020](../docs/adr/020-inter-shot-cadence.md)'s adopted 1200 s cadence already delivers
+[ADR-020](../appendix/adr/020-inter-shot-cadence.md)'s adopted 1200 s cadence already delivers
 76.9° per shot, two and a half times the target, before the motor is energised.
 
 The claim that a spring "cannot achieve 30° of phase by design" is false. A spring and a clock

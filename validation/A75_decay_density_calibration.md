@@ -1,9 +1,9 @@
 # A75, whether the decay model is the wrong shape or just at the wrong level
 
-**Closes, if it passes:** the calculable half of [P79](../OPEN_PROBLEMS.md#p79).
+**Closes, if it passes:** the calculable half of [P79](../appendix/OPEN_PROBLEMS.md#p79).
 
 [A50](A50_campaign_altitude.md) band 1 was declared as a calibration against
-[E28](../OPEN_PROBLEMS.md)'s own GMAT runs and it failed: `astro.py` gives **70.6 days** at 350 km
+[E28](../appendix/OPEN_PROBLEMS.md)'s own GMAT runs and it failed: `astro.py` gives **70.6 days** at 350 km
 where those runs reentered at **36 and 29**. P79 records the cause as a static atmosphere and asks
 for a variable-density model.
 
@@ -55,7 +55,7 @@ which is what makes this a calibration between two models and not a validation a
 tests whether one is needed, which is a different and cheaper question, and if bands 3 and 4 pass
 then the answer is that the model's altitude shape was never the problem.
 
-**It does not close [E28](../OPEN_PROBLEMS.md).** E28 asks for a campaign mission life at a real
+**It does not close [E28](../appendix/OPEN_PROBLEMS.md).** E28 asks for a campaign mission life at a real
 deployment altitude, written where the host is described rather than only in a run sheet. This
 supplies the number; the propagation is separate.
 
@@ -63,13 +63,13 @@ supplies the number; the propagation is separate.
 from this environment on 2026-08-31 and the egress proxy still refuses the connection under
 organisation policy, exactly as A9 recorded when it was written. The repository therefore still
 has no comparison against a flown object, and this run is two models against each other like every
-other one. [E4](../OPEN_PROBLEMS.md) stands.
+other one. [E4](../appendix/OPEN_PROBLEMS.md) stands.
 
 **It does not change A50's bands or re-run A50.** A50's band 1 failed and stays failed; a
 calibration performed after a band fails does not retroactively pass it.
 
 It does not touch Gen5's baseline, which contains no lifetime figure derived from this model
-beyond the ×1.60 ratio [P16](../OPEN_PROBLEMS.md) already withdrew and re-quoted at a stated
+beyond the ×1.60 ratio [P16](../appendix/OPEN_PROBLEMS.md) already withdrew and re-quoted at a stated
 activity level.
 
 ---
@@ -143,7 +143,7 @@ variable-density model stays open**, and it is now a 1.24× question rather than
 passed — and a calibration performed after a band fails does not reach back and change the
 verdict. A50 band 1 stays failed on the page.
 
-**It does not rescue [P16](../OPEN_PROBLEMS.md).** P16 withdrew a lifetime-invariance claim
+**It does not rescue [P16](../appendix/OPEN_PROBLEMS.md).** P16 withdrew a lifetime-invariance claim
 because a uniform density scaling preserves a lifetime *ratio* by construction, so the sweep that
 tested it could not have falsified it. Nothing here changes that: this run calibrates absolute
 lifetimes at one altitude, and it says nothing about whether a real atmosphere preserves ratios.
@@ -152,10 +152,10 @@ A5's GMAT falsification stands, and the ×1.60 stays quoted at a stated activity
 **It is not a measurement.** GMAT is a second model. [A9](A9_tle_decay.md) remains the only run
 specified anywhere in `validation/` that would compare against a flown object, and CelesTrak was
 re-tested from this environment on 2026-08-31: the egress proxy still refuses the connection under
-organisation policy, exactly as A9 recorded when it was written. **[E4](../OPEN_PROBLEMS.md)
+organisation policy, exactly as A9 recorded when it was written. **[E4](../appendix/OPEN_PROBLEMS.md)
 stands, and it stands for the same reason it did in July.**
 
-**It does not close [E28](../OPEN_PROBLEMS.md).** E28 asks for a campaign mission life at a real
+**It does not close [E28](../appendix/OPEN_PROBLEMS.md).** E28 asks for a campaign mission life at a real
 deployment altitude, written where the host is described rather than in a run sheet. This supplies
 the number.
 

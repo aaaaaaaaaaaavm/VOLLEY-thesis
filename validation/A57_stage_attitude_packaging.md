@@ -42,15 +42,15 @@
 >
 > ### What survives, and it is the part that mattered
 >
-> [P99](../OPEN_PROBLEMS.md) survives the correction. At A52's own requirement the campaign is
+> [P99](../appendix/OPEN_PROBLEMS.md) survives the correction. At A52's own requirement the campaign is
 > 17.53 N·m·s against the 15 N·m·s wheel A52 declared, it still saturates, by 1.17x rather than
 > by 18x. The margin is now thin instead of hopeless, which makes it a design question rather than
 > a dismissal.
 >
-> [P100](../OPEN_PROBLEMS.md) records the arm defect itself.
+> [P100](../appendix/OPEN_PROBLEMS.md) records the arm defect itself.
 
 **Closes, if the bands hold:** the two remaining `NEEDS SOURCE` rows in
-[`docs/KILL_CRITERIA.md`](../docs/KILL_CRITERIA.md), row 2, envelope and row 5, attitude
+`docs/KILL_CRITERIA.md` (historical source path: `../docs/KILL_CRITERIA.md`), row 2, envelope and row 5, attitude
 rate at firing. Both were quantified for Gen5 and neither has been recomputed for the
 architecture now carried as the design target. Recoil was the third and
 [A52](A52_legacy_study_recoil.md) closed it on 2026-08-19.
@@ -118,9 +118,9 @@ string search would have tripped on the docstring that forbids it; the AST check
 > shots — and that **no ConOps in this repository describes one.** It is flagged `outside_bands`
 > and labelled as a finding about *A52's assumed wheel*, not about any real stage.
 >
-> Suppressing it would have been the opposite failure to [P94](../OPEN_PROBLEMS.md)'s, and
+> Suppressing it would have been the opposite failure to [P94](../appendix/OPEN_PROBLEMS.md)'s, and
 > widening band 5 to admit it would have been P94's failure exactly. It goes in the findings block
-> and opens [P99](../OPEN_PROBLEMS.md).
+> and opens [P99](../appendix/OPEN_PROBLEMS.md).
 
 ### The script had a defect and the bands caught it
 
@@ -152,8 +152,8 @@ constraint and quietly acquires a 200 mm overrun is not a closed row.
 
 ### What this run must not do, and it is the reason band 5 is written the way it is
 
-**[P94](../OPEN_PROBLEMS.md) is open because A13 band 5 passed on a host reaction-control authority
-of 0.1 N·m that [E5](../OPEN_PROBLEMS.md) records does not exist. A number was declared as an
+**[P94](../appendix/OPEN_PROBLEMS.md) is open because A13 band 5 passed on a host reaction-control authority
+of 0.1 N·m that [E5](../appendix/OPEN_PROBLEMS.md) records does not exist. A number was declared as an
 assumption, a band was written against it, and the band passed — which reports a *capability* the
 project has no source for.
 

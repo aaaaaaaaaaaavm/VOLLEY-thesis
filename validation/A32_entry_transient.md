@@ -12,7 +12,7 @@ Two transients exist in this architecture and neither has been looked at:
 1. Establishment. The satellite starts at rest and the stator is switched on. Eddy currents
    in the plate take time to build, so thrust is not available at t = 0 and the machine is
    pushing against a secondary that is not yet responding.
-2. Segment handover. [ADR-022](../docs/adr/022-stator-segmented-not-block-commutated.md)
+2. Segment handover. [ADR-022](../appendix/adr/022-stator-segmented-not-block-commutated.md)
    segments the stator, and a 340 mm plate crossing a segment boundary sees the travelling field
    truncated under part of its own length.
 

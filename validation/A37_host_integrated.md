@@ -14,8 +14,8 @@ Two runs have closed two of the three routes to kill criterion 1.
 package. P59 records that only a payload-class change remains.
 
 A third possibility was never analysed: that the deployer is not carried by a stage but *is* one.
-[ADR-023](../docs/adr/023-target-host-class.md) already re-scoped the host to a restartable upper
-stage and dropped envelope compliance; [ADR-024](../docs/adr/024-last-mile-delivery-conops.md)
+[ADR-023](../appendix/adr/023-target-host-class.md) already re-scoped the host to a restartable upper
+stage and dropped envelope compliance; [ADR-024](../appendix/adr/024-last-mile-delivery-conops.md)
 wrote the last-mile concept. Neither took the last step: after the primary separates, the spent
 stage stops being the mounting surface and becomes the machine, its structure the track, its
 array the supply, its residual propellant the repositioning budget.

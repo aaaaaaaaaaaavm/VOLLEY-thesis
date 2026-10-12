@@ -7,7 +7,7 @@ Verify with `git show --stat <this commit> -- analysis/tube_structure.py`, which
 
 ## Why this run exists
 
-[ADR-034](../docs/adr/034-legacy_study-long-stroke-design-point.md) took the stroke from 2.18 m to
+[ADR-034](../appendix/adr/034-legacy_study-long-stroke-design-point.md) took the stroke from 2.18 m to
 8.0 m and nothing structural was checked. [A49](A49_design_surface.md) costed the tube as
 *"a plain cylinder at one wall thickness, no bending, no alignment tolerance, no dynamic seal
 behaviour"*, its own words, and added that every omission flatters a long tube.

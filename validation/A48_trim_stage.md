@@ -10,14 +10,14 @@ Verify with `git show --stat <this commit> -- analysis/trim_stage.py`, which mus
 Asked in review: can historical study be gas *and* electromagnetic, each a fail-safe for the other?
 
 The mutual-redundancy form does not survive arithmetic and is recorded as
-[PII-20](../docs/VAULT.md) rather than run. For either drive to deploy alone, each must be
+PII-20 (historical source path: `../docs/VAULT.md`) rather than run. For either drive to deploy alone, each must be
 sized for the full duty; A35 prices the electromagnetic half at C2 + C3 = 11.54 + 26.35 kg,
 which is exactly what ADR-032 deleted. And [A47](A47_legacy_study_fmea.md) has since shown the payoff
 would be small anyway, an entire architecture change moved expected delivery by 0.37
 satellites.
 
 But the question contains a better idea than the one it asks. historical study's largest live defect is
-not energy, it is control: [P67](../OPEN_PROBLEMS.md), velocity is committed before the shot,
+not energy, it is control: [P67](../appendix/OPEN_PROBLEMS.md), velocity is committed before the shot,
 3σ dispersion is 1.113 %, and 93.4 % of that variance is a seal friction nobody has
 measured. A fivefold better transducer moves it 0.008 %. There is no instrumentation route.
 

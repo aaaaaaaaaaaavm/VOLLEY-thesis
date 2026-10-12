@@ -1,6 +1,6 @@
 # A71, a numerically converged guided-contact solution
 
-Closes, if it passes: the numerical half of [P108](../OPEN_PROBLEMS.md).
+Closes, if it passes: the numerical half of [P108](../appendix/OPEN_PROBLEMS.md).
 [A67](A67_guided_contact.md) produced a result at one step size, [A68](A68_contact_law.md) found a
 65 % model-form spread in it, and [A70](A70_guided_contact_derived.md)'s retest on the
 corrected centreline moved from 44.17 to 17.14 °/s when the step was quartered. No physical
@@ -49,7 +49,7 @@ accuracy requirement.
 ## What this run does not do
 
 It does not calibrate against hardware, E4. It does not model stick-slip, roundness,
-inertia variation or tube compliance; those are [P103](../OPEN_PROBLEMS.md)'s second-order set. It
+inertia variation or tube compliance; those are [P103](../appendix/OPEN_PROBLEMS.md)'s second-order set. It
 does not redesign anything, and **no parameter is changed to make a band pass.**
 
 
@@ -122,11 +122,11 @@ Three routes, all computation, none tried here:
 3. A compliant piston. If the land may deflect, the contact stiffness is a physical number
    rather than a numerical parameter, and the convergence question changes character.
 
-**[P108](../OPEN_PROBLEMS.md) is not closed and the 2.0 deg/s band is not evaluated.**
+**[P108](../appendix/OPEN_PROBLEMS.md) is not closed and the 2.0 deg/s band is not evaluated.**
 
 ### What did improve
 
-[P112](../OPEN_PROBLEMS.md). The lateral bore lookup wrapped the rear land to the far end of
+[P112](../appendix/OPEN_PROBLEMS.md). The lateral bore lookup wrapped the rear land to the far end of
 the tube: penetration at the nominal point was 1192 % of the clearance before that was found
 and 45 % after. The earlier solver blocker was substantially a geometry error, and what
 remains is a genuine, well-posed numerical-method problem.

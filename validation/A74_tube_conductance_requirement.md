@@ -1,6 +1,6 @@
 # A74, what the tube has to become, stated as a requirement rather than a material
 
-**Closes, if it passes:** the part of [P92](../OPEN_PROBLEMS.md#p92) that is a calculation.
+**Closes, if it passes:** the part of [P92](../appendix/OPEN_PROBLEMS.md#p92) that is a calculation.
 
 [A66](A66_tube_shielding.md) priced the attenuation. [A72](A72_trim_array_drag.md) integrated the
 drag and found that ADR-033's carriage-borne secondary and ADR-035's aluminium wall exclude each
@@ -18,10 +18,10 @@ stroke. This run takes the third and turns the question round.
 Screening materials means importing a conductivity and a density for each candidate, and this
 repository has exactly one of each — aluminium's 3.5 × 10⁷ S/m and 2700 kg/m³. Six more would be
 six more handbook numbers carried at face value into a conclusion, and
-[E11](../OPEN_PROBLEMS.md) already records public material screening as its own open item.
+[E11](../appendix/OPEN_PROBLEMS.md) already records public material screening as its own open item.
 
 So the run computes what the tube must satisfy, from models the repository already owns, and
-leaves the search against that requirement to E11 and [E3](../OPEN_PROBLEMS.md). **A requirement
+leaves the search against that requirement to E11 and [E3](../appendix/OPEN_PROBLEMS.md). **A requirement
 derived from the machine is worth more than a shortlist derived from a table.**
 
 ## Inputs
@@ -56,8 +56,8 @@ Every one is already in the repository. No new material data enters this run.
 **It does not choose the tube material, and it does not name one.** It produces a number. E11 and
 E3 own the search against it, and neither is closed by this run.
 
-It does not re-open [ADR-033](../docs/adr/033-legacy_study-trim-stage.md) or
-[ADR-035](../docs/adr/035-drive-tube-material.md). Which of the two yields is a programme decision
+It does not re-open [ADR-033](../appendix/adr/033-legacy_study-trim-stage.md) or
+[ADR-035](../appendix/adr/035-drive-tube-material.md). Which of the two yields is a programme decision
 and this run supplies one side of the input to it.
 
 It does not price a non-metallic tube. That is a pressure boundary, a sliding seal bore and a
@@ -133,7 +133,7 @@ reading. Both counts are on the record: it fits at **two of six**. The any-field
 pass, and it would pass in the corner where the secondary makes 18.37 N
 ([A73](A73_trim_secondary.md) band 2) against a 948.0 N specification. A band that passes where
 the machine makes nothing tests nothing, which is
-[ADR-037](../docs/adr/037-a66-band-one-was-unsatisfiable.md)'s point, and the wording should have
+[ADR-037](../appendix/adr/037-a66-band-one-was-unsatisfiable.md)'s point, and the wording should have
 said so.
 
 **P92's third original candidate is gone with it.** All three of the fixes that run-sheet named —
@@ -151,7 +151,7 @@ metal works, so the material has to change.
 
 ### Band 5, and the one number ADR-035 did not have
 
-[ADR-035](../docs/adr/035-drive-tube-material.md) chose aluminium on mass alone, and it was right
+[ADR-035](../appendix/adr/035-drive-tube-material.md) chose aluminium on mass alone, and it was right
 on the questions asked of it — [A59](A59_tube_structure.md) found strength, stiffness and buckling
 all indifferent between the metals. The mass argument was **2.154 kg**.
 
@@ -172,7 +172,7 @@ affordable to give back.** It was never a large number; it was the only number i
 ### What this run does not do
 
 **It names no material and does not choose one.** The requirement is stated so that
-[E11](../OPEN_PROBLEMS.md)'s public material screening and [E3](../OPEN_PROBLEMS.md)'s component
+[E11](../appendix/OPEN_PROBLEMS.md)'s public material screening and [E3](../appendix/OPEN_PROBLEMS.md)'s component
 selection can be run against it, and neither is closed here. A72's own run sheet already records
 the one observation this repository can make without new data, and it stays there rather than
 being repeated as though this run produced it.

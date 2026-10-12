@@ -1,5 +1,8 @@
 # Validation plan
 
+**Archive boundary.** Many A-series records below preserve earlier design branches and historical assumptions. The current Gen5 thesis results and limitations are controlled by the final-year report, P-series sheets, exact-solid CAD audit and academic evidence guide. A historical result is not a current motor rating, provider acceptance or flight-performance claim.
+
+
 > **New current finding (P118).** A finite-array/stator 3-D analytic force integral gives 1.042 kJ ideal work and a 12.448 m/s geometry-only speed under ideal phase, challenging the historical 16.029 m/s periodic shot. It shares the earlier cuboid magnetic field law and is not an independent FEM or measurement. See [P118](P118_gen5_finite_force_map.md), the [result JSON](../analysis/results/gen5_finite_force_map.json) and [matched mission screen](../docs/MATCHED_MISSION_REFERENCE.md). The older run-sheet count below describes the historical A-series table, not these new P-series review checks.
 
 > **Independent 2-D follow-up (P119).** A triangular-mesh magnetostatic PDE calculation supports the finite-array end-of-stator force decline and gives 1,081.6 J ideal in-plane work on a 1 mm mesh. The 2-D method omits magnet-depth effects and does not certify the full 3-D force or a coupled shot. See [P119](P119_gen5_finite_force_fem2d.md) and its [solver output](../analysis/results/gen5_finite_force_fem2d.json).
@@ -45,13 +48,13 @@ another model (E4). Each analysis closes a specific named item.
 |---|---|---|---|---|
 | A1 | Airgap field, 2-D magnetostatic | scikit-fem + gmsh (FEMM substituted) | E1 (2-D half), E2 (partly) | RUN 2026-07-29, verdict PARTIAL: K<sub>t</sub> agrees to 0.03 % after correcting shared quadrature, two bands missed with causes (P20, P21) |
 | A4 | Sled chassis structural | CalculiX ccx 2.21 | P5, P8 | RUN 2026-07-28: as-drawn plate passes all three bands |
-| A5 | Orbital lifetime and seeding | GMAT R2022a | E6, hardens x1.80 | RUN, verdict FAIL on invariance. See [`../docs/RESULTS.md`](../docs/RESULTS.md) |
+| A5 | Orbital lifetime and seeding | GMAT R2022a | E6, hardens x1.80 | RUN, verdict FAIL on invariance. See `../docs/RESULTS.md` (historical source path: `../docs/RESULTS.md`) |
 | A9 | Decay rate against flown CubeSats (TLE history) | Space-Track + numpy | E6, against reality rather than another model | NOT RUN, blocked by network policy here and re-tested 2026-07-31. Candidate objects now shortlisted in the sheet, so this is an afternoon elsewhere |
 | A6 | Conjunction probability | scipy 2-D Pc (CARA substituted) | P1, not closed | CORRECTED 2026-08-03: fixed-shape claim retracted; current slab bound 4.4e-5, two of five bands, three VOID, P1 open |
 | A7 | Separation and tip-off | Project Chrono | E7-adjacent | SUPERSEDED 2026-08-20 by [A23](A23_tipoff_release.md) and [A34](A34_cradle_restitution.md), which answered it, ideal release 0 °/s, skew tolerance 50.6 µs, and the cradle rattle settles in 27.25 ms of a 146.4 ms stroke leaving *exactly zero* residual rate. A7 itself stays correctly unrun. A7-R RUN 2026-08-05 instead: Chrono is unavailable and the release mechanism is undefined, so the tolerance was computed rather than the rate, the full push may act unbalanced for only 50.7 µs before the 2 °/s band breaks |
 | A8 | Pulse-power chain | ngspice / PySpice | E17 | RERUN 2026-08-05 as A8-R2 at the corrected point: six of six bands, exit velocity agrees to 0.016 % |
 | A10 | Shot against a realistic bank ESR | `motor_model.shot()` | nothing; opened P26 | RERUN 2026-08-03: hard ceiling 68 mohm, five of six bands, one VOID |
-| A11 | Regenerative recovery of sled energy | `motor_model.regen_brake()` | nothing; asks what R5 did not | RERUN 2026-08-03: 291.4 J recovered, eight of eight bands. Superseded as a current figure: that run integrated over the 240 mm section [ADR-030](../docs/adr/030-apply-the-depth-resolved-thrust-constant.md) removed. At the 39 mm that survives, recovery is 47.0 J, 3.9 % of the sled's energy (P97) |
+| A11 | Regenerative recovery of sled energy | `motor_model.regen_brake()` | nothing; asks what R5 did not | RERUN 2026-08-03: 291.4 J recovered, eight of eight bands. Superseded as a current figure: that run integrated over the 240 mm section [ADR-030](../appendix/adr/030-apply-the-depth-resolved-thrust-constant.md) removed. At the 39 mm that survives, recovery is 47.0 J, 3.9 % of the sled's energy (P97) |
 | A12 | Inter-array attraction, two numerical methods | magpylib + surface Maxwell stress | P17 | CORRECTED 2026-08-03: extended stress plane 2680.0 N vs 2686.6 N volume force; five of five bands |
 | A13 | Indexing and sled-return attitude disturbance | momentum bookkeeping | E24 | CORRECTED 2026-08-03: transient-rate rows 3/4 FAIL, row 7 VOID; ideal residual rate is zero and the cadence conclusion is superseded |
 | A14 | EMI scoping: payload coupling and comms | `drive_electrical` + magpylib | advances E12; opened P34 | RUN 2026-08-05, verdict PARTIAL: six of eight bands, band 4 FAIL at 611x, band 5 VOID. The dominant term is the static magnet field, not the drive |
@@ -120,11 +123,11 @@ another model (E4). Each analysis closes a specific named item.
 | A58 | The chamber, the tube and the seal across a campaign | numpy-free | opened P88, extended P85 | RUN 2026-08-19: six of eight. The bulk thermal case is comfortable, the tube warms 5-8 K over a campaign, the chamber recovers with a 7 s time constant against a 1200 s cadence, and the gas ends 135 K above condensation. The problem is the seal: 667.2 J arrives in it in five milliseconds at 2419 W, and a 2 g seal must shed 77.52 % of that during the stroke to stay within 50 K, a requirement on a component that exists in no file. Band 6 failed at 10.79 µm of differential clearance, which matching the two materials removes for free. Band 7 passed on a test declared wrong: it compared a definite input against an upper bound, and the sign of the net thermal load is undetermined |
 | A59 | The drive tube as a beam, a column and a pressure vessel | numpy-free | opened P85; sizes the rail interface | RUN 2026-08-19: six of nine. Hoop stress is a non-issue at 13.9x margin, the tube is a column. Its Euler load unsupported is 19.9 N against the shot's own 445.86 N axial reaction, so it buckles by 45x and intermediate support is what makes the machine work at all. First mode 1.67 Hz against a 70 Hz target. Two independent criteria land on 1.0 m spacing, seven supports, which cost 99.7 g, so the prediction that they would eat ADR-034's mass saving was wrong. The real exposure is that nobody has said what the tube is made of: 1.140 kg in aluminium, 3.294 in steel, and A49 band 7 passes on one and fails on the other |
 > Two entries above are document reviews rather than banded runs, and are filed in `docs/`
-> because they declare no band: [`ICD_COMPLIANCE.md`](../docs/ICD_COMPLIANCE.md) (the launch
+> because they declare no band: `ICD_COMPLIANCE.md` (historical source path: `../docs/ICD_COMPLIANCE.md`) (the launch
 > interface permits 16.029 m/s; three worse requirements found) and
-> [`FMEA.md`](../docs/FMEA.md) (nine of thirteen elements forfeit the manifest; the design
+> `FMEA.md` (historical source path: `../docs/FMEA.md`) (nine of thirteen elements forfeit the manifest; the design
 > needs r >= 0.99326 per element per cycle to beat a spring). Both came out of the external
-> review recorded in [`REVIEW_RESPONSES.md`](../docs/REVIEW_RESPONSES.md).
+> review recorded in `REVIEW_RESPONSES.md` (historical source path: `../docs/REVIEW_RESPONSES.md`).
 | A19 | Sensitivity ranking of nine assumed inputs | numpy + the real pipeline | nothing; ranks the assumptions behind P29, P28, `STRUCTURAL_GAP` | RUN 2026-08-10, verdict band 1 FAIL: net efficiency has two different leaders depending on the metric, so both rankings are published. `v_exit` does not respond to bank ESR at all, nil, then total |
 
 A10 and A11 are cross-checks of the model against its own physics rather than against an
@@ -212,7 +215,7 @@ record the mesher and solver versions beside the deck hash in the run sheet; the
 derived and `.gitignore` excludes it. Where a deck was written by hand, or produced by a step
 that is not reproducible from this repository, the deck is the input and it is committed.
 Result JSON under `validation/results/` is committed either way, because that is the quantity
-an acceptance band is read against. See [P39](../OPEN_PROBLEMS.md#p39) for the case that
+an acceptance band is read against. See [P39](../appendix/OPEN_PROBLEMS.md#p39) for the case that
 settled this and [A4](A4_sled_structural.md#reproduction-record-2026-09-15) for the
 reproduction record it rests on.
 

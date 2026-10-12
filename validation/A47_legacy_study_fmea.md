@@ -7,7 +7,7 @@ Verify with `git show --stat <this commit> -- analysis/fmea_legacy_study.py`, wh
 
 ## Why this run exists
 
-[E30](../OPEN_PROBLEMS.md) is the strongest structural criticism this design has received, and
+[E30](../appendix/OPEN_PROBLEMS.md) is the strongest structural criticism this design has received, and
 it has been LIVE since 2026-08-10:
 
 > A spring dispenser is twelve independent one-shot mechanisms in parallel. One failure costs
