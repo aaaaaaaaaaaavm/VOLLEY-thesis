@@ -1,6 +1,6 @@
 ---
 title: "VOLLEY Gen5 | Final-review evidence handout"
-date: "10 October 2026"
+date: "12 October 2026 (post-review update)"
 geometry: margin=15mm
 papersize: a4
 fontsize: 9pt
@@ -23,6 +23,6 @@ fontsize: 9pt
 
 **Evidence classes.** The pack contains source scripts, captured run outputs, numerical cross-checks, FreeCAD native review assemblies, STEP exports, figures, reports and an explicit claim-to-source map. These establish only their stated models, geometry and boundary conditions. They do not establish payload qualification, supplier component ratings, host/provider approval, customer demand or flight readiness.
 
-**Next gate.** Independently check finite integrated thrust; rerun the coupled circuit and trajectory; select a feasible feeder and reconcile its mass, clearances and loads; repeat the matched mission; then build an instrumented coupon or test article when resources and interfaces are available. Gen6 and 1 km/s are future trade targets, not results.
+**Next gate.** Independently check finite integrated thrust; rerun the coupled circuit and trajectory; select a feasible feeder and reconcile its mass, clearances and loads. The later Gen6 P130 surrogate lets both commanded release and spring-plus-host meet four ideal targets, but assumed device-plus-fuel mass favors springs by 10.7177 kg. P131–P132 provide two partial FreeCAD/STEP first-article envelopes and necessary energy bounds; neither candidate is build ready. An instrumented article follows only after G0/G1 interface, source, contact, brake and installed-system review. The 1 km/s line is long-range research, not a result.
 
 **Source trail.** `P118_gen5_finite_force_map.md`; `P119_gen5_finite_force_fem2d.md`; `P120_gen5_finite_coupled_shot.md`; `P121_gen5_finite_force_surface3d.md`; `P122_gen5_finite_force_sensitivity.md`; `P117_rated_energy_mass_audit.md`; `P116_gen5_assembly_packaging.md`; `P115_rated_orbit_cartesian.md`; `GEN5_COMPUTATIONAL_REVIEW.pdf`; `GEN5_CAD_REVIEW.pdf`; `CLAIM_EVIDENCE_MAP.md`. The complete pack is in the VOLLEY-thesis repository's `university/final_review_2026_10_10/` directory.

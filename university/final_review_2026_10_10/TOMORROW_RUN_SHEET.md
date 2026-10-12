@@ -1,6 +1,6 @@
 ---
 title: "VOLLEY | 15-minute final-review run sheet"
-subtitle: "10 October 2026 · two presenters · computational Gen5 study"
+subtitle: "12 October update to the 10 October two-presenter review route"
 author: "Adityavardhan Mishra and Pratham Chawla"
 geometry: margin=16mm
 papersize: a4
@@ -35,7 +35,7 @@ The spoken route is **13:55**, leaving **1:05** for slide changes and interrupti
 | 9:10–10:45 | 17–19 | Pratham | 1:35 | Decision slides: 126.6 kg dry / 10.55 kg per 3U fails the ~6 kg spring comparison; side-fed reference layout is 11 mm too narrow; R1 clears scripted routes but is an unselected candidate. |
 | 10:45–12:20 | 20–21 | Pratham | 1:35 | Demonstrate the computational chain on slide 20. The finite Gen5 case saves 1.866 kg ideal host propellant in one matched event, yet its device plus resized fuel is 52.717 kg heavier; no twelve-shot case closes. Hand back: “The system-level result is therefore a decision, not a performance claim.” |
 | 12:20–13:00 | 22 | Adityavardhan | 0:40 | State the three adverse findings and what the study actually establishes. |
-| 13:00–13:45 | 23–24 | Adityavardhan | 0:45 | P124 shows why 1 km/s over 1.3 m implies about 39,220 g for 4 kg; it is separate research. The first Gen6 article needs mission-derived speed, payload load and measured accuracy. |
+| 13:00–13:45 | 23–24 | Adityavardhan | 0:45 | P130 lets both commanded release and spring-plus-host reach the same four ideal targets; assumed installed device plus consumed fuel favors springs by 10.72 kg. Two Gen6 STEP envelopes exist, but P131–P132 leave motor, source, contact, brake and full mass open. G0/G1 must close before a build; 1 km/s remains separate research. |
 | 13:45–13:55 | 25–26 | Adityavardhan | 0:10 | Point to sources and invite questions. |
 
 **Handoff rule:** either student must be able to explain slides 13–14, 17–19 and 21. Those are likely to attract technical questions.

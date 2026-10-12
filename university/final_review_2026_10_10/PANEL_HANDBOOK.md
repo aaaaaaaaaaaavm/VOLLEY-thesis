@@ -4,7 +4,7 @@ subtitle: "Panel handbook: completed Gen5 study, findings, and future direction"
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
-date: "10 October 2026"
+date: "12 October 2026 (post-review update)"
 geometry: margin=20mm
 papersize: a4
 fontsize: 10pt
@@ -221,6 +221,8 @@ The thesis's strongest engineering contribution is the transparent decision reco
 Gen6's controlling objective is a reusable launch path that sequentially accepts different supported CubeSat sizes and commands each departure condition. The approximately 1–2 m/s to 1 km/s span is an investigation envelope; the upper end may force acceleration, energy, travel, payload or provider constraints that reject candidates. Electromagnetic systems are preferred for comparison but are not preselected. Competent springs, electromechanical/stored-energy, gas/fluid, hybrid, BOLLEY and conventional mission substitutes belong in the same comparison boundary.
 
 The near-term milestone is one named test-article configuration that can be independently reviewed. Its package needs controlled geometry and drawings, a bill of materials, host and payload interfaces, full installed mass/energy/thermal accounting, assembly and inspection instructions, instrumented procedures, predetermined pass/fail and stop criteria, uncertainty and model-credibility evidence, retained failures, and an explicit build/test release decision. A rejected candidate is a valid research outcome; it must not be presented as a build-ready survivor.
+
+**12 October post-review evidence update.** [P130](../../validation/P130_gen6_matched_campaign.md) models two passive 1U and two passive 3U spacecraft in a 500 km sun-synchronous surrogate. Both commanded release and spring-plus-host controls reach the same ideal full-state targets 24 hours after the last release. With assumed installed devices of 30 and 16 kg, commanded release saves 3.2823 kg of ideal host fuel but loses by 10.7177 kg on device plus consumed fuel. A +0.1 m/s shot error changes one-day terminal position by roughly 25–27 km. These are not customer tolerances or measured precision. [P131](../../validation/P131_gen6_go2_article_bounds.md) and [P132](../../validation/P132_gen6_go2_power_instrument_screen.md) add two partial FreeCAD/STEP 3U first-article envelopes and necessary mechanical/source bounds. Their approximately 9.93 kg partial material proxy leaves only about 9.35 kg under the narrow surrogate parity ceiling for all omitted installed hardware. At 6 m/s, roughly 82 J of moving kinetic energy and 818 J of bus energy at an *assumed* 10% efficiency are lower-bound screens; neither motor nor source is selected. G0/G1 remain open, and 1 km/s remains a separate long-range research question. See the [Go 3 gate review](../../GO3_ACADEMIC_RELEASE_REVIEW.md).
 
 # 11. References and project records
 

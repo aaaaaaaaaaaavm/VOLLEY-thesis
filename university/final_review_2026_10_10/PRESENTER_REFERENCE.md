@@ -4,7 +4,7 @@ subtitle: "Slide notes, key numbers, equations, and viva preparation"
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
-date: "10 October 2026"
+date: "12 October 2026 (post-review update)"
 geometry: margin=18mm
 papersize: a4
 fontsize: 10pt
@@ -133,11 +133,11 @@ The comparison fixes one payload, host, start orbit and target. With assumed dev
 
 ## 23. Future work — Gen6
 
-Gen6 retains the mission and reopens hardware selection. This slide now shows P124's **ideal stroke/load calculation**, not a motor test. Over Gen5's 1.3 m stroke, an ordinary 4 kg 3U would see about 39,220 g and carry 2 MJ of payload kinetic energy at 1 km/s; that high-end research objective cannot be the first prototype specification. Start with one delivered orbital state, tolerance, host and payload load limit, then compare mechanism options and choose a measurable lower-speed first article. No achieved command range is asserted.
+Gen6 retains the hosted, sequential-delivery mission and reopens hardware selection. The updated slide shows **P130's matched four-release surrogate**, not measured delivery: both commanded release and spring-plus-host reach the same ideal full-state targets, while assumed installed device plus consumed host fuel favors springs by 10.7177 kg. A +0.1 m/s release error creates about 25–27 km position difference after one day in this model. The first article has two partial FreeCAD/STEP envelope candidates; P131–P132 leave motor, source, contact, brake and full installed mass open. The 1 km/s objective remains distant research; at 1.3 m and 4 kg it would imply about 39,220 g ideal mean acceleration. No achieved command range or product benefit is asserted.
 
 ## 24. Future work — test article
 
-The target is one named, independently reviewable test-article configuration: controlled geometry, BOM, interfaces, mass/energy/thermal budgets, assembly and inspection, calibration and instrumentation, pass/fail and stop criteria, uncertainty and retained failures. A configuration may be rejected. Physical manufacture, testing and qualification are later milestones. Avoid calling N5 itself “the prototype complete.”
+The immediate target is to close G0 customer/host/interface requirements and G1 complete architecture selection. The two partial candidates do not yet have selected circuits, rated source, release contact, launch restraint, carrier capture/brake or an installed bill of materials. A later build package needs controlled geometry, interfaces, mass/energy/thermal budgets, calibration and instrumentation, pass/fail and stop criteria, uncertainty and retained failures. A configuration may be rejected. Physical manufacture, testing and qualification are later milestones.
 
 ## 25–26. References
 
