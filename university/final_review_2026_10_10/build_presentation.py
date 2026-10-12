@@ -396,19 +396,19 @@ txt(s, "STEP reference, enclosure hidden; fit fails. No physical test.",
     7.12, 5.96, 5.55, 0.48, 13, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 20 Future Gen6
-s = base("Future work", "Gen6 reopens the mechanism and installed-system trade",
-         "P124 ideal stroke screen; Gen6 prototype specification remains open", "GEN6 PLAN • NOT ACHIEVED")
-image_fit(s, ROOT / "figures/precision_delivery_design_space.png", 0.48, 1.55, 7.3, 4.4)
-card(s, 8.06, 1.8, 4.54, 1.88, "Start with the mission", "Specify a delivered state, tolerance, host and payload load before choosing release speed.", TEAL, 18, 15)
-card(s, 8.06, 3.9, 4.54, 1.88, "Separate the regimes", "1 km/s over 1.3 m implies ~39,220 g for 4 kg. It is not a first ordinary-3U prototype target.", RED, 18, 15)
-txt(s, "Ideal kinematics only; no commanded range, payload approval or motor rating established.",
+s = base("Future work", "Gen6 has a testable mission, but no selected article",
+         "P130 matched four-release J2 screen; P131–P132 first-article bounds", "GEN6 SCREEN • NOT ACHIEVED")
+image_fit(s, ROOT / "figures/gen6_matched_campaign.png", 0.48, 1.55, 7.3, 4.4)
+card(s, 8.06, 1.8, 4.54, 1.88, "Matched mission", "Two 1U + two 3U targets: both release choices reach ideal states. Assumed device + fuel favors springs by 10.72 kg.", TEAL, 18, 15)
+card(s, 8.06, 3.9, 4.54, 1.88, "First-article gap", "Two STEP envelopes exist; ~9.35 kg remains for all omitted hardware under a surrogate parity screen.", RED, 18, 15)
+txt(s, "1 km/s remains separate long-range research; no command range or motor rating established.",
     0.9, 6.35, 11.55, 0.43, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 21 Future test
-s = base("Future work", "Next milestone: one reviewable first-test configuration",
-         "PLAN-R2 N0–N5 and agreed near-term end goal", "GEN6 PLAN • NOT ACHIEVED")
-steps = [("Freeze", "Named mission, payload and host surrogate"),
-    ("Decide", "Fair mechanism and installed-burden trade"),
+s = base("Future work", "Next milestone: close G0 and G1 before any build",
+         "P130–P132; G0/G1 review gates; no construction authorization", "GEN6 PLAN • NOT ACHIEVED")
+steps = [("Specify", "Real customer targets, tolerances and provider interface"),
+    ("Decide", "Complete motor, source, brake, contact and installed BOM"),
          ("Measure", "Field, contact, release, arrest, loads and cycle behavior"),
     ("Review", "Drawings, BOM, procedures, uncertainty and review decision")]
 for i, (head, body) in enumerate(steps):

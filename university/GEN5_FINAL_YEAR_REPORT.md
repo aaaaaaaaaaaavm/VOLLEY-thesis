@@ -4,7 +4,7 @@ subtitle: "Computational design, evidence review, and engineering disposition"
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
-date: "10 October 2026"
+date: "12 October 2026 (Gen6 future-work update)"
 geometry: margin=20mm
 papersize: a4
 fontsize: 10pt
@@ -249,6 +249,18 @@ The thesis's strongest engineering contribution is the transparent decision reco
 Gen6's controlling objective is a reusable launch path that sequentially accepts different supported CubeSat sizes and commands each departure condition. The approximately 1–2 m/s to 1 km/s span is an investigation envelope; the upper end may force acceleration, energy, travel, payload or provider constraints that reject candidates. Electromagnetic systems are preferred for comparison but are not preselected. Competent springs, electromechanical/stored-energy, gas/fluid, hybrid, BOLLEY and conventional mission substitutes belong in the same comparison boundary.
 
 The near-term milestone is one named test-article configuration that can be independently reviewed. Its package needs controlled geometry and drawings, a bill of materials, host and payload interfaces, full installed mass/energy/thermal accounting, assembly and inspection instructions, instrumented procedures, predetermined pass/fail and stop criteria, uncertainty and model-credibility evidence, retained failures, and an explicit build/test release decision. A rejected candidate is a valid research outcome; it must not be presented as a build-ready survivor.
+
+## Post-study Gen6 service and first-article screens (P130–P132)
+
+The follow-on mission is an explicitly **surrogate** four-release case: two passive 1U and two passive 3U spacecraft, a roughly 500 km sun-synchronous host, all releases within one orbit, and a distinct full position/velocity target for each satellite 24 hours after the last release. The [matched J2 campaign](../validation/P130_gen6_matched_campaign.md) lets both commanded release and spring plus host maneuvers meet the **same** four exact mathematical targets. With assumed installed masses of 30 kg for VOLLEY and 16 kg for springs, VOLLEY saves 3.2823 kg of host fuel but adds 14 kg of installed device, leaving a 10.7177 kg penalty on the narrow device-plus-consumed-fuel measure. A +0.1 m/s release-speed perturbation moves the one-day terminal position by roughly 25–27 km in either strategy. Exact numerical matching is not delivered-state accuracy; the study has no customer tolerance, navigation covariance or physical dispenser rating.
+
+Two editable [FreeCAD/STEP 3U first-article envelope candidates](../cad/gen6_first_article/README.md) provide a separate geometry screen. A captured permanent-magnet carrier is the analysis lead; a captured conductive-plate carrier remains a challenger. Their **partial** frame, guide and carrier material proxies are 9.926 and 9.945 kg. Under the surrogate P130 mission, only about 9.35 kg remains for all unmodelled hardware before device-plus-consumed-fuel parity is lost. Five nominal positions have no solid intersection, but the assumed 0.7° yaw with a 1.5 mm linear stack clashes with the simple guide corridor. [P131](../validation/P131_gen6_go2_article_bounds.md) gives an ideal 6 m/s moving-energy floor of about 82 J. At an assumed 10% wall-to-kinetic efficiency, [P132](../validation/P132_gen6_go2_power_instrument_screen.md) requires at least 818 J of input; it does not select a source, motor or brake. The proposed first article's 3–6 m/s measurement band also does not cover the campaign's approximately 7 and 9 m/s hypothetical release commands.
+
+These screens make the next research questions specific, while preserving Gen5 as the sole evaluated thesis configuration. They do **not** close Gen6's mission value, full installed mass, moving-contact/release design, electrical and thermal ratings, qualification or build authorization. The [Go 3 claim and gate disposition](../GO3_ACADEMIC_RELEASE_REVIEW.md) traces the open items for examination.
+
+![Surrogate four-release comparison. Both strategies reach the same ideal mathematical targets; installed mass assumptions decide this narrow comparison.](<../figures/gen6_matched_campaign.png>){width=88%}
+
+![Gen6 first-article partial CAD material mass versus the remaining surrogate allowance. Unmodelled installed items are excluded.](<../figures/gen6_go2_mass_gate.png>){width=88%}
 
 # 11. References and project records
 

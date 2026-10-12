@@ -6,11 +6,13 @@
 
 This directory is the review pack for the computational Gen5 study. It follows the user's eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
+**12 October post-review update:** Slides 23–24 and the report's future-work section now summarize P130–P132. They were prepared after the dated 10 October pack and must not be described as material delivered at that earlier review. The Gen5 result slides, which report the evaluated configuration and adverse findings, retain their original scope. [Go 3 release review](../../GO3_ACADEMIC_RELEASE_REVIEW.md) lists the exact academic and engineering gates still open.
+
 **Presentation thesis:** the Gen5 system-level computational evaluation reports a conditional orbital benefit, a failed 3U mass criterion, and a failed side-fed CAD reference fit. Slides 1–22 present the research and its limitations. Slides 23–24 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product or final design freeze.
 
 ## Bring to the review
 
-**Start with [How to present the old numbers and known errors](READ_THIS_FIRST.md)** and give the panel the [one-page evidence handout](PANEL_HANDOUT.pdf). The [15-minute two-speaker run sheet](TOMORROW_RUN_SHEET.pdf) assigns the handoff, timing and fallback route. The deck places the historical shot beside the 3-D analytic force screen, independent 2-D FEM, and conditional bank rerun; slide 20 shows the computational force-to-mission chain. An offline presentation and core-evidence ZIP is provided as `TOMORROW_PRESENTATION_PACK.zip`; the reproducible source remains in this repository.
+**Start with [How to present the old numbers and known errors](READ_THIS_FIRST.md)** and give the panel the [one-page evidence handout](PANEL_HANDOUT.pdf). The [15-minute two-speaker run sheet](TOMORROW_RUN_SHEET.pdf) assigns the handoff, timing and fallback route. The deck places the historical shot beside the 3-D analytic force screen, independent 2-D FEM, and conditional bank rerun; slide 20 shows the computational force-to-mission chain. The current offline bundle is [GO3_ACADEMIC_REVIEW_PACK.zip](GO3_ACADEMIC_REVIEW_PACK.zip), including the revised report, presentation, P130–P132 and Gen6 STEP envelopes. `TOMORROW_PRESENTATION_PACK.zip` preserves the earlier 10 October handover; the reproducible source remains in this repository.
 
 | Item | Present/print | Editable source |
 |:--|:--|:--|

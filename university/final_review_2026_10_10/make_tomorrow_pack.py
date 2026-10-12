@@ -9,7 +9,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
-OUTPUT = HERE / "TOMORROW_PRESENTATION_PACK.zip"
+OUTPUT = HERE / "GO3_ACADEMIC_REVIEW_PACK.zip"
 
 FILES = {
     "START_HERE/READ_THIS_FIRST.pdf": HERE / "READ_THIS_FIRST.pdf",
@@ -21,6 +21,7 @@ FILES = {
     "PRESENTATION/PRESENTER_REFERENCE.pdf": HERE / "PRESENTER_REFERENCE.pdf",
     "EVIDENCE/PANEL_HANDBOOK.pdf": HERE / "PANEL_HANDBOOK.pdf",
     "EVIDENCE/CLAIM_EVIDENCE_MAP.md": HERE / "CLAIM_EVIDENCE_MAP.md",
+    "EVIDENCE/GO3_ACADEMIC_RELEASE_REVIEW.md": REPO / "GO3_ACADEMIC_RELEASE_REVIEW.md",
     "EVIDENCE/GEN5_FINAL_YEAR_REPORT.pdf": REPO / "university/GEN5_FINAL_YEAR_REPORT.pdf",
     "EVIDENCE/GEN5_COMPUTATIONAL_REVIEW.pdf": REPO / "reports/GEN5_COMPUTATIONAL_REVIEW.pdf",
     "EVIDENCE/GEN5_CAD_REVIEW.pdf": REPO / "cad/GEN5_CAD_REVIEW.pdf",
@@ -37,6 +38,16 @@ FILES = {
     "EVIDENCE/P125_gen5_voltage_limited_screen.md": REPO / "validation/P125_gen5_voltage_limited_screen.md",
     "EVIDENCE/P126_feeder_r1_tolerance_screen.md": REPO / "cad/FEEDER_R1_TOLERANCE_SCREEN.md",
     "EVIDENCE/P127_gen5_release_arrest_bounds.md": REPO / "validation/P127_gen5_release_arrest_bounds.md",
+    "EVIDENCE/P130_gen6_matched_campaign.md": REPO / "validation/P130_gen6_matched_campaign.md",
+    "EVIDENCE/P131_gen6_go2_article_bounds.md": REPO / "validation/P131_gen6_go2_article_bounds.md",
+    "EVIDENCE/P132_gen6_go2_power_instrument_screen.md": REPO / "validation/P132_gen6_go2_power_instrument_screen.md",
+    "RESULTS/gen6_matched_campaign.json": REPO / "analysis/results/gen6_matched_campaign.json",
+    "RESULTS/gen6_go2_article_bounds.json": REPO / "analysis/results/gen6_go2_article_bounds.json",
+    "RESULTS/gen6_go2_power_instrument_screen.json": REPO / "analysis/results/gen6_go2_power_instrument_screen.json",
+    "CAD/Gen6_G1_A_Envelope.step": REPO / "cad/gen6_first_article/release/Gen6_G1_A_Envelope.step",
+    "CAD/Gen6_G1_B_Envelope.step": REPO / "cad/gen6_first_article/release/Gen6_G1_B_Envelope.step",
+    "CAD_VIEWS/Gen6_G1_A_STEP_derived.jpg": REPO / "cad/gen6_first_article/release/Gen6_G1_A_STEP_derived.jpg",
+    "CAD_VIEWS/Gen6_G1_B_STEP_derived.jpg": REPO / "cad/gen6_first_article/release/Gen6_G1_B_STEP_derived.jpg",
     "RESULTS/gen5_voltage_limited_screen.json": REPO / "analysis/results/gen5_voltage_limited_screen.json",
     "RESULTS/FEEDER_R1_TOLERANCE_SCREEN.json": REPO / "cad/FEEDER_R1_TOLERANCE_SCREEN.json",
     "RESULTS/gen5_release_arrest_bounds.json": REPO / "analysis/results/gen5_release_arrest_bounds.json",
