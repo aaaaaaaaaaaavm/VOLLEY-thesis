@@ -12,7 +12,7 @@ The evaluated **Gen5 twelve-3U configuration** is a completed *computational fea
 
 | Record | Current state |
 |:--|:--|
-| Chaptered academic report and PDF | `university/GEN5_FINAL_YEAR_REPORT.md/.pdf`; Gen6 P130–P132 appear only as future work. |
+| Chaptered academic report and PDF | `university/GEN5_FINAL_YEAR_REPORT.md/.pdf`; 12 October pre-submission black-book candidate with unsigned front matter, calculation identities and verification-status matrix. Gen6 P130–P132 appear only as future work. |
 | IEEE-formatted manuscript and PDF | `source/paper.tex` and `source/VOLLEY_IEEE_Conference.pdf`; IEEE venue and final submission rules remain unselected. |
 | Presentation and presenter materials | 26-slide PPTX/PDF, handout, run sheet, presenter reference and panel handbook under `university/final_review_2026_10_10/`. |
 | Traceable numerical record | Local `analysis/`, `validation/`, figures, adverse results, model scripts and captured JSON. |
