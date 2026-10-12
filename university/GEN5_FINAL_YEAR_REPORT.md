@@ -21,37 +21,9 @@ mainfont: DejaVu Sans
 **Department:** Mechanical Engineering, Symbiosis Institute of Technology<br>
 **Document type:** Final-year project report; pre-submission review draft, not guide-approved or plagiarism-checked
 
-# Submission control sheet — unsigned draft
-
-| Field | Entry / required action |
-|:--|:--|
-| Institute and programme | Symbiosis Institute of Technology, Pune; B.Tech. Mechanical Engineering |
-| Candidates | Adityavardhan Mishra (23070125054); Pratham Chawla (23070125029) |
-| Guide named in the existing review pack | Vikas Gulia — verify designation and spelling before submission |
-| Scope | Gen5 computational feasibility study and negative configuration decision; Gen6 is future work |
-| Guide approval | **Pending** — no signature or approval is represented here |
-| Plagiarism report / similarity index | **Pending** — obtain actual report; append its first page as required by Proforma 4 |
-| Proforma 4 | **Pending** — complete with real entries and signatures outside this draft |
-| Department decision on working project model | **Pending** — computational demonstration has not been accepted as a substitute |
-| Final PDF / binding / Moodle upload | **Pending** — record final checksum and submission receipts |
-
-The 10 October 2026 departmental instructions require a prescribed presentation format, guide confirmation, plagiarism check, Proforma 4, two hardbound reports, Moodle deliverables and a working project model. This report is an editable candidate for those steps, not proof that they occurred. The attached 2025 black-book PDF is an organizational example, not an express 2026 template. See the [verified submission requirements](../SIT_2026_FINAL_SUBMISSION_REQUIREMENTS.md).
-
-\newpage
-
-# Certificate and declarations — completion instructions
-
-**Institutional certificate:** insert only the certificate wording approved by the guide/department. Do not reuse the 2025 sample's names, signatures or approval claims. Leave the submitted certificate unsigned until the named signatories actually approve it.
-
-**Student originality and attribution declaration:** both listed students should review the final text, figures, external material, code and authorship before signing the department-approved declaration. Individual contributions are not allocated in this draft. The signed Proforma 4 and genuine similarity-report first page must be appended to the submission copy; no numerical similarity result is available at this revision.
-
-**Acknowledgements:** author-approved acknowledgements and any required guide/institute wording remain to be inserted before binding. This page is intentionally incomplete to avoid implying a personal statement or endorsement that has not been supplied.
-
-\newpage
-
 # Reader's map and abbreviations
 
-The abstract states the decision; Chapters 1–5 give the problem, prior art, objectives and method; Chapters 6–8 present the controlled Gen5 calculation and adverse findings; Chapters 9–10 give the conclusion and future Gen6 gates. Appendix A traces numerical and CAD claims to source files. Appendix B records submission status. The repository PDF is self-contained for the principal results; linked scripts and logs are its reproducibility record.
+The abstract states the decision; Chapters 1–5 give the problem, prior art, objectives and method; Chapters 6–8 present the controlled Gen5 calculation and adverse findings; Chapters 9–10 give the conclusion and future Gen6 gates. Appendix A traces numerical and CAD claims to source files. Appendix B records the remaining technical closure. The repository PDF is self-contained for the principal results; linked scripts and logs are its reproducibility record.
 
 | Term | Meaning |
 |:--|:--|
@@ -60,7 +32,6 @@ The abstract states the decision; Chapters 1–5 give the problem, prior art, ob
 | FEM / FEA | Finite-element method / finite-element analysis |
 | J2 / LEO | Earth's second zonal gravity term / low Earth orbit |
 | LSM | Linear synchronous motor |
-| SI | Similarity index in the university integrity form; not a model-confidence measure |
 | 1U / 3U | CubeSat form-factor classes; no specific spacecraft is qualified here |
 
 **Figure provenance:** every rendered CAD view is a model visualization. Every graph is a calculation unless explicitly identified as external data. None depicts a VOLLEY hardware test. The figure captions and Appendix A identify the relevant model family; the final release must retain source paths and hashes.
@@ -95,7 +66,7 @@ This final-year project report evaluates a magazine-fed electromagnetic CubeSat 
 | Exclusions | Hardware measurements, payload qualification, provider ICD approval, lifetime cross-check for the assumed historical input |
 | Build record | Reproduce PDF from this Markdown with Pandoc and XeLaTeX; inspect local source and run sheets |
 
-The 10 October departmental email supplies a prescribed PPT example, a 2025 sample report, and Proforma 4, but does not expressly fix a 2026 report page layout. This draft therefore uses a conventional chapter structure and marks unsigned front matter as pending. No unperformed test, approval, plagiarism result or authorship certification is implied.
+This draft uses a conventional chapter structure. No unperformed test, approval or hardware validation is implied.
 
 # Executive summary
 
@@ -243,7 +214,7 @@ The magnetic field was compared across an analytical representation, magpylib, a
 | Mid-2025 | Coilgun concept shifted toward a linear synchronous motor | Approximate historical milestone |
 | 2025–July 2026 | CAD generations and mass model developed | Some dates reconstructed/approximate |
 | July–September 2026 | Gen5 analysis, numerical checks, defects and thesis record | Dated repository/analysis records |
-| October 2026 | Gen5 findings and design decision assembled for academic review; final presentation scheduled for 31 October | Review package dated 10 October; departmental email dated 10 October |
+| October 2026 | Gen5 findings and design decision assembled for academic review; final presentation scheduled for 31 October | Review package dated 10 October |
 
 The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the rated speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions are part of the review record; the historical 16.029 m/s shot remains traceable, but no final speed rating is selected. Gen6 research gates are described only in §10, Future work.
 
@@ -355,7 +326,7 @@ The follow-on mission is an explicitly **surrogate** four-release case: two pass
 
 Two editable [FreeCAD/STEP 3U first-article envelope candidates](../cad/gen6_first_article/README.md) provide a separate geometry screen. A captured permanent-magnet carrier is the analysis lead; a captured conductive-plate carrier remains a challenger. Their **partial** frame, guide and carrier material proxies are 9.926 and 9.945 kg. Under the surrogate P130 mission, only about 9.35 kg remains for all unmodelled hardware before device-plus-consumed-fuel parity is lost. Five nominal positions have no solid intersection, but the assumed 0.7° yaw with a 1.5 mm linear stack clashes with the simple guide corridor. [P131](../validation/P131_gen6_go2_article_bounds.md) gives an ideal 6 m/s moving-energy floor of about 82 J. At an assumed 10% wall-to-kinetic efficiency, [P132](../validation/P132_gen6_go2_power_instrument_screen.md) requires at least 818 J of input; it does not select a source, motor or brake. The proposed first article's 3–6 m/s measurement band also does not cover the campaign's approximately 7 and 9 m/s hypothetical release commands.
 
-These screens make the next research questions specific, while preserving Gen5 as the sole evaluated thesis configuration. They do **not** close Gen6's mission value, full installed mass, moving-contact/release design, electrical and thermal ratings, qualification or build authorization. The [Go 3 claim and gate disposition](../GO3_ACADEMIC_RELEASE_REVIEW.md) traces the open items for examination.
+These screens make the next research questions specific, while preserving Gen5 as the sole evaluated thesis configuration. They do **not** close Gen6's mission value, full installed mass, moving-contact/release design, electrical and thermal ratings, qualification or build authorization. The [claim and gate disposition](../GO3_ACADEMIC_RELEASE_REVIEW.md) traces the open items for examination.
 
 ![Surrogate four-release comparison. Both strategies reach the same ideal mathematical targets; installed mass assumptions decide this narrow comparison.](<../figures/gen6_matched_campaign.png>){width=88%}
 
@@ -387,6 +358,6 @@ These screens make the next research questions specific, while preserving Gen5 a
 
 The run sheets report software, inputs, declared comparison bands and files. Figures are generated model or CAD visualizations. A screenshot of a solver interface would not by itself establish a correct result; the editable model, data and case boundary are the audit trail.
 
-# Appendix B. Submission and freeze status
+# Appendix B. Technical closure status
 
-The project is ready to **review** as a computational study with recorded adverse findings. It is **not yet ready for black-book submission** and cannot be described as a fully validated design or released product. Before an academic freeze, close or explicitly disposition the decisive electromagnetic, feed/release, brake, host, structural and installed-system questions; confirm the department's report layout and the working-model route; complete the actual plagiarism check and Proforma 4; obtain guide approval; and record the submitted PDF checksum and Moodle receipts. Physical bench and qualification tests remain future work and must stay marked unrun. The current requirement and owner list is in [SIT 2026 final submission requirements](../SIT_2026_FINAL_SUBMISSION_REQUIREMENTS.md).
+Gen5 is a computational study with recorded adverse findings. Its evaluated configuration is not a qualified deployer or released product. The decisive electromagnetic, feed/release, brake, host, structural and installed-system questions remain open or bounded as recorded in the validation files. Physical bench and qualification tests are future work and remain marked unrun.
