@@ -1,20 +1,21 @@
 # A29: what air costs a ground test of exit velocity
 
-Bears on: [`../docs/BENCHTOP_TESTS.md`](../docs/BENCHTOP_TESTS.md),
-[`../docs/QUALIFICATION_PLAN.md`](../docs/QUALIFICATION_PLAN.md), and E4, because the
-full-scale ground test is the step that turns this project's headline velocity into a measurement.
+**Evidence status:** pre-test CFD screen at a historical 16.388 m/s model point. No VOLLEY ground firing, measured exit velocity or full-scale demonstrator exists. The correction below is predicted, not measured, and the historical point is not a current rated Gen5 speed.
 
-The machine flies in vacuum. The test happens in a room.
+Bears on the [prototype-to-flight roadmap](../docs/GEN6_PROTOTYPE_TO_FLIGHT_ROADMAP.md)
+and the historical E4 test concept, because a proposed full-scale ground test would be the
+step that turns a model velocity into a measurement.
+
+The proposed orbital machine would operate in vacuum. The proposed ground test would take place in a room; it has not been run.
 
 Every velocity in this repository is computed with no aerodynamic drag, because there is none in
-orbit. The TRL-5 step in `QUALIFICATION_PLAN.md` is a full 1.5 m track firing a mass simulator
-into the eddy brake in a laboratory at sea level, and its whole purpose is to compare a
-measured exit velocity against the computed one.
+orbit. The historical TRL-5 test concept calls for a full 1.5 m track to fire a mass simulator
+into an eddy brake in a laboratory at sea level, to compare a future measured exit velocity
+against a computed one.
 
-Nothing in this repository says what the air is worth. A measured velocity compared to
-16.388 m/s without an air correction is biased low by an amount nobody has computed, and the
-comparison is therefore not a validation of the motor model, it is a validation of the motor
-model plus an unquantified error.
+Before this CFD screen, the air correction had not been estimated. A future measurement compared to
+the historical 16.388 m/s model point without an air correction would include an avoidable bias;
+that comparison alone would not validate the motor model.
 
 > ## BANDS DECLARED 2026-08-13, BEFORE `validation/cfd/` EXISTS.
 >
@@ -35,21 +36,21 @@ model plus an unquantified error.
 | 4 | deficit ≥ 10 % of the 0.0267 m/s dispersion | **19.2 % of it** | **PASS** |
 | 5 | channel C_d exceeds free-stream C_d by ≥ 10 % | **−12.7 %** | **FAIL** |
 
-### The answer the test needs
+### The predicted correction a future test would need
 
 | | |
 |---|---:|
 | Drag at exit velocity, free stream | **1.734 N**, spread ±0.144 N over the averaging window |
 | Work against air over the 1.30 m stroke | **1.127 J** |
-| Exit velocity, vacuum → sea-level air | **16.3880 → 16.3829 m/s** |
+| Predicted exit velocity, vacuum → sea-level air at the historical model point | **16.3880 → 16.3829 m/s** |
 | **Deficit** | **5.116 mm/s (0.0312 %)** |
-| Against the 3σ dispersion the test exists to resolve | **19.2 % of it** |
+| Against the modeled 3σ dispersion a future test would assess | **19.2 % of it** |
 | As a servo command instead | **1.734 N, 0.125 % of the 1389 N shot** |
 
-A full-scale ground test can be run in air and does not need a vacuum chamber. But
-every velocity it measures must carry the correction, because 5.1 mm/s is a fifth of the
-dispersion the test is there to resolve. A measurement compared to 16.388 m/s without it is
-being compared to the wrong number by an amount comparable to the quantity being measured.
+A future ground velocity test could use air if it accounts for the predicted correction and
+its uncertainty; this would not replace vacuum or thermal qualification. The 5.1 mm/s
+model correction is about a fifth of the modeled dispersion. No measured velocity is
+available to compare against the historical 16.388 m/s point.
 
 **Bands 3 and 4 together are the useful result**, and they point in opposite directions on
 purpose: band 3 says the term is small, band 4 says it is not small *enough to ignore*. Either
@@ -60,8 +61,8 @@ open-loop deficit, which is what a raw shot comparison sees. A servo tracking th
 profile nulls it instead, and it appears as 1.734 N of extra commanded force, 0.125 % of the
 shot, rather than as velocity error. So a *closed-loop* ground test measures the right
 velocity and hides the air in the current trace; an *open-loop* one measures 5.1 mm/s slow. Which
-of those a test is depends on how it is run, and the run sheet in
-[`../docs/QUALIFICATION_PLAN.md`](../docs/QUALIFICATION_PLAN.md) does not currently say.
+of those a future test exhibits depends on its actual control mode and must be specified in
+the test procedure before measurement.
 
 ### Band 1 — the coarse mesh is converged, and it settles band 2
 

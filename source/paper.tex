@@ -342,13 +342,13 @@ Evidence status & flight heritage & computational study & provider-specific\\
 
 \subsection{Demonstration Path}
 \subsection{What Air Costs a Ground Test}\label{sec:airdrag}
-The machine operates in vacuum and every velocity above is computed with no aerodynamic term, but the full-scale demonstration fires a mass simulator down the track in a laboratory at sea level, so the comparison that test exists to make is between a measured velocity and a computed one that omits the air. A steady RANS solution ($k$-$\omega$ SST) around the sled and payload \emph{as generated}, meshed directly from the CAD surfaces rather than from an idealised body, gives a drag coefficient of \textbf{0.52} on a 201.6~cm$^2$ projected frontal area at $Re = 7.0\times10^5$, i.e. 1.73~N at exit velocity. Because the profile is position-scheduled, $v^2$ rises linearly with distance and so does the drag, making the work over the 1.30~m acceleration zone 1.13~J and the exit-velocity deficit \textbf{5.1~mm/s}, or 0.031~\% (Fig.~\ref{fig:airdrag}).
+The proposed orbital machine would operate in vacuum; the velocities above are computed without aerodynamic drag. A future ground test might fire a mass simulator in air, but no VOLLEY ground shot or measured velocity exists. The CFD case below is a pre-test sensitivity at a historical 16.388~m/s model point, not a correction validated for the present finite-force shot. A steady RANS solution ($k$-$\omega$ SST) around the sled and payload \emph{as generated}, meshed directly from the CAD surfaces rather than from an idealised body, gives a drag coefficient of \textbf{0.52} on a 201.6~cm$^2$ projected frontal area at $Re = 7.0\times10^5$, i.e. 1.73~N at exit velocity. Because the profile is position-scheduled, $v^2$ rises linearly with distance and so does the drag, making the work over the 1.30~m acceleration zone 1.13~J and the exit-velocity deficit \textbf{5.1~mm/s}, or 0.031~\% (Fig.~\ref{fig:airdrag}).
 
 That figure is small against the design point and \emph{not} small against the quantity a ground test resolves: it is \textbf{19~\% of the 3$\sigma$ closed-loop dispersion}. An atmospheric ground test can be considered for initial velocity measurements, but its air-load correction and uncertainty must be reported; vacuum and thermal testing remain separate qualification questions. The distinction depends on how the test is run: open-loop, the deficit appears as 5.1~mm/s of velocity; closed-loop, the servo nulls it and it appears instead as 1.73~N of additional commanded force, 0.125~\% of the shot.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\columnwidth]{A29_wake.png}
-\caption{Mid-plane slice ($z=0$) of the converged fine-mesh solution: kinematic pressure above, speed below, flow left to right. Stagnation on the forward face, separation at the shoulders, and a wake that has not recovered by $x=2.2$~m. The pressure term shown here is integrated directly from the solved field; \textbf{the viscous term is not solved} and is bounded by a turbulent flat-plate correlation over the meshed wetted area, as the text states.}
+\caption{Mid-plane slice ($z=0$) of the fine-mesh CFD screen: kinematic pressure above, speed below, flow left to right. Stagnation on the forward face, separation at the shoulders, and a wake that has not recovered by $x=2.2$~m. The pressure term shown here is integrated directly from the solved field; \textbf{the viscous term is not solved} and is bounded by a turbulent flat-plate correlation over the meshed wetted area, as the text states.}
 \label{fig:wake}
 \end{figure}
 
@@ -362,7 +362,7 @@ Two properties of the solution are reported rather than presented as convergence
 
 \begin{figure}[t]
 \centering\includegraphics[width=\columnwidth]{F14_airdrag.png}
-\caption{Air drag along the acceleration zone, and the resulting exit-velocity deficit set against the design point and against the dispersion a ground test exists to resolve.}
+\caption{Air drag along the acceleration zone, and the resulting exit-velocity deficit set against the historical 16.388~m/s model point and a modeled dispersion a future ground test would need to resolve; no shot has been measured.}
 \label{fig:airdrag}
 \end{figure}
 
