@@ -71,7 +71,7 @@ The [prototype-to-flight decision gates](docs/GEN6_PROTOTYPE_TO_FLIGHT_ROADMAP.m
 
 | Deliverable | Open it | Evidence route |
 |:--|:--|:--|
-| **27-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
+| **28-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
 | **Panel handbook** | [PDF](university/final_review_2026_10_10/PANEL_HANDBOOK.pdf) · [Markdown](university/final_review_2026_10_10/PANEL_HANDBOOK.md) | Detailed explanations and figures |
 | **Final-year project report** | [PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Markdown](university/GEN5_FINAL_YEAR_REPORT.md) | Chaptered academic review draft; college-specific format remains to be applied |
 | **Technical manuscript** | [PDF](source/VOLLEY_IEEE_Conference.pdf) · [LaTeX](source/paper.tex) | [Local evidence guide](ACADEMIC_EVIDENCE.md) |
@@ -99,7 +99,7 @@ Gen5 is one specified system: a release station 1.5 m from the breech on 1.8 m s
 | Dry / loaded design mass | **126.6 / 174.6 kg** | Modeled rollup with historical Gen3 sled volumes and assumed components, not a complete installed host mass |
 | Mass per carried 3U | **10.547 kg** | **Fails** the approximately 2 kg/satellite economic screen |
 | Incumbent canister parity | **1.758×** a roughly 6 kg/3U canister | **Fails** the separate ±15% parity band |
-| One modeled 450 km orbit case | **28.8 km** semi-major-axis rise; **1.60×** lifetime | Conditional atmosphere and orbit assumptions; current lifetime point lacks an independent rerun |
+| One modeled 450 km orbit case | **28.8 km** semi-major-axis rise; **1.60×** lifetime | Conditional atmosphere and orbit assumptions; P134 checks the shared-atmosphere numerical ratio; real lifetime remains unvalidated |
 | Current rated two-body cross-check | **28.800775 km** immediate axis rise | Independent Cartesian propagation; lifetime, host and delivery excluded |
 | Side-fed reference assembly fit | **11 mm shortfall** | 32,915 mm³ cassette/track clash per side; full audit finds 17 pairs, including sled/track and sled/stator |
 
@@ -146,3 +146,11 @@ The result is a **documented computational study with a negative selection scree
 The manuscript uses an IEEE conference layout. A university-specific full-thesis template has not been supplied, and no claim is made that this PDF satisfies an unprovided submission format. The review presentation and academic evidence record are ready for scrutiny of their stated computational scope.
 
 **Beyond Gen5:** [Gen6 direction](university/final_review_2026_10_10/GEN6_DIRECTION.md) frames 1 km/s as a research objective. A named host and ICD, complete installed-system model, payload-specific structural and release testing, repeated shots and full mission closure are future gates. [VOLLEY engineering](https://github.com/aaaaaaaaaaaavm/VOLLEY) and [paper companion](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) offer optional context; this repository contains the evidence needed to review this thesis.
+
+## Reconciled Gen5 evidence, 16 October 2026
+
+The [engineering record](validation/P133_gen5_evidence_audit.md) reconciles the complete historical mass rollup, all 22 Gen5/R1 intersection pairs, fault/uncertainty limits and matched mission outcomes. [P134](validation/P134_gen5_lifetime_crosscheck.md) reproduces a 1.602 static-atmosphere lifetime ratio by a separate numerical integration; the real atmosphere, achieved release speed and full mission remain unvalidated. [The corrected A15 R1 archive](validation/A15_poem_campaign.md) distinguishes the executed GMAT run from regenerated inputs and sampled clearance.
+
+![Reconciled historical mass screen; model assumptions, not measured installed mass](figures/gen5_reconciled_mass.png)
+
+[Versioned evaluated Gen5 technical baseline](docs/GEN5_TECHNICAL_BASELINE.json) fixes exact source/result/CAD hashes and known exceptions. Academic guide approval and final submission remain separate gates.

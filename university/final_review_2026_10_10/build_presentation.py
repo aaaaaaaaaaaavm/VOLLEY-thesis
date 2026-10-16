@@ -155,7 +155,7 @@ txt(s, "Presented By", 2.4, 4.3, 8.5, 0.36, 17, False, RGBColor(35, 77, 129), al
 txt(s, "Adityavardhan Mishra  ·  Pratham Chawla", 1.55, 4.67, 10.25, 0.44, 20, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "PRN 23070125054  ·  PRN 23070125029", 2.1, 5.12, 9.15, 0.34, 15, False, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "Guide: Vikas Gulia", 0.8, 5.68, 5.6, 0.42, 18, True, RGBColor(0, 103, 169))
-txt(s, "Final review: 10 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
+txt(s, "Review candidate: 16 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
 txt(s, "SYMBIOSIS INSTITUTE OF TECHNOLOGY PUNE", 0.6, 6.75, 12.15, 0.45, 23, True, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "1", 12.6, 7.14, 0.3, 0.2, 9, False, MID, align=PP_ALIGN.RIGHT)
 
@@ -206,7 +206,7 @@ s = base("Objectives", "The analytical research objectives have outcomes",
 table(s, ["Research objective", "Final thesis outcome"], [
     ("Design a commandable 3U system", "Reference CAD and subsystem concepts documented; feed remains open"),
     ("Calculate shot and control performance", "Historical model completed; finite force screen challenges its rating"),
-    ("Evaluate orbital utility", "Conditional orbit results; current lifetime not independently closed"),
+    ("Evaluate orbital utility", "Conditional orbit results; real lifetime unvalidated"),
     ("Count full installed burden", "Mass rollup completed; 3U parity criterion failed"),
     ("Test credibility of key claims", "Numerical cross-checks and limits recorded"),
 ], [5.05, 7.2], row_h=0.82, font=16)
@@ -243,7 +243,7 @@ milestones = [
     ("Mid-2025*", "LSM direction", "Coilgun study gives way to a linear synchronous motor"),
     ("2025–26*", "CAD generations", "Geometry and mass models mature through Gen5"),
     ("Jul–Sep 2026", "Gen5 evidence", "Cross-checks, defect corrections and thesis record"),
-    ("Oct 2026", "Final review", "Gen5 results, failed criterion and thesis record presented"),
+    ("Oct 2026", "Final review", "Gen5 results, failed criteria and thesis record prepared"),
 ]
 for i, (date, head, body) in enumerate(milestones):
     y = 1.72 + i * 0.93
@@ -326,7 +326,7 @@ s = base("Results", "Historical orbit input has a separate geometry check",
          "P115 Cartesian orbit check; manuscript Astrodynamic Utility", "GEN5 TWO-BODY CHECK")
 image_fit(s, FIG / "rated_orbit_crosscheck.png", 0.62, 1.8, 7.65, 4.67)
 card(s, 8.52, 1.94, 3.96, 1.95, "+28.8008 km", "Immediate two-body axis rise for an assumed historical 16.029 m/s input.", TEAL, 25, 16)
-card(s, 8.52, 4.1, 3.96, 1.95, "1.60× open", "Lifetime remains atmosphere-dependent and lacks an independent rerun for this input.", AMBER, 22, 16)
+card(s, 8.52, 4.1, 3.96, 1.95, "1.602 model", "P134 checks the shared static atmosphere; actual lifetime and achieved release remain unvalidated.", AMBER, 22, 16)
 txt(s, "Persistent phasing requires a relative state change; this result concerns orbital energy.", 0.8, 6.62, 11.75, 0.27, 13, True, NAVY)
 
 # 16 Mass
@@ -451,6 +451,13 @@ refs = [
     "[11] VOLLEY/BOLLEY, Current Plan and Status — PLAN-R2, controlled working baseline, 29 Sep 2026 (project plan).",
 ]
 bullets(s, refs, 0.76, 1.68, 11.9, 5.13, 16, 16)
+
+# Evidence appendix: numerical model check, not environmental validation.
+s = base("Evidence appendix", "What the reconciled numerical record establishes",
+         "P133/P134 · technical evidence revision, 16 October 2026", "MODEL EVIDENCE ONLY")
+image_fit(s, ROOT / "figures/gen5_lifetime_numerical_check.png", 0.55, 1.62, 8.0, 4.6)
+card(s, 8.8, 1.85, 3.8, 1.7, "1.602 model ratio", "Separate integration, same static atmosphere. Actual lifetime is unvalidated.", AMBER, 18, 14)
+card(s, 8.8, 3.85, 3.8, 1.9, "Failures retained", "22 Gen5/R1 intersections classified; 126.562 kg model; no sampled twelve-shot mission closes.", RED, 18, 14)
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)

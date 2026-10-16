@@ -27,7 +27,7 @@ toc-depth: 2
 
 VOLLEY investigates a last-mile problem in rideshare launches: a secondary CubeSat reaches orbit but ordinarily receives the orbit selected for the primary payload. A spring deployer separates it safely, often at roughly 1–2 m/s; that relative impulse, later drag differences, or host maneuvering can change its in-track phase. Deployment time by itself does not create persistent phase separation from an otherwise unchanged co-orbital host. A larger, deliberately commanded release velocity can also change orbital energy. The thesis evaluates whether that added capability justifies a complete deployer system. The mission model splits responsibilities between a maneuvering host, which performs coarse repositioning, and a deployer, which supplies each satellite's commanded release condition.
 
-The authored thesis analyses one Gen5 solution: a magazine-fed, linear synchronous motor driving a reusable magnetic sled. The historical periodic-force 3U model predicts **16.0 m/s** exit speed at **10.07 g**. Its modeled dry-mass rollup is **126.6 kg**, and the power model predicts **2.782 kJ** gross electrical draw per shot. A closed-loop simulation predicts **0.0274 m/s ($3\sigma$)** exit-speed dispersion at a 15.8 m/s setpoint. For an assumed historical 16.029 m/s input, the orbit model raises semi-major axis by **28.8 km**, with a **1.60×** modelled lifetime multiplier at mean solar activity. The lifetime result is atmosphere-sensitive and has not been independently rerun for that assumed historical input.
+The authored thesis analyses one Gen5 solution: a magazine-fed, linear synchronous motor driving a reusable magnetic sled. The historical periodic-force 3U model predicts **16.0 m/s** exit speed at **10.07 g**. Its modeled dry-mass rollup is **126.6 kg**, and the power model predicts **2.782 kJ** gross electrical draw per shot. A closed-loop simulation predicts **0.0274 m/s ($3\sigma$)** exit-speed dispersion at a 15.8 m/s setpoint. For an assumed historical 16.029 m/s input, the orbit model raises semi-major axis by **28.8 km**, with a **1.60×** modelled lifetime multiplier at mean solar activity. The lifetime result is atmosphere-sensitive and is numerically reproduced by P134 under the same static atmosphere; actual environmental lifetime remains unvalidated.
 
 Gen5 also produced a decisive negative result. With twelve 3U satellites, its deployer mass is **10.55 kg per customer**, versus about **6 kg** for the spring canister comparator used in the thesis. This is **1.76×** as much hardware per 3U payload and fails the preset 15% mass-parity band. The study therefore reaches a decision: the conditional modelled orbital benefit does not make this Gen5 configuration a defensible 3U selection. The result completes the analytical comparison; it does not require a prototype to know that the modelled mass criterion failed. Physical payload loads, magnetic cleanliness, cycle life, and provider interfaces remain questions for a different evidence phase.
 
@@ -186,7 +186,7 @@ The closed-loop Monte Carlo model predicts **0.0274 m/s ($3\sigma$)** exit-veloc
 
 ## Orbital utility
 
-For the stated orbit and mean-solar-activity case, an assumed historical 16.029 m/s release predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. A separate Cartesian two-body integration of that assumed historical state returns **28.800775 km**, agreeing within the declared numerical band. This checks only the immediate orbital-energy result. The atmospheric lifetime multiplier has not been independently reproduced at the exact current point. Timing alone, with zero relative impulse and no host or drag difference, produces neither persistent phasing nor this semi-major-axis change.
+For the stated orbit and mean-solar-activity case, an assumed historical 16.029 m/s release predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. A separate Cartesian two-body integration of that assumed historical state returns **28.800775 km**, agreeing within the declared numerical band. This checks only the immediate orbital-energy result. P134 independently integrates the shared static-atmosphere model and gives a 1.602165 ratio; that numerical agreement does not validate real lifetime or solar invariance. Timing alone, with zero relative impulse and no host or drag difference, produces neither persistent phasing nor this semi-major-axis change.
 
 ![Independent rated-state two-body orbit check. The lifetime claim is outside its scope.](<../../figures/rated_orbit_crosscheck.png>){width=92%}
 
@@ -214,7 +214,7 @@ The analytical result has four parts. The historical model represents a proposed
 
 The Gen5 computational thesis reaches a research conclusion within its stated scope. Its model predicts a commandable moderate-acceleration release and a conditional orbital-energy benefit, with a separate check of the immediate two-body orbital change. Installed-mass accounting misses its preset 3U benchmark, and the side-fed reference CAD assembly fails its width check. The current configuration is therefore not a selected flight baseline. Hardware behavior and interfaces remain outside the tested evidence.
 
-The thesis's strongest engineering contribution is the transparent decision record: the full machine was modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. That closes the Gen5 study and provides a defensible input to a separate future architecture trade.
+The thesis's strongest engineering contribution is the transparent decision record: system budgets and idealized mechanisms were modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. That closes the Gen5 study and provides a defensible input to a separate future architecture trade.
 
 # 10. Future work
 
@@ -239,3 +239,17 @@ A later [four-cell FreeCAD/STEP packaging study](../../cad/gen6_four_cell_r0/REA
 9. D. A. Vallado, *Fundamentals of Astrodynamics and Applications*, 4th ed., 2013.
 10. A. Mishra, *VOLLEY-thesis*: authored manuscript, baseline, provenance, figures and validation records, repository head `b30ffdc`, 28 September 2026. Project record, not independent experimental evidence.
 11. VOLLEY/BOLLEY, *Current Plan and Status — PLAN-R2*, controlled working baseline, 29 September 2026. Project plan, not achieved performance.
+
+# Reconciled engineering record, 16 October 2026
+
+The 23-line historical mass model sums to 126.561588 kg dry, with an assumed axial CG of 0.457690 m. This is not a complete Gen5 material extraction or full inertia tensor. Potential enclosure/thermal/bracket allocation overlap remains unresolved; no unverified mass credit is taken. The original mass failure is retained.
+
+All 17 evaluated Gen5 and five widened-R1 intersections are classified as confirmed conflicts or unresolved adapter/payload proxy intersections. None is accepted as intentional contact without an interface definition; no geometry repair is claimed. Historical isolated FE results do not qualify the failed assembly.
+
+P134 uses a separate orbit-averaged DOP853 integration of the shared static atmosphere. At imposed inertial increments of 2.5, 12.448437 and 16.029 m/s it gives lifetime ratios of 1.082110, 1.451222 and 1.602165. The maximum refinement change is 0.000145%, below its 0.5% numerical band. Space weather, ballistic coefficient history and actual achieved release remain outside that evidence.
+
+The corrected A15 R1 archive was executed in GMAT R2026a on 30 September and reparsed on 16 October. Its circular RAAN span is 14.558545°; the focused window minimum sampled separation is 190.149944 m. No continuous-clearance, coupled sequential host or complete mission verdict follows. The 367° historical span is withdrawn.
+
+![Independent numerical lifetime check under a shared static atmosphere; imposed input speeds, no environmental validation.](../../figures/gen5_lifetime_numerical_check.png){width=92%}
+
+[Mass and interface ledger](../../docs/GEN5_MASS_AND_INTERFACE_LEDGER.md) · [Uncertainty and acceptance](../../docs/GEN5_UNCERTAINTY_AND_ACCEPTANCE.md) · [Solver boundary](../../docs/SOLVER_EVIDENCE_BOUNDARY.md).

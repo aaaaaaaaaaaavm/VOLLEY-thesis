@@ -1,0 +1,518 @@
+{
+  "revision": "2026-10-16 current review deliverables",
+  "hardware_measurements": false,
+  "boundary": "Legacy graphs remain historical model outputs with current manuscript limitations. STEP-derived views do not prove loaded clearance. This catalog fixes image identity; method/units/case are described by captions and validation records.",
+  "figures": [
+    {
+      "path": "cad/gen6_feeder/release/Gen6_Feed_One_Cell_Storyboard.jpg",
+      "sha256": "82c991832b1a6f4ed37026aa9ae34f0fc72fc792f75af6d5acf94f010574fba6",
+      "bytes": 263342,
+      "referenced_by": [
+        "README.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "cad/gen6_feeder/release/Gen6_Feeder_Provisional_Trade.png",
+      "sha256": "62e526d4fe2f96be244abe4173b6df59f877e3a66aae50bd73d7eb88d06990fe",
+      "bytes": 107703,
+      "referenced_by": [
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "cad/gen6_first_article/release/Gen6_G1_A_STEP_derived.jpg",
+      "sha256": "d0b014e462162c657004180b230ea56e88693fa9ebf1123919c433fdc5ae6ef8",
+      "bytes": 79524,
+      "referenced_by": [
+        "README.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "cad/gen6_four_cell_r0/release_paired/Four_Cell_R0_Plan.png",
+      "sha256": "2d46d0f9504e1ef093e67e133b5e8d2f9cb7e544cd16d9e3a84036008ea6e66a",
+      "bytes": 109108,
+      "referenced_by": [
+        "presentation:ppt/media/image13.png",
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "FreeCAD-derived computed projection; not a solver screenshot"
+    },
+    {
+      "path": "cad/gen6_integration_r2/release/Gen6_R1_R2_Handoff_Section.png",
+      "sha256": "0683abc71ab3ed60db5c30e57e893d3c475ec29db97c0436dcf1f436128b0b6c",
+      "bytes": 97963,
+      "referenced_by": [
+        "README.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "FreeCAD-derived computed projection; not a solver screenshot"
+    },
+    {
+      "path": "cad/renders/sequence/gen5_operations_hero.png",
+      "sha256": "0372daacb5c590b0c16e9d3cae3d378fad62c53969e76f4240c7fa2b49a8dc75",
+      "bytes": 3912919,
+      "referenced_by": [
+        "README.md"
+      ],
+      "evidence_class": "CAD/STEP-derived visualization; Blender render where noted by source record"
+    },
+    {
+      "path": "cad/renders/step_review/gen5_reference_closed.jpg",
+      "sha256": "2916fd1401243f6dafe1f27c589d516e375e60d82f641f41c0e420def2ba1d6e",
+      "bytes": 173304,
+      "referenced_by": [
+        "presentation:ppt/media/image3.jpg"
+      ],
+      "evidence_class": "CAD/STEP-derived visualization; Blender render where noted by source record"
+    },
+    {
+      "path": "cad/renders/step_review/gen5_reference_open.jpg",
+      "sha256": "237b92f0a5ba4a4dae755fa2fd08544e159a3bc49e83456c9eb9858862e2c01e",
+      "bytes": 177256,
+      "referenced_by": [
+        "presentation:ppt/media/image2.jpg",
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "CAD/STEP-derived visualization; Blender render where noted by source record"
+    },
+    {
+      "path": "cad/renders/step_review/r1_candidate_open.jpg",
+      "sha256": "5c204d24c9f9517745f88e3dfbff295643405c3699b8a7d2a0f8981eff45c47a",
+      "bytes": 184772,
+      "referenced_by": [
+        "README.md",
+        "presentation:ppt/media/image9.jpg"
+      ],
+      "evidence_class": "CAD/STEP-derived visualization; Blender render where noted by source record"
+    },
+    {
+      "path": "figures/F01_shot.png",
+      "sha256": "4b2d77a196029926525a6d6af6c3d603df6200baa8479d1546c3ac750c7b5bcf",
+      "bytes": 165896,
+      "referenced_by": [
+        "presentation:ppt/media/image4.png"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_feeder_candidate_r1.png",
+      "sha256": "58985597161987ddfc79df042e0b2f58c3909fd0607bc67fad46b517d6d1d24a",
+      "bytes": 67184,
+      "referenced_by": [
+        "README.md",
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_finite_coupled_shot.png",
+      "sha256": "f1be92a6782c13a99d6fa36cf342c6da5e3fc1cdcc25072020ca22664622f119",
+      "bytes": 77802,
+      "referenced_by": [
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_finite_force_fem2d.png",
+      "sha256": "d45e8dc6b8d9ddea3f0a5e65ef208d52a04c8acd9645ec608b5667a1d5186e3a",
+      "bytes": 102326,
+      "referenced_by": [
+        "presentation:ppt/media/image10.png",
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_finite_force_map.png",
+      "sha256": "a947fc5ebde8086a6e8e8325925d22f69a884dd0846de1997c19639f5e189f2c",
+      "bytes": 79417,
+      "referenced_by": [
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_finite_force_sensitivity.png",
+      "sha256": "fb70e2883588deecd67f22cab3a5dfe20c52e674a7d233f2c7a6870812bb26cd",
+      "bytes": 96262,
+      "referenced_by": [
+        "presentation:ppt/media/image5.png",
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_finite_force_surface3d.png",
+      "sha256": "34c47e784df735d80543c07fbbaf9ae4b7bef926743843aeeb037deeaa8fe82c",
+      "bytes": 74550,
+      "referenced_by": [
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_lifetime_numerical_check.png",
+      "sha256": "5142b3fdb6a204e429a1f86c870bccdc5332a4654a260cfac5811f603c202fd0",
+      "bytes": 107203,
+      "referenced_by": [
+        "presentation:ppt/media/image14.png",
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_one_event_installed_burden.svg",
+      "sha256": "47267ba2aa857344bb2be62f9e8b1797a61d6843cbbffc207c75830d019c9f1b",
+      "bytes": 2943,
+      "referenced_by": [
+        "README.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_packaging_section.png",
+      "sha256": "bbb32caf7af3cbc6ad288548ea3a7236ecd23e4aacfa25c39dd98d918446bfd4",
+      "bytes": 79923,
+      "referenced_by": [
+        "presentation:ppt/media/image8.png",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen5_reconciled_mass.png",
+      "sha256": "a2cfd3d9c7c3dd25e52e90c097f438835832bd037607f6efde0447029a696fdd",
+      "bytes": 71597,
+      "referenced_by": [
+        "README.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen6_go2_mass_gate.png",
+      "sha256": "a0c883a657d37edaff29aa72854f4c9e4351ff54a2912531777c6a5b11cd0e22",
+      "bytes": 109652,
+      "referenced_by": [
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/gen6_matched_campaign.png",
+      "sha256": "411f4199aef6306925c8a2708470a2c5ca821052930166b58ce69a96a859ccd4",
+      "bytes": 109276,
+      "referenced_by": [
+        "presentation:ppt/media/image12.png",
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/matched_mission_reference.png",
+      "sha256": "228fd1b68477f56b159c2fd8cb670b69e0ad6ae455314eda0b506b6f6f6fbf7a",
+      "bytes": 58053,
+      "referenced_by": [
+        "presentation:ppt/media/image11.png",
+        "reports/GEN5_COMPUTATIONAL_REVIEW.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/precision_delivery_design_space.png",
+      "sha256": "c805529543b221837dc048a34fb3a27780581055c8bcd40b22484792c10306f7",
+      "bytes": 91146,
+      "referenced_by": [
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/precision_delivery_design_space.svg",
+      "sha256": "22cc715a646ac6fdc39e4ee3e39a4feaf2506c53eb2afd3270915aa9e0e710f9",
+      "bytes": 3727,
+      "referenced_by": [
+        "README.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "figures/rated_orbit_crosscheck.png",
+      "sha256": "2b1c3e1d5647b5c330f6541ec4211bd04f2545b13a016da65489db5b3681a7ad",
+      "bytes": 88766,
+      "referenced_by": [
+        "presentation:ppt/media/image7.png",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/A02_field_map.png",
+      "sha256": "7952c129a6090dd985b23fd14cdbc2d4be47d2d6c066ab5071715e2f26610b8c",
+      "bytes": 130137,
+      "referenced_by": [
+        "source/paper.tex",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/A29_cfd_report.png",
+      "sha256": "81d1fe6b66699430496650a7c09cc2fd4f729eda3d62d7cea3d9ffe2570f8200",
+      "bytes": 233902,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/A29_wake.png",
+      "sha256": "47a70ac29021e6b8d6058307d042fa640ad6550409f10f76a04025c7dab4a41f",
+      "bytes": 117082,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/A35_ledger.png",
+      "sha256": "afc28aaef7b5b1d41104e7e33dd4a5dda6b2e0d65ad660e672173c600aa014a4",
+      "bytes": 139999,
+      "referenced_by": [
+        "source/paper.tex",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/D01_block.png",
+      "sha256": "d6637f135584dd42c2d2b429e72d07ec37e76ca1c9ded3afaf6e231a95bf6481",
+      "bytes": 188065,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/D02_layout.png",
+      "sha256": "968e4819241ce950983a9ec3a0637160f3bfa5c7eadb8b829119fdb80fb5993c",
+      "bytes": 106409,
+      "referenced_by": [
+        "source/paper.tex",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F01_shot.png",
+      "sha256": "4b2d77a196029926525a6d6af6c3d603df6200baa8479d1546c3ac750c7b5bcf",
+      "bytes": 165896,
+      "referenced_by": [
+        "source/paper.tex",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F02_ripple.png",
+      "sha256": "a9118072853295c45d62c29989ed9a27832dfa6e949c00ea2965641a969e9743",
+      "bytes": 106474,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F03_mc.png",
+      "sha256": "2867ee9466bbcb97dd25f4dac92f50be755b61dc20d5a2b95e3739ab53c594f3",
+      "bytes": 78221,
+      "referenced_by": [
+        "presentation:ppt/media/image6.png",
+        "source/paper.tex",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F04_life.png",
+      "sha256": "7a8278fc16f3d4f7cc5f922558edfa753ca41786a2f4269fbafa8ec969fa30b9",
+      "bytes": 119611,
+      "referenced_by": [
+        "source/paper.tex",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/PANEL_HANDBOOK.md"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F05_dragvs.png",
+      "sha256": "05734cd081dff6521305e270eab72fc750e8bfdb6ea7448c73b2092760b1aebb",
+      "bytes": 62536,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F06_conj.png",
+      "sha256": "c3a987af56489a98e7cdadfb577dd596553bc316778f7d2066314db8a29fb665",
+      "bytes": 124723,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F07_family.png",
+      "sha256": "21db9b138322c65f657292ec75ca329aac44a6d6ecaf385916d28b4fb5d226a8",
+      "bytes": 62629,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F08_brake.png",
+      "sha256": "a82fc6294376bb289b43e04ebfac9a83920243a06408ece675dc2423e184c406",
+      "bytes": 138680,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F09_tipoff.png",
+      "sha256": "71fd333d33cbafcfad085427092eefa5110847b6ced4a5344cf04aab31e7008e",
+      "bytes": 73382,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F11_uq.png",
+      "sha256": "cf842d0f262c973561cfb99c3ac411af6e7cb9807587ac0ae1452f9fafd621b9",
+      "bytes": 100525,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F12_bode.png",
+      "sha256": "4ec06b0effea560b29121f8f82587e68ba2533271ddc09ec520cd7388b5fc038",
+      "bytes": 169531,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F13_latency.png",
+      "sha256": "ba09a1baa152fe335dbc6445ba7f7f227d8fb75d16cd144135a8a1374475636c",
+      "bytes": 92276,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/F14_airdrag.png",
+      "sha256": "c8c0cbad120f150c4848b68481ad7875b98dbbfebd24f7b1d1d8a4ea0b5ddb75",
+      "bytes": 118221,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/gen5_finite_force_fem2d.png",
+      "sha256": "d45e8dc6b8d9ddea3f0a5e65ef208d52a04c8acd9645ec608b5667a1d5186e3a",
+      "bytes": 102326,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/gen5_finite_force_sensitivity.png",
+      "sha256": "fb70e2883588deecd67f22cab3a5dfe20c52e674a7d233f2c7a6870812bb26cd",
+      "bytes": 96262,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/gen5_packaging_section.png",
+      "sha256": "bbb32caf7af3cbc6ad288548ea3a7236ecd23e4aacfa25c39dd98d918446bfd4",
+      "bytes": 79923,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/gen5_reference_open.jpg",
+      "sha256": "237b92f0a5ba4a4dae755fa2fd08544e159a3bc49e83456c9eb9858862e2c01e",
+      "bytes": 177256,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "source/figures/matched_mission_reference.png",
+      "sha256": "228fd1b68477f56b159c2fd8cb670b69e0ad6ae455314eda0b506b6f6f6fbf7a",
+      "bytes": 58053,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "computational plot or diagram; no physical measurement"
+    },
+    {
+      "path": "university/final_review_2026_10_10/assets/sit-logo.jpg",
+      "sha256": "3a671052c9d60d56590bafc5fadba81d8198b4a89dc153984e4decb25e9a0948",
+      "bytes": 7719,
+      "referenced_by": [
+        "presentation:ppt/media/image1.jpg"
+      ],
+      "evidence_class": "institutional logo extracted from prescribed university example"
+    }
+  ],
+  "document_sha256": {
+    "README.md": "62d4d9e55607ba2b733431932997524a07fe39fb0685464f423e6c3cbb5d3283",
+    "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
+    "source/paper.tex": "5652fee511ca34bf21622cb3f5f0fa7ebd2e3d2763b7bd58671aedbb9cb57d95",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "68abc656f9b493e8c4b81c66b249e5aef8b6885b9b0fe19cd3992b7fe7e5d4ff",
+    "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158"
+  }
+}

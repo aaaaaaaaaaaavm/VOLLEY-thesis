@@ -131,7 +131,11 @@ def main() -> None:
     local_links = check_links()
     figures = check_manuscript_figures()
     check_captured_results()
+    import subprocess, sys
+    subprocess.run([sys.executable, str(ROOT / 'analysis/gen5_evidence_audit.py'), '--check'], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools/freeze_gen5_record.py'), '--check'], check=True)
     runpy.run_path(str(ROOT / "cad/tools/check_step_views.py"))["main"]()
+    subprocess.run([sys.executable, str(ROOT / 'tools/check_figure_inventory.py')], check=True)
     artifacts = check_manifest()
     check_containers()
     print(f"PASS: {local_links} current local links, {figures} manuscript figures, "
