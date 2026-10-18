@@ -459,6 +459,16 @@ image_fit(s, ROOT / "figures/gen5_lifetime_numerical_check.png", 0.55, 1.62, 8.0
 card(s, 8.8, 1.85, 3.8, 1.7, "1.602 model ratio", "Separate integration, same static atmosphere. Actual lifetime is unvalidated.", AMBER, 18, 14)
 card(s, 8.8, 3.85, 3.8, 1.9, "Failures retained", "22 Gen5/R1 intersections classified; 126.562 kg model; no sampled twelve-shot mission closes.", RED, 18, 14)
 
+# Native orbit supplement, 18 October 2026.
+s = base("Evidence appendix", "Native solvers: agreement and unresolved differences",
+         "Orekit 13.1.6 / GMAT R2026a; 18 October evidence supplement", "ORBITAL ANALYSIS")
+image_fit(s, ROOT / "validation/orbit_evidence/figures/solver_comparison.png", 0.65, 1.7, 12.0, 4.9)
+txt(s, "Prescribed states; no release-accuracy or hardware validation. J2 frames are not harmonized.", 0.8, 6.65, 11.8, 0.3, 14)
+s = base("Evidence appendix", "Archived campaign: sampled proximity has a limit",
+         "Twelve preloaded post-release orbits; simulation dates in 2027", "GMAT R1 ARCHIVE")
+image_fit(s, ROOT / "validation/orbit_evidence/figures/archived_campaign.png", 0.65, 1.7, 12.0, 4.9)
+txt(s, "190.15 m sampled; 180.29 m interpolated. Continuous clearance remains unproven.", 0.8, 6.65, 11.8, 0.3, 14)
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)
 print(f"Wrote {OUT} ({len(prs.slides)} slides)")

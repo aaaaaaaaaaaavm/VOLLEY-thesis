@@ -1,5 +1,9 @@
 # VOLLEY Gen5 — final-year thesis and review
 
+
+
+
+
 ### A controlled electromagnetic CubeSat deployer configuration, evaluated by computation
 
 This repository is the **standalone academic record** for VOLLEY Gen5. It holds the technical [manuscript](source/VOLLEY_IEEE_Conference.pdf), editable [source](source/paper.tex), model scripts and outputs, CAD, validation sheets, assumptions, defects, and the college [presentation and evidence](university/final_review_2026_10_10/README.md). A professor can follow a slide claim to a result file and method without opening another repository. [Academic release review](GO3_ACADEMIC_RELEASE_REVIEW.md) states which claims are supported and which gates remain open.
@@ -67,7 +71,7 @@ The [prototype-to-flight decision gates](docs/GEN6_PROTOTYPE_TO_FLIGHT_ROADMAP.m
 
 *Model and mission architecture. A host and provider interface have not been selected.*
 
-## Bring this to the final review
+## Academic review package
 
 | Deliverable | Open it | Evidence route |
 |:--|:--|:--|
@@ -83,7 +87,7 @@ To rebuild the chaptered report from this repository, run `pandoc university/GEN
 
 **Market context for the viva:** [audited customer and spacecraft fit](MARKET_AND_CUSTOMER_FIT.md). It checks the relevant Drive market report and independent business-case review against primary industry sources and the Gen5 result. Candidate buyers and satellite classes are hypotheses, not endorsed customers or qualified payloads.
 
-## The result to defend
+## Principal findings
 
 Gen5 is one specified system: a release station 1.5 m from the breech on 1.8 m structural longerons, with a 1.3 m powered stroke, ironless double-sided Halbach linear motor, reusable permanent-magnet sled, pulse store, eddy-current arrest and two conceptual cassettes for twelve ordinary 3U CubeSats. The release load and mechanical/electrical compatibility of any actual CubeSat remain unqualified.
 
@@ -154,3 +158,17 @@ The [engineering record](validation/P133_gen5_evidence_audit.md) reconciles the 
 ![Reconciled historical mass screen; model assumptions, not measured installed mass](figures/gen5_reconciled_mass.png)
 
 [Versioned evaluated Gen5 technical baseline](docs/GEN5_TECHNICAL_BASELINE.json) fixes exact source/result/CAD hashes and known exceptions. Academic guide approval and final submission remain separate gates.
+
+## Native orbital analysis — 18 October 2026
+
+The [standalone orbital evidence guide](validation/orbit_evidence/README.md) contains executed
+Orekit 13.1.6 and GMAT R2026a cases, source and CSV histories, refinement/conservation checks,
+and the archived 90-day campaign. The unresolved J2 setup difference is shown explicitly;
+this supplement does not establish hardware performance or continuous clearance.
+
+![Native solver comparison with the unresolved J2 difference](validation/orbit_evidence/figures/solver_comparison.png)
+
+[Five-page evidence brief](validation/orbit_evidence/ORBIT_EVIDENCE_BRIEF.pdf) ·
+[Release histories](validation/orbit_evidence/figures/release_history.svg) ·
+[Archived campaign](validation/orbit_evidence/figures/archived_campaign.svg) ·
+[Figure conventions](docs/FIGURE_STANDARD.md)
