@@ -543,13 +543,31 @@
         "README.md"
       ],
       "evidence_class": "Native solver output plotted with Matplotlib; archived campaign clearly separated; not a GUI screenshot or physical measurement"
+    },
+    {
+      "path": "figures/gen5_scientific_mass.png",
+      "sha256": "5245283936271504138e1fdd53a645f4a6bbbf6370c0154e5f1add53b0ed6fc7",
+      "bytes": 144768,
+      "referenced_by": [
+        "README.md"
+      ],
+      "evidence_class": "Computed plot of captured historical model; scientific presentation edition, not hardware measurement"
+    },
+    {
+      "path": "figures/gen5_scientific_lifetime.png",
+      "sha256": "767a399795ec198a204eceab92f828cf376404dc7da7701e6c78083b11ac14bb",
+      "bytes": 178723,
+      "referenced_by": [
+        "tools/plot_scientific_summary.py"
+      ],
+      "evidence_class": "Computed plot of captured historical model; scientific presentation edition, not hardware measurement"
     }
   ],
   "document_sha256": {
-    "README.md": "34d89810dfd2ed92b41609ffb4320c3ce677354a9861828ab4b82852247b7ffd",
+    "README.md": "ef358bf464c48e4f3984aae118f559fbb5e294fb1265ad431269e3df4f82065b",
     "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
     "source/paper.tex": "5652fee511ca34bf21622cb3f5f0fa7ebd2e3d2763b7bd58671aedbb9cb57d95",
-    "university/GEN5_FINAL_YEAR_REPORT.md": "68abc656f9b493e8c4b81c66b249e5aef8b6885b9b0fe19cd3992b7fe7e5d4ff",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "5a81b8b602b484383b7b5c8fa55779c9b6e5e890939d9e47b426d8569291ea10",
     "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158",
     "validation/orbit_evidence/README.md": "c00443d41ebafacc3de5e6e94c38f0f75ba37247c629fe2839d04687995bf415"
   }

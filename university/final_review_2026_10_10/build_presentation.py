@@ -155,7 +155,7 @@ txt(s, "Presented By", 2.4, 4.3, 8.5, 0.36, 17, False, RGBColor(35, 77, 129), al
 txt(s, "Adityavardhan Mishra  ·  Pratham Chawla", 1.55, 4.67, 10.25, 0.44, 20, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "PRN 23070125054  ·  PRN 23070125029", 2.1, 5.12, 9.15, 0.34, 15, False, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "Guide: Vikas Gulia", 0.8, 5.68, 5.6, 0.42, 18, True, RGBColor(0, 103, 169))
-txt(s, "Review candidate: 16 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
+txt(s, "Review candidate: 19 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
 txt(s, "SYMBIOSIS INSTITUTE OF TECHNOLOGY PUNE", 0.6, 6.75, 12.15, 0.45, 23, True, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "1", 12.6, 7.14, 0.3, 0.2, 9, False, MID, align=PP_ALIGN.RIGHT)
 
@@ -362,8 +362,8 @@ txt(s, "Separate R1 candidate; no change to evaluated Gen5 shot, mass or host-fi
     0.8, 6.62, 11.8, 0.35, 15, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 18 Demo
-s = base("Results", "Computational demonstration: from force to mission decision",
-         "P118–P127 finite force, source, tolerance and arrest; matched reference", "SIMULATION DEMONSTRATION")
+s = base("Results", "Computed results: from force to mission decision",
+         "P118–P127 finite force, source, tolerance and arrest; matched reference", "CAPTURED COMPUTATIONAL RESULTS")
 box(s, 0.62, 1.78, 5.72, 4.25, LIGHT, None, True)
 box(s, 6.97, 1.78, 5.72, 4.25, LIGHT, None, True)
 txt(s, "1. Finite-force geometry screen", 0.84, 1.94, 5.26, 0.47, 19, True, NAVY)
@@ -448,7 +448,7 @@ refs = [
     "[8] NASA, General Environmental Verification Standard (GEVS), GSFC-STD-7000A, 2013.",
     "[9] D. A. Vallado, Fundamentals of Astrodynamics and Applications, 4th ed., 2013.",
     "[10] A. Mishra, VOLLEY-thesis: manuscript, baseline, provenance and validation records, repo head b30ffdc, 28 Sep 2026.",
-    "[11] VOLLEY/BOLLEY, Current Plan and Status — PLAN-R2, controlled working baseline, 29 Sep 2026 (project plan).",
+    "[11] VOLLEY, Gen6 G0 mission and article requirements, 12 Oct 2026 (study requirements).",
 ]
 bullets(s, refs, 0.76, 1.68, 11.9, 5.13, 16, 16)
 

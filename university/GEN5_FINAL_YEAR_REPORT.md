@@ -76,7 +76,7 @@ This report analyses one Gen5 solution: a magazine-fed, linear synchronous motor
 
 Gen5 also produced a decisive negative result. With twelve 3U satellites, its deployer mass is **10.55 kg per customer**, versus about **6 kg** for the spring canister comparator used in the thesis. This is **1.76×** as much hardware per 3U payload and fails the preset 15% mass-parity band. The study therefore reaches a decision: the conditional modelled orbital benefit does not make this Gen5 configuration a defensible 3U selection. The result completes the analytical comparison; it does not require a prototype to know that the modelled mass criterion failed. Physical payload loads, magnetic cleanliness, cycle life, and provider interfaces remain questions for a different evidence phase.
 
-The later Gen6 programme retains the hosted sequential-deployment mission while reopening mechanism choice. It investigates an approximately **1–2 m/s to 1 km/s** release-speed envelope across electromagnetic, mechanical, stored-energy, gas/fluid, hybrid, BOLLEY and conventional options. The high end is a requirement to examine and may prove infeasible. The near-term goal is one named, reproducible, independently reviewable test-article configuration with a corresponding build/test release decision.
+The later Gen6 programme retains the hosted sequential-deployment mission while reopening mechanism choice. It investigates an approximately **1–2 m/s to 1 km/s** release-speed envelope across electromagnetic, mechanical, stored-energy, gas/fluid, hybrid and conventional options. The high end is a requirement to examine and may prove infeasible. The near-term goal is one named, reproducible, independently reviewable test-article configuration with a corresponding build/test release decision.
 
 # 2. Finite-force, feeder-route and mission findings
 
@@ -316,7 +316,7 @@ The thesis's strongest engineering contribution is the transparent decision reco
 
 # 10. Future work
 
-Gen6's controlling objective is a reusable launch path that sequentially accepts different supported CubeSat sizes and commands each departure condition. The approximately 1–2 m/s to 1 km/s span is an investigation envelope; the upper end may force acceleration, energy, travel, payload or provider constraints that reject candidates. Electromagnetic systems are preferred for comparison but are not preselected. Competent springs, electromechanical/stored-energy, gas/fluid, hybrid, BOLLEY and conventional mission substitutes belong in the same comparison boundary.
+Gen6's controlling objective is a reusable launch path that sequentially accepts different supported CubeSat sizes and commands each departure condition. The approximately 1–2 m/s to 1 km/s span is an investigation envelope; the upper end may force acceleration, energy, travel, payload or provider constraints that reject candidates. Electromagnetic systems are preferred for comparison but are not preselected. Competent springs, electromechanical/stored-energy, gas/fluid, hybrid and conventional mission substitutes belong in the same comparison boundary.
 
 The near-term milestone is one named test-article configuration that can be independently reviewed. Its package needs controlled geometry and drawings, a bill of materials, host and payload interfaces, full installed mass/energy/thermal accounting, assembly and inspection instructions, instrumented procedures, predetermined pass/fail and stop criteria, uncertainty and model-credibility evidence, retained failures, and an explicit build/test release decision. A rejected candidate is a valid research outcome; it must not be presented as a build-ready survivor.
 
@@ -358,7 +358,7 @@ These screens make the next research questions specific, while preserving Gen5 a
 8. NASA, *General Environmental Verification Standard*, GSFC-STD-7000A, 2013.
 9. D. A. Vallado, *Fundamentals of Astrodynamics and Applications*, 4th ed., 2013.
 10. A. Mishra, *VOLLEY-thesis*: authored manuscript, baseline, provenance, figures and validation records, repository head `b30ffdc`, 28 September 2026. Project record, not independent experimental evidence.
-11. VOLLEY/BOLLEY, *Current Plan and Status — PLAN-R2*, controlled working baseline, 29 September 2026. Project plan, not achieved performance.
+11. VOLLEY, *Gen6 G0 Mission and Article Requirements*, 12 October 2026. Reference study requirements, not achieved performance.
 
 # Appendix A. Numerical and CAD audit trail
 
@@ -399,6 +399,6 @@ P134 uses a separate orbit-averaged DOP853 integration of the shared static atmo
 
 The corrected A15 R1 archive was executed in GMAT R2026a on 30 September and reparsed on 16 October. Its circular RAAN span is 14.558545°; the focused window minimum sampled separation is 190.149944 m. No continuous-clearance, coupled sequential host or complete mission verdict follows. The 367° historical span is withdrawn.
 
-![Independent numerical lifetime check under a shared static atmosphere; imposed input speeds, no environmental validation.](../figures/gen5_lifetime_numerical_check.png){width=92%}
+![Independent numerical lifetime check under a shared static atmosphere; imposed input speeds, no environmental validation.](../figures/gen5_scientific_lifetime.png){width=92%}
 
 [Mass and interface ledger](../docs/GEN5_MASS_AND_INTERFACE_LEDGER.md) · [Uncertainty and acceptance](../docs/GEN5_UNCERTAINTY_AND_ACCEPTANCE.md) · [Solver boundary](../docs/SOLVER_EVIDENCE_BOUNDARY.md).
