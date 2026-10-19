@@ -1,4 +1,4 @@
-# Final B.Tech project review — 10 October 2026
+# Final B.Tech project review — candidate for 31 October 2026
 
 **Presenters:** Adityavardhan Mishra (PRN 23070125054) and Pratham Chawla (PRN 23070125029)<br>
 **Guide:** Vikas Gulia<br>
@@ -6,20 +6,20 @@
 
 This directory is the review pack for the computational Gen5 study. It follows an eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
 
-**12 October post-review update:** The expanded [Gen5 whole-assembly audit](../../cad/GEN5_FULL_INTERFERENCE_AUDIT_2026_10_12.md) found 17 intersecting leaf-solid pairs, and five remain in the widened R1 candidate. Slides 18–19 and the handbook now disclose sled/track and sled/stator conflicts alongside the original 11 mm cassette fit failure. These corrected files are a later revision of the dated review pack, not a record of what was shown on 10 October.  Slides 23–25 and the report's future-work section now summarize P130–P132 and the separately unselected Gen6 four-cell packaging screen. They were prepared after the dated 10 October pack and must not be described as material delivered at that earlier review. The Gen5 result slides, which report the evaluated configuration and adverse findings, retain their original scope. [Go 3 release review](../../GO3_ACADEMIC_RELEASE_REVIEW.md) lists the exact academic and engineering gates still open.
+**12 October technical update:** The expanded [Gen5 whole-assembly audit](../../cad/GEN5_FULL_INTERFERENCE_AUDIT_2026_10_12.md) found 17 intersecting leaf-solid pairs, and five remain in the widened R1 candidate. Slides 18–19 and the handbook now disclose sled/track and sled/stator conflicts alongside the original 11 mm cassette fit failure. These corrected files are a later revision of the dated review pack, not a record of what was shown on 10 October.  Slides 23–25 and the report's future-work section now summarize P130–P132 and the separately unselected Gen6 four-cell packaging screen. They were prepared after the dated 10 October pack and must not be described as material delivered at that earlier review. The Gen5 result slides, which report the evaluated configuration and adverse findings, retain their original scope. [Go 3 release review](../../GO3_ACADEMIC_RELEASE_REVIEW.md) lists the exact academic and engineering gates still open.
 
 **Presentation thesis:** the Gen5 system-level computational evaluation reports a conditional orbital benefit, a failed 3U mass criterion, and a failed side-fed CAD reference fit. Slides 1–22 present the research and its limitations. Slides 23–25 label Gen6 as future work, with no achieved Gen6 speed or selected mechanism. Completion here means an answered analytical question, not a qualified flight product or final design freeze.
 
-## Bring to the review
+## Review materials
 
 The [evidence handout](PANEL_HANDOUT.pdf) and presentation provide the public review route. The deck places the historical shot beside the 3-D analytic force screen, independent 2-D FEM, and conditional bank rerun; slide 20 shows the computational force-to-mission chain. Reproducible source and results are available in this repository.
 
-| Item | Present/print | Editable source |
+| Item | Review artifact | Editable source |
 |:--|:--|:--|
-| Main presentation, 28 slides | [PPTX](VOLLEY_Final_Review_2026-10-10.pptx) · [PDF](VOLLEY_Final_Review_2026-10-10.pdf) | [Build script](build_presentation.py) |
+| Main presentation, 34 slides | [PPTX](VOLLEY_Final_Review_2026-10-10.pptx) · [PDF](VOLLEY_Final_Review_2026-10-10.pdf) | [Build script](build_presentation.py) |
 | Panel handbook, detailed explanation and figures | [PDF](PANEL_HANDBOOK.pdf) | [Markdown](PANEL_HANDBOOK.md) · [DOCX](PANEL_HANDBOOK.docx) |
 
-The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive slide to the manuscript, numerical result and/or project-plan source. The [Gen6 direction](GEN6_DIRECTION.md) records precisely what the forward-looking slides mean. The full technical detail remains in the [manuscript PDF](../../source/VOLLEY_IEEE_Conference.pdf), [computational report](../../reports/GEN5_COMPUTATIONAL_REVIEW.pdf), [FreeCAD review report](../../cad/GEN5_CAD_REVIEW.pdf), [`analysis/`](../../analysis/), [`validation/`](../../validation/), [`cad/`](../../cad/) and [`appendix/`](../../appendix/). The reports include simulation plots and software-generated CAD views; none represents a physical test.
+The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive slide to the manuscript, numerical result and controlled configuration. The [Gen6 direction](GEN6_DIRECTION.md) records precisely what the forward-looking slides mean. The full technical detail remains in the [manuscript PDF](../../source/VOLLEY_IEEE_Conference.pdf), [computational report](../../reports/GEN5_COMPUTATIONAL_REVIEW.pdf), [FreeCAD review report](../../cad/GEN5_CAD_REVIEW.pdf), [`analysis/`](../../analysis/), [`validation/`](../../validation/), [`cad/`](../../cad/) and [`appendix/`](../../appendix/). The reports include simulation plots and software-generated CAD views; none represents a physical test.
 
 The deck's assembly images are [STEP-derived, Blender-rendered review views](../../cad/renders/step_review/README.md). The source STEP and FreeCAD files, image hashes, visible parts and hidden enclosure are recorded in the [view provenance](../../cad/renders/step_review/PROVENANCE.json). The repository includes an optional [four-stage operations storyboard](../../cad/renders/sequence/gen5_operations_hero.png), [eight-second video](../../cad/renders/sequence/gen5_intended_sequence.mp4) and [P124 ideal load figure](../../figures/precision_delivery_design_space.png) under `VISUALS/`. The video is a **conceptual motion aid**; it does not validate feed, contact, clearance or braking. The exact-solid width and interference findings come from the CAD audit.
 
@@ -47,3 +47,7 @@ Slide 3 and the handbook introduce the [audited market and spacecraft-fit report
 ## Rebuild
 
 From this directory, run `python build_presentation.py` and `python render_review_pdf.py` to build the PPTX and matching 28-page PDF. The renderer checks text for overflow. The handbook and presenter PDFs and DOCXs can be rebuilt with Pandoc and XeLaTeX from their Markdown sources. All image references point to files already in this repository. The SIT logo in `assets/` was extracted from the university example PDF solely for this university-format review pack. Check [file hashes](CHECKSUMS.sha256) after copying the submission pack.
+
+## Evidence cutoff, 19 October 2026
+
+The dated directory and file names retain the original pack location. The current candidate has 34 slides. Slides 28–30 retain explicitly dated earlier evidence; slides 31–34 add the matched gravity-axis follow-up, coupled four/twelve-payload countercases, unselected seven-feeder review and genuine native solver-data view. These additions do not change the frozen Gen5 technical record or establish a completed feeder. The [local feeder report](../../validation/feeder_review/README.md) retains failed arrest-tooth sizing and open handoff/contact/installed-hardware gates. No college approval, plagiarism clearance or delivered presentation is implied.

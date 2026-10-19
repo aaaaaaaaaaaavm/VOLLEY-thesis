@@ -469,6 +469,26 @@ s = base("Evidence appendix", "Archived campaign: sampled proximity has a limit"
 image_fit(s, ROOT / "validation/orbit_evidence/figures/archived_campaign.png", 0.65, 1.7, 12.0, 4.9)
 txt(s, "190.15 m sampled; 180.29 m interpolated. Continuous clearance remains unproven.", 0.8, 6.65, 11.8, 0.3, 14)
 
+# 19 October engineering supplement: separate from frozen Gen5 results.
+s = base("Evidence appendix", "The J2 setup discrepancy now has a bounded resolution",
+         "GMAT R2026a / Orekit 13.1.6 · matched prescribed pole, 19 October", "NUMERICAL CONSISTENCY")
+image_fit(s, ROOT / "validation/orbit_harmonization/figures/harmonization.png", 0.6, 1.65, 12.1, 4.8)
+txt(s, "1.285 mm maximum over one day. Shared orientation; no physical orbit or release-accuracy claim.", 0.75, 6.65, 11.8, 0.3, 14)
+s = base("Future-work appendix", "Host assistance closes mathematical targets, with a cost",
+         "Constructed four/twelve-payload J2 campaign · ideal impulses and mass proxies", "GEN6 SURROGATE")
+image_fit(s, ROOT / "validation/coupled_delivery/release/figures/resource_comparison.png", 0.6, 1.65, 12.1, 4.8)
+txt(s, "Larger-reserve spring case completes. Fuel savings do not recover the assumed device-mass penalty.", 0.75, 6.65, 11.8, 0.3, 14)
+s = base("Future-work appendix", "Seven feeder concepts: inspectable geometry, open hardware gates",
+         "Native FreeCAD / STEP · analytical cases / CalculiX fixture · 19 October", "UNSELECTED CANDIDATES")
+image_fit(s, ROOT / "validation/feeder_review/release/figures/lead_screw_cad.png", 0.6, 1.65, 8.0, 4.8)
+bullets(s, ["1U/3U CAD and bounded motion checks", "Load, tolerance and fault cases retained", "Arrest-tooth sizing fails adverse cases", "Handoff, latch engagement and installed parts unverified", "No baseline selection or hardware release"], 8.8, 1.85, 3.9, 4.4, 18, 20)
+txt(s, "STEP-derived orthographic view; no measured reliability or full-cycle qualification.", 0.75, 6.65, 11.8, 0.3, 14)
+
+s = base("Evidence appendix", "Native mesh and result view: keep the fixture explicit",
+         "CalculiX2.23 DAT / INP displayed in Gmsh4.14.1 · undeformed geometry", "ASSUMED CLAMPED FLOOR")
+image_fit(s, ROOT / "validation/feeder_review/release/fea/Gmsh_CalculiX_floor.png", 0.65, 1.65, 12.0, 4.8)
+txt(s, "Displacement norm in metres. Actual joints absent; peak support stress is not converged or a strength pass.", 0.75, 6.65, 11.8, 0.3, 14)
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)
 print(f"Wrote {OUT} ({len(prs.slides)} slides)")

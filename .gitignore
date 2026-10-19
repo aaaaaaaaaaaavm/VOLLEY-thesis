@@ -7,3 +7,7 @@ paper.pdf
 
 # FreeCAD autosave snapshots
 *.FCBak
+
+# Reproducible LaTeX build caches
+*.fdb_latexmk
+*.fls

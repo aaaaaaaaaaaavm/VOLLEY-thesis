@@ -1,6 +1,6 @@
 # Presentation claim and evidence map
 
-This map connects each review slide to the most detailed available record in this repository. The 28 September 2026 thesis checkout at `b30ffdc` and the 29 September 2026 PLAN-R2 working baseline were used to prepare the 10 October 2026 review pack. A slide is an explanation of the evidence; it is not a substitute for its underlying analysis and run sheet.
+This map traces the 34-slide candidate for 31 October 2026 to repository-local evidence. The primary Gen5 technical record remains fixed; later Gen6 and numerical supplements have separate dated boundaries. A slide explains the evidence and does not replace the calculation, raw result or native CAD record.
 
 | Slide | Claim or purpose | Detailed record | Evidence class / limit |
 |:--|:--|:--|:--|
@@ -28,6 +28,15 @@ This map connects each review slide to the most detailed available record in thi
 | 24 | Paired versus staggered Gen6 four-cell packaging | [Editable CAD, STEP, plots and checks](../../cad/gen6_four_cell_r0/README.md); [comparison JSON](../../cad/gen6_four_cell_r0/Four_Cell_Layout_Comparison.json) | 330 versus 900 mm shortest modeled acceleration distance; 5.56 versus 2.04 g ideal mean for 6 m/s. Nominal geometry only; no selected feeder or motor rating |
 | 25 | Future G0/G1 decision and high-speed boundary | [P124](../../validation/P124_precision_delivery_design_space.md); [Go 3 review](../../GO3_ACADEMIC_RELEASE_REVIEW.md) | No selected motor, measured accuracy, host interface or 1 km/s result |
 | 26–27 | Published/agency literature and project sources | `source/paper.tex`, bibliography; [`appendix/LITERATURE.md`](../../appendix/LITERATURE.md) | Sources are categorized; project records are not external validation |
+
+
+| 28 | Reconciled mass/interference and lifetime numerical record | [Fixed technical baseline](../../docs/GEN5_TECHNICAL_BASELINE.json); [P134](../../validation/P134_gen5_lifetime_crosscheck.md) | Shared-atmosphere numerical consistency; real lifetime and failed geometry unchanged |
+| 29 | Original unmatched native solver comparison, 18 October | [Original capture](../../validation/orbit_evidence/README.md) | Historical setup mismatch retained; follow-up is slide31 |
+| 30 | Archived preloaded-orbit proximity case | [Native/archive boundary](../../validation/orbit_evidence/README.md) | Sample/interpolation is not continuous flight clearance |
+| 31 | Matched prescribed-pole J2 residual | [Harmonization source and raw histories](../../validation/orbit_harmonization/README.md) | Shared orientation, numerical agreement only; no physical release accuracy |
+| 32 | Coupled four/twelve-payload resource countercases | [Local report and sources](../../validation/coupled_delivery/README.md) | Constructed targets, ideal host impulses and device proxies; no service advantage proven |
+| 33 | Seven feeder candidates and retained sizing failures | [Feeder source/CAD archive and review](../../validation/feeder_review/README.md) | Nominal geometry does not close handoff, engagement, contact, installed parts or selection |
+| 34 | Actual CalculiX fixture mesh/data in native Gmsh | [Native-result provenance](../../validation/feeder_review/release/fea/VIEW_PROVENANCE.json); [fixture results](../../validation/feeder_review/release/fea/RESULTS.json) | Assumed clamped floor; actual mounts absent; peak stress not converged/qualified |
 
 ## Exact Gen5 numbers and dependencies
 

@@ -4,7 +4,7 @@ subtitle: "Final B.Tech. Mechanical Engineering black-book candidate — unsigne
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
-date: "16 October 2026 (technical evidence revision; academic approval pending)"
+date: "19 October 2026 (dated computational supplement; academic approval pending)"
 geometry: margin=20mm
 papersize: a4
 fontsize: 10pt
@@ -402,3 +402,27 @@ The corrected A15 R1 archive was executed in GMAT R2026a on 30 September and rep
 ![Independent numerical lifetime check under a shared static atmosphere; imposed input speeds, no environmental validation.](../figures/gen5_scientific_lifetime.png){width=92%}
 
 [Mass and interface ledger](../docs/GEN5_MASS_AND_INTERFACE_LEDGER.md) · [Uncertainty and acceptance](../docs/GEN5_UNCERTAINTY_AND_ACCEPTANCE.md) · [Solver boundary](../docs/SOLVER_EVIDENCE_BOUNDARY.md).
+
+# Supplementary follow-up, 19 October 2026
+
+## Native propagation harmonization
+
+The [local harmonization report](../validation/orbit_harmonization/README.md) isolates the earlier gravity-axis/configuration mismatch. GMAT R2026a and Orekit 13.1.6 agree to approximately **1.285 mm maximum** over one day with shared prescribed pole and JGM2 constants, using one continuous GMAT arc. Independent Cartesian and time-step comparisons are retained. This is numerical consistency, not physical orbit accuracy, independent Earth-orientation validation or demonstrated release speed. The frozen Gen5 record is unchanged.
+
+![Matched native solver result and diagnostic sequence; numerical model agreement only.](../validation/orbit_harmonization/figures/harmonization.png){width=98%}
+
+## Coupled four/twelve-payload construction
+
+The [local coupled-delivery supplement](../validation/coupled_delivery/README.md) adds host pre-burn, finite-mass shot recoil, 20 s coast, transfer/recovery impulses, propellant accounting and final host-state restoration. It uses a 500 km, 97.4° surrogate and constructed 3–9 m/s prograde target increments, with common state assessment at 90000 s. A 3–6 m/s imposed input can reach the targets with host assistance; no motor capability or delivered-state accuracy is demonstrated.
+
+The twelve-payload spring case exceeds a 10 kg reserve but completes with 20 kg initially available, consuming approximately **15.35 kg**. The corresponding 3–6 m/s case consumes approximately **4.05 kg**. The assumed device proxies are 48 and 90 kg, so the fuel saving does not recover the mass penalty. No optimized customer mission or commercial advantage is established. Conditional adaptive interval bounds for nominal point centers exclude the first 20 s near-field phase and assume a 1 cm numerical state-error bound; they are not a physical clearance or collision-probability result.
+
+![Declared mass proxies and consumed fuel; no installed-system advantage inferred.](../validation/coupled_delivery/release/figures/resource_comparison.png){width=98%}
+
+## Feeder engineering review
+
+The [local feeder review](../validation/feeder_review/README.md) includes all seven candidates, 1U/3U native CAD, STEP states, material-only BOM/CG/inertia, 108 analytical load cases, 12 tolerance stacks and 36 conditional state/fault records. Six native CalculiX runs examine an assumed clamped storage-floor fixture; they do not analyze actual joints or qualify the assembly. The spring sizing fails higher resistance cases and the adverse alignment stack loses clearance. A 972-case rectangular capture-tooth sensitivity reaches approximately 1.97 GPa nominal root bending under the largest calculated mean arrest force, exceeding even the assumed 1000 MPa yield band. Actual material allowable, peak impact force and positive engagement are unknown; this is a redesign finding.
+
+The connected fork-frame correction is distinct from proven mechanical load transfer. Gate/latch engagement, front-barrier handoff, continuous return/indexing, purchased components, actual host mounts and loaded restraint/contact remain open. Ordinal safety-led trade intervals overlap; no concept meets the evidence gate for final baseline selection. The report and source/CAD archive preserve this bounded result without claiming a completed or manufactured feeder.
+
+![Independent STEP-derived nominal lead-screw reference geometry; unselected mechanism with open handoff/contact verification.](../validation/feeder_review/release/figures/lead_screw_cad.png){width=98%}
