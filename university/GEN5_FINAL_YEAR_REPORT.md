@@ -426,3 +426,19 @@ The [local feeder review](../validation/feeder_review/README.md) includes all se
 The connected fork-frame correction is distinct from proven mechanical load transfer. Gate/latch engagement, front-barrier handoff, continuous return/indexing, purchased components, actual host mounts and loaded restraint/contact remain open. Ordinal safety-led trade intervals overlap; no concept meets the evidence gate for final baseline selection. The report and source/CAD archive preserve this bounded result without claiming a completed or manufactured feeder.
 
 ![Independent STEP-derived nominal lead-screw reference geometry; unselected mechanism with open handoff/contact verification.](../validation/feeder_review/release/figures/lead_screw_cad.png){width=98%}
+
+
+# Captive-transfer correction and servicing disposition, 19 October 2026
+
+The separately versioned [CT-01 local report](../validation/captive_transfer_review/README.md) provides 22 native/STEP states and continuous interval checks for prescribed rectilinear 1U/3U transfer, receiver capture, fork withdrawal and reset. The storage gate now retracts downward through a floor slot; the 120 mm stroke requires under-deck accommodation. Receiver locks use separate motion bands. All represented nominal primitive pairs clear over the 20 phase cases, with 60 independent native B-rep poses. This does not validate actuator joints, loaded fit, contact or actual receiver-to-sled custody.
+
+![CT-01 STEP side projections with common axes; nominal prescribed motion only](../validation/captive_transfer_review/release/figures/step_sequence.png){width=98%}
+
+A separate enlarged 16 × 6 mm rack-root coupon has one modeled face-contact pose and six native CalculiX fixture cases. Its peak stress remains unconverged and its actual material/impact/attachment are unqualified. The 972-case compliant-stop investigation retains 226 cases exceeding a proposed 24 mm total allowance; 148 of 243 local fit sensitivities are nonpositive. False receiver-lock indication, uncontrolled gate closure and missing external sled custody remain explicit physical counterexamples. No feeder selection or hardware release follows.
+
+The [limited replenishment concept](../validation/replenishment_feasibility/README.md) defines a closed cooperative cartridge, provisional datums, capture/retention and contamination interfaces, operations and recovery requirements. Its 108 capture and 36 insertion sensitivities retain 18 failed fits. Because the baseline lacks removable-cartridge integration, real servicing access and verified double custody, operational replenishment is a no-go for this configuration. Ground loading remains the assumed campaign boundary. The limited study is complete as a bounded negative feasibility/interface finding; it is not a docking or robotic hardware demonstration.
+
+
+## Close prior-art interpretation
+
+The [full-text feeder comparison](../docs/FEEDER_FULL_TEXT_REVIEW_2026_10_19.md) examines the closest 2022 and 2025 studies with page references and publisher-source hashes. The 2022 electromagnetic release prototype reports gravity-compensated dummy releases, not VOLLEY performance. The 2025 storage prototype uses spacecraft-side grooves, guides and iron patches; this does not establish the unchanged passive-payload objective adopted here. Its 1200 N receiving-force result is simulated, while its fast laboratory pushes are gravity-assisted. The distinction requires actual payload interface approval, contact/load analysis and shared-path isolation in future VOLLEY work. Broader end-effect, mission and carrier literature and independent technical review remain outstanding.

@@ -489,6 +489,17 @@ s = base("Evidence appendix", "Native mesh and result view: keep the fixture exp
 image_fit(s, ROOT / "validation/feeder_review/release/fea/Gmsh_CalculiX_floor.png", 0.65, 1.65, 12.0, 4.8)
 txt(s, "Displacement norm in metres. Actual joints absent; peak support stress is not converged or a strength pass.", 0.75, 6.65, 11.8, 0.3, 14)
 
+# CT-01 and RPL-01 follow-on studies, same-day later evidence.
+s = base("Future-work appendix", "Continuous feed geometry exposes the remaining safety work",
+         "CT-01 · separate captive-transfer coupon; 19 October 2026", "PRESCRIBED MOTION ONLY")
+image_fit(s, ROOT / "validation/captive_transfer_review/release/figures/step_sequence.png", 0.55, 1.65, 7.9, 4.8)
+bullets(s, ["20 continuous 1U/3U phase checks", "Downward gate needs under-deck volume", "Stop travel and adverse fit cases fail", "Real latch/custody and drive remain open"], 8.7, 1.85, 3.95, 4.4, 18, 20)
+txt(s, "Native CAD and nominal translation proof do not establish full mechanism safety or a selected feeder.", 0.75, 6.65, 11.8, 0.3, 14)
+s = base("Future-work appendix", "Orbital reload: define the interface before promising a service",
+         "RPL-01 · limited cooperative-cartridge feasibility", "BASELINE OPERATIONAL NO-GO")
+image_fit(s, ROOT / "validation/replenishment_feasibility/release/figures/replenishment.png", 0.6, 1.65, 12.1, 4.8)
+txt(s, "108 capture / 36 fit sensitivities. No integrated reload mechanism; ground loading remains the assumption.", 0.75, 6.65, 11.8, 0.3, 14)
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)
 print(f"Wrote {OUT} ({len(prs.slides)} slides)")

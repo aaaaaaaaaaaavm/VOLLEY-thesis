@@ -38,6 +38,9 @@ This map traces the 34-slide candidate for 31 October 2026 to repository-local e
 | 33 | Seven feeder candidates and retained sizing failures | [Feeder source/CAD archive and review](../../validation/feeder_review/README.md) | Nominal geometry does not close handoff, engagement, contact, installed parts or selection |
 | 34 | Actual CalculiX fixture mesh/data in native Gmsh | [Native-result provenance](../../validation/feeder_review/release/fea/VIEW_PROVENANCE.json); [fixture results](../../validation/feeder_review/release/fea/RESULTS.json) | Assumed clamped floor; actual mounts absent; peak stress not converged/qualified |
 
+| 35 | CT-01 continuous nominal transfer and retained safety failures | [Local CT-01 report](../../validation/captive_transfer_review/README.md) | Prescribed geometry; physical capture, drive and loaded integration remain open |
+| 36 | Limited orbital cartridge replenishment concept | [Local RPL-01 report](../../validation/replenishment_feasibility/README.md) | Negative baseline disposition; no robotics/docking hardware demonstrated |
+
 ## Exact Gen5 numbers and dependencies
 
 The generated [`appendix/BASELINE.md`](../../appendix/BASELINE.md) is the presentation's preferred short numerical source. It names source fields in `analysis/results/*.json`. The presentation retains the historical 16.029 m/s point for traceability and gives the adverse finite-geometry result its own slide. For mass and alternatives, read the payload-family and enclosure results with the manuscript's qualification that smaller payload classes need new cassette/retention design. For orbital lifetime, read the manuscript's solar-activity caveat and failed invariance check before quoting 1.60×.
