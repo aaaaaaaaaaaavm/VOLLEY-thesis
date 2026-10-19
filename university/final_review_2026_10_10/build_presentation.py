@@ -474,10 +474,10 @@ s = base("Evidence appendix", "The J2 setup discrepancy now has a bounded resolu
          "GMAT R2026a / Orekit 13.1.6 · matched prescribed pole, 19 October", "NUMERICAL CONSISTENCY")
 image_fit(s, ROOT / "validation/orbit_harmonization/figures/harmonization.png", 0.6, 1.65, 12.1, 4.8)
 txt(s, "1.285 mm maximum over one day. Shared orientation; no physical orbit or release-accuracy claim.", 0.75, 6.65, 11.8, 0.3, 14)
-s = base("Future-work appendix", "Host assistance closes mathematical targets, with a cost",
-         "Constructed four/twelve-payload J2 campaign · ideal impulses and mass proxies", "GEN6 SURROGATE")
-image_fit(s, ROOT / "validation/coupled_delivery/release/figures/resource_comparison.png", 0.6, 1.65, 12.1, 4.8)
-txt(s, "Larger-reserve spring case completes. Fuel savings do not recover the assumed device-mass penalty.", 0.75, 6.65, 11.8, 0.3, 14)
+s = base("Future-work appendix", "Precise delivery needs a measured control budget",
+         "CNR-01 · complete native event replay and deterministic sensitivity", "GEN6 SURROGATE")
+image_fit(s, ROOT / "validation/native_campaign_review/figures/control_sensitivity.png", 0.6, 1.65, 12.1, 4.8)
+txt(s, "+0.1% imposed release-speed bias gives ~1.53 km error. Numerical agreement is not flight precision.", 0.75, 6.65, 11.8, 0.3, 14)
 s = base("Future-work appendix", "Seven feeder concepts: inspectable geometry, open hardware gates",
          "Native FreeCAD / STEP · analytical cases / CalculiX fixture · 19 October", "UNSELECTED CANDIDATES")
 image_fit(s, ROOT / "validation/feeder_review/release/figures/lead_screw_cad.png", 0.6, 1.65, 8.0, 4.8)

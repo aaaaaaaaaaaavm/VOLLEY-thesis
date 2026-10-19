@@ -54,3 +54,5 @@ The generated [`appendix/BASELINE.md`](../../appendix/BASELINE.md) is the presen
 - A **Gen6 target** is a trade requirement, not an achieved Gen5 or Gen6 operating point.
 
 P133 maps all historical mass lines and 22 Gen5/R1 intersections. The 16 October technical evidence revision retains failed geometry, unselected hardware and incomplete provider interfaces. P134 is a numerical model check, not a native environmental validation.
+
+CNR-01 updates the existing mission appendix with [native event replay and deterministic sensitivity](../../validation/native_campaign_review/README.md). Nominal numerical consistency, physical delivery precision and imposed release-speed assumptions remain separate claims.
