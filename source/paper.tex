@@ -547,6 +547,14 @@ CNR-01 replays the complete prescribed host burn/recoil sequence from one initia
 
 A common +0.1\% imposed release-speed bias produces approximately 1.53~km terminal position error in the VOLLEY cases. Conditional photogate and frame-compensation budgets therefore develop requirements rather than certify precision. Frozen-command thrust-time screens also expose host constraints: at 5~N, the twelve-spring plan needs approximately 6135~s before the 3600~s final release, versus 1488~s for the imposed 3--6~m/s case. These totals exclude finite-burn retargeting and operational scheduling; another competent spring-host policy may improve them. Actual actuator ratings, feedback, installed mass and near-field integration remain open. The companion repository retains all event records, native logs, sensitivity cases and exact source identities.
 
+
+\subsection{Finite-duration host control, 20 October 2026}
+FBR-01 replaces ideal host impulses with two targeted constant-inertial-force windows per leg, integrating mass flow at an assumed 220~s specific impulse. Preparation begins at $-900$~s and is counted; each release is followed by a 20~s zero-force guard, with final host recovery by 4200~s. Eighteen targeted schedules are independently replayed in 46 native Orekit runs from one initial state. Shared constructed targets, the fixed-axis J2 force model and the DOP853 integration family limit independence; numerical agreement is not flight accuracy.
+
+For the declared 35\%/35\% policy, four-release spring and imposed VOLLEY inputs require 13.36/6.50~N peak and 6.056/1.895~kg fuel. Twelve-release inputs require 33.83/18.00~N and 23.122/6.123~kg, respectively: spring exceeds the illustrative 20~N and 20~kg limits. With a common 30~kg reserve and 100~N limit, both twelve-release policies reach their constructed full-state targets. Their 17.460~kg propellant difference remains smaller than the 42~kg device-proxy penalty. Neither universal spring infeasibility nor a net installed-mass advantage follows.
+
+Interpreting the resultant as a single fixed thruster requires up to approximately 9~deg/s mean direction slew in 20~s zero-force gaps. No actual host attitude, opposed-thruster allocation, plume/contact geometry, navigation feedback or motor rating is verified. Fuel-exhausted formal traces remain diagnostic only. The local finite-force supplement retains all controls, mass histories, native logs, deterministic probes and failed screens; it advances translational targeting without closing operational delivery.
+
 \begin{thebibliography}{25}
 \bibitem{lewis} C. Lewis, ``Failure of the ball-lock mechanism on the NanoRacks CubeSat deployer,'' in \emph{Proc. 44th Aerospace Mechanisms Symp.}, 2018.
 \bibitem{jssod} JAXA, ``JEM payload accommodation handbook, vol. 8: Small satellite deployment interface control document,'' via UNOOSA KiboCUBE.

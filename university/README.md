@@ -1,7 +1,7 @@
 # University report and presentation
 
 - [Blackbook PDF](GEN5_FINAL_YEAR_REPORT.pdf), [editable DOCX](GEN5_FINAL_YEAR_REPORT.docx) and [Markdown source](GEN5_FINAL_YEAR_REPORT.md).
-- [Presentation and claim map](final_review_2026_10_10/README.md): 36-slide editable/PDF package for a selected 15-minute route plus questions.
+- [Presentation and claim map](final_review_2026_10_10/README.md): 37-slide editable/PDF package for a selected 15-minute route plus questions.
 - [Native campaign report](../validation/native_campaign_review/README.md): full prescribed-event replay and precision budgets.
 
 ## Report structure and issue

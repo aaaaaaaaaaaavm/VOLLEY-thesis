@@ -751,13 +751,23 @@
         "university/layout/blackbook-frontmatter.tex"
       ],
       "evidence_class": "Native application viewport"
+    },
+    {
+      "path": "validation/finite_burn_review/figures/force_fuel_trade.png",
+      "sha256": "cae25e7b03ac82bb6c4385b13e8df09422072d6fb23450551bfb90f5161daba9",
+      "bytes": 216051,
+      "referenced_by": [
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/build_presentation.py"
+      ],
+      "evidence_class": "Computed finite-force surrogate-control plot; no achieved hardware"
     }
   ],
   "document_sha256": {
-    "README.md": "93a1ab3abb338c20318ab3906c20376e650beec567c5484766ba401d65e87ebc",
+    "README.md": "57c228b7e95a188375aea34f33dea535fb8602199f3c8c46e1e2500da4677aa8",
     "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
-    "source/paper.tex": "0fa8186225a43487e818a5b54a7c681dd76e23bbdb651354b1812714adb085d6",
-    "university/GEN5_FINAL_YEAR_REPORT.md": "472aeec7b286b499b2f91bcdafa97285bdf5faddf41880407dfc8aa9d5c457ce",
+    "source/paper.tex": "28340174ab8db4f1a1a4a28add165e6552a498290e38aedf85fb6a40ec2f018b",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "8a587743e95f600a4b1802b029eaeeedf349b971e1ec7f4c119a4ce18be0eb6a",
     "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158",
     "validation/orbit_evidence/README.md": "3f350ec088a33fb413861c20e88e04946c183bb67c67c2378625103412190967",
     "validation/feeder_review/README.md": "b226b959274eb24030f6f20b4ac58932154fa9b2713ea486bf49a09bb4dba94a",

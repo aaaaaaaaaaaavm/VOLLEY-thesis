@@ -16,7 +16,7 @@ The [evidence handout](PANEL_HANDOUT.pdf) and presentation provide the public re
 
 | Item | Review artifact | Editable source |
 |:--|:--|:--|
-| Main presentation, 36 slides | [PPTX](VOLLEY_Final_Review_2026-10-10.pptx) · [PDF](VOLLEY_Final_Review_2026-10-10.pdf) | [Build script](build_presentation.py) |
+| Main presentation, 37 slides | [PPTX](VOLLEY_Final_Review_2026-10-10.pptx) · [PDF](VOLLEY_Final_Review_2026-10-10.pdf) | [Build script](build_presentation.py) |
 | Panel handbook, detailed explanation and figures | [PDF](PANEL_HANDBOOK.pdf) | [Markdown](PANEL_HANDBOOK.md) · [DOCX](PANEL_HANDBOOK.docx) |
 
 The [claim and evidence map](CLAIM_EVIDENCE_MAP.md) traces every substantive slide to the manuscript, numerical result and controlled configuration. The [Gen6 direction](GEN6_DIRECTION.md) records precisely what the forward-looking slides mean. The full technical detail remains in the [manuscript PDF](../../source/VOLLEY_IEEE_Conference.pdf), [computational report](../../reports/GEN5_COMPUTATIONAL_REVIEW.pdf), [FreeCAD review report](../../cad/GEN5_CAD_REVIEW.pdf), [`analysis/`](../../analysis/), [`validation/`](../../validation/), [`cad/`](../../cad/) and [`appendix/`](../../appendix/). The reports include simulation plots and software-generated CAD views; none represents a physical test.
@@ -50,6 +50,6 @@ From this directory, run `python build_presentation.py` and `python render_revie
 
 ## Evidence cutoff, 19 October 2026
 
-The dated directory and file names retain the original pack location. The current candidate has 36 slides. Slides 28–30 retain explicitly dated earlier evidence; slides 31–34 add the matched gravity-axis follow-up, coupled four/twelve-payload countercases, unselected seven-feeder review and genuine native solver-data view. These additions do not change the frozen Gen5 technical record or establish a completed feeder. The [local feeder report](../../validation/feeder_review/README.md) retains failed arrest-tooth sizing and open handoff/contact/installed-hardware gates. No college approval, plagiarism clearance or delivered presentation is implied.
+The dated directory and file names retain the original pack location. The current candidate has 37 slides. Slides 28–30 retain explicitly dated earlier evidence; slides 31–34 add the matched gravity-axis follow-up, coupled four/twelve-payload countercases, unselected seven-feeder review and genuine native solver-data view. These additions do not change the frozen Gen5 technical record or establish a completed feeder. The [local feeder report](../../validation/feeder_review/README.md) retains failed arrest-tooth sizing and open handoff/contact/installed-hardware gates. No college approval, plagiarism clearance or delivered presentation is implied.
 
 The later same-day appendix slides 35–36 add CT-01 prescribed-cycle evidence and the RPL-01 negative replenishment finding. Earlier FDR-08 findings remain dated and unchanged. These appendices do not establish a completed feeder or replace academic approval.

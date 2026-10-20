@@ -155,7 +155,7 @@ txt(s, "Presented By", 2.4, 4.3, 8.5, 0.36, 17, False, RGBColor(35, 77, 129), al
 txt(s, "Adityavardhan Mishra  ·  Pratham Chawla", 1.55, 4.67, 10.25, 0.44, 20, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "PRN 23070125054  ·  PRN 23070125029", 2.1, 5.12, 9.15, 0.34, 15, False, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "Guide: Vikas Gulia", 0.8, 5.68, 5.6, 0.42, 18, True, RGBColor(0, 103, 169))
-txt(s, "Review candidate: 19 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
+txt(s, "Review candidate: 20 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
 txt(s, "SYMBIOSIS INSTITUTE OF TECHNOLOGY PUNE", 0.6, 6.75, 12.15, 0.45, 23, True, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "1", 12.6, 7.14, 0.3, 0.2, 9, False, MID, align=PP_ALIGN.RIGHT)
 
@@ -432,7 +432,7 @@ s = base("References", "Core literature and standards (1/2)",
          "Bibliography from VOLLEY-thesis/source/paper.tex", "SOURCE LIST")
 refs = [
     "[1] JAXA, JEM Payload Accommodation Handbook, Vol. 8: Small Satellite Deployment ICD.",
-    "[2] Cal Poly, CubeSat Design Specification, Rev. 14, 2020.",
+    "[2] Cal Poly, CubeSat Design Specification, Rev. 14.1, 2022.",
     "[3] C. Foster et al., ‘Constellation phasing with differential drag on Planet Labs satellites,’ J. Spacecraft Rockets 55(2), 2018.",
     "[4] H. Feng et al., ‘Design and reachable domain analysis of on-orbit electromagnetic launcher for CubeSats,’ Int. J. Aerospace Eng., 2025.",
     "[5] Y. Zhao et al., ‘Design and analysis of a new deployer for the in-orbit release of multiple stacked CubeSats,’ Remote Sensing 14(17), 4205, 2022.",
@@ -447,7 +447,7 @@ refs = [
     "[7] K. Halbach, ‘Design of permanent multipole magnets with oriented rare earth cobalt material,’ Nucl. Instrum. Methods 169, 1980.",
     "[8] NASA, General Environmental Verification Standard (GEVS), GSFC-STD-7000A, 2013.",
     "[9] D. A. Vallado, Fundamentals of Astrodynamics and Applications, 4th ed., 2013.",
-    "[10] A. Mishra, VOLLEY-thesis: manuscript, baseline, provenance and validation records, repo head b30ffdc, 28 Sep 2026.",
+    "[10] A. Mishra, VOLLEY-thesis: manuscript, baseline, provenance and validation records, evidence snapshot 5b92edc, 20 Oct 2026.",
     "[11] VOLLEY, Gen6 G0 mission and article requirements, 12 Oct 2026 (study requirements).",
 ]
 bullets(s, refs, 0.76, 1.68, 11.9, 5.13, 16, 16)
@@ -457,7 +457,7 @@ s = base("Evidence appendix", "What the reconciled numerical record establishes"
          "P133/P134 · technical evidence revision, 16 October 2026", "MODEL EVIDENCE ONLY")
 image_fit(s, ROOT / "figures/gen5_lifetime_numerical_check.png", 0.55, 1.62, 8.0, 4.6)
 card(s, 8.8, 1.85, 3.8, 1.7, "1.602 model ratio", "Separate integration, same static atmosphere. Actual lifetime is unvalidated.", AMBER, 18, 14)
-card(s, 8.8, 3.85, 3.8, 1.9, "Failures retained", "22 Gen5/R1 intersections classified; 126.562 kg model; no sampled twelve-shot mission closes.", RED, 18, 14)
+card(s, 8.8, 3.85, 3.8, 1.9, "Failures retained", "22 Gen5/R1 intersections; 126.562 kg model; archived mission screens fail. New Gen6 targeting is separately bounded.", RED, 18, 14)
 
 # Native orbit supplement, 18 October 2026.
 s = base("Evidence appendix", "Native solvers: agreement and unresolved differences",
@@ -499,6 +499,13 @@ s = base("Future-work appendix", "Orbital reload: define the interface before pr
          "RPL-01 · limited cooperative-cartridge feasibility", "BASELINE OPERATIONAL NO-GO")
 image_fit(s, ROOT / "validation/replenishment_feasibility/release/figures/replenishment.png", 0.6, 1.65, 12.1, 4.8)
 txt(s, "108 capture / 36 fit sensitivities. No integrated reload mechanism; ground loading remains the assumption.", 0.75, 6.65, 11.8, 0.3, 14)
+
+# FBR-01 finite-duration controls, separated from the Gen5 evaluated result.
+s = base("Future-work appendix", "Finite-duration thrust changes the resource comparison",
+         "FBR-01 · 18 targeted schedules / 46 native Orekit runs", "GEN6 SURROGATE CONTROL")
+image_fit(s, ROOT / "validation/finite_burn_review/figures/force_fuel_trade.png", 0.5, 1.52, 8.1, 5.15)
+bullets(s, ["Four releases fit the 20 N / 10 kg screen", "Twelve spring inputs exceed 20 N / 20 kg", "Both twelve-case policies close with 30 kg / 100 N", "Device mass still exceeds saved propellant", "Nearly 9°/s reversals if one fixed thruster; host allocation unverified"], 8.78, 1.65, 3.85, 4.8, 17, 15)
+txt(s, "Finite-force translational targets; imposed release speeds. No rated host, motor, flight precision or physical clearance.", 0.75, 6.74, 11.8, 0.3, 13)
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)

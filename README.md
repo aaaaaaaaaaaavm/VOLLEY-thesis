@@ -8,7 +8,7 @@
 
 This repository is the **standalone academic record** for VOLLEY Gen5. It holds the technical [manuscript](source/VOLLEY_IEEE_Conference.pdf), editable [source](source/paper.tex), model scripts and outputs, CAD, validation sheets, assumptions, defects, and the college [presentation and evidence](university/final_review_2026_10_10/README.md). A professor can follow a slide claim to a result file and method without opening another repository. [Academic release review](GO3_ACADEMIC_RELEASE_REVIEW.md) states which claims are supported and which gates remain open.
 
-The final-year report and presentation are review drafts. No physical working model or department acceptance of the computational demonstration is claimed. Final submission requirements and approvals are managed outside this public research repository.
+The final-year report and presentation document a computational study. No physical prototype has been built. Institutional submission requirements and approvals are managed outside this public research repository.
 
 **Assembly audit, 12 October 2026.** The [all-leaf Gen5 audit](cad/GEN5_FULL_INTERFERENCE_AUDIT_2026_10_12.md) finds 17 intersecting pairs in the evaluated assembly and five in the widened R1 candidate. The sled intersects the solid track beam and stator proxy in both. A [separate Gen6 one-cell integration audit](cad/GEN6_INTEGRATION_AUDIT_2026_10_12.md) finds that the previously independent feeder and first-article studies collide when combined. Its unselected R1 revision clears sampled nominal intersections but leaves a 10 mm handoff gap; R2 closes that nominal gap with an extending bridge proxy. The later [four-cell R0 study](cad/gen6_four_cell_r0/README.md) compares staggered and paired 1U/3U fixed cells; both pass represented nominal STEP-solid checks. Paired cells give at least 900 mm modeled drive distance, but contact loads, power-off restraint, carrier docking and host fit remain open. These findings supersede any narrower path-only claim of assembly clearance.
 
@@ -79,11 +79,19 @@ The [prototype-to-flight decision gates](docs/GEN6_PROTOTYPE_TO_FLIGHT_ROADMAP.m
 
 Eleven main chapters integrate the evaluated Gen5 configuration, finite-force challenge, CAD/mass failures and matched mission findings. Three appendices separate the evidence trail, development history and Gen6 studies. The certification page is visibly unsigned. No physical prototype, completed similarity check, guide approval or qualified product is asserted.
 
+## Finite-duration host manoeuvres
+
+The [FBR-01 finite-force study](validation/finite_burn_review/README.md) and [seven-page report](validation/finite_burn_review/FINITE_BURN_CAMPAIGN_REVIEW.pdf) replace the earlier ideal impulses with explicit preparation, thrust windows, mass flow and recovery. Eighteen targeted schedules and 46 native Orekit runs retain numerical refinements, control-error probes and thrust/fuel failures.
+
+At the declared 35%/35% policy, the twelve-release spring input requires 33.83 N peak and 23.12 kg fuel, failing the illustrative 20 N / 20 kg screen. The imposed VOLLEY input requires 18.00 N and 6.12 kg. With a common 30 kg reserve and 100 N limit, **both** cases reach the constructed translational targets. VOLLEY's assumed device-mass penalty still exceeds its propellant saving. A single fixed-thruster interpretation also needs nearly 9°/s mean direction reversals; host attitude/force allocation remains unverified.
+
+![Separately targeted finite-force schedules; surrogate controls and resource limits, no rated host or achieved release](validation/finite_burn_review/figures/force_fuel_trade.png)
+
 ## Native campaign replay and precision requirements · 19 October 2026
 
 The [CNR-01 local report](validation/native_campaign_review/README.md) provides 51 native Orekit runs: complete prescribed host-burn/recoil sequences, matched four/twelve-release cases, step comparisons and deterministic control-error probes. Nominal payload endpoint differences from the source implementation are below 8 µm. This is a numerical consistency result, **not delivered flight accuracy**.
 
-A common +0.1% imposed release-speed bias produces approximately 1.53 km terminal position error for the VOLLEY cases. Conditional photogate budgets and a frozen-command thrust-time screen expose the sensor, control and host requirements. Actual motor ratings, closed-loop accuracy, finite-burn targeting and installed integration remain open.
+A common +0.1% imposed release-speed bias produces approximately 1.53 km terminal position error for the VOLLEY cases. Conditional photogate budgets and a frozen-command thrust-time screen expose the sensor, control and host requirements. Actual motor ratings, closed-loop accuracy and installed integration remain open. FBR-01 separately targets finite-duration translational controls; host force allocation and operational compatibility remain unverified.
 
 ![Terminal position sensitivity to stated deterministic command probes; imposed velocities, surrogate host and no feedback](validation/native_campaign_review/figures/control_sensitivity.png)
 
@@ -101,7 +109,7 @@ The [limited replenishment study](validation/replenishment_feasibility/README.md
 
 | Deliverable | Open it | Evidence route |
 |:--|:--|:--|
-| **36-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
+| **37-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
 | **Panel handbook** | [PDF](university/final_review_2026_10_10/PANEL_HANDBOOK.pdf) · [Markdown](university/final_review_2026_10_10/PANEL_HANDBOOK.md) | Detailed explanations and figures |
 | **Final-year project report** | [PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Markdown](university/GEN5_FINAL_YEAR_REPORT.md) | Chaptered academic review draft; college-specific format remains to be applied |
 | **Technical manuscript** | [PDF](source/VOLLEY_IEEE_Conference.pdf) · [LaTeX](source/paper.tex) | [Local evidence guide](ACADEMIC_EVIDENCE.md) |

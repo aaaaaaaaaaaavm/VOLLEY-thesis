@@ -552,6 +552,17 @@ The twenty equivalent-thrust time screens apply only to the frozen impulse polic
 
 
 
+## Finite-duration host targeting
+
+The separately versioned [FBR-01 finite-force report](../validation/finite_burn_review/README.md) targets actual finite-duration resultant-force windows with integrated mass consumption. Eighteen solutions vary the two-window fraction, numerical step and fuel reserve; 46 native Orekit runs include nominal replays, refinements and deterministic force/release/initial-state probes. Preparation from −900 s, 20 s post-release guards and recovery to 4200 s are counted. All payloads retain the common 90000 s assessment epoch. The inputs remain imposed release velocities and a fixed-axis J2 point-mass model.
+
+At the 35%/35% policy, four-release spring/VOLLEY inputs require 13.36/6.50 N peak and 6.056/1.895 kg fuel. Twelve-release inputs require 33.83/18.00 N and 23.122/6.123 kg. The twelve-spring 20 kg reserve is exhausted at 3509.06 s; subsequent formal trajectory is diagnostic only. With a common 30 kg reserve and 100 N limit, both twelve-release controls reach the constructed full-state targets. The 17.460 kg propellant saving remains smaller than the 42 kg device-proxy penalty.
+
+![Retargeted finite-force schedules under common mission targets. Each point is a separate solution; limits and hardware resources are surrogate assumptions.](../validation/finite_burn_review/figures/force_fuel_trade.png){width=98%}
+
+Native nominal terminal differences stay below 23 µm and eight numerical refinement differences below 13 µm. These verify numerical consistency, not real delivery accuracy. A single fixed-thruster interpretation requires nearly 9°/s mean direction reversal in some 20 s gaps, with no settling allowance. Opposed thrust allocation might avoid whole-host reversal, but its plumbing, mass, plume geometry and attitude requirements are undefined. Host compatibility, physical near-field safety, navigation feedback, installed hardware and the motor/circuit rating remain open; no operational service is established.
+
+
 # Bibliography {.unnumbered}
 
 1. JAXA, *JEM Payload Accommodation Handbook*, Vol. 8, small-satellite deployment interface control document, cited in the VOLLEY thesis.
