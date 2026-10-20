@@ -72,6 +72,13 @@ The [prototype-to-flight decision gates](docs/GEN6_PROTOTYPE_TO_FLIGHT_ROADMAP.m
 *Model and mission architecture. A host and provider interface have not been selected.*
 
 
+
+## Blackbook — first similarity-review issue, 20 October 2026
+
+[Read the report PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Editable DOCX](university/GEN5_FINAL_YEAR_REPORT.docx) · [Source and reproducible build](university/README.md).
+
+Eleven main chapters integrate the evaluated Gen5 configuration, finite-force challenge, CAD/mass failures and matched mission findings. Three appendices separate the evidence trail, development history and Gen6 studies. The certification page is visibly unsigned. No physical prototype, completed similarity check, guide approval or qualified product is asserted.
+
 ## Native campaign replay and precision requirements · 19 October 2026
 
 The [CNR-01 local report](validation/native_campaign_review/README.md) provides 51 native Orekit runs: complete prescribed host-burn/recoil sequences, matched four/twelve-release cases, step comparisons and deterministic control-error probes. Nominal payload endpoint differences from the source implementation are below 8 µm. This is a numerical consistency result, **not delivered flight accuracy**.
@@ -166,7 +173,7 @@ Run `python3 tools/check_review_surface.py` for a fast, dependency-light check o
 
 The result is a **documented computational study with a negative selection screen for the evaluated 3U configuration**. Integrated thrust, the coupled shot chain, and other engineering closures remain open. The lack of a physical prototype is stated directly; published tests of other devices support context or parameters, not claims that VOLLEY itself was tested. The college rubric includes objectives, technical quality, results/validation, documentation, and presentation/viva. The supplied example deck gives a visual and section outline; it does not supply technical evidence for VOLLEY. [Review-pack rubric mapping](university/final_review_2026_10_10/README.md).
 
-The manuscript uses an IEEE conference layout. A university-specific full-thesis template has not been supplied, and no claim is made that this PDF satisfies an unprovided submission format. The review presentation and academic evidence record are ready for scrutiny of their stated computational scope.
+The manuscript uses an IEEE conference layout. The separate blackbook follows the inspected college sample’s front-matter and chapter conventions. The 20 October first similarity-review issue is available as PDF and editable DOCX; guide approval, institutional format confirmation and similarity results remain pending.
 
 **Beyond Gen5:** [Gen6 direction](university/final_review_2026_10_10/GEN6_DIRECTION.md) frames 1 km/s as a research objective. A named host and ICD, complete installed-system model, payload-specific structural and release testing, repeated shots and full mission closure are future gates. [VOLLEY engineering](https://github.com/aaaaaaaaaaaavm/VOLLEY) and [paper companion](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) offer optional context; this repository contains the evidence needed to review this thesis.
 

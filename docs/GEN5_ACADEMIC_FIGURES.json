@@ -1,5 +1,5 @@
 {
-  "revision": "19 October2026 computational supplements; fixed Gen5 technical record unchanged",
+  "revision": "20 October2026 academic issue; frozen Gen5 technical record unchanged",
   "hardware_measurements": false,
   "boundary": "Legacy graphs remain historical model outputs with current manuscript limitations. STEP-derived views do not prove loaded clearance. This catalog fixes image identity; method/units/case are described by captions and validation records.",
   "figures": [
@@ -742,13 +742,22 @@
         "README.md"
       ],
       "evidence_class": "Native solver numerical consistency; Shared prescribed orientation, one-day J2 case. Diagnostic bars use declared different numerical histories. Millimetre agreement is not physical orbit or release accuracy."
+    },
+    {
+      "path": "validation/captive_transfer_review/release/FreeCAD_CT01_receiver.png",
+      "sha256": "01a28788980bb6c79280f7ef15bf59bc9d5a1d187c9a2b73a5072e5c57b6e576",
+      "bytes": 41478,
+      "referenced_by": [
+        "university/layout/blackbook-frontmatter.tex"
+      ],
+      "evidence_class": "Native application viewport"
     }
   ],
   "document_sha256": {
-    "README.md": "517260bd1999fd69563e88f9228d05a626e31b2fc6f08354dc1630eef5f999a8",
+    "README.md": "93a1ab3abb338c20318ab3906c20376e650beec567c5484766ba401d65e87ebc",
     "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
-    "source/paper.tex": "cdca52d187fa3f0dba6829ea7e1aefe12703863045db40cdf74cf7e386970ddf",
-    "university/GEN5_FINAL_YEAR_REPORT.md": "73cee8802f7b040bcc61dc0e7eae2cebb7bf4a4ac6db5c056c3b24d89ee8571c",
+    "source/paper.tex": "0fa8186225a43487e818a5b54a7c681dd76e23bbdb651354b1812714adb085d6",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "472aeec7b286b499b2f91bcdafa97285bdf5faddf41880407dfc8aa9d5c457ce",
     "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158",
     "validation/orbit_evidence/README.md": "3f350ec088a33fb413861c20e88e04946c183bb67c67c2378625103412190967",
     "validation/feeder_review/README.md": "b226b959274eb24030f6f20b4ac58932154fa9b2713ea486bf49a09bb4dba94a",

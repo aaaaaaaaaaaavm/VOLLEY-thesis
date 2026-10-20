@@ -1,0 +1,35 @@
+{
+  "issue": "first_similarity_review_2026_10_20",
+  "date": "2026-10-20",
+  "scope": "Evaluated Gen5 computational thesis with negative design finding; separate Gen6 appendices",
+  "path_basis": "repository_root",
+  "guide_approval": false,
+  "similarity_result": null,
+  "physical_prototype": false,
+  "pages": 58,
+  "main_chapters": 11,
+  "appendices": 3,
+  "figure_count": 28,
+  "table_count": 12,
+  "fonts": {
+    "PDF": "LiberationSerif12pt",
+    "DOCX": "TimesNewRoman12pt"
+  },
+  "build_environment": {
+    "Python": "3.12.14",
+    "Pandoc": "pandoc 3.1.11.1",
+    "XeLaTeX": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)",
+    "python-docx": "1.2.0"
+  },
+  "files": {
+    "university/GEN5_FINAL_YEAR_REPORT.md": "472aeec7b286b499b2f91bcdafa97285bdf5faddf41880407dfc8aa9d5c457ce",
+    "university/GEN5_FINAL_YEAR_REPORT.pdf": "b9d31c4931a5078456ecbec73912f52a03cebb7441e57808562f7271ac838f05",
+    "university/GEN5_FINAL_YEAR_REPORT.docx": "50aa1785dbc908e82f87b70e3127995e41758fd8330298bb838a72bd279b047c",
+    "university/build_report.py": "2ae146f1114c28355eb72bc824352dc9f8a9ae8710ecd39f5d40833a712cde84",
+    "university/requirements-build.txt": "8d012b64cc8a04924f9a2e87716e83cdf659638ccddaf900066edf1bd26a45c6",
+    "university/layout/blackbook-frontmatter.tex": "bea3ed599ea432303f56637c6ec8015444534dc9fd91b7466beb5fa43784311d",
+    "university/layout/blackbook-header.tex": "fec5ef32c5134b5e2d595373c9637dde9a1bf283b2a83b14dafe518140814fea",
+    "university/layout/evidence-links.lua": "97bd67df93efaa68542062f4472c52b4656ebe82e856392413b27f45b9645082",
+    "tools/check_blackbook_issue.py": "64cfc9ee1e96eabaacb5aca662506e9e14ec2601dc66cc84660dc99e91a85e0a"
+  }
+}
