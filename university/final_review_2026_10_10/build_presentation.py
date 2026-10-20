@@ -507,6 +507,12 @@ image_fit(s, ROOT / "validation/finite_burn_review/figures/force_fuel_trade.png"
 bullets(s, ["Four releases fit the 20 N / 10 kg screen", "Twelve spring inputs exceed 20 N / 20 kg", "Both twelve-case policies close with 30 kg / 100 N", "Device mass still exceeds saved propellant", "Nearly 9°/s reversals if one fixed thruster; host allocation unverified"], 8.78, 1.65, 3.85, 4.8, 17, 15)
 txt(s, "Finite-force translational targets; imposed release speeds. No rated host, motor, flight precision or physical clearance.", 0.75, 6.74, 11.8, 0.3, 13)
 
+s = base("Future-work appendix", "Feeder handoff: represented geometry, open hardware interfaces",
+         "FM-02 / IDR-01 / FSR-01 · separate Gen6 studies", "UNSELECTED GEN6 RESEARCH")
+image_fit(s, ROOT / "validation/feeder_actuation_review/figures/FreeCAD_FM02_transfer.png", 0.45, 1.55, 8.0, 4.95)
+bullets(s, ["28 native/STEP poses; 26 continuous rigid phases", "12 mm underfloor receiving latch; positive crosspins", "115/324 adverse fit residuals remain nonpositive", "103 s assumed cycle exceeds 92.18 s later coast", "Actuation, axial pin retention and installed integration remain open"], 8.75, 1.65, 3.85, 4.7, 17, 14)
+txt(s, "Genuine FreeCAD Qt/Coin capture. Captive handling only; no launch, measured reliability or manufacturing release.", 0.7, 6.76, 11.9, 0.28, 12)
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)
 print(f"Wrote {OUT} ({len(prs.slides)} slides)")

@@ -563,6 +563,16 @@ At the 35%/35% policy, four-release spring/VOLLEY inputs require 13.36/6.50 N pe
 Native nominal terminal differences stay below 23 µm and eight numerical refinement differences below 13 µm. These verify numerical consistency, not real delivery accuracy. A single fixed-thruster interpretation requires nearly 9°/s mean direction reversal in some 20 s gaps, with no settling allowance. Opposed thrust allocation might avoid whole-host reversal, but its plumbing, mass, plume geometry and attitude requirements are undefined. Host compatibility, physical near-field safety, navigation feedback, installed hardware and the motor/circuit rating remain open; no operational service is established.
 
 
+## Feeder actuation and revised custody geometry
+
+The separate [FM-02 engineering review](../validation/feeder_actuation_review/README.md) replaces the tall receiving latch with a 12 mm underfloor entry frame, two positive endpoint crosspins and a physically represented sled. Twenty-eight native FreeCAD/STEP poses and 26 continuous prescribed rigid-translation phases have no represented positive-volume penetration. The storage crossbolt and each receiving pin obstruct the tested adverse motions. Axial pin capture, actual release actuators, loaded contacts and complete deployment/reset remain unimplemented; no hardware containment or manufacturing release follows.
+
+![FM-02 captive handling sequence from actual STEP exchanges. The payload remains retained during the illustrated 80 mm sled translation and return; no launch is represented.](../validation/feeder_actuation_review/figures/step_sequence.png){width=98%}
+
+The integrated ball-screw candidate is a separate ambient component screen and is not installed in this CAD. A quintic rest-to-rest law, moving load, drag, rotational inertia and component limits are checked in 972 scenarios. Polynomial extrema and exact piecewise integrals reproduce every decision; at 801 samples the maximum relative torque and input-energy-proxy discrepancies are $8.58\times10^{-8}$ and $1.08\times10^{-6}$. These are numerical model errors, not physical uncertainties. The sampled 10, 15 and 20 s cases meet the declared ambient screen; 5 s cases fail.
+
+The study retains 115 of 324 nonpositive fit residuals, 12 of 54 winding-temperature failures, 96 no-stop brake sensitivities and 72 finite runouts above the proposed 24 mm allowance. Actual component temperature domains differ, and the two-node thermal model is uncorrelated. A slow 103.0 s handling assumption does not fit eleven later twelve-release coasts of 92.182 s; a faster 74.5 s assumption fits, without actuator, attitude, indexing or full campaign validation. These findings define remaining engineering requirements. All seven feeder alternatives remain unselected; Gen5's achieved computational result is unchanged.
+
 # Bibliography {.unnumbered}
 
 1. JAXA, *JEM Payload Accommodation Handbook*, Vol. 8, small-satellite deployment interface control document, cited in the VOLLEY thesis.

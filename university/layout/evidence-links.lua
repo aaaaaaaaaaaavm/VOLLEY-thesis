@@ -1,5 +1,5 @@
 -- Resolve the report's repository-local evidence links against its immutable input snapshot.
-local base = 'https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis/blob/5b92edcbc052c170081ffea0d912426e150eb0e9/'
+local base = 'https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis/blob/24804907b30c9f0e568c134eb3a90269ec3caec5/'
 function Link(el)
   if el.target:match('^%.%./') then el.target=base..el.target:gsub('^%.%./','') end
   return el

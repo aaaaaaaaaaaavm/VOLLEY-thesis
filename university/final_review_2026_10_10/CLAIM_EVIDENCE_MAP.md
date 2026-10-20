@@ -41,6 +41,9 @@ This map traces the 34-slide candidate for 31 October 2026 to repository-local e
 | 35 | CT-01 continuous nominal transfer and retained safety failures | [Local CT-01 report](../../validation/captive_transfer_review/README.md) | Prescribed geometry; physical capture, drive and loaded integration remain open |
 | 36 | Limited orbital cartridge replenishment concept | [Local RPL-01 report](../../validation/replenishment_feasibility/README.md) | Negative baseline disposition; no robotics/docking hardware demonstrated |
 
+| 37 | Retargeted finite-duration host controls | [Local FBR-01 report](../../validation/finite_burn_review/README.md) | Imposed releases; constructed targets, mass flow and failures; no host/hardware acceptance |
+| 38 | Revised captive feeder custody and actuation screens | [Local FM-02/IDR-01/FSR-01 report](../../validation/feeder_actuation_review/README.md) | Nominal geometry; actual actuation, axial retention, loaded fit and installed integration open; no selected feeder |
+
 ## Exact Gen5 numbers and dependencies
 
 The generated [`appendix/BASELINE.md`](../../appendix/BASELINE.md) is the presentation's preferred short numerical source. It names source fields in `analysis/results/*.json`. The presentation retains the historical 16.029 m/s point for traceability and gives the adverse finite-geometry result its own slide. For mass and alternatives, read the payload-family and enclosure results with the manuscript's qualification that smaller payload classes need new cassette/retention design. For orbital lifetime, read the manuscript's solar-activity caveat and failed invariance check before quoting 1.60×.

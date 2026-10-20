@@ -6,10 +6,10 @@
   "guide_approval": false,
   "similarity_result": null,
   "physical_prototype": false,
-  "pages": 59,
+  "pages": 61,
   "main_chapters": 11,
   "appendices": 3,
-  "figure_count": 29,
+  "figure_count": 30,
   "table_count": 12,
   "fonts": {
     "PDF": "LiberationSerif12pt",
@@ -22,14 +22,14 @@
     "python-docx": "1.2.0"
   },
   "files": {
-    "university/GEN5_FINAL_YEAR_REPORT.md": "8a587743e95f600a4b1802b029eaeeedf349b971e1ec7f4c119a4ce18be0eb6a",
-    "university/GEN5_FINAL_YEAR_REPORT.pdf": "10e1079e725e9657644eaf5ad8219b237ddc65023e460d136d15b94110675f22",
-    "university/GEN5_FINAL_YEAR_REPORT.docx": "ef70e2b745a8650918c291acb5e70ee7decc5711f7a0666d6fcedae68fc00dcb",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "b1343eef5f70b1bd8f1c48fcee60a24aa5638a873fa31e7daeee2261721245fc",
+    "university/GEN5_FINAL_YEAR_REPORT.pdf": "e6014408bfaa2871f8be0593caa742ff1c7589aa359526f74cfc689a2f6208c3",
+    "university/GEN5_FINAL_YEAR_REPORT.docx": "9b169a060236d612c5694c5a205e64319ca541cd8bd0ed8e34ef186683293347",
     "university/build_report.py": "2ae146f1114c28355eb72bc824352dc9f8a9ae8710ecd39f5d40833a712cde84",
     "university/requirements-build.txt": "8d012b64cc8a04924f9a2e87716e83cdf659638ccddaf900066edf1bd26a45c6",
     "university/layout/blackbook-frontmatter.tex": "bea3ed599ea432303f56637c6ec8015444534dc9fd91b7466beb5fa43784311d",
     "university/layout/blackbook-header.tex": "fec5ef32c5134b5e2d595373c9637dde9a1bf283b2a83b14dafe518140814fea",
-    "university/layout/evidence-links.lua": "64fd20d5b07378f7962e1d089f9eb90d9dddc8800b7ffaf1821e0d0f73906a05",
+    "university/layout/evidence-links.lua": "1410390ef04ba6cce8d8ca244768ef06fbd50725d9bae932d589122141f783a3",
     "tools/check_blackbook_issue.py": "64cfc9ee1e96eabaacb5aca662506e9e14ec2601dc66cc84660dc99e91a85e0a"
   }
 }

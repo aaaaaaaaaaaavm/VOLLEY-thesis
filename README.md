@@ -95,6 +95,16 @@ A common +0.1% imposed release-speed bias produces approximately 1.53 km termina
 
 ![Terminal position sensitivity to stated deterministic command probes; imposed velocities, surrogate host and no feedback](validation/native_campaign_review/figures/control_sensitivity.png)
 
+## Feeder mechanism and actuation review · 20 October 2026
+
+[FM-02 / IDR-01 / FSR-01](validation/feeder_actuation_review/README.md) supplies 28 native FreeCAD/STEP poses, 26 continuous prescribed-motion checks, a 12 mm underfloor receiving latch and source-backed ground-drive, brake, thermal and handling studies. The receiving restraints now belong to an actual modeled sled. All 972 sampled drive decisions agree with polynomial extrema/integrals.
+
+The study retains failed fit, thermal, brake and cycle-time criteria. Pin axial retention and actuation, installed drive/brake integration, loaded contact and four/twelve-cell accommodation remain unverified. **All seven feeder architectures remain unselected.** Gen5's evaluated baseline is unchanged.
+
+![Genuine FreeCAD view of the FM-02 3U captive-transfer geometry; source-sized envelopes and unvalidated interfaces, not a manufacturing release](validation/feeder_actuation_review/figures/FreeCAD_FM02_transfer.png)
+
+[Nine-page engineering review](validation/feeder_actuation_review/FEEDER_ACTUATION_REVIEW.pdf) · [Actual 3U STEP](validation/feeder_actuation_review/cad/FM02_3U_transfer.step) · [Native FreeCAD](validation/feeder_actuation_review/cad/FM02_3U_transfer.FCStd) · [Prescribed STEP-pose animation](validation/feeder_actuation_review/figures/prescribed_cycle.gif) · [Recorded engineering findings](validation/feeder_actuation_review/FINDINGS.json)
+
 ## Captive-transfer and servicing studies · 19 October 2026
 
 [Full-text feeder comparison](docs/FEEDER_FULL_TEXT_REVIEW_2026_10_19.md) distinguishes the closest prototypes from VOLLEY, including payload modifications, gravity-assisted tests, contact loads and shared-path failures.
@@ -109,7 +119,7 @@ The [limited replenishment study](validation/replenishment_feasibility/README.md
 
 | Deliverable | Open it | Evidence route |
 |:--|:--|:--|
-| **37-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
+| **38-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
 | **Panel handbook** | [PDF](university/final_review_2026_10_10/PANEL_HANDBOOK.pdf) · [Markdown](university/final_review_2026_10_10/PANEL_HANDBOOK.md) | Detailed explanations and figures |
 | **Final-year project report** | [PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Markdown](university/GEN5_FINAL_YEAR_REPORT.md) | Chaptered academic review draft; college-specific format remains to be applied |
 | **Technical manuscript** | [PDF](source/VOLLEY_IEEE_Conference.pdf) · [LaTeX](source/paper.tex) | [Local evidence guide](ACADEMIC_EVIDENCE.md) |
