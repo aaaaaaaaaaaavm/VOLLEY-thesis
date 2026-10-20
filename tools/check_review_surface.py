@@ -131,6 +131,7 @@ def main() -> None:
     local_links = check_links()
     figures = check_manuscript_figures()
     check_captured_results()
+    runpy.run_path(str(ROOT / "validation/finite_burn_review/check_capture.py"))
     import subprocess, sys
     subprocess.run([sys.executable, str(ROOT / 'analysis/gen5_evidence_audit.py'), '--check'], check=True)
     subprocess.run([sys.executable, str(ROOT / 'tools/freeze_gen5_record.py'), '--check'], check=True)
