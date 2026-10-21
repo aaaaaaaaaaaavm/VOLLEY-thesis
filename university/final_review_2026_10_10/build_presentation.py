@@ -519,11 +519,11 @@ image_fit(s, ROOT / "validation/feeder_integrity_review/figures/component_compli
 bullets(s, ["12 actual-FM06 plus 40 historical receiver analyses", "3U one-dog mean: 1.883 to 0.0600 mm", "Clamped bores do not bound assembled stiffness", "1,117/1,215 adverse guide-fit residuals nonpositive"], 8.65, 1.8, 4.0, 4.6, 17, 15)
 txt(s, "Assumed elastic properties; no selected material allowable, real joint-contact acceptance or hardware testing.", 0.7, 6.76, 11.9, 0.28, 12)
 
-s = base("Future-work appendix", "Native contact runs expose a model limitation",
-         "FCE08 · Project Chrono 10.0.0; 12 captured cases", "NUMERICAL ACCEPTANCE NOT ESTABLISHED")
-image_fit(s, ROOT / "validation/feeder_integrity_review/figures/contact_refinement.png", 0.5, 1.7, 7.8, 4.7)
-bullets(s, ["Nominal transfer sequences reach their programmed endpoint", "Contact peaks and final pose remain step/iteration sensitive", "Independent B-rep checks detect payload/fork overlap", "No dynamic-clearance, precision or design-load acceptance"], 8.65, 1.8, 4.0, 4.6, 17, 15)
-txt(s, "A completed simulation sequence does not establish a validated contact model or physical reliability.", 0.7, 6.76, 11.9, 0.28, 12)
+s = base("Future-work appendix", "Contact representation: calibrated controls, sensitive final pose",
+         "FCE12 · Project Chrono 10.0.0; 12 captured cases", "NUMERICAL METHOD RESULTS")
+image_fit(s, ROOT / "validation/feeder_contact_verification/figures/contact_calibration.png", 0.5, 1.7, 7.8, 4.7)
+bullets(s, ["14 planar controls; largest checked gap error 4.28 nm", "10 endpoint sequences; two injected faults abort", "84 full-solid pose checks; residuals bounded at 1 µm", "Final COM refinement changes 1.51 / 1.47 mm; no precision rating"], 8.65, 1.8, 4.0, 4.6, 17, 15)
+txt(s, "Calibrated planar controls and sampled geometry do not establish continuous loaded clearance or hardware reliability.", 0.7, 6.76, 11.9, 0.28, 12)
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)

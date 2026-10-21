@@ -148,3 +148,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+# Verify the current independently captured contact representation.
+runpy.run_path(str(ROOT / "validation/feeder_contact_verification/check_capture.py"))

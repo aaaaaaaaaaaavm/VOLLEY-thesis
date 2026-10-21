@@ -44,7 +44,7 @@ This map traces the 40-slide candidate for 31 October 2026 to repository-local e
 | 37 | Retargeted finite-duration host controls | [Local FBR-01 report](../../validation/finite_burn_review/README.md) | Imposed releases; constructed targets, mass flow and failures; no host/hardware acceptance |
 | 38 | FM06-R1 nominal geometry and corrected backstop surface | [Native geometry and exchange record](../../validation/feeder_integrity_review/README.md) | Actual CAD render;30assembly poses/70part exchanges/28prescribed phases. No loaded-clearance or manufacturing acceptance |
 | 39 | Receiver and tine component-fixture stiffness | [FLR01/FLR02 evidence](../../validation/feeder_integrity_review/README.md) | Assumed elastic properties and idealized component supports; actual joints, material allowables and fit acceptance remain open |
-| 40 | FCE08 numerical rejection and independent B-rep overlap | [Native contact assessment](../../validation/feeder_integrity_review/CONTACT_REVIEW.md) | Step/iteration sensitivity and actual-solid overlap prevent contact-force, precision and dynamic-clearance acceptance |
+| 40 | FCE12 planar calibration and final-state sensitivity | [Native contact verification](../../validation/feeder_contact_verification/README.md) | Fourteen controls and 84 selected poses; final COM refinement remains above the provisional criterion. No design-load or measured-precision acceptance. |
 
 ## Exact Gen5 numbers and dependencies
 

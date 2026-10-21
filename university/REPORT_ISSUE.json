@@ -1,7 +1,7 @@
 {
   "issue": "first_similarity_review_2026_10_21",
   "date": "2026-10-21",
-  "scope": "Evaluated Gen5 computational feasibility study with adverse findings; separate dated Gen6 research including rejected contact acceptance",
+  "scope": "Evaluated Gen5 computational feasibility study; separate dated Gen6 component, contact-verification and numerical-sensitivity studies",
   "path_basis": "repository_root",
   "guide_approval": false,
   "similarity_result": null,
@@ -23,14 +23,14 @@
     "XeLaTeX": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)"
   },
   "files": {
-    "university/GEN5_FINAL_YEAR_REPORT.md": "9e573b1f6e3ffbc73acca069833aa3c623cfb95fb4bcaabea2ddd5d0e90dbf6a",
-    "university/GEN5_FINAL_YEAR_REPORT.pdf": "2f3f777b088342dd7b5d88df8b79bec1885b48033cb744db6239150a719477e6",
-    "university/GEN5_FINAL_YEAR_REPORT.docx": "d8503af800c32d16e58b884b564f631763db0ce0fd578a81ac2f56f4a2112479",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "df93b6bf4a3057667d10f78ae8439fd07327a902745f2d908e75926a17aed437",
+    "university/GEN5_FINAL_YEAR_REPORT.pdf": "1685ae10c40c1fa2e7a952f243111d9fec981d7fd61a07f7ae894c79263da2cf",
+    "university/GEN5_FINAL_YEAR_REPORT.docx": "e21b0695ee53b2807be3aaec0c5bc3306cae4cd8ff57dfa3941105ab02e6d953",
     "university/build_report.py": "617ed0f000796259076f0c122428125a7681335fc14f9de243408a418bd07dfe",
     "university/requirements-build.txt": "8d012b64cc8a04924f9a2e87716e83cdf659638ccddaf900066edf1bd26a45c6",
     "university/layout/blackbook-frontmatter.tex": "2717e4758aa8d4d3fe3aad41c5fb43b032e03f6f451a03f6e0884605c95c9028",
     "university/layout/blackbook-header.tex": "fec5ef32c5134b5e2d595373c9637dde9a1bf283b2a83b14dafe518140814fea",
-    "university/layout/evidence-links.lua": "f36313311f577111cda4e7c54958d7bb7fc7659c869adade6ad142a5051daeb3",
+    "university/layout/evidence-links.lua": "edb3eba075c9b9f2dfeeaec1a99fca94e88aab94386a8366fb6bc1ffbbd7235c",
     "tools/check_blackbook_issue.py": "9ede9a86ce7586bfa8add616bb1244290ad39ba7af70b61bc38dae446d758abe"
   }
 }
