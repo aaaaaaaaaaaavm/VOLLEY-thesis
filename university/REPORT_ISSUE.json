@@ -8,7 +8,7 @@
   "physical_prototype": false,
   "presentation_hardware_requirement": "No hardware required per user confirmation; no physical validation claimed",
   "project_completion": "Whole-project completion is not asserted; technical gaps remain in the controlled private checklist",
-  "pages": 63,
+  "pages": 64,
   "main_chapters": 11,
   "appendices": 3,
   "figure_count": 33,
@@ -23,14 +23,14 @@
     "XeLaTeX": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)"
   },
   "files": {
-    "university/GEN5_FINAL_YEAR_REPORT.md": "df93b6bf4a3057667d10f78ae8439fd07327a902745f2d908e75926a17aed437",
-    "university/GEN5_FINAL_YEAR_REPORT.pdf": "1685ae10c40c1fa2e7a952f243111d9fec981d7fd61a07f7ae894c79263da2cf",
-    "university/GEN5_FINAL_YEAR_REPORT.docx": "e21b0695ee53b2807be3aaec0c5bc3306cae4cd8ff57dfa3941105ab02e6d953",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "76304d63aa27b7226de1b1dc39524146a6a9945777c72e154b14efa3e1df1f74",
+    "university/GEN5_FINAL_YEAR_REPORT.pdf": "f3c296f2aba650a1eb0e9cbee07b435fd70111481cf22a6da79b396a4c14eb32",
+    "university/GEN5_FINAL_YEAR_REPORT.docx": "05e6ad7dbe2ea8ad52dc5c6be3e02082003b8b68d52288ffeb4178be49a7cdb3",
     "university/build_report.py": "617ed0f000796259076f0c122428125a7681335fc14f9de243408a418bd07dfe",
     "university/requirements-build.txt": "8d012b64cc8a04924f9a2e87716e83cdf659638ccddaf900066edf1bd26a45c6",
     "university/layout/blackbook-frontmatter.tex": "2717e4758aa8d4d3fe3aad41c5fb43b032e03f6f451a03f6e0884605c95c9028",
     "university/layout/blackbook-header.tex": "fec5ef32c5134b5e2d595373c9637dde9a1bf283b2a83b14dafe518140814fea",
-    "university/layout/evidence-links.lua": "edb3eba075c9b9f2dfeeaec1a99fca94e88aab94386a8366fb6bc1ffbbd7235c",
+    "university/layout/evidence-links.lua": "eccc33f84c4355eff4f9409d7673c25a7822b60cb5aca78b3c07009d813d3f39",
     "tools/check_blackbook_issue.py": "9ede9a86ce7586bfa8add616bb1244290ad39ba7af70b61bc38dae446d758abe"
   }
 }

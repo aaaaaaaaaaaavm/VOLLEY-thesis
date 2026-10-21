@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-21-FCE12",
+  "revision": "2026-10-21-FM07-FCE12",
   "hardware_measurements": false,
   "boundary": "Legacy graphs remain historical model outputs with current manuscript limitations. STEP-derived views do not prove loaded clearance. This catalog fixes image identity; method/units/case are described by captions and validation records.",
   "figures": [
@@ -737,9 +737,7 @@
       "path": "validation/captive_transfer_review/release/FreeCAD_CT01_receiver.png",
       "sha256": "01a28788980bb6c79280f7ef15bf59bc9d5a1d187c9a2b73a5072e5c57b6e576",
       "bytes": 41478,
-      "referenced_by": [
-        "university/layout/blackbook-frontmatter.tex"
-      ],
+      "referenced_by": [],
       "evidence_class": "Native application viewport"
     },
     {
@@ -809,13 +807,24 @@
         "source/paper.tex"
       ],
       "evidence_class": "Native numerical contact calibration; no hardware measurement or delivered-accuracy acceptance"
+    },
+    {
+      "path": "validation/feeder_release_review/figures/FM07_Technical_exit_open.png",
+      "sha256": "a38ba6ee3bfc46345f7541cee9112fe29a939adb403ca74e4a3fae35c4666912",
+      "bytes": 565455,
+      "referenced_by": [
+        "README.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/build_presentation.py"
+      ],
+      "evidence_class": "Blender Workbench render of actual FreeCAD geometry; prescribed nominal state, no hardware or launch result"
     }
   ],
   "document_sha256": {
-    "README.md": "40b1e569181852d0da4f0a3ae379d102bade5c9c780351d81e9e08a209b88193",
+    "README.md": "64d81ac46b2c2e51b6ab907fce3fc35d3b9198043a0f88d04b9358d3324f50c6",
     "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
-    "source/paper.tex": "0ea981b9c8111cad730fa33dac4ac9168800e4577973749296c6ecf90d0285b9",
-    "university/GEN5_FINAL_YEAR_REPORT.md": "df93b6bf4a3057667d10f78ae8439fd07327a902745f2d908e75926a17aed437",
+    "source/paper.tex": "03fcd1af89527ba0ddf19011c00d458e677965d65f5d68631a1941aa2ab11b97",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "76304d63aa27b7226de1b1dc39524146a6a9945777c72e154b14efa3e1df1f74",
     "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158",
     "validation/orbit_evidence/README.md": "3f350ec088a33fb413861c20e88e04946c183bb67c67c2378625103412190967",
     "validation/feeder_review/README.md": "b226b959274eb24030f6f20b4ac58932154fa9b2713ea486bf49a09bb4dba94a",

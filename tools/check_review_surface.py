@@ -151,3 +151,5 @@ if __name__ == "__main__":
 
 # Verify the current independently captured contact representation.
 runpy.run_path(str(ROOT / "validation/feeder_contact_verification/check_capture.py"))
+
+runpy.run_path(str(ROOT / "validation/feeder_release_review/check_capture.py"))

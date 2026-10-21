@@ -34,3 +34,5 @@ The 40-slide deck and full blackbook report carry the evaluated Gen5 findings an
 ## 21 October feeder integrity evidence
 
 The [local component-fixture record](validation/feeder_integrity_review/README.md) retains FM06 geometry, actual receiver and tine analyses, and the dated contact capture. The current [FCE12 contact-verification study](validation/feeder_contact_verification/README.md) calibrates the numerical material representation and reports 84 selected full-solid poses. Final COM refinement changes exceed the provisional criterion, so no precision or design-load rating follows. Loaded fits, installed release/reset hardware and the seven-architecture downselect remain separate acceptance requirements. This Gen6 research does not revise evaluated Gen5.
+
+The [FM07-R5 release/reset geometry](validation/feeder_release_review/README.md) adds nominal custody and empty reset. Its native geometry checks remain separate from FM06 contact and component-fixture results; no all-seven downselect or hardware acceptance is asserted.

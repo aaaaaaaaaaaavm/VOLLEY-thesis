@@ -507,11 +507,11 @@ image_fit(s, ROOT / "validation/finite_burn_review/figures/force_fuel_trade.png"
 bullets(s, ["Four releases fit the 20 N / 10 kg screen", "Twelve spring inputs exceed 20 N / 20 kg", "Both twelve-case policies close with 30 kg / 100 N", "Device mass still exceeds saved propellant", "Nearly 9°/s reversals if one fixed thruster; host allocation unverified"], 8.78, 1.65, 3.85, 4.8, 17, 15)
 txt(s, "Finite-force translational targets; imposed release speeds. No rated host, motor, flight precision or physical clearance.", 0.75, 6.74, 11.8, 0.3, 13)
 
-s = base("Future-work appendix", "Feeder handoff: checked nominal geometry, unresolved hardware",
-         "FM06-R1 · separate Gen6 geometry study", "UNSELECTED GEN6 RESEARCH")
-image_fit(s, ROOT / "validation/feeder_integrity_review/figures/FM06_Technical_transfer.png", 0.45, 1.55, 8.0, 4.95)
-bullets(s, ["30 native/STEP assembly states; 70 checked part exchanges", "28 continuous prescribed rigid-translation phases", "Backstop junction corrected; closed surfaces checked", "Installed actuation, rail-end contacts and forward-stop release remain open"], 8.75, 1.65, 3.85, 4.7, 17, 15)
-txt(s, "Blender Workbench render of actual native CAD. No manufactured mechanism, launch or qualification claim.", 0.7, 6.76, 11.9, 0.28, 12)
+s = base("Future-work appendix", "Feeder geometry includes exit release and empty reset",
+         "FM07-R5 · separate Gen6 nominal geometry", "NATIVE GEOMETRY RESULTS")
+image_fit(s, ROOT / "validation/feeder_release_review/figures/FM07_Technical_exit_open.png", 0.45, 1.55, 8.0, 4.95)
+bullets(s, ["46 cycle poses; 34 additional door-angle samples", "40 continuous prescribed linear sweeps", "20 assembly STEP files; 74 checked individual parts", "Loaded fits, installed actuation and seven-way downselect remain acceptance gates"], 8.75, 1.65, 3.85, 4.7, 17, 15)
+txt(s, "Blender Workbench render of actual native CAD. Prescribed geometry, not launch dynamics or hardware qualification.", 0.7, 6.76, 11.9, 0.28, 12)
 
 s = base("Future-work appendix", "Component stiffness improves within an idealized fixture",
          "FLR01 / FLR02 / FLR03 · Gmsh 4.14.1 / CalculiX 2.23", "COMPONENT FIXTURE RESULTS")
