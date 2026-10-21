@@ -73,11 +73,21 @@ The [prototype-to-flight decision gates](docs/GEN6_PROTOTYPE_TO_FLIGHT_ROADMAP.m
 
 
 
-## Blackbook — first similarity-review issue, 20 October 2026
+## Blackbook — first similarity-review issue, 21 October 2026
 
 [Read the report PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Editable DOCX](university/GEN5_FINAL_YEAR_REPORT.docx) · [Source and reproducible build](university/README.md).
 
 Eleven main chapters integrate the evaluated Gen5 configuration, finite-force challenge, CAD/mass failures and matched mission findings. Three appendices separate the evidence trail, development history and Gen6 studies. The certification page is visibly unsigned. No physical prototype, completed similarity check, guide approval or qualified product is asserted.
+
+## Feeder geometry and native load/contact review · 21 October 2026
+
+[FM06-R1 engineering record](validation/feeder_integrity_review/README.md) adds thirty native assembly/STEP poses, seventy independently checked individual STEP files and a corrected backstop junction. Fifty-two receiver-fixture analyses (40 historical, 12 on the actual current geometry) and four tine unit-load analyses retain mesh refinement, force/moment balance and explicit support assumptions.
+
+The native contact campaign is a **negative numerical finding**: programmed transfer completion does not establish converged forces or dynamic clearance. Independent B-rep checks detect payload/fork overlap, and adverse tolerance cases remain. Installed actuators, release/reset and multi-cell integration are unfinished. No feeder architecture is selected; the evaluated Gen5 is unchanged.
+
+![FM06-R1 native-CAD transfer state rendered in Blender Workbench; nominal research geometry, not a tested or qualified mechanism](validation/feeder_integrity_review/figures/FM06_Technical_transfer.png)
+
+[Engineering report](validation/feeder_integrity_review/FEEDER_INTEGRITY_REVIEW.pdf) · [Native 3U FreeCAD](validation/feeder_integrity_review/cad/FM06_3U_transfer.FCStd) · [3U STEP](validation/feeder_integrity_review/cad/FM06_3U_transfer.step) · [70 reference parts](validation/feeder_integrity_review/parts/INDEX.json) · [Contact assessment](validation/feeder_integrity_review/CONTACT_REVIEW.md)
 
 ## Finite-duration host manoeuvres
 
@@ -119,7 +129,7 @@ The [limited replenishment study](validation/replenishment_feasibility/README.md
 
 | Deliverable | Open it | Evidence route |
 |:--|:--|:--|
-| **38-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
+| **40-slide college presentation** | [PDF](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pdf) · [editable PPTX](university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.pptx) | [Slide-by-slide claim map](university/final_review_2026_10_10/CLAIM_EVIDENCE_MAP.md) |
 | **Panel handbook** | [PDF](university/final_review_2026_10_10/PANEL_HANDBOOK.pdf) · [Markdown](university/final_review_2026_10_10/PANEL_HANDBOOK.md) | Detailed explanations and figures |
 | **Final-year project report** | [PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Markdown](university/GEN5_FINAL_YEAR_REPORT.md) | Chaptered academic review draft; college-specific format remains to be applied |
 | **Technical manuscript** | [PDF](source/VOLLEY_IEEE_Conference.pdf) · [LaTeX](source/paper.tex) | [Local evidence guide](ACADEMIC_EVIDENCE.md) |
@@ -191,7 +201,7 @@ Run `python3 tools/check_review_surface.py` for a fast, dependency-light check o
 
 The result is a **documented computational study with a negative selection screen for the evaluated 3U configuration**. Integrated thrust, the coupled shot chain, and other engineering closures remain open. The lack of a physical prototype is stated directly; published tests of other devices support context or parameters, not claims that VOLLEY itself was tested. The college rubric includes objectives, technical quality, results/validation, documentation, and presentation/viva. The supplied example deck gives a visual and section outline; it does not supply technical evidence for VOLLEY. [Review-pack rubric mapping](university/final_review_2026_10_10/README.md).
 
-The manuscript uses an IEEE conference layout. The separate blackbook follows the inspected college sample’s front-matter and chapter conventions. The 20 October first similarity-review issue is available as PDF and editable DOCX; guide approval, institutional format confirmation and similarity results remain pending.
+The manuscript uses an IEEE conference layout. The separate blackbook follows the inspected college sample’s front-matter and chapter conventions. The 21 October first similarity-review issue is available as PDF and editable DOCX; guide approval, institutional format confirmation and similarity results remain pending.
 
 **Beyond Gen5:** [Gen6 direction](university/final_review_2026_10_10/GEN6_DIRECTION.md) frames 1 km/s as a research objective. A named host and ICD, complete installed-system model, payload-specific structural and release testing, repeated shots and full mission closure are future gates. [VOLLEY engineering](https://github.com/aaaaaaaaaaaavm/VOLLEY) and [paper companion](https://github.com/aaaaaaaaaaaavm/VOLLEY-paper) offer optional context; this repository contains the evidence needed to review this thesis.
 

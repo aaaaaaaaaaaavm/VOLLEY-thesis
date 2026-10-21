@@ -1,15 +1,17 @@
 {
-  "issue": "first_similarity_review_2026_10_20",
-  "date": "2026-10-20",
-  "scope": "Evaluated Gen5 computational thesis with negative design finding; separate Gen6 appendices",
+  "issue": "first_similarity_review_2026_10_21",
+  "date": "2026-10-21",
+  "scope": "Evaluated Gen5 computational feasibility study with adverse findings; separate dated Gen6 research including rejected contact acceptance",
   "path_basis": "repository_root",
   "guide_approval": false,
   "similarity_result": null,
   "physical_prototype": false,
-  "pages": 61,
+  "presentation_hardware_requirement": "No hardware required per user confirmation; no physical validation claimed",
+  "project_completion": "Whole-project completion is not asserted; technical gaps remain in the controlled private checklist",
+  "pages": 63,
   "main_chapters": 11,
   "appendices": 3,
-  "figure_count": 30,
+  "figure_count": 33,
   "table_count": 12,
   "fonts": {
     "PDF": "LiberationSerif12pt",
@@ -18,18 +20,17 @@
   "build_environment": {
     "Python": "3.12.14",
     "Pandoc": "pandoc 3.1.11.1",
-    "XeLaTeX": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)",
-    "python-docx": "1.2.0"
+    "XeLaTeX": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)"
   },
   "files": {
-    "university/GEN5_FINAL_YEAR_REPORT.md": "b1343eef5f70b1bd8f1c48fcee60a24aa5638a873fa31e7daeee2261721245fc",
-    "university/GEN5_FINAL_YEAR_REPORT.pdf": "e6014408bfaa2871f8be0593caa742ff1c7589aa359526f74cfc689a2f6208c3",
-    "university/GEN5_FINAL_YEAR_REPORT.docx": "9b169a060236d612c5694c5a205e64319ca541cd8bd0ed8e34ef186683293347",
-    "university/build_report.py": "2ae146f1114c28355eb72bc824352dc9f8a9ae8710ecd39f5d40833a712cde84",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "9e573b1f6e3ffbc73acca069833aa3c623cfb95fb4bcaabea2ddd5d0e90dbf6a",
+    "university/GEN5_FINAL_YEAR_REPORT.pdf": "2f3f777b088342dd7b5d88df8b79bec1885b48033cb744db6239150a719477e6",
+    "university/GEN5_FINAL_YEAR_REPORT.docx": "d8503af800c32d16e58b884b564f631763db0ce0fd578a81ac2f56f4a2112479",
+    "university/build_report.py": "617ed0f000796259076f0c122428125a7681335fc14f9de243408a418bd07dfe",
     "university/requirements-build.txt": "8d012b64cc8a04924f9a2e87716e83cdf659638ccddaf900066edf1bd26a45c6",
-    "university/layout/blackbook-frontmatter.tex": "bea3ed599ea432303f56637c6ec8015444534dc9fd91b7466beb5fa43784311d",
+    "university/layout/blackbook-frontmatter.tex": "2717e4758aa8d4d3fe3aad41c5fb43b032e03f6f451a03f6e0884605c95c9028",
     "university/layout/blackbook-header.tex": "fec5ef32c5134b5e2d595373c9637dde9a1bf283b2a83b14dafe518140814fea",
-    "university/layout/evidence-links.lua": "1410390ef04ba6cce8d8ca244768ef06fbd50725d9bae932d589122141f783a3",
-    "tools/check_blackbook_issue.py": "64cfc9ee1e96eabaacb5aca662506e9e14ec2601dc66cc84660dc99e91a85e0a"
+    "university/layout/evidence-links.lua": "f36313311f577111cda4e7c54958d7bb7fc7659c869adade6ad142a5051daeb3",
+    "tools/check_blackbook_issue.py": "9ede9a86ce7586bfa8add616bb1244290ad39ba7af70b61bc38dae446d758abe"
   }
 }

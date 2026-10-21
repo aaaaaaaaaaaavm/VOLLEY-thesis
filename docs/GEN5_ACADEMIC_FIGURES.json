@@ -1,5 +1,5 @@
 {
-  "revision": "20 October2026 academic issue; frozen Gen5 technical record unchanged",
+  "revision": "21 October2026 academic issue; evaluated Gen5 technical record unchanged",
   "hardware_measurements": false,
   "boundary": "Legacy graphs remain historical model outputs with current manuscript limitations. STEP-derived views do not prove loaded clearance. This catalog fixes image identity; method/units/case are described by captions and validation records.",
   "figures": [
@@ -761,13 +761,49 @@
         "university/final_review_2026_10_10/build_presentation.py"
       ],
       "evidence_class": "Computed finite-force surrogate-control plot; no achieved hardware"
+    },
+    {
+      "path": "validation/feeder_integrity_review/figures/FM06_Technical_transfer.png",
+      "sha256": "24329b969efc2ac601117d04037e867a8c784eb700d74831236d732bed5aff02",
+      "bytes": 573183,
+      "referenced_by": [
+        "Current manuscript, academic report or review appendices as applicable"
+      ],
+      "evidence_class": "Explicit CAD render or computed component/native-contact figure; no hardware measurement"
+    },
+    {
+      "path": "validation/feeder_integrity_review/figures/component_compliance.png",
+      "sha256": "4c2c53cc714384be08bcbaeb6eadf47fe9969139113504bf3f99d553a6a55bd1",
+      "bytes": 91381,
+      "referenced_by": [
+        "Current manuscript, academic report or review appendices as applicable"
+      ],
+      "evidence_class": "Explicit CAD render or computed component/native-contact figure; no hardware measurement"
+    },
+    {
+      "path": "validation/feeder_integrity_review/figures/contact_refinement.png",
+      "sha256": "b32c81b50741435038460fb3e7c1307f275c531abf6f9ebf32f8cb4622de2f5b",
+      "bytes": 148022,
+      "referenced_by": [
+        "Current manuscript, academic report or review appendices as applicable"
+      ],
+      "evidence_class": "Explicit CAD render or computed component/native-contact figure; no hardware measurement"
+    },
+    {
+      "path": "source/figures/feeder_contact_refinement.png",
+      "sha256": "b32c81b50741435038460fb3e7c1307f275c531abf6f9ebf32f8cb4622de2f5b",
+      "bytes": 148022,
+      "referenced_by": [
+        "Current manuscript, academic report or review appendices as applicable"
+      ],
+      "evidence_class": "Explicit CAD render or computed component/native-contact figure; no hardware measurement"
     }
   ],
   "document_sha256": {
-    "README.md": "734425946427e84a56f8b6ce6b597c827739ad23bd4ef0eea3ee0948f1c4db50",
+    "README.md": "5a5f2434493ab4176c2cc07e42c1d81aa1aaae840401ae1e4cbde07310471782",
     "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
-    "source/paper.tex": "59bf63048ada3939082707aee8fa0c0ee39af73788397dc6d0b252c9eda80b1d",
-    "university/GEN5_FINAL_YEAR_REPORT.md": "b1343eef5f70b1bd8f1c48fcee60a24aa5638a873fa31e7daeee2261721245fc",
+    "source/paper.tex": "70ef134a025018a00e29a1ebf575220c695be72e5c94092fb83cd48c0a320de0",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "9e573b1f6e3ffbc73acca069833aa3c623cfb95fb4bcaabea2ddd5d0e90dbf6a",
     "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158",
     "validation/orbit_evidence/README.md": "3f350ec088a33fb413861c20e88e04946c183bb67c67c2378625103412190967",
     "validation/feeder_review/README.md": "b226b959274eb24030f6f20b4ac58932154fa9b2713ea486bf49a09bb4dba94a",

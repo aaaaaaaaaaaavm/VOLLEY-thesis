@@ -561,6 +561,21 @@ The separate FM-02 revision supplies a connected receiving sled, a 12~mm underfl
 
 A distinct integrated ball-screw ground-drive screen uses quintic motion and catalogue limits~\cite{faulhaber32lsb,faulhaber3242}. All 972 sampled decisions agree with polynomial extrema and piecewise integrals; maximum relative 801-sample torque and input-energy-proxy discrepancies are $8.58\times10^{-8}$ and $1.08\times10^{-6}$. This is numerical consistency, not physical correlation. The study retains 115/324 nonpositive fit residuals, 12/54 winding-temperature failures and brake sensitivities with 96 no-stop cases. Later twelve-release coasts offer 92.182~s: a 103.0~s assumed handling sequence fails eleven releases, whereas a 74.5~s hypothesis fits. Neither hypothesis establishes actuator performance or a complete campaign. The local companion supplement contains the source, native CAD/STEP, logs, failure cases and reference sheets; these separate Gen6 studies do not change the evaluated Gen5 configuration.
 
+
+\subsection{Receiver stiffness and contact-model rejection, 21 October 2026}
+FM06-R1 adds integral transfer tines, longer receiver guides and a corrected backstop junction. Thirty native assembly/STEP states, seventy individual exchanges and 28 prescribed continuous translation checks have no nominal represented penetration. A separate surface audit is necessary: solid validity alone missed an edge-only backstop/rail connection. This nominal correction is not a strength or tolerance approval.
+
+A revision audit identifies a changed crossbar arrangement, so twelve new native CalculiX cases analyze actual FM06 receiver solids alongside forty historical fixtures. With assumed 200~GPa steel and fully clamped bores, the 1,000~N one-dog 3U mean displacement changes from 1.8829~mm for FM02 to 0.05998~mm for current FM06; its final compliance refinement change is below 0.200\%. Historical FM03 yields 0.05811~mm and is not used as current stiffness. The result characterizes this component fixture; real pin contact, guide bearing and support flexibility prevent an assembled-stiffness bound. Four tine meshes yield 0.0101446~mm/N mean end compliance with a final 0.0334\% change, using assumed 69~GPa aluminium and an isolated clamped root. No material allowable or qualification follows. Of 1,215 deterministic guide-fit combinations, 1,117 have nonpositive residual width; the count is not a hardware failure probability.
+
+The twelve-case FCE08 native rigid-contact campaign uses Project Chrono~10 with closed CAD-derived surfaces and ideal guide constraints. Nominal sequences reach capture and pusher withdrawal, but contact-force peaks and final poses remain sensitive to integration step and solver iterations. Independent exact-solid spot checks detect payload/fork overlap in simulated poses despite small reported triangle-contact distances. Thus, momentum-bookkeeping agreement and sequence completion do not establish dynamic clearance, converged contact loads or delivery accuracy. Figure~\ref{fig:contact_refinement} retains this negative numerical result. Source-rated actuation, actual joints, payload-contact approval, free separation/reset and installed multi-cell integration remain open; no feeder downselect follows.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{feeder_contact_refinement.png}
+\caption{FCE08 native time-step sensitivity. Peak contact forces are not accepted structural loads; the 125~$\mu$s trace is a numerical reference rather than a validated solution. Separate B-rep spot checks detect actual represented overlap.}
+\label{fig:contact_refinement}
+\end{figure}
+
 \begin{thebibliography}{25}
 \bibitem{lewis} C. Lewis, ``Failure of the ball-lock mechanism on the NanoRacks CubeSat deployer,'' in \emph{Proc. 44th Aerospace Mechanisms Symp.}, 2018.
 \bibitem{jssod} JAXA, ``JEM payload accommodation handbook, vol. 8: Small satellite deployment interface control document,'' via UNOOSA KiboCUBE.

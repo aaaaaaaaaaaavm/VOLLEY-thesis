@@ -1,6 +1,6 @@
 # Presentation claim and evidence map
 
-This map traces the 34-slide candidate for 31 October 2026 to repository-local evidence. The primary Gen5 technical record remains fixed; later Gen6 and numerical supplements have separate dated boundaries. A slide explains the evidence and does not replace the calculation, raw result or native CAD record.
+This map traces the 40-slide candidate for 31 October 2026 to repository-local evidence. The primary Gen5 technical record remains fixed; later Gen6 and numerical supplements have separate dated boundaries. A slide explains the evidence and does not replace the calculation, raw result or native CAD record.
 
 | Slide | Claim or purpose | Detailed record | Evidence class / limit |
 |:--|:--|:--|:--|
@@ -42,7 +42,9 @@ This map traces the 34-slide candidate for 31 October 2026 to repository-local e
 | 36 | Limited orbital cartridge replenishment concept | [Local RPL-01 report](../../validation/replenishment_feasibility/README.md) | Negative baseline disposition; no robotics/docking hardware demonstrated |
 
 | 37 | Retargeted finite-duration host controls | [Local FBR-01 report](../../validation/finite_burn_review/README.md) | Imposed releases; constructed targets, mass flow and failures; no host/hardware acceptance |
-| 38 | Revised captive feeder custody and actuation screens | [Local FM-02/IDR-01/FSR-01 report](../../validation/feeder_actuation_review/README.md) | Nominal geometry; actual actuation, axial retention, loaded fit and installed integration open; no selected feeder |
+| 38 | FM06-R1 nominal geometry and corrected backstop surface | [Native geometry and exchange record](../../validation/feeder_integrity_review/README.md) | Actual CAD render;30assembly poses/70part exchanges/28prescribed phases. No loaded-clearance or manufacturing acceptance |
+| 39 | Receiver and tine component-fixture stiffness | [FLR01/FLR02 evidence](../../validation/feeder_integrity_review/README.md) | Assumed elastic properties and idealized component supports; actual joints, material allowables and fit acceptance remain open |
+| 40 | FCE08 numerical rejection and independent B-rep overlap | [Native contact assessment](../../validation/feeder_integrity_review/CONTACT_REVIEW.md) | Step/iteration sensitivity and actual-solid overlap prevent contact-force, precision and dynamic-clearance acceptance |
 
 ## Exact Gen5 numbers and dependencies
 

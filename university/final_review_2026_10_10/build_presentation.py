@@ -507,11 +507,23 @@ image_fit(s, ROOT / "validation/finite_burn_review/figures/force_fuel_trade.png"
 bullets(s, ["Four releases fit the 20 N / 10 kg screen", "Twelve spring inputs exceed 20 N / 20 kg", "Both twelve-case policies close with 30 kg / 100 N", "Device mass still exceeds saved propellant", "Nearly 9°/s reversals if one fixed thruster; host allocation unverified"], 8.78, 1.65, 3.85, 4.8, 17, 15)
 txt(s, "Finite-force translational targets; imposed release speeds. No rated host, motor, flight precision or physical clearance.", 0.75, 6.74, 11.8, 0.3, 13)
 
-s = base("Future-work appendix", "Feeder handoff: represented geometry, open hardware interfaces",
-         "FM-02 / IDR-01 / FSR-01 · separate Gen6 studies", "UNSELECTED GEN6 RESEARCH")
-image_fit(s, ROOT / "validation/feeder_actuation_review/figures/FreeCAD_FM02_transfer.png", 0.45, 1.55, 8.0, 4.95)
-bullets(s, ["28 native/STEP poses; 26 continuous rigid phases", "12 mm underfloor receiving latch; positive crosspins", "115/324 adverse fit residuals remain nonpositive", "103 s assumed cycle exceeds 92.18 s later coast", "Actuation, axial pin retention and installed integration remain open"], 8.75, 1.65, 3.85, 4.7, 17, 14)
-txt(s, "Genuine FreeCAD Qt/Coin capture. Captive handling only; no launch, measured reliability or manufacturing release.", 0.7, 6.76, 11.9, 0.28, 12)
+s = base("Future-work appendix", "Feeder handoff: checked nominal geometry, unresolved hardware",
+         "FM06-R1 · separate Gen6 geometry study", "UNSELECTED GEN6 RESEARCH")
+image_fit(s, ROOT / "validation/feeder_integrity_review/figures/FM06_Technical_transfer.png", 0.45, 1.55, 8.0, 4.95)
+bullets(s, ["30 native/STEP assembly states; 70 checked part exchanges", "28 continuous prescribed rigid-translation phases", "Backstop junction corrected; closed surfaces checked", "Installed actuation, rail-end contacts and forward-stop release remain open"], 8.75, 1.65, 3.85, 4.7, 17, 15)
+txt(s, "Blender Workbench render of actual native CAD. No manufactured mechanism, launch or qualification claim.", 0.7, 6.76, 11.9, 0.28, 12)
+
+s = base("Future-work appendix", "Component stiffness improves within an idealized fixture",
+         "FLR01 / FLR02 / FLR03 · Gmsh 4.14.1 / CalculiX 2.23", "COMPONENT FIXTURE RESULTS")
+image_fit(s, ROOT / "validation/feeder_integrity_review/figures/component_compliance.png", 0.55, 1.7, 7.8, 4.7)
+bullets(s, ["12 actual-FM06 plus 40 historical receiver analyses", "3U one-dog mean: 1.883 to 0.0600 mm", "Clamped bores do not bound assembled stiffness", "1,117/1,215 adverse guide-fit residuals nonpositive"], 8.65, 1.8, 4.0, 4.6, 17, 15)
+txt(s, "Assumed elastic properties; no selected material allowable, real joint-contact acceptance or hardware testing.", 0.7, 6.76, 11.9, 0.28, 12)
+
+s = base("Future-work appendix", "Native contact runs expose a model limitation",
+         "FCE08 · Project Chrono 10.0.0; 12 captured cases", "NUMERICAL ACCEPTANCE NOT ESTABLISHED")
+image_fit(s, ROOT / "validation/feeder_integrity_review/figures/contact_refinement.png", 0.5, 1.7, 7.8, 4.7)
+bullets(s, ["Nominal transfer sequences reach their programmed endpoint", "Contact peaks and final pose remain step/iteration sensitive", "Independent B-rep checks detect payload/fork overlap", "No dynamic-clearance, precision or design-load acceptance"], 8.65, 1.8, 4.0, 4.6, 17, 15)
+txt(s, "A completed simulation sequence does not establish a validated contact model or physical reliability.", 0.7, 6.76, 11.9, 0.28, 12)
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.save(OUT)

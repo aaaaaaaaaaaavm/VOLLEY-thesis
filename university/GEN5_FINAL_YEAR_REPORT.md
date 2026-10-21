@@ -3,7 +3,7 @@ title: "VOLLEY Gen5: Computational Feasibility and Engineering Disposition of a 
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
-date: "20 October 2026"
+date: "21 October 2026"
 lang: en-GB
 papersize: a4
 fontsize: 12pt
@@ -39,7 +39,7 @@ This final-year project report evaluates a magazine-fed electromagnetic CubeSat 
 
 All plotted VOLLEY results are computations unless explicitly described as external experimental data. CAD views and Blender renders show geometry rather than manufactured hardware. “Failed” identifies a missed evaluated criterion; “unverified” identifies behavior unresolved by the stated method. Numerical verification is distinguished from physical validation throughout.
 
-This issue contains the evaluated Gen5 study and separately identified Gen6 research through 19 October 2026. It is issued on 20 October for first similarity review; institutional approval and the similarity result are not asserted.
+This issue contains the evaluated Gen5 study and separately identified Gen6 research through 21 October 2026. It is issued for first similarity review; institutional approval and the similarity result are not asserted. Gen6 research does not alter the evaluated Gen5 configuration.
 
 \clearpage
 \pagenumbering{arabic}
@@ -572,6 +572,26 @@ The separate [FM-02 engineering review](../validation/feeder_actuation_review/RE
 The integrated ball-screw candidate is a separate ambient component screen and is not installed in this CAD. A quintic rest-to-rest law, moving load, drag, rotational inertia and component limits are checked in 972 scenarios. Polynomial extrema and exact piecewise integrals reproduce every decision; at 801 samples the maximum relative torque and input-energy-proxy discrepancies are $8.58\times10^{-8}$ and $1.08\times10^{-6}$. These are numerical model errors, not physical uncertainties. The sampled 10, 15 and 20 s cases meet the declared ambient screen; 5 s cases fail.
 
 The study retains 115 of 324 nonpositive fit residuals, 12 of 54 winding-temperature failures, 96 no-stop brake sensitivities and 72 finite runouts above the proposed 24 mm allowance. Actual component temperature domains differ, and the two-node thermal model is uncorrelated. A slow 103.0 s handling assumption does not fit eleven later twelve-release coasts of 92.182 s; a faster 74.5 s assumption fits, without actuator, attitude, indexing or full campaign validation. These findings define remaining engineering requirements. All seven feeder alternatives remain unselected; Gen5's achieved computational result is unchanged.
+
+## Feeder geometry, component stiffness and contact limitations: 21 October 2026
+
+The separate [FM06-R1 record](../validation/feeder_integrity_review/README.md) introduces integral support tines, a 12 mm front-restraint stroke and longer receiver guides. Thirty native FreeCAD/STEP poses, seventy individual part exchanges and 28 continuous prescribed rigid-translation checks retain no represented nominal positive-volume interference. An edge-only backstop/rail junction, missed by solid-validity checks, is corrected and all seventy component contact surfaces pass a closed, consistently wound mesh audit. These are reference geometries, not manufacturing drawings or physical qualification.
+
+![FM06-R1 cassette-to-sled transfer state, rendered from native FreeCAD geometry using Blender Workbench. The payload remains retained; installed actuation, rail-end interfaces and free separation are unresolved.](../validation/feeder_integrity_review/figures/FM06_Technical_transfer.png){width=94%}
+
+A revision audit found that the earlier receiver-fixture results use a different crossbar arrangement. Twelve new native FLR03 cases therefore analyze the actual FM06-R1 solid, alongside forty historical FLR01 cases. Under 1,000 N reference loads and assumed steel stiffness, the 3U one-dog mean loaded-face displacement changes from 1.8829 mm for FM02 to 0.05998 mm for current FM06. The historical FM03 result is 0.05811 mm and is not substituted for the current revision. The largest final FLR03 mesh-to-mesh compliance change is 0.200%. Both pin bores are fully clamped, so the reduction applies to this component fixture and does not bound assembled stiffness. Reaction force and moment balance are checked; no selected alloy allowable or assembled pin-contact acceptance follows.
+
+Four native unit-load tine meshes yield 0.0101446 mm/N mean end compliance at the finest 53,650-element mesh, with a final 0.0334% change. Forty linear-scaled load sensitivities retain large-deflection and gap failures. At 6 kg and 1 g, an assumed equal load split gives approximately 0.298 mm displacement per tine against a nominal 0.6 mm slot gap; one-tine loading nearly consumes that gap before root/frame flexibility and tolerances. The clamped isolated tine is not a qualification model.
+
+![Native component-fixture compliance comparison. The logarithmic axis covers historical and current receiver revisions under identical reference loads; the supports are idealized clamped bores.](../validation/feeder_integrity_review/figures/component_compliance.png){width=96%}
+
+Longer guides reduce the bounded rigid rocking excursion, but the tighter fit creates a separate manufacturing problem: 1,117 of 1,215 deterministic adverse width/alignment/thermal/deflection combinations have nonpositive residual width. The count is not a statistical hardware failure rate.
+
+The twelve-case FCE08 Project Chrono campaign evaluates CAD-derived rigid contact, step/iteration sensitivity, assumed friction, a gravity sensitivity and two injected faults. Nominal sequences complete, but force peaks and final poses remain numerically sensitive. Independent exact-solid spot checks find payload/fork intersections in actual simulated poses despite small reported triangle-contact distances. **Dynamic clearance, contact-force convergence and delivery accuracy are therefore not established.** Momentum bookkeeping agreement does not validate contact representation.
+
+![Native contact sensitivity to integration step. The finest run is a numerical comparison reference, not an exact solution; force peaks are not accepted design loads.](../validation/feeder_integrity_review/figures/contact_refinement.png){width=96%}
+
+These separate Gen6 findings preserve a negative result rather than claim a completed feeder. Axial pin retention, source-rated installed actuators/brake, approved payload rail-end contacts, forward-stop release, full launch/empty return/reset and a universal mixed-size/multi-cell assembly remain unresolved. The evidence-gated seven-architecture downselect remains open.
 
 # Bibliography {.unnumbered}
 
