@@ -821,10 +821,10 @@
     }
   ],
   "document_sha256": {
-    "README.md": "64d81ac46b2c2e51b6ab907fce3fc35d3b9198043a0f88d04b9358d3324f50c6",
+    "README.md": "bfb5fdacd81f22c2e4f368b4756cdec9f1e56e2dbf590843bcc4e0c929833b3f",
     "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
-    "source/paper.tex": "03fcd1af89527ba0ddf19011c00d458e677965d65f5d68631a1941aa2ab11b97",
-    "university/GEN5_FINAL_YEAR_REPORT.md": "76304d63aa27b7226de1b1dc39524146a6a9945777c72e154b14efa3e1df1f74",
+    "source/paper.tex": "d3f149122122e4da684f041c58c3921b4a757e8b87bce05b42e4534a03df881f",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "3e55192980933640de083e59e8b204adf4a632d492dc8218e0db94804429f571",
     "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158",
     "validation/orbit_evidence/README.md": "3f350ec088a33fb413861c20e88e04946c183bb67c67c2378625103412190967",
     "validation/feeder_review/README.md": "b226b959274eb24030f6f20b4ac58932154fa9b2713ea486bf49a09bb4dba94a",

@@ -129,7 +129,7 @@ def main():
             elif shape.has_text_frame:
                 overflows.extend(text_shape(pdf, shape, page_height, number))
         pdf.showPage()
-    pdf.setTitle("VOLLEY Gen5 — final B.Tech project review")
+    pdf.setTitle('VOLLEY: Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism')
     pdf.setAuthor("Adityavardhan Mishra and Pratham Chawla")
     pdf.save()
     print(f"Wrote {PDF} ({len(deck.slides)} pages)")

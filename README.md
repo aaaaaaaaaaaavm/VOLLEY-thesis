@@ -1,6 +1,6 @@
 # VOLLEY — Engineering thesis
 
-### Computational evaluation of an electromagnetic CubeSat deployment system
+### VOLLEY: Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism
 
 This repository contains the final-year report, presentation, calculations, CAD and reproducible evidence for the VOLLEY computational study. The academic authors are Adityavardhan Mishra and Pratham Chawla. All evidence needed to examine the report is included locally.
 

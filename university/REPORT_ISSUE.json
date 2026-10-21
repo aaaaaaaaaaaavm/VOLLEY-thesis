@@ -23,13 +23,13 @@
     "XeLaTeX": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)"
   },
   "files": {
-    "university/GEN5_FINAL_YEAR_REPORT.md": "76304d63aa27b7226de1b1dc39524146a6a9945777c72e154b14efa3e1df1f74",
-    "university/GEN5_FINAL_YEAR_REPORT.pdf": "f3c296f2aba650a1eb0e9cbee07b435fd70111481cf22a6da79b396a4c14eb32",
-    "university/GEN5_FINAL_YEAR_REPORT.docx": "05e6ad7dbe2ea8ad52dc5c6be3e02082003b8b68d52288ffeb4178be49a7cdb3",
-    "university/build_report.py": "617ed0f000796259076f0c122428125a7681335fc14f9de243408a418bd07dfe",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "3e55192980933640de083e59e8b204adf4a632d492dc8218e0db94804429f571",
+    "university/GEN5_FINAL_YEAR_REPORT.pdf": "867011256a25a1fced43c77af99c33fe8ba11765b1215bb25bd136a752e6f18b",
+    "university/GEN5_FINAL_YEAR_REPORT.docx": "fdcbfbc50d52fb5ab7451ffbf7c9ec08856af025d0843bd16de16522c41efdd5",
+    "university/build_report.py": "e08411455b14df54747af63dfc078a1c063f4cffd3b28efbca4c7c4cb5c4a44f",
     "university/requirements-build.txt": "8d012b64cc8a04924f9a2e87716e83cdf659638ccddaf900066edf1bd26a45c6",
-    "university/layout/blackbook-frontmatter.tex": "2717e4758aa8d4d3fe3aad41c5fb43b032e03f6f451a03f6e0884605c95c9028",
-    "university/layout/blackbook-header.tex": "fec5ef32c5134b5e2d595373c9637dde9a1bf283b2a83b14dafe518140814fea",
+    "university/layout/blackbook-frontmatter.tex": "5feec08bd7f97dcc19f2c82ad49c5d04fe3c6a366bdfcdd608238c4a4461249c",
+    "university/layout/blackbook-header.tex": "17c0a4e5cca1e3e023d83f9786bc4262e2f75265b7e81611da08ad06018042c5",
     "university/layout/evidence-links.lua": "eccc33f84c4355eff4f9409d7673c25a7822b60cb5aca78b3c07009d813d3f39",
     "tools/check_blackbook_issue.py": "9ede9a86ce7586bfa8add616bb1244290ad39ba7af70b61bc38dae446d758abe"
   }

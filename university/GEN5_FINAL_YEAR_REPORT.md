@@ -1,5 +1,5 @@
 ---
-title: "VOLLEY Gen5: Computational Feasibility and Engineering Disposition of a CubeSat Deployer"
+title: "VOLLEY: Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism"
 author:
   - Adityavardhan Mishra
   - Pratham Chawla

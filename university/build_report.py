@@ -24,7 +24,7 @@ def reference(path):
 
 def frontmatter(path):
  d=Document(path);new=Document();new.styles['Normal'].font.name='Times New Roman';new.styles['Normal'].font.size=Pt(12)
- for text,bold,size in [('A THESIS ON',True,12),('VOLLEY Gen5',True,18),('Computational Feasibility and Engineering Disposition of a CubeSat Deployer',True,16),('THESIS SUBMITTED IN PARTIAL FULFILLMENT OF THE REQUIREMENT FOR THE AWARD OF THE DEGREE',False,12),('BACHELOR OF TECHNOLOGY IN MECHANICAL ENGINEERING',True,14),('SUBMITTED BY',True,12),('Adityavardhan Mishra — 23070125054',False,12),('Pratham Chawla — 23070125029',False,12)]:
+ for text,bold,size in [('A THESIS ON',True,12),('VOLLEY',True,18),('Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism',True,16),('THESIS SUBMITTED IN PARTIAL FULFILLMENT OF THE REQUIREMENT FOR THE AWARD OF THE DEGREE',False,12),('BACHELOR OF TECHNOLOGY IN MECHANICAL ENGINEERING',True,14),('SUBMITTED BY',True,12),('Adityavardhan Mishra — 23070125054',False,12),('Pratham Chawla — 23070125029',False,12)]:
   p=new.add_paragraph();p.alignment=1;r=p.add_run(text);r.bold=bold;r.font.size=Pt(size)
  p=new.add_paragraph();p.alignment=1;p.add_run().add_picture(str(U/'final_review_2026_10_10/assets/sit-logo.jpg'),height=Mm(18))
  for text in ['Under the Guidance of Vikas Gulia','SYMBIOSIS INSTITUTE OF TECHNOLOGY','A constituent of Symbiosis International (Deemed University), Pune — 412115','2026','First similarity-review issue · 21 October 2026']:
@@ -65,7 +65,7 @@ def frontmatter(path):
    kind,number,caption=match.groups();p.clear();p.style='Caption';p.add_run(kind+' ')
    f=OxmlElement('w:fldSimple');f.set(qn('w:instr'),'SEQ '+kind+' \\* ARABIC')
    run=OxmlElement('w:r');t=OxmlElement('w:t');t.text=number;run.append(t);f.append(run);p._p.append(f);p.add_run(': '+caption)
- d.core_properties.title='VOLLEY Gen5: Computational Feasibility and Engineering Disposition of a CubeSat Deployer'
+ d.core_properties.title='VOLLEY: Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism'
  d.core_properties.author='Adityavardhan Mishra; Pratham Chawla'
  d.core_properties.subject='First similarity-review issue,21 October2026;no approval or similarity result asserted'
  d.core_properties.comments=''
