@@ -35,16 +35,16 @@ This map traces the 40-slide candidate for 31 October 2026 to repository-local e
 | 30 | Archived preloaded-orbit proximity case | [Native/archive boundary](../../validation/orbit_evidence/README.md) | Sample/interpolation is not continuous flight clearance |
 | 31 | Matched prescribed-pole J2 residual | [Harmonization source and raw histories](../../validation/orbit_harmonization/README.md) | Shared orientation, numerical agreement only; no physical release accuracy |
 | 32 | Coupled four/twelve-payload resource countercases | [Local report and sources](../../validation/coupled_delivery/README.md) | Constructed targets, ideal host impulses and device proxies; no service advantage proven |
-| 33 | Seven feeder candidates and retained sizing failures | [Feeder source/CAD archive and review](../../validation/feeder_review/README.md) | Nominal geometry does not close handoff, engagement, contact, installed parts or selection |
+| 33 | FDR09 seven-feeder common four-payload comparison | [Local native CAD, STEP, BOM and mandatory gates](../../validation/feeder_common_boundary/README.md) | Ten native/STEP pairs; separate lead R2 nominal corridor correction. Partial mass accounting; no eligible downselect or installed/loaded acceptance. |
 | 34 | Actual CalculiX fixture mesh/data in native Gmsh | [Native-result provenance](../../validation/feeder_review/release/fea/VIEW_PROVENANCE.json); [fixture results](../../validation/feeder_review/release/fea/RESULTS.json) | Assumed clamped floor; actual mounts absent; peak stress not converged/qualified |
 
 | 35 | CT-01 continuous nominal transfer and retained safety failures | [Local CT-01 report](../../validation/captive_transfer_review/README.md) | Prescribed geometry; physical capture, drive and loaded integration remain open |
 | 36 | Limited orbital cartridge replenishment concept | [Local RPL-01 report](../../validation/replenishment_feasibility/README.md) | Negative baseline disposition; no robotics/docking hardware demonstrated |
 
 | 37 | Retargeted finite-duration host controls | [Local FBR-01 report](../../validation/finite_burn_review/README.md) | Imposed releases; constructed targets, mass flow and failures; no host/hardware acceptance |
-| 38 | FM07-R5 nominal release and empty reset | [Native geometry and exchange record](../../validation/feeder_release_review/README.md) | 46 cycle poses, 34 rotary samples and 40 continuous linear sweeps. Loaded fits, installed hardware and architecture selection remain separate gates. |
+| 38 | RVC01 / FM07-R6 complete-angle nominal clearance | [Native geometry, STEP and numerical screen](../../validation/feeder_rotary_clearance/README.md) | 0.25 mm panel relief; four full rotary intervals; smallest guarded nominal bound 0.0098846 mm. Loaded fit, actuation and contact dynamics remain separate. |
 | 39 | Receiver and tine component-fixture stiffness | [FLR01/FLR02 evidence](../../validation/feeder_integrity_review/README.md) | Assumed elastic properties and idealized component supports; actual joints, material allowables and fit acceptance remain open |
-| 40 | FCE12 planar calibration and final-state sensitivity | [Native contact verification](../../validation/feeder_contact_verification/README.md) | Fourteen controls and 84 selected poses; final COM refinement remains above the provisional criterion. No design-load or measured-precision acceptance. |
+| 40 | FCE13 solver/representation diagnosis on FM06-R1 | [Native source, six completed additional runs and raw-data checks](../../validation/feeder_contact_diagnosis/README.md) | Baseline byte-identical; original/BB/exact-box refinement fails retained pose limits. No qualified correction, design-load rating or transfer of contact acceptance to R6. |
 
 ## Exact Gen5 numbers and dependencies
 

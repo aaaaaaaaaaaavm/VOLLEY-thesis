@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib,json,re,zipfile,xml.etree.ElementTree as E
 R=Path(__file__).resolve().parents[1];U=R/'university'
 d=json.loads((U/'REPORT_ISSUE.json').read_text())
-assert d['issue']=='first_similarity_review_2026_10_21'
+assert d['issue']=='first_similarity_review_2026_10_23'
 assert d['guide_approval'] is False and d['similarity_result'] is None
 for rel,expected in d['files'].items():assert hashlib.sha256((R/rel).read_bytes()).hexdigest()==expected,rel
 s=(U/'GEN5_FINAL_YEAR_REPORT.md').read_text();body=s.split('\\appendix',1)

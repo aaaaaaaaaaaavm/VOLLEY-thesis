@@ -108,7 +108,15 @@ def check_evidence_tracking(errors: list[str]) -> None:
     """Every file in a current captured-study manifest must enter the Git payload."""
     import json
     tracked = set(git("ls-files", "-z").decode().split("\0"))
-    for name in ["validation/feeder_contact_verification/MANIFEST.json",
+    for name in ["validation/feeder_common_boundary/MANIFEST.json",
+                 "experiments/feeder_common_boundary/MANIFEST.json",
+                 "validation/extended_feasibility_bounds/MANIFEST.json",
+                 "experiments/extended_feasibility_bounds/MANIFEST.json",
+                 "validation/feeder_rotary_clearance/MANIFEST.json",
+                 "validation/feeder_contact_diagnosis/MANIFEST.json",
+                 "experiments/feeder_rotary_clearance/MANIFEST.json",
+                 "experiments/feeder_contact_diagnosis/MANIFEST.json",
+                 "validation/feeder_contact_verification/MANIFEST.json",
                  "experiments/feeder-contact-verification/MANIFEST.json",
                  "validation/feeder_release_review/MANIFEST.json",
                  "experiments/feeder-release-review/MANIFEST.json",
@@ -118,7 +126,6 @@ def check_evidence_tracking(errors: list[str]) -> None:
                  "experiments/feeder-actuation-review/MANIFEST.json",
                  "validation/finite_burn_review/MANIFEST.json",
                  "experiments/finite-burn-review/MANIFEST.json",
-                 "university/REPORT_ISSUE.json",
                  "validation/native_campaign_review/MANIFEST.json",
                  "experiments/native-campaign-review/MANIFEST.json",
                  "validation/captive_transfer_review/MANIFEST.json",
@@ -128,12 +135,8 @@ def check_evidence_tracking(errors: list[str]) -> None:
         manifest = ROOT / name
         if not manifest.is_file():
             continue
-        record = json.loads(manifest.read_text())
-        basis = ROOT if record.get("path_basis") == "repository_root" else manifest.parent
-        paths = [manifest, *[basis / relative for relative in record["files"]]]
-        for candidate in paths:
-            path = candidate.resolve()
-            relative = path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path)
+        for relative in ["MANIFEST.json", *json.loads(manifest.read_text())["files"]]:
+            path = (manifest.parent / relative).resolve()
             if path.suffix == ".FCBak" or path.name == "spooles.out":
                 errors.append(f"{name}: uncontrolled backup/scratch artifact in release: {relative}")
             if not path.is_relative_to(ROOT.resolve()):

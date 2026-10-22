@@ -478,11 +478,11 @@ s = base("Future-work appendix", "Precise delivery needs a measured control budg
          "CNR-01 · complete native event replay and deterministic sensitivity", "GEN6 SURROGATE")
 image_fit(s, ROOT / "validation/native_campaign_review/figures/control_sensitivity.png", 0.6, 1.65, 12.1, 4.8)
 txt(s, "+0.1% imposed release-speed bias gives ~1.53 km error. Numerical agreement is not flight precision.", 0.75, 6.65, 11.8, 0.3, 14)
-s = base("Future-work appendix", "Seven feeder concepts: inspectable geometry, open hardware gates",
-         "Native FreeCAD / STEP · analytical cases / CalculiX fixture · 19 October", "UNSELECTED CANDIDATES")
-image_fit(s, ROOT / "validation/feeder_review/release/figures/lead_screw_cad.png", 0.6, 1.65, 8.0, 4.8)
-bullets(s, ["1U/3U CAD and bounded motion checks", "Load, tolerance and fault cases retained", "Arrest-tooth sizing fails adverse cases", "Handoff, latch engagement and installed parts unverified", "No baseline selection or hardware release"], 8.8, 1.85, 3.9, 4.4, 18, 20)
-txt(s, "STEP-derived orthographic view; no measured reliability or full-cycle qualification.", 0.75, 6.65, 11.8, 0.3, 14)
+s = base("Future-work appendix", "Seven feeders on one four-payload comparison boundary",
+         "FDR09 · native FreeCAD / STEP and source-backed option screens · 22 October", "UNSELECTED CANDIDATES")
+image_fit(s, ROOT / "validation/feeder_common_boundary/comparison_mass.png", 0.5, 1.65, 8.0, 4.8)
+bullets(s, ["Two 1U + two 3U; one shared receiver", "Seven concepts; ten checked native/STEP pairs", "Separate R2 nominal payload sweep: eight collisions to zero", "Full installed mass, loaded support and custody remain unverified", "No eligible architecture selection"], 8.8, 1.85, 3.9, 4.4, 17, 16)
+txt(s, "CAD material and unintegrated catalog options are partial accounting; no mass ranking or hardware qualification.", 0.75, 6.65, 11.8, 0.3, 13)
 
 s = base("Evidence appendix", "Native mesh and result view: keep the fixture explicit",
          "CalculiX2.23 DAT / INP displayed in Gmsh4.14.1 · undeformed geometry", "ASSUMED CLAMPED FLOOR")
@@ -507,11 +507,11 @@ image_fit(s, ROOT / "validation/finite_burn_review/figures/force_fuel_trade.png"
 bullets(s, ["Four releases fit the 20 N / 10 kg screen", "Twelve spring inputs exceed 20 N / 20 kg", "Both twelve-case policies close with 30 kg / 100 N", "Device mass still exceeds saved propellant", "Nearly 9°/s reversals if one fixed thruster; host allocation unverified"], 8.78, 1.65, 3.85, 4.8, 17, 15)
 txt(s, "Finite-force translational targets; imposed release speeds. No rated host, motor, flight precision or physical clearance.", 0.75, 6.74, 11.8, 0.3, 13)
 
-s = base("Future-work appendix", "Feeder geometry includes exit release and empty reset",
-         "FM07-R5 · separate Gen6 nominal geometry", "NATIVE GEOMETRY RESULTS")
-image_fit(s, ROOT / "validation/feeder_release_review/figures/FM07_Technical_exit_open.png", 0.45, 1.55, 8.0, 4.95)
-bullets(s, ["46 cycle poses; 34 additional door-angle samples", "40 continuous prescribed linear sweeps", "20 assembly STEP files; 74 checked individual parts", "Loaded fits, installed actuation and seven-way downselect remain acceptance gates"], 8.75, 1.65, 3.85, 4.7, 17, 15)
-txt(s, "Blender Workbench render of actual native CAD. Prescribed geometry, not launch dynamics or hardware qualification.", 0.7, 6.76, 11.9, 0.28, 12)
+s = base("Future-work appendix", "Gate relief passes the complete-angle nominal screen",
+         "RVC01 · FM07-R6 candidate; separate from evaluated Gen5", "NATIVE GEOMETRY RESULTS")
+image_fit(s, ROOT / "validation/feeder_rotary_clearance/figures/rotary_clearance.png", 0.45, 1.8, 8.0, 4.65)
+bullets(s, ["Panel lower edge relieved by 0.25 mm", "Four full opening/closing intervals checked", "Eight assembly and two gate STEP readbacks", "Nominal numerical bound; loaded fit and actuation remain separate"], 8.75, 1.65, 3.85, 4.7, 17, 15)
+txt(s, "Smallest guarded bound: 0.0098846 mm. No manufactured-clearance, contact-convergence or qualification claim.", 0.7, 6.76, 11.9, 0.28, 12)
 
 s = base("Future-work appendix", "Component stiffness improves within an idealized fixture",
          "FLR01 / FLR02 / FLR03 · Gmsh 4.14.1 / CalculiX 2.23", "COMPONENT FIXTURE RESULTS")
@@ -519,11 +519,11 @@ image_fit(s, ROOT / "validation/feeder_integrity_review/figures/component_compli
 bullets(s, ["12 actual-FM06 plus 40 historical receiver analyses", "3U one-dog mean: 1.883 to 0.0600 mm", "Clamped bores do not bound assembled stiffness", "1,117/1,215 adverse guide-fit residuals nonpositive"], 8.65, 1.8, 4.0, 4.6, 17, 15)
 txt(s, "Assumed elastic properties; no selected material allowable, real joint-contact acceptance or hardware testing.", 0.7, 6.76, 11.9, 0.28, 12)
 
-s = base("Future-work appendix", "Contact representation: calibrated controls, sensitive final pose",
-         "FCE12 · Project Chrono 10.0.0; 12 captured cases", "NUMERICAL METHOD RESULTS")
-image_fit(s, ROOT / "validation/feeder_contact_verification/figures/contact_calibration.png", 0.5, 1.7, 7.8, 4.7)
-bullets(s, ["14 planar controls; largest checked gap error 4.28 nm", "10 endpoint sequences; two injected faults abort", "84 full-solid pose checks; residuals bounded at 1 µm", "Final COM refinement changes 1.51 / 1.47 mm; no precision rating"], 8.65, 1.8, 4.0, 4.6, 17, 15)
-txt(s, "Calibrated planar controls and sampled geometry do not establish continuous loaded clearance or hardware reliability.", 0.7, 6.76, 11.9, 0.28, 12)
+s = base("Future-work appendix", "Contact diagnosis retains the numerical acceptance criteria",
+         "FCE13 · FM06-R1; six additional completed native Chrono cases", "NUMERICAL METHOD RESULTS")
+image_fit(s, ROOT / "validation/feeder_contact_diagnosis/convergence_publication.png", 0.45, 1.9, 8.0, 4.0)
+bullets(s, ["Instrumented baseline reproduced byte for byte", "PSOR, BB and exact-box refinements exceed pose limits", "Sensitivity develops during feed deceleration", "No qualified correction or contact-force rating"], 8.7, 1.8, 4.0, 4.6, 17, 15)
+txt(s, "Nominal FM07-R6 rotary screens pass separately; FM06 contact results do not validate that revised assembly.", 0.7, 6.76, 11.9, 0.28, 12)
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.core_properties.title = 'VOLLEY: Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism'

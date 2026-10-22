@@ -581,6 +581,82 @@ Independent full-solid checks cover 84 targeted poses. Two residual intersection
 
 A separate FM07-R5 geometry revision adds captive receiver pins, a hinged exit gate and prescribed empty-carrier reset. Forty-six native cycle poses, 34 rotary samples and 40 continuous linear sweeps retain no represented nominal collision. Twenty assemblies and 74 individual STEP parts pass independent readback. Rotary clearance remains discretely sampled; loaded fits and installed actuation are separate requirements. The unchanged FM06 fork/tine and receiver-bar material permits component-fixture lineage, not assembled-stiffness acceptance. Modeled single-cell mass proxies are 3.7624/6.1566~kg for 1U/3U, excluding payload and unmodeled installed hardware. The all-seven mandatory selection gates remain unmet; this revision is a development reference, not a selected feeder baseline.
 
+
+The Japanese original of the Halbach end-effect study~\cite{yamaguchioriginal2023} uses a 2D infinite-width model, compared with 2D JMAG. Its cancellation conditions require integer magnetic-period length, air-core coils and energized coverage beyond each field end. Selected methods/results passages do not establish finite-width 3D or hardware validation, and no universal correction is applied to VOLLEY. The closely related double-magnetic-circuit CubeSat actuator article~\cite{zhaovca2022} remains metadata/abstract-only in this review; no quantitative performance or passive-payload interface claim is inherited.
+
+\subsection{Continuous Rotary Clearance and Numerical Contact Diagnosis}
+The separate RVC01 study finds zero nominal gate/deck distance near the closed R5 pose, with zero intersection volume. FM07-R6 raises only the panel lower edge by 0.25~mm while retaining its upper edge, hinge and locks. Each gate loses 41~mm$^3$ of material. Adaptive native B-rep distance checks with rigid-rotation displacement bounds cover all four complete opening/closing intervals. The smallest guarded conservative lower bound is 0.0098846~mm. Eight assembly and two gate STEP files pass separate CadQuery/OpenCascade readback; all other components match R5. This is a nominal numerical screen, not a certified kernel error enclosure, tolerance allowance, loaded fit or contact validation.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.94\textwidth]{rvc01_rotary_clearance.png}
+\caption{RVC01 native gate/deck distances and complete-angle conservative screen for FM07-R6. The 0.25~mm panel relief and the smaller global guarded bound are different quantities. R5 near-closed zero distance denotes surface contact, not demonstrated volumetric penetration.}
+\label{fig:rvc01}
+\end{figure*}
+
+FCE13 retains the FM06-R1 contact model and physical assumptions and adds six completed native Chrono diagnostic runs. Instrumentation reproduces the original 3U 250~$\mu$s trajectory byte for byte. Sensitivity develops during feed deceleration, before capture. Warm starting, native preconditioned Barzilai--Borwein (BB) and an exactly equivalent native box-core representation fail to establish pose convergence. The unchanged 250-to-125~$\mu$s endpoint comparisons are:
+\begin{table}[t]
+\centering
+\caption{FCE13 pose refinement at the common 26.5~s endpoint. Both retained limits must pass.}
+\label{tab:fce13}
+\begin{tabular}{lrr}
+\toprule
+Model / solver & COM [mm] & Angle [deg]\\
+\midrule
+1U original PSOR & 1.508584 & 0.639678\\
+3U original PSOR & 1.466380 & 0.232303\\
+3U native BB & 1.926456 & 0.120098\\
+3U exact box / PSOR & 0.716162 & 0.564333\\
+Retained limit & 0.05 & 0.05\\
+\bottomrule
+\end{tabular}
+\end{table}
+At 125~$\mu$s, substituting the geometrically identical box core alone changes the endpoint by 0.755420~mm and 0.603748$^\circ$. Work changes below the separate 1\% screen do not imply pose or force convergence. PSOR and BB residual definitions differ; full-budget counts alone are not stopping-tolerance tests. Two terminated APGD pilots are excluded from endpoint comparisons. No correction is qualified and no bound on exact-solution or physical error is established. These FM06-R1 results do not validate FM07-R6 or select a feeder.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{fce13_convergence.png}
+\caption{FCE13 native Chrono refinement differences and 2,000-iteration budget use. P: PSOR; W: warm-start PSOR; BB: preconditioned BB; Box: equivalent box core with PSOR. Shading marks feed deceleration; dashed lines retain the 0.05~mm and 0.05$^\circ$ screens. A full-budget solve may meet tolerance on its last iteration. The plots measure tested numerical sensitivity rather than certified error.}
+\label{fig:fce13}
+\end{figure*}
+
+
+\subsection{Lunar and Upper-Speed Compatibility Bounds}
+The lunar extension is an ideal requirements screen. An ideal coplanar, tangential patched-conic screen gives Earth departure 3.106427~km/s, lunar arrival excess speed 0.830117~km/s and direct capture into a 100~km circular lunar orbit 821.239408~m/s. Finite sphere-of-influence and epoch targeting are excluded. Capture into a $100\times10{,}000$~km ellipse reduces initial capture to 306.643674~m/s, but later same-perilune circularization restores the same total impulse. At the three staging examples, ideal engine-only escape thresholds are 676.620, 523.149 and 162.024~m/s. An assumed 200~m/s allowance does not establish escape from the first two. No-shot release-recoil credit is zero. Useful lifetime, navigation covariance, finite carrier burns and controlled independent disposal remain unresolved.
+
+For a 4~kg payload and 300~kg retained host, a separate 1~km/s relative-release investigation requires at least 1.973684~MJ added relative kinetic energy and 2.012598~km constant-force stroke at the 25~g study ceiling. This rejects the compact/low-acceleration requirement combination in that ideal model; 25~g is not a payload qualification. Pusher, loss, source and catcher burdens are additional. Nine algebraic checks and 182 reproduced numerical fields support these conditional bounds. They are not provider performance or flight validation. The source package preserves the historical C0-S2 criteria-hash mismatch rather than rewriting its provenance.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.94\textwidth]{extended_feasibility_bounds.png}
+\caption{Necessary release-stroke compatibility for the declared 4~kg/300~kg ideal model, and capture/circularization impulse for the same 100~km lunar target. Acceleration screens are study choices. Initial capture savings do not imply a lower total impulse or a useful long-lived staging orbit.}
+\label{fig:extended_bounds}
+\end{figure*}
+
+
+\subsection{Common-Boundary Four-Payload Feeder Study}
+FDR09 models all seven candidates with two 1U and two 3U stored payloads and one common receiver. Fixed-cell concepts include four local feed stations and 900~mm receiver travel on 1,600~mm rails; the indexed drum retains a separate index/extraction arrangement. Passive 1U inserts preserve the common outer handling envelope and release datum; each modeled insert weighs 0.185933~kg. Positive insert lock/return custody and spacecraft-interface approval remain unestablished.
+
+\begin{table}[t]
+\centering
+\caption{FDR09-R1 partial mass accounting [kg]. Catalog options are unintegrated; full installed mass/CG/inertia remain unknown. All seven fail eligibility.}
+\label{tab:fdr09}
+\begin{tabular}{lrr}
+\toprule
+Candidate & CAD material & Catalog options\\
+\midrule
+Captive lead screw & 18.606 & 4.230\\
+Spring / dual gate & 18.915 & 6.002\\
+Rack / pawl & 18.618 & 5.830\\
+Indexed drum & 14.821 & 1.932\\
+Pantograph & 18.060 & 6.002\\
+Nested telescope & 18.132 & 4.230\\
+Belt shuttle & 17.915 & 5.830\\
+\bottomrule
+\end{tabular}
+\end{table}
+The manufacturer-data option screen contains 384 time/station cases. It does not validate a complete source-rated mechanism. A separate lead R2 trim changes the checked nominal rectangular payload sweep from eight intersections to zero and removes a 16.176779~mm$^3$ guide-bearing housing intersection. Its custom-material subtotal is 18.492547~kg. A 0.25~mm screw-bearing radial gap and unverified loaded support remain. This geometry correction does not establish full-carriage, tolerance, fault, insert-custody or installed-system acceptance. Ten native/STEP pairs have separate same-kernel-family CadQuery readback. No candidate passes all mandatory gates; the agreed weights therefore do not produce an eligible downselect. The four-payload result does not constitute a twelve-payload integration.
+
 \begin{thebibliography}{25}
 \bibitem{lewis} C. Lewis, ``Failure of the ball-lock mechanism on the NanoRacks CubeSat deployer,'' in \emph{Proc. 44th Aerospace Mechanisms Symp.}, 2018.
 \bibitem{jssod} JAXA, ``JEM payload accommodation handbook, vol. 8: Small satellite deployment interface control document,'' via UNOOSA KiboCUBE.
@@ -615,6 +691,8 @@ A separate FM07-R5 geometry revision adds captive receiver pins, a hinged exit g
 \bibitem{einat2023} M. Einat and Y. Orbach, ``A multi-stage 130 m/s reluctance linear electromagnetic launcher,'' \emph{Sci. Rep.}, vol. 13, 2023.
 \bibitem{faulhaber32lsb} FAULHABER, ``Linear actuators: Series 32L ... SB,'' data sheet, ed. Jul. 28, 2026. [Online]. Available: \url{https://www.faulhaber.com/fileadmin/Import/Media/EN_32L_SB_FMM.pdf}.
 \bibitem{faulhaber3242} FAULHABER, ``Brushless DC-servomotors: Series 3242 ... BX4,'' data sheet, ed. Jul. 28, 2026. [Online]. Available: \url{https://www.faulhaber.com/fileadmin/Import/Media/EN_3242_BX4_DFF.pdf}.
+\bibitem{yamaguchioriginal2023} H. Q. Yamaguchi and M. Morishita, ``End effects of Halbach field magnet-type linear motor,'' \emph{IEEJ Trans. Industry Applications}, vol. 143, no. 7, pp. 570--578, 2023 (Japanese original), doi:10.1541/ieejias.143.570.
+\bibitem{zhaovca2022} Y. Zhao, H. Yue, F. Yang, and J. Zhu, ``A high thrust density voice coil actuator with a new structure of double magnetic circuits for CubeSat deployers,'' \emph{IEEE Trans. Industrial Electronics}, vol. 69, no. 12, pp. 13305--13315, 2022, doi:10.1109/TIE.2021.3134060.
 \end{thebibliography}
 
 \end{document}
