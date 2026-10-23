@@ -137,6 +137,8 @@ def main():
         print("TEXT OVERFLOW:", item)
     if overflows:
         raise SystemExit(f"{len(overflows)} text frames exceed their boxes")
+    from shutil import copyfile
+    copyfile(PDF, HERE.parents[1] / "university/VOLLEY_Final_Presentation_2026-10-31.pdf")
 
 
 if __name__ == "__main__":

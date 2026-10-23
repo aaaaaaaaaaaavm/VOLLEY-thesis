@@ -1,10 +1,10 @@
 ---
 title: "VOLLEY | Final B.Tech Project Review"
-subtitle: "Panel handbook: completed Gen5 study, findings, and future direction"
+subtitle: "Evaluated Gen5, selected FM08-R3 feeder and physical development"
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
-date: "12 October 2026 (post-review update)"
+date: "23 October 2026"
 geometry: margin=20mm
 papersize: a4
 fontsize: 10pt
@@ -19,7 +19,7 @@ toc-depth: 2
 **Department:** Mechanical Engineering, Symbiosis Institute of Technology<br>
 **Review type:** Final Project Presentation & Demonstration
 
-> **Scope of the completed thesis.** VOLLEY is a system-level engineering design and computational research project. The Gen5 evaluated configuration and adverse numerical findings are documented; decisive force and mission closure remain open. The results are predictions, with numerical cross-checks where identified. Physical prototype testing, CubeSat qualification and provider accommodation belong to a later development phase. Gen6 is presented separately as future work.
+> **Scope of the completed thesis.** VOLLEY is a system-level engineering design and computational research project. The Gen5 evaluated configuration and adverse numerical findings are documented; decisive force and mission closure remain open. The results are predictions, with numerical cross-checks where identified. Physical prototype testing, CubeSat qualification and provider accommodation belong to a later development phase. Gen6 is presented separately, including the selected FM08-R3 academic feeder design and its physical development requirements.
 
 ![Gen5 reference FreeCAD/STEP assembly visualized in Blender with enclosure hidden. Known side-fed clash remains; no physical article exists.](<../../cad/renders/step_review/gen5_reference_open.jpg>){width=88%}
 
@@ -31,7 +31,7 @@ The authored thesis analyses one Gen5 solution: a magazine-fed, linear synchrono
 
 Gen5 also produced a decisive negative result. With twelve 3U satellites, its deployer mass is **10.55 kg per customer**, versus about **6 kg** for the spring canister comparator used in the thesis. This is **1.76×** as much hardware per 3U payload and fails the preset 15% mass-parity band. The study therefore reaches a decision: the conditional modelled orbital benefit does not make this Gen5 configuration a defensible 3U selection. The result completes the analytical comparison; it does not require a prototype to know that the modelled mass criterion failed. Physical payload loads, magnetic cleanliness, cycle life, and provider interfaces remain questions for a different evidence phase.
 
-The later Gen6 programme retains the hosted sequential-deployment mission while reopening mechanism choice. It investigates an approximately **1–2 m/s to 1 km/s** release-speed envelope across electromagnetic, mechanical, stored-energy, gas/fluid, hybrid, BOLLEY and conventional options. The high end is a requirement to examine and may prove infeasible. The near-term goal is one named, reproducible, independently reviewable test-article configuration with a corresponding build/test release decision.
+The later Gen6 programme retains the hosted sequential-deployment mission while reopening mechanism choice. It investigates an approximately **1–2 m/s to 1 km/s** release-speed envelope across electromagnetic, mechanical, stored-energy, gas/fluid, hybrid and conventional options. The high end is a requirement to examine and may prove infeasible. The near-term goal is one named, reproducible, independently reviewable test-article configuration with a corresponding build/test release decision.
 
 # Finite-force, feeder-route and mission findings
 
@@ -111,7 +111,7 @@ The thesis addresses that gap by constructing a documented Gen5 reference config
 | Analytical research objective | Completed outcome | Interpretation |
 |:--|:--|:--|
 | Model a commandable 3U system | Gen5 CAD, magazine, sled, motor, arrest and power architecture | System-level design record, not manufactured hardware |
-| Quantify the release | Rated shot, circuit and closed-loop simulations | Predicted performance under stated assumptions |
+| Quantify the release | Historical shot, circuit and closed-loop simulations | Predicted performance under stated assumptions |
 | Evaluate orbital value | Orbit model and selected independent numerical cross-checks | Conditional energy and lifetime benefit |
 | Test whole-system competitiveness | Mass rollup, spring/alternatives comparison and preset criteria | Gen5 fails the 3U mass target |
 | Challenge model credibility | Numerical verification, defect corrections and provenance record | Scope and remaining physical uncertainties made explicit |
@@ -149,7 +149,7 @@ The magnetic field was compared across an analytical representation, magpylib, a
 | July–September 2026 | Gen5 analysis, numerical checks, defects and thesis record | Dated repository/analysis records |
 | October 2026 | Gen5 findings and design decision presented for final review | Review package dated 10 October 2026 |
 
-The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the rated speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions are part of the completed study, not signs that the final numbers are placeholders. Gen6 research gates are described only in §10, Future work.
+The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the historical periodic-model speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions form the documented computational record. The selected Gen6 feeder and its physical development requirements are described separately in Section 10.
 
 # 7. Work progress
 
@@ -163,7 +163,7 @@ The deliverable here is a completed computational thesis, not a flight article. 
 
 The analysed system uses a double-sided Halbach-array linear synchronous motor to propel a reusable permanent-magnet sled to a release station 1.5 m from the breech on 1.8 m structural longerons. Two transverse cassettes are intended to feed twelve 3U satellites, but the present side-fed placement fails the fit check. A capacitor-based bank supplies the modeled pulse, and a brake is intended to arrest the sled after payload release. The **9.45 kg** sled input comes from historical Gen3 CAD solid volumes; this value reduced the exit speed relative to an earlier optimistic parametric estimate. The CAD render conveys a concept, not manufactured or assembled hardware.
 
-## Rated 3U shot
+## Historical nominal 3U shot
 
 | Model output | Rated result | Interpretation |
 |:--|--:|:--|
@@ -188,7 +188,7 @@ The closed-loop Monte Carlo model predicts **0.0274 m/s ($3\sigma$)** exit-veloc
 
 For the stated orbit and mean-solar-activity case, an assumed historical 16.029 m/s release predicts a **28.8 km** semi-major-axis increase and a **1.60×** lifetime multiplier for a propulsionless satellite. A separate Cartesian two-body integration of that assumed historical state returns **28.800775 km**, agreeing within the declared numerical band. This checks only the immediate orbital-energy result. P134 independently integrates the shared static-atmosphere model and gives a 1.602165 ratio; that numerical agreement does not validate real lifetime or solar invariance. Timing alone, with zero relative impulse and no host or drag difference, produces neither persistent phasing nor this semi-major-axis change.
 
-![Independent rated-state two-body orbit check. The lifetime claim is outside its scope.](<../../figures/rated_orbit_crosscheck.png>){width=92%}
+![Independent historical-state two-body orbit check. The lifetime claim is outside its scope.](<../../figures/rated_orbit_crosscheck.png>){width=92%}
 
 ![Modelled orbital-lifetime response. Absolute values depend on atmosphere.](<../../source/figures/F04_life.png>){width=87%}
 
@@ -216,9 +216,9 @@ The Gen5 computational thesis reaches a research conclusion within its stated sc
 
 The thesis's strongest engineering contribution is the transparent decision record: system budgets and idealized mechanisms were modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. That closes the Gen5 study and provides a defensible input to a separate future architecture trade.
 
-# 10. Future work
+# 10. Selected Gen6 feeder and physical development
 
-Gen6's controlling objective is a reusable launch path that sequentially accepts different supported CubeSat sizes and commands each departure condition. The approximately 1–2 m/s to 1 km/s span is an investigation envelope; the upper end may force acceleration, energy, travel, payload or provider constraints that reject candidates. Electromagnetic systems are preferred for comparison but are not preselected. Competent springs, electromechanical/stored-energy, gas/fluid, hybrid, BOLLEY and conventional mission substitutes belong in the same comparison boundary.
+Gen6's controlling objective is a reusable launch path that sequentially accepts different supported CubeSat sizes and commands each departure condition. The approximately 1–2 m/s to 1 km/s span is an investigation envelope; the upper end may force acceleration, energy, travel, payload or provider constraints that reject candidates. Electromagnetic systems are preferred for comparison but are not preselected. Competent springs, electromechanical/stored-energy, gas/fluid, hybrid and conventional mission substitutes belong in the same comparison boundary.
 
 The near-term milestone is one named test-article configuration that can be independently reviewed. Its package needs controlled geometry and drawings, a bill of materials, host and payload interfaces, full installed mass/energy/thermal accounting, assembly and inspection instructions, instrumented procedures, predetermined pass/fail and stop criteria, uncertainty and model-credibility evidence, retained failures, and an explicit build/test release decision. A rejected candidate is a valid research outcome; it must not be presented as a build-ready survivor.
 
@@ -226,10 +226,20 @@ The near-term milestone is one named test-article configuration that can be inde
 
 A later [four-cell FreeCAD/STEP packaging study](../../cad/gen6_four_cell_r0/README.md) compares two 1U and two 3U surrogate boxes in staggered and paired side cassettes. Both have 13 nominal represented-solid states and sampled transfer and stowed-carrier paths without penetration. Pairing moves the shortest ideal acceleration distance from 330 mm to 900 mm; at 6 m/s this lowers the corresponding ideal mean acceleration from 5.56 g to 2.04 g. Neither is an achievable-speed rating or a selected feed mechanism. Positive locks, contact loads, positioning, tolerances, installed mass and host fit remain open. This finding appears only in the 12 October post-review revision, not in the original 10 October presentation. See the [Go 3 gate review](../../GO3_ACADEMIC_RELEASE_REVIEW.md).
 
+## FM08-R3 selected feeder design
+
+The current academic feeder design uses independent guided lead-screw cassettes and one indexed receiver for two 1U and two 3U envelopes. Fixed 1U spacers remain in their cassettes. A split clutch disconnects the toothed-belt indexer before launch; stopped-carrier proof precedes re-engagement and return. A capped transfer channel, a proved-closed receiver far stop, near-side capture tabs, guides, hard stops and a normally engaged static brake define the intended containment chain. Nominal transfer is a coast operation. The pusher cannot pull a jammed spacecraft; end-stop impact remains unrated. A failed retained cell may be isolated only after independent common-path proof and supervised recovery; a bridge obstruction inhibits the shared path.
+
+The [local selected-design package](../../validation/selected_feeder/README.md) provides native CAD, STEP, calculations and executable sequencing records. The safety-led trade gives the lead screw 7.30/10, rack/pawl 7.10 and spring/two-gate 6.90. These are engineering judgments. Equal weights tie the top three; alternative priorities can change the preferred mechanism. The lead screw is selected for the declared controllability and custody requirements, with rack/pawl retained as runner-up.
+
+The conditional 50 N actuator screen gives 0.01485 N·m local motor demand and 0.02038 N·m receiver demand. At 100 N, receiver demand reaches 0.04058 N·m against a 0.0418 N·m catalog continuous rating. Resistance and 0.50 gear efficiency are assumptions; the small adverse-case margin requires physical correlation. The deterministic sequence model passes its enumerated four- and twelve-cell logical checks, including four-cell progression, empty return/home/reset, power loss, inhibited commands and supervised isolation. This verifies logical contracts, rather than real sensor truth or hardware reliability.
+
+Earlier FM06-R1 rigid-contact convergence remains unestablished and supplies no precision or peak-load rating for FM08-R3. The selected feeder is a controlled academic design baseline. Manufacturing acceptance, environmental qualification, measured repeated releases and provider approval belong to subsequent physical development.
+
 # 11. References and project records
 
 1. JAXA, *JEM Payload Accommodation Handbook*, Vol. 8, small-satellite deployment interface control document, cited in the VOLLEY thesis.
-2. California Polytechnic State University, *CubeSat Design Specification*, Rev. 14, 2020.
+2. California Polytechnic State University, *CubeSat Design Specification*, Rev. 14.1, 2022.
 3. C. Foster *et al.*, “Constellation phasing with differential drag on Planet Labs satellites,” *Journal of Spacecraft and Rockets*, 55(2), 2018.
 4. H. Feng, Y. Yang and Y. Wu, “Design and reachable domain analysis of on-orbit electromagnetic launcher for CubeSats,” *International Journal of Aerospace Engineering*, art. 3000765, 2025.
 5. Y. Zhao *et al.*, “Design and analysis of a new deployer for the in-orbit release of multiple stacked CubeSats,” *Remote Sensing*, 14(17), 4205, 2022.
@@ -237,8 +247,8 @@ A later [four-cell FreeCAD/STEP packaging study](../../cad/gen6_four_cell_r0/REA
 7. K. Halbach, “Design of permanent multipole magnets with oriented rare earth cobalt material,” *Nuclear Instruments and Methods*, 169, 1980.
 8. NASA, *General Environmental Verification Standard*, GSFC-STD-7000A, 2013.
 9. D. A. Vallado, *Fundamentals of Astrodynamics and Applications*, 4th ed., 2013.
-10. A. Mishra, *VOLLEY-thesis*: authored manuscript, baseline, provenance, figures and validation records, repository head `b30ffdc`, 28 September 2026. Project record, not independent experimental evidence.
-11. VOLLEY/BOLLEY, *Current Plan and Status — PLAN-R2*, controlled working baseline, 29 September 2026. Project plan, not achieved performance.
+10. A. Mishra, *VOLLEY-thesis*: authored manuscript, baseline, provenance, figures and validation records, historical technical snapshot `b30ffdc`, 28 September 2026. Project record, not independent experimental evidence.
+11. VOLLEY, *Controlled programme plan — PLAN-R2 (historical VOLLEY scope)*, controlled working baseline, 29 September 2026. Project plan, not achieved performance.
 
 # Reconciled engineering record, 16 October 2026
 

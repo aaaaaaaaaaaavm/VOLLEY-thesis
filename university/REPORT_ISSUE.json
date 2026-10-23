@@ -1,18 +1,18 @@
 {
   "issue": "first_similarity_review_2026_10_23",
-  "date": "2026-10-22",
-  "scope": "Evaluated Gen5 study and separate dated Gen6 development findings through22October2026; intended first similarity opportunity23October.",
+  "date": "2026-10-23",
+  "scope": "Evaluated Gen5 computational study and separately controlled FM08-R3 selected academic feeder design, with dated Gen6 system studies through 23 October 2026.",
   "path_basis": "repository_root",
   "guide_approval": false,
   "similarity_result": null,
   "physical_prototype": false,
   "presentation_hardware_requirement": "No hardware required per user confirmation; no physical validation claimed",
-  "project_completion": "Whole-project completion is not asserted. D27/contact/installed-system and extended mission gates remain as recorded in the private task authority.",
-  "pages": 70,
+  "project_completion": "This issue records the computational academic design and its stated evidence. Physical prototype testing, environmental qualification, provider approval and similarity clearance are not asserted.",
+  "pages": 85,
   "main_chapters": 11,
   "appendices": 3,
-  "figure_count": 37,
-  "table_count": 14,
+  "figure_count": 42,
+  "table_count": 18,
   "fonts": {
     "PDF": "LiberationSerif12pt",
     "DOCX": "TimesNewRoman12pt"
@@ -23,14 +23,16 @@
     "XeLaTeX": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)"
   },
   "files": {
-    "university/GEN5_FINAL_YEAR_REPORT.md": "88c77c762fef93104c8780cdb32a9b450c85a97ee83cdacc77119035a91d3037",
-    "university/GEN5_FINAL_YEAR_REPORT.pdf": "a71c4395a178d65be19d5f8504d0162f8e02e6ca81254ea9e0a02a14ad4dfacd",
-    "university/GEN5_FINAL_YEAR_REPORT.docx": "2ea55fc1875eb3fa15c87c9822b7f2c8a12c4fe89baa582f079e71202b9dba74",
-    "university/build_report.py": "e08411455b14df54747af63dfc078a1c063f4cffd3b28efbca4c7c4cb5c4a44f",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "f3446f8f1b6a8e3d2ba9601ff8f196a8af56dd90804542284e8dc34324da0bb1",
+    "university/GEN5_FINAL_YEAR_REPORT.pdf": "aff23c9513a9601c4629344975320019b946417800c1138c7e777778a662c7c3",
+    "university/GEN5_FINAL_YEAR_REPORT.docx": "564be0da5ef1214add851731efadae9ee08910396715b8e185a54e7f92e3b187",
+    "university/build_report.py": "1e880ad4c3af712ef642769eba97f1c88718dd58815c8ecb9ad75ea187d52543",
     "university/requirements-build.txt": "8d012b64cc8a04924f9a2e87716e83cdf659638ccddaf900066edf1bd26a45c6",
-    "university/layout/blackbook-frontmatter.tex": "5feec08bd7f97dcc19f2c82ad49c5d04fe3c6a366bdfcdd608238c4a4461249c",
+    "university/layout/blackbook-frontmatter.tex": "d5967a65a676a3b60d0e461da382fb4da2adef798c5a83c2139d2d1772550b3a",
     "university/layout/blackbook-header.tex": "17c0a4e5cca1e3e023d83f9786bc4262e2f75265b7e81611da08ad06018042c5",
-    "university/layout/evidence-links.lua": "eccc33f84c4355eff4f9409d7673c25a7822b60cb5aca78b3c07009d813d3f39",
+    "university/layout/evidence-links.lua": "75779bb996aca3607deff1a5ac008dd48c57683ab654e57653bfd5b4b8696fd8",
     "tools/check_blackbook_issue.py": "40b4eb8291bc608cbc3b4af3771968a671fbc29515cdca8ea2ba37e2310e1b40"
-  }
+  },
+  "selected_feeder_design": "FM08-R3",
+  "selection_study": "FDR10-R0"
 }

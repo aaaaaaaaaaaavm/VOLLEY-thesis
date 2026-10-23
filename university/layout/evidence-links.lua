@@ -1,5 +1,6 @@
--- Resolve the report's repository-local evidence links against its immutable input snapshot.
-local base = 'https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis/blob/fbf5be376a2a056347ca9ffea491d4b1be73b40c/'
+-- Resolve the report's local evidence links within its self-contained repository.
+-- Exact source/export identities are held in REPORT_ISSUE.json and artifact manifests.
+local base = 'https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis/blob/main/'
 function Link(el)
   if el.target:match('^%.%./') then el.target=base..el.target:gsub('^%.%./','') end
   return el

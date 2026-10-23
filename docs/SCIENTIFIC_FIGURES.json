@@ -1,5 +1,5 @@
 {
-  "revision": "19 October2026 \u00b7 bounded computational supplements",
+  "revision": "23 October 2026 · selected feeder and bounded system studies",
   "scope": "Selected current figure sets only. Retained historical graphics are not automatically certified compliant.",
   "figures": [
     {
@@ -96,7 +96,7 @@
     },
     {
       "evidence_class": "STEP-derived orthographic geometry",
-      "caption": "belt shuttle cad \u00b7 FDR-08",
+      "caption": "belt shuttle cad · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -114,7 +114,7 @@
     },
     {
       "evidence_class": "Computed load/tolerance/native-FEA plot",
-      "caption": "fea convergence \u00b7 FDR-08",
+      "caption": "fea convergence · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -131,7 +131,7 @@
     },
     {
       "evidence_class": "STEP-derived orthographic geometry",
-      "caption": "indexed drum cad \u00b7 FDR-08",
+      "caption": "indexed drum cad · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -149,7 +149,7 @@
     },
     {
       "evidence_class": "STEP-derived orthographic geometry",
-      "caption": "lead screw cad \u00b7 FDR-08",
+      "caption": "lead screw cad · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -167,7 +167,7 @@
     },
     {
       "evidence_class": "Computed load/tolerance/native-FEA plot",
-      "caption": "loads \u00b7 FDR-08",
+      "caption": "loads · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -184,7 +184,7 @@
     },
     {
       "evidence_class": "STEP-derived orthographic geometry",
-      "caption": "pantograph cad \u00b7 FDR-08",
+      "caption": "pantograph cad · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -202,7 +202,7 @@
     },
     {
       "evidence_class": "STEP-derived orthographic geometry",
-      "caption": "rack pawl cad \u00b7 FDR-08",
+      "caption": "rack pawl cad · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -220,7 +220,7 @@
     },
     {
       "evidence_class": "STEP-derived orthographic geometry",
-      "caption": "spring dual gate cad \u00b7 FDR-08",
+      "caption": "spring dual gate cad · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -238,7 +238,7 @@
     },
     {
       "evidence_class": "STEP-derived orthographic geometry",
-      "caption": "telescopic cad \u00b7 FDR-08",
+      "caption": "telescopic cad · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -256,7 +256,7 @@
     },
     {
       "evidence_class": "Computed load/tolerance/native-FEA plot",
-      "caption": "tolerance \u00b7 FDR-08",
+      "caption": "tolerance · FDR-08",
       "limitations": "Unselected candidates;210 nominal states/straight-payload sweeps only. Material proxies exclude purchased hardware; failed fits/arrest sizing retained. No full-cycle, contact, installed strength, reliability or manufacturing pass.",
       "sources": {
         "validation/feeder_review/FEEDER_SOURCE_AND_CAD.zip": "6d7977b64252d53acba0f884ae65534c7a603a1e5bb460db7f67482a67e258b4",
@@ -534,7 +534,7 @@
     },
     {
       "evidence_class": "Computed finite-force/native Orekit study; prescribed surrogate controls",
-      "caption": "force fuel trade \u00b7 FBR-01",
+      "caption": "force fuel trade · FBR-01",
       "limitations": "Fixed-axis J2 and point releases; no rated host, flight precision, physical clearance or installed product. Failed thrust/fuel and unverified attitude requirements retained.",
       "sources": {
         "validation/finite_burn_review/report.py": "2b6ba82c08e124604a9324e8d055feecd9b7c79726efacf2c0b534d05936e34b",
@@ -550,7 +550,7 @@
     },
     {
       "evidence_class": "Computed finite-force/native Orekit study; prescribed surrogate controls",
-      "caption": "twelve chronology \u00b7 FBR-01",
+      "caption": "twelve chronology · FBR-01",
       "limitations": "Fixed-axis J2 and point releases; no rated host, flight precision, physical clearance or installed product. Failed thrust/fuel and unverified attitude requirements retained.",
       "sources": {
         "validation/finite_burn_review/report.py": "2b6ba82c08e124604a9324e8d055feecd9b7c79726efacf2c0b534d05936e34b",
@@ -566,7 +566,7 @@
     },
     {
       "evidence_class": "Computed finite-force/native Orekit study; prescribed surrogate controls",
-      "caption": "native consistency \u00b7 FBR-01",
+      "caption": "native consistency · FBR-01",
       "limitations": "Fixed-axis J2 and point releases; no rated host, flight precision, physical clearance or installed product. Failed thrust/fuel and unverified attitude requirements retained.",
       "sources": {
         "validation/finite_burn_review/report.py": "2b6ba82c08e124604a9324e8d055feecd9b7c79726efacf2c0b534d05936e34b",
@@ -582,7 +582,7 @@
     },
     {
       "evidence_class": "Computed finite-force/native Orekit study; prescribed surrogate controls",
-      "caption": "finite control sensitivity \u00b7 FBR-01",
+      "caption": "finite control sensitivity · FBR-01",
       "limitations": "Fixed-axis J2 and point releases; no rated host, flight precision, physical clearance or installed product. Failed thrust/fuel and unverified attitude requirements retained.",
       "sources": {
         "validation/finite_burn_review/report.py": "2b6ba82c08e124604a9324e8d055feecd9b7c79726efacf2c0b534d05936e34b",
@@ -598,7 +598,7 @@
     },
     {
       "evidence_class": "Computed finite-force/native Orekit study; prescribed surrogate controls",
-      "caption": "slew requirements \u00b7 FBR-01",
+      "caption": "slew requirements · FBR-01",
       "limitations": "Fixed-axis J2 and point releases; no rated host, flight precision, physical clearance or installed product. Failed thrust/fuel and unverified attitude requirements retained.",
       "sources": {
         "validation/finite_burn_review/report.py": "2b6ba82c08e124604a9324e8d055feecd9b7c79726efacf2c0b534d05936e34b",
@@ -614,7 +614,7 @@
     },
     {
       "evidence_class": "STEP-derived nominal geometry",
-      "caption": "step sequence \u2014 FM-02 / IDR-01 / FSR-01",
+      "caption": "step sequence — FM-02 / IDR-01 / FSR-01",
       "limitations": "Unselected computational revision. No source-rated installed feeder, manufacturing fit, measured reliability or flight claim. Failed fit/thermal/brake/timeline criteria remain explicit.",
       "sources": {
         "validation/feeder_actuation_review/plot.py": "c0bc31afe9c861bbf74e66bb7d9c7e499a2e75bcc5135ab0aa306da1e6be047c",
@@ -634,7 +634,7 @@
     },
     {
       "evidence_class": "STEP-derived nominal geometry",
-      "caption": "interlock plan \u2014 FM-02 / IDR-01 / FSR-01",
+      "caption": "interlock plan — FM-02 / IDR-01 / FSR-01",
       "limitations": "Unselected computational revision. No source-rated installed feeder, manufacturing fit, measured reliability or flight claim. Failed fit/thermal/brake/timeline criteria remain explicit.",
       "sources": {
         "validation/feeder_actuation_review/plot.py": "c0bc31afe9c861bbf74e66bb7d9c7e499a2e75bcc5135ab0aa306da1e6be047c",
@@ -654,7 +654,7 @@
     },
     {
       "evidence_class": "Computed deterministic sensitivity or numerical consistency",
-      "caption": "drive thermal \u2014 FM-02 / IDR-01 / FSR-01",
+      "caption": "drive thermal — FM-02 / IDR-01 / FSR-01",
       "limitations": "Unselected computational revision. No source-rated installed feeder, manufacturing fit, measured reliability or flight claim. Failed fit/thermal/brake/timeline criteria remain explicit.",
       "sources": {
         "validation/feeder_actuation_review/plot.py": "c0bc31afe9c861bbf74e66bb7d9c7e499a2e75bcc5135ab0aa306da1e6be047c",
@@ -674,7 +674,7 @@
     },
     {
       "evidence_class": "Computed deterministic sensitivity or numerical consistency",
-      "caption": "stop sensitivity \u2014 FM-02 / IDR-01 / FSR-01",
+      "caption": "stop sensitivity — FM-02 / IDR-01 / FSR-01",
       "limitations": "Unselected computational revision. No source-rated installed feeder, manufacturing fit, measured reliability or flight claim. Failed fit/thermal/brake/timeline criteria remain explicit.",
       "sources": {
         "validation/feeder_actuation_review/plot.py": "c0bc31afe9c861bbf74e66bb7d9c7e499a2e75bcc5135ab0aa306da1e6be047c",
@@ -694,7 +694,7 @@
     },
     {
       "evidence_class": "Computed deterministic sensitivity or numerical consistency",
-      "caption": "fit budget \u2014 FM-02 / IDR-01 / FSR-01",
+      "caption": "fit budget — FM-02 / IDR-01 / FSR-01",
       "limitations": "Unselected computational revision. No source-rated installed feeder, manufacturing fit, measured reliability or flight claim. Failed fit/thermal/brake/timeline criteria remain explicit.",
       "sources": {
         "validation/feeder_actuation_review/plot.py": "c0bc31afe9c861bbf74e66bb7d9c7e499a2e75bcc5135ab0aa306da1e6be047c",
@@ -714,7 +714,7 @@
     },
     {
       "evidence_class": "Computed deterministic sensitivity or numerical consistency",
-      "caption": "handling margin \u2014 FM-02 / IDR-01 / FSR-01",
+      "caption": "handling margin — FM-02 / IDR-01 / FSR-01",
       "limitations": "Unselected computational revision. No source-rated installed feeder, manufacturing fit, measured reliability or flight claim. Failed fit/thermal/brake/timeline criteria remain explicit.",
       "sources": {
         "validation/feeder_actuation_review/plot.py": "c0bc31afe9c861bbf74e66bb7d9c7e499a2e75bcc5135ab0aa306da1e6be047c",
@@ -734,7 +734,7 @@
     },
     {
       "evidence_class": "Computed deterministic sensitivity or numerical consistency",
-      "caption": "drive convergence \u2014 FM-02 / IDR-01 / FSR-01",
+      "caption": "drive convergence — FM-02 / IDR-01 / FSR-01",
       "limitations": "Unselected computational revision. No source-rated installed feeder, manufacturing fit, measured reliability or flight claim. Failed fit/thermal/brake/timeline criteria remain explicit.",
       "sources": {
         "validation/feeder_actuation_review/plot.py": "c0bc31afe9c861bbf74e66bb7d9c7e499a2e75bcc5135ab0aa306da1e6be047c",
@@ -804,7 +804,7 @@
     },
     {
       "evidence_class": "Computed CAD/component-fixture/native-contact research; no measurements",
-      "caption": "component compliance \u00b7 FM06-R1/FLR01/FLR02/FCE08",
+      "caption": "component compliance · FM06-R1/FLR01/FLR02/FCE08",
       "limitations": "Nominal geometry and bounded component fixtures. Native contact acceptance is not established: step/iteration sensitivity and actual-solid overlap retained. No material strength, installed mechanism or hardware validation.",
       "sources": {
         "validation/feeder_integrity_review/README.md": "adb6ee56f2a34b1f7cfb20a189c6ee31462894762511e911b996b91233607aab",
@@ -820,7 +820,7 @@
     },
     {
       "evidence_class": "Computed CAD/component-fixture/native-contact research; no measurements",
-      "caption": "mesh convergence \u00b7 FM06-R1/FLR01/FLR02/FCE08",
+      "caption": "mesh convergence · FM06-R1/FLR01/FLR02/FCE08",
       "limitations": "Nominal geometry and bounded component fixtures. Native contact acceptance is not established: step/iteration sensitivity and actual-solid overlap retained. No material strength, installed mechanism or hardware validation.",
       "sources": {
         "validation/feeder_integrity_review/README.md": "adb6ee56f2a34b1f7cfb20a189c6ee31462894762511e911b996b91233607aab",
@@ -836,7 +836,7 @@
     },
     {
       "evidence_class": "Computed CAD/component-fixture/native-contact research; no measurements",
-      "caption": "receiver section \u00b7 FM06-R1/FLR01/FLR02/FCE08",
+      "caption": "receiver section · FM06-R1/FLR01/FLR02/FCE08",
       "limitations": "Nominal geometry and bounded component fixtures. Native contact acceptance is not established: step/iteration sensitivity and actual-solid overlap retained. No material strength, installed mechanism or hardware validation.",
       "sources": {
         "validation/feeder_integrity_review/README.md": "adb6ee56f2a34b1f7cfb20a189c6ee31462894762511e911b996b91233607aab",
@@ -852,7 +852,7 @@
     },
     {
       "evidence_class": "Computed CAD/component-fixture/native-contact research; no measurements",
-      "caption": "tine fixture \u00b7 FM06-R1/FLR01/FLR02/FCE08",
+      "caption": "tine fixture · FM06-R1/FLR01/FLR02/FCE08",
       "limitations": "Nominal geometry and bounded component fixtures. Native contact acceptance is not established: step/iteration sensitivity and actual-solid overlap retained. No material strength, installed mechanism or hardware validation.",
       "sources": {
         "validation/feeder_integrity_review/README.md": "adb6ee56f2a34b1f7cfb20a189c6ee31462894762511e911b996b91233607aab",
@@ -868,7 +868,7 @@
     },
     {
       "evidence_class": "Computed CAD/component-fixture/native-contact research; no measurements",
-      "caption": "receiver rigid play \u00b7 FM06-R1/FLR01/FLR02/FCE08",
+      "caption": "receiver rigid play · FM06-R1/FLR01/FLR02/FCE08",
       "limitations": "Nominal geometry and bounded component fixtures. Native contact acceptance is not established: step/iteration sensitivity and actual-solid overlap retained. No material strength, installed mechanism or hardware validation.",
       "sources": {
         "validation/feeder_integrity_review/README.md": "adb6ee56f2a34b1f7cfb20a189c6ee31462894762511e911b996b91233607aab",
@@ -884,7 +884,7 @@
     },
     {
       "evidence_class": "Computed CAD/component-fixture/native-contact research; no measurements",
-      "caption": "contact refinement \u00b7 FM06-R1/FLR01/FLR02/FCE08",
+      "caption": "contact refinement · FM06-R1/FLR01/FLR02/FCE08",
       "limitations": "Nominal geometry and bounded component fixtures. Native contact acceptance is not established: step/iteration sensitivity and actual-solid overlap retained. No material strength, installed mechanism or hardware validation.",
       "sources": {
         "validation/feeder_integrity_review/README.md": "adb6ee56f2a34b1f7cfb20a189c6ee31462894762511e911b996b91233607aab",
@@ -900,7 +900,7 @@
     },
     {
       "evidence_class": "Native CAD render or genuine application export, as explicitly identified by caption",
-      "caption": "FM06_Technical_transfer.png \u00b7 source-backed nominal/component-fixture view",
+      "caption": "FM06_Technical_transfer.png · source-backed nominal/component-fixture view",
       "limitations": "No hardware photograph, actual assembled contact validation, qualification or manufacturing release.",
       "sources": {
         "validation/feeder_integrity_review/MANIFEST.json": "6954e939a267e932e97ef817292821dcefbc1cf774e4d63766fe08e662249c68",
@@ -912,7 +912,7 @@
     },
     {
       "evidence_class": "Native CAD render or genuine application export, as explicitly identified by caption",
-      "caption": "FreeCAD_FM06_transfer.png \u00b7 source-backed nominal/component-fixture view",
+      "caption": "FreeCAD_FM06_transfer.png · source-backed nominal/component-fixture view",
       "limitations": "No hardware photograph, actual assembled contact validation, qualification or manufacturing release.",
       "sources": {
         "validation/feeder_integrity_review/MANIFEST.json": "6954e939a267e932e97ef817292821dcefbc1cf774e4d63766fe08e662249c68",
@@ -924,7 +924,7 @@
     },
     {
       "evidence_class": "Native CAD render or genuine application export, as explicitly identified by caption",
-      "caption": "Gmsh_FLR02_tine.png \u00b7 source-backed nominal/component-fixture view",
+      "caption": "Gmsh_FLR02_tine.png · source-backed nominal/component-fixture view",
       "limitations": "No hardware photograph, actual assembled contact validation, qualification or manufacturing release.",
       "sources": {
         "validation/feeder_integrity_review/MANIFEST.json": "6954e939a267e932e97ef817292821dcefbc1cf774e4d63766fe08e662249c68",
@@ -932,6 +932,330 @@
       },
       "exports": {
         "validation/feeder_integrity_review/figures/Gmsh_FLR02_tine.png": "b6a101b562f15696ba9512778506a271ace8decd5b19e431892a3ec77a502700"
+      }
+    },
+    {
+      "evidence_class": "Declared computational study",
+      "caption": "Selected feeder or bounded system study; source-linked quantities and assumptions are identified in the local package.",
+      "limitations": "No physical performance, provider approval, measured uncertainty or hardware reliability is established.",
+      "sources": {
+        "validation/selected_feeder/verification/PARAMETERS.json": "7ced07573d926508f54978bb0dd9fa416532a56797338811ae60d26808fff3f6",
+        "validation/selected_feeder/verification/check_capture.py": "d19a373698f57d30e2108ff9b79ce64b0a81eedcb4146b2b94501c9651c2f0b8",
+        "validation/selected_feeder/verification/verify_feeder.py": "bf7b84c707b1562023d00d4b2dded9e9943fac9623aa3c391c24eec0e7aea356",
+        "validation/selected_feeder/verification/build_report.py": "a6e132d9c3e4a97d33715952a59fb989e873d681c450acd61fe00a5beb883204",
+        "validation/selected_feeder/verification/SELECTED_CATALOG_OPTIONS.json": "627256f07f48af66c3ab36d801a66979f044e8c33aabf658bb6710813a796ffa",
+        "validation/selected_feeder/verification/catalog_reference.json": "401d4da4d3b3a0395a42f3b4f140f862c05f9ccaa3489d3863b02f86fb73423d"
+      },
+      "exports": {
+        "validation/selected_feeder/verification/results/feeder_trade.png": "62ca2d3c82b59a460d77331f61bc3be95efa49d83a0266a95467d9a97d385339",
+        "validation/selected_feeder/verification/results/feeder_trade.svg": "890d651b1951f006e7f8629de70254aeddd6dba30d8202f1c94df128d39afe7f"
+      }
+    },
+    {
+      "evidence_class": "Declared computational study",
+      "caption": "Selected feeder or bounded system study; source-linked quantities and assumptions are identified in the local package.",
+      "limitations": "No physical performance, provider approval, measured uncertainty or hardware reliability is established.",
+      "sources": {
+        "validation/selected_feeder/verification/PARAMETERS.json": "7ced07573d926508f54978bb0dd9fa416532a56797338811ae60d26808fff3f6",
+        "validation/selected_feeder/verification/check_capture.py": "d19a373698f57d30e2108ff9b79ce64b0a81eedcb4146b2b94501c9651c2f0b8",
+        "validation/selected_feeder/verification/verify_feeder.py": "bf7b84c707b1562023d00d4b2dded9e9943fac9623aa3c391c24eec0e7aea356",
+        "validation/selected_feeder/verification/build_report.py": "a6e132d9c3e4a97d33715952a59fb989e873d681c450acd61fe00a5beb883204",
+        "validation/selected_feeder/verification/SELECTED_CATALOG_OPTIONS.json": "627256f07f48af66c3ab36d801a66979f044e8c33aabf658bb6710813a796ffa",
+        "validation/selected_feeder/verification/catalog_reference.json": "401d4da4d3b3a0395a42f3b4f140f862c05f9ccaa3489d3863b02f86fb73423d"
+      },
+      "exports": {
+        "validation/selected_feeder/verification/results/feeder_motion.png": "ec36ee09a8fc886fff74a315d00f81d94b3f1a435eb9b93ce8ac9fee530b7b68",
+        "validation/selected_feeder/verification/results/feeder_motion.svg": "392be7b8f4f7bf0f06893b55ba9bc9cefc4a567e806ac380f25ce6d5c5cc5709"
+      }
+    },
+    {
+      "evidence_class": "Declared computational study",
+      "caption": "Selected feeder or bounded system study; source-linked quantities and assumptions are identified in the local package.",
+      "limitations": "No physical performance, provider approval, measured uncertainty or hardware reliability is established.",
+      "sources": {
+        "validation/system_feasibility_closure/PYTHON_RUNTIME.json": "45611c06ee76372ad1890ca3ca44432a5b5668d6ebb20b4f13453cc29cdb4723",
+        "validation/system_feasibility_closure/extract_native_mass.py": "add27f943e90f776d1e785f112d320551a8b34f7c5b8b4cef5d722cf906848e5",
+        "validation/system_feasibility_closure/build_twelve.py": "060966720956f8af0119080e75c56db02cd642fe3ee116dd22e055440efd075b",
+        "validation/system_feasibility_closure/lunar_navigation_sensitivity.py": "f7a09efaa8f261f365dbb7448eb96dd5b106098ddce988d68fc5e5ee3d9db453",
+        "validation/system_feasibility_closure/LUNAR_NAVIGATION_SENSITIVITY.json": "03a8e23f306e93613359cd3f94849775f57f156f6101da7118fb937ef822f3e2",
+        "validation/system_feasibility_closure/check_capture.py": "0c8a268911c3398464f0be0285407045663cda3065fda3336be0c6706d1c7b31",
+        "validation/system_feasibility_closure/SOURCE_IDENTITY.json": "c10e579fe9011d96fe37b74535f3b0112fe33e47a817363b6f40f1ae50028177",
+        "validation/system_feasibility_closure/MISSION_RETARGET_SUMMARY.json": "e110d6c54ec56ef77b5bdf95cac527bf3836deb533886356c3863d526e2963e8",
+        "validation/system_feasibility_closure/TWELVE_MASS_LEDGER.json": "ab35fdcb7564a6d7624985ba2c273d1360ad1603c7bebd425dd41dd28328c6e2",
+        "validation/system_feasibility_closure/MOVING_MASS_FLOWDOWN.json": "cbc926f0b7e55a8bfbbb918452fbb69218ccb36ebb4ef4909d068de7d6ab190f",
+        "validation/system_feasibility_closure/NATIVE_REPLAY_CHECKS.json": "4ed414cbdde70b984897d5266a1b8051622c1b77d5182bad146870357d78ad9a",
+        "validation/system_feasibility_closure/moving_mass_flowdown.py": "f94945d43b344687e202a22f1e58dfca170c3e2f79a7fa51bb042ddd13605f87",
+        "validation/system_feasibility_closure/plot_integration.py": "83729f4faae60112ddc25a4802ac2c1fe51471a533bf61494d895bb12b4786ec",
+        "validation/system_feasibility_closure/CAD_RUNTIME.json": "5e93425cb5c8fcb208b28d1b89312e5f3d601c8b1b3a6d524ce0c40fadc8dba0",
+        "validation/system_feasibility_closure/build_report.py": "60ba60b208315e62602f78124d63269ed23c7764d984dd6d38eb26f0f13fc154",
+        "validation/system_feasibility_closure/BASELINE_REPRODUCTION.json": "e8d173e06a98f4a49502c8eb95d727698dd225fade076c497b65d1468e46bdbf",
+        "validation/system_feasibility_closure/system_screens.py": "13a6fe424059a5196052ea748c1c7da63d24ee496dedb9d20a7f52d2609f9a55",
+        "validation/system_feasibility_closure/TWELVE_ASSEMBLY_REPORT.json": "227028c0d4977adad6474d6bf8d2393b72b75f27e8f848cec01d6dbb16ec0516",
+        "validation/system_feasibility_closure/SYSTEM_SCREENS.json": "2b369956c47891a7dcf86fc9f21b15d68cde713dbde9ca1027630ce902405638",
+        "validation/system_feasibility_closure/STEP_EXCHANGE_CHECKS.json": "a0a3e5fc8db411e0e5ae7d8c2a5571aa80f7fd59220c689a2c3e45156b371cb5",
+        "validation/system_feasibility_closure/plot_screens.py": "1354cc763ccc4d8ceb9c95907fb8e48c66b5f935c42bdc4ba2054db1ed9eb30b",
+        "validation/system_feasibility_closure/check_step_exchange.py": "1d14758c4dda33c766d4c9e8b5ba59af564df6d95d7dd36c527f96249995000c",
+        "validation/system_feasibility_closure/source_inputs/FOUR_ASSEMBLY_REPORT.json": "7f4e7c222266464b657ba5b271584984fd4756c3b3791d8f3710138c92415714",
+        "validation/system_feasibility_closure/source_inputs/FBR01_target.py": "3a1319507b7923c88e585302d7aa1aef326409f8a74ba9d4689c402a7e541881",
+        "validation/system_feasibility_closure/source_inputs/build_selected_R3.py": "6ebbde89b5452a7529a7b860cfcba87afacdf25025d7f6e0e0fb65e2e7bc4b6c",
+        "validation/system_feasibility_closure/source_inputs/FBR01_SUMMARY.json": "93ccab34fd7716890b035af9f247f608f3a86f39cac43d3611b85a8480281167",
+        "validation/system_feasibility_closure/source_inputs/EXTENDED_BOUNDS.json": "8a782b9725b99440e0fb673e47ba1480f472fd05159bfec4b9477d9d754a8b10",
+        "validation/system_feasibility_closure/source_inputs/SELECTED_CATALOG_OPTIONS.json": "627256f07f48af66c3ab36d801a66979f044e8c33aabf658bb6710813a796ffa",
+        "validation/system_feasibility_closure/mission/target.py": "77ffb5ae5db385eded0af6d43ceb184daf33cd917dba016bd7ef2cd538fc16dc",
+        "validation/system_feasibility_closure/mission/SOFTWARE_LOCK.json": "f26f92aa58c235e05d082a039d7787f361198ef12fb81c291841008cb36e610d",
+        "validation/system_feasibility_closure/mission/export.py": "1c29b2844fa91771b186956ea45b73c3ce1f6d124425b0f9abe7b769c2283929",
+        "validation/system_feasibility_closure/mission/replay_and_check.py": "f24b3aee03a190d9901fa2ed1102a824adc5e71e6fa8fec98087309ba97fd41d",
+        "validation/system_feasibility_closure/mission/run_selected_matrix.py": "6d0a6de43db9d58de41cf594e6792be7e74aaabca0e6d9dfa64d11652f742ae9",
+        "validation/system_feasibility_closure/mission/retarget_selected_mass.py": "eb84fef054a544afa3b31d83eae65ab007e40793b798f5626d6e640cea38f6a5",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_stowed.json": "e72b264eac768ca283c62a3c02f76a29ade574d0cd7b2cc9cd5cf721e69f458a",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_far_3U_seated.json": "48c84ec6c357fc2ae9213720feb8f9802927632c895834512bd62a9c7def1b4b",
+        "validation/system_feasibility_closure/mission/release/12_volley_device93.331463_fuel30_f0.1_guard5_h60.json": "0e92a234657de7d458efd33c621c5cbc24386e25b638616f0eb20109c18c7284",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.1_guard5_h60.json": "7a70fd22e422f15bf90524a138f166ee5f7b8225634f2d9bed6c147f45816d73",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.2_guard5_h60.json": "2bbb3bfa022bf5e0f760830e23601b837087545d313160baa0eb0046481c32fa",
+        "validation/system_feasibility_closure/mission/release/12_volley_device133.331463_fuel30_f0.1_guard5_h60.json": "61d33312724d2671425886e7345e9975e8be8aeafc4bdaab81cdc609b6a12e32",
+        "validation/system_feasibility_closure/mission/release/4_volley_device39.837310_fuel10_f0.35_guard5_h60.json": "ffee4cc948843f3c192c6b4cfd48a25a8cde9585f7463cd99e66af0d27e67c24",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.35_guard5_h60.json": "3b38ed35f91cbce1b43026f90e6da503cc918d488e2abd38f973253b725176aa",
+        "validation/system_feasibility_closure/mission/release/4_spring_device16.000000_fuel10_f0.35_guard5_h60.json": "8eeaf9946f98e4a9564bfa265158753e911a750f5b4bd61e14a8117c7e382d86",
+        "validation/system_feasibility_closure/mission/release/12_volley_device108.331463_fuel30_f0.1_guard5_h60.json": "8aedd72908aa5ca807956f80574a0086504c492dc96a05c5a5e9c4889cc51a2b",
+        "validation/system_feasibility_closure/mission/release/4_volley_device54.837310_fuel10_f0.35_guard5_h60.json": "1afa92d151028c481745280779ef3cb415db79fec63177c97ffa234b44bb2f93",
+        "validation/system_feasibility_closure/mission/release/4_volley_device79.837310_fuel10_f0.35_guard5_h60.json": "68f02ff7d344de3480929d5934354e3f36a346eff6b1909c3150e75b5def1cea"
+      },
+      "exports": {
+        "validation/system_feasibility_closure/figures/lunar_navigation_sensitivity.png": "14bdd889e18d5c145d963a8359822ac7ce2955501c33662bf5f4dc9b270ff5a8",
+        "validation/system_feasibility_closure/figures/lunar_navigation_sensitivity.svg": "7ceb29f0a3856afbb954d4ed27d69877925f6a27e21bdac965fc5b7f3b92ae03",
+        "validation/system_feasibility_closure/figures/lunar_navigation_sensitivity.pdf": "87f782fcd60cb3c64e9c7fe7172c20f20fc1088e0dbbc831684663c628d5df07"
+      }
+    },
+    {
+      "evidence_class": "Declared computational study",
+      "caption": "Selected feeder or bounded system study; source-linked quantities and assumptions are identified in the local package.",
+      "limitations": "No physical performance, provider approval, measured uncertainty or hardware reliability is established.",
+      "sources": {
+        "validation/system_feasibility_closure/PYTHON_RUNTIME.json": "45611c06ee76372ad1890ca3ca44432a5b5668d6ebb20b4f13453cc29cdb4723",
+        "validation/system_feasibility_closure/extract_native_mass.py": "add27f943e90f776d1e785f112d320551a8b34f7c5b8b4cef5d722cf906848e5",
+        "validation/system_feasibility_closure/build_twelve.py": "060966720956f8af0119080e75c56db02cd642fe3ee116dd22e055440efd075b",
+        "validation/system_feasibility_closure/lunar_navigation_sensitivity.py": "f7a09efaa8f261f365dbb7448eb96dd5b106098ddce988d68fc5e5ee3d9db453",
+        "validation/system_feasibility_closure/LUNAR_NAVIGATION_SENSITIVITY.json": "03a8e23f306e93613359cd3f94849775f57f156f6101da7118fb937ef822f3e2",
+        "validation/system_feasibility_closure/check_capture.py": "0c8a268911c3398464f0be0285407045663cda3065fda3336be0c6706d1c7b31",
+        "validation/system_feasibility_closure/SOURCE_IDENTITY.json": "c10e579fe9011d96fe37b74535f3b0112fe33e47a817363b6f40f1ae50028177",
+        "validation/system_feasibility_closure/MISSION_RETARGET_SUMMARY.json": "e110d6c54ec56ef77b5bdf95cac527bf3836deb533886356c3863d526e2963e8",
+        "validation/system_feasibility_closure/TWELVE_MASS_LEDGER.json": "ab35fdcb7564a6d7624985ba2c273d1360ad1603c7bebd425dd41dd28328c6e2",
+        "validation/system_feasibility_closure/MOVING_MASS_FLOWDOWN.json": "cbc926f0b7e55a8bfbbb918452fbb69218ccb36ebb4ef4909d068de7d6ab190f",
+        "validation/system_feasibility_closure/NATIVE_REPLAY_CHECKS.json": "4ed414cbdde70b984897d5266a1b8051622c1b77d5182bad146870357d78ad9a",
+        "validation/system_feasibility_closure/moving_mass_flowdown.py": "f94945d43b344687e202a22f1e58dfca170c3e2f79a7fa51bb042ddd13605f87",
+        "validation/system_feasibility_closure/plot_integration.py": "83729f4faae60112ddc25a4802ac2c1fe51471a533bf61494d895bb12b4786ec",
+        "validation/system_feasibility_closure/CAD_RUNTIME.json": "5e93425cb5c8fcb208b28d1b89312e5f3d601c8b1b3a6d524ce0c40fadc8dba0",
+        "validation/system_feasibility_closure/build_report.py": "60ba60b208315e62602f78124d63269ed23c7764d984dd6d38eb26f0f13fc154",
+        "validation/system_feasibility_closure/BASELINE_REPRODUCTION.json": "e8d173e06a98f4a49502c8eb95d727698dd225fade076c497b65d1468e46bdbf",
+        "validation/system_feasibility_closure/system_screens.py": "13a6fe424059a5196052ea748c1c7da63d24ee496dedb9d20a7f52d2609f9a55",
+        "validation/system_feasibility_closure/TWELVE_ASSEMBLY_REPORT.json": "227028c0d4977adad6474d6bf8d2393b72b75f27e8f848cec01d6dbb16ec0516",
+        "validation/system_feasibility_closure/SYSTEM_SCREENS.json": "2b369956c47891a7dcf86fc9f21b15d68cde713dbde9ca1027630ce902405638",
+        "validation/system_feasibility_closure/STEP_EXCHANGE_CHECKS.json": "a0a3e5fc8db411e0e5ae7d8c2a5571aa80f7fd59220c689a2c3e45156b371cb5",
+        "validation/system_feasibility_closure/plot_screens.py": "1354cc763ccc4d8ceb9c95907fb8e48c66b5f935c42bdc4ba2054db1ed9eb30b",
+        "validation/system_feasibility_closure/check_step_exchange.py": "1d14758c4dda33c766d4c9e8b5ba59af564df6d95d7dd36c527f96249995000c",
+        "validation/system_feasibility_closure/source_inputs/FOUR_ASSEMBLY_REPORT.json": "7f4e7c222266464b657ba5b271584984fd4756c3b3791d8f3710138c92415714",
+        "validation/system_feasibility_closure/source_inputs/FBR01_target.py": "3a1319507b7923c88e585302d7aa1aef326409f8a74ba9d4689c402a7e541881",
+        "validation/system_feasibility_closure/source_inputs/build_selected_R3.py": "6ebbde89b5452a7529a7b860cfcba87afacdf25025d7f6e0e0fb65e2e7bc4b6c",
+        "validation/system_feasibility_closure/source_inputs/FBR01_SUMMARY.json": "93ccab34fd7716890b035af9f247f608f3a86f39cac43d3611b85a8480281167",
+        "validation/system_feasibility_closure/source_inputs/EXTENDED_BOUNDS.json": "8a782b9725b99440e0fb673e47ba1480f472fd05159bfec4b9477d9d754a8b10",
+        "validation/system_feasibility_closure/source_inputs/SELECTED_CATALOG_OPTIONS.json": "627256f07f48af66c3ab36d801a66979f044e8c33aabf658bb6710813a796ffa",
+        "validation/system_feasibility_closure/mission/target.py": "77ffb5ae5db385eded0af6d43ceb184daf33cd917dba016bd7ef2cd538fc16dc",
+        "validation/system_feasibility_closure/mission/SOFTWARE_LOCK.json": "f26f92aa58c235e05d082a039d7787f361198ef12fb81c291841008cb36e610d",
+        "validation/system_feasibility_closure/mission/export.py": "1c29b2844fa91771b186956ea45b73c3ce1f6d124425b0f9abe7b769c2283929",
+        "validation/system_feasibility_closure/mission/replay_and_check.py": "f24b3aee03a190d9901fa2ed1102a824adc5e71e6fa8fec98087309ba97fd41d",
+        "validation/system_feasibility_closure/mission/run_selected_matrix.py": "6d0a6de43db9d58de41cf594e6792be7e74aaabca0e6d9dfa64d11652f742ae9",
+        "validation/system_feasibility_closure/mission/retarget_selected_mass.py": "eb84fef054a544afa3b31d83eae65ab007e40793b798f5626d6e640cea38f6a5",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_stowed.json": "e72b264eac768ca283c62a3c02f76a29ade574d0cd7b2cc9cd5cf721e69f458a",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_far_3U_seated.json": "48c84ec6c357fc2ae9213720feb8f9802927632c895834512bd62a9c7def1b4b",
+        "validation/system_feasibility_closure/mission/release/12_volley_device93.331463_fuel30_f0.1_guard5_h60.json": "0e92a234657de7d458efd33c621c5cbc24386e25b638616f0eb20109c18c7284",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.1_guard5_h60.json": "7a70fd22e422f15bf90524a138f166ee5f7b8225634f2d9bed6c147f45816d73",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.2_guard5_h60.json": "2bbb3bfa022bf5e0f760830e23601b837087545d313160baa0eb0046481c32fa",
+        "validation/system_feasibility_closure/mission/release/12_volley_device133.331463_fuel30_f0.1_guard5_h60.json": "61d33312724d2671425886e7345e9975e8be8aeafc4bdaab81cdc609b6a12e32",
+        "validation/system_feasibility_closure/mission/release/4_volley_device39.837310_fuel10_f0.35_guard5_h60.json": "ffee4cc948843f3c192c6b4cfd48a25a8cde9585f7463cd99e66af0d27e67c24",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.35_guard5_h60.json": "3b38ed35f91cbce1b43026f90e6da503cc918d488e2abd38f973253b725176aa",
+        "validation/system_feasibility_closure/mission/release/4_spring_device16.000000_fuel10_f0.35_guard5_h60.json": "8eeaf9946f98e4a9564bfa265158753e911a750f5b4bd61e14a8117c7e382d86",
+        "validation/system_feasibility_closure/mission/release/12_volley_device108.331463_fuel30_f0.1_guard5_h60.json": "8aedd72908aa5ca807956f80574a0086504c492dc96a05c5a5e9c4889cc51a2b",
+        "validation/system_feasibility_closure/mission/release/4_volley_device54.837310_fuel10_f0.35_guard5_h60.json": "1afa92d151028c481745280779ef3cb415db79fec63177c97ffa234b44bb2f93",
+        "validation/system_feasibility_closure/mission/release/4_volley_device79.837310_fuel10_f0.35_guard5_h60.json": "68f02ff7d344de3480929d5934354e3f36a346eff6b1909c3150e75b5def1cea"
+      },
+      "exports": {
+        "validation/system_feasibility_closure/figures/native_mission_sensitivity.png": "9ba6eb124ff4e6823ab4e72a7d929b7e7984cdce0501f52b7d32e3c7c92405db",
+        "validation/system_feasibility_closure/figures/native_mission_sensitivity.svg": "6c74e4417c100199649dfa2b2d2391a0ec661679d4020f2f537de785c92dac2e",
+        "validation/system_feasibility_closure/figures/native_mission_sensitivity.pdf": "e3cd306ab6ac5fbd2558a2dbb3869730558dc1f42a13b5973f00108d7f280979"
+      }
+    },
+    {
+      "evidence_class": "Declared computational study",
+      "caption": "Selected feeder or bounded system study; source-linked quantities and assumptions are identified in the local package.",
+      "limitations": "No physical performance, provider approval, measured uncertainty or hardware reliability is established.",
+      "sources": {
+        "validation/system_feasibility_closure/PYTHON_RUNTIME.json": "45611c06ee76372ad1890ca3ca44432a5b5668d6ebb20b4f13453cc29cdb4723",
+        "validation/system_feasibility_closure/extract_native_mass.py": "add27f943e90f776d1e785f112d320551a8b34f7c5b8b4cef5d722cf906848e5",
+        "validation/system_feasibility_closure/build_twelve.py": "060966720956f8af0119080e75c56db02cd642fe3ee116dd22e055440efd075b",
+        "validation/system_feasibility_closure/lunar_navigation_sensitivity.py": "f7a09efaa8f261f365dbb7448eb96dd5b106098ddce988d68fc5e5ee3d9db453",
+        "validation/system_feasibility_closure/LUNAR_NAVIGATION_SENSITIVITY.json": "03a8e23f306e93613359cd3f94849775f57f156f6101da7118fb937ef822f3e2",
+        "validation/system_feasibility_closure/check_capture.py": "0c8a268911c3398464f0be0285407045663cda3065fda3336be0c6706d1c7b31",
+        "validation/system_feasibility_closure/SOURCE_IDENTITY.json": "c10e579fe9011d96fe37b74535f3b0112fe33e47a817363b6f40f1ae50028177",
+        "validation/system_feasibility_closure/MISSION_RETARGET_SUMMARY.json": "e110d6c54ec56ef77b5bdf95cac527bf3836deb533886356c3863d526e2963e8",
+        "validation/system_feasibility_closure/TWELVE_MASS_LEDGER.json": "ab35fdcb7564a6d7624985ba2c273d1360ad1603c7bebd425dd41dd28328c6e2",
+        "validation/system_feasibility_closure/MOVING_MASS_FLOWDOWN.json": "cbc926f0b7e55a8bfbbb918452fbb69218ccb36ebb4ef4909d068de7d6ab190f",
+        "validation/system_feasibility_closure/NATIVE_REPLAY_CHECKS.json": "4ed414cbdde70b984897d5266a1b8051622c1b77d5182bad146870357d78ad9a",
+        "validation/system_feasibility_closure/moving_mass_flowdown.py": "f94945d43b344687e202a22f1e58dfca170c3e2f79a7fa51bb042ddd13605f87",
+        "validation/system_feasibility_closure/plot_integration.py": "83729f4faae60112ddc25a4802ac2c1fe51471a533bf61494d895bb12b4786ec",
+        "validation/system_feasibility_closure/CAD_RUNTIME.json": "5e93425cb5c8fcb208b28d1b89312e5f3d601c8b1b3a6d524ce0c40fadc8dba0",
+        "validation/system_feasibility_closure/build_report.py": "60ba60b208315e62602f78124d63269ed23c7764d984dd6d38eb26f0f13fc154",
+        "validation/system_feasibility_closure/BASELINE_REPRODUCTION.json": "e8d173e06a98f4a49502c8eb95d727698dd225fade076c497b65d1468e46bdbf",
+        "validation/system_feasibility_closure/system_screens.py": "13a6fe424059a5196052ea748c1c7da63d24ee496dedb9d20a7f52d2609f9a55",
+        "validation/system_feasibility_closure/TWELVE_ASSEMBLY_REPORT.json": "227028c0d4977adad6474d6bf8d2393b72b75f27e8f848cec01d6dbb16ec0516",
+        "validation/system_feasibility_closure/SYSTEM_SCREENS.json": "2b369956c47891a7dcf86fc9f21b15d68cde713dbde9ca1027630ce902405638",
+        "validation/system_feasibility_closure/STEP_EXCHANGE_CHECKS.json": "a0a3e5fc8db411e0e5ae7d8c2a5571aa80f7fd59220c689a2c3e45156b371cb5",
+        "validation/system_feasibility_closure/plot_screens.py": "1354cc763ccc4d8ceb9c95907fb8e48c66b5f935c42bdc4ba2054db1ed9eb30b",
+        "validation/system_feasibility_closure/check_step_exchange.py": "1d14758c4dda33c766d4c9e8b5ba59af564df6d95d7dd36c527f96249995000c",
+        "validation/system_feasibility_closure/source_inputs/FOUR_ASSEMBLY_REPORT.json": "7f4e7c222266464b657ba5b271584984fd4756c3b3791d8f3710138c92415714",
+        "validation/system_feasibility_closure/source_inputs/FBR01_target.py": "3a1319507b7923c88e585302d7aa1aef326409f8a74ba9d4689c402a7e541881",
+        "validation/system_feasibility_closure/source_inputs/build_selected_R3.py": "6ebbde89b5452a7529a7b860cfcba87afacdf25025d7f6e0e0fb65e2e7bc4b6c",
+        "validation/system_feasibility_closure/source_inputs/FBR01_SUMMARY.json": "93ccab34fd7716890b035af9f247f608f3a86f39cac43d3611b85a8480281167",
+        "validation/system_feasibility_closure/source_inputs/EXTENDED_BOUNDS.json": "8a782b9725b99440e0fb673e47ba1480f472fd05159bfec4b9477d9d754a8b10",
+        "validation/system_feasibility_closure/source_inputs/SELECTED_CATALOG_OPTIONS.json": "627256f07f48af66c3ab36d801a66979f044e8c33aabf658bb6710813a796ffa",
+        "validation/system_feasibility_closure/mission/target.py": "77ffb5ae5db385eded0af6d43ceb184daf33cd917dba016bd7ef2cd538fc16dc",
+        "validation/system_feasibility_closure/mission/SOFTWARE_LOCK.json": "f26f92aa58c235e05d082a039d7787f361198ef12fb81c291841008cb36e610d",
+        "validation/system_feasibility_closure/mission/export.py": "1c29b2844fa91771b186956ea45b73c3ce1f6d124425b0f9abe7b769c2283929",
+        "validation/system_feasibility_closure/mission/replay_and_check.py": "f24b3aee03a190d9901fa2ed1102a824adc5e71e6fa8fec98087309ba97fd41d",
+        "validation/system_feasibility_closure/mission/run_selected_matrix.py": "6d0a6de43db9d58de41cf594e6792be7e74aaabca0e6d9dfa64d11652f742ae9",
+        "validation/system_feasibility_closure/mission/retarget_selected_mass.py": "eb84fef054a544afa3b31d83eae65ab007e40793b798f5626d6e640cea38f6a5",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_stowed.json": "e72b264eac768ca283c62a3c02f76a29ade574d0cd7b2cc9cd5cf721e69f458a",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_far_3U_seated.json": "48c84ec6c357fc2ae9213720feb8f9802927632c895834512bd62a9c7def1b4b",
+        "validation/system_feasibility_closure/mission/release/12_volley_device93.331463_fuel30_f0.1_guard5_h60.json": "0e92a234657de7d458efd33c621c5cbc24386e25b638616f0eb20109c18c7284",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.1_guard5_h60.json": "7a70fd22e422f15bf90524a138f166ee5f7b8225634f2d9bed6c147f45816d73",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.2_guard5_h60.json": "2bbb3bfa022bf5e0f760830e23601b837087545d313160baa0eb0046481c32fa",
+        "validation/system_feasibility_closure/mission/release/12_volley_device133.331463_fuel30_f0.1_guard5_h60.json": "61d33312724d2671425886e7345e9975e8be8aeafc4bdaab81cdc609b6a12e32",
+        "validation/system_feasibility_closure/mission/release/4_volley_device39.837310_fuel10_f0.35_guard5_h60.json": "ffee4cc948843f3c192c6b4cfd48a25a8cde9585f7463cd99e66af0d27e67c24",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.35_guard5_h60.json": "3b38ed35f91cbce1b43026f90e6da503cc918d488e2abd38f973253b725176aa",
+        "validation/system_feasibility_closure/mission/release/4_spring_device16.000000_fuel10_f0.35_guard5_h60.json": "8eeaf9946f98e4a9564bfa265158753e911a750f5b4bd61e14a8117c7e382d86",
+        "validation/system_feasibility_closure/mission/release/12_volley_device108.331463_fuel30_f0.1_guard5_h60.json": "8aedd72908aa5ca807956f80574a0086504c492dc96a05c5a5e9c4889cc51a2b",
+        "validation/system_feasibility_closure/mission/release/4_volley_device54.837310_fuel10_f0.35_guard5_h60.json": "1afa92d151028c481745280779ef3cb415db79fec63177c97ffa234b44bb2f93",
+        "validation/system_feasibility_closure/mission/release/4_volley_device79.837310_fuel10_f0.35_guard5_h60.json": "68f02ff7d344de3480929d5934354e3f36a346eff6b1909c3150e75b5def1cea"
+      },
+      "exports": {
+        "validation/system_feasibility_closure/figures/resource_requirements.png": "0bf4814881c780c9289dcaf52a2a340cd19bf91f8b0f57fab19fea5e95a5fe26",
+        "validation/system_feasibility_closure/figures/resource_requirements.svg": "db20bcde78cbbf99e6eedd8b03f91d4ed8b1381db43ffe0b0177675b60711f68",
+        "validation/system_feasibility_closure/figures/resource_requirements.pdf": "8f3417be430ce59c93bd3a2ddfb7deb9e6e00b23d311755a0d17cf0c31683b10"
+      }
+    },
+    {
+      "evidence_class": "Declared computational study",
+      "caption": "Selected feeder or bounded system study; source-linked quantities and assumptions are identified in the local package.",
+      "limitations": "No physical performance, provider approval, measured uncertainty or hardware reliability is established.",
+      "sources": {
+        "validation/system_feasibility_closure/PYTHON_RUNTIME.json": "45611c06ee76372ad1890ca3ca44432a5b5668d6ebb20b4f13453cc29cdb4723",
+        "validation/system_feasibility_closure/extract_native_mass.py": "add27f943e90f776d1e785f112d320551a8b34f7c5b8b4cef5d722cf906848e5",
+        "validation/system_feasibility_closure/build_twelve.py": "060966720956f8af0119080e75c56db02cd642fe3ee116dd22e055440efd075b",
+        "validation/system_feasibility_closure/lunar_navigation_sensitivity.py": "f7a09efaa8f261f365dbb7448eb96dd5b106098ddce988d68fc5e5ee3d9db453",
+        "validation/system_feasibility_closure/LUNAR_NAVIGATION_SENSITIVITY.json": "03a8e23f306e93613359cd3f94849775f57f156f6101da7118fb937ef822f3e2",
+        "validation/system_feasibility_closure/check_capture.py": "0c8a268911c3398464f0be0285407045663cda3065fda3336be0c6706d1c7b31",
+        "validation/system_feasibility_closure/SOURCE_IDENTITY.json": "c10e579fe9011d96fe37b74535f3b0112fe33e47a817363b6f40f1ae50028177",
+        "validation/system_feasibility_closure/MISSION_RETARGET_SUMMARY.json": "e110d6c54ec56ef77b5bdf95cac527bf3836deb533886356c3863d526e2963e8",
+        "validation/system_feasibility_closure/TWELVE_MASS_LEDGER.json": "ab35fdcb7564a6d7624985ba2c273d1360ad1603c7bebd425dd41dd28328c6e2",
+        "validation/system_feasibility_closure/MOVING_MASS_FLOWDOWN.json": "cbc926f0b7e55a8bfbbb918452fbb69218ccb36ebb4ef4909d068de7d6ab190f",
+        "validation/system_feasibility_closure/NATIVE_REPLAY_CHECKS.json": "4ed414cbdde70b984897d5266a1b8051622c1b77d5182bad146870357d78ad9a",
+        "validation/system_feasibility_closure/moving_mass_flowdown.py": "f94945d43b344687e202a22f1e58dfca170c3e2f79a7fa51bb042ddd13605f87",
+        "validation/system_feasibility_closure/plot_integration.py": "83729f4faae60112ddc25a4802ac2c1fe51471a533bf61494d895bb12b4786ec",
+        "validation/system_feasibility_closure/CAD_RUNTIME.json": "5e93425cb5c8fcb208b28d1b89312e5f3d601c8b1b3a6d524ce0c40fadc8dba0",
+        "validation/system_feasibility_closure/build_report.py": "60ba60b208315e62602f78124d63269ed23c7764d984dd6d38eb26f0f13fc154",
+        "validation/system_feasibility_closure/BASELINE_REPRODUCTION.json": "e8d173e06a98f4a49502c8eb95d727698dd225fade076c497b65d1468e46bdbf",
+        "validation/system_feasibility_closure/system_screens.py": "13a6fe424059a5196052ea748c1c7da63d24ee496dedb9d20a7f52d2609f9a55",
+        "validation/system_feasibility_closure/TWELVE_ASSEMBLY_REPORT.json": "227028c0d4977adad6474d6bf8d2393b72b75f27e8f848cec01d6dbb16ec0516",
+        "validation/system_feasibility_closure/SYSTEM_SCREENS.json": "2b369956c47891a7dcf86fc9f21b15d68cde713dbde9ca1027630ce902405638",
+        "validation/system_feasibility_closure/STEP_EXCHANGE_CHECKS.json": "a0a3e5fc8db411e0e5ae7d8c2a5571aa80f7fd59220c689a2c3e45156b371cb5",
+        "validation/system_feasibility_closure/plot_screens.py": "1354cc763ccc4d8ceb9c95907fb8e48c66b5f935c42bdc4ba2054db1ed9eb30b",
+        "validation/system_feasibility_closure/check_step_exchange.py": "1d14758c4dda33c766d4c9e8b5ba59af564df6d95d7dd36c527f96249995000c",
+        "validation/system_feasibility_closure/source_inputs/FOUR_ASSEMBLY_REPORT.json": "7f4e7c222266464b657ba5b271584984fd4756c3b3791d8f3710138c92415714",
+        "validation/system_feasibility_closure/source_inputs/FBR01_target.py": "3a1319507b7923c88e585302d7aa1aef326409f8a74ba9d4689c402a7e541881",
+        "validation/system_feasibility_closure/source_inputs/build_selected_R3.py": "6ebbde89b5452a7529a7b860cfcba87afacdf25025d7f6e0e0fb65e2e7bc4b6c",
+        "validation/system_feasibility_closure/source_inputs/FBR01_SUMMARY.json": "93ccab34fd7716890b035af9f247f608f3a86f39cac43d3611b85a8480281167",
+        "validation/system_feasibility_closure/source_inputs/EXTENDED_BOUNDS.json": "8a782b9725b99440e0fb673e47ba1480f472fd05159bfec4b9477d9d754a8b10",
+        "validation/system_feasibility_closure/source_inputs/SELECTED_CATALOG_OPTIONS.json": "627256f07f48af66c3ab36d801a66979f044e8c33aabf658bb6710813a796ffa",
+        "validation/system_feasibility_closure/mission/target.py": "77ffb5ae5db385eded0af6d43ceb184daf33cd917dba016bd7ef2cd538fc16dc",
+        "validation/system_feasibility_closure/mission/SOFTWARE_LOCK.json": "f26f92aa58c235e05d082a039d7787f361198ef12fb81c291841008cb36e610d",
+        "validation/system_feasibility_closure/mission/export.py": "1c29b2844fa91771b186956ea45b73c3ce1f6d124425b0f9abe7b769c2283929",
+        "validation/system_feasibility_closure/mission/replay_and_check.py": "f24b3aee03a190d9901fa2ed1102a824adc5e71e6fa8fec98087309ba97fd41d",
+        "validation/system_feasibility_closure/mission/run_selected_matrix.py": "6d0a6de43db9d58de41cf594e6792be7e74aaabca0e6d9dfa64d11652f742ae9",
+        "validation/system_feasibility_closure/mission/retarget_selected_mass.py": "eb84fef054a544afa3b31d83eae65ab007e40793b798f5626d6e640cea38f6a5",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_stowed.json": "e72b264eac768ca283c62a3c02f76a29ade574d0cd7b2cc9cd5cf721e69f458a",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_far_3U_seated.json": "48c84ec6c357fc2ae9213720feb8f9802927632c895834512bd62a9c7def1b4b",
+        "validation/system_feasibility_closure/mission/release/12_volley_device93.331463_fuel30_f0.1_guard5_h60.json": "0e92a234657de7d458efd33c621c5cbc24386e25b638616f0eb20109c18c7284",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.1_guard5_h60.json": "7a70fd22e422f15bf90524a138f166ee5f7b8225634f2d9bed6c147f45816d73",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.2_guard5_h60.json": "2bbb3bfa022bf5e0f760830e23601b837087545d313160baa0eb0046481c32fa",
+        "validation/system_feasibility_closure/mission/release/12_volley_device133.331463_fuel30_f0.1_guard5_h60.json": "61d33312724d2671425886e7345e9975e8be8aeafc4bdaab81cdc609b6a12e32",
+        "validation/system_feasibility_closure/mission/release/4_volley_device39.837310_fuel10_f0.35_guard5_h60.json": "ffee4cc948843f3c192c6b4cfd48a25a8cde9585f7463cd99e66af0d27e67c24",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.35_guard5_h60.json": "3b38ed35f91cbce1b43026f90e6da503cc918d488e2abd38f973253b725176aa",
+        "validation/system_feasibility_closure/mission/release/4_spring_device16.000000_fuel10_f0.35_guard5_h60.json": "8eeaf9946f98e4a9564bfa265158753e911a750f5b4bd61e14a8117c7e382d86",
+        "validation/system_feasibility_closure/mission/release/12_volley_device108.331463_fuel30_f0.1_guard5_h60.json": "8aedd72908aa5ca807956f80574a0086504c492dc96a05c5a5e9c4889cc51a2b",
+        "validation/system_feasibility_closure/mission/release/4_volley_device54.837310_fuel10_f0.35_guard5_h60.json": "1afa92d151028c481745280779ef3cb415db79fec63177c97ffa234b44bb2f93",
+        "validation/system_feasibility_closure/mission/release/4_volley_device79.837310_fuel10_f0.35_guard5_h60.json": "68f02ff7d344de3480929d5934354e3f36a346eff6b1909c3150e75b5def1cea"
+      },
+      "exports": {
+        "validation/system_feasibility_closure/figures/twelve_capacity_plan.png": "ce8ff3bfffb62e7211ab55024abbf0925c7aa3e174fe0c5542315b1edec692b4",
+        "validation/system_feasibility_closure/figures/twelve_capacity_plan.svg": "1ef34eb596730acd6b291b363c1f404cf261d32ae3e1454a79cb521588866a30",
+        "validation/system_feasibility_closure/figures/twelve_capacity_plan.pdf": "62694cda58e1cea0053345e3e73785a84e53f4eb36269d87746c81bb44c30548"
+      }
+    },
+    {
+      "evidence_class": "Declared computational study",
+      "caption": "Selected feeder or bounded system study; source-linked quantities and assumptions are identified in the local package.",
+      "limitations": "No physical performance, provider approval, measured uncertainty or hardware reliability is established.",
+      "sources": {
+        "validation/system_feasibility_closure/PYTHON_RUNTIME.json": "45611c06ee76372ad1890ca3ca44432a5b5668d6ebb20b4f13453cc29cdb4723",
+        "validation/system_feasibility_closure/extract_native_mass.py": "add27f943e90f776d1e785f112d320551a8b34f7c5b8b4cef5d722cf906848e5",
+        "validation/system_feasibility_closure/build_twelve.py": "060966720956f8af0119080e75c56db02cd642fe3ee116dd22e055440efd075b",
+        "validation/system_feasibility_closure/lunar_navigation_sensitivity.py": "f7a09efaa8f261f365dbb7448eb96dd5b106098ddce988d68fc5e5ee3d9db453",
+        "validation/system_feasibility_closure/LUNAR_NAVIGATION_SENSITIVITY.json": "03a8e23f306e93613359cd3f94849775f57f156f6101da7118fb937ef822f3e2",
+        "validation/system_feasibility_closure/check_capture.py": "0c8a268911c3398464f0be0285407045663cda3065fda3336be0c6706d1c7b31",
+        "validation/system_feasibility_closure/SOURCE_IDENTITY.json": "c10e579fe9011d96fe37b74535f3b0112fe33e47a817363b6f40f1ae50028177",
+        "validation/system_feasibility_closure/MISSION_RETARGET_SUMMARY.json": "e110d6c54ec56ef77b5bdf95cac527bf3836deb533886356c3863d526e2963e8",
+        "validation/system_feasibility_closure/TWELVE_MASS_LEDGER.json": "ab35fdcb7564a6d7624985ba2c273d1360ad1603c7bebd425dd41dd28328c6e2",
+        "validation/system_feasibility_closure/MOVING_MASS_FLOWDOWN.json": "cbc926f0b7e55a8bfbbb918452fbb69218ccb36ebb4ef4909d068de7d6ab190f",
+        "validation/system_feasibility_closure/NATIVE_REPLAY_CHECKS.json": "4ed414cbdde70b984897d5266a1b8051622c1b77d5182bad146870357d78ad9a",
+        "validation/system_feasibility_closure/moving_mass_flowdown.py": "f94945d43b344687e202a22f1e58dfca170c3e2f79a7fa51bb042ddd13605f87",
+        "validation/system_feasibility_closure/plot_integration.py": "83729f4faae60112ddc25a4802ac2c1fe51471a533bf61494d895bb12b4786ec",
+        "validation/system_feasibility_closure/CAD_RUNTIME.json": "5e93425cb5c8fcb208b28d1b89312e5f3d601c8b1b3a6d524ce0c40fadc8dba0",
+        "validation/system_feasibility_closure/build_report.py": "60ba60b208315e62602f78124d63269ed23c7764d984dd6d38eb26f0f13fc154",
+        "validation/system_feasibility_closure/BASELINE_REPRODUCTION.json": "e8d173e06a98f4a49502c8eb95d727698dd225fade076c497b65d1468e46bdbf",
+        "validation/system_feasibility_closure/system_screens.py": "13a6fe424059a5196052ea748c1c7da63d24ee496dedb9d20a7f52d2609f9a55",
+        "validation/system_feasibility_closure/TWELVE_ASSEMBLY_REPORT.json": "227028c0d4977adad6474d6bf8d2393b72b75f27e8f848cec01d6dbb16ec0516",
+        "validation/system_feasibility_closure/SYSTEM_SCREENS.json": "2b369956c47891a7dcf86fc9f21b15d68cde713dbde9ca1027630ce902405638",
+        "validation/system_feasibility_closure/STEP_EXCHANGE_CHECKS.json": "a0a3e5fc8db411e0e5ae7d8c2a5571aa80f7fd59220c689a2c3e45156b371cb5",
+        "validation/system_feasibility_closure/plot_screens.py": "1354cc763ccc4d8ceb9c95907fb8e48c66b5f935c42bdc4ba2054db1ed9eb30b",
+        "validation/system_feasibility_closure/check_step_exchange.py": "1d14758c4dda33c766d4c9e8b5ba59af564df6d95d7dd36c527f96249995000c",
+        "validation/system_feasibility_closure/source_inputs/FOUR_ASSEMBLY_REPORT.json": "7f4e7c222266464b657ba5b271584984fd4756c3b3791d8f3710138c92415714",
+        "validation/system_feasibility_closure/source_inputs/FBR01_target.py": "3a1319507b7923c88e585302d7aa1aef326409f8a74ba9d4689c402a7e541881",
+        "validation/system_feasibility_closure/source_inputs/build_selected_R3.py": "6ebbde89b5452a7529a7b860cfcba87afacdf25025d7f6e0e0fb65e2e7bc4b6c",
+        "validation/system_feasibility_closure/source_inputs/FBR01_SUMMARY.json": "93ccab34fd7716890b035af9f247f608f3a86f39cac43d3611b85a8480281167",
+        "validation/system_feasibility_closure/source_inputs/EXTENDED_BOUNDS.json": "8a782b9725b99440e0fb673e47ba1480f472fd05159bfec4b9477d9d754a8b10",
+        "validation/system_feasibility_closure/source_inputs/SELECTED_CATALOG_OPTIONS.json": "627256f07f48af66c3ab36d801a66979f044e8c33aabf658bb6710813a796ffa",
+        "validation/system_feasibility_closure/mission/target.py": "77ffb5ae5db385eded0af6d43ceb184daf33cd917dba016bd7ef2cd538fc16dc",
+        "validation/system_feasibility_closure/mission/SOFTWARE_LOCK.json": "f26f92aa58c235e05d082a039d7787f361198ef12fb81c291841008cb36e610d",
+        "validation/system_feasibility_closure/mission/export.py": "1c29b2844fa91771b186956ea45b73c3ce1f6d124425b0f9abe7b769c2283929",
+        "validation/system_feasibility_closure/mission/replay_and_check.py": "f24b3aee03a190d9901fa2ed1102a824adc5e71e6fa8fec98087309ba97fd41d",
+        "validation/system_feasibility_closure/mission/run_selected_matrix.py": "6d0a6de43db9d58de41cf594e6792be7e74aaabca0e6d9dfa64d11652f742ae9",
+        "validation/system_feasibility_closure/mission/retarget_selected_mass.py": "eb84fef054a544afa3b31d83eae65ab007e40793b798f5626d6e640cea38f6a5",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_stowed.json": "e72b264eac768ca283c62a3c02f76a29ade574d0cd7b2cc9cd5cf721e69f458a",
+        "validation/system_feasibility_closure/cad_twelve/FM08_R3_twelve_cell_far_3U_seated.json": "48c84ec6c357fc2ae9213720feb8f9802927632c895834512bd62a9c7def1b4b",
+        "validation/system_feasibility_closure/mission/release/12_volley_device93.331463_fuel30_f0.1_guard5_h60.json": "0e92a234657de7d458efd33c621c5cbc24386e25b638616f0eb20109c18c7284",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.1_guard5_h60.json": "7a70fd22e422f15bf90524a138f166ee5f7b8225634f2d9bed6c147f45816d73",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.2_guard5_h60.json": "2bbb3bfa022bf5e0f760830e23601b837087545d313160baa0eb0046481c32fa",
+        "validation/system_feasibility_closure/mission/release/12_volley_device133.331463_fuel30_f0.1_guard5_h60.json": "61d33312724d2671425886e7345e9975e8be8aeafc4bdaab81cdc609b6a12e32",
+        "validation/system_feasibility_closure/mission/release/4_volley_device39.837310_fuel10_f0.35_guard5_h60.json": "ffee4cc948843f3c192c6b4cfd48a25a8cde9585f7463cd99e66af0d27e67c24",
+        "validation/system_feasibility_closure/mission/release/12_spring_device48.000000_fuel30_f0.35_guard5_h60.json": "3b38ed35f91cbce1b43026f90e6da503cc918d488e2abd38f973253b725176aa",
+        "validation/system_feasibility_closure/mission/release/4_spring_device16.000000_fuel10_f0.35_guard5_h60.json": "8eeaf9946f98e4a9564bfa265158753e911a750f5b4bd61e14a8117c7e382d86",
+        "validation/system_feasibility_closure/mission/release/12_volley_device108.331463_fuel30_f0.1_guard5_h60.json": "8aedd72908aa5ca807956f80574a0086504c492dc96a05c5a5e9c4889cc51a2b",
+        "validation/system_feasibility_closure/mission/release/4_volley_device54.837310_fuel10_f0.35_guard5_h60.json": "1afa92d151028c481745280779ef3cb415db79fec63177c97ffa234b44bb2f93",
+        "validation/system_feasibility_closure/mission/release/4_volley_device79.837310_fuel10_f0.35_guard5_h60.json": "68f02ff7d344de3480929d5934354e3f36a346eff6b1909c3150e75b5def1cea"
+      },
+      "exports": {
+        "validation/system_feasibility_closure/figures/mission_mass_sensitivity.png": "e6e08748dce316cd69d364d05d076779c10956801204019bac85721f7800131c",
+        "validation/system_feasibility_closure/figures/mission_mass_sensitivity.svg": "7bfc7c040ab7ba126f8956f445c21d5e08a14e7c144b98a78c07ffb75f571e03",
+        "validation/system_feasibility_closure/figures/mission_mass_sensitivity.pdf": "4872b8b1adf3f31f2a67affff988bc05f75c7ad74b6313c056cf5173af1b5584"
       }
     }
   ]

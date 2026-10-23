@@ -3,7 +3,7 @@ title: "VOLLEY: Design and Computational Feasibility Assessment of a Commanded E
 author:
   - Adityavardhan Mishra
   - Pratham Chawla
-date: "21 October 2026"
+date: "23 October 2026"
 lang: en-GB
 papersize: a4
 fontsize: 12pt
@@ -19,7 +19,7 @@ geometry:
 
 # Abstract {.unnumbered .unlisted}
 
-This final-year project report evaluates a magazine-fed electromagnetic CubeSat deployer as a *computational design study*. For a twelve-payload 3U configuration, the historical periodic-force model predicts a 16.029 m/s release at 10.068 g and 2.782 kJ gross shot draw. A finite-array/stator 3-D analytic integral challenges that speed prediction, giving 12.448 m/s under ideal phase. A separate 2-D finite-element screen gives 1.082 kJ ideal work; an independent numerical 3-D surface-charge formulation reproduces 1.042 kJ under shared assumptions. An illustrative 14 mm face gap lowers ideal work to 0.907 kJ, while a conditional full-winding bank rerun gives 2.099 kJ gross draw. These are model results, not a selected motor rating. An independent Cartesian two-body calculation reproduces a 28.800775 km immediate semi-major-axis rise for the imposed historical input at 450 km. A native FreeCAD 1.0 review document and STEP exports expose an 11 mm transverse shortfall in the specified side-fed layout, with 32,915 mm³ of exact-solid overlap per cassette. The estimated 126.6 kg dry mass gives 10.547 kg of deployer per carried 3U, failing both the 2 kg economic screen and an approximately 6 kg spring-canister parity comparison. Atmospheric lifetime, exact payload interfaces and full mission delivery remain conditional or open. There is no physical prototype or VOLLEY test data. The completed result is a documented model-based decision against this Gen5 3U configuration, with Gen6 scale-up treated as future research.
+This final-year project report evaluates a magazine-fed electromagnetic CubeSat deployer as a *computational design study*. For a twelve-payload 3U configuration, the historical periodic-force model predicts a 16.029 m/s release at 10.068 g and 2.782 kJ gross shot draw. A finite-array/stator 3-D analytic integral challenges that speed prediction, giving 12.448 m/s under ideal phase. A separate 2-D finite-element screen gives 1.082 kJ ideal work; an independent numerical 3-D surface-charge formulation reproduces 1.042 kJ under shared assumptions. An illustrative 14 mm face gap lowers ideal work to 0.907 kJ, while a conditional full-winding bank rerun gives 2.099 kJ gross draw. These are model results, not a selected motor rating. An independent Cartesian two-body calculation reproduces a 28.800775 km immediate semi-major-axis rise for the imposed historical input at 450 km. A native FreeCAD 1.0 review document and STEP exports expose an 11 mm transverse shortfall in the specified side-fed layout, with 32,915 mm³ of exact-solid overlap per cassette. The estimated 126.6 kg dry mass gives 10.547 kg of deployer per carried 3U, failing both the 2 kg economic screen and an approximately 6 kg spring-canister parity comparison. Atmospheric lifetime, exact payload interfaces and full mission delivery remain conditional or open. There is no physical prototype or VOLLEY test data. The Gen5 result is a documented model-based decision against this 3U configuration. A separately versioned Gen6 design study selects a guided lead-screw feeder with fixed dedicated cells, capped-channel containment and one indexed receiver; its analytical and nominal-geometric evidence is distinguished from physical qualification. High-speed scaling remains future research.
 
 **Keywords:** CubeSat deployment; electromagnetic launcher; systems engineering; numerical verification; CAD interference; orbital mechanics; model credibility.
 
@@ -39,7 +39,7 @@ This final-year project report evaluates a magazine-fed electromagnetic CubeSat 
 
 All plotted VOLLEY results are computations unless explicitly described as external experimental data. CAD views and Blender renders show geometry rather than manufactured hardware. “Failed” identifies a missed evaluated criterion; “unverified” identifies behavior unresolved by the stated method. Numerical verification is distinguished from physical validation throughout.
 
-This issue contains the evaluated Gen5 study and separately identified Gen6 research through 22 October 2026. It is issued for first similarity review; institutional approval and the similarity result are not asserted. Gen6 research does not alter the evaluated Gen5 configuration.
+This issue contains the evaluated Gen5 study and separately identified Gen6 research and the FM08-R3 feeder design selection through 23 October 2026. It is issued for first similarity review; institutional approval and the similarity result are not asserted. Gen6 research does not alter the evaluated Gen5 configuration.
 
 \clearpage
 \pagenumbering{arabic}
@@ -78,7 +78,7 @@ The thesis addresses that gap by constructing a documented Gen5 reference config
 
 | Analytical research objective | Completed outcome | Interpretation |
 |:--|:--|:--|
-| Model a commandable 3U system | Reference CAD, magazine concept, sled, motor, arrest and power architecture | Feed and release mechanics remain unresolved |
+| Model a commandable 3U system | Reference CAD, magazine concept, sled, motor, arrest and power architecture | Gen5 mechanics retain their evaluated limitations; the separate FM08-R3 feeder design is documented in Appendix C |
 | Quantify the release | Historical periodic shot, circuit and closed-loop simulations; adverse finite-force screen | No selected or verified speed rating |
 | Evaluate orbital value | Historical-input orbit model and selected numerical cross-checks | Conditional geometry; rated lifetime remains open |
 | Test whole-system competitiveness | Mass rollup, spring/alternatives comparison and preset criteria | Gen5 fails the 3U mass target |
@@ -143,7 +143,7 @@ The evaluated configuration is the twelve-3U, side-fed Gen5 reference. Its missi
 
 ## Reproducibility and uncertainty rule
 
-Each quantitative result must retain its input configuration, model method, software/source file, output file, comparison band and stated limits. A second implementation under the same geometry is a useful **numerical cross-check**, but shared material laws and boundary assumptions remain common-mode uncertainty. Mesh or quadrature convergence establishes discretization behavior within a model; it cannot establish physical accuracy. Supplier ratings, fabrication tolerance distributions, payload limits and host ICD limits are absent. Deterministic gap, current and bank sweeps therefore show sensitivity, not measured statistical confidence intervals. The open issues in Appendix A are held as exceptions rather than treated as zeros.
+Each quantitative result must retain its input configuration, model method, software/source file, output file, comparison band and stated limits. A second implementation under the same geometry is a useful **numerical cross-check**, but shared material laws and boundary assumptions remain common-mode uncertainty. Mesh or quadrature convergence establishes discretization behavior within a model; it cannot establish physical accuracy. Supplier ratings for the evaluated Gen5 launch-power chain, fabrication tolerance distributions, payload limits and host ICD limits are absent. Catalog feeder options used in FM08-R3 remain conditional prototype references. Deterministic gap, current and bank sweeps therefore show sensitivity, not measured statistical confidence intervals. The open issues in Appendix A are held as exceptions rather than treated as zeros.
 
 ![Historical modeled shot: velocity, bank voltage and current.](<../source/figures/F01_shot.png>){width=100%}
 
@@ -284,7 +284,7 @@ The side-fed reference assembly has **526 mm** clear enclosure width. Its **205 
 
 ## Separately evaluated widened geometry and arrest bounds
 
-An **unselected R1 geometry candidate**uses a 570 mm wide enclosure. Its native FreeCAD document and STEP parts clear the original cassette--track overlap and twelve scripted 3U envelope transfer paths against selected fixed parts. A subsequent all-leaf exact-solid audit finds five other intersecting pairs in this widened assembly, including sled--track and sled--stator conflicts. The reference track beam occupies the roller corridor because its solid model has no channel cut; the sled backstop occupies the stator proxy. R1 therefore does not pass complete assembly integration. It also lacks the actual lift/carriage, launch restraint, actuation, tolerances, fault recovery and revised installed mass. Its increased envelope has no approved host. This candidate does not alter the evaluated Gen5 configuration or repair the performance discrepancy. See [R1 CAD record](../cad/FEEDER_CANDIDATE_R1.md) and the [all-leaf audit](../cad/GEN5_FULL_INTERFERENCE_AUDIT_2026_10_12.md).
+An **unselected R1 geometry candidate** uses a 570 mm wide enclosure. Its native FreeCAD document and STEP parts clear the original cassette--track overlap and twelve scripted 3U envelope transfer paths against selected fixed parts. A subsequent all-leaf exact-solid audit finds five other intersecting pairs in this widened assembly, including sled--track and sled--stator conflicts. The reference track beam occupies the roller corridor because its solid model has no channel cut; the sled backstop occupies the stator proxy. R1 therefore does not pass complete assembly integration. It also lacks the actual lift/carriage, launch restraint, actuation, tolerances, fault recovery and revised installed mass. Its increased envelope has no approved host. This candidate does not alter the evaluated Gen5 configuration or repair the performance discrepancy. See [R1 CAD record](../cad/FEEDER_CANDIDATE_R1.md) and the [all-leaf audit](../cad/GEN5_FULL_INTERFERENCE_AUDIT_2026_10_12.md).
 
 The separate [P126 lateral tolerance screen](../cad/FEEDER_R1_TOLERANCE_SCREEN.md) uses R1's CAD-derived 5 mm nominal cassette-to-track gap. With declared 1 mm track placement, 1 mm cassette placement, 0.5 mm combined form and 0.2° angular error across a 340.5 mm payload proxy, worst-case residual is 1.31 mm; a 0.5° band overlaps by 0.47 mm. These are illustrative assumptions, not measured process capability or released GD&T.
 
@@ -301,6 +301,16 @@ All 17 evaluated Gen5 and five widened-R1 intersections are classified as confir
 
 
 
+
+## Selected Gen6 feeder architecture
+
+The separately controlled **FM08-R3 feeder** uses fixed dedicated cells with guided lead-screw pushers and one indexed receiver. A fixed spacer accommodates each 1U payload without modifying the satellite or launching the spacer. A continuous capped channel contains the payload during transfer. The receiver far stop is proved closed before the cassette gate opens; seated-presence and settling proof precede near-side receiver capture and pusher return. Independent cell actuation supports isolation of a faulty cell, subject to a verified clear common path.
+
+![FM08-R3 selected four-cell assembly. Visualization derived from native CAD; shown geometry and catalog envelopes describe the computational design, rather than manufactured hardware.](../validation/selected_feeder/cad/figures/FM08_assembly.png){width=98%}
+
+This selection uses an explicitly revised academic design criterion: a justified architecture trade, editable CAD and STEP, nominal operating-envelope checks, declared tolerance and analytical load screens, catalog-based actuator sizing, and executable sequence/fault verification. Architecture selection is supported by verification of the selected configuration; the alternative concepts retain their dated comparative evidence and research dispositions. It does not convert CAD sampling into manufacturing tolerance verification or a software interlock model into demonstrated hardware reliability.
+
+The [selected feeder package](../validation/selected_feeder/README.md) contains the design record and the reproducible acceptance evidence. Appendix C reports the configuration, calculated results and remaining physical validation boundary. The frozen Gen5 reference and its evaluated mass, fit and motor results remain unchanged.
 
 # Orbital mechanics and matched mission comparison
 
@@ -420,7 +430,9 @@ Simulation cannot supply the acceptance of a launch provider, a calibrated hardw
 
 The Gen5 computational thesis reaches a research conclusion within its stated scope. Its historical model predicts a moderate-acceleration release, but finite geometry challenges the speed; an independent two-body calculation checks only the immediate orbital change under that assumed release state. Installed-mass accounting misses its preset 3U benchmark, and the side-fed reference CAD assembly fails its width check. The current configuration is therefore not a selected flight baseline. Hardware behavior and interfaces remain outside the tested evidence.
 
-The thesis's strongest engineering contribution is the transparent decision record: system budgets and idealized mechanisms were modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. That closes the Gen5 study and provides a defensible input to a separate future architecture trade.
+The thesis's strongest engineering contribution is the transparent decision record: system budgets and idealized mechanisms were modelled, independent numerical checks corrected several claims, and an unfavourable mass result was retained. That closes the Gen5 study and provides a defensible input to the separately controlled Gen6 design study.
+
+The separate FM08-R3 work adds a selected mechanical subsystem: guided pusher transfer from dedicated mixed-size cells into a reusable receiver, with retained spacers, capped-channel containment and explicit boundary handover, conditional actuator sizing and executable interlock tests. This provides a defined engineering basis for a future instrumented article. The selected subsystem does not establish the launch motor's attainable speed, a whole-system economic advantage or physical reliability.
 
 ## Gen6 direction and research boundary
 
@@ -428,7 +440,7 @@ Gen6's controlling objective is a reusable launch path that sequentially accepts
 
 The next milestone is an independently reviewable test-article configuration: controlled CAD and drawings; a sourceable bill of materials; host/payload interfaces; installed mass, energy and thermal accounting; assembly and inspection procedures; instrumented tests with predetermined pass/fail and stop criteria; uncertainty and retained failures; and an explicit build/test release decision. A rejected candidate remains a valid research result.
 
-Appendix C details the passive 1U/3U service objective and manoeuvring-host surrogate. Its 3–6 m/s first-article objective and distant 1 km/s research objective are distinct. No final feeder, physical prototype or hardware build release is asserted.
+Appendix C details the passive 1U/3U service objective, manoeuvring-host surrogate and selected FM08-R3 feeder design. Its 3–6 m/s first-article objective and distant 1 km/s research objective are distinct. The feeder is selected at the computational academic-design level; physical performance, environmental qualification and a hardware build release are not asserted.
 
 \appendix
 
@@ -480,7 +492,7 @@ The unchanged 68-file [Gen5 technical baseline](../docs/GEN5_TECHNICAL_BASELINE.
 : Documented evolution — Period.
 
 
-The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the rated speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions are part of the review record; the historical 16.029 m/s shot remains traceable, but no final speed rating is selected. Gen6 studies are separately identified in Appendix C.
+The thesis repository's reconstructed history expressly marks several early milestone dates as approximate. The analytical baseline was revised as evidence improved: a CAD-derived sled mass displaced a lighter parametric estimate; a depth-resolved thrust calculation lowered the historical periodic-model speed; an enclosure buildup exposed the 3U mass penalty; and an independent orbit check rejected an overbroad solar-invariance claim. These revisions are part of the review record; the historical 16.029 m/s shot remains traceable, but no final speed rating is selected. Gen6 studies are separately identified in Appendix C.
 
 # Separate Gen6 research studies
 
@@ -534,7 +546,7 @@ The separately versioned [CT-01 local report](../validation/captive_transfer_rev
 
 ![CT-01 STEP side projections with common axes; nominal prescribed motion only](../validation/captive_transfer_review/release/figures/step_sequence.png){width=98%}
 
-A separate enlarged 16 × 6 mm rack-root coupon has one modeled face-contact pose and six native CalculiX fixture cases. Its peak stress remains unconverged and its actual material/impact/attachment are unqualified. The 972-case compliant-stop investigation retains 226 cases exceeding a proposed 24 mm total allowance; 148 of 243 local fit sensitivities are nonpositive. False receiver-lock indication, uncontrolled gate closure and missing external sled custody remain explicit physical counterexamples. No feeder selection or hardware release follows.
+A separate enlarged 16 × 6 mm rack-root coupon has one modeled face-contact pose and six native CalculiX fixture cases. Its peak stress remains unconverged and its actual material/impact/attachment are unqualified. The 972-case compliant-stop investigation retains 226 cases exceeding a proposed 24 mm total allowance; 148 of 243 local fit sensitivities are nonpositive. False receiver-lock indication, uncontrolled gate closure and missing external sled custody remain explicit physical counterexamples. That dated coupon study supplied no feeder selection or hardware release; the later FM08-R3 design decision is reported separately.
 
 ![Genuine Python-hosted FreeCAD Qt/Coin viewport of the CT-01 receiver-capture pose. Source document and capture provenance are retained; this is a native application view, not hardware or a completed mechanism.](../validation/captive_transfer_review/release/FreeCAD_CT01_receiver.png){width=92%}
 
@@ -571,7 +583,7 @@ The separate [FM-02 engineering review](../validation/feeder_actuation_review/RE
 
 The integrated ball-screw candidate is a separate ambient component screen and is not installed in this CAD. A quintic rest-to-rest law, moving load, drag, rotational inertia and component limits are checked in 972 scenarios. Polynomial extrema and exact piecewise integrals reproduce every decision; at 801 samples the maximum relative torque and input-energy-proxy discrepancies are $8.58\times10^{-8}$ and $1.08\times10^{-6}$. These are numerical model errors, not physical uncertainties. The sampled 10, 15 and 20 s cases meet the declared ambient screen; 5 s cases fail.
 
-The study retains 115 of 324 nonpositive fit residuals, 12 of 54 winding-temperature failures, 96 no-stop brake sensitivities and 72 finite runouts above the proposed 24 mm allowance. Actual component temperature domains differ, and the two-node thermal model is uncorrelated. A slow 103.0 s handling assumption does not fit eleven later twelve-release coasts of 92.182 s; a faster 74.5 s assumption fits, without actuator, attitude, indexing or full campaign validation. These findings define remaining engineering requirements. All seven feeder alternatives remain unselected; Gen5's achieved computational result is unchanged.
+The study retains 115 of 324 nonpositive fit residuals, 12 of 54 winding-temperature failures, 96 no-stop brake sensitivities and 72 finite runouts above the proposed 24 mm allowance. Actual component temperature domains differ, and the two-node thermal model is uncorrelated. A slow 103.0 s handling assumption does not fit eleven later twelve-release coasts of 92.182 s; a faster 74.5 s assumption fits, without actuator, attitude, indexing or full campaign validation. These findings define remaining engineering requirements. At that dated stage, all seven feeder alternatives remained unselected; the subsequent FM08-R3 selection is reported separately. Gen5's computational result is unchanged.
 
 ## Feeder geometry, component stiffness and contact limitations: 21 October 2026
 
@@ -642,7 +654,7 @@ Nine algebraic checks reproduce 182 numerical fields. The source package retains
 ![Ideal stroke compatibility and capture/circularization accounting for a common final lunar orbit. Assumed payload/host masses and acceleration screens are stated in the source package; no useful lifetime or provider performance is established.](../validation/extended_feasibility_bounds/feasibility_bounds.png){width=98%}
 
 
-## Seven-feeder common-boundary CAD comparison: FDR09
+## Seven-feeder common-boundary CAD comparison: FDR09, 22 October 2026
 
 The [FDR09 development study](../validation/feeder_common_boundary/README.md) replaces unequal one-cell/four-cell mass comparisons with a declared four-payload inventory: two 1U and two 3U satellites, one common receiver and separate local feed stations. Fixed-cell candidates model a 900 mm shared receiver travel on 1,600 mm rails; the drum retains a distinct index/extraction arrangement. Common 3U outer handling packages use passive 1U inserts, each with modeled mass 0.185933 kg. This packaging is not an optimized storage-density result or a qualified spacecraft interface.
 
@@ -656,15 +668,153 @@ The [FDR09 development study](../validation/feeder_common_boundary/README.md) re
 | Nested telescope | 18.132 | 4.230 | Not eligible |
 | Belt shuttle | 17.915 | 5.830 | Not eligible |
 
-: FDR09-R1 partial mass accounting. Catalog options are not integrated or qualified. Neither column establishes full installed mass, CG or inertia; missing hardware is not assigned zero mass.
+: FDR09-R1 partial mass accounting. Catalog options are not integrated or qualified. Neither column establishes full installed mass, CG or inertia for FDR09-R1; missing hardware is not assigned zero mass.
 
-The source-backed option screen contains 384 time/station evaluations using manufacturer motor/gear/controller data. Listed cycle times remain conditional actuator options, not verified complete feed cycles. Spring force deficiency, a 35.5 mm pantograph output gap, telescopic component intersections and common-path interferences remain in the source records. Mandatory eligibility is evaluated before weighted ranking; none of the seven candidates is eligible, so no defensible numerical winner or controlled feeder freeze follows.
+The source-backed option screen contains 384 time/station evaluations using manufacturer motor/gear/controller data. Listed cycle times remain conditional actuator options, not verified complete feed cycles. Spring force deficiency, a 35.5 mm pantograph output gap, telescopic component intersections and common-path interferences remain in the source records. Under the original FDR09 eligibility rule, mandatory gates preceded weighted ranking. None of its seven R1 candidates was eligible on 22 October, so that study supplied no controlled selection. The subsequent FM08-R3 design decision uses the explicitly stated academic-design boundary below.
 
 The separate lead R2 correction trims obstructing guides/capture racks, shortens the screw blank, shifts its end bearing and relieves a guide-bearing housing. The checked nominal rectangular payload sweep changes from eight intersections to zero; the identified 16.176779 mm³ housing interference becomes zero. The corrected custom-material subtotal is 18.492547 kg. A 0.25 mm radial screw-bearing gap remains; positive bearing support, full-carriage clearance, loaded/tolerance/fault behavior, insert lock/return custody and full installed accounting are not accepted. R2 is separate from the seven R1 comparisons and from FM07-R6.
 
 Ten native/STEP pairs cover seven R1 candidates, corrected lead R2 and two insert coupons. A separate CadQuery/OpenCascade import checks all ten exchanges. For the eight full comparison assemblies, imported solid counts and volumes agree with the native records under the declared 1 ppm relative serialization-volume criterion. This is not a manufacturing tolerance or a different-kernel certification. The original spring serialization diagnostic and its sampled-surface evidence remain recorded.
 
 ![CAD material subtotals and separately listed catalog hardware options for the same four-payload boundary. Neither is a full installed-system mass; all candidates retain unpassed mandatory gates. Source: FDR09-R1.](../validation/feeder_common_boundary/comparison_mass.png){width=98%}
+
+## Selected feeder design: FM08-R3, 23 October 2026
+
+FM08-R3 selects independently driven, guided lead-screw cassettes feeding one indexed reusable receiver. The reference inventory is two passive 1U and two passive 3U envelopes. Fixed 1U spacers remain in the cassettes; retractable receiver stops distinguish the aft datums while retaining a common leading datum. No loose insert is released with the spacecraft. Rack-and-pawl transfer is retained as the runner-up.
+
+The [selected-design record](../validation/selected_feeder/README.md) contains editable native CAD, STEP exchanges, nominal operating-envelope checks, the declared tolerance and analytical load screens, supplier-reference actuator sizing and executable sequence/fault checks. The selection defines a computational academic mechanism; it is separate from a qualified manufactured mechanism.
+
+### Represented geometry and mass properties
+
+The stowed native assembly contains 154 named parts. Its represented custom material is **25.364310 kg**, with material CG **[592.142, 51.908, 54.706] mm** in the assembly X/Y/Z frame. X is the launch/index direction, Y is the local feed direction and Z is the assembly vertical. The bounding envelope is **1,610 × 877.8 × 388 mm**, or **548.344 L** of bounding-box volume. This is an accommodation requirement, not an approved host deck allocation.
+
+The represented material inertia about that CG is:
+
+$$
+I_{\mathrm{CG,represented}}=\begin{bmatrix}
+1.180194&-0.520026&0.013393\\
+-0.520026&4.180394&-0.028242\\
+0.013393&-0.028242&5.022837
+\end{bmatrix}\;\mathrm{kg\,m^2}.
+$$
+
+The five complete assembly states each contain 154 physical features and 154 STEP solids. Inclusive exact-solid checks find no positive-volume interference. The installed operating-envelope matrix passes all 115 sampled cases, with 18 additional local payload-motion samples. Separate CadQuery/OCP imports pass the five STEP validity, solid-count and volume checks, with maximum relative volume difference 2.94 × 10⁻¹⁴. FreeCAD and CadQuery use the OpenCASCADE kernel family, so this is a separate import/serialization check rather than independent-kernel certification. Nominal sampled clearances do not establish continuous tolerance, loaded-contact or manufactured acceptance.
+
+These properties exclude payload internals and catalog hardware masses. The separately listed primary-drive catalog subtotal is 4.473 kg, giving a **29.837310 kg partial feeder accounting boundary** before omitted equipment. Harness, fasteners, gate/retainer actuation, the launch drive, power source and final thermal hardware are not silently assigned zero mass. Full installed mass, CG and inertia require their resolved installation; the later mission cases therefore use explicit omitted-equipment allowances.
+
+### Architecture trade and sensitivity
+
+The trade assigns 35% to safety/fault control, 25% to packaging/mass, 20% to positioning/custody, 10% to cycle/power and 10% to manufacturability. Scores are structured engineering judgments from the documented mechanisms and available evidence, rather than measured reliability or success probabilities.
+
+| Architecture | Weighted judgment / 10 | Design disposition |
+|:--|--:|:--|
+| Guided lead screw | 7.30 | Selected for controlled pusher displacement and channel containment |
+| Rack and pawl | 7.10 | Runner-up; engagement, backlash and tooth-load detail remain relevant |
+| Spring and two gates | 6.90 | Compact alternative; force, governing, reset and gate synchronization need redesign |
+| Belt shuttle | 6.70 | Alternative; tension, compliance and retention require attention |
+| Indexed drum | 6.40 | Alternative; common indexing and extraction increase integration demands |
+| Nested telescope | 6.05 | Alternative; extension overlap and alignment require further design |
+| Pantograph | 5.50 | Alternative; joint count, near-flat loads and output continuity penalize this case |
+
+: FDR10 architecture selection under the declared safety-led weights. The scores are judgments, not hardware measurements.
+
+The 0.20-point lead over rack and pawl is modest. Equal weights give a three-way tie at 7.20; packaging-emphasis weights favor the spring/two-gate concept, and cycle-emphasis weights favor rack/pawl. The decision is consequently a requirement-dependent engineering compromise. The rejected concepts retain their research value and source history; the selection does not establish a universally optimal mechanism.
+
+![FDR10 weighted architecture judgments. The seven values follow the stated weights; sensitivity changes the preferred architecture. This plot contains no experimental reliability data.](../validation/selected_feeder/verification/results/feeder_trade.png){width=98%}
+
+### Operating sequence and fault containment
+
+![FM08-R3 prescribed storage, transfer, seated and launch-preparation states. CAD-derived visualization; fixed 1U spacers remain in storage. The image does not represent measured motion or a physical test.](../validation/selected_feeder/cad/figures/FM08_sequence.png){width=100%}
+
+The nominal sequence is: retain the payload in its cell; index and dock an empty receiver; establish docking, empty-receiver and closed-far-stop proof; open the cell boundary; advance the guided pusher through the capped channel; establish seated-presence and settling proof; close the near-side receiver capture tabs; withdraw the pusher; close the cell; then permit launch preparation. The receiver toothed-belt index drive uses a split clutch: independent disengagement proof is required before launch arming. After launch, independent stopped-carrier proof precedes clutch engagement and engagement proof, then empty return and home/reset. The next feed is inhibited until this sequence completes.
+
+A power loss, jam, timeout, contradictory sensor state or double-feed request inhibits release and commands a retained safe state. A failed cell may be isolated only after a verified clear common path and supervised recovery. A bridge obstruction inhibits the entire shared path. The capped channel, closed receiver far stop, guides, hard stops and a normally engaged static brake support the containment concept. The pusher does not pull the spacecraft: low-friction forward motion inside the channel and end-stop impact remain unmeasured. A jammed payload requires supervised recovery; pusher reversal alone does not demonstrate payload retrieval. Screw self-locking is not assumed.
+
+The deterministic state model passes **32,821 enumerated logic cases**, including the four-cell sequence, return/home/reset, fault injection, forbidden commands, repeated release and isolated-cell continuation. The twelve-cell extension passes a separate 98,325-case logical campaign. Nominal payload transfer requires a coast condition, with host burn off and a stable-host proof; launch also requires 5 s with the host burn off. An unexpected burn inhibits the cycle and resets the guard. These are tests of the implemented logical contracts. Actual latch engagement, truthful independent sensor evidence and brake response remain physical interface contracts; the test count is not a hardware reliability estimate.
+
+### Conditional actuator and structural sizing
+
+The local drive reference is a FAULHABER 3242G024BX4 motor with a 32GPT 9:1 gearhead and MC5005S controller. The receiver uses the same motor family with a nominal 59:1 gearhead, actual ratio 59.4. The captured supplier data and parameter classifications [13–17] are retained in the local package. Supplier ambient ratings do not establish vacuum, launch or thermal qualification.
+
+The local prescribed transfer is 200 mm in 30 s; the four-cell receiver indexes up to 900 mm in 20 s. The calculation assumes 50 N nominal resistance, a 100 N adverse screen and 0.50 gear efficiency. The trapezoidal-thread model includes flank friction, bearing drag and reflected rotating inertia; the receiver model includes tangential belt force at the declared 12 mm pulley radius and reflected inertia. Belt tooth engagement, pretension and backlash are not supplier-qualified by this sizing model. Motor continuous torque is 0.0418 N·m in the captured data.
+
+| Motion and resistance | Peak motor torque / N·m | Peak motor speed / rpm | Peak modeled current / A |
+|:--|--:|--:|--:|
+| Local feed, 50 N | 0.01485 | 3600 | 0.448 |
+| Local feed, 100 N | 0.02627 | 3600 | 0.724 |
+| Receiver, 50 N | 0.02038 | 4254 | 0.581 |
+| Receiver, 100 N | 0.04058 | 4254 | 1.069 |
+
+: Conditional drive sizing at the declared motion profiles. The 100 N receiver result uses approximately 97% of the catalog continuous torque; the small margin depends on the assumed resistance and efficiency.
+
+A pinned-pinned Euler calculation for the 7.4 mm screw root and a 350 mm supported span gives 2372 N critical load and 0.00407 mm calculated axial shortening at the 100 N adverse condition. The restraint-pin screen uses declared material allowables and 5/10/25 g sensitivity loads; these are study bands rather than provider qualification. The corridor calculation retains **0.623 mm** after its stated manufacturing/alignment/thermal and 75 N guide-deflection stack. It applies to the modeled corridor direction, rather than qualifying every bearing fit, end barrier or spacecraft gauge.
+
+The local 0.12 N·m static-brake reference exceeds the ideal frictionless 155 N backdrive demand by a factor of 2.43. The receiver separately uses a 2 N·m static-brake reference against a 1.2 N·m holding demand at 100 N and 12 mm pulley radius, giving a static ratio of 1.67. These comparisons do not establish dynamic arrest distance, impact load, engagement time or wear. Source friction, gear efficiency, actual assembled stiffness and environmental behavior require correlation before a hardware performance rating.
+
+### Evidence disposition
+
+The selected feeder is an academic design baseline with controlled geometry and bounded verification. The earlier FM06-R1 rigid-contact model remains numerically unconverged; its endpoint differences and impulsive peaks are not used as release-precision, latch-load or contact-force acceptance for FM08-R3. Prescribed kinematics and analytical load assumptions are explicitly distinguished from a calibrated dynamic contact model. The Gen5 motor speed and installed-mass results do not transfer to this new geometry.
+
+## Twelve-cell geometric scaling and current mass boundary
+
+The detailed twelve-cell extension uses six 1U and six 3U envelopes, repeated from the four-cell module with a 4,200 mm rail and 3,500 mm receiver travel. Its actual stowed native assembly contains **398 named parts** and **72.730463 kg represented custom material**. The corresponding material CG is **[1883.728, 52.088, 57.072] mm**. Its bounding envelope is **4,210 × 877.8 × 388 mm**, or **1,433.869 L**; these dimensions are a host-accommodation requirement, without provider acceptance.
+
+Both twelve-cell native/STEP states contain 398 physical features and 398 solids. Their inclusive exact-solid checks report zero positive-volume interference; all twelve modeled rectangular payload swept corridors also clear the represented solids. These checks cover nominal represented geometry, rather than tolerance distributions, dynamic contact or provider accommodation.
+
+The selected primary-drive catalog subtotal is 10.601 kg, giving **83.331463 kg partial feeder accounting**. Neither this subtotal nor the four-cell 29.837310 kg subtotal is full installed mass. The matched mission cases add declared omitted-equipment allowances of 10, 25 or 50 kg, covering still-unspecified installation burden rather than assigning it zero mass. The resulting four-cell device assumptions are 39.837, 54.837 and 79.837 kg; the twelve-cell assumptions are 93.331, 108.331 and 133.331 kg. They are sensitivity cases, not weighed or supplier-complete assemblies.
+
+The 3,500 mm receiver travel retains the prescribed 90 mm/s peak speed by using 77.778 s per full index. The conservative feeder-only allocation is 223.556 s per payload, or 2,682.667 s for twelve. This allocation excludes the launch, braking, charging and attitude-control requirements; the native orbital follow-up checks the declared schedule separately.
+
+## Matched mission retarget with the selected feeder
+
+FBR-02 retargets the common full position/velocity delivery states and common final epoch for both host-assisted spring separation and imposed 3–6 m/s VOLLEY release. The 300 kg base-host, 220 s specific impulse, J2 force model, 100 N maneuver-force ceiling and 10/30 kg initial fuel for four/twelve spacecraft are declared study inputs, rather than provider ratings. Every release has a 5 s zero-force preparation guard and a 20 s post-release guard. No achieved electromagnetic release speed is inferred.
+
+All ten selected-mass targeting cases meet their declared force, fuel and state-residual criteria. The 26 native Orekit runs and ten campaign conservation/guard checks pass. The maximum nominal terminal position discrepancy is 1.973 × 10⁻⁵ m and the maximum velocity discrepancy is 2.184 × 10⁻⁸ m/s. Maximum conservation residuals are 7.96 × 10⁻¹³ kg for mass and 6.61 × 10⁻¹⁰ kg·m/s for momentum. These measure numerical replay consistency, rather than physical delivery precision. Reducing maximum step from 60 to 30 s changes terminal position by at most 4.72 μm for four spacecraft and 8.26 μm for twelve. Separate frozen-command 3U mass probes from 4 to 6 kg miss the target by 19.543 km and 43.018 km, showing the need for accurate payload mass and retargeting. The following table uses the central 25 kg omitted-equipment allowance for VOLLEY. The spring reference is also evaluated at longer maneuver windows because it does not inherit the shared feeder handling time.
+
+| Manifest and release option | Assumed device mass / kg | Host peak force / N | Propellant used / kg |
+|:--|--:|--:|--:|
+| Four, spring, f = 0.35 | 16.000 | 13.356 | 6.076 |
+| Four, VOLLEY + 25 kg allowance, f = 0.35 | 54.837 | 6.979 | 2.039 |
+| Twelve, spring, f = 0.10 | 48.000 | 93.657 | 17.676 |
+| Twelve, spring, f = 0.20 | 48.000 | 52.044 | 19.769 |
+| Twelve, spring, f = 0.35 | 48.000 | 35.858 | 24.100 |
+| Twelve, VOLLEY + 25 kg allowance, f = 0.10 | 108.331 | 51.884 | 4.852 |
+
+: FBR-02 conditional matched-state mission resources. The parameter f sets the fraction of each transfer leg assigned to each of its two maneuver windows; it is not an overall mission duty cycle. Device masses are explicit partial-feeder-plus-allowance assumptions, rather than supplier-complete installations.
+
+The four-cell minimum pre-release coast is 268.5 s, leaving 160.5 s after its 108 s feeder-only allocation. The twelve-cell coast is 241.818 s, leaving 18.263 s after 223.556 s of feeder handling. Charging, launch, braking, reset and attitude-control operations must also fit their actual available intervals; a positive feeder allocation residual alone does not close the complete operational schedule.
+
+At the central allowance, VOLLEY uses 4.036 kg less propellant for four spacecraft and 12.824 kg less for twelve than the lowest-consumption tested spring policy. Its assumed device dry-mass penalties are 38.837 kg and 60.331 kg, respectively. The dry burden therefore exceeds these propellant-use reductions. The spring f = 0.35 policy also needs less peak force than the twelve-cell VOLLEY policy. The result establishes a conditional propulsion-resource trade, without an installed-mass, optimized wet-mass, cost or customer-service advantage.
+
+## Resource requirements and lunar navigation sensitivity
+
+The separate [SYS-01 and LNS-01 package](../validation/system_feasibility_closure/README.md) extends the requirements analysis without assigning an achieved launch rating. SYS-01 evaluates 108 energy/charging cases, 18 constant-force stroke cases, 36 single-axis host-impulse cases and 54 optimistic heat-rejection cases. Retained host mass is 300 kg. Net efficiency of 25/50/75% and charging power of 25/50/100 W are declared investigation bands.
+
+For a 4 kg payload at an imposed 6 m/s relative release, ideal reduced-mass energy is 71.053 J per shot. Four independent identical 4 kg shots at assumed 25% net efficiency require at least 1.137 kJ from the bus and 22.74 s of charging at 50 W, before additional source/catcher burdens. This homogeneous sensitivity case is distinct from the mixed 1U/3U reference manifest. Recoil work and energy are accounted for; a centered point impulse produces zero single-axis angular impulse, while an offset changes the angular demand. Flexible-host response, real attitude control and thermal correlation are outside that point-impulse model.
+
+![SYS-01 charging and acceleration requirements. Left: twelve independent 4 kg shots, 50 W charging and assumed net efficiencies. Right: the constant-force lower bound for a 1.3 m stroke. The 25 g line is a study ceiling, not payload qualification; source, catcher and environmental burdens remain additional.](../validation/system_feasibility_closure/figures/resource_requirements.png){width=100%}
+
+LNS-01 evaluates lunar osculating-periapsis sensitivity at three staging apoapsides and three assumed uncertainty bands. The model uses two-body motion about a spherical lunar reference and a point release at apolune. Each case has 4,096- and 8,192-sample checks, with finite-difference refinement of the local state Jacobian. The uncertainty inputs are declared independent zero-mean Gaussians, rather than measured navigation or actuator statistics.
+
+| Assumed band | Position σ | Velocity σ | Pointing σ | Relative-speed σ |
+|:--|--:|--:|--:|--:|
+| Tight | 10 m | 0.01 m/s | 0.01° | 0.1% |
+| Middle | 100 m | 0.1 m/s | 0.1° | 1% |
+| Wide | 1 km | 1 m/s | 1° | 5% |
+
+: LNS-01 assumed independent uncertainty bands. The distributions are study choices, rather than flight specifications.
+
+Under the middle band, the linearized periapsis standard deviation is approximately 570 m, 581 m and 1,357 m for staging apoapsides of 100, 1,000 and 10,000 km. The corresponding 8,192-sample standard deviations are 573 m, 583 m and 1,353 m. The local Jacobian refinement checks pass the stated 10⁻⁴ relative criterion. These comparisons support the sensitivity calculation within its model; lunar terrain, nonspherical gravity, external perturbations, coverage, communications and useful orbital lifetime are excluded.
+
+![LNS-01 periapsis sensitivity for three declared uncertainty bands. Position, velocity, pointing and relative-speed assumptions are specified in the table. These are conditional osculating-orbit distributions, rather than measured navigation precision, collision probability or useful lifetime.](../validation/system_feasibility_closure/figures/lunar_navigation_sensitivity.png){width=100%}
+
+
+### Native lunar coast and gravity-model sensitivity
+
+The separate [LNC-01 native GMAT R2026a study](../validation/lunar_native_coast/REPORT.md) propagates three prescribed lunar orbits from 23 October 2026, using DE421 Earth/Sun point perturbations and lunar gravity degree/order 20, 40 and bounded 80 comparisons. All 18 prescribed attempts have captured native histories. Of twelve cases requesting 180 days, seven terminate at the 1,737.4 km spherical-radius condition and five reach 180 days; the six higher-degree/alternative-field cases complete their requested 30 days. The stated 90° inclination is relative to MJ2000Eq, rather than a lunar-polar mission plane.
+
+For the 100 km circular 90° reference, the spherical stop occurs at 115.859 days with degree/order 20 and 117.984 days with 40. At the common 90-day checkpoint, reducing maximum integration step from 120 to 60 s changes position by 0.0575 m, whereas degree 20 to 40 changes it by 10.35 km. Degree 40 to 80 differences at 30 days remain 619–1,398 m across the three orbit cases. Small integration-step sensitivity therefore does not establish gravity-model convergence. These finite-horizon coasts exclude topography, stationkeeping and delivery targeting; neither a spherical stop nor reaching 180 days establishes useful mission lifetime or continuous terrain clearance.
+
 
 # Bibliography {.unnumbered}
 
@@ -680,3 +830,9 @@ Ten native/STEP pairs cover seven R1 candidates, corrected lead R2 and two inser
 10. A. Mishra, *VOLLEY-thesis*: authored manuscript, baseline, provenance, figures and validation records, technical evidence snapshot `b2e2c1f3932deed363281cc4a94bedfdc155c495`, 19 October 2026. Project record, not independent experimental evidence.
 11. VOLLEY, *Gen6 G0 Mission and Article Requirements*, 12 October 2026. Reference study requirements, not achieved performance.
 12. H. Q. Yamaguchi and M. Morishita, “End effects of Halbach field magnet-type linear motor,” *Electrical Engineering in Japan*, 2023, doi: [10.1002/eej.23450](https://doi.org/10.1002/eej.23450). Bibliographic context; not an experimental validation of VOLLEY.
+
+13. FAULHABER, *Series 3242 BX4 Brushless DC-Servomotors*, manufacturer data sheet, reference 3242G024BX4. [Manufacturer source](https://www.faulhaber.com/fileadmin/Import/Media/EN_3242_BX4_DFF.pdf).
+14. FAULHABER, *Series 32GPT Planetary Gearheads*, manufacturer data sheet. [Manufacturer source](https://www.faulhaber.com/fileadmin/Import/Media/EN_32GPT_FMM.pdf).
+15. FAULHABER, *MC 5005 S Motion Controller*, manufacturer data sheet. [Manufacturer source](https://www.faulhaber.com/fileadmin/Import/Media/EN_MC5005S_DFF.pdf).
+16. Thomson, *Neff Lead Screws*, catalog reference SPT10x2M/SB3700; captured parameter review and access boundary are retained in the selected-design source record. [Catalog source](https://www.thomsonlinear.com/downloads/screws/Neff_LeadScrews_bruk.pdf).
+17. Miki Pulley, *Spring Actuated Brake*, catalog reference used for static holding sizing. [Catalog source](https://www.mikipulley-us.com/documents/Catalog/Catalog_Spring_Actuated_Brake.pdf).

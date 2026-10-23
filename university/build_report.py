@@ -27,7 +27,7 @@ def frontmatter(path):
  for text,bold,size in [('A THESIS ON',True,12),('VOLLEY',True,18),('Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism',True,16),('THESIS SUBMITTED IN PARTIAL FULFILLMENT OF THE REQUIREMENT FOR THE AWARD OF THE DEGREE',False,12),('BACHELOR OF TECHNOLOGY IN MECHANICAL ENGINEERING',True,14),('SUBMITTED BY',True,12),('Adityavardhan Mishra — 23070125054',False,12),('Pratham Chawla — 23070125029',False,12)]:
   p=new.add_paragraph();p.alignment=1;r=p.add_run(text);r.bold=bold;r.font.size=Pt(size)
  p=new.add_paragraph();p.alignment=1;p.add_run().add_picture(str(U/'final_review_2026_10_10/assets/sit-logo.jpg'),height=Mm(18))
- for text in ['Under the Guidance of Vikas Gulia','SYMBIOSIS INSTITUTE OF TECHNOLOGY','A constituent of Symbiosis International (Deemed University), Pune — 412115','2026','First similarity-review issue · 21 October 2026']:
+ for text in ['Under the Guidance of Vikas Gulia','SYMBIOSIS INSTITUTE OF TECHNOLOGY','A constituent of Symbiosis International (Deemed University), Pune — 412115','2026','First similarity-review issue · 23 October 2026']:
   p=new.add_paragraph(text);p.alignment=1
  new.add_page_break();new.add_paragraph('Certification','Heading 1');new.add_paragraph('Unsigned review issue')
  new.add_paragraph('This report is presented by Adityavardhan Mishra (23070125054) and Pratham Chawla (23070125029) for academic review in the Bachelor of Technology programme in Mechanical Engineering at Symbiosis Institute of Technology, Pune. The project guide identified for the report is Vikas Gulia.')
@@ -67,7 +67,7 @@ def frontmatter(path):
    run=OxmlElement('w:r');t=OxmlElement('w:t');t.text=number;run.append(t);f.append(run);p._p.append(f);p.add_run(': '+caption)
  d.core_properties.title='VOLLEY: Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism'
  d.core_properties.author='Adityavardhan Mishra; Pratham Chawla'
- d.core_properties.subject='First similarity-review issue,21 October2026;no approval or similarity result asserted'
+ d.core_properties.subject='First similarity-review issue, 23 October 2026; no approval or similarity result asserted'
  d.core_properties.comments=''
  d.save(path)
 

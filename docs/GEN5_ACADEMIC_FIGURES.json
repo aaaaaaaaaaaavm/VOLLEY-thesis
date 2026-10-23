@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-21-FM07-FCE12",
+  "revision": "2026-10-23-FM08-R3-FDR10",
   "hardware_measurements": false,
   "boundary": "Legacy graphs remain historical model outputs with current manuscript limitations. STEP-derived views do not prove loaded clearance. This catalog fixes image identity; method/units/case are described by captions and validation records.",
   "figures": [
@@ -881,14 +881,99 @@
         "Current study, manuscript, academic report or front page as applicable"
       ],
       "evidence_class": "Source-linked native/numerical calculation; revision-specific; no hardware measurement"
+    },
+    {
+      "path": "validation/selected_feeder/cad/figures/FM08_assembly.png",
+      "sha256": "d5c9b16607bd93fa51a2473eff1c6542c37ef515bf5663d380027c0894f0568e",
+      "bytes": 820387,
+      "referenced_by": [
+        "README.md",
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "CAD-derived visualization or declared computational study; no physical measurement. See source package caption and provenance."
+    },
+    {
+      "path": "validation/selected_feeder/cad/figures/FM08_sequence.png",
+      "sha256": "78bb2d3a887bd460293418dd50d1df912234e23722eee53c47f7543c680db030",
+      "bytes": 2338682,
+      "referenced_by": [
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/build_presentation.py"
+      ],
+      "evidence_class": "CAD-derived visualization or declared computational study; no physical measurement. See source package caption and provenance."
+    },
+    {
+      "path": "validation/selected_feeder/verification/results/feeder_trade.png",
+      "sha256": "62ca2d3c82b59a460d77331f61bc3be95efa49d83a0266a95467d9a97d385339",
+      "bytes": 90394,
+      "referenced_by": [
+        "source/paper.tex",
+        "university/GEN5_FINAL_YEAR_REPORT.md",
+        "university/final_review_2026_10_10/build_presentation.py"
+      ],
+      "evidence_class": "CAD-derived visualization or declared computational study; no physical measurement. See source package caption and provenance."
+    },
+    {
+      "path": "validation/system_feasibility_closure/figures/lunar_navigation_sensitivity.png",
+      "sha256": "14bdd889e18d5c145d963a8359822ac7ce2955501c33662bf5f4dc9b270ff5a8",
+      "bytes": 93765,
+      "referenced_by": [
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "CAD-derived visualization or declared computational study; no physical measurement. See source package caption and provenance."
+    },
+    {
+      "path": "validation/system_feasibility_closure/figures/mission_mass_sensitivity.png",
+      "sha256": "e6e08748dce316cd69d364d05d076779c10956801204019bac85721f7800131c",
+      "bytes": 70454,
+      "referenced_by": [
+        "university/final_review_2026_10_10/build_presentation.py"
+      ],
+      "evidence_class": "CAD-derived visualization or declared computational study; no physical measurement. See source package caption and provenance."
+    },
+    {
+      "path": "validation/system_feasibility_closure/figures/resource_requirements.png",
+      "sha256": "0bf4814881c780c9289dcaf52a2a340cd19bf91f8b0f57fab19fea5e95a5fe26",
+      "bytes": 145797,
+      "referenced_by": [
+        "university/GEN5_FINAL_YEAR_REPORT.md"
+      ],
+      "evidence_class": "CAD-derived visualization or declared computational study; no physical measurement. See source package caption and provenance."
+    },
+    {
+      "path": "validation/system_feasibility_closure/figures/twelve_capacity_plan.png",
+      "sha256": "ce8ff3bfffb62e7211ab55024abbf0925c7aa3e174fe0c5542315b1edec692b4",
+      "bytes": 50128,
+      "referenced_by": [
+        "university/final_review_2026_10_10/build_presentation.py"
+      ],
+      "evidence_class": "CAD-derived visualization or declared computational study; no physical measurement. See source package caption and provenance."
+    },
+    {
+      "path": "source/figures/selected_feeder_trade.png",
+      "sha256": "62ca2d3c82b59a460d77331f61bc3be95efa49d83a0266a95467d9a97d385339",
+      "bytes": 90394,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "Manuscript image alias of source-linked selected-design or system figure; no physical measurement"
+    },
+    {
+      "path": "source/figures/selected_feeder_sequence.png",
+      "sha256": "78bb2d3a887bd460293418dd50d1df912234e23722eee53c47f7543c680db030",
+      "bytes": 2338682,
+      "referenced_by": [
+        "source/paper.tex"
+      ],
+      "evidence_class": "Manuscript image alias of source-linked selected-design or system figure; no physical measurement"
     }
   ],
   "document_sha256": {
-    "README.md": "8e83c1a5e43702b1a7cf71c758422893639e1b80e49e9db547ee849a8ed22d2f",
+    "README.md": "7df6bd2e83566299ea46aed1c4c775073b6bb9374275a4c39afd050de72c4bcc",
     "reports/GEN5_COMPUTATIONAL_REVIEW.md": "1541b43f05818888dd0cc1ded1fe42dc1d7e5e73f3f17a8a6ecc45668d6619e6",
-    "source/paper.tex": "5df452b44fec795cc1047f18124e112621dc5280ee8294c43eb82bf1fe62ae6e",
-    "university/GEN5_FINAL_YEAR_REPORT.md": "88c77c762fef93104c8780cdb32a9b450c85a97ee83cdacc77119035a91d3037",
-    "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "c20addae5df14e1100f5a2f943fed3347652f38c17a1befb99664f1045a25158",
+    "source/paper.tex": "7c830e957e6ad3b18772b74672859817ad565bd42f4810b18fb0b4d5749443c0",
+    "university/GEN5_FINAL_YEAR_REPORT.md": "f3446f8f1b6a8e3d2ba9601ff8f196a8af56dd90804542284e8dc34324da0bb1",
+    "university/final_review_2026_10_10/PANEL_HANDBOOK.md": "d5ad160cd7e7a1746dc21415a3cd191ad30724ff70d92a63cd7edf776af817fd",
     "validation/orbit_evidence/README.md": "3f350ec088a33fb413861c20e88e04946c183bb67c67c2378625103412190967",
     "validation/feeder_review/README.md": "b226b959274eb24030f6f20b4ac58932154fa9b2713ea486bf49a09bb4dba94a",
     "validation/coupled_delivery/README.md": "2969768ba2bff29cf6f80fcf51a1a7828ad01b6fc8a0a1bb1500518bc7ee7fbd",

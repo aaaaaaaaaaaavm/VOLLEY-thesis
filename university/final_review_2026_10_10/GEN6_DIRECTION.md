@@ -4,6 +4,10 @@ This is a dated statement of **research direction**, not a performance result or
 
 **12 October addendum:** The revised future-work slides now include the distinct P130 matched four-release surrogate and P131–P132 first-article screens. Both release strategies hit the same ideal full-state targets under P130's control construction, and the assumed device-plus-fuel comparison favors springs by 10.7177 kg. Two native FreeCAD/STEP partial envelopes exist, but neither is selected for build; G0 and G1 remain open. The original PLAN-R2 description below is a historical planning source, not evidence that those gates passed. See the [Go 3 review](../../GO3_ACADEMIC_RELEASE_REVIEW.md).
 
+## Selected feeder — 23 October 2026
+
+The academic feeder design baseline is **FM08-R3**, an independently actuated guided lead-screw cassette architecture with fixed 1U spacers and a common indexed receiver. The [local selected-design package](../../validation/selected_feeder/README.md) supplies the current decision and evidence boundary. The earlier architecture records below remain dated research history. This design selection is separate from physical qualification and from the 1 km/s research objective.
+
 ## Mission and investigation envelope
 
 The host performs coarse orbital repositioning; VOLLEY aims to provide individually commanded release conditions to sequential CubeSats of different supported sizes. The controlling Gen6 objective is one reusable launch path with sequential loading. The approximate 1–2 m/s low end through 1 km/s high end is an **architecture-trade investigation envelope**. It is not a selected operating specification, a demonstrated speed, evidence of payload tolerance, or provider accommodation.

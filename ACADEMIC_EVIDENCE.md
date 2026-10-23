@@ -1,8 +1,8 @@
-# Academic evidence guide and examination questions
+# Academic evidence and scope
 
 The thesis claim is narrow: **a fixed Gen5 system-level design was computationally evaluated and shown to fail an important 3U mass criterion despite modeled orbital utility.** This guide links the result, counterresult and limitation within this repository.
 
-| Examiner question | Answer to present | Inspect here |
+| Technical question | Evidence-based response | Local record |
 |:--|:--|:--|
 | What exactly was designed? | A 1.5 m release station on 1.8 m structural longerons, 1.3 m powered stroke, reusable sled, energy store, arrest system and conceptual twelve-3U magazine. | [System manuscript](source/paper.tex), [Gen5 CAD](cad/step/gen5/) |
 | Does the native assembly fit? | The as-drawn side-fed reference does not: 11 mm shortfall, 32,915 mm³ track/cassette clash per side and 17 intersecting leaf-solid pairs overall, including sled/track and sled/stator. | [FreeCAD document](cad/native/Gen5_Review.FCStd), [P116](validation/P116_gen5_assembly_packaging.md) |
@@ -14,7 +14,11 @@ The thesis claim is narrow: **a fixed Gen5 system-level design was computational
 | Does the orbital result establish a delivered mission? | No. The quoted 28.8 km and 1.60× refer to a stated single 450 km, mean-activity model case. Host operations, lifetime variability and complete manifested delivery need separate closure. | [Orbit JSON](analysis/results/astro_results.json), [manuscript limitations](source/paper.tex), [open problems](appendix/OPEN_PROBLEMS.md) |
 | Can an ordinary CubeSat survive release? | Unproven. Modeled acceleration is not a payload-specific load qualification. Retention, contact, tip-off, vibration, contamination and interface approval remain open. | [Manuscript limitations](source/paper.tex), [open problems](appendix/OPEN_PROBLEMS.md) |
 | What was built or physically validated? | No VOLLEY hardware. Literature and third-party products are comparators, not tests of this configuration. | [Provenance](appendix/PROVENANCE.md), [prior art](appendix/PRIOR_ART.md) |
-| What is Gen6? | A separate four-payload 1U/3U surrogate mission and two partial FreeCAD/STEP first-article candidates. Both release strategies reach ideal matched states, but installed-mass assumptions favor springs. The 1 km/s-class goal is distant research; no selected architecture, qualified payload or achieved release speed exists. | [P130 mission](validation/P130_gen6_matched_campaign.md), [P131 CAD/mechanics](validation/P131_gen6_go2_article_bounds.md), [P132 source screen](validation/P132_gen6_go2_power_instrument_screen.md), [Go 3 gate review](GO3_ACADEMIC_RELEASE_REVIEW.md) |
+| What is Gen6? | A separate four-payload 1U/3U surrogate mission and the selected FM08-R3 guided lead-screw feeder design. Both release strategies reach ideal matched states in the earlier mission screen, but its installed-mass assumptions favor springs. The 1 km/s-class goal remains distant research; physical payload qualification and achieved release speed are not established. | [P130 mission](validation/P130_gen6_matched_campaign.md), [P131 CAD/mechanics](validation/P131_gen6_go2_article_bounds.md), [P132 source screen](validation/P132_gen6_go2_power_instrument_screen.md), [Go 3 gate review](GO3_ACADEMIC_RELEASE_REVIEW.md) |
+
+## Selected feeder evidence
+
+The [FM08-R3 package](validation/selected_feeder/README.md) is the current feeder design reference. It contains its selected configuration and the stated nominal-geometric, analytical and sequence-verification evidence. Earlier candidate studies remain dated research records. The design selection does not transfer historical motor performance to the new mechanism or establish physical reliability.
 
 ## Reproduce and inspect
 
@@ -27,7 +31,7 @@ The thesis claim is narrow: **a fixed Gen5 system-level design was computational
 
 The design configuration, analysis chain, captured results, negative mass decision, manuscript, final-review slides and explanatory material form a documented **computational academic study** with a negative mass finding. Decisive model verification, full mission closure and installed-system validation remain open as stated in the local evidence register. This is not hardware verification or a claim that all system requirements passed. A future product needs a provider and ICD, a complete installed-system and mission comparison, feeder/retention/recoil design, payload-specific loads, environmental qualification and repeatable calibrated releases.
 
-The 40-slide deck and full blackbook report carry the evaluated Gen5 findings and separately identified Gen6 studies. The college-provided report sample has been inspected for front matter, chapter structure, figures, tables and typography. The 21 October first similarity-review issue includes an editable DOCX and a reproducible PDF build; institutional format approval and similarity results remain external requirements.
+The 40-slide deck and full blackbook report carry the evaluated Gen5 findings and separately identified Gen6 studies. The college-provided report sample has been inspected for front matter, chapter structure, figures, tables and typography. The 23 October first similarity-review issue includes an editable DOCX and a reproducible PDF build; institutional format approval and similarity results remain external requirements.
 
 **CAD/mass provenance:** the 9.445 kg sled input was computed from historical Gen3 CAD solid volumes and checked with the A4 chassis idealization. The current Gen5 STEP and native FreeCAD packages are geometry models, including a recorded side-fed interference. The 126.6 kg rollup includes assumed component masses and is not a mass extraction from a complete installed Gen5 assembly.
 

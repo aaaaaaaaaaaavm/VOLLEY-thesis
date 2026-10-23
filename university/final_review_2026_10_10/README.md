@@ -1,10 +1,12 @@
-# Final B.Tech project review — candidate for 31 October 2026
+# Final B.Tech project review — 31 October 2026
 
 **Presenters:** Adityavardhan Mishra (PRN 23070125054) and Pratham Chawla (PRN 23070125029)<br>
 **Guide:** Vikas Gulia<br>
 **Institution:** Symbiosis Institute of Technology, Pune
 
-This directory is the review pack for the computational Gen5 study. It follows an eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
+This directory contains the evaluated Gen5 study and the selected FM08-R3 Gen6 feeder design. It follows an eleven-part outline and the visual format of the supplied university example PDF: SIT cover and logo, cyan content headings, white body, and numbered slides. The example PDF contained another project's work; none of that work was reused as VOLLEY content.
+
+**Current issue: 23 October 2026.** The current delivery files are the [presentation PDF](../VOLLEY_Final_Presentation_2026-10-31.pdf) and [editable PPTX](../VOLLEY_Final_Presentation_2026-10-31.pptx). The [selected feeder package](../../validation/selected_feeder/README.md) provides the current mechanical design and its evidence. The retained filenames below preserve the original evidence-pack location and are byte-identical to the current delivery files.
 
 **12 October technical update:** The expanded [Gen5 whole-assembly audit](../../cad/GEN5_FULL_INTERFERENCE_AUDIT_2026_10_12.md) found 17 intersecting leaf-solid pairs, and five remain in the widened R1 candidate. Slides 18–19 and the handbook now disclose sled/track and sled/stator conflicts alongside the original 11 mm cassette fit failure. These corrected files are a later revision of the dated review pack, not a record of what was shown on 10 October.  Slides 23–25 and the report's future-work section now summarize P130–P132 and the separately unselected Gen6 four-cell packaging screen. They were prepared after the dated 10 October pack and must not be described as material delivered at that earlier review. The Gen5 result slides, which report the evaluated configuration and adverse findings, retain their original scope. [Go 3 release review](../../GO3_ACADEMIC_RELEASE_REVIEW.md) lists the exact academic and engineering gates still open.
 
@@ -31,7 +33,7 @@ Slide 3 and the handbook introduce the [audited market and spacecraft-fit report
 
 - The captured Gen5 computational cases and their negative 3U selection decision are documented. Results are predictions; numerical cross-checks apply to named models and cases. No VOLLEY hardware has been built or physically tested.
 - The modelled Gen5 3U system fails its preset mass-parity criterion against a spring canister. Its stated side-fed reference assembly also fails a width and exact-solid interference check. Both negative findings are in the presentation and handbook.
-- Gen6 is an **open architecture trade**. Its approximately 1–2 m/s to 1 km/s span is an investigation envelope. No 1 km/s performance, mechanism selection, payload qualification, host compatibility or build/test release is claimed.
+- Gen6 includes the **selected FM08-R3 academic feeder design** and separately identified mission and high-speed studies. Its approximately 1–2 m/s to 1 km/s span is an investigation envelope. The selected feeder does not establish a 1 km/s capability, payload qualification, host compatibility or hardware build/test release.
 - The historical thesis manuscript is authored under Adityavardhan Mishra's name. This review pack credits both named presenters; it does not retroactively change manuscript authorship.
 
 ## University final-review rubric coverage
@@ -44,14 +46,37 @@ Slide 3 and the handbook introduce the [audited market and spacecraft-fit report
 | Report and documentation (5 marks) | Manuscript, baseline, validation, provenance and this pack |
 | Presentation, demonstration and viva (10 marks) | Slide 20 computational demonstration |
 
+## Fifteen-minute presentation route
+
+The following allocation is a presentation plan, not a record of a completed timed rehearsal. Both presenters share the route; individual research contributions are not assigned here. The remaining slides provide evidence for questions.
+
+| Slide | Topic | Planned seconds |
+|:--|:--|--:|
+| 1 | Title and research question | 20 |
+| 3 | Mission and customer context | 40 |
+| 4 | Prior art | 50 |
+| 5 | Research gap | 40 |
+| 7 | Methodology | 60 |
+| 12 | Evaluated Gen5 geometry | 40 |
+| 14 | Finite-force cross-check | 70 |
+| 17 | Installed mass | 50 |
+| 21 | Matched mission comparison | 80 |
+| 22 | Gen5 conclusion | 40 |
+| 23 | Gen6 mission reference | 50 |
+| 24 | Selected feeder and operating sequence | 100 |
+| 33 | Architecture selection and verification | 70 |
+| 25 | Physical development and qualification | 50 |
+| 40 | Numerical contact-model boundary | 40 |
+| **Total** | | **900 (15 minutes)** |
+
 ## Rebuild
 
 From this directory, run `python build_presentation.py` and `python render_review_pdf.py` to build the PPTX and matching 40-page PDF. The renderer checks text for overflow. The handbook and presenter PDFs and DOCXs can be rebuilt with Pandoc and XeLaTeX from their Markdown sources. All image references point to files already in this repository. The SIT logo in `assets/` was extracted from the university example PDF solely for this university-format review pack. Check [file hashes](CHECKSUMS.sha256) after copying the submission pack.
 
-## Evidence cutoff, 22 October 2026
+## Evidence cutoff, 23 October 2026
 
-The dated directory and file names retain the original pack location. The current candidate has 40 slides. Slides 28–30 retain explicitly dated earlier evidence; slides 31–34 add the matched gravity-axis follow-up, coupled four/twelve-payload countercases, unselected seven-feeder review and genuine native solver-data view. These additions do not change the frozen Gen5 technical record or establish a completed feeder. The [local feeder report](../../validation/feeder_review/README.md) retains failed arrest-tooth sizing and open handoff/contact/installed-hardware gates. No college approval, plagiarism clearance or delivered presentation is implied.
+The dated directory and file names retain the original pack location. The current candidate has 40 slides. Slides 28–30 retain explicitly dated earlier evidence; slides 31–34 add the matched gravity-axis follow-up, coupled four/twelve-payload countercases, the current feeder selection and a genuine native solver-data view. The current FM08-R3 addition selects the academic feeder design; the frozen Gen5 technical record remains unchanged. The [local feeder report](../../validation/feeder_review/README.md) retains failed arrest-tooth sizing and open handoff/contact/installed-hardware gates. No college approval, plagiarism clearance or delivered presentation is implied.
 
 The later same-day appendix slides 35–36 add CT-01 prescribed-cycle evidence and the RPL-01 negative replenishment finding. Earlier FDR-08 findings remain dated and unchanged. These appendices do not establish a completed feeder or replace academic approval.
 
-Slide 37 contains the dated FBR-01 host-control study. Slides 38–40 contain RVC01/FM07-R6 complete-angle nominal clearance, current component-fixture evidence and FCE13 contact-model diagnosis. The [integrity record](../../validation/feeder_integrity_review/README.md) and [current contact verification](../../validation/feeder_contact_verification/README.md) preserve native source, outputs, CAD, checks and quantitative acceptance boundaries. No completed-hardware or feeder-downselect claim is made.
+Slide 37 contains the dated FBR-01 host-control study. Slides 38–40 contain RVC01/FM07-R6 complete-angle nominal clearance, current component-fixture evidence and FCE13 contact-model diagnosis. The [integrity record](../../validation/feeder_integrity_review/README.md) and [current contact verification](../../validation/feeder_contact_verification/README.md) preserve native source, outputs, CAD, checks and quantitative acceptance boundaries. The later FM08-R3 selection is a computational academic-design decision; no completed-hardware claim is made.

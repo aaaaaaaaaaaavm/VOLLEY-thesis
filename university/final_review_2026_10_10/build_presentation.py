@@ -1,4 +1,4 @@
-"""Build the 10 October 2026 VOLLEY final-review presentation.
+"""Build the controlled VOLLEY final-review presentation.
 
 The cover, heading bands, palette, and slide numbers follow the user-provided
 university format PDF. The PDF was a filled example, so its other project's
@@ -155,7 +155,7 @@ txt(s, "Presented By", 2.4, 4.3, 8.5, 0.36, 17, False, RGBColor(35, 77, 129), al
 txt(s, "Adityavardhan Mishra  ·  Pratham Chawla", 1.55, 4.67, 10.25, 0.44, 20, True, RGBColor(35, 77, 129), align=PP_ALIGN.CENTER)
 txt(s, "PRN 23070125054  ·  PRN 23070125029", 2.1, 5.12, 9.15, 0.34, 15, False, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "Guide: Vikas Gulia", 0.8, 5.68, 5.6, 0.42, 18, True, RGBColor(0, 103, 169))
-txt(s, "Review candidate: 21 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
+txt(s, "Final review: 31 October 2026", 7.4, 5.68, 5.1, 0.42, 18, True, RGBColor(0, 103, 169), align=PP_ALIGN.RIGHT)
 txt(s, "SYMBIOSIS INSTITUTE OF TECHNOLOGY PUNE", 0.6, 6.75, 12.15, 0.45, 23, True, TEMPLATE_RED, align=PP_ALIGN.CENTER)
 txt(s, "1", 12.6, 7.14, 0.3, 0.2, 9, False, MID, align=PP_ALIGN.RIGHT)
 
@@ -204,7 +204,7 @@ card(s, 6.8, 3.47, 5.72, 2.35, "Boundary", "Electromagnetic CubeSat deployment e
 s = base("Objectives", "The analytical research objectives have outcomes",
          "Thesis manuscript, BASELINE.md and PROVENANCE.md; presentation synthesis")
 table(s, ["Research objective", "Final thesis outcome"], [
-    ("Design a commandable 3U system", "Reference CAD and subsystem concepts documented; feed remains open"),
+    ("Design a commandable 3U system", "Evaluated Gen5 reference; separate FM08-R3 feeder selected"),
     ("Calculate shot and control performance", "Historical model completed; finite force screen challenges its rating"),
     ("Evaluate orbital utility", "Conditional orbit results; real lifetime unvalidated"),
     ("Count full installed burden", "Mass rollup completed; 3U parity criterion failed"),
@@ -243,7 +243,7 @@ milestones = [
     ("Mid-2025*", "LSM direction", "Coilgun study gives way to a linear synchronous motor"),
     ("2025–26*", "CAD generations", "Geometry and mass models mature through Gen5"),
     ("Jul–Sep 2026", "Gen5 evidence", "Cross-checks, defect corrections and thesis record"),
-    ("Oct 2026", "Final review", "Gen5 results, failed criteria and thesis record prepared"),
+    ("Oct 2026", "Final review", "Gen5 study and FM08-R3 feeder design selection"),
 ]
 for i, (date, head, body) in enumerate(milestones):
     y = 1.72 + i * 0.93
@@ -395,31 +395,30 @@ image_fit(s, STEP_VIEWS / "gen5_reference_open.jpg", 7.1, 1.9, 5.6, 3.9)
 txt(s, "STEP reference, enclosure hidden; fit fails. No physical test.",
     7.12, 5.96, 5.55, 0.48, 13, True, NAVY, align=PP_ALIGN.CENTER)
 
-# 20 Future Gen6
-s = base("Future work", "Gen6 has a testable mission, but no selected article",
-         "P130 matched four-release J2 screen; P131–P132 first-article bounds", "GEN6 SCREEN • NOT ACHIEVED")
-image_fit(s, ROOT / "figures/gen6_matched_campaign.png", 0.48, 1.55, 7.3, 4.4)
-card(s, 8.06, 1.8, 4.54, 1.88, "Matched mission", "Two 1U + two 3U targets: both release choices reach ideal states. Assumed device + fuel favors springs by 10.72 kg.", TEAL, 18, 15)
-card(s, 8.06, 3.9, 4.54, 1.88, "First-article gap", "Two STEP envelopes exist; ~9.35 kg remains for all omitted hardware under a surrogate parity screen.", RED, 18, 15)
-txt(s, "1 km/s remains separate long-range research; no command range or motor rating established.",
-    0.9, 6.35, 11.55, 0.43, 15, True, NAVY, align=PP_ALIGN.CENTER)
+# Current Gen6 matched-state comparison, separate from evaluated Gen5.
+s = base("Gen6 mission study", "Commanded release trades host propellant against device burden",
+         "FBR-02 · selected-feeder mass retarget and 26 native Orekit replays", "CONDITIONAL RESOURCE STUDY")
+image_fit(s, ROOT / "validation/system_feasibility_closure/figures/mission_mass_sensitivity.png", 0.48, 1.65, 7.3, 4.5)
+card(s, 8.06, 1.8, 4.54, 1.88, "4.04 / 12.82 kg", "Less propellant for four / twelve releases at the central allowance, compared with lowest-consumption tested springs.", TEAL, 21, 15)
+card(s, 8.06, 3.9, 4.54, 1.88, "Dry burden is larger", "38.84 / 60.33 kg added device mass exceeds the propellant-use reduction. No installed-mass advantage established.", AMBER, 20, 15)
+txt(s, "Imposed 3–6 m/s release; no achieved motor rating. Spring alternatives may use longer maneuver windows.",
+    0.9, 6.45, 11.55, 0.43, 14, True, NAVY, align=PP_ALIGN.CENTER)
 
-# Future Gen6 four-cell packaging evidence
-s = base("Future work", "Paired cells improve the nominal acceleration path",
-         "FreeCAD/STEP R0 packaging comparison; no feeder mechanism selected", "GEN6 GEOMETRY • UNSELECTED")
-image_fit(s, ROOT / "cad/gen6_four_cell_r0/release_paired/Four_Cell_R0_Plan.png", 0.52, 1.52, 8.0, 4.7)
-card(s, 8.72, 1.78, 3.92, 1.77, "Staggered", "Last cell: 330 mm to brake; 5.56 g ideal mean for 6 m/s.", RED, 17, 14)
-card(s, 8.72, 3.74, 3.92, 1.77, "Paired", "At least 900 mm per cell; 2.04 g largest ideal mean at 6 m/s.", TEAL, 17, 14)
-txt(s, "26 nominal FreeCAD/STEP states pass represented-solid checks; locks, contact, docking and host fit remain open.",
-    0.8, 6.33, 11.9, 0.5, 13, True, NAVY, align=PP_ALIGN.CENTER)
+# Current selected feeder: separate from the fixed evaluated Gen5 design.
+s = base("Gen6 selected design", "A guided lead screw controls each cassette transfer",
+         "FM08-R3 · native CAD / STEP and FDR10 design verification · 23 October", "SELECTED ACADEMIC DESIGN")
+image_fit(s, ROOT / "validation/selected_feeder/cad/figures/FM08_sequence.png", 0.42, 1.6, 8.1, 4.85)
+bullets(s, ["Two 1U + two 3U; one indexed receiver", "Fixed 1U spacers stay in their cassettes", "Far stop proved → feed → seating proof → capture", "Index clutch disengaged before launch arming", "Release inhibited on jam, power loss or contradictory state"], 8.75, 1.78, 3.9, 4.65, 17, 16)
+txt(s, "Source-derived prescribed CAD states. Academic design selection; measured reliability and qualification require hardware.",
+    0.72, 6.67, 11.95, 0.34, 12, True, NAVY, align=PP_ALIGN.CENTER)
 
 # 21 Future test
-s = base("Future work", "Next milestone: close G0 and G1 before any build",
-         "P130–P132; G0/G1 review gates; no construction authorization", "GEN6 PLAN • NOT ACHIEVED")
-steps = [("Specify", "Real customer targets, tolerances and provider interface"),
-    ("Decide", "Complete motor, source, brake, contact and installed BOM"),
-         ("Measure", "Field, contact, release, arrest, loads and cycle behavior"),
-    ("Review", "Drawings, BOM, procedures, uncertainty and review decision")]
+s = base("Future work", "Next phase: instrument and test the selected design",
+         "Selected FM08-R3 design; physical development and provider integration", "PHYSICAL DEVELOPMENT")
+steps = [("Integrate", "Confirm payload, host, material and supplier interfaces"),
+    ("Build", "Manufacture and inspect the selected mechanism"),
+         ("Measure", "Transfer, custody, release, arrest and repeated-cycle behavior"),
+    ("Qualify", "Environmental tests and independent integration review")]
 for i, (head, body) in enumerate(steps):
     y = 1.8 + i * 1.15
     box(s, 0.83, y, 2.2, 0.84, TEAL if i < 3 else AMBER, None, True)
@@ -478,11 +477,11 @@ s = base("Future-work appendix", "Precise delivery needs a measured control budg
          "CNR-01 · complete native event replay and deterministic sensitivity", "GEN6 SURROGATE")
 image_fit(s, ROOT / "validation/native_campaign_review/figures/control_sensitivity.png", 0.6, 1.65, 12.1, 4.8)
 txt(s, "+0.1% imposed release-speed bias gives ~1.53 km error. Numerical agreement is not flight precision.", 0.75, 6.65, 11.8, 0.3, 14)
-s = base("Future-work appendix", "Seven feeders on one four-payload comparison boundary",
-         "FDR09 · native FreeCAD / STEP and source-backed option screens · 22 October", "UNSELECTED CANDIDATES")
-image_fit(s, ROOT / "validation/feeder_common_boundary/comparison_mass.png", 0.5, 1.65, 8.0, 4.8)
-bullets(s, ["Two 1U + two 3U; one shared receiver", "Seven concepts; ten checked native/STEP pairs", "Separate R2 nominal payload sweep: eight collisions to zero", "Full installed mass, loaded support and custody remain unverified", "No eligible architecture selection"], 8.8, 1.85, 3.9, 4.4, 17, 16)
-txt(s, "CAD material and unintegrated catalog options are partial accounting; no mass ranking or hardware qualification.", 0.75, 6.65, 11.8, 0.3, 13)
+s = base("Selected feeder appendix", "The safety-led trade selects a reversible guided drive",
+         "FDR10 / FM08-R3 · quantified judgment sensitivity and executable checks", "SELECTED LEAD SCREW")
+image_fit(s, ROOT / "validation/selected_feeder/verification/results/feeder_trade.png", 0.45, 1.65, 8.05, 4.9)
+bullets(s, ["Lead screw 7.30; rack/pawl runner-up 7.10", "Equal weights tie the top three", "Conditional motor sizing at 50 N / 100 N", "Four- and twelve-cell fault-sequence checks", "Scores and logical tests do not measure reliability"], 8.8, 1.85, 3.8, 4.5, 16, 15)
+txt(s, "Channel containment and controllability drive the choice. Original unconverged contact results supply no precision/load rating.", 0.7, 6.72, 11.95, 0.28, 12)
 
 s = base("Evidence appendix", "Native mesh and result view: keep the fixture explicit",
          "CalculiX2.23 DAT / INP displayed in Gmsh4.14.1 · undeformed geometry", "ASSUMED CLAMPED FLOOR")
@@ -500,12 +499,13 @@ s = base("Future-work appendix", "Orbital reload: define the interface before pr
 image_fit(s, ROOT / "validation/replenishment_feasibility/release/figures/replenishment.png", 0.6, 1.65, 12.1, 4.8)
 txt(s, "108 capture / 36 fit sensitivities. No integrated reload mechanism; ground loading remains the assumption.", 0.75, 6.65, 11.8, 0.3, 14)
 
-# FBR-01 finite-duration controls, separated from the Gen5 evaluated result.
-s = base("Future-work appendix", "Finite-duration thrust changes the resource comparison",
-         "FBR-01 · 18 targeted schedules / 46 native Orekit runs", "GEN6 SURROGATE CONTROL")
-image_fit(s, ROOT / "validation/finite_burn_review/figures/force_fuel_trade.png", 0.5, 1.52, 8.1, 5.15)
-bullets(s, ["Four releases fit the 20 N / 10 kg screen", "Twelve spring inputs exceed 20 N / 20 kg", "Both twelve-case policies close with 30 kg / 100 N", "Device mass still exceeds saved propellant", "Nearly 9°/s reversals if one fixed thruster; host allocation unverified"], 8.78, 1.65, 3.85, 4.8, 17, 15)
-txt(s, "Finite-force translational targets; imposed release speeds. No rated host, motor, flight precision or physical clearance.", 0.75, 6.74, 11.8, 0.3, 13)
+# Current twelve-cell geometry and schedule scaling.
+s = base("Gen6 scaling appendix", "Twelve dedicated cells require a larger host allocation",
+         "Native FreeCAD / STEP · FBR-02 nominal scheduling and mass boundary", "DETAILED SCALING STUDY")
+image_fit(s, ROOT / "validation/system_feasibility_closure/figures/twelve_capacity_plan.png", 0.55, 1.65, 12.2, 2.8)
+card(s, 0.8, 4.65, 5.8, 1.65, "398 parts; 4.21 m envelope", "Six 1U + six 3U; 83.331 kg partial feeder accounting. Full installed mass and host approval are separate.", TEAL, 19, 13)
+card(s, 6.85, 4.65, 5.65, 1.65, "18.26 s allocation residual", "241.818 s coast minus 223.556 s feeder-only allocation. Launch, charging, braking and reset must also fit.", AMBER, 19, 13)
+txt(s, "Two nominal native/STEP states and twelve modeled payload swept corridors clear represented geometry; no hardware qualification.", 0.75, 6.65, 11.8, 0.3, 12)
 
 s = base("Future-work appendix", "Gate relief passes the complete-angle nominal screen",
          "RVC01 · FM07-R6 candidate; separate from evaluated Gen5", "NATIVE GEOMETRY RESULTS")
@@ -528,4 +528,6 @@ txt(s, "Nominal FM07-R6 rotary screens pass separately; FM06 contact results do 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 prs.core_properties.title = 'VOLLEY: Design and Computational Feasibility Assessment of a Commanded Electromagnetic CubeSat Deployment Mechanism'
 prs.save(OUT)
+from shutil import copyfile
+copyfile(OUT, ROOT / "university/VOLLEY_Final_Presentation_2026-10-31.pptx")
 print(f"Wrote {OUT} ({len(prs.slides)} slides)")

@@ -6,7 +6,7 @@ This repository contains the final-year report, presentation, calculations, CAD 
 
 **Report:** [PDF](university/GEN5_FINAL_YEAR_REPORT.pdf) · [Editable DOCX](university/GEN5_FINAL_YEAR_REPORT.docx) · [Source](university/GEN5_FINAL_YEAR_REPORT.md)
 
-**Presentation:** [Slides and evidence map](university/final_review_2026_10_10/README.md) · [Academic evidence](ACADEMIC_EVIDENCE.md) · [Report build](university/README.md)
+**Presentation:** [PDF](university/VOLLEY_Final_Presentation_2026-10-31.pdf) · [Editable PPTX](university/VOLLEY_Final_Presentation_2026-10-31.pptx) · [Slides and evidence map](university/final_review_2026_10_10/README.md) · [Academic evidence](ACADEMIC_EVIDENCE.md) · [Report build](university/README.md)
 
 ![STEP-derived Blender storyboard of intended storage, transfer, acceleration and departure](cad/renders/sequence/gen5_operations_hero.png)
 
@@ -17,6 +17,16 @@ This repository contains the final-year report, presentation, calculations, CAD 
 **Gen5** is the fixed evaluated configuration: twelve 4 kg 3U payloads, a 1.3 m powered stroke and a reusable carrier. Its technical evidence snapshot is retained with the assessed design criteria. **Gen6** is a separate development study for passive 1U and 3U spacecraft, initially two of each, with a twelve-payload expansion assessed separately.
 
 The Gen6 mission reference uses a generic maneuvering OTV in approximately 500 km sun-synchronous orbit. Four releases occur within one orbital period; full position and velocity targets are evaluated at a common epoch 24 hours after the last release. Host maneuvers and their resource costs are included for both deployment policies. These are declared surrogates, not provider-approved interfaces.
+
+## Selected feeder design
+
+**FM08-R3 is the selected academic feeder design baseline.** Independent, guided lead-screw pushers transfer payloads from fixed dedicated cells to one indexed receiver. Its toothed-belt indexer disengages through a split clutch before launch and re-engages only after stopped-carrier proof. Fixed 1U spacers remain in their cassettes; a continuous capped channel, a proved-closed receiver far stop and an interlocked transfer sequence define the containment handover. The reference manifest is two 1U and two 3U payloads.
+
+![FM08-R3 selected four-cell feeder, visualized from native CAD.](validation/selected_feeder/cad/figures/FM08_assembly.png)
+
+*CAD-derived visualization of the selected academic design; no manufactured hardware or measured performance is shown.*
+
+The [selected-design package](validation/selected_feeder/README.md) contains the controlled geometry, STEP exchanges, selection rationale, calculations and executable sequence checks. Architecture selection is an academic design decision. Physical reliability, environmental qualification and provider approval require later hardware evidence.
 
 ## Engineering evidence
 
@@ -57,11 +67,11 @@ The [finite-force analyses](validation/P121_gen5_finite_force_surface3d.md), [ma
 
 ## Evidence boundaries
 
-This is a computational design study. No physical prototype, measured release performance or flight qualification is claimed. Fixture compliance uses idealized supports and material assumptions. The captured FCE08 contact model does not establish dynamic clearance or converged contact loads; its [assessment](validation/feeder_integrity_review/CONTACT_REVIEW.md) records the applicable evidence. Installed actuation, complete release/reset and mixed-size system integration remain development requirements. All seven feeder architectures remain unselected.
+This is a computational design study. No physical prototype, measured release performance or flight qualification is claimed. Fixture compliance uses idealized supports and material assumptions. The earlier FCE08 contact model does not establish dynamic clearance or converged contact loads; its [assessment](validation/feeder_integrity_review/CONTACT_REVIEW.md) records the applicable evidence. FM08-R3 supplies the separately controlled feeder design and its stated analytical and geometric acceptance evidence. Complete hardware integration, measured release/reset behavior and environmental qualification remain outside this computational study.
 
 ## Research and development
 
-The [feeder trade](docs/GEN6_FEEDER_CONCEPT_TRADE.md) compares lead-screw, escapement, rack/pawl, indexed tray/drum, pantograph, telescoping and belt/cable approaches. Safety, retention, integration, mass, motion and fault evidence govern downselection. A 1 km/s-class release is a separate long-range scaling objective.
+The [feeder trade](docs/GEN6_FEEDER_CONCEPT_TRADE.md) retains the seven-concept research history. The [current selection](validation/selected_feeder/README.md) adopts a guided lead screw for controlled low-speed pusher transfer; the alternatives remain documented with their applicable limitations. A 1 km/s-class release is a separate long-range scaling objective.
 
 ## Reproducibility
 
@@ -99,6 +109,6 @@ FM07-R5 adds captive receiver pins, a hinged exit gate and prescribed empty-carr
 
 ## Common-boundary feeder evidence
 
-[FDR09: seven four-cell CAD/STEP concepts](validation/feeder_common_boundary/README.md) uses two 1U and two 3U payloads with one shared receiver. A separate lead-screw R2 correction clears the checked nominal payload corridor; loaded support, insert custody and full installed-system gates remain open. No feeder is selected.
+[FDR09: seven four-cell CAD/STEP concepts](validation/feeder_common_boundary/README.md) uses two 1U and two 3U payloads with one shared receiver. A separate lead-screw R2 correction clears the checked nominal payload corridor; loaded support, insert custody and full installed-system gates remained open in that dated revision. The separate FM08-R3 selected-design package supersedes FDR09 as the current feeder design reference.
 
 ![Partial mass accounting on the declared four-payload boundary](validation/feeder_common_boundary/comparison_mass.png)

@@ -108,6 +108,28 @@ def check_captured_results() -> None:
             "a twelve-shot campaign now closes; review text needs updating")
 
 
+def check_selected_design_claims() -> None:
+    capture = ROOT / "validation/selected_feeder/verification/results/SUMMARY.json"
+    require(capture.is_file(), "selected feeder capture missing")
+    data = json.loads(capture.read_text())
+    require(data["selected"] == "lead_screw" and data["runner_up"] == "rack_pawl",
+            "selected architecture changed; academic claims require reconciliation")
+    require(data["nominal_drive_screens_pass"] and data["logic_pass"] and data["expanded_logic_pass"],
+            "selected feeder analytical or logical criterion did not pass")
+    manuscript = (ROOT / SOURCE).read_text()
+    for key in ["logic_assertion_cases", "expanded_logic_assertion_cases"]:
+        count = f"{data[key]:,}"
+        require(count in manuscript, "manuscript feeder logic count differs from capture: " + count)
+        if not IS_PAPER:
+            require(count in (ROOT / "university/GEN5_FINAL_YEAR_REPORT.md").read_text(),
+                    "blackbook feeder logic count differs from capture: " + count)
+    require("unconverged" in data["contact_convergence"].lower(),
+            "contact evidence boundary changed; technical review required")
+    require("FM08-R3 is the selected academic feeder design baseline" in (ROOT / "README.md").read_text(),
+            "current design identity missing from repository front page")
+    require("no physical prototype" in manuscript.lower(), "physical evidence boundary missing")
+
+
 def check_manifest() -> int:
     manifest = ROOT / "ARTIFACT_MANIFEST.sha256"
     require(manifest.is_file(), "artifact manifest missing")
@@ -125,12 +147,19 @@ def check_manifest() -> int:
 
 
 def check_containers() -> None:
+    if not IS_PAPER:
+        for suffix in ["pdf", "pptx"]:
+            current = ROOT / f"university/VOLLEY_Final_Presentation_2026-10-31.{suffix}"
+            retained = ROOT / f"university/final_review_2026_10_10/VOLLEY_Final_Review_2026-10-10.{suffix}"
+            require(current.read_bytes() == retained.read_bytes(),
+                    "current presentation differs from its retained evidence-pack export: " + suffix)
     pdf = (ROOT / PDF).read_bytes()
     require(pdf.startswith(b"%PDF-") and b"%%EOF" in pdf[-2048:], "paper PDF incomplete")
 def main() -> None:
     local_links = check_links()
     figures = check_manuscript_figures()
     check_captured_results()
+    check_selected_design_claims()
     runpy.run_path(str(ROOT / "validation/feeder_integrity_review/check_capture.py"))
     runpy.run_path(str(ROOT / "validation/finite_burn_review/check_capture.py"))
     import subprocess, sys
