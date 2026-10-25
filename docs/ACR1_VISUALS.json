@@ -1,0 +1,180 @@
+{
+  "revision": "ACR1-companion-visuals-R1",
+  "configuration": "VOLLEY-G5-ACR1",
+  "scope": "Source-identical current ACR1 visual files; original academic assets and PDF/manifests unchanged by visual integration.",
+  "license": "Project-created assets: CC BY 4.0; see LICENSING.md and NOTICE. No vendor/publisher images or institution logos are added.",
+  "guidance": "FIGURE_STANDARD.md",
+  "guidance_sha256": "34fe0ace1462665c201f15ef67562698210ca53525180e052a198885cfced004",
+  "camera_and_geometry_provenance": "Accepted source cameras, all source state identities and omission lists are in ACR1_CAD_VIEW_PROVENANCE.json. The home native/STEP is local under current/cad/release/; other native state files retain their identified canonical source. All ten display assets are local.",
+  "privacy": "No correspondence, planning notes, supplier PDFs, publisher text or event photographs introduced. Academic author identity follows this repository\u2019s NOTICE.",
+  "assets": [
+    {
+      "path": "current/academic/assets/01_assembly_isometric.png",
+      "sha256": "b2a46ac8ea7f187d9f6769a38f90438de78ff62f11243078caa71e1555b35422",
+      "frozen_source": "visuals/renders/01_assembly_isometric.png",
+      "source_sha256": "b2a46ac8ea7f187d9f6769a38f90438de78ff62f11243078caa71e1555b35422",
+      "evidence_class": "native-CAD-derived Blender render",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/02_handoff_pallet_locks.png",
+      "sha256": "f075051e21796cf090b7b4da086bafb859114d59f6ae60c150f4099622b13123",
+      "frozen_source": "visuals/renders/02_handoff_pallet_locks.png",
+      "source_sha256": "f075051e21796cf090b7b4da086bafb859114d59f6ae60c150f4099622b13123",
+      "evidence_class": "native-CAD-derived Blender render",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/03_captured_source_level.png",
+      "sha256": "3136a96d7e7f7abf50d686149def0ce295fea72c43b7d709fcd1f176b0308861",
+      "frozen_source": "visuals/renders/03_captured_source_level.png",
+      "source_sha256": "3136a96d7e7f7abf50d686149def0ce295fea72c43b7d709fcd1f176b0308861",
+      "evidence_class": "native-CAD-derived Blender render",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/04_clear_docked.png",
+      "sha256": "0f24049a07677a8521ab41878115d2f55ef249ae5e57219fb972938b9ddb5e0d",
+      "frozen_source": "visuals/renders/04_clear_docked.png",
+      "source_sha256": "0f24049a07677a8521ab41878115d2f55ef249ae5e57219fb972938b9ddb5e0d",
+      "evidence_class": "native-CAD-derived Blender render",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/MISSION_RESOURCES.png",
+      "sha256": "86794a4cbaf3b02d9f251ba616a4453b727660c5de2ed44c22fbcde2b3011909",
+      "frozen_source": "mission/figures/MISSION_RESOURCES.png",
+      "source_sha256": "86794a4cbaf3b02d9f251ba616a4453b727660c5de2ed44c22fbcde2b3011909",
+      "evidence_class": "computed scientific result",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/MISSION_TARGETS.png",
+      "sha256": "175594c388830c1e4243bce857e7c2cf46a251b1a104e3742d324f69c10c7fdb",
+      "frozen_source": "mission/figures/MISSION_TARGETS.png",
+      "source_sha256": "175594c388830c1e4243bce857e7c2cf46a251b1a104e3742d324f69c10c7fdb",
+      "evidence_class": "computed scientific result",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/coupled_shot_reference.png",
+      "sha256": "d47e8dd86b3e9faba3911b7f3da9f8df6772317945450f50a9d6dec4357fe839",
+      "frozen_source": "figures/coupled_shot_reference.png",
+      "source_sha256": "d47e8dd86b3e9faba3911b7f3da9f8df6772317945450f50a9d6dec4357fe839",
+      "evidence_class": "computed scientific result",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/finite_force_coefficient.png",
+      "sha256": "8c553ff9aa80e26c47f45068587be6a809c8986a6eb62a0fe43020940a94cca8",
+      "frozen_source": "figures/finite_force_coefficient.png",
+      "source_sha256": "8c553ff9aa80e26c47f45068587be6a809c8986a6eb62a0fe43020940a94cca8",
+      "evidence_class": "computed scientific result",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/magnetic_gap_section.png",
+      "sha256": "5e1cd6923ed0b732374231c0e17d3dc6e67ea5294a7177b412f545637bde7411",
+      "frozen_source": "figures/magnetic_gap_section.png",
+      "source_sha256": "5e1cd6923ed0b732374231c0e17d3dc6e67ea5294a7177b412f545637bde7411",
+      "evidence_class": "computed scientific result",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    },
+    {
+      "path": "current/academic/assets/shot_energy_ledger.png",
+      "sha256": "bafd5579ec0de422c662aac377095dd1c15c579fc6d7ede28019c55c22a2c78c",
+      "frozen_source": "figures/shot_energy_ledger.png",
+      "source_sha256": "bafd5579ec0de422c662aac377095dd1c15c579fc6d7ede28019c55c22a2c78c",
+      "evidence_class": "computed scientific result",
+      "configuration": "VOLLEY-G5-ACR1",
+      "local_image": true,
+      "modified": false
+    }
+  ],
+  "cad_view_provenance": "ACR1_CAD_VIEW_PROVENANCE.json",
+  "cad_view_provenance_sha256": "44b3eecf038c3adcc1f0288cc92b3cd6c36fdf583b89279b35d9e40bf54e2f11",
+  "local_CAD_source_map": [
+    {
+      "view": "01_assembly_isometric",
+      "state": "home",
+      "source_files": [
+        {
+          "sha256": "46c7e3f1a5904e766adae2f0e37e30b1cadaf1e993df13846729318b6446040a",
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_home.FCStd"
+        },
+        {
+          "sha256": "77c949d42eeda86a9470405dded81ae05ff57074a20ea303383140dd08936922",
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_home.step"
+        }
+      ]
+    },
+    {
+      "view": "02_handoff_pallet_locks",
+      "state": "handoff",
+      "source_files": [
+        {
+          "sha256": "4e0f2b7c0f9ac751e6675cba65d6910df17733c8a29612931705b7c853521778",
+          "available_locally": false,
+          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_handoff.FCStd"
+        },
+        {
+          "sha256": "1ae09dc2389748777c7565f421354c50a3d8c28e7205b9c8eff5febd17e675be",
+          "available_locally": false,
+          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_handoff.step"
+        }
+      ]
+    },
+    {
+      "view": "03_captured_source_level",
+      "state": "captured",
+      "source_files": [
+        {
+          "sha256": "40be4905cc594c292f4e6282b763e6530be2aa73624c01b4353998fbbad992cd",
+          "available_locally": false,
+          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_captured.FCStd"
+        },
+        {
+          "sha256": "d1b572c12e9503037132157149fd3e1fcfc1bda45ef86c8be0a7d28892645302",
+          "available_locally": false,
+          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_captured.step"
+        }
+      ]
+    },
+    {
+      "view": "04_clear_docked",
+      "state": "clear",
+      "source_files": [
+        {
+          "sha256": "d607bf2fc17f10c5cb09c89f52b20973f8b81976c082abbaf9c87fc7152b60e3",
+          "available_locally": false,
+          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_clear.FCStd"
+        },
+        {
+          "sha256": "e4191a053e7ffe9fdd46d7d6fc23c74a09a6330b45d6c317047cbbcc62acd922",
+          "available_locally": false,
+          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_clear.step"
+        }
+      ]
+    }
+  ]
+}

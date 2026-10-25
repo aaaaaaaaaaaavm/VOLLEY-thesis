@@ -34,11 +34,9 @@
     },
     "full_publication_scan": {
       "pass": true,
-      "checked_path_count": 8386,
       "command": "python tools/prepublish_gate.py --all",
-      "scope": "ED1 sources/outputs, preserved original archive, current and historical applicable tree"
+      "scope": "Full academic current/historical source tree; local Markdown targets checked against the Git index; exact source/output outer manifest checked."
     },
-    "final_editorial_delta": "Current/source-map/root hashes and scoped publication checks verified after adding the161-file unchanged-engineering identity count.",
     "archived_original_report_pdf_docx_and_manuscript_bytes": true,
     "editorial_revision": {
       "citation_corrections_verified": true,
@@ -47,7 +45,9 @@
       "paper_pages": 9,
       "current_hashes": "current/academic/EDITORIAL_REVISION.json",
       "originals": "archive/2026-10-24-acr1-original/academic"
-    }
+    },
+    "inventory_checks": "Current source/output hashes, outer manifest, original academic identities and 161unchanged engineering source/result identities verified.",
+    "indexed_markdown_targets": "Local linked files must be in the Git index; linked directories require an indexed descendant. Outside paths remain rejected."
   },
   "not_repeated": [
     "Native CAD motion/refinement solves",
@@ -60,6 +60,7 @@
     "Venue unselected; manuscript unsubmitted",
     "Genuine similarity feedback and institutional approvals/signatures remain external"
   ],
-  "publication": "Prepared working tree; no commit, tag, push, submission or acceptance is asserted by this receipt.",
-  "editorial_revision": "VOLLEY-G5-ACR1-ED1"
+  "publication": "The containing Git commit and any release tag referencing it identify this repository edition. ARTIFACT_MANIFEST.sha256 and current/MANIFEST.sha256 identify exact files. A repository release does not imply paper publication, institutional approval or hardware qualification.",
+  "editorial_revision": "VOLLEY-G5-ACR1-ED1",
+  "verification_scope": "ED1 document rebuilds and citation/layout checks; exact reuse of unchanged captured engineering sources/results; local examples, package inventories, reader links and publication checks."
 }
