@@ -1,0 +1,160 @@
+{
+  "title": "VOLLEY: Design and Computational Evaluation of a Commanded Electromagnetic CubeSat Deployment Mechanism",
+  "slides": 17,
+  "planned_duration_s": 900,
+  "speaker_durations_s": [
+    450,
+    450
+  ],
+  "final": true,
+  "files": {
+    "VOLLEY_BTech_Presentation.pptx": {
+      "sha256": "880c1ac970c46aa54dda3db4ed5111c30386623ffd1251aeb91ff94043ec929c",
+      "bytes": 12337929
+    },
+    "VOLLEY_BTech_Presentation.pdf": {
+      "sha256": "29bab0e1a37ba49021f3df0aba0797abad0542983973d68456f015ed3f05abde",
+      "bytes": 2035530
+    },
+    "SPEAKER_NOTES.md": {
+      "sha256": "f3bf57c8ea46fa4944fa7cefb463161c5e28cbdfc5e194d50c085657150f7bd7",
+      "bytes": 13896
+    },
+    "SPEAKER_NOTES.json": {
+      "sha256": "824249cb55a2800b9861e5de805eb0bdc57181d64aac8a58fb506ea5fe24fad2",
+      "bytes": 17446
+    },
+    "README.md": {
+      "sha256": "4f00bfb53394fb40a489851fd5a326fc43d7e710f34e0a91796f49229e18b586",
+      "bytes": 2054
+    },
+    "build_presentation.py": {
+      "sha256": "73d229df7b4a4a8426692ddedb6c2fff56a2c3fba3a8c169f792161fbce2b2b1",
+      "bytes": 37026
+    },
+    "PRESENTATION_PROVENANCE.json": {
+      "sha256": "07edcdbbe7a89ea0ac5d947764ed61a970e18a3ba39d37458074332c30775e84",
+      "bytes": 15194
+    },
+    "ASSET_SOURCES.json": {
+      "sha256": "759d91461650c05ea1fdd6c811d07bb8963e40a119545460000dcad0e5e1d01f",
+      "bytes": 2406
+    },
+    "SLIDE_CONTACT_SHEET.png": {
+      "sha256": "c4ebc6ea170fd56a28267ef8d85802880341db35f956f90b6342fb85af017bd7",
+      "bytes": 744969
+    },
+    "slide_pngs/slide-01.png": {
+      "sha256": "f32592b43210927ec1b28eb1cf8f6fbd00a1ac8f32c8bd5daed72429fd410d36",
+      "bytes": 250007
+    },
+    "slide_pngs/slide-02.png": {
+      "sha256": "f8b9b1160ca3c21b64521973223c9e8c6776b1d1875b30d6a528cf25091f84c2",
+      "bytes": 108384
+    },
+    "slide_pngs/slide-03.png": {
+      "sha256": "113e20bc3d1929cdc61e68ac8d711505e314497d1c80ff5e2735229835208b37",
+      "bytes": 156832
+    },
+    "slide_pngs/slide-04.png": {
+      "sha256": "0d74c14d3665ff9e1529ebc558e5cb4480fb4e235e5eeb4d8bd0f2d8323cfae0",
+      "bytes": 196331
+    },
+    "slide_pngs/slide-05.png": {
+      "sha256": "fc3fa1e6cb8d7e7d04dc09a773d341f280fa7010be7591c4064453e382d78ab6",
+      "bytes": 135070
+    },
+    "slide_pngs/slide-06.png": {
+      "sha256": "5695b4658f493eacd343563c8a8073f9c9afc116a181d866080586a200174d8e",
+      "bytes": 117552
+    },
+    "slide_pngs/slide-07.png": {
+      "sha256": "bd6d2dc4a54413bd3bcf96da65ef6d4d500c45c97ca907dfcced3516b01c156b",
+      "bytes": 129163
+    },
+    "slide_pngs/slide-08.png": {
+      "sha256": "6cdeb8de840c4f66704b1ed8924edc9540315d6bfddbdb6b7fc295984248691f",
+      "bytes": 115177
+    },
+    "slide_pngs/slide-09.png": {
+      "sha256": "e1dd86fd34172a3c65982ede3264a1179609848f17df6097585f19abd53721a8",
+      "bytes": 432739
+    },
+    "slide_pngs/slide-10.png": {
+      "sha256": "465eaa6c3466b90d69d4b869b6fc6a4972d383460d887fee0cde1b38b77951e2",
+      "bytes": 355924
+    },
+    "slide_pngs/slide-11.png": {
+      "sha256": "b55207ec0a03f5f9be87e326e52695581252c0866fe6de9f0336ed62e36899e1",
+      "bytes": 202246
+    },
+    "slide_pngs/slide-12.png": {
+      "sha256": "0e068d2e5d951622ff46f611bbc4365184f7494987c544991809eb2cf52153e5",
+      "bytes": 222050
+    },
+    "slide_pngs/slide-13.png": {
+      "sha256": "abe19c573256939b3e0e3f82d3b937cb7f353372a15c386028dcc953993fd8ab",
+      "bytes": 283175
+    },
+    "slide_pngs/slide-14.png": {
+      "sha256": "6c2a1333f5377bf346b482ee90fe3ffa2ac9af4d744a128ba759edc7862d003e",
+      "bytes": 138796
+    },
+    "slide_pngs/slide-15.png": {
+      "sha256": "79e6ac84c07dd34336947f8182c9496501013df1997e52af09960506d49dc97f",
+      "bytes": 143487
+    },
+    "slide_pngs/slide-16.png": {
+      "sha256": "cd796961e324bbb525f97fddd434797d68cf6efac875ad51d7be6f3a9ecbf0f7",
+      "bytes": 127311
+    },
+    "slide_pngs/slide-17.png": {
+      "sha256": "1e9f0defd6f0fff7e2f80c59e8e4736eda04b49cef8e554fdc9449d8265b5451",
+      "bytes": 216336
+    },
+    "assets/01_assembly_isometric.png": {
+      "sha256": "b2a46ac8ea7f187d9f6769a38f90438de78ff62f11243078caa71e1555b35422",
+      "bytes": 2092045
+    },
+    "assets/02_handoff_pallet_locks.png": {
+      "sha256": "f075051e21796cf090b7b4da086bafb859114d59f6ae60c150f4099622b13123",
+      "bytes": 3199036
+    },
+    "assets/03_captured_source_level.png": {
+      "sha256": "3136a96d7e7f7abf50d686149def0ce295fea72c43b7d709fcd1f176b0308861",
+      "bytes": 2576504
+    },
+    "assets/04_clear_docked.png": {
+      "sha256": "0f24049a07677a8521ab41878115d2f55ef249ae5e57219fb972938b9ddb5e0d",
+      "bytes": 3671106
+    },
+    "assets/ACTUAL_CHASSIS_RESULT.png": {
+      "sha256": "d4742703ac269cd9ecadc23a4fe90654341a3f1e791758ca39706bf76aa9a935",
+      "bytes": 345407
+    },
+    "assets/MISSION_RESOURCES.png": {
+      "sha256": "86794a4cbaf3b02d9f251ba616a4453b727660c5de2ed44c22fbcde2b3011909",
+      "bytes": 142084
+    },
+    "assets/coupled_shot_reference.png": {
+      "sha256": "d47e8dd86b3e9faba3911b7f3da9f8df6772317945450f50a9d6dec4357fe839",
+      "bytes": 136601
+    },
+    "assets/finite_force_coefficient.png": {
+      "sha256": "8c553ff9aa80e26c47f45068587be6a809c8986a6eb62a0fe43020940a94cca8",
+      "bytes": 75992
+    },
+    "assets/magnetic_gap_section.png": {
+      "sha256": "5e1cd6923ed0b732374231c0e17d3dc6e67ea5294a7177b412f545637bde7411",
+      "bytes": 93295
+    },
+    "assets/shot_energy_ledger.png": {
+      "sha256": "bafd5579ec0de422c662aac377095dd1c15c579fc6d7ede28019c55c22a2c78c",
+      "bytes": 56986
+    },
+    "assets/sit-logo.jpg": {
+      "sha256": "3a671052c9d60d56590bafc5fadba81d8198b4a89dc153984e4decb25e9a0948",
+      "bytes": 7719
+    }
+  }
+}

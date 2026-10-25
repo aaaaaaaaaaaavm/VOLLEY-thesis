@@ -1,0 +1,12 @@
+{
+  "document_build_observed": {
+    "Pandoc": "3.1.11.1",
+    "XeTeX": "0.999996 TeX Live 2025/dev/Debian",
+    "pdfTeX": "1.40.26 TeX Live 2025/dev/Debian",
+    "python-docx": "1.2.0",
+    "python-pptx": "1.0.2",
+    "Pillow": "12.3.0"
+  },
+  "reference_native_versions_file": "sources/SOFTWARE_ENVIRONMENT.json",
+  "byte_identity": "Current ED1 source/output hashes identify a citation-corrected editorial derivative. Original 24 October source/PDF/DOCX/manuscript bytes are preserved in the dated archive. Build metadata/font/runtime can change hashes."
+}

@@ -1,0 +1,116 @@
+{
+  "configuration_id": "VOLLEY-G5-ACR1",
+  "captured_utc": "2026-10-24T20:11:00.787229+00:00",
+  "title": "VOLLEY: Design and Computational Evaluation of a Commanded Electromagnetic CubeSat Deployment Mechanism",
+  "authors": [
+    "Adityavardhan Mishra",
+    "Pratham Chawla"
+  ],
+  "report_chapters": 11,
+  "report_appendices": 3,
+  "report_pdf_pages": 55,
+  "paper_pdf_pages": 9,
+  "pending_markers": false,
+  "output_timestamps_follow_current_sources": true,
+  "asset_records": 17,
+  "evidence_records": 40,
+  "files": [
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.md",
+      "bytes": 72606,
+      "sha256": "0dbf624af075b4afd1584174d25138f4acffa07a069a41264266c6f94f1d9786",
+      "modified_utc": "2026-10-24T20:08:31.841013+00:00"
+    },
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.pdf",
+      "bytes": 9593588,
+      "sha256": "67db0ff61a563bd195f84539a64ac4e257c862f4138c18bfd37282e2db4659c3",
+      "modified_utc": "2026-10-24T20:10:30.440193+00:00"
+    },
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.docx",
+      "bytes": 12323937,
+      "sha256": "1da2daeb5f5622841299058ae3512bbe16e5aac2ac4d9b02284aae72a849a353",
+      "modified_utc": "2026-10-24T20:10:31.812177+00:00"
+    },
+    {
+      "path": "paper/paper.tex",
+      "bytes": 44304,
+      "sha256": "a045926305baa45f4240b0e9c9a738d2ba9478d3ff2e207af66098ef2d85b824",
+      "modified_utc": "2026-10-24T20:08:31.841779+00:00"
+    },
+    {
+      "path": "paper/paper.pdf",
+      "bytes": 5924398,
+      "sha256": "b7dc232dff8ce81bad5cefeadfc59e0ccee41a678b9029356f353054858c2688",
+      "modified_utc": "2026-10-24T20:09:06.261155+00:00"
+    },
+    {
+      "path": "paper/IEEEtran.cls",
+      "bytes": 281957,
+      "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
+      "modified_utc": "2026-10-24T19:49:09.763122+00:00"
+    },
+    {
+      "path": "build_report.py",
+      "bytes": 7202,
+      "sha256": "2f614c4d1faa1e6d408ca3fa5d067ced5ec9629f90393e3e790402dc823cf023",
+      "modified_utc": "2026-10-24T19:49:37.262877+00:00"
+    },
+    {
+      "path": "layout/blackbook-frontmatter.tex",
+      "bytes": 2700,
+      "sha256": "4facd4dbe4a7bb59f81fec4036ea0e6bfe5bc016b0d587896597716f37077960",
+      "modified_utc": "2026-10-24T19:46:13.955120+00:00"
+    },
+    {
+      "path": "layout/blackbook-header.tex",
+      "bytes": 918,
+      "sha256": "012f0c39330ce027824ee2207edf7dc6a79ecc2f35aefef84202a9cf5f6b9fcf",
+      "modified_utc": "2026-10-24T19:46:13.955244+00:00"
+    },
+    {
+      "path": "layout/evidence-links.lua",
+      "bytes": 933,
+      "sha256": "0c000700971bd85d01ab038bad388355f5c02b6f0eaf2fe428ada73468ba9157",
+      "modified_utc": "2026-10-24T19:49:37.263059+00:00"
+    },
+    {
+      "path": "ASSET_MAP.json",
+      "bytes": 4714,
+      "sha256": "697b28fcdcd16200fa0a6469bf6b14c0f62b8d9196e34e04032ef3665e31f7b9",
+      "modified_utc": "2026-10-24T20:09:04.519760+00:00"
+    },
+    {
+      "path": "EVIDENCE_MAP.json",
+      "bytes": 8231,
+      "sha256": "498a3830a394eb6f2566c0fc9d68486c1f51f58d2adfa7520b6f02f5358a7cc0",
+      "modified_utc": "2026-10-24T20:09:04.555192+00:00"
+    },
+    {
+      "path": "prepare_assets.py",
+      "bytes": 3987,
+      "sha256": "f2fdcd4583d22528c52c81054e454652fbb9144cbb6e82ec6a5c3305b7e25132",
+      "modified_utc": "2026-10-24T20:03:15.734778+00:00"
+    },
+    {
+      "path": "draw_operating_cycle.py",
+      "bytes": 2099,
+      "sha256": "454332e0836e3a59d818410cec3184a41d4eff8e90690bb3de07e0179a40b2d6",
+      "modified_utc": "2026-10-24T19:51:16.340963+00:00"
+    },
+    {
+      "path": "BLACKBOOK_BUILD.log",
+      "bytes": 94,
+      "sha256": "6c8604a4508afb868ef3456653fd7d09b164060a6b5f8a04440debd96787b953",
+      "modified_utc": "2026-10-24T20:10:31.816177+00:00"
+    },
+    {
+      "path": "paper/build-pass2.log",
+      "bytes": 7911,
+      "sha256": "7e453611ca7c304f64bcd2704db5332c2c98dd81cd1dbc9dd3b71d97cf5c2a94",
+      "modified_utc": "2026-10-24T20:09:06.261155+00:00"
+    }
+  ],
+  "scope": "Document-build and source-identity receipt; engineering method boundaries are stated in the documents and controlled evidence."
+}

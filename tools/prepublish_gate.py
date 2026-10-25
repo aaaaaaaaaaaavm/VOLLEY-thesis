@@ -34,13 +34,14 @@ def git(*args: str) -> bytes:
 
 def changed_paths(base: str | None, all_files: bool) -> list[str]:
     if all_files:
-        raw = git("ls-files", "-z")
+        raw = git("ls-files", "-z") + git("ls-files", "--others", "--exclude-standard", "-z")
     else:
         if not base:
             raise ValueError("pass --base <published commit> or --all")
         raw = git("diff", "--name-only", "--diff-filter=ACMR", "-z", base, "HEAD")
         # A developer may run the gate before committing; include staged and working edits.
         raw += git("diff", "--name-only", "--diff-filter=ACMR", "-z", "HEAD")
+        raw += git("ls-files", "--others", "--exclude-standard", "-z")
     return sorted(set(p.decode() for p in raw.split(b"\0") if p))
 
 

@@ -1,0 +1,67 @@
+{
+  "editorial_revision": "VOLLEY-G5-ACR1-ED1",
+  "engineering_configuration": "VOLLEY-G5-ACR1",
+  "captured_utc": "2026-10-25T07:33:14.462994+00:00",
+  "report_chapters": 11,
+  "report_appendices": 3,
+  "report_pdf_pages": 55,
+  "paper_pdf_pages": 9,
+  "files": [
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.md",
+      "bytes": 72830,
+      "sha256": "54276babdfea4964bc017f21cb84b6eeacef16bb4aef746afcea805e4eed5a01"
+    },
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.pdf",
+      "bytes": 9593865,
+      "sha256": "3739d382a3538862373eae1e2d3fb28eef7e8189020f855aaf04ff1cbada1f3c"
+    },
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.docx",
+      "bytes": 12324047,
+      "sha256": "b28497f536e914d14d9c1c586d95619f77baae50c2967e70cb53a2761be06dea"
+    },
+    {
+      "path": "paper/paper.tex",
+      "bytes": 44511,
+      "sha256": "dcac1923ad507478d8ae2c2ba2a1bdbeef218080d53c9ce53781fe10807426c4"
+    },
+    {
+      "path": "paper/paper.pdf",
+      "bytes": 5924556,
+      "sha256": "ef44b7cab03d626dc01dc5aab24165ae3dcaefe44869ce6e7d98e6f2f7be3507"
+    },
+    {
+      "path": "EDITORIAL_REVISION.json",
+      "bytes": 2979,
+      "sha256": "8623f2531a6cb60a5b7a53613b1f4e4dc048ff525b9ed07a296071517b197843"
+    },
+    {
+      "path": "ASSET_MAP.json",
+      "bytes": 4490,
+      "sha256": "a6b93961f7c75a7bfe9adb42396c7b2d4c3fb18791ce6d467d4882ac970a5e6d"
+    },
+    {
+      "path": "EVIDENCE_MAP.json",
+      "bytes": 10531,
+      "sha256": "1de17fe4562e00b136dadb2c52cf2251cbf0a287e380cacae4ae4c52bc283112"
+    },
+    {
+      "path": "build_report.py",
+      "bytes": 7202,
+      "sha256": "2f614c4d1faa1e6d408ca3fa5d067ced5ec9629f90393e3e790402dc823cf023"
+    },
+    {
+      "path": "paper/build.sh",
+      "bytes": 219,
+      "sha256": "c7e93d71dff454e879b8551da5242f248ff65b18c8341cc133da6f0e66d62529"
+    },
+    {
+      "path": "paper/IEEEtran.cls",
+      "bytes": 281957,
+      "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+    }
+  ],
+  "scope": "Citation-corrected editorial derivative; original frozen output/source identities remain in FROZEN_DOCUMENT_MANIFEST.json and the dated original archive. No engineering-result change."
+}

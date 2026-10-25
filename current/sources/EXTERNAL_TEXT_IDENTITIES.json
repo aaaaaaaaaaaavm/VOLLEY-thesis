@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "irfp4668.txt",
+    "sha256": "7d1afb1738f149d37246eb83af198e67a788cb7b6d16426c547b0308c525144e",
+    "bytes": 17920,
+    "role": "Historical pdftotext extraction; not redistributed; source URLs are in component/source references."
+  },
+  {
+    "filename": "ucc21520.txt",
+    "sha256": "518949722fd08a70f0d62dd942e7e45e042222a1ca4b1fedd69660a6c86c1787",
+    "bytes": 204454,
+    "role": "Historical pdftotext extraction; not redistributed; source URLs are in component/source references."
+  },
+  {
+    "filename": "faulhaber_ratios.txt",
+    "sha256": "e9b1708dc5d9503bca20e294960fd700a6569c445163c85ac9f8160edbd6d611",
+    "bytes": 146351,
+    "role": "Historical pdftotext extraction; not redistributed; source URLs are in component/source references."
+  },
+  {
+    "filename": "eaton_tv.txt",
+    "sha256": "64e0f27eac78b87d520305778c9bf1f2784f7972546f803e9aa37c063b275292",
+    "bytes": 20794,
+    "role": "Historical pdftotext extraction; not redistributed; source URLs are in component/source references."
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "local": "evidence/mission/MISSION_CAPTURE.json",
+    "sha256": "584bdc90278c3a6c17283bcad214ec353a2d534d3b53d9a516f5c3618ded00ac",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/SOFTWARE_LOCK.json",
+    "sha256": "4de3bd120f687981950c6ac29cbe39b4cdffa64431ba4a534b6ae2c01cb83fbf",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/MISSION_REPORT.md",
+    "sha256": "a6e1a3d2091b21edfe0cd3e78f23772a0ec4e15631eff2c8bf91a56e63fd65b2",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/MISSION_RESULTS.csv",
+    "sha256": "7acb70e5d23bcac84630eab0c101568f916f66e1647e320cf99bbe8357b39209",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/FIGURE_SOURCE_CAPTURE.json",
+    "sha256": "30fe3eeb311988ecfc80fe731fa2a701ac451ffda648500d62ca4a6108cd8ef5",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/verification/chassis_fea/d4b53d520c1bc0d3_h8/ACTUAL_CHASSIS_FIGURE.json",
+    "sha256": "988e06fd67b1c2be919f4fcb522382986986feb57a6543bf0ab0eca5b72d0103",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/RESOURCE_LEDGER.json",
+    "sha256": "054a6627261af1a21e9df558700ce00ecf32861e130d73cf01fb102b3a6a5917",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/ENGINEERING_DEFINITION_R1.json",
+    "sha256": "9317fb5ceb9bf0e2ec4d030327178261301b0d79dc34d0829e933255b4120508",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/LIFT_SIZING.json",
+    "sha256": "b6e8c553a2dcd47322c861b6ac6036813057062cc3408c0a98f68257cd9d2fc6",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/MISSION_COMPARISON.json",
+    "sha256": "635b011caf6a02dd509cceba7be9bf03ddf534cef2aabf99c6dd83200cb6ede4",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/SELECTED_CASES.json",
+    "sha256": "1901e736aa6980f823b8cf3b9b6a3e623efe8c1742324bc28366184e924df46b",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/NATIVE_REPLAY_CHECKS.json",
+    "sha256": "0fa56fff1c061555f9ae58bf7f47fcf9ad509818ad313dedfd71b8dbc8305691",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/MISSION_INPUTS.json",
+    "sha256": "40144519717a84babf0ba2ea211adbfd57c4d1ddb0110119eba9b0200d81f28f",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/TARGETS.json",
+    "sha256": "43b1d2bce760f49f1e7a1333c1ddfee4a34f278eb390369abc4b6894553dca2e",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/mission/provenance/SOFTWARE_LOCK.json",
+    "sha256": "f26f92aa58c235e05d082a039d7787f361198ef12fb81c291841008cb36e610d",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/DESIGN_BUDGETS.json",
+    "sha256": "e904380c58f56397bc75d2bba0104a63d52a9b118e1f0f08d52073dddddb1b5d",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/FEEDER_SIZING.json",
+    "sha256": "e3d9bc99b18c43d5d5ff529d4f7afcafb52e5da8da3bec53511365965f052ecf",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/cad/release/FINAL_CAD_MANIFEST.json",
+    "sha256": "77b8a5c2b4b30c16f0faa2fbdd7fc243b7952d417a7e962d2e4096ba1e7a1350",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/cad/release/MECHANICAL_CAPTURE.md",
+    "sha256": "f7da985546283e959cab09c01ff0ede9bbd97d1b1351aa3e93c363e27124429f",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/cad/release/MOTION_VERIFICATION.json",
+    "sha256": "94397ed52b572de5f5d1a9602b918935a9264875a0b5e92fa414e5edf7841104",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/cad/release/FINAL_REFINEMENT_VERIFICATION.json",
+    "sha256": "7ea762595dc3020e91839c5534e2d08472376ebef2b8d650936ead708f08c301",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/verification/MASS_CG_INERTIA_SUMMARY.json",
+    "sha256": "e31a4050250f5f8c96296a8509f830b0f4ecb30ace7e8954c3cad461487cc971",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/FINITE_MOTOR.json",
+    "sha256": "546cf2f427f356fc043f7d5cfd3f6af9b4ab5d4ab84b582e1e7c30baf8fd89ec",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/CURRENT_FIELD_FORCE.json",
+    "sha256": "0328a31527f75f9ab214e74952a6319dba295ca50d48f0eba19be7226772d076",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/SURFACE_CHARGE_CHECK.json",
+    "sha256": "baea34ac67dc69e368c4bb48f64fded0348f676238b82975be7c41e0f6e9c8da",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/WINDING_INDUCTANCE.json",
+    "sha256": "5cd23f78aa4a589656ad9b66fe4fc9c083b737547f2a6c17c409e0ed8f8659c5",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/COUPLED_SHOT.json",
+    "sha256": "176f0e325089c5b3798407810fc6d147398c1b939bedf74ea4baf9fa6061d2e1",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/POWER_COMPONENT_REFERENCE.json",
+    "sha256": "187905f64ba50273077b2739aa19f71c425bc7e4a7951e72021af554c318810f",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/analysis/TRANSFER_INTERLOCKS.json",
+    "sha256": "9f291fba1951d8fd64bf8a0d822a01be33f464f6c1099628b1341755899e0d4c",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/verification/COUPLED_SHOT_REVIEW.json",
+    "sha256": "8beb07acd3b2e82c4d41c5172c8b70820cb08ad362e20bf0dea47972291552d2",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/verification/COUPLED_SHOT_REVIEW.md",
+    "sha256": "9a52c19f76f1fe77ba1d5be740f16c2e0cd530fd1388abc136c4381019c252de",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/verification/CHASSIS_ACTUAL_REVIEW.md",
+    "sha256": "5efcdc3e89c68a46e478de2050c6245f89256d8af2eca05456c535fb96bf6878",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/sources/eaton_tv_SOURCE.json",
+    "sha256": "d6beadd63d38270efa903b258b247dab44d43f6352fd9c5be95bfb6c2e5f5233",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/sources/irfp4668_SOURCE.json",
+    "sha256": "5d090f342badbe7ae3f0d9b5f966cc7ef9c7f4a715f2ad78a7d9e6f25a4ee5cd",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/sources/ucc21520_SOURCE.json",
+    "sha256": "7faa44cf0598372693351398d0b2865d84b6f49ba9a8a0eee5c0b0ef90dd07b0",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Controlled computational result or source identity"
+  },
+  {
+    "local": "evidence/literature/FEEDER_FULL_TEXT_REVIEW_2026_10_19.md",
+    "sha256": "4a317ccbac1777112b1cbd988d3ff8792333d64791fd3043e13f3ff0ea63ae49",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Existing full-text literature comparison and source identities"
+  },
+  {
+    "local": "evidence/literature/FEEDER_FULL_TEXT_SOURCES.json",
+    "sha256": "ccfc00e63ec20b30e5ed29de83e0fe5c339006f9aadd57119ff928a5df708939",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Existing full-text literature comparison and source identities"
+  },
+  {
+    "local": "evidence/literature/ACR1_SOURCE_COMPARISON.json",
+    "sha256": "a59509c1accbb8fba50cfc544d8c079957816d0d4994fd6f19c8866e4fde21c3",
+    "origin": "ACR1 primary-source editorial review 2026-10-25",
+    "role": "Accessible source comparison and ED1 citation correction; review boundaries explicit"
+  },
+  {
+    "local": "evidence/literature/ACR1_QUANTITATIVE_COMPARISON.csv",
+    "sha256": "f616ccdbb0b00d609ac740682cb26c9970bbb4d4d1caacbe9ee9e8e199771c1a",
+    "origin": "ACR1 primary-source editorial review 2026-10-25",
+    "role": "Accessible source comparison and ED1 citation correction; review boundaries explicit"
+  },
+  {
+    "local": "evidence/literature/ACR1_EDITORIAL_REVIEW.md",
+    "sha256": "506b34da4092f6fe21febca5f8def601eb4e2e11aca19ef28174213b87759814",
+    "origin": "ACR1 primary-source editorial review 2026-10-25",
+    "role": "Accessible source comparison and ED1 citation correction; review boundaries explicit"
+  }
+]

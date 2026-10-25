@@ -1,16 +1,15 @@
-VOLLEY — an electromagnetic orbital CubeSat deployer
+VOLLEY: Design and Computational Evaluation of a Commanded Electromagnetic CubeSat Deployment Mechanism
 Copyright (c) 2026 Adityavardhan Mishra
 
-This work is licensed under the Creative Commons Attribution 4.0 International
-License (CC BY 4.0). The full licence text is in LICENSE.
+Original VOLLEY material is licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0); see LICENSE and LICENSING.md for scope and exceptions.
 
-You may share and adapt this material for any purpose, including commercially,
-provided you give appropriate credit, provide a link to the licence, and
-indicate if changes were made.
+Cite the academic study as:
+  Adityavardhan Mishra and Pratham Chawla, "VOLLEY: Design and Computational
+  Evaluation of a Commanded Electromagnetic CubeSat Deployment Mechanism",
+  Gen5 ACR1, 2026. https://github.com/aaaaaaaaaaaavm/VOLLEY
 
-Attribute as:
-  Adityavardhan Mishra, "VOLLEY: an electromagnetic orbital CubeSat deployer",
-  2026. https://github.com/aaaaaaaaaaaavm/VOLLEY — licensed under CC BY 4.0.
-
-See LICENSING.md for scope, for what this change does and does not affect, and
-for the separate position of the IEEE manuscript in paper/.
+Academic authorship is reproduced from the controlled report/manuscript.
+No individual research-contribution allocation is asserted. Third-party
+classes, supplier documents, software and the institution logo retain their
+own rights; see LICENSING.md.

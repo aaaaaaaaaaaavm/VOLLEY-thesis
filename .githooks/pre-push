@@ -17,6 +17,5 @@ while read -r local_ref local_sha remote_ref remote_sha; do
         *)
             python3 tools/prepublish_gate.py --base "$remote_sha" ;;
     esac
-    python3 tools/check_review_surface.py
-    python3 tools/check_scientific_assets.py
+    python3 tools/check_acr1.py
 done

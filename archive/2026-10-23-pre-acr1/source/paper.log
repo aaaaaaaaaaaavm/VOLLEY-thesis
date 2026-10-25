@@ -1,0 +1,698 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.9.27)  21 OCT 2026 13:16
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**paper.tex
+(./paper.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen141
+\@IEEEtrantmpdimenB=\dimen142
+\@IEEEtrantmpdimenC=\dimen143
+\@IEEEtrantmpcountA=\count196
+\@IEEEtrantmpcountB=\count197
+\@IEEEtrantmpcountC=\count198
+\@IEEEtrantmptoksA=\toks17
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
+03.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen144
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen145
+\CLASSINFOnormalsizeunitybaselineskip=\dimen146
+\IEEEnormaljot=\dimen147
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen148
+\IEEEquantizedlengthdiff=\dimen149
+\IEEEquantizedtextheightdiff=\dimen150
+\IEEEilabelindentA=\dimen151
+\IEEEilabelindentB=\dimen152
+\IEEEilabelindent=\dimen153
+\IEEEelabelindent=\dimen154
+\IEEEdlabelindent=\dimen155
+\IEEElabelindent=\dimen156
+\IEEEiednormlabelsep=\dimen157
+\IEEEiedmathlabelsep=\dimen158
+\IEEEiedtopsep=\skip49
+\c@section=\count199
+\c@subsection=\count266
+\c@subsubsection=\count267
+\c@paragraph=\count268
+\c@IEEEsubequation=\count269
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\c@figure=\count270
+\c@table=\count271
+\@IEEEeqnnumcols=\count272
+\@IEEEeqncolcnt=\count273
+\@IEEEsubeqnnumrollback=\count274
+\@IEEEquantizeheightA=\dimen159
+\@IEEEquantizeheightB=\dimen160
+\@IEEEquantizeheightC=\dimen161
+\@IEEEquantizeprevdepth=\dimen162
+\@IEEEquantizemultiple=\count275
+\@IEEEquantizeboxA=\box52
+\@IEEEtmpitemindent=\dimen163
+\IEEEPARstartletwidth=\dimen164
+\c@IEEEbiography=\count276
+\@IEEEtranrubishbin=\box53
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen167
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen168
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count277
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count278
+\leftroot@=\count279
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count280
+\DOTSCASE@=\count281
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen169
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count282
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count283
+\dotsspace@=\muskip18
+\c@parentequation=\count284
+\dspbrk@lvl=\count285
+\tag@help=\toks20
+\row@=\count286
+\column@=\count287
+\maxfields@=\count288
+\andhelp@=\toks21
+\eqnshift@=\dimen170
+\alignsep@=\dimen171
+\tagshift@=\dimen172
+\tagwidth@=\dimen173
+\totwidth@=\dimen174
+\lineht@=\dimen175
+\@envbody=\toks22
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen176
+\lightrulewidth=\dimen177
+\cmidrulewidth=\dimen178
+\belowrulesep=\dimen179
+\belowbottomsep=\dimen180
+\aboverulesep=\dimen181
+\abovetopsep=\dimen182
+\cmidrulesep=\dimen183
+\cmidrulekern=\dimen184
+\defaultaddspace=\dimen185
+\@cmidla=\count289
+\@cmidlb=\count290
+\@aboverulesep=\dimen186
+\@belowrulesep=\dimen187
+\@thisruleclass=\count291
+\@lastruleclass=\count292
+\@thisrulewidth=\dimen188
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen189
+\captionmargin=\dimen190
+\caption@leftmargin=\dimen191
+\caption@rightmargin=\dimen192
+\caption@width=\dimen193
+\caption@indent=\dimen194
+\caption@parindent=\dimen195
+\caption@hangindent=\dimen196
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace
+ {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptio
+nsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspac
+e \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\nor
+malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
+ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
+ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
+\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
+\fi  on input line 1175.
+)
+\c@KVtest=\count293
+\sf@farskip=\skip55
+\sf@captopadj=\dimen197
+\sf@capskip=\skip56
+\sf@nearskip=\skip57
+\c@subfigure=\count294
+\c@subfigure@save=\count295
+\c@lofdepth=\count296
+\c@subtable=\count297
+\c@subtable@save=\count298
+\c@lotdepth=\count299
+\sf@top=\skip58
+\sf@bottom=\skip59
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count300
+\l__pdf_internal_box=\box56
+)
+(./paper.aux)
+\openout1 = `paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+-- Lines per column: 56 (exact).
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count301
+\scratchdimen=\dimen198
+\scratchbox=\box57
+\nofMPsegments=\count302
+\nofMParguments=\count303
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count304
+\MPscratchDim=\dimen199
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+
+
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/base/8r.enc}
+
+
+]
+
+
+
+[2]
+
+<figures/D01_block.png, id=22, 428.802pt x 259.2084pt>
+File: figures/D01_block.png Graphic file (type png)
+<use figures/D01_block.png>
+Package pdftex.def Info: figures/D01_block.png  used on input line 104.
+(pdftex.def)             Requested size: 252.0pt x 152.33043pt.
+<figures/D02_layout.png, id=24, 428.802pt x 214.6419pt>
+File: figures/D02_layout.png Graphic file (type png)
+<use figures/D02_layout.png>
+Package pdftex.def Info: figures/D02_layout.png  used on input line 110.
+(pdftex.def)             Requested size: 252.0pt x 126.13979pt.
+<figures/gen5_reference_open.jpg, id=25, 1806.75pt x 1015.795pt>
+File: figures/gen5_reference_open.jpg Graphic file (type jpg)
+<use figures/gen5_reference_open.jpg>
+Package pdftex.def Info: figures/gen5_reference_open.jpg  used on input line 11
+6.
+(pdftex.def)             Requested size: 252.0pt x 141.66783pt.
+
+
+[3 <./figures/D01_block.png> <./figures/D02_layout.png>]
+
+<figures/F08_brake.png, id=32, 367.6134pt x 219.9417pt>
+File: figures/F08_brake.png Graphic file (type png)
+<use figures/F08_brake.png>
+Package pdftex.def Info: figures/F08_brake.png  used on input line 128.
+(pdftex.def)             Requested size: 214.20154pt x 128.15692pt.
+
+
+[4 <./figures/gen5_reference_open.jpg> <./figures/F08_brake.png>]
+<figures/A02_field_map.png, id=37, 560.0925pt x 251.86095pt>
+File: figures/A02_field_map.png Graphic file (type png)
+<use figures/A02_field_map.png>
+Package pdftex.def Info: figures/A02_field_map.png  used on input line 146.
+(pdftex.def)             Requested size: 443.76031pt x 199.55595pt.
+<figures/F02_ripple.png, id=38, 330.2739pt x 219.9417pt>
+File: figures/F02_ripple.png Graphic file (type png)
+<use figures/F02_ripple.png>
+Package pdftex.def Info: figures/F02_ripple.png  used on input line 153.
+(pdftex.def)             Requested size: 201.60077pt x 134.25484pt.
+
+
+<figures/F12_bode.png, id=39, 354.6048pt x 316.3017pt>
+File: figures/F12_bode.png Graphic file (type png)
+<use figures/F12_bode.png>
+Package pdftex.def Info: figures/F12_bode.png  used on input line 169.
+(pdftex.def)             Requested size: 252.0pt x 224.7833pt.
+<figures/F13_latency.png, id=40, 351.4731pt x 210.7875pt>
+File: figures/F13_latency.png Graphic file (type png)
+<use figures/F13_latency.png>
+Package pdftex.def Info: figures/F13_latency.png  used on input line 175.
+(pdftex.def)             Requested size: 214.20154pt x 128.46118pt.
+
+
+[5]
+
+<figures/F01_shot.png, id=44, 513.117pt x 195.129pt>
+File: figures/F01_shot.png Graphic file (type png)
+<use figures/F01_shot.png>
+Package pdftex.def Info: figures/F01_shot.png  used on input line 187.
+(pdftex.def)             Requested size: 252.0pt x 95.83139pt.
+<figures/F03_mc.png, id=45, 306.1839pt x 219.9417pt>
+File: figures/F03_mc.png Graphic file (type png)
+<use figures/F03_mc.png>
+Package pdftex.def Info: figures/F03_mc.png  used on input line 193.
+(pdftex.def)             Requested size: 201.60077pt x 144.81964pt.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+99.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+[6 <./figures/A02_field_map.png> <./figures/F02_ripple.png> <./figures/F12_bode
+.png>]
+
+
+
+[7 <./figures/F13_latency.png> <./figures/F01_shot.png> <./figures/F03_mc.png>]
+<figures/A35_ledger.png, id=63, 744.74236pt x 267.399pt>
+File: figures/A35_ledger.png Graphic file (type png)
+<use figures/A35_ledger.png>
+Package pdftex.def Info: figures/A35_ledger.png  used on input line 230.
+(pdftex.def)             Requested size: 474.71906pt x 170.4493pt.
+
+
+<figures/F04_life.png, id=64, 345.2097pt x 212.4738pt>
+File: figures/F04_life.png Graphic file (type png)
+<use figures/F04_life.png>
+Package pdftex.def Info: figures/F04_life.png  used on input line 253.
+(pdftex.def)             Requested size: 214.20154pt x 131.83937pt.
+<figures/F11_uq.png, id=65, 354.123pt x 231.7458pt>
+File: figures/F11_uq.png Graphic file (type png)
+<use figures/F11_uq.png>
+Package pdftex.def Info: figures/F11_uq.png  used on input line 259.
+(pdftex.def)             Requested size: 201.60077pt x 131.9338pt.
+<figures/F05_dragvs.png, id=66, 317.2653pt x 205.9695pt>
+File: figures/F05_dragvs.png Graphic file (type png)
+<use figures/F05_dragvs.png>
+Package pdftex.def Info: figures/F05_dragvs.png  used on input line 265.
+(pdftex.def)             Requested size: 214.20154pt x 139.06425pt.
+
+
+[8]
+
+<figures/F06_conj.png, id=70, 370.5042pt x 225.4824pt>
+File: figures/F06_conj.png Graphic file (type png)
+<use figures/F06_conj.png>
+Package pdftex.def Info: figures/F06_conj.png  used on input line 274.
+(pdftex.def)             Requested size: 214.20154pt x 130.36012pt.
+
+
+[9 <./figures/A35_ledger.png> <./figures/F04_life.png> <./figures/F11_uq.png> <
+./figures/F05_dragvs.png> <./figures/F06_conj.png>]
+<figures/F09_tipoff.png, id=80, 390.9807pt x 199.7061pt>
+File: figures/F09_tipoff.png Graphic file (type png)
+<use figures/F09_tipoff.png>
+Package pdftex.def Info: figures/F09_tipoff.png  used on input line 283.
+(pdftex.def)             Requested size: 201.60077pt x 102.97624pt.
+<figures/F07_family.png, id=81, 306.1839pt x 206.9331pt>
+File: figures/F07_family.png Graphic file (type png)
+<use figures/F07_family.png>
+Package pdftex.def Info: figures/F07_family.png  used on input line 289.
+(pdftex.def)             Requested size: 201.60077pt x 136.25418pt.
+
+
+
+
+[10 <./figures/F09_tipoff.png> <./figures/F07_family.png>]
+Underfull \vbox (badness 1735) has occurred while \output is active []
+
+
+
+<figures/A29_wake.png, id=87, 479.8728pt x 364.2408pt>
+File: figures/A29_wake.png Graphic file (type png)
+<use figures/A29_wake.png>
+Package pdftex.def Info: figures/A29_wake.png  used on input line 352.
+(pdftex.def)             Requested size: 252.0pt x 191.2793pt.
+<figures/A29_cfd_report.png, id=88, 708.246pt x 228.3732pt>
+File: figures/A29_cfd_report.png Graphic file (type png)
+<use figures/A29_cfd_report.png>
+Package pdftex.def Info: figures/A29_cfd_report.png  used on input line 358.
+(pdftex.def)             Requested size: 505.6778pt x 163.05908pt.
+
+
+[11 <./figures/A29_wake.png>]
+<figures/F14_airdrag.png, id=94, 461.5644pt x 208.6194pt>
+File: figures/F14_airdrag.png Graphic file (type png)
+<use figures/F14_airdrag.png>
+Package pdftex.def Info: figures/F14_airdrag.png  used on input line 366.
+(pdftex.def)             Requested size: 252.0pt x 113.89745pt.
+
+
+
+
+[12 <./figures/A29_cfd_report.png> <./figures/F14_airdrag.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 433--433
+[]\OT1/ptm/m/n/8 Manifest
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+[]\OT1/ptm/m/n/8 Caged es-cape-ment; controlled-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--434
+[]\OT1/ptm/m/n/8 Early
+ []
+
+
+Underfull \hbox (badness 6078) in paragraph at lines 435--435
+[]\OT1/ptm/m/n/8 Wrong ve-
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 435--436
+\OT1/ptm/m/n/8 pho-to-gate cross-check; no-fire on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
+[]\OT1/ptm/m/n/8 Capacitor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
+[]\OT1/ptm/m/n/8 Reduced
+ []
+
+
+Underfull \hbox (badness 6316) in paragraph at lines 437--437
+[]\OT1/ptm/m/n/8 Inverter de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--438
+[]\OT1/ptm/m/n/8 Magnet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--439
+[]\OT1/ptm/m/n/8 CubeSat
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--440
+[]\OT1/ptm/m/n/8 Sled
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--441
+[]\OT1/ptm/m/n/8 Controller
+ []
+
+
+
+
+
+[14]
+<figures/gen5_packaging_section.png, id=107, 460.922pt x 623.931pt>
+File: figures/gen5_packaging_section.png Graphic file (type png)
+<use figures/gen5_packaging_section.png>
+Package pdftex.def Info: figures/gen5_packaging_section.png  used on input line
+ 464.
+(pdftex.def)             Requested size: 196.5597pt x 266.07635pt.
+
+
+
+
+[15 <./figures/gen5_packaging_section.png>]
+<figures/gen5_finite_force_fem2d.png, id=113, 650.43pt x 332.442pt>
+File: figures/gen5_finite_force_fem2d.png Graphic file (type png)
+<use figures/gen5_finite_force_fem2d.png>
+Package pdftex.def Info: figures/gen5_finite_force_fem2d.png  used on input lin
+e 478.
+(pdftex.def)             Requested size: 252.0pt x 128.79964pt.
+<figures/gen5_finite_force_sensitivity.png, id=114, 722.7pt x 289.08pt>
+File: figures/gen5_finite_force_sensitivity.png Graphic file (type png)
+<use figures/gen5_finite_force_sensitivity.png>
+Package pdftex.def Info: figures/gen5_finite_force_sensitivity.png  used on inp
+ut line 484.
+(pdftex.def)             Requested size: 252.0pt x 100.80016pt.
+
+
+<figures/matched_mission_reference.png, id=115, 722.7pt x 303.534pt>
+File: figures/matched_mission_reference.png Graphic file (type png)
+<use figures/matched_mission_reference.png>
+Package pdftex.def Info: figures/matched_mission_reference.png  used on input l
+ine 496.
+(pdftex.def)             Requested size: 252.0pt x 105.84016pt.
+
+
+[16 <./figures/gen5_finite_force_fem2d.png> <./figures/gen5_finite_force_sensit
+ivity.png> <./figures/matched_mission_reference.png>]
+
+
+
+[17]
+
+
+
+[18]
+Underfull \hbox (badness 2856) in paragraph at lines 539--540
+\OT1/ptm/m/n/10 tive/STEP states and con-tin-u-ous in-ter-val non-pen-e-tra-tio
+n
+ []
+
+
+
+
+
+[19]
+Underfull \hbox (badness 1552) in paragraph at lines 556--557
+[]\OT1/ptm/m/n/10 For the de-clared 35%/35% pol-icy, four-release spring
+ []
+
+
+Underfull \hbox (badness 2951) in paragraph at lines 556--557
+\OT1/ptm/m/n/10 and 6.056/1.895 kg fuel. Twelve-release in-puts re-quire
+ []
+
+
+
+<figures/feeder_contact_calibration.png, id=132, 650.43pt x 263.7855pt>
+File: figures/feeder_contact_calibration.png Graphic file (type png)
+<use figures/feeder_contact_calibration.png>
+Package pdftex.def Info: figures/feeder_contact_calibration.png  used on input 
+line 577.
+(pdftex.def)             Requested size: 252.0pt x 102.19972pt.
+
+
+[20]
+Underfull \hbox (badness 2005) in paragraph at lines 597--598
+[]\OT1/ptm/m/n/8 C. Fos-ter, H. Hal-lam, and J. Ma-son, ``Or-bit de-ter-mi-na-t
+ion and
+ []
+
+
+Underfull \hbox (badness 3547) in paragraph at lines 597--598
+\OT1/ptm/m/n/8 differential-drag con-trol of Planet Labs Cube-Sat con-stel-la-t
+ions,''
+ []
+
+
+
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+
+
+[21 <./figures/feeder_contact_calibration.png>] (./paper.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 4372 strings out of 475178
+ 77710 string characters out of 5766539
+ 479113 words of memory out of 5000000
+ 27343 multiletter control sequences out of 15000+600000
+ 600012 words of font info for 112 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 57i,11n,65p,5203b,346s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (21 pages, 2676631 bytes).
+PDF statistics:
+ 229 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+

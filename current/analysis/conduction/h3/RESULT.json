@@ -1,0 +1,38 @@
+{
+  "configuration_id": "VOLLEY-G5-ACR1",
+  "method": "Linear tetrahedral DC conduction FEM",
+  "input_step_sha256": "b10c2306b947dfa7d65022e8959f76e2ca95ff7bac17786a8e4002755a18864b",
+  "model_sha256": "8bdcff69bf9eb4af4c4e9ffc08eb54631f117e9da0af0add324ea282797efc2e",
+  "gmsh_version": "4.13.1",
+  "max_mesh_size_mm": 3.0,
+  "nodes": 50630,
+  "elements": 133688,
+  "connected_mesh_components": 1,
+  "terminal_faces": [
+    [
+      997
+    ],
+    [
+      7
+    ]
+  ],
+  "resistance_ohm_at20C": 0.005660107310739562,
+  "current_at1V_A": 176.67509555915785,
+  "ground_current_A": -176.67509558093246,
+  "energy_at1V_W": 176.6750955782931,
+  "current_balance_relative_error": 1.2324663241394254e-10,
+  "energy_balance_relative_error": 1.0830760766802821e-10,
+  "copper_volume_m3": 0.0004147989999999997,
+  "resistivity_ohm_m": 1.7e-08,
+  "potential_range_V": [
+    0.0,
+    1.0
+  ],
+  "wall_seconds": 8.53393875600068,
+  "limitations": [
+    "Uniform copper resistivity and perfect continuous CAD joints",
+    "DC only; no skin/proximity/eddy-current or temperature coupling",
+    "Zero-radius corner peak current densities require mesh/fillet interpretation",
+    "Phase-A result cannot silently be assigned to other phases without a geometry check"
+  ]
+}

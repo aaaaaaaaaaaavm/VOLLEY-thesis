@@ -1,13 +1,9 @@
+.venv/
 __pycache__/
+.cache/
 *.pyc
-*.aux
-*.log
-*.out
-paper.pdf
-
-# FreeCAD autosave snapshots
-*.FCBak
-
-# Reproducible LaTeX build caches
-*.fdb_latexmk
-*.fls
+current/mission/jars/
+current/academic/paper/*.aux
+current/academic/paper/*.log
+current/academic/paper/*.out
+current/academic/paper/build-pass*.log

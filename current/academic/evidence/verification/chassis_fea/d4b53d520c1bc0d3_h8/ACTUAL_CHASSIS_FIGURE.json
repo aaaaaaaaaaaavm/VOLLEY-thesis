@@ -1,0 +1,8 @@
+{
+  "source_BREP_sha256": "d4b53d520c1bc0d33c1c36c29dddeb775d0b4147ec24dbb342a4fc43e97460a1",
+  "plot_script_sha256": "853e392145d1b30474c0426fb0a5a93944266a108b73d5da90127ee90e1f51d1",
+  "boundary_corner_triangles": 29072,
+  "displacement_exaggeration": 20,
+  "source_result_sha256": "8b0f48e5a7827dfd00e5c4f88ab8a832381fd16b0b91e8e8c06526b60481bd4c",
+  "scope": "Corner triangulation of actual C3D10 boundary and actual interpolated paired displacement field; scientific result graphic, not a software-interface screenshot."
+}

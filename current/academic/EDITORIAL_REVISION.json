@@ -1,0 +1,74 @@
+{
+  "editorial_revision": "VOLLEY-G5-ACR1-ED1",
+  "date_UTC": "2026-10-25",
+  "engineering_configuration": "VOLLEY-G5-ACR1",
+  "original_issue": "2026-10-24",
+  "original_archive": "../../archive/2026-10-24-acr1-original/academic",
+  "corrections": [
+    {
+      "location": "Report reference8; manuscript bibitem end",
+      "correction": "Correct H.Q.Yamaguchi to H.Yamaguchi; provide translation volume216/no4/e23450 and distinguish the selected Japanese original passages actually examined.",
+      "sources": [
+        "https://doi.org/10.1002/eej.23450",
+        "https://doi.org/10.1541/ieejias.143.570"
+      ]
+    },
+    {
+      "location": "Report reference6; manuscript bibitem feng",
+      "correction": "Add verified DOI10.1155/ijae/3000765.",
+      "sources": [
+        "https://doi.org/10.1155/ijae/3000765"
+      ]
+    }
+  ],
+  "technical_change": false,
+  "unchanged_before_bibliography": {
+    "report": true,
+    "manuscript": true
+  },
+  "review_boundary": "Zhao full-text context and cited result distinctions checked. Selected original end-effect passages examined; no full English-translation read or human peer review is asserted.",
+  "publication": "Editorial derivative only; no new submission, approval, acceptance or freeze receipt.",
+  "artifacts": [
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.md",
+      "current_sha256": "54276babdfea4964bc017f21cb84b6eeacef16bb4aef746afcea805e4eed5a01",
+      "original_sha256": "0dbf624af075b4afd1584174d25138f4acffa07a069a41264266c6f94f1d9786",
+      "changed": true,
+      "bytes": 72830
+    },
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.pdf",
+      "current_sha256": "3739d382a3538862373eae1e2d3fb28eef7e8189020f855aaf04ff1cbada1f3c",
+      "original_sha256": "67db0ff61a563bd195f84539a64ac4e257c862f4138c18bfd37282e2db4659c3",
+      "changed": true,
+      "bytes": 9593865
+    },
+    {
+      "path": "GEN5_FINAL_YEAR_REPORT.docx",
+      "current_sha256": "b28497f536e914d14d9c1c586d95619f77baae50c2967e70cb53a2761be06dea",
+      "original_sha256": "1da2daeb5f5622841299058ae3512bbe16e5aac2ac4d9b02284aae72a849a353",
+      "changed": true,
+      "bytes": 12324047
+    },
+    {
+      "path": "paper/paper.tex",
+      "current_sha256": "dcac1923ad507478d8ae2c2ba2a1bdbeef218080d53c9ce53781fe10807426c4",
+      "original_sha256": "a045926305baa45f4240b0e9c9a738d2ba9478d3ff2e207af66098ef2d85b824",
+      "changed": true,
+      "bytes": 44511
+    },
+    {
+      "path": "paper/paper.pdf",
+      "current_sha256": "ef44b7cab03d626dc01dc5aab24165ae3dcaefe44869ce6e7d98e6f2f7be3507",
+      "original_sha256": "b7dc232dff8ce81bad5cefeadfc59e0ccee41a678b9029356f353054858c2688",
+      "changed": true,
+      "bytes": 5924556
+    }
+  ],
+  "verified_output_pages": {
+    "report": 55,
+    "paper": 9
+  },
+  "bibliography_layout_review": "Rebuilt PDF page counts, extracted corrected citations and rendered final bibliography pages reviewed; no clipping observed.",
+  "unchanged_engineering_source_result_files": 161
+}

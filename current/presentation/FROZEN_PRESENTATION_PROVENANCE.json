@@ -1,0 +1,389 @@
+{
+  "title": "VOLLEY: Design and Computational Evaluation of a Commanded Electromagnetic CubeSat Deployment Mechanism",
+  "authors": [
+    {
+      "name": "Adityavardhan Mishra",
+      "PRN": "23070125054"
+    },
+    {
+      "name": "Pratham Chawla",
+      "PRN": "23070125029"
+    }
+  ],
+  "guide": "Vikas Gulia",
+  "slide_count": 17,
+  "planned_duration_s": 900,
+  "speakers": [
+    {
+      "name": "Adityavardhan Mishra",
+      "slides": [
+        1,
+        8
+      ],
+      "seconds": 450
+    },
+    {
+      "name": "Pratham Chawla",
+      "slides": [
+        9,
+        17
+      ],
+      "seconds": 450
+    }
+  ],
+  "template_structure_source": "/workspace/attachments/18352eb6-cee3-4a5c-927c-2c776a4c6d7d/B.Tech project presentation PPT Format.pdf",
+  "input_sha256": {
+    "cad/release/FINAL_CAD_MANIFEST.json": "77b8a5c2b4b30c16f0faa2fbdd7fc243b7952d417a7e962d2e4096ba1e7a1350",
+    "analysis/COUPLED_SHOT.json": "176f0e325089c5b3798407810fc6d147398c1b939bedf74ea4baf9fa6061d2e1",
+    "analysis/FINITE_MOTOR.json": "546cf2f427f356fc043f7d5cfd3f6af9b4ab5d4ab84b582e1e7c30baf8fd89ec",
+    "analysis/CURRENT_FIELD_FORCE.json": "0328a31527f75f9ab214e74952a6319dba295ca50d48f0eba19be7226772d076",
+    "analysis/DESIGN_BUDGETS.json": "e904380c58f56397bc75d2bba0104a63d52a9b118e1f0f08d52073dddddb1b5d",
+    "verification/COUPLED_SHOT_REVIEW.json": "8beb07acd3b2e82c4d41c5172c8b70820cb08ad362e20bf0dea47972291552d2",
+    "mission/MISSION_CAPTURE.json": "584bdc90278c3a6c17283bcad214ec353a2d534d3b53d9a516f5c3618ded00ac",
+    "mission/MISSION_COMPARISON.json": "635b011caf6a02dd509cceba7be9bf03ddf534cef2aabf99c6dd83200cb6ede4",
+    "academic/GEN5_FINAL_YEAR_REPORT.md": "0dbf624af075b4afd1584174d25138f4acffa07a069a41264266c6f94f1d9786"
+  },
+  "asset_sources": {
+    "sit-logo.jpg": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/academic/assets/sit-logo.jpg",
+      "sha256": "3a671052c9d60d56590bafc5fadba81d8198b4a89dc153984e4decb25e9a0948"
+    },
+    "04_clear_docked.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/04_clear_docked.png",
+      "sha256": "0f24049a07677a8521ab41878115d2f55ef249ae5e57219fb972938b9ddb5e0d"
+    },
+    "02_handoff_pallet_locks.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/02_handoff_pallet_locks.png",
+      "sha256": "f075051e21796cf090b7b4da086bafb859114d59f6ae60c150f4099622b13123"
+    },
+    "01_assembly_isometric.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/01_assembly_isometric.png",
+      "sha256": "b2a46ac8ea7f187d9f6769a38f90438de78ff62f11243078caa71e1555b35422"
+    },
+    "03_captured_source_level.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/03_captured_source_level.png",
+      "sha256": "3136a96d7e7f7abf50d686149def0ce295fea72c43b7d709fcd1f176b0308861"
+    },
+    "magnetic_gap_section.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/magnetic_gap_section.png",
+      "sha256": "5e1cd6923ed0b732374231c0e17d3dc6e67ea5294a7177b412f545637bde7411"
+    },
+    "finite_force_coefficient.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/finite_force_coefficient.png",
+      "sha256": "8c553ff9aa80e26c47f45068587be6a809c8986a6eb62a0fe43020940a94cca8"
+    },
+    "coupled_shot_reference.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/coupled_shot_reference.png",
+      "sha256": "d47e8dd86b3e9faba3911b7f3da9f8df6772317945450f50a9d6dec4357fe839"
+    },
+    "shot_energy_ledger.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/shot_energy_ledger.png",
+      "sha256": "bafd5579ec0de422c662aac377095dd1c15c579fc6d7ede28019c55c22a2c78c"
+    },
+    "ACTUAL_CHASSIS_RESULT.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/verification/chassis_fea/d4b53d520c1bc0d3_h8/ACTUAL_CHASSIS_RESULT.png",
+      "sha256": "d4742703ac269cd9ecadc23a4fe90654341a3f1e791758ca39706bf76aa9a935"
+    },
+    "MISSION_RESOURCES.png": {
+      "source": "/workspace/volley-work/2026-10-24-gen5-acr1/mission/figures/MISSION_RESOURCES.png",
+      "sha256": "86794a4cbaf3b02d9f251ba616a4453b727660c5de2ed44c22fbcde2b3011909"
+    }
+  },
+  "slides": [
+    {
+      "slide": 1,
+      "title": "",
+      "section": "B.Tech project presentation",
+      "images": [
+        {
+          "asset": "sit-logo.jpg",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/academic/assets/sit-logo.jpg",
+            "sha256": "3a671052c9d60d56590bafc5fadba81d8198b4a89dc153984e4decb25e9a0948"
+          },
+          "cad_caption_crop": null
+        },
+        {
+          "asset": "01_assembly_isometric.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/01_assembly_isometric.png",
+            "sha256": "b2a46ac8ea7f187d9f6769a38f90438de78ff62f11243078caa71e1555b35422"
+          },
+          "cad_caption_crop": {
+            "top": 0.095,
+            "bottom": 0.115
+          }
+        }
+      ],
+      "sources": "Symbiosis Institute of Technology, Pune | October 2026",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 30
+    },
+    {
+      "slide": 2,
+      "title": "Presentation outline",
+      "section": "Outline",
+      "images": [],
+      "sources": "College presentation structure adapted to the VOLLEY study",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 20
+    },
+    {
+      "slide": 3,
+      "title": "Commanded release adds a local delivery variable",
+      "section": "Introduction",
+      "images": [],
+      "sources": "Sources: JAXA deployment ICD; Cal Poly CDS Rev. 14.1; Foster et al. (2018); Vallado (2013)",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 65
+    },
+    {
+      "slide": 4,
+      "title": "Prior work establishes the mechanisms and comparison context",
+      "section": "Literature review",
+      "images": [],
+      "sources": "Sources: Zhao et al. (2022, 2025); Feng et al. (2025); Halbach (1980); Yamaguchi & Morishita (2023)",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 90
+    },
+    {
+      "slide": 5,
+      "title": "Research gap: closing the complete retained-carrier cycle",
+      "section": "Research gap",
+      "images": [],
+      "sources": "Basis: literature synthesis and the defined Gen5 ACR1 system boundary",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 70
+    },
+    {
+      "slide": 6,
+      "title": "Objectives and controlled reference requirements",
+      "section": "Objectives",
+      "images": [],
+      "sources": "Sources: frozen CAD manifest; PARAMETERS.json; coupled operating-study definition",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 60
+    },
+    {
+      "slide": 7,
+      "title": "Methodology follows the physical dependency chain",
+      "section": "Research methodology",
+      "images": [],
+      "sources": "Sources: engineering manifests; finite field/current models; STEP readback and reviewed 5 \u00b5s timestep-audit records",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 80
+    },
+    {
+      "slide": 8,
+      "title": "Timeline and work progress",
+      "section": "Timeline / work progress",
+      "images": [],
+      "sources": "Current submission: October 2026 | Gen6 physical prototype is future development",
+      "speaker": "Adityavardhan Mishra",
+      "planned_seconds": 35
+    },
+    {
+      "slide": 9,
+      "title": "Reference architecture: fixed banks and one captive pallet",
+      "section": "Architecture",
+      "images": [
+        {
+          "asset": "01_assembly_isometric.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/01_assembly_isometric.png",
+            "sha256": "b2a46ac8ea7f187d9f6769a38f90438de78ff62f11243078caa71e1555b35422"
+          },
+          "cad_caption_crop": {
+            "top": 0.095,
+            "bottom": 0.115
+          }
+        }
+      ],
+      "sources": "Native CAD render: final Gen5 ACR1 home state; represented masses include declared reference components",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 70
+    },
+    {
+      "slide": 10,
+      "title": "Capture before release: three explicit custody states",
+      "section": "Feeder and pallet",
+      "images": [
+        {
+          "asset": "03_captured_source_level.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/03_captured_source_level.png",
+            "sha256": "3136a96d7e7f7abf50d686149def0ce295fea72c43b7d709fcd1f176b0308861"
+          },
+          "cad_caption_crop": {
+            "top": 0.095,
+            "bottom": 0.115
+          }
+        },
+        {
+          "asset": "02_handoff_pallet_locks.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/02_handoff_pallet_locks.png",
+            "sha256": "f075051e21796cf090b7b4da086bafb859114d59f6ae60c150f4099622b13123"
+          },
+          "cad_caption_crop": {
+            "top": 0.095,
+            "bottom": 0.115
+          }
+        },
+        {
+          "asset": "04_clear_docked.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/visuals/renders/04_clear_docked.png",
+            "sha256": "0f24049a07677a8521ab41878115d2f55ef249ae5e57219fb972938b9ddb5e0d"
+          },
+          "cad_caption_crop": {
+            "top": 0.095,
+            "bottom": 0.115
+          }
+        }
+      ],
+      "sources": "Native CAD states; handoff detail hides banks, host ladder and fixed lift frame as disclosed in its provenance",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 70
+    },
+    {
+      "slide": 11,
+      "title": "Finite motor geometry enters the force model",
+      "section": "Electromagnetic simulation",
+      "images": [
+        {
+          "asset": "magnetic_gap_section.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/magnetic_gap_section.png",
+            "sha256": "5e1cd6923ed0b732374231c0e17d3dc6e67ea5294a7177b412f545637bde7411"
+          },
+          "cad_caption_crop": null
+        },
+        {
+          "asset": "finite_force_coefficient.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/finite_force_coefficient.png",
+            "sha256": "8c553ff9aa80e26c47f45068587be6a809c8986a6eb62a0fe43020940a94cca8"
+          },
+          "cad_caption_crop": null
+        }
+      ],
+      "sources": "Sources: FINITE_MOTOR.json; CURRENT_FIELD_FORCE.json | coefficients use peak phase amperes",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 55
+    },
+    {
+      "slide": 12,
+      "title": "Coupled shot: release, source and active arrest",
+      "section": "Simulation results",
+      "images": [
+        {
+          "asset": "coupled_shot_reference.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/coupled_shot_reference.png",
+            "sha256": "d47e8dd86b3e9faba3911b7f3da9f8df6772317945450f50a9d6dec4357fe839"
+          },
+          "cad_caption_crop": null
+        },
+        {
+          "asset": "shot_energy_ledger.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/figures/shot_energy_ledger.png",
+            "sha256": "bafd5579ec0de422c662aac377095dd1c15c579fc6d7ede28019c55c22a2c78c"
+          },
+          "cad_caption_crop": null
+        }
+      ],
+      "sources": "Numerical source-coupled model; nominal 3 m/s, 20 \u00b5H trace | sensitivity values retain their declared assumptions",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 65
+    },
+    {
+      "slide": 13,
+      "title": "Mechanical evaluation: actual chassis and declared contact budgets",
+      "section": "Structure and contact",
+      "images": [
+        {
+          "asset": "ACTUAL_CHASSIS_RESULT.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/verification/chassis_fea/d4b53d520c1bc0d3_h8/ACTUAL_CHASSIS_RESULT.png",
+            "sha256": "d4742703ac269cd9ecadc23a4fe90654341a3f1e791758ca39706bf76aa9a935"
+          },
+          "cad_caption_crop": null
+        }
+      ],
+      "sources": "Sources: actual-chassis CalculiX solve; DESIGN_BUDGETS.json | simulations and analytical bounds",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 65
+    },
+    {
+      "slide": 14,
+      "title": "Mission trade: retain the complete mass and control boundary",
+      "section": "Mission results",
+      "images": [
+        {
+          "asset": "MISSION_RESOURCES.png",
+          "source": {
+            "source": "/workspace/volley-work/2026-10-24-gen5-acr1/mission/figures/MISSION_RESOURCES.png",
+            "sha256": "86794a4cbaf3b02d9f251ba616a4453b727660c5de2ed44c22fbcde2b3011909"
+          },
+          "cad_caption_crop": null
+        }
+      ],
+      "sources": "Accepted finite-burn comparison: same 500 kg wet bus and twelve 4 kg payloads; tested policy families",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 65
+    },
+    {
+      "slide": 15,
+      "title": "Conclusions of the computational design study",
+      "section": "Conclusion",
+      "images": [],
+      "sources": "Basis: controlled Gen5 ACR1 geometry, coupled simulations, independent checks and mission comparison",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 30
+    },
+    {
+      "slide": 16,
+      "title": "Gen6: an instrumented mixed 1U / 3U physical prototype",
+      "section": "Future work",
+      "images": [],
+      "sources": "Proposed development programme; no measured VOLLEY prototype performance is reported",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 20
+    },
+    {
+      "slide": 17,
+      "title": "Selected references",
+      "section": "References",
+      "images": [],
+      "sources": "Full bibliography, source data sheets and engineering provenance accompany the report",
+      "speaker": "Pratham Chawla",
+      "planned_seconds": 10
+    }
+  ],
+  "build_script_sha256": "73d229df7b4a4a8426692ddedb6c2fff56a2c3fba3a8c169f792161fbce2b2b1",
+  "pptx_sha256": "880c1ac970c46aa54dda3db4ed5111c30386623ffd1251aeb91ff94043ec929c",
+  "statement": "Completed computational design study; Gen6 physical prototype is proposed future work. No individual research contributions are assigned.",
+  "pdf_sha256": "29bab0e1a37ba49021f3df0aba0797abad0542983973d68456f015ed3f05abde",
+  "pdf_page_count": 17,
+  "rendered_with": "LibreOfficeDev26.8.0.0.alpha0",
+  "final_visual_review": {
+    "contact_sheet": "SLIDE_CONTACT_SHEET.png",
+    "all_slides_reviewed": true,
+    "last_readability_corrections": [
+      3,
+      7,
+      9
+    ],
+    "root_approved_reference_slide": 12
+  },
+  "checks": {
+    "slides_17": true,
+    "planned_seconds_900": true,
+    "two_speakers_450s_each": true,
+    "approved_metadata": true,
+    "shared_solver_audit_wording": true,
+    "Gen6_hardware_future_work": true
+  }
+}

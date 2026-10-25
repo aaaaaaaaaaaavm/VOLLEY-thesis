@@ -1,0 +1,18 @@
+name: current-academic
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch exact source
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q origin "${{ github.sha }}"
+          git checkout -q --detach "${{ github.sha }}"
+      - name: Current identities, links and containers
+        run: python3 tools/check_acr1.py
+      - name: Full publication scan
+        run: python3 tools/prepublish_gate.py --all

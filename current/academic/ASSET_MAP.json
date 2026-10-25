@@ -1,0 +1,104 @@
+[
+  {
+    "asset": "assets/coupled_shot_reference.png",
+    "sha256": "d47e8dd86b3e9faba3911b7f3da9f8df6772317945450f50a9d6dec4357fe839",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/coupled_shot_reference.pdf",
+    "sha256": "329e5a15b1fa41a86f8aa8566fb4f275caf110d438d547b711761c82b17e4d5d",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/shot_energy_ledger.png",
+    "sha256": "bafd5579ec0de422c662aac377095dd1c15c579fc6d7ede28019c55c22a2c78c",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/shot_energy_ledger.pdf",
+    "sha256": "fff6a5ec875d3475f80cf5491811f44da7959b2ad5c99933f854433807ed9bea",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/MISSION_RESOURCES.png",
+    "sha256": "86794a4cbaf3b02d9f251ba616a4453b727660c5de2ed44c22fbcde2b3011909",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/MISSION_RESOURCES.pdf",
+    "sha256": "aa1fe7235974f6187dbcae45881fb6c73bb2f7bdc1a440ccd4cf25b873285691",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/MISSION_TARGETS.png",
+    "sha256": "175594c388830c1e4243bce857e7c2cf46a251b1a104e3742d324f69c10c7fdb",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/01_assembly_isometric.png",
+    "sha256": "b2a46ac8ea7f187d9f6769a38f90438de78ff62f11243078caa71e1555b35422",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/02_handoff_pallet_locks.png",
+    "sha256": "f075051e21796cf090b7b4da086bafb859114d59f6ae60c150f4099622b13123",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/03_captured_source_level.png",
+    "sha256": "3136a96d7e7f7abf50d686149def0ce295fea72c43b7d709fcd1f176b0308861",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/04_clear_docked.png",
+    "sha256": "0f24049a07677a8521ab41878115d2f55ef249ae5e57219fb972938b9ddb5e0d",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/finite_force_coefficient.png",
+    "sha256": "8c553ff9aa80e26c47f45068587be6a809c8986a6eb62a0fe43020940a94cca8",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/magnetic_gap_section.png",
+    "sha256": "5e1cd6923ed0b732374231c0e17d3dc6e67ea5294a7177b412f545637bde7411",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/ACTUAL_CHASSIS_RESULT.png",
+    "sha256": "d4742703ac269cd9ecadc23a4fe90654341a3f1e791758ca39706bf76aa9a935",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Computational geometry or scientific result; see caption and source record"
+  },
+  {
+    "asset": "assets/operating_cycle.png",
+    "sha256": "0bc7fc9a7c5a991734f940ce743aca610911cce3a73474ed34b2496f11d80c29",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Author-drawn selected operating sequence"
+  },
+  {
+    "asset": "assets/operating_cycle.pdf",
+    "sha256": "ad46560f43312a7d4e56ac0e79f83187a98e4544987d00c8cdea98a78618c782",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Author-drawn selected operating sequence"
+  },
+  {
+    "asset": "assets/operating_cycle.svg",
+    "sha256": "c142e5c641516d2590d5884466ee0550a8b54e2e87cfc2596fb3d2e31f53468e",
+    "origin": "VOLLEY-G5-ACR1 2026-10-24",
+    "role": "Author-drawn selected operating sequence"
+  }
+]

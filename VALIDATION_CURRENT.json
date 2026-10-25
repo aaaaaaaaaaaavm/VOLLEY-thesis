@@ -1,0 +1,65 @@
+{
+  "configuration_id": "VOLLEY-G5-ACR1",
+  "verification_date_UTC": "2026-10-25",
+  "distribution": "Standalone academic package; source/output identities in current/MANIFEST.sha256 and ARTIFACT_MANIFEST.sha256",
+  "checked": {
+    "current_source_output_hashes": true,
+    "current_reader_links": true,
+    "report_scratch_build": {
+      "pass": true,
+      "pages": 55,
+      "source": "current/academic/build_report.py"
+    },
+    "manuscript_scratch_build": {
+      "pass": true,
+      "pages": 9,
+      "source": "current/academic/paper/build.sh"
+    },
+    "presentation_scratch_build": {
+      "pass": true,
+      "slides": 17,
+      "planned_duration_s": 900,
+      "speakers_planned_seconds": [
+        450,
+        450
+      ]
+    },
+    "local_example": {
+      "pass": true,
+      "logic_checks": 166,
+      "feeder_matches_capture": true,
+      "nominal_3m_s_20uH_release_speed_m_s": 2.99986398873585,
+      "arrest_position_m": 1.5072886918120394,
+      "all_declared_shot_checks_pass": true
+    },
+    "full_publication_scan": {
+      "pass": true,
+      "checked_path_count": 8386,
+      "command": "python tools/prepublish_gate.py --all",
+      "scope": "ED1 sources/outputs, preserved original archive, current and historical applicable tree"
+    },
+    "final_editorial_delta": "Current/source-map/root hashes and scoped publication checks verified after adding the161-file unchanged-engineering identity count.",
+    "archived_original_report_pdf_docx_and_manuscript_bytes": true,
+    "editorial_revision": {
+      "citation_corrections_verified": true,
+      "before_bibliography_source_unchanged": true,
+      "report_pages": 55,
+      "paper_pages": 9,
+      "current_hashes": "current/academic/EDITORIAL_REVISION.json",
+      "originals": "archive/2026-10-24-acr1-original/academic"
+    }
+  },
+  "not_repeated": [
+    "Native CAD motion/refinement solves",
+    "Finite-element mesh/current/elastic solves",
+    "Full matched-campaign targeting and Java replay"
+  ],
+  "captured_evidence": "Source-pinned original results for those methods remain bundled, with original numerical limitations.",
+  "external_conditions": [
+    "Independent human technical reader unavailable",
+    "Venue unselected; manuscript unsubmitted",
+    "Genuine similarity feedback and institutional approvals/signatures remain external"
+  ],
+  "publication": "Prepared working tree; no commit, tag, push, submission or acceptance is asserted by this receipt.",
+  "editorial_revision": "VOLLEY-G5-ACR1-ED1"
+}

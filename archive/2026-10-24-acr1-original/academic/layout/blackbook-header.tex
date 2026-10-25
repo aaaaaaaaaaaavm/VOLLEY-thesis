@@ -1,0 +1,21 @@
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{chngcntr}
+\usepackage{tikz}
+\setstretch{1.35}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\titleformat{\chapter}[display]{\normalfont\bfseries\centering\Large}{CHAPTER \Roman{chapter}}{10pt}{\Large}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\captionsetup{font=small,labelfont=bf}
+\AtBeginDocument{\hypersetup{pdftitle={VOLLEY: Design and Computational Evaluation of a Commanded Electromagnetic CubeSat Deployment Mechanism},pdfauthor={Adityavardhan Mishra; Pratham Chawla},hidelinks}}
+\setcounter{tocdepth}{1}
+\emergencystretch=3em
+\let\volleyoriginalappendix\appendix
+\renewcommand{\appendix}{\volleyoriginalappendix\titleformat{\chapter}[display]{\normalfont\bfseries\centering\Large}{APPENDIX \Alph{chapter}}{10pt}{\Large}}
+
+\widowpenalty=10000
+\clubpenalty=10000
