@@ -46,8 +46,30 @@
       "current_hashes": "current/academic/EDITORIAL_REVISION.json",
       "originals": "archive/2026-10-24-acr1-original/academic"
     },
-    "inventory_checks": "Current source/output hashes, outer manifest, original academic identities and 161unchanged engineering source/result identities verified.",
-    "indexed_markdown_targets": "Local linked files must be in the Git index; linked directories require an indexed descendant. Outside paths remain rejected."
+    "inventory_checks": "Current source/output hashes, outer manifest, original academic identities and 161 unchanged engineering source/result identities verified.",
+    "indexed_markdown_targets": "Local linked files must be in the Git index; linked directories require an indexed descendant. Outside paths remain rejected.",
+    "standalone_dataset": {
+      "local_native_states": 8,
+      "local_STEP_states": 8,
+      "local_BOM_state_JSON": 8,
+      "raw_solver_archive_parts": 2,
+      "raw_solver_archive_members": 60,
+      "conduction_solution_arrays": 4,
+      "actual_chassis_review_local": true,
+      "restoration_scope": "Byte-preserved captured owned solver files; not a new solver calculation.",
+      "published_core_files": 258,
+      "exact_core_files": 249,
+      "declared_portability_adapters": 9,
+      "coverage_record": "current/CORE_COVERAGE.json",
+      "scratch_restoration": {
+        "pass": true,
+        "member_identities_verified": 60,
+        "files_written": 60,
+        "matching_files_retained": 0,
+        "archive_sha256": "53caa2eb6cb82566ebeb12587b15b676c749a3ce602aa96949390e06e464e217",
+        "independent_bundle": "Only this package\u2019s own two parts, materializer and source record were present in the scratch input."
+      }
+    }
   },
   "not_repeated": [
     "Native CAD motion/refinement solves",

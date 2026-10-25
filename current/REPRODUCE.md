@@ -24,8 +24,22 @@ The paper builder runs pdfLaTeX twice and uses the bundled unmodified IEEEtran 1
 
 For more numerical work, sources and required inputs are under [analysis](analysis/), [cad](cad/) and [mission](mission/). `analysis/coupled_shot.py` recomputes the full sampled shot set; `verification/review_coupled_shot.py` performs the six-case refined timestep audit. `mission/mission_model.py` generates the matched campaign; its raw commands/results are already bundled. The optional independent Java replay uses Java 21, Orekit 13.1.6 and Hipparchus 4.0.3: obtain exact JARs from the URLs in [SOFTWARE_LOCK.json](mission/SOFTWARE_LOCK.json), verify their hashes, place them under `current/mission/jars/`, then run `python current/mission/native_checks.py`. No JARs are redistributed.
 
-Native CAD/mesh/elastic/current-density regeneration needs the corresponding FreeCAD/Gmsh/CalculiX environment and raw geometry. [Software capture](sources/SOFTWARE_ENVIRONMENT.json), [home native/STEP](cad/release/) and [full asset inventory](cad/release/FINAL_CAD_MANIFEST.json) pin these tools and inputs. Large remaining raw assets are linked from the [main engineering package](https://github.com/aaaaaaaaaaaavm/VOLLEY/tree/main/validation/acr1). Native and FE regeneration is distinct from the locally verified examples and document builds; this receipt does not claim those solvers were rerun here.
+Native CAD/mesh/elastic/current-density regeneration needs the corresponding FreeCAD/Gmsh/CalculiX environment. [Software capture](sources/SOFTWARE_ENVIRONMENT.json), [all eight local native/STEP/BOM states](cad/release/) and [the final CAD inventory](cad/release/FINAL_CAD_MANIFEST.json) pin those inputs. All four captured conduction solution arrays and the actual-chassis review are local. The raw conductor/structural inputs and outputs are distributed in the [local two-part supplement](SUPPLEMENT_ASSETS.json); no other repository is required to obtain them.
 
-Optional lift-sizing regeneration also requires the catalog text extraction `sources/faulhaber_ratios.txt`; retrieve the cited FAULHABER reduction-ratio catalog, extract its text and verify the captured text identity in `sources/EXTERNAL_TEXT_IDENTITIES.json`. This historical hash input is not needed for the selected examples.
+```bash
+python3 current/supplements/materialize.py --verify-only
+python3 current/supplements/materialize.py --output /tmp/volley-academic-raw
+```
+
+For a complete native-solver working tree, copy the package and restore into that copy so the drivers find their inputs at the recorded relative paths:
+
+```bash
+cp -a current /tmp/volley-academic-work
+python3 /tmp/volley-academic-work/supplements/materialize.py --output /tmp/volley-academic-work
+```
+
+The materializer verifies both parts, the combined archive and all 60 member hashes before extraction. It retains matching files and refuses nonmatching destinations. The immutable source record's `extract_to` field identifies the upstream package; the explicit `--output` command controls this standalone restoration. Use the restored paths with the captured solver input/model scripts in the declared native environment. Data restoration is distinct from a new solver run: the source-pinned numerical limits remain unchanged, and this distribution does not claim a native or FE rerun.
+
+The [core coverage record](CORE_COVERAGE.json) inventories all 258 published engineering files: 249 exact local copies and 9 declared portability adapters, each retaining its published source bytes under `frozen_sources/`. Adaptations select local inputs, the installed Gmsh/CalculiX environment (`ccx` on PATH, or `VOLLEY_CCX`), local JAR/cache/output paths and catalog identity metadata; they do not change the governing equations or captured numerical results. The historical C-frame comparison's two source inputs are local. Lift sizing uses the locally recorded catalog-text SHA256 as provenance; it does not require redistribution of the supplier's full text. Archived source captures are evidence; use the current local drivers as execution entry points.
 
 Supplier PDFs and full text extractions are not redistributed because no express redistribution permission was established. Their authoritative URLs, source hashes and catalog reference values are in the [source register](sources/README.md). They are not needed by the selected examples or document build.

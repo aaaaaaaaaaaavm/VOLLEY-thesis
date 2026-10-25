@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib,json,math
 ROOT=Path(__file__).resolve().parents[1]
 CAT=ROOT/'sources/feeder_catalog_reference.json'
-RATIOS=ROOT/'sources/faulhaber_ratios.txt'
+RATIOS=ROOT/'sources/EXTERNAL_TEXT_IDENTITIES.json'
 
 def main():
     raw=(ROOT/'cad/PARAMETERS.json').read_bytes();p=json.loads(raw)
@@ -45,7 +45,7 @@ def main():
                     checks=checks,pass_declared_screens=all(checks.values())))
     out=dict(configuration_id=p['configuration_id'],CAD_parameter_sha256=hashlib.sha256(raw).hexdigest(),
         cradle_source_sha256=hashlib.sha256(source).hexdigest(),model_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        ratio_source_sha256=hashlib.sha256(RATIOS.read_bytes()).hexdigest(),
+        ratio_source_sha256=next(item['sha256'] for item in json.loads(RATIOS.read_text()) if item['filename']=='faulhaber_ratios.txt'),
         reference=dict(motor='3242G024BX4',gear='32GPT20:1 nominal,19.8:1 exact',gear_mass_kg=.157,
             motor_mass_kg=.179,gear_body_length_mm=34.7,motor_gear_length_mm=78.9,
             sources=[cat['motor_basis']['source_url'],'https://www.faulhaber.com/fileadmin/Import/Media/EN_32GPT_FMM.pdf',

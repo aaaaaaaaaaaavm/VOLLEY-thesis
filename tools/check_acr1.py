@@ -2,7 +2,7 @@
 """Verify current ACR1 local identities, numerical claims, links and document containers."""
 from pathlib import Path
 from zipfile import ZipFile
-import hashlib,json,re,sys
+import hashlib,json,re,sys,subprocess
 from urllib.parse import unquote
 R=Path(__file__).resolve().parents[1];C=R/'current'
 def require(ok,why):
@@ -27,7 +27,18 @@ with ZipFile(C/'presentation/VOLLEY_BTech_Presentation.pptx') as z:
 with ZipFile(C/'academic/GEN5_FINAL_YEAR_REPORT.docx') as z:require(z.testzip() is None,'DOCX CRC')
 get=lambda p:json.loads((C/p).read_text())
 m=get('cad/release/MOTION_VERIFICATION.json');require(m['case_count']==154 and m['failed_case_count']==0 and m['all_sampled_cases_pass'],'motion claims')
-require(len(get('cad/release/FINAL_CAD_MANIFEST.json')['states'])==8,'native state inventory')
+cad=get('cad/release/FINAL_CAD_MANIFEST.json');require(len(cad['states'])==8,'native state inventory')
+for state in cad['states']:
+ for name,item in state['files'].items():
+  path=C/'cad/release'/name
+  require(path.is_file() and path.stat().st_size==item['bytes'] and hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256'],'local native/STEP/BOM identity '+name)
+coverage=get('CORE_COVERAGE.json');require(len(coverage['files'])==258,'complete published core coverage')
+for item in coverage['files']:
+ require(hashlib.sha256((C/item['path']).read_bytes()).hexdigest()==item['sha256'],'core identity '+item['path'])
+ if item['role']=='declared_local_portability_adapter':
+  require(hashlib.sha256((C/item['preserved_source']).read_bytes()).hexdigest()==item['published_source_sha256'],'preserved core source '+item['path'])
+supplement=get('SUPPLEMENT_ASSETS.json');require(len(supplement['files'])==60,'raw solver member inventory')
+subprocess.run([sys.executable,str(C/'supplements/materialize.py'),'--verify-only'],check=True)
 l=get('analysis/TRANSFER_INTERLOCKS.json');require(l['accepted_nominal_commands']==24 and l['tests']==166 and l['all_passed'],'logic claims')
 require(get('verification/COUPLED_SHOT_REVIEW.json')['summary']['all_refined_cases_pass'],'refined shot audit')
 require(abs(get('analysis/RESOURCE_LEDGER.json')['CAD_dry_kg']-149.55671970039353)<1e-9,'mass')
@@ -46,4 +57,4 @@ source=(C/'academic/paper/paper.tex').read_text()
 for name in re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}',source):require((C/'academic/assets'/name).exists(),'missing manuscript figure '+name)
 for p in C.rglob('*.py'):
  require('/workspace/' not in p.read_text(),'private runtime path '+str(p.relative_to(R)))
-print(f'PASS: {count} current hashes, {links} reader links; ED1 and archived-original sources, 17-slide deck, current numerical claims and portable runtime paths')
+print(f'PASS: {count} current hashes, {links} reader links; ED1 and archived-original sources, 17-slide deck, eight local native/STEP states, 60 raw solver members, current numerical claims and portable runtime paths')

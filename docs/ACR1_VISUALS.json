@@ -5,7 +5,7 @@
   "license": "Project-created assets: CC BY 4.0; see LICENSING.md and NOTICE. No vendor/publisher images or institution logos are added.",
   "guidance": "FIGURE_STANDARD.md",
   "guidance_sha256": "34fe0ace1462665c201f15ef67562698210ca53525180e052a198885cfced004",
-  "camera_and_geometry_provenance": "Accepted source cameras, all source state identities and omission lists are in ACR1_CAD_VIEW_PROVENANCE.json. The home native/STEP is local under current/cad/release/; other native state files retain their identified canonical source. All ten display assets are local.",
+  "camera_and_geometry_provenance": "Accepted source cameras, state identities and omission lists remain in ACR1_CAD_VIEW_PROVENANCE.json. All eight native/STEP/BOM states and all ten display assets are local under current/; the local raw solver supplement restores its 60 listed members.",
   "privacy": "No correspondence, planning notes, supplier PDFs, publisher text or event photographs introduced. Academic author identity follows this repository\u2019s NOTICE.",
   "assets": [
     {
@@ -134,13 +134,13 @@
       "source_files": [
         {
           "sha256": "4e0f2b7c0f9ac751e6675cba65d6910df17733c8a29612931705b7c853521778",
-          "available_locally": false,
-          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_handoff.FCStd"
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_handoff.FCStd"
         },
         {
           "sha256": "1ae09dc2389748777c7565f421354c50a3d8c28e7205b9c8eff5febd17e675be",
-          "available_locally": false,
-          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_handoff.step"
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_handoff.step"
         }
       ]
     },
@@ -150,13 +150,13 @@
       "source_files": [
         {
           "sha256": "40be4905cc594c292f4e6282b763e6530be2aa73624c01b4353998fbbad992cd",
-          "available_locally": false,
-          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_captured.FCStd"
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_captured.FCStd"
         },
         {
           "sha256": "d1b572c12e9503037132157149fd3e1fcfc1bda45ef86c8be0a7d28892645302",
-          "available_locally": false,
-          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_captured.step"
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_captured.step"
         }
       ]
     },
@@ -166,15 +166,29 @@
       "source_files": [
         {
           "sha256": "d607bf2fc17f10c5cb09c89f52b20973f8b81976c082abbaf9c87fc7152b60e3",
-          "available_locally": false,
-          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_clear.FCStd"
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_clear.FCStd"
         },
         {
           "sha256": "e4191a053e7ffe9fdd46d7d6fc23c74a09a6330b45d6c317047cbbcc62acd922",
-          "available_locally": false,
-          "canonical_source": "https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/validation/acr1/cad/release/VOLLEY_G5_ACR1_clear.step"
+          "available_locally": true,
+          "local_path": "current/cad/release/VOLLEY_G5_ACR1_clear.step"
         }
       ]
     }
-  ]
+  ],
+  "complete_local_CAD_inventory": {
+    "path": "current/cad/release/FINAL_CAD_MANIFEST.json",
+    "states": 8,
+    "native_files": 8,
+    "STEP_files": 8,
+    "BOM_state_JSON_files": 8,
+    "sha256": "77b8a5c2b4b30c16f0faa2fbdd7fc243b7952d417a7e962d2e4096ba1e7a1350"
+  },
+  "local_raw_solver_inventory": {
+    "path": "current/SUPPLEMENT_ASSETS.json",
+    "members": 60,
+    "parts": 2,
+    "sha256": "8166c0041daafe3c69751011ae2b18fefe1aeba5d65aea3a669d344fb0a3428f"
+  }
 }
