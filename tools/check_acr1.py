@@ -59,3 +59,5 @@ for name in re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}',source):re
 for p in C.rglob('*.py'):
  require('/workspace/' not in p.read_text(),'private runtime path '+str(p.relative_to(R)))
 print(f'PASS: {count} current hashes, {links} reader links; ED1 and archived-original sources, 17-slide deck, eight local native/STEP states, 60 raw solver members, current numerical claims and portable runtime paths')
+
+subprocess.run([sys.executable, str(R / "tools/check_editions.py")], check=True)

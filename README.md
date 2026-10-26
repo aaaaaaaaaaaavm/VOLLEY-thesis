@@ -13,7 +13,7 @@ VOLLEY stores twelve 4 kg 3U payload surrogates in two fixed banks and feeds a c
 [Guided-feed close-up](figures/acr1-polish/feeder_detail_annotated.png) · [Four-state custody sequence](figures/acr1-polish/operating_sequence.png) · [Caption and visibility notes](figures/acr1-polish/CAPTIONS.md)
 
 
-Start with the 55-page report, its editable source and the chapter evidence map.
+Start with the updated [57-page ED2 report](editions/ED2/VOLLEY_ED2_Report.pdf), [17-slide ED2 presentation](editions/ED2/VOLLEY_ED2_Presentation.pdf) and [portable edition sources](editions/ED2/README.md). ED2 adds the matched-load ANSYS chassis comparison and updated illustrations. The table below preserves the ED1 engineering capture and its original academic files.
 
 | Academic artifact | Download and source |
 |---|---|
