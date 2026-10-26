@@ -43,6 +43,7 @@ l=get('analysis/TRANSFER_INTERLOCKS.json');require(l['accepted_nominal_commands'
 require(get('verification/COUPLED_SHOT_REVIEW.json')['summary']['all_refined_cases_pass'],'refined shot audit')
 require(abs(get('analysis/RESOURCE_LEDGER.json')['CAD_dry_kg']-149.55671970039353)<1e-9,'mass')
 require(get('mission/NATIVE_REPLAY_CHECKS.json')['all_declared_numerical_checks_pass'],'native mission capture')
+subprocess.run([sys.executable,str(R/'tools/check_literature.py')],check=True)
 links=0
 for p in [R/'README.md',R/'LICENSING.md',R/'archive/README.md',*C.glob('*.md'),C/'academic/README.md',C/'sources/README.md',C/'presentation/README.md']:
  fenced=False
