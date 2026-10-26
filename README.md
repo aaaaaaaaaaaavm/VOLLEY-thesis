@@ -6,9 +6,12 @@ Adityavardhan Mishra and Pratham Chawla · Mechanical Engineering, Symbiosis Ins
 
 VOLLEY stores twelve 4 kg 3U payload surrogates in two fixed banks and feeds a captive pallet onto a reusable magnetic carrier. A finite linear synchronous motor commands release in the studied **1–3 m/s** range, then arrests and returns the carrier and pallet. This repository presents the completed computational design study and its reproducible academic record.
 
-<p><a href="current/academic/assets/01_assembly_isometric.png"><img src="current/academic/assets/01_assembly_isometric.png" alt="ACR1 native-CAD-derived assembly view: two six-level storage banks, central indexed lift and reusable carrier track" width="680"></a></p>
+<p><a href="figures/acr1-polish/assembly_hero.png"><img src="figures/acr1-polish/assembly_hero.webp" alt="CAD-derived render of all 387 represented VOLLEY Gen5 ACR1 parts in the home pose; teal marks the selected feed and captive-pallet path." width="760"></a></p>
 
-*CAD-derived Blender view · ACR1 home state · all 387 native objects present. [Native/STEP source](current/cad/release/) · [current visual provenance](docs/ACR1_VISUALS.json).*
+*CAD-derived Blender render · ACR1 home pose · all 387 represented objects present. Teal identifies the selected feed/pallet path; surface colours are display choices. [View provenance](figures/acr1-polish/POLISH_PROVENANCE.json).*
+
+[Guided-feed close-up](figures/acr1-polish/feeder_detail_annotated.png) · [Four-state custody sequence](figures/acr1-polish/operating_sequence.png) · [Caption and visibility notes](figures/acr1-polish/CAPTIONS.md)
+
 
 Start with the 55-page report, its editable source and the chapter evidence map.
 
