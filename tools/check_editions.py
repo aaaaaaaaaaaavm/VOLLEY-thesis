@@ -27,3 +27,16 @@ with ZipFile(edition / 'VOLLEY_ED2_Document_Sources.zip') as archive:
         if name.endswith(('.py', '.md', '.tex', '.lua')):
             assert b'/workspace/' not in archive.read(name), name
 print('PASS: ED2 artifact identities, PDF/ZIP containers, portable sources and 57-page/17-slide route')
+
+new = root / 'editions/ED3'
+r = json.loads((new/'MANIFEST.json').read_text())
+assert (r['report_pages'],r['presentation_slides'],r['presentation_planned_seconds']) == (58,17,900)
+for item in r['files']:
+ p = new/item['path'];raw=p.read_bytes()
+ assert p.parent==new and len(raw)==item['bytes'] and hashlib.sha256(raw).hexdigest()==item['sha256'],item['path']
+ if p.suffix=='.pdf':assert raw.startswith(b'%PDF-') and b'%%EOF' in raw[-2048:]
+ if p.suffix=='.zip':
+  with ZipFile(p) as z:
+   assert z.testzip() is None
+   assert all(not n.startswith('/') and '..' not in Path(n).parts for n in z.namelist())
+print('PASS: ED3 artifact identities and 58-page/17-slide route')

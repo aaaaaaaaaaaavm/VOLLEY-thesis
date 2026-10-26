@@ -1,0 +1,90 @@
+# Academic edition ED2 — 15-minute speaking notes
+
+Edition source: [portable ED2 document source](../editions/ED2/VOLLEY_ED2_Document_Sources.zip), SHA-256 `320675134ea608b5148341a7a330eb6a23269c76cb9648288d9170a6cb66a450`. The source builder defines these 17 scripts and their planned timing.
+
+Delivery allocation: Adityavardhan Mishra, slides 1–8 (7 min 30 s); Pratham Chawla, slides 9–17 (7 min 30 s). This allocates speaking time without assigning individual research contributions.
+
+## 01. Project introduction
+Adityavardhan Mishra — 30 seconds
+
+Good morning. We are Adityavardhan Mishra and Pratham Chawla, presenting VOLLEY under the guidance of Vikas Gulia. This project develops and computationally evaluates a commanded electromagnetic CubeSat deployment mechanism. The presentation focuses on the completed Gen5 ACR1 computational reference and the physical validation proposed for Gen6.
+
+## 02. Presentation outline
+Adityavardhan Mishra — 20 seconds
+
+We begin with the deployment problem and relevant prior work, then define the research gap and objectives. We explain the computational method and progress before moving to the mechanism and results. We close with the mission trade, conclusions and the proposed Gen6 validation programme.
+
+## 03. Commanded release adds a local delivery variable
+Adityavardhan Mishra — 65 seconds
+
+A deployer is an interface between a host platform and a free-flying spacecraft. The host can manoeuvre before release, while the deployer sets a local relative velocity at a specific event. These are related but distinct controls. A release impulse can change orbital energy and subsequent phasing, and its usefulness depends on the delivery objective and the available host resources. Our schematic identifies the event rather than depicting a flight vehicle. The design question is therefore broader than generating force. The payload must remain retained and guided before command, the moving carrier must be arrested and returned, and its momentum and installed mass must remain in the mission budget. This is the system boundary used throughout the study.
+
+## 04. Prior work establishes the mechanisms and comparison context
+Adityavardhan Mishra — 90 seconds
+
+Electromagnetic CubeSat deployment and high-volume storage are established prior art. Zhao and colleagues reported stacked electromagnetic release in 2022, including gravity-compensated laboratory tests. Their measured velocities belong to their mechanism, payloads and test conditions. The 2025 storage study examines pushing, receiving guides and magnetic transport, including spacecraft-side grooves and iron patches. That interface differs from the passive rectangular envelope represented here. Feng and colleagues examine a higher-speed launcher and reachable domain, which provides mission context but uses a different operating regime. Halbach supplies the permanent-magnet field concept, while finite-motor literature identifies the importance of longitudinal end effects. The present contribution is the integration and evaluation of one explicit retained-carrier reference: custody, finite force, source limits, arrest and host burden are assessed together. We preserve the distinction between third-party experimental evidence and our numerical results.
+
+## 05. Research gap: closing the complete retained-carrier cycle
+Adityavardhan Mishra — 70 seconds
+
+The research gap addressed here is integration at a defined reference boundary. First, a storage-to-release mechanism needs an explicit answer to who holds the payload at every transition. Second, a useful electromagnetic result requires the force map, real moving mass and electrical source to be solved as one problem, including what happens after the spacecraft separates. Third, the retained carrier and installed hardware affect the host even when the payload has departed. The study connects these questions using one controlled mechanical revision. This supplies a reproducible basis for evaluating operating cases and for deciding which measurements a physical prototype must provide. It is a design-specific integration contribution rather than a claim that adjustable electromagnetic ejection is a new principle.
+
+## 06. Objectives and controlled reference requirements
+Adityavardhan Mishra — 60 seconds
+
+The reference manifest contains twelve identical four-kilogram 3U envelope surrogates. The represented contact envelope is 340.5 by 100 by 100 millimetres. The current computational operating study covers commands from one to three metres per second. The rail is 2250 millimetres long, and the post-release arrest allocation is 210 millimetres. Within this boundary, the objectives are to define continuous payload custody, evaluate the finite motor geometry, solve the coupled source and mechanical cycle, and carry the retained burden into structural and mission evaluation. These values identify the analysed configuration. The later mixed-size prototype will need its own payload interfaces and verification rather than inheriting this twelve-3U definition.
+
+## 07. Methodology follows the physical dependency chain
+Adityavardhan Mishra — 80 seconds
+
+The method follows the physical dependencies. CAD defines contact paths and conductor and magnet placement. The same solids and assigned reference masses produce the mass and inertia ledger. Finite electromagnetic and current models then define the force and resistance used by the source-coupled shot model. The shot includes unilateral payload contact, electrical braking, mechanical separation and active arrest of the retained carrier. Actual-chassis elasticity and declared clearance, thermal and contact budgets assess the mechanical consequences. Finally, the achieved release map and installed burden enter the host mission comparison. Independent checks supplement these models: STEP imports are compared with native geometry, a source-face field formulation and conductor-current FEM check the electromagnetic calculation, and an independently reviewed five-microsecond timestep audit checks the principal three-metre-per-second cases using the shared production solver. These are computational checks with distinct purposes; they do not replace future physical correlation.
+
+## 08. Timeline and work progress
+Adityavardhan Mishra — 35 seconds
+
+The work has progressed from literature and problem framing to the Gen5 ACR1 reference, followed by the coupled computational study. The current stage is the academic report and presentation capture. The computational design study is complete within its stated reference cases. Gen6 is the proposed physical development stage, beginning with an instrumented mixed 1U and 3U prototype. Pratham will now explain the reference mechanism and the engineering results.
+
+## 09. Reference architecture: fixed banks and one captive pallet
+Pratham Chawla — 70 seconds
+
+The reference mechanism has two fixed banks with six cells per bank. Positive guided pushers feed one selected payload toward the central lift. The lift carries a single captive pallet, and that same physical pallet docks to the launch carrier. The magnet arrays remain on the reusable carrier rather than on the payload. This is the complete native CAD home state, including the storage banks and generic mounting ladder. The retained moving carrier, pallet, lock pins and reference actuators total 13.128 kilograms. Represented dry CAD mass is 149.557 kilograms, with a separate seven-kilogram power and control allowance. These masses are part of the system assessment. They are material-volume and assigned-reference totals, rather than a weighed physical article.
+
+## 10. Capture before release: three explicit custody states
+Pratham Chawla — 70 seconds
+
+These are three native CAD states of the same mechanism. At the source level, the lift grips support the pallet while the end frames and Y keepers contain the spacecraft envelope. At docking, four pallet feet land on the carrier. The upper capture caps and the two keyed bayonet locks engage before the lift grip pins retract, so the sequence explicitly captures before releasing custody. The lift then raises clear while the pallet remains attached to the carrier for launch, arrest and return. The handoff view omits the banks, host ladder and fixed lift frame to expose the interfaces, and that omission is disclosed. During the shot, fixed passive cams open the two forekeepers over fifty millimetres of carrier travel. Their twelve-millimetre opening completes five millimetres before release. This separates the slow transfer actuation from the position-defined release motion.
+
+## 11. Finite motor geometry enters the force model
+Pratham Chawla — 55 seconds
+
+The motor uses forty-two discrete eight-millimetre magnet blocks on each opposed carrier array and a finite three-phase stator with two hundred and sixteen active bars. The active bar section is forty-two square millimetres, while the minimum represented return neck is twenty-one. Force is obtained by integrating current density crossed with the finite permanent-magnet field over copper. At the checked interior station, active conductors give 1.3287 newtons per peak phase ampere; including the represented returns gives 1.3991. The conductor-current finite-element comparison differs by 0.172 percent at that interior station. Position dependence is retained for launch and arrest. These comparisons support the specified numerical model; static force and back-emf measurements remain part of Gen6.
+
+## 12. Coupled shot: release, source and active arrest
+Pratham Chawla — 65 seconds
+
+The left plot shows the nominal twenty-microhenry, three-metre-per-second source-coupled reference. Current accelerates the retained carrier and spacecraft, then reverses for active arrest after mechanical separation. The signed current is therefore negative during braking. Model release is 2.999864 metres per second, and the carrier stops at 1.507 metres of relative travel, inside the 210-millimetre post-release allocation. Nominal source draw is 379.7 joules, apportioned in the energy ledger. All six principal three-metre-per-second cases, spanning nominal and adverse assumptions and three inductance values, pass the independently reviewed five-microsecond timestep audit, which shares the production simulation implementation. The thermal values shown are the worst reviewed sensitivity estimates, not the nominal trace alone: 0.0667 kelvin bulk copper rise and a 2.495-kelvin local DC-current-FEM adiabatic mesh observation. They define physical correlation priorities rather than a measured hotspot rating.
+
+## 13. Matched static cross-check supports the chassis result
+Pratham Chawla — 65 seconds
+
+The corrected ANSYS package cross-checks the accepted bare-chassis result under the same material, opposed 3.010-kilonewton patches and six numerical restraints. Its reference BREP matches the selected chassis. Primary paired closure is 0.286392 millimetres against 0.285983 from CalculiX, a difference of 0.143 percent. Independent native-result interpolation reproduces all 11,448 primary samples. Three ANSYS meshes span 0.285241 to 0.287589 millimetres: sensitivity evidence rather than a formal convergence bound. The plot uses native-result-derived data and identifies Y45 as the patch boundary. The original 0.264-millimetre face allocation retains its CalculiX basis. Substituting the finest ANSYS peak into the same explicitly centred budget gives 0.263067 millimetres. This is a conditional sensitivity, not an installed-gap validation. Contact-energy rate bounds remain separate analytical quantities. Assembled support behavior and physical qualification require their own evidence.
+
+## 14. Mission trade: retain the complete mass and control boundary
+Pratham Chawla — 65 seconds
+
+The mission comparison keeps the same five-hundred-kilogram wet bus, including twenty kilograms of propellant, and twelve four-kilogram payloads. Corrected Gen5 initial wet mass is 704.557 kilograms, compared with 620 kilograms for the declared spring class assumption. For uniform two-metre-per-second targets, Gen5 uses 0.05244 kilograms of fuel and the fixed two-metre-per-second spring case uses 0.04696. For alternating one and three targets, Gen5 meets the five-newton ceiling with about 0.28987 kilograms, while ideal ground pretrim uses about 0.05365 at five newtons and also has a tested one-newton solution. The fixed-two spring family’s minimum tested peak is 7.537 newtons; this is not a global infeasibility proof. Gen5 uses four-hundred-second coast-only release windows while spring policies allow broader burns. The result establishes no mass or fuel advantage over ideal pretrim under these stated families. A separate native Orekit replay checks the accepted mission trajectories.
+
+## 15. Conclusions of the computational design study
+Pratham Chawla — 30 seconds
+
+The study produces a complete computational reference for a repeated deployment cycle, from retained storage to carrier return. The declared low-speed cases are evaluated with finite motor geometry, actual retained mass and a stated source, and the principal three-metre-per-second cases receive an independently reviewed shared-solver timestep audit. The system burden remains substantial and the mission comparison supplies no mass or fuel advantage over ideal pretrim. This defines the outcome and the next physical validation step.
+
+## 16. Gen6: an instrumented mixed 1U / 3U physical prototype
+Pratham Chawla — 20 seconds
+
+Gen6 is the proposed physical prototype stage. It should characterise the motor and source, correlate custody and contact behaviour, and then demonstrate instrumented release, arrest and repeated duty. Mixed one-unit and three-unit handling needs fresh envelopes, retention definitions and mass accounting. Higher-speed scaling requires new coupled energy, acceleration, arrest and thermal budgets.
+
+## 17. Selected references
+Pratham Chawla — 10 seconds
+
+These selected references support the interface assumptions, prior-work comparison and numerical methods. The full bibliography and traceable engineering records accompany the report. Thank you; we welcome questions.

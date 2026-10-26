@@ -1,0 +1,33 @@
+{
+  "edition": "VOLLEY-G5-ACR1-ED3",
+  "report_pages": 58,
+  "presentation_slides": 17,
+  "presentation_planned_seconds": 900,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1909,
+      "sha256": "8eef387313794f9a285ab92533d0d4da40f43921782849ff3ac05d0781d85efd"
+    },
+    {
+      "path": "SPEAKER_NOTES.md",
+      "bytes": 12874,
+      "sha256": "0482bc34d232c3c29c20cdde6a2001ea54a4f8ba4a46e5d92782b3b5952114c8"
+    },
+    {
+      "path": "VOLLEY_ED3_Document_Sources.zip",
+      "bytes": 20036520,
+      "sha256": "9ba165e293c97ae00583e39c7bfe607c08819ab99e17d3c0b5df75a9c4857f2c"
+    },
+    {
+      "path": "VOLLEY_ED3_Presentation.pdf",
+      "bytes": 1445834,
+      "sha256": "ad4d12e3a2778286810fb15e9dfc647ecce80798cee925c677fd722ae2978760"
+    },
+    {
+      "path": "VOLLEY_ED3_Report.pdf",
+      "bytes": 11677644,
+      "sha256": "64e828f3a34c4ca9c50e289476a94a28729e8d31c1e828a484d5df2a87586ab7"
+    }
+  ]
+}
