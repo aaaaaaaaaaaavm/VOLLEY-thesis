@@ -1,7 +1,11 @@
-# Dated development archive
+# Academic development archive
 
-[23 October and earlier academic snapshot](2026-10-23-pre-acr1/README.md) preserves the previous report, manuscript, figures, numerical studies, reviews and gate scripts in their original relative hierarchy. Its claims, status, build paths and numbers belong to those dated configurations. They are retained for traceability; the [current ACR1 package](../README.md) defines this revision.
+| Record | Location |
+|:--|:--|
+| Earlier designs, numerical investigations and academic documents | [Pre-ACR1 capture](2026-10-23-pre-acr1/README.md) |
+| Original Gen5 ACR1 report and manuscript | [24 October source issue](2026-10-24-acr1-original/README.md) |
+| ED1 scientific source and citation revision | [Captured academic source](../current/academic/README.md) |
 
-The archive is a copy of material already present in this repository before ACR1 promotion, not a new private handoff dump. Older failed contact models and earlier mass/force/mission results stay available in this dated record. Their earlier checks are retained with their sources. Archived external paths and historical link defects are identified in the publication exclusion policy; no current reproduction command depends on them.
+Earlier documents and computations retain their configuration identities. Original scientific binaries, CAD and solver data are preserved; identified corrections and later document editions receive their own paths and manifests. [Repository map](../docs/REPOSITORY_MAP.md).
 
-[Original ACR1 academic issue — 24 October 2026](2026-10-24-acr1-original/README.md) preserves the exact original files before the ED1 citation correction.
+[ED2 academic edition](../editions/ED2/README.md) · [ED3 report and presentation](../editions/ED3/README.md)

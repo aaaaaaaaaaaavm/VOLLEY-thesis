@@ -45,6 +45,34 @@ The study connects mechanical custody, finite electromagnetic force, electrical 
 
 The mission trade establishes where the concept must earn its installed burden: the tested preplanned campaigns show no propellant or initial wet-mass advantage over ideal ground-pretrimmed springs. The report presents this result alongside the demonstrated numerical behaviour of the selected mechanism. Physical prototype correlation and qualification form the subsequent development programme.
 
+### From magnetic geometry to release dynamics
+
+The finite motor calculation retains the stator's spatial extent and represented return conductors. Its force-position map feeds the electrical and mechanical model, linking the CAD reference to the predicted departure condition.
+
+![Finite electromagnetic force coefficient across the represented stroke](current/academic/assets/finite_force_coefficient.png)
+
+*Computed result · Gen5 ACR1. [Finite motor calculation](current/analysis/FINITE_MOTOR.json) · [Actual-conductor-current comparison](current/analysis/CURRENT_FIELD_FORCE.json). Numerical formulations retain their stated shared assumptions.*
+
+![Source-coupled nominal shot showing carrier motion, current and source voltage](current/academic/assets/coupled_shot_reference.png)
+
+*Computed result · nominal 3 m/s case. [Captured cases](current/analysis/COUPLED_SHOT.json) and [numerical refinement audit](current/verification/COUPLED_SHOT_REVIEW.json) connect launch, payload departure and retained-carrier arrest.*
+
+### Structure and mission consequences
+
+Structural and orbital calculations carry the mechanism beyond a motor-only result. The chassis study applies the stated loading and restraint boundary; the mission study counts retained device mass, host manoeuvres and recoil against shared delivery targets.
+
+![Computed actual-chassis linear-elastic deformation and displacement result](current/academic/assets/ACTUAL_CHASSIS_RESULT.png)
+
+*Computed structural result · the represented chassis and declared numerical supports. [Structural review](current/verification/CHASSIS_ACTUAL_REVIEW.md). This is solver output for the stated model, rather than a photograph of a test.*
+
+![Modeled target states for the shared host-assisted delivery comparison](current/academic/assets/MISSION_TARGETS.png)
+
+*Computed mission geometry · synthetic common-epoch target families. [Target definition](current/mission/MISSION_INPUTS.json) · [Resource results](current/mission/MISSION_RESULTS.csv) · [Native Orekit replay](current/mission/NATIVE_REPLAY_CHECKS.json). The same delivered states define the comparison.*
+
+## Design development
+
+The local [development archive](archive/README.md) preserves the earlier design studies, reports and numerical investigations leading to the integrated Gen5 reference. The current documents explain the selected mechanism and its evaluation; Gen6 development is presented as the subsequent research and prototype programme. [Repository map](docs/REPOSITORY_MAP.md).
+
 ## Report, presentation and supporting record
 
 | Material | Location |
