@@ -6,7 +6,21 @@ R=Path(__file__).resolve().parents[1]
 def module(path):
  spec=importlib.util.spec_from_file_location('acr1_example',path);m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m);return m
 with tempfile.TemporaryDirectory(prefix='volley-acr1-example-') as d:
- C=Path(d)/'current';shutil.copytree(R/'current',C)
+ C=Path(d)/'current'
+ # Copy only the actual inputs used below, preserving their relative paths.
+ # The full distribution also contains CAD binaries and solver archives that
+ # are not required for this numerical example.
+ required=(
+  'analysis/transfer_interlocks.py','analysis/feeder_sizing.py',
+  'analysis/FEEDER_SIZING.json','analysis/coupled_shot.py',
+  'analysis/COUPLED_SHOT.json','analysis/FINITE_MOTOR.json',
+  'analysis/ARREST_FORCE_MAP.json','analysis/conduction/phase_A/h2/RESULT.json',
+  'cad/PARAMETERS.json','cad/release/VOLLEY_G5_ACR1_home.json',
+  'sources/feeder_catalog_reference.json',
+ )
+ for relative in required:
+  destination=C/relative;destination.parent.mkdir(parents=True,exist_ok=True)
+  shutil.copyfile(R/'current'/relative,destination)
  runpy.run_path(str(C/'analysis/transfer_interlocks.py'),run_name='__main__')
  logic=json.loads((C/'analysis/TRANSFER_INTERLOCKS.json').read_text())
  assert logic['accepted_nominal_commands']==24 and logic['tests']==166 and logic['all_passed']
