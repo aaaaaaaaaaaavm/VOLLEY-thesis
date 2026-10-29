@@ -1,0 +1,179 @@
+{
+  "title": "VOLLEY commanded deployment presentation",
+  "issue": "October 2026",
+  "core_slides": 19,
+  "technical_appendix_slides": 12,
+  "total_slides": 31,
+  "planned_seconds": 900,
+  "speaker_seconds": {
+    "Adityavardhan Mishra": 450,
+    "Pratham Chawla": 450
+  },
+  "files": [
+    {
+      "path": "ASSET_MANIFEST.json",
+      "bytes": 3762,
+      "sha256": "a42a783f2d17340b5beee2631df0d379a8cbed04dfa641d98990cffc972c2535"
+    },
+    {
+      "path": "QA_REPORT.json",
+      "bytes": 1701,
+      "sha256": "fdb10a9f9181418884837bd95bad16aa2d0785a1ef95f762c27c878085fc4147"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3185,
+      "sha256": "cda50c43da0889a98af8a70cff49d1d78ceea2ef2c377571721b2033a4397827"
+    },
+    {
+      "path": "ROUTE.json",
+      "bytes": 6075,
+      "sha256": "67c97de8867c710474f0f400b283a2dbc72547b87fdbf1cec6c41d5a1c03641f"
+    },
+    {
+      "path": "SLIDES.json",
+      "bytes": 49166,
+      "sha256": "49e1354d9db7401433c60d95972374d95443cccaa0bed78521cf22ce52fbf33a"
+    },
+    {
+      "path": "SPEAKER_NOTES.md",
+      "bytes": 17314,
+      "sha256": "2093dcab7561c8f2d743e039c73cbd8d260bc71edc8d5f7bf6b21f94e84ec3ed"
+    },
+    {
+      "path": "VOLLEY_Presentation.html",
+      "bytes": 159336,
+      "sha256": "0b6decf0927f0d9a14e08a41ddb360a268c375c5ea44c2adbb1f7ce33741ea3b"
+    },
+    {
+      "path": "VOLLEY_Presentation.pdf",
+      "bytes": 1531184,
+      "sha256": "6c774544b92d21ca8e57da9a36cf15b6ce2aee95c941e3d78aecdad6320b4903"
+    },
+    {
+      "path": "VOLLEY_Presentation.pptx",
+      "bytes": 1552321,
+      "sha256": "724ee21805d7dfcd31da37494a0593befe590fa9f1e450493493e44416110680"
+    },
+    {
+      "path": "assets/02_handoff_pallet_locks-f075051e2179.jpg",
+      "bytes": 119261,
+      "sha256": "eda3b4cd072dca2d2328b1cefe5f0913c7258d236c010f5a9d1180d1a94b4ce0"
+    },
+    {
+      "path": "assets/04_clear_docked-0f24049a0767.jpg",
+      "bytes": 139893,
+      "sha256": "3fdb07fbbb4cd2fa1707580a25b2adf35277aea3bd5eae91a1d2de56d3320ff3"
+    },
+    {
+      "path": "assets/ED3_assembly_guide-9128ffa322a2.jpg",
+      "bytes": 116542,
+      "sha256": "1a718388feeac9d1be649f8533f79fde45c0a80bbf1a6e2210f4a42fe5412f06"
+    },
+    {
+      "path": "assets/LIBERATION_FONT_LICENSE.txt",
+      "bytes": 5756,
+      "sha256": "f32df582a2aab128c07b2f7e36e7b928dc5f6bd82657b905c04f91459f9e5cf9"
+    },
+    {
+      "path": "assets/LiberationSans-Bold.ttf",
+      "bytes": 414568,
+      "sha256": "1b5f2da6f4cadce4c05b9ecebe3a6fcd374eb95ae443605e799f4c3287978939"
+    },
+    {
+      "path": "assets/LiberationSans-Italic.ttf",
+      "bytes": 415920,
+      "sha256": "93ff5260834141b6f9d8f2b846d427f3a5dc492dbdce8ebdad406e38a38f34bb"
+    },
+    {
+      "path": "assets/LiberationSans-Regular.ttf",
+      "bytes": 410820,
+      "sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "path": "assets/assembly_hero-89a1b8670054.jpg",
+      "bytes": 113494,
+      "sha256": "7980b1ed30086a1f860bcd1e73865985c7ccc9f7da41d9cbb64f7d8b8aeae582"
+    },
+    {
+      "path": "assets/chassis_mesh_and_paired_closure.jpg",
+      "bytes": 97974,
+      "sha256": "017089d3e33b0d4a9d8174bb6d427bd4846b15a934f13f0975407e8d7019f9f9"
+    },
+    {
+      "path": "assets/commanded_release_traces_slide-98a05c50dacf.jpg",
+      "bytes": 79791,
+      "sha256": "8d29f46087274a57857593ff26eafeed6acab9e7683c8307b7d608f9368af465"
+    },
+    {
+      "path": "assets/feed_and_capture.mp4",
+      "bytes": 288398,
+      "sha256": "12f9ee3a39dc5c10d4282e8188718963faed212a642d47b367dd54275b03d3bc"
+    },
+    {
+      "path": "assets/feed_poster.jpg",
+      "bytes": 34069,
+      "sha256": "b9706caa0bb715c665d947f265d742196c6a2b5b493b9f09f594123ee649f929"
+    },
+    {
+      "path": "assets/feeder_detail_annotated-ad7e94cd594d.jpg",
+      "bytes": 61460,
+      "sha256": "c81865656d2eb6bcc05a2f97c973aed667d7074ec76cdb441e1c622f9fdbfa3a"
+    },
+    {
+      "path": "assets/finite_force_coefficient-8c553ff9aa80.jpg",
+      "bytes": 82001,
+      "sha256": "58cec9110c3074706f9109b1d5eb6d86d4da81c65b291a4e376f07efcff1485d"
+    },
+    {
+      "path": "assets/host_and_release_roles_slide-9a2ee6ca67d3.jpg",
+      "bytes": 71698,
+      "sha256": "5fc413c93b468f4886553a02763591548f9f115b8d691eaf6b8f628c9b81c057"
+    },
+    {
+      "path": "assets/matched_mission_comparison_slide-758a51d967ce.jpg",
+      "bytes": 49058,
+      "sha256": "d227e701c87aea2574235ee2ac57054b4ff471a1241c9a320bf80b75e351ac8e"
+    },
+    {
+      "path": "assets/matched_structural_comparison_slide-23df2c42ac4d.jpg",
+      "bytes": 56472,
+      "sha256": "0db0faa3c5d1b110eae65c1a3f4302da7d0c179e528dd23161aa42bf2f664766"
+    },
+    {
+      "path": "assets/motor_force_principle_slide-5aa6819d5b10.jpg",
+      "bytes": 50038,
+      "sha256": "f950f8a4546da06d2e98b5b6794d45ce5e7f5fa9f7ca4ff1dac8793af4880d6d"
+    },
+    {
+      "path": "assets/release_arrest_return.mp4",
+      "bytes": 109191,
+      "sha256": "5b41e6dfb5239f3ed900ee5648ad884375a6cd8d1551c34d61e818c25bf2f150"
+    },
+    {
+      "path": "assets/release_poster.jpg",
+      "bytes": 32419,
+      "sha256": "809719ea8a3fc0ebfae16d4c09490999715d2b0ed3aa7cb46b3f2efd43bb77de"
+    },
+    {
+      "path": "assets/shot_energy_account_slide-01e52275629e.jpg",
+      "bytes": 62012,
+      "sha256": "c518e043b727d5cb8e47cd9b81323d6211f1d1b2145b9edb65fed22941458eaa"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 642,
+      "sha256": "70f0e8fbd94d3005a9a8f2d836d99d732f8d2193bece9e08a123b24971e713a0"
+    },
+    {
+      "path": "render_deck.py",
+      "bytes": 30512,
+      "sha256": "8fff6488d32c763d218f58e41d3ea4eb5311c958e52a1005ed506afedf86d99c"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 51,
+      "sha256": "1ee75f79e1d704eb26fad16e330862ed187dd2e8355404e96e9b1f78663df713"
+    }
+  ]
+}

@@ -40,3 +40,21 @@ for item in r['files']:
    assert z.testzip() is None
    assert all(not n.startswith('/') and '..' not in Path(n).parts for n in z.namelist())
 print('PASS: ED3 artifact identities and 58-page/17-slide route')
+
+presentation = root / 'editions/presentation-2026-10'
+record = json.loads((presentation / 'MANIFEST.json').read_text())
+assert (record['core_slides'], record['technical_appendix_slides'], record['total_slides'], record['planned_seconds']) == (19, 12, 31, 900)
+assert sorted(record['speaker_seconds'].values()) == [450, 450]
+for item in record['files']:
+    path = (presentation / item['path']).resolve()
+    assert path.is_relative_to(presentation.resolve()) and path.is_file(), item['path']
+    raw = path.read_bytes()
+    assert len(raw) == item['bytes'] and hashlib.sha256(raw).hexdigest() == item['sha256'], item['path']
+with ZipFile(presentation / 'VOLLEY_Presentation.pptx') as archive:
+    import re
+    assert archive.testzip() is None
+    assert len([name for name in archive.namelist() if re.fullmatch(r'ppt/slides/slide\d+\.xml', name)]) == 31
+    assert len([name for name in archive.namelist() if name.startswith('ppt/media/') and name.endswith('.mp4')]) == 2
+route = json.loads((presentation / 'ROUTE.json').read_text())
+assert route['core_count'] == 19 and route['appendix_count'] == 12 and route['planned_seconds'] == 900
+print('PASS: October presentation, 19 core/12 appendix slides, 450+450 seconds, two embedded clips and portable asset identities')

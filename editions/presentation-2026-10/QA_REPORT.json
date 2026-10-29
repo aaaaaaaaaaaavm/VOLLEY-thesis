@@ -1,0 +1,67 @@
+{
+  "pdf": {
+    "pages": 31,
+    "bookmarks": 31,
+    "page_sizes": [
+      [
+        960,
+        540
+      ]
+    ],
+    "links": 6,
+    "all_pages_have_searchable_text": true
+  },
+  "pptx": {
+    "slides": 31,
+    "native_notes": 31,
+    "native_text_runs": 474,
+    "embedded_videos": [
+      "ppt/media/media1.mp4",
+      "ppt/media/media2.mp4"
+    ],
+    "all_slide_xml_parse": true
+  },
+  "bounds": {
+    "slides": 31,
+    "text_bounds_issues": []
+  },
+  "html": {
+    "slides": 31,
+    "javascript_errors": [],
+    "remote_requests": [],
+    "video_decode_and_play": [
+      {
+        "duration": 13.2,
+        "currentTime": 0.299941,
+        "readyState": 4,
+        "videoWidth": 960,
+        "videoHeight": 540
+      },
+      {
+        "duration": 8,
+        "currentTime": 0.302571,
+        "readyState": 4,
+        "videoWidth": 960,
+        "videoHeight": 540
+      }
+    ],
+    "keyboard_navigation": true,
+    "offline_fonts_ready": true
+  },
+  "portability": {
+    "isolated_directory_build_exit_code": 0,
+    "original_source_images_required": false,
+    "relative_asset_paths": true,
+    "stderr": ""
+  },
+  "visual_review": "All 31 pages rendered; title, feeder, operating result, future roadmap and bibliography inspected at 960\u00d7540. Three full contact sheets retained.",
+  "playback_boundary": "Embedded MP4 structure and Chromium playback verified. Native PowerPoint playback on the presentation computer requires device rehearsal.",
+  "final_requested_content": {
+    "core17: technical paper draft": true,
+    "core17: GatewayCX": true,
+    "core18: Artemis": true,
+    "core18: 3.5 km/s": true,
+    "core18: POEM-inspired": true,
+    "core18: replenishable": true
+  }
+}

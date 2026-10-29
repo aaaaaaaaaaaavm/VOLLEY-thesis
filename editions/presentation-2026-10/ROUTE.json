@@ -1,0 +1,255 @@
+{
+  "core_count": 19,
+  "appendix_count": 12,
+  "planned_seconds": 900,
+  "slides": [
+    {
+      "id": 1,
+      "title": "VOLLEY",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 15,
+      "page": 1,
+      "appendix": false
+    },
+    {
+      "id": 2,
+      "title": "From the delivery problem to the engineering result",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 15,
+      "page": 2,
+      "appendix": false
+    },
+    {
+      "id": 3,
+      "title": "The host moves the orbit. VOLLEY commands departure.",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 40,
+      "page": 3,
+      "appendix": false
+    },
+    {
+      "id": 4,
+      "title": "The contribution is the integrated retained-carrier cycle",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 40,
+      "page": 4,
+      "appendix": false
+    },
+    {
+      "id": 5,
+      "title": "A complete reference for twelve retained payloads",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 45,
+      "page": 5,
+      "appendix": false
+    },
+    {
+      "id": 6,
+      "title": "Feed one cell into a supported receiver",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 65,
+      "page": 6,
+      "appendix": false
+    },
+    {
+      "id": 7,
+      "title": "Transfer custody before withdrawing support",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 55,
+      "page": 7,
+      "appendix": false
+    },
+    {
+      "id": 8,
+      "title": "Finite geometry sets the motor force",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 55,
+      "page": 8,
+      "appendix": false
+    },
+    {
+      "id": 9,
+      "title": "Solve source, current and motion together",
+      "speaker": "Pratham Chawla",
+      "seconds": 60,
+      "page": 9,
+      "appendix": false
+    },
+    {
+      "id": 10,
+      "title": "The principal 3 m/s case completes release and arrest",
+      "speaker": "Pratham Chawla",
+      "seconds": 75,
+      "page": 10,
+      "appendix": false
+    },
+    {
+      "id": 11,
+      "title": "Check solids, states and the represented motion path",
+      "speaker": "Pratham Chawla",
+      "seconds": 45,
+      "page": 11,
+      "appendix": false
+    },
+    {
+      "id": 12,
+      "title": "Independent static calculations reproduce paired closure",
+      "speaker": "Pratham Chawla",
+      "seconds": 60,
+      "page": 12,
+      "appendix": false
+    },
+    {
+      "id": 13,
+      "title": "Thermal budgets and interlocks complete the operating boundary",
+      "speaker": "Pratham Chawla",
+      "seconds": 50,
+      "page": 13,
+      "appendix": false
+    },
+    {
+      "id": 14,
+      "title": "Compare equal delivery targets and count retained resources",
+      "speaker": "Pratham Chawla",
+      "seconds": 90,
+      "page": 14,
+      "appendix": false
+    },
+    {
+      "id": 15,
+      "title": "A complete computational reference connects the machine to the mission",
+      "speaker": "Pratham Chawla",
+      "seconds": 40,
+      "page": 15,
+      "appendix": false
+    },
+    {
+      "id": 16,
+      "title": "Development follows linked engineering questions",
+      "speaker": "Pratham Chawla",
+      "seconds": 30,
+      "page": 16,
+      "appendix": false
+    },
+    {
+      "id": 17,
+      "title": "An engineering ecosystem grew around the deployment problem",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 35,
+      "page": 17,
+      "appendix": false
+    },
+    {
+      "id": 18,
+      "title": "Gen6 turns the reference into an instrumented hardware programme",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 65,
+      "page": 18,
+      "appendix": false
+    },
+    {
+      "id": 19,
+      "title": "Commanded deployment, evaluated as a complete system",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 20,
+      "page": 19,
+      "appendix": false
+    },
+    {
+      "id": "A1",
+      "title": "Reference quantities and mass boundaries",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 20,
+      "appendix": true
+    },
+    {
+      "id": "A2",
+      "title": "Why a guided lead screw?",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 21,
+      "appendix": true
+    },
+    {
+      "id": "A3",
+      "title": "Capture before lift release",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 22,
+      "appendix": true
+    },
+    {
+      "id": "A4",
+      "title": "Finite-field and current-path comparisons",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 23,
+      "appendix": true
+    },
+    {
+      "id": "A5",
+      "title": "Source and switching allocations",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 24,
+      "appendix": true
+    },
+    {
+      "id": "A6",
+      "title": "Principal nominal energy account",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 25,
+      "appendix": true
+    },
+    {
+      "id": "A7",
+      "title": "Gap closure and individual-face budgets",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 26,
+      "appendix": true
+    },
+    {
+      "id": "A8",
+      "title": "Thermal and fault interpretation",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 27,
+      "appendix": true
+    },
+    {
+      "id": "A9",
+      "title": "Host reaction and the common terminal epoch",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 28,
+      "appendix": true
+    },
+    {
+      "id": "A10",
+      "title": "Higher-speed work already in Labs",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 29,
+      "appendix": true
+    },
+    {
+      "id": "A11",
+      "title": "Lunar departure and capture are separate operations",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 30,
+      "appendix": true
+    },
+    {
+      "id": "A12",
+      "title": "Selected bibliography and research record",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "page": 31,
+      "appendix": true
+    }
+  ]
+}

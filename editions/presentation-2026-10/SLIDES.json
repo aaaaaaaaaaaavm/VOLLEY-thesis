@@ -1,0 +1,1004 @@
+{
+  "title": "VOLLEY: A Commanded Electromagnetic CubeSat Deployment Mechanism",
+  "subtitle": "Design and Computational Evaluation",
+  "authors": [
+    "Adityavardhan Mishra",
+    "Pratham Chawla"
+  ],
+  "guide": "Vikas Gulia",
+  "institution": "Symbiosis Institute of Technology, Pune",
+  "department": "Mechanical Engineering",
+  "date": "October 2026",
+  "planned_duration_seconds": 900,
+  "speaker_seconds": {
+    "Adityavardhan Mishra": 450,
+    "Pratham Chawla": 450
+  },
+  "slides": [
+    {
+      "id": 1,
+      "title": "VOLLEY",
+      "section": "B.Tech Mechanical Engineering",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 15,
+      "message": "A Commanded Electromagnetic CubeSat Deployment Mechanism",
+      "bullets": [
+        "Adityavardhan Mishra · Pratham Chawla",
+        "Symbiosis Institute of Technology, Pune",
+        "Guide: Vikas Gulia"
+      ],
+      "asset": "assets/assembly_hero-89a1b8670054.jpg",
+      "caption": "CAD-derived Blender rendering of the evaluated Gen5 assembly.",
+      "notes": "VOLLEY is a commanded electromagnetic CubeSat deployment mechanism. We developed and computationally evaluated a complete storage, transfer, launch and carrier-recovery reference. This presentation explains the engineering, the results and the programme it supports.",
+      "metrics": [],
+      "layout": "title",
+      "sources": [
+        "Design and Computational Evaluation · October 2026"
+      ],
+      "subtitle": "A Commanded Electromagnetic CubeSat Deployment Mechanism",
+      "authors": "Adityavardhan Mishra  ·  Pratham Chawla",
+      "institution": "Symbiosis Institute of Technology, Pune\nB.Tech · Mechanical Engineering",
+      "guide": "Guide: Vikas Gulia"
+    },
+    {
+      "id": 2,
+      "title": "From the delivery problem to the engineering result",
+      "section": "Outline",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 15,
+      "message": "One connected argument: mission, machine, evidence and development.",
+      "bullets": [
+        "Problem, prior work and design objectives",
+        "Mechanism, models, numerical checks and mission results",
+        "Development history, research ecosystem and next hardware stage"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "We begin with the mission and the design choices, then follow one payload through the machine. We explain the coupled motor and source, geometric and structural checks, and matched mission comparison. We close with the completed study and the next development steps.",
+      "metrics": [],
+      "layout": "two_columns",
+      "sources": [
+        "Department presentation format; blackbook chapters 1–11"
+      ],
+      "takeaway": "One connected argument: mission, machine, evidence and development.",
+      "columns": [
+        {
+          "title": "Problem and objectives",
+          "bullets": [
+            "Problem, prior work and design objectives"
+          ]
+        },
+        {
+          "title": "Mechanism and evaluation",
+          "bullets": [
+            "Mechanism, models, numerical checks and mission results"
+          ]
+        },
+        {
+          "title": "Research programme",
+          "bullets": [
+            "Development history, research ecosystem and next hardware stage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The host moves the orbit. VOLLEY commands departure.",
+      "section": "Introduction",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 40,
+      "message": "Add a controllable relative release state to a manoeuvring host.",
+      "bullets": [
+        "Initial integration audience: orbital-transfer and rideshare host operators",
+        "POEM inspires reuse of an orbital platform; Electron Kick Stage inspires host manoeuvres",
+        "Individual departure velocity is an additional mission variable"
+      ],
+      "asset": "assets/host_and_release_roles_slide-9a2ee6ca67d3.jpg",
+      "caption": "Explanatory schematic. Release velocity and host velocity refer to the same event and frame.",
+      "notes": "A satellite inherits the host state and a relative release vector at separation. POEM demonstrated a powered, attitude-controlled platform using a spent PS4 stage. Electron’s Kick Stage demonstrated manoeuvres before satellite release. These are architectural precedents. Our evaluated host remains a generic manoeuvring reference, with no approved vehicle accommodation. The service question is whether additional local release control is worth its installed and operating burden.",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§1.1,2.2,8.1; ISRO POEM; Rocket Lab Kick Stage"
+      ],
+      "takeaway": "Add a controllable relative release state to a manoeuvring host."
+    },
+    {
+      "id": 4,
+      "title": "The contribution is the integrated retained-carrier cycle",
+      "section": "Literature review and research gap",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 40,
+      "message": "Connect custody, finite motor force, source response, arrest and mission burden.",
+      "bullets": [
+        "Zhao et al. (2022): stacked electromagnetic deployment",
+        "Zhao et al. (2025): storage and transport interfaces; Feng et al. (2025): reachable-domain study",
+        "VOLLEY evaluates these coupled system questions for one explicit design"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "Adjustable electromagnetic separation is established prior art. We credit the published deployers and their experimental evidence. Our contribution is the design-specific integration and evaluation of a reusable retained-carrier architecture. The same represented geometry and mass connect the feeder, finite motor, source-limited shot, structural budget and mission comparison. Results from another apparatus support methods and comparisons; they are not measurements of VOLLEY.",
+      "metrics": [],
+      "layout": "table",
+      "sources": [
+        "Blackbook chapter 3; doi:10.3390/rs14174205; doi:10.3390/aerospace12060466; doi:10.1155/ijae/3000765"
+      ],
+      "takeaway": "Connect custody, finite motor force, source response, arrest and mission burden.",
+      "headers": [
+        "Prior work / study",
+        "Engineering focus"
+      ],
+      "column_widths": [
+        0.3,
+        0.7
+      ],
+      "rows": [
+        [
+          "Zhao et al. (2022)",
+          "Stacked electromagnetic deployment"
+        ],
+        [
+          "Zhao et al. (2025)",
+          "Storage and transport interfaces"
+        ],
+        [
+          "Feng et al. (2025)",
+          "Reachable-domain study"
+        ],
+        [
+          "VOLLEY",
+          "Integrated custody, finite motor/source, arrest and mission burden"
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "title": "A complete reference for twelve retained payloads",
+      "section": "Objectives and configuration",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 45,
+      "message": "Define a repeatable path from storage to free departure.",
+      "bullets": [
+        "Two fixed six-cell banks; one indexed captive pallet",
+        "Guided lead-screw feed; positive carrier capture",
+        "Reusable moving-magnet carrier; fixed three-phase stator"
+      ],
+      "asset": "assets/ED3_assembly_guide-9128ffa322a2.jpg",
+      "caption": "CAD-derived assembly view. The represented payload is a 3U envelope surrogate.",
+      "notes": "The academic reference holds twelve identical four-kilogram 3U surrogates. Their contact envelope is 340.5 by 100 by 100 millimetres. Two fixed six-cell banks feed one captive pallet on an indexed lift. The pallet docks to a retained magnetic carrier. The objectives are continuous custody, finite electromagnetic force, source-coupled release and arrest, and a mission assessment including retained resources. Mixed 1U/3U belongs to the subsequent prototype programme.",
+      "metrics": [
+        {
+          "value": "12 × 4 kg",
+          "label": "3U envelope surrogates"
+        },
+        {
+          "value": "1–3 m/s",
+          "label": "Analysed command cases"
+        },
+        {
+          "value": "2250 mm",
+          "label": "Guide-rail allocation"
+        }
+      ],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§2.1–2.3,5.1"
+      ],
+      "takeaway": "Define a repeatable path from storage to free departure."
+    },
+    {
+      "id": 6,
+      "title": "Feed one cell into a supported receiver",
+      "section": "Feeder mechanism",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 65,
+      "message": "The selected guided lead screw transfers the payload into the lift-held pallet.",
+      "bullets": [
+        "Index the receiver to the selected cell",
+        "Open the permitted restraint; advance the guided pusher",
+        "Establish receiving containment; retract the pusher and close the cell"
+      ],
+      "asset": "assets/feed_poster.jpg",
+      "caption": "CAD-derived operating sequence; display timing edited. Static fallback shown.",
+      "notes": "Follow the payload, not just the actuator. It begins retained in a fixed cell. The lift-held pallet is indexed to the source. A guided positive pusher advances the payload along the restrained path. The receiving end frames and keepers contain it before the pusher retracts and the source closes. The receiver then moves to the carrier. The lead screw offers controlled travel and a defined load path. Seven feeder alternatives were compared in Labs; their scores are engineering judgments, not measured reliability. We retained the runner-up and rejected concepts for traceability.",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§5.1–5.4,7.4; Labs feeder selection"
+      ],
+      "takeaway": "The selected guided lead screw transfers the payload into the lift-held pallet.",
+      "movie": "assets/feed_and_capture.mp4",
+      "poster": "assets/feed_poster.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Transfer custody before withdrawing support",
+      "section": "Pallet docking and release",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 55,
+      "message": "One captive pallet stays with the reusable carrier through launch and recovery.",
+      "bullets": [
+        "Carrier capture caps and independent pins engage",
+        "Keyed pallet shafts insert 12 mm and rotate 90°",
+        "Only then do lift grips retract and the lift clear the launch path"
+      ],
+      "asset": "assets/02_handoff_pallet_locks-f075051e2179.jpg",
+      "caption": "CAD-derived docking state. Modelled capture sequence; not a photographed hardware test.",
+      "notes": "Four pallet feet land on the carrier while the lift remains engaged. Capture caps, lock pins and the keyed pallet shafts establish carrier capture. Lift grips retract by 26 millimetres only after the permitted state is established. Before departure, fixed cams open the forekeepers. Electrical braking reduces the unilateral rear-contact reaction to zero; the payload then leaves. The pallet and magnetic carrier remain on the host, arrest under the motor map and return. This separates payload release from carrier recovery.",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§5.2–5.4,9.2"
+      ],
+      "takeaway": "One captive pallet stays with the reusable carrier through launch and recovery."
+    },
+    {
+      "id": 8,
+      "title": "Finite geometry sets the motor force",
+      "section": "Electromagnetic operating principle",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 55,
+      "message": "Opposed permanent-magnet arrays exchange force with a fixed three-phase winding.",
+      "bullets": [
+        "Integrate current density over the represented copper",
+        "Finite magnet blocks, active conductors and returns enter the calculation",
+        "Launch and arrest use their corresponding position-dependent maps"
+      ],
+      "asset": "assets/motor_force_principle_slide-5aa6819d5b10.jpg",
+      "caption": "Local force/reaction schematic. The numerical model integrates the represented finite geometry.",
+      "notes": "The phased fixed winding and moving magnet arrays form a linear synchronous motor. Current density and magnetic field give longitudinal Lorentz force. The equal and opposite reaction acts on the moving array carrier. A periodic wave is useful for initial sizing, but finite end geometry and returns matter to launch and arrest. We report approximately 1.328 newtons per peak phase ampere for active conductors and 1.399 including represented returns. Pratham will now explain how those forces were coupled to a finite source and checked against the mechanical cycle.",
+      "metrics": [
+        {
+          "value": "≈1.328 N/A",
+          "label": "Active-conductor coefficient"
+        },
+        {
+          "value": "≈1.399 N/A",
+          "label": "Including represented returns"
+        }
+      ],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§4.2,6.1–6.2"
+      ],
+      "takeaway": "Opposed permanent-magnet arrays exchange force with a fixed three-phase winding.",
+      "formula": "Fₓ = ∫Cu (J × B)ₓ dV",
+      "formula_position": "image_top"
+    },
+    {
+      "id": 9,
+      "title": "Solve source, current and motion together",
+      "section": "Research methodology",
+      "speaker": "Pratham Chawla",
+      "seconds": 60,
+      "message": "The release event changes the mechanical connectivity of the model.",
+      "bullets": [
+        "Phase voltage, current and back-emf",
+        "Finite capacitance and ESR constrain available terminal power",
+        "Rear contact reaches zero; the retained carrier then arrests"
+      ],
+      "asset": "assets/release_poster.jpg",
+      "caption": "CAD-derived operating sequence; display timing edited. Static fallback shown.",
+      "notes": "The shot calculation couples current dynamics, finite force, source voltage and motion. The phase relation contains winding resistance, inductance and back-emf. The capacitor is not ideal: its internal voltage, ESR and physical power root are evaluated. Requested braking is also constrained by regenerative terminal voltage. Payload and carrier initially interact through compressive rear contact. That contact cannot pull the payload. After detachment, the reduced mechanical system changes and the same finite motor arrests the retained carrier. The audit checks the algebra and limiting logic of an instrumented production solver; it is not an unrelated full physics implementation.",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§4.3–4.4,6.3–6.4"
+      ],
+      "takeaway": "The release event changes the mechanical connectivity of the model.",
+      "formula": "Vq = R Iq + L dIq/dt + Ke(x) v",
+      "formula_position": "image_top",
+      "movie": "assets/release_arrest_return.mp4",
+      "poster": "assets/release_poster.jpg"
+    },
+    {
+      "id": 10,
+      "title": "The principal 3 m/s case completes release and arrest",
+      "section": "Coupled operating results",
+      "speaker": "Pratham Chawla",
+      "seconds": 75,
+      "message": "The six principal nominal/adverse and inductance cases pass their declared model checks.",
+      "bullets": [],
+      "asset": "assets/commanded_release_traces_slide-98a05c50dacf.jpg",
+      "caption": "Computed histories. Principal case: 3 m/s command, nominal source, 20 µH; source and case-specific checks apply.",
+      "notes": "The source reference uses 64 Eaton-family cells in a 32-series two-parallel arrangement. Nominal capacitance is 6.25 farads and ESR 0.176 ohms; adverse source assumptions are separate. One three-half-bridge inverter uses ten MOSFETs per switch position, sixty in total. We show the nominal twenty-microhenry principal replay. Relative release is 2.999864 metres per second; stopping occurs at 1.507289 metres from the model origin. All six principal combinations of nominal/adverse conditions and three inductances pass declared checks in the refined audit. The 1 and 2 metre-per-second cases support the analysed range, while the full timestep audit applies specifically to 3 metres per second.\n\nDisplayed result context: 64 cells, 32S2P; 86.4 V initial source command; Principal nominal replay: 2.999864 m/s relative departure; Carrier stops at 1.507289 m, inside the post-release allocation",
+      "metrics": [
+        {
+          "value": "86.4 V",
+          "label": "Initial source command"
+        },
+        {
+          "value": "2.999864 m/s",
+          "label": "Nominal model departure"
+        },
+        {
+          "value": "0.2073 m",
+          "label": "Approximate arrest travel"
+        }
+      ],
+      "layout": "plot_big",
+      "sources": [
+        "Blackbook §§6.3–6.4; coupled shot and timestep audit"
+      ],
+      "takeaway": "3 m/s command → 2.999864 m/s release · carrier stop position 1.507289 m"
+    },
+    {
+      "id": 11,
+      "title": "Check solids, states and the represented motion path",
+      "section": "CAD and integration verification",
+      "speaker": "Pratham Chawla",
+      "seconds": 45,
+      "message": "Geometry is checked beyond a single assembly rendering.",
+      "bullets": [
+        "Eight native and STEP states retain part identities and pallet counts",
+        "154 accepted sampled-motion and refinement checks",
+        "Named solid-volume mass ledger separates CAD material and allowances"
+      ],
+      "asset": "assets/04_clear_docked-0f24049a0767.jpg",
+      "caption": "CAD-derived launch-ready state. Native solid and exchange-geometry records support the displayed arrangement.",
+      "notes": "An isometric rendering explains the assembly, but geometric checks use individual shapes, connected-solid status and intersections. Eight states preserve the part identities and physical pallet count. The accepted motion record combines 135 retained poses and 19 final direct checks. Certain changes also have strict material-subset or conservative travel-envelope arguments. These are nominal geometric checks with stated allocations, not a measured manufacturing tolerance distribution. Represented dry CAD mass is 149.557 kilograms; a separate seven-kilogram power/control allowance is carried into mission accounting.",
+      "metrics": [
+        {
+          "value": "8",
+          "label": "Native / STEP states"
+        },
+        {
+          "value": "154",
+          "label": "Motion / refinement checks"
+        },
+        {
+          "value": "149.557 kg",
+          "label": "Represented dry CAD mass"
+        }
+      ],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§7.1,7.3–7.5; native/STEP readback"
+      ],
+      "takeaway": "Geometry is checked beyond a single assembly rendering."
+    },
+    {
+      "id": 12,
+      "title": "Independent static calculations reproduce paired closure",
+      "section": "Structural analysis",
+      "speaker": "Pratham Chawla",
+      "seconds": 60,
+      "message": "Use the same chassis, opposed loads and restraints for a meaningful solver comparison.",
+      "bullets": [],
+      "asset": "assets/matched_structural_comparison_slide-23df2c42ac4d.jpg",
+      "caption": "Computed bare-chassis comparison. ANSYS mesh refinement sensitivity is distinct from experimental accuracy.",
+      "notes": "Magnetic attraction loads the carrier across the gap. The actual connected bare-chassis geometry is subjected to opposed inward patches with matched numerical restraints. Each resultant is approximately 3010.481 newtons. CalculiX gives 0.285983 millimetres paired closure; the primary ANSYS sample gives 0.286392, approximately 0.143 percent higher. Three ANSYS meshes examine refinement sensitivity. A sum of two remaining gaps does not establish each individual assembled gap. The individual-face budget additionally uses centring, flatness, assembly and thermal allocations. Solver agreement supports this matched numerical boundary; it does not measure complete assembled hardware.\n\nDisplayed result context: Each array patch receives approximately 3.010 kN inward; CalculiX reference paired closure: 0.285983 mm; Primary ANSYS sampled closure: 0.286392 mm",
+      "metrics": [],
+      "layout": "plot_big",
+      "sources": [
+        "Blackbook §7.2; corrected matched ANSYS static cross-check"
+      ],
+      "takeaway": "Paired closure: 0.285983 mm (CalculiX) · 0.286392 mm (primary ANSYS sample)"
+    },
+    {
+      "id": 13,
+      "title": "Thermal budgets and interlocks complete the operating boundary",
+      "section": "Thermal analysis and controls",
+      "speaker": "Pratham Chawla",
+      "seconds": 50,
+      "message": "Electrical losses, contact assumptions and sequencing stay explicit.",
+      "bullets": [
+        "Copper heating uses the current history and represented conductor field",
+        "Repeated-shot estimates distinguish bulk rise, local rise and cooling assumptions",
+        "24 nominal commands; 166 passing interlock-model tests"
+      ],
+      "asset": "assets/shot_energy_account_slide-01e52275629e.jpg",
+      "caption": "Computed principal-case energy account. Numerical residuals check conservation; they are not efficiency or reliability measurements.",
+      "notes": "Energy accounting includes mechanical change, copper, inverter, bank and auxiliary terms. Thermal estimates distinguish bulk temperature rise from local adiabatic observations. The 3.295053-kelvin quantity in the repeated-operation discussion is a temperature rise, not a percentage. Four hundred and fifty seconds is assumed shot spacing, not the diffusion time. The interlock model checks twenty-four nominal commands and one hundred and sixty-six tests, including declared power-loss, jam, disagreement, timeout and host-burn cases. These test the represented logic. They do not provide a measured probability of successful release.",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook §§5.4,7.6–7.7; source energy and interlock records"
+      ],
+      "takeaway": "Electrical losses, contact assumptions and sequencing stay explicit."
+    },
+    {
+      "id": 14,
+      "title": "Compare equal delivery targets and count retained resources",
+      "section": "Mission comparison",
+      "speaker": "Pratham Chawla",
+      "seconds": 90,
+      "message": "Commanded departure must earn its service value at the complete host-system boundary.",
+      "bullets": [],
+      "asset": "assets/matched_mission_comparison_slide-758a51d967ce.jpg",
+      "caption": "Selected feasible tested policies in the alternating target family with a 5 N host ceiling; device masses and burn guards retain their declared differences.",
+      "notes": "A fair comparison includes device mass, changing host mass, recoil, fuel and allowed operations. We use the same target position and velocity states at a common terminal epoch. In the selected alternating-family five-newton cases, VOLLEY uses about 0.28987 kilograms of host propellant and ideal ground-pretrimmed springs about 0.05365. Retained device assumptions are 156.557 and 72 kilograms respectively. The result establishes no mass or fuel advantage for VOLLEY in this tested preplanned service. This identifies where a customer case must be stronger, such as a genuine need for on-orbit command flexibility. That flexibility has not itself been priced as demonstrated economic benefit. Native Orekit replay checks the declared mission arcs and J2 boundary; it is not a full flight safety analysis.\n\nDisplayed result context: Common payload manifest, target states and terminal epoch; Compare host-assisted VOLLEY with host-assisted spring alternatives; In the tested preplanned case, ideal ground pretrim uses less propellant",
+      "metrics": [],
+      "layout": "plot_big",
+      "sources": [
+        "Blackbook §§8.2–8.5; mission comparison and native Orekit replay"
+      ],
+      "takeaway": "Host propellant: 0.2899 kg (VOLLEY) · 0.0536 kg (ideal ground-pretrim spring)"
+    },
+    {
+      "id": 15,
+      "title": "A complete computational reference connects the machine to the mission",
+      "section": "Conclusions",
+      "speaker": "Pratham Chawla",
+      "seconds": 40,
+      "message": "The study delivers a defined operating cycle and configuration-specific engineering results.",
+      "bullets": [
+        "Storage, feed, capture, departure, arrest and return are defined",
+        "Finite force, source response and retained mass are evaluated together",
+        "Geometry, structure, thermal budgets and mission resources share an evidence chain"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "The achieved result is a complete computational design reference. It provides an explicit payload path, a finite motor and source-coupled operating study, geometric and structural checks, thermal and control budgets, and a matched mission comparison. The 1–3 metre-per-second study supplies the evaluated academic envelope. The conclusions include both the supported operation and the system trade revealed by the mission case. This is the engineering basis for selecting and instrumenting a physical article.",
+      "metrics": [],
+      "layout": "cards",
+      "sources": [
+        "Blackbook chapters 9–11"
+      ],
+      "takeaway": "The study delivers a defined operating cycle and configuration-specific engineering results.",
+      "columns": [
+        {
+          "title": "Operating cycle",
+          "bullets": [
+            "Storage, feed, capture, departure, arrest and return are defined"
+          ]
+        },
+        {
+          "title": "Coupled model",
+          "bullets": [
+            "Finite force, source response and retained mass are evaluated together"
+          ]
+        },
+        {
+          "title": "Engineering checks",
+          "bullets": [
+            "Geometry, structure, thermal budgets and mission resources share an evidence chain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Development follows linked engineering questions",
+      "section": "Timeline and work progress",
+      "speaker": "Pratham Chawla",
+      "seconds": 30,
+      "message": "Five-plus years of VOLLEY development produced a connected engineering record.",
+      "bullets": [
+        "Concept and host architecture → feeder, carrier and finite motor models",
+        "Integrated computational reference → independent numerical comparisons",
+        "Reusable tools and Labs investigations → physical-development requirements"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "VOLLEY developed over more than five years. We describe the stages using the documented lineage rather than assigning every related repository the same age. Concept selection led to payload handling, finite motor geometry, coupled source and motion, structural and mission evaluations. The completed reference now supports prototype requirements. Related tools emerged from specific engineering needs. Adityavardhan will close by showing that ecosystem and its staged development direction.",
+      "metrics": [],
+      "layout": "roadmap",
+      "sources": [
+        "Blackbook development appendix; documented project history"
+      ],
+      "takeaway": "Five-plus years of VOLLEY development produced a connected engineering record.",
+      "stages": [
+        {
+          "title": "Concept and architecture",
+          "body": "Concept and host architecture → feeder, carrier and finite motor models"
+        },
+        {
+          "title": "Integrated evaluation",
+          "body": "Integrated computational reference → independent numerical comparisons"
+        },
+        {
+          "title": "Prototype requirements",
+          "body": "Reusable tools and Labs investigations → physical-development requirements"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "An engineering ecosystem grew around the deployment problem",
+      "section": "Research ecosystem",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 35,
+      "message": "Each related project addresses a specific part of the development chain.",
+      "bullets": [
+        "VOLLEY Labs: feeder alternatives, force benchmarking and new speed configurations",
+        "Reusable tools: motor design, separation/orbits, CAD automation and source traceability",
+        "GatewayCX: proposed cislunar network relationship; technical paper draft for future peer review"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "The ecosystem is organised by the questions it answers. Labs preserves mechanism alternatives, experimental comparisons, new speed configurations and lunar architecture studies. The related repositories extract reusable tools for motor design, separation dynamics, orbital comparison, CAD evidence and numerical traceability. GatewayCX is a separate cislunar communications architecture. Future VOLLEY delivery studies could consider deployment of suitable infrastructure for that network; no integrated flight system is claimed. The technical paper is planned as a publication of the checked study, with a venue still unselected.",
+      "metrics": [],
+      "layout": "two_columns",
+      "sources": [
+        "VOLLEY Labs research catalogue; engineering tool repositories; GatewayCX architecture"
+      ],
+      "takeaway": "Each related project addresses a specific part of the development chain.",
+      "columns": [
+        {
+          "title": "VOLLEY Labs",
+          "bullets": [
+            "VOLLEY Labs: feeder alternatives, force benchmarking and new speed configurations"
+          ]
+        },
+        {
+          "title": "Reusable tools",
+          "bullets": [
+            "Reusable tools: motor design, separation/orbits, CAD automation and source traceability"
+          ]
+        },
+        {
+          "title": "Future interfaces",
+          "bullets": [
+            "GatewayCX: proposed cislunar network relationship; technical paper draft for future peer review"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Gen6 turns the reference into an instrumented hardware programme",
+      "section": "Future work",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 65,
+      "message": "Long-term cislunar delivery: 3.5 km/s departure research, with targeting and capture designed separately.",
+      "bullets": [
+        "Gen6: instrumented feed/lock and motor/source articles, then a mixed 1U/3U prototype",
+        "Higher-speed programme: separate ~10 m/s computational design; 1 km/s stretch research objective",
+        "Future host: a POEM-inspired free-flying carrier, replenishable constellations and Artemis-era lunar science/communications"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "Gen6 begins with instrumented mechanism and motor articles and an integrated mixed one-unit/three-unit prototype. A separately specified Labs configuration has computed ten-metre-per-second release cases. Kilometre-per-second performance is a stretch research objective requiring a different source, stroke, loading and host architecture. The 3.5-kilometre-per-second case is a longer-term departure scenario, not an achieved launcher rating or automatic lunar-orbit delivery; lunar targeting and capture remain separate. The wider service hypothesis is standardised batches of short-life spacecraft, clustered or phased deployment, replenishment and planned disposal where mission needs permit. Artemis-era lunar infrastructure motivates later communications and science applications, including a possible GatewayCX relationship.",
+      "metrics": [],
+      "layout": "roadmap",
+      "sources": [
+        "Blackbook §11.2; Labs high-speed and lunar architecture studies; NASA lunar infrastructure programme"
+      ],
+      "takeaway": "Long-term cislunar delivery: 3.5 km/s departure research, with targeting and capture designed separately.",
+      "stages": [
+        {
+          "title": "Gen6 prototype",
+          "body": "Gen6: instrumented feed/lock and motor/source articles, then a mixed 1U/3U prototype"
+        },
+        {
+          "title": "Higher-speed study",
+          "body": "Higher-speed programme: separate ~10 m/s computational design; 1 km/s stretch research objective"
+        },
+        {
+          "title": "Long-term architecture",
+          "body": "Future host: a POEM-inspired free-flying carrier, replenishable constellations and Artemis-era lunar science/communications"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Commanded deployment, evaluated as a complete system",
+      "section": "Selected references and questions",
+      "speaker": "Adityavardhan Mishra",
+      "seconds": 20,
+      "message": "A defined machine. Coupled engineering. A measured route to hardware.",
+      "bullets": [
+        "CubeSat interface sources; Zhao 2022/2025; Feng 2025; Halbach and finite-motor literature",
+        "Native CAD, finite-element, circuit and orbital source records accompany the study",
+        "VOLLEY technical record: github.com/aaaaaaaaaaaavm/VOLLEY"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "The full references and source routes are provided in the technical appendix and supporting records. The study connects a defined machine, coupled calculations and a clear hardware measurement programme. We welcome questions; both of us can address the mechanism, methods and results.",
+      "metrics": [],
+      "layout": "closing",
+      "sources": [
+        "Full bibliography in blackbook; technical appendix and source-linked study records"
+      ]
+    }
+  ],
+  "appendix": [
+    {
+      "id": "A1",
+      "title": "Reference quantities and mass boundaries",
+      "section": "Reference configuration",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Keep represented CAD material, system allowances and payloads separate.",
+      "bullets": [
+        "Payloads: 12 × 4 kg; each 340.5 × 100 × 100 mm",
+        "Dry CAD 149.557 kg; power/control allowance 7 kg; loaded device 204.557 kg",
+        "Retained moving carrier plus pallet: 13.127806 kg"
+      ],
+      "asset": "assets/ED3_assembly_guide-9128ffa322a2.jpg",
+      "caption": "CAD-derived assembly; mass values are modelled/allocated, not scale measurements.",
+      "notes": "",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook: Reference configuration"
+      ],
+      "appendix": true,
+      "takeaway": "Keep represented CAD material, system allowances and payloads separate."
+    },
+    {
+      "id": "A2",
+      "title": "Why a guided lead screw?",
+      "section": "Feeder selection",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Selection balances restraint, controlled travel, packaging and failure behaviour.",
+      "bullets": [
+        "Lead screw selected; rack-and-pawl retained as runner-up",
+        "Seven candidates preserve pantograph, telescope, belt, drum and spring/gate concepts",
+        "Weighted scores are declared judgments; measured reliability remains a hardware question"
+      ],
+      "asset": "assets/feeder_detail_annotated-ad7e94cd594d.jpg",
+      "caption": "CAD-derived feeder detail. Detailed comparison remains in Labs.",
+      "notes": "",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook: Feeder selection"
+      ],
+      "appendix": true,
+      "takeaway": "Selection balances restraint, controlled travel, packaging and failure behaviour."
+    },
+    {
+      "id": "A3",
+      "title": "Capture before lift release",
+      "section": "Pallet custody",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Carrier capture and independent locking precede lift withdrawal.",
+      "bullets": [
+        "12 mm lock insertion; keyed heads rotate 90°",
+        "Lift grips retract 26 mm only after permitted carrier capture",
+        "Same pallet remains through launch, arrest and return"
+      ],
+      "asset": "assets/02_handoff_pallet_locks-f075051e2179.jpg",
+      "caption": "CAD-derived state; interlock logic and geometric checks have separate scopes.",
+      "notes": "",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook: Pallet custody"
+      ],
+      "appendix": true,
+      "takeaway": "Carrier capture and independent locking precede lift withdrawal."
+    },
+    {
+      "id": "A4",
+      "title": "Finite-field and current-path comparisons",
+      "section": "Electromagnetic methods",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Alternative calculations test different aspects of the represented model.",
+      "bullets": [
+        "Finite source-face comparison checks the active field/force formulation",
+        "Conduction FEM at 0.65 m: 1.396651 N per peak phase ampere",
+        "Uniform bars plus approximate returns: 1.399055 N/A; local difference −0.1718%"
+      ],
+      "asset": "assets/finite_force_coefficient-8c553ff9aa80.jpg",
+      "caption": "Numerical comparison at stated stations; not a physical accuracy specification.",
+      "notes": "",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook: Electromagnetic methods"
+      ],
+      "appendix": true,
+      "takeaway": "Alternative calculations test different aspects of the represented model.",
+      "formula": "Fₓ = ∫ (J × B)ₓ dV"
+    },
+    {
+      "id": "A5",
+      "title": "Source and switching allocations",
+      "section": "Electrical reference",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Ratings enter the model with finite impedance and declared switching assumptions.",
+      "bullets": [
+        "32S2P, 64 cells; nominal 6.25 F and 0.176 Ω",
+        "Adverse 3.9375 F and 0.352 Ω; 2.9 V/cell regeneration terminal cap",
+        "Three half bridges, 10 devices per switch position, 60 MOSFETs; 40 kHz reference PWM"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "",
+      "metrics": [],
+      "layout": "cards",
+      "sources": [
+        "Blackbook: Electrical reference"
+      ],
+      "appendix": true,
+      "takeaway": "Ratings enter the model with finite impedance and declared switching assumptions.",
+      "columns": [
+        {
+          "title": "Nominal source",
+          "bullets": [
+            "32S2P, 64 cells; nominal 6.25 F and 0.176 Ω"
+          ]
+        },
+        {
+          "title": "Adverse source",
+          "bullets": [
+            "Adverse 3.9375 F and 0.352 Ω; 2.9 V/cell regeneration terminal cap"
+          ]
+        },
+        {
+          "title": "Power stage",
+          "bullets": [
+            "Three half bridges, 10 devices per switch position, 60 MOSFETs; 40 kHz reference PWM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "title": "Principal nominal energy account",
+      "section": "Energy verification",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Signed energy terms include source and auxiliary losses.",
+      "bullets": [
+        "Capacitor draw: 379.682 J in the 20 µs principal nominal replay",
+        "Copper 136.066 J; inverter 161.429 J; bank 5.039 J; auxiliaries 52.389 J",
+        "Full-cycle mechanical term 24.768 J; do not equate it with peak moving-body kinetic energy"
+      ],
+      "asset": "assets/shot_energy_account_slide-01e52275629e.jpg",
+      "caption": "Numerical ledger for one specified case; regenerative braking and event boundaries matter.",
+      "notes": "",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook: Energy verification"
+      ],
+      "appendix": true,
+      "takeaway": "Signed energy terms include source and auxiliary losses."
+    },
+    {
+      "id": "A7",
+      "title": "Gap closure and individual-face budgets",
+      "section": "Structural interpretation",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "A paired closure is not an individual assembled clearance.",
+      "bullets": [
+        "CalculiX nominal paired closure 0.285983 mm; 1.3-load closure 0.371778 mm",
+        "Conditional centring split, plus alignment/flatness/assembly/thermal allowances",
+        "Individual-face reference design budget 0.264111 mm"
+      ],
+      "asset": "assets/chassis_mesh_and_paired_closure.jpg",
+      "caption": "Native bare-chassis mesh and paired closure. Deformation ×20; assembled allowances are separate.",
+      "notes": "",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook: Structural interpretation"
+      ],
+      "appendix": true,
+      "takeaway": "A paired closure is not an individual assembled clearance."
+    },
+    {
+      "id": "A8",
+      "title": "Thermal and fault interpretation",
+      "section": "Thermal and control scope",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Keep quantities and test meanings distinct.",
+      "bullets": [
+        "3.295053 K is a temperature rise; 450 s is the inter-shot interval",
+        "Bulk, volume-99 and sharp-corner mesh observations have different meanings",
+        "166 interlock tests verify encoded logic, not a measured reliability probability"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "",
+      "metrics": [],
+      "layout": "cards",
+      "sources": [
+        "Blackbook: Thermal and control scope"
+      ],
+      "appendix": true,
+      "takeaway": "Keep quantities and test meanings distinct.",
+      "columns": [
+        {
+          "title": "Temperature and time",
+          "bullets": [
+            "3.295053 K is a temperature rise; 450 s is the inter-shot interval"
+          ]
+        },
+        {
+          "title": "Thermal measures",
+          "bullets": [
+            "Bulk, volume-99 and sharp-corner mesh observations have different meanings"
+          ]
+        },
+        {
+          "title": "Encoded logic",
+          "bullets": [
+            "166 interlock tests verify encoded logic, not a measured reliability probability"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A9",
+      "title": "Host reaction and the common terminal epoch",
+      "section": "Mission mechanics",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "A commanded relative release differs from the payload inertial increment.",
+      "bullets": [
+        "Principal 3 m/s nominal relative release gives about 2.927 m/s payload inertial increment",
+        "Count carrier acceleration, subsequent carrier arrest and changing retained mass",
+        "Compare all payload position/velocity targets at a common epoch"
+      ],
+      "asset": "assets/host_and_release_roles_slide-9a2ee6ca67d3.jpg",
+      "caption": "Explanatory mission schematic; complete comparison includes host manoeuvres and device mass.",
+      "notes": "",
+      "metrics": [],
+      "layout": "image_split",
+      "sources": [
+        "Blackbook: Mission mechanics"
+      ],
+      "appendix": true,
+      "takeaway": "A commanded relative release differs from the payload inertial increment."
+    },
+    {
+      "id": "A10",
+      "title": "Higher-speed work already in Labs",
+      "section": "Research configurations",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "The approximately 10 m/s study is a separately specified computational design.",
+      "bullets": [
+        "Longer powered travel, revised finite winding and source accounting",
+        "Retained-carrier nominal/adverse cases pass their declared circuit/motion checks",
+        "Attached-shoe alternative and its adverse speed miss remain separately recorded"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "",
+      "metrics": [],
+      "layout": "cards",
+      "sources": [
+        "Blackbook: Research configurations"
+      ],
+      "appendix": true,
+      "takeaway": "The approximately 10 m/s study is a separately specified computational design.",
+      "columns": [
+        {
+          "title": "New configuration",
+          "bullets": [
+            "Longer powered travel, revised finite winding and source accounting"
+          ]
+        },
+        {
+          "title": "Model checks",
+          "bullets": [
+            "Retained-carrier nominal/adverse cases pass their declared circuit/motion checks"
+          ]
+        },
+        {
+          "title": "Alternative design",
+          "bullets": [
+            "Attached-shoe alternative and its adverse speed miss remain separately recorded"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A11",
+      "title": "Lunar departure and capture are separate operations",
+      "section": "Cislunar architecture",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "Departure speed alone does not establish lunar-orbit delivery.",
+      "bullets": [
+        "Ideal 500 km parking-orbit screen: approximately 3.058 km/s departure increment",
+        "A prograde 3.5 km/s increment from that reference is Earth-escape energy",
+        "Lunar targeting, host recoil and lunar capture require their own complete mission design"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "",
+      "metrics": [],
+      "layout": "cards",
+      "sources": [
+        "Blackbook: Cislunar architecture"
+      ],
+      "appendix": true,
+      "takeaway": "Departure speed alone does not establish lunar-orbit delivery.",
+      "columns": [
+        {
+          "title": "Parking-orbit screen",
+          "bullets": [
+            "Ideal 500 km parking-orbit screen: approximately 3.058 km/s departure increment"
+          ]
+        },
+        {
+          "title": "Departure energy",
+          "bullets": [
+            "A prograde 3.5 km/s increment from that reference is Earth-escape energy"
+          ]
+        },
+        {
+          "title": "Capture design",
+          "bullets": [
+            "Lunar targeting, host recoil and lunar capture require their own complete mission design"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A12",
+      "title": "Selected bibliography and research record",
+      "section": "References and research ecosystem",
+      "speaker": "Shared questions",
+      "seconds": 0,
+      "message": "The paper documents the checked study; tools retain their own contribution boundaries.",
+      "bullets": [
+        "Planned IEEE-formatted paper; venue unselected and manuscript unsubmitted",
+        "Motor, orbital/separation, CAD and traceability tools support reproducible study",
+        "GatewayCX remains a separate network architecture with proposed future deployment interfaces"
+      ],
+      "asset": null,
+      "caption": "",
+      "notes": "",
+      "metrics": [],
+      "layout": "references",
+      "sources": [
+        "Blackbook: References and research ecosystem"
+      ],
+      "appendix": true,
+      "takeaway": "The paper documents the checked study; tools retain their own contribution boundaries.",
+      "columns": [
+        {
+          "title": "Publication",
+          "bullets": [
+            "Planned IEEE-formatted paper; venue unselected and manuscript unsubmitted"
+          ]
+        },
+        {
+          "title": "Reusable tools",
+          "bullets": [
+            "Motor, orbital/separation, CAD and traceability tools support reproducible study"
+          ]
+        },
+        {
+          "title": "Future interface",
+          "bullets": [
+            "GatewayCX remains a separate network architecture with proposed future deployment interfaces"
+          ]
+        }
+      ],
+      "references": [
+        {
+          "text": "Y. Zhao et al. (2022). “Design and analysis of a new deployer for the in-orbit release of multiple stacked CubeSats.” Remote Sensing 14(17), 4205.",
+          "doi": "doi:10.3390/rs14174205"
+        },
+        {
+          "text": "Y. Zhao et al. (2025). “Simulation analysis and experimental verification of the transport characteristics of a high-volume CubeSat storage device.” Aerospace 12(6), 466.",
+          "doi": "doi:10.3390/aerospace12060466"
+        },
+        {
+          "text": "H. Feng, Y. Yang and Y. Wu (2025). “Design and reachable domain analysis of on-orbit electromagnetic launcher for CubeSats.” International Journal of Aerospace Engineering, 3000765.",
+          "doi": "doi:10.1155/ijae/3000765"
+        }
+      ],
+      "links": [
+        {
+          "label": "ISRO · POEM-3 mission account",
+          "url": "https://www.isro.gov.in/POEM-3_Mission_achieves_Payload_objectives.html"
+        },
+        {
+          "label": "Rocket Lab · Electron guide v7.0",
+          "url": "https://rocketlabcorp.com/assets/Electron-Payload-User-Guide-7.0-v6.pdf"
+        },
+        {
+          "label": "NASA · Lunar surface technology",
+          "url": "https://www.nasa.gov/lunar-surface-technology/"
+        }
+      ]
+    }
+  ]
+}
