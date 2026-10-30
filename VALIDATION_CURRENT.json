@@ -84,5 +84,19 @@
   ],
   "publication": "The containing Git commit and any release tag referencing it identify this repository edition. ARTIFACT_MANIFEST.sha256 and current/MANIFEST.sha256 identify exact files. A repository release does not imply paper publication, institutional approval or hardware qualification.",
   "editorial_revision": "VOLLEY-G5-ACR1-ED1",
-  "verification_scope": "ED1 document rebuilds and citation/layout checks; exact reuse of unchanged captured engineering sources/results; local examples, package inventories, reader links and publication checks."
+  "verification_scope": "ED1 document rebuilds and citation/layout checks; exact reuse of unchanged captured engineering sources/results; local examples, package inventories, reader links and publication checks.",
+  "final_academic_issue": {
+    "date": "2026-10-30",
+    "report": "editions/final-2026-10/MANIFEST.json",
+    "presentation": "editions/presentation-2026-10/MANIFEST.json",
+    "report_pages": 64,
+    "presentation_slides": 31,
+    "authors": [
+      "Adityavardhan Mishra",
+      "Pratham Chawla"
+    ],
+    "report_standalone_source_rebuild": "PDF page text and Word text, mathematics, tables and image bytes match the distributed issue",
+    "approved_reading_copies_preserved": true,
+    "earlier_capture_checks": "The pre-existing checked entries identify their original source editions; final document identities are in the manifests above."
+  }
 }

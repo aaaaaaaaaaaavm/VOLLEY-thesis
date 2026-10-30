@@ -13,9 +13,9 @@ Standalone engineering thesis, academic presentation, design development and rep
 | [archive/](../archive/) | 4070 | Superseded concepts, earlier document issues and retained design history |
 | [current/](../current/) | 387 | Self-contained captured scientific core and original academic source |
 | [docs/](../docs/) | 7 | Project documentation, website, scientific figure guidance and navigation |
-| [editions/](../editions/) | 46 | Separately identified report, presentation and source editions |
+| [editions/](../editions/) | 51 | Separately identified report, presentation and source editions |
 | [figures/](../figures/) | 14 | Published scientific figures, CAD views and provenance |
-| [tools/](../tools/) | 9 | Build, reproduction, publication and navigation checks |
+| [tools/](../tools/) | 10 | Build, reproduction, publication and navigation checks |
 
 ## Root files
 

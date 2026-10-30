@@ -13,22 +13,18 @@ The example runs the actual command/proof state model (24 nominal commands and 1
 
 ## Rebuild the published report linked from the home page
 
-Use its [local document-source archive](../editions/ED3/VOLLEY_ED3_Document_Sources.zip). The `current/academic` folder preserves an earlier report capture; rebuilding that folder alone does not reproduce the later report linked from the home page.
+Use the [final blackbook source archive](../editions/final-2026-10/VOLLEY_Blackbook_Sources.zip). The `current/academic` folder preserves an earlier report capture; rebuilding that folder alone does not reproduce the final report linked from the home page.
 
 From the repository root, extract the document archive into a new working directory. Then run the commands below inside that directory:
 
 ```bash
-python3 materialize_assets.py --verify-only
-python3 materialize_assets.py
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-documents.txt
 .venv/bin/python current/academic/build_report.py
-.venv/bin/python cache_docx_indexes.py
-.venv/bin/python current/presentation/build_presentation.py
-soffice --headless --convert-to pdf --outdir current/presentation current/presentation/VOLLEY_BTech_Presentation.pptx
+.venv/bin/python cache_docx_indexes.py --source-root current
 ```
 
-The archive contains the report text, presentation builder, layouts, captured document inputs and figure assets. The materializer verifies every asset before restoring its builder path. The reference toolchain is Python 3.12, Pandoc 3.1.11.1, XeLaTeX from TeX Live 2025/dev and LibreOffice 25.2.3.2. Install the listed fonts and pinned document requirements. A rebuilt file has its own identity; fonts and tool versions can change pagination.
+The archive contains report text, layouts, captured document inputs, figure assets and their source manifest. All assets are already at their builder paths. The reference toolchain is Python 3.12, Pandoc 3.1.11.1 and XeLaTeX from TeX Live 2025/dev. Install the listed fonts and pinned document requirements. A rebuilt file has its own identity; fonts and tool versions can change pagination. The [31-slide presentation](../editions/presentation-2026-10/README.md) has a separate portable builder, content file and local animation assets. Earlier [ED3 document sources](../editions/ED3/README.md) remain available for reproducing that earlier edition.
 
 ## Rebuild the earlier source capture
 

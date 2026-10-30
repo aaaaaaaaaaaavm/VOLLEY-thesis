@@ -1,5 +1,7 @@
 # Academic reading and evidence map
 
+The final reading documents are the [64-page blackbook](../editions/final-2026-10/README.md) and [31-slide presentation](../editions/presentation-2026-10/README.md). The map below identifies the retained engineering source and earlier academic capture supporting those documents. The final blackbook source archive preserves its own chapter text, layouts and figures.
+
 The [report source](academic/GEN5_FINAL_YEAR_REPORT.md) contains eleven chapters and three appendices. The [paper source](academic/paper/paper.tex) presents the same selected configuration in IEEE format.
 
 | Report chapters / paper theme | Local method and evidence |

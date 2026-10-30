@@ -6,7 +6,7 @@ Mechanical Engineering · Symbiosis Institute of Technology, Pune
 
 VOLLEY is a commanded CubeSat deployment mechanism combining individually restrained storage, guided feed, a captive transfer pallet and a reusable electromagnetic launch carrier. This repository presents the **completed computational design study**, its report and presentation, and the local engineering record supporting its conclusions.
 
-**[Read the published report · 58 pages](editions/ED3/VOLLEY_ED3_Report.pdf)** · **[Presentation · 19 core + 12 technical slides](editions/presentation-2026-10/VOLLEY_Presentation.pdf)** · [Editable PowerPoint](editions/presentation-2026-10/VOLLEY_Presentation.pptx) · [Presentation sources](editions/presentation-2026-10/README.md) · [Local CAD and analyses](current/README.md)
+**[Read the final blackbook · 64 pages](editions/final-2026-10/VOLLEY_Blackbook.pdf)** · [Editable report](editions/final-2026-10/VOLLEY_Blackbook.docx) · **[Presentation · 19 core + 12 technical slides](editions/presentation-2026-10/VOLLEY_Presentation.pdf)** · [Editable PowerPoint](editions/presentation-2026-10/VOLLEY_Presentation.pptx) · [Local CAD and analyses](current/README.md)
 
 <p><a href="figures/acr1-polish/assembly_hero.png"><img src="figures/acr1-polish/assembly_hero.webp" alt="Deployment assembly with two fixed satellite banks, guided transfer cradle and central reusable launch carrier" width="900"></a></p>
 
@@ -79,9 +79,10 @@ The next development stage is an instrumented prototype. Component tests will fi
 
 | Material | Location |
 |:--|:--|
-| Published report | [Blackbook report and preserved document edition](editions/ED3/README.md) |
+| Final report | [64-page blackbook, editable report and exact document identities](editions/final-2026-10/README.md) |
 | Current presentation | [PDF, PowerPoint, offline browser edition and source](editions/presentation-2026-10/README.md) |
-| Portable report/presentation builders and figures | [Report and presentation source archive](editions/ED3/VOLLEY_ED3_Document_Sources.zip) |
+| Portable report builders and figures | [Final blackbook sources](editions/final-2026-10/VOLLEY_Blackbook_Sources.zip) |
+| Presentation builders, figures and animations | [Presentation source edition](editions/presentation-2026-10/README.md) |
 | Native CAD, STEP and BOM | [All eight assembly states](current/cad/release/) |
 | Analysis methods and captured results | [Results](current/RESULTS.md) · [Chapter/figure map](current/ACADEMIC_MAP.md) |
 | Source and selected numerical reproduction | [Build and run guide](current/REPRODUCE.md) |

@@ -21,7 +21,7 @@ The 19-slide core route is planned for 15 minutes. The technical appendix suppli
 
 ## Read the engineering record
 
-- [Published study report](../ED3/VOLLEY_ED3_Report.pdf)
+- [Final blackbook report](../final-2026-10/VOLLEY_Blackbook.pdf)
 - [Standalone engineering and reproduction guide](../../current/README.md)
 - [CAD/STEP assembly states](../../current/cad/release/)
 - [Finite motor calculation](../../current/analysis/FINITE_MOTOR.json)

@@ -1,5 +1,7 @@
 # Engineering models and supporting evidence
 
+The final academic documents are the [64-page blackbook and its editable/source files](../editions/final-2026-10/README.md) and the [31-slide presentation](../editions/presentation-2026-10/README.md). The academic files inside this directory preserve an earlier source capture; they do not supersede those final document editions.
+
 This directory contains the original report/manuscript, presentation, engineering source/results, all **eight native/STEP/BOM states**, and the **60-member raw conductor/structural solver supplement** as two exact byte parts. [Core coverage](CORE_COVERAGE.json) inventories all 258 published engineering files (249 exact copies and 9 local portability adapters with their original bytes preserved). [Build and reproduction](REPRODUCE.md), [chapter/figure map](ACADEMIC_MAP.md), [current file identities](MANIFEST.sha256), [CAD inventory](cad/release/FINAL_CAD_MANIFEST.json) and [raw archive identities](SUPPLEMENT_ASSETS.json) identify each role.
 
 Verify local source, data, documents and archive members from the repository root:

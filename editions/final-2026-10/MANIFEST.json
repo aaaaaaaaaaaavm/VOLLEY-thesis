@@ -1,0 +1,55 @@
+{
+  "title": "VOLLEY: Design and Computational Evaluation of a Commanded Electromagnetic CubeSat Deployment Mechanism",
+  "release": "thesis-2026.10",
+  "date": "2026-10-30",
+  "authors": [
+    "Adityavardhan Mishra",
+    "Pratham Chawla"
+  ],
+  "report_pages": 64,
+  "presentation_slides": 31,
+  "core_slides": 19,
+  "appendix_slides": 12,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2873,
+      "sha256": "18c40973e170e7c787ee31baa05f5ba375f8a76248be0ac9ad7cb79863b40aed"
+    },
+    {
+      "path": "VOLLEY_Blackbook.docx",
+      "bytes": 14508180,
+      "sha256": "7ea84168b8f1a8cca7c2280d2556f5667b6a8a5b473702435ad36e2c199085c3"
+    },
+    {
+      "path": "VOLLEY_Blackbook.pdf",
+      "bytes": 11910664,
+      "sha256": "299659f159b8c1279e531288d43489dd4775b7ab54bf74d9bbc57a6eb16d59a5"
+    },
+    {
+      "path": "VOLLEY_Blackbook_Sources.zip",
+      "bytes": 21652467,
+      "sha256": "470bca5c91a6fcbeb05447906f46ebddcc1d65db5113aecaf64d84f7f0f1b4ae"
+    }
+  ],
+  "associated_artifacts": [
+    {
+      "path": "editions/presentation-2026-10/VOLLEY_Presentation.pdf",
+      "bytes": 1531184,
+      "sha256": "6c774544b92d21ca8e57da9a36cf15b6ce2aee95c941e3d78aecdad6320b4903"
+    },
+    {
+      "path": "editions/presentation-2026-10/VOLLEY_Presentation.pptx",
+      "bytes": 1552321,
+      "sha256": "724ee21805d7dfcd31da37494a0593befe590fa9f1e450493493e44416110680"
+    },
+    {
+      "path": "editions/presentation-2026-10/MANIFEST.json",
+      "bytes": 5836,
+      "sha256": "f2fb7bd8074e2b94a0e34146e02e30c458f3cfd65f82a3e13ee5ac42737f6b86"
+    }
+  ],
+  "engineering_core": "current/MANIFEST.sha256",
+  "reproduction": "current/REPRODUCE.md",
+  "historical_editions": "archive/README.md"
+}

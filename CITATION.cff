@@ -9,8 +9,9 @@ authors:
   - family-names: Chawla
     given-names: Pratham
     affiliation: "Department of Mechanical Engineering, Symbiosis Institute of Technology, Symbiosis International (Deemed University), Pune, India"
-version: "VOLLEY-G5-ACR1-ED1"
-date-released: "2026-10-25"
+version: "2026.10"
+date-released: "2026-10-30"
+url: "https://github.com/aaaaaaaaaaaavm/VOLLEY-thesis"
 license: CC-BY-4.0
 keywords:
   - CubeSat deployment

@@ -58,3 +58,6 @@ with ZipFile(presentation / 'VOLLEY_Presentation.pptx') as archive:
 route = json.loads((presentation / 'ROUTE.json').read_text())
 assert route['core_count'] == 19 and route['appendix_count'] == 12 and route['planned_seconds'] == 900
 print('PASS: October presentation, 19 core/12 appendix slides, 450+450 seconds, two embedded clips and portable asset identities')
+
+import runpy
+runpy.run_path(str(root/'tools/check_final_academic.py'), run_name='__main__')
