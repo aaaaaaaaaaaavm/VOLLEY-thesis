@@ -1,5 +1,9 @@
 # Computational results
 
+The overall result is a combined study on the low speed mechanisms, where the payload handling, finite size of motor, mass of the moving parts, and the supply of electric power, combined with the need to arrest the carrier after payload release, are all considered in one reference design. There are eight released CAD states and 154 accepted motion and refinement checks for nominal CAD compatibility. The retained pallet resolves the custody transfer because it stays with the carrier all the way to the shot and back. These passive forekeeper cams produce a finite opening motion before payload release.
+
+The common-state mission comparison closes current 1–3 m/s target families while retaining ideal pretrim spring deployment as a competitive benchmark. It establishes no propellant or mass advantage over that ideal benchmark; the mechanism contribution is configured commandability.
+
 | Result | Controlled evidence and interpretation |
 |---|---|
 | Twelve 4 kg, 340.5 × 100 × 100 mm surrogates | [CAD parameters](cad/PARAMETERS.json); two banks, six cells each |

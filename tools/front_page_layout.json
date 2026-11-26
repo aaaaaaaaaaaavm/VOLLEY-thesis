@@ -1,12 +1,13 @@
 {
   "role": "Standalone engineering thesis, academic presentation, design development and reproducible local evidence.",
   "headings": [
-    "# VOLLEY \u2014 Engineering Thesis",
+    "# VOLLEY — Engineering Thesis",
     "## Study at a glance",
     "## The deployment cycle",
     "## Results and engineering contribution",
     "## Design development",
-    "## Report, presentation and supporting record"
+    "## Report, presentation and supporting record",
+    "## Credits"
   ],
   "catalogue": false,
   "folders": {

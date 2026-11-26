@@ -1,4 +1,6 @@
-# Presentation
+# Earlier presentation source capture
+
+The final submitted [31-slide presentation and its editable/source files](../../editions/presentation-2026-10/README.md) are distributed separately. This directory retains the earlier 17-slide source capture.
 
 The supplied deck has 17 slides and 900 planned seconds, with 450 seconds assigned to each speaker. [PDF](VOLLEY_BTech_Presentation.pdf), [editable PPTX](VOLLEY_BTech_Presentation.pptx), [notes](SPEAKER_NOTES.md) and [contact sheet](SLIDE_CONTACT_SHEET.png) are bundled. The local builder consumes packaged assets and numerical inputs; see [build instructions](../REPRODUCE.md). These are planned speaking times, not a recorded rehearsal. No individual research-contribution attribution is inferred from speaking roles.
 

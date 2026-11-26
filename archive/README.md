@@ -8,6 +8,8 @@ The final academic reading copies are the [64-page blackbook and its sources](..
 | Original Gen5 ACR1 report and manuscript | [24 October source issue](2026-10-24-acr1-original/README.md) |
 | ED1 scientific source and citation revision | [Captured academic source](../current/academic/README.md) |
 
+The final architecture includes both fixed banks, positively driven guided pushers, a vertically indexed captive pallet and a retained carrier. Forekeepers are opened, before payload departure, with passive cams. The powered-return and motor-arrest system then returns the carrier for the next cycle. The data presented numerically and graphically in this document are for this configuration.
+
 Earlier documents and computations retain their configuration identities. Original scientific binaries, CAD and solver data are preserved; identified corrections and later document editions receive their own paths and manifests. [Repository map](../docs/REPOSITORY_MAP.md).
 
 [ED2 academic edition](../editions/ED2/README.md) · [ED3 report and presentation](../editions/ED3/README.md)

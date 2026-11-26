@@ -6,7 +6,7 @@
 Mechanical Engineering · Symbiosis Institute of Technology, Pune  
 Guide: Vikas Gulia
 
-The presentation follows the complete evaluated deployment cycle: retained storage, guided feed, pallet docking, commanded departure, active carrier arrest and return. Finite electromagnetic calculations, a source-coupled operating study, CAD and structural checks, thermal budgets and a matched mission comparison support the engineering discussion. The closing section connects this reference to prototype development and separately identified research configurations.
+The final architecture includes both fixed banks, positively driven guided pushers, a vertically indexed captive pallet and a retained carrier. Forekeepers are opened, before payload departure, with passive cams. The powered-return and motor-arrest system then returns the carrier for the next cycle. The data presented numerically and graphically in this document are for this configuration.
 
 | Material | File |
 |:--|:--|

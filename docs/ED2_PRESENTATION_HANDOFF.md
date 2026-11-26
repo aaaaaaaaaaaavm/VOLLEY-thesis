@@ -1,6 +1,6 @@
-# Academic edition ED2 — presentation sources
+# Earlier report and presentation — document sources
 
-ED2 contains a 57-page report and 17-slide presentation of Gen5 ACR1. The current academic report and presentation are distributed separately as [ED3](../editions/ED3/README.md).
+This earlier edition contains a 57-page report and 17-slide presentation. The final submitted documents are the [64-page blackbook](../editions/final-2026-10/README.md) and [31-slide presentation](../editions/presentation-2026-10/README.md). The intermediate [third document edition](../editions/ED3/README.md) remains available in the archive.
 
 ## Edition artifacts
 

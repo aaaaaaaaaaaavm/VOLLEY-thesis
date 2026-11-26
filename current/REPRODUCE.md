@@ -1,5 +1,11 @@
 # Build and reproduce the academic package
 
+## Reproduction sequence from the report
+
+First the file digests and chosen configuration identifier must be checked to start reproduction. Then the eight acquired states are used to recreate or audit the native CAD model. Part count, pallet count, Connected-solid status and interface results are compared to the configuration manifest. The mass ledger must also be checked prior to running the force, source and shot calculations. The six principal 3 m/s cases are rerun at a 5 µs time step, with results being compared to declared energy, event and voltage checks, and current. Structure reproduction takes the captured BREP, load patches, mesh and constraint definitions.
+
+## Selected local examples
+
 Run commands from the repository root. Python 3.12 is the reference interpreter. The selected numerical environment is pinned in [requirements-numerical.txt](requirements-numerical.txt); the document environment is pinned in [requirements-documents.txt](requirements-documents.txt).
 
 ```bash

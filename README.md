@@ -4,7 +4,7 @@
 **Adityavardhan Mishra and Pratham Chawla**<br>
 Mechanical Engineering · Symbiosis Institute of Technology, Pune
 
-VOLLEY is a commanded CubeSat deployment mechanism combining individually restrained storage, guided feed, a captive transfer pallet and a reusable electromagnetic launch carrier. This repository presents the **completed computational design study**, its report and presentation, and the local engineering record supporting its conclusions.
+VOLLEY is a commanded electromagnetic deployment mechanism intended to assign individual relative release velocities to CubeSats carried by a manoeuvring host. This study develops and computationally evaluates the Gen5 reference design for twelve 4 kg, 3U envelope surrogates.
 
 **[Read the final blackbook · 64 pages](editions/final-2026-10/VOLLEY_Blackbook.pdf)** · [Editable report](editions/final-2026-10/VOLLEY_Blackbook.docx) · **[Presentation · 19 core + 12 technical slides](editions/presentation-2026-10/VOLLEY_Presentation.pdf)** · [Editable PowerPoint](editions/presentation-2026-10/VOLLEY_Presentation.pptx) · [Local CAD and analyses](current/README.md)
 
@@ -25,7 +25,13 @@ VOLLEY is a commanded CubeSat deployment mechanism combining individually restra
 
 ## The deployment cycle
 
-The selected cell transfers its payload to the lift. Receiving locks capture the pallet before the lift withdraws. The motor accelerates the loaded carrier; passive release cams open the payload restraint, and active braking arrests the retained carrier and pallet for recovery.
+A nominal cycle begins with an empty carrier indexed at home and the pallet acquired by the lift. The lift indexes to a selected cell, the relevant cell restraint opens under the permitted state, and the guided pusher transfers the payload to the pallet. The receiving end frames and keepers establish the containment. After cell closure and when the pusher gets retracted, the lift returns to the carrier and completes the entire docking sequence.
+
+For the launch, all lift hardware is cleared and the pallet locks are engaged. The home pin is withdrawn and host & source conditions permit actuation. The motor then accelerates the carrier and payload together along the rail.
+
+The electrical braking reduces a rear-contact reaction until it reaches zero. The payload then departs along its free path. The carrier and the pallet remain on the rail, arrest under LSM control and return under power.
+
+*LSM: linear synchronous motor.*
 
 <p><a href="figures/acr1-polish/operating_sequence.png"><img src="figures/acr1-polish/operating_sequence.webp" alt="CAD-derived sequence showing payload storage, guided feed, pallet docking and launch" width="900"></a></p>
 
@@ -33,7 +39,7 @@ The selected cell transfers its payload to the lift. Receiving locks capture the
 
 ## Results and engineering contribution
 
-The study follows the full deployment cycle. Geometry defines the payload path and moving mass. The finite motor and electrical source determine the launch and arrest. The mission comparison then accounts for the retained mechanism and the host manoeuvres.
+The overall result is a combined study on the low speed mechanisms, where the payload handling, finite size of motor, mass of the moving parts, and the supply of electric power, combined with the need to arrest the carrier after payload release, are all considered in one reference design. There are eight released CAD states and 154 accepted motion and refinement checks for nominal CAD compatibility. The retained pallet resolves the custody transfer because it stays with the carrier all the way to the shot and back. These passive forekeeper cams produce a finite opening motion before payload release.
 
 | Area | Completed computational result |
 |:--|:--|
@@ -43,11 +49,11 @@ The study follows the full deployment cycle. Geometry defines the payload path a
 | Structural analysis | Matched-load ANSYS/CalculiX bare-chassis comparison, with 0.143% primary peak-displacement difference and three ANSYS mesh levels |
 | Mission evaluation | Same-target twelve-release campaigns and native Orekit numerical replays, including full installed mass and recoil |
 
-The mission trade establishes where the concept must earn its installed burden: the tested preplanned campaigns show no propellant or initial wet-mass advantage over ideal ground-pretrimmed springs. The report presents this result alongside the demonstrated numerical behaviour of the selected mechanism. Physical prototype correlation and qualification form the subsequent development programme.
+The common-state mission comparison closes current 1–3 m/s target families while retaining ideal pretrim spring deployment as a competitive benchmark. It establishes no propellant or mass advantage over that ideal benchmark; the mechanism contribution is configured commandability.
 
 ### From magnetic geometry to release dynamics
 
-The finite motor calculation retains the stator's spatial extent and represented return conductors. Its force-position map feeds the electrical and mechanical model, linking the CAD reference to the predicted departure condition.
+The finite source model of the system uses 42 magnets per array with 8 mm block pitch and 48 mm wavelength. It assumes 1.32 T polarization. At the launch interior, the optimized active force coefficient is approximately 1.328 N/A. Adding the represented returns to it gives approximately 1.399 N/A. The active coefficient varies little through the 0 to 1.3 m launch stroke, while the end geometry becomes more influential in the later arrest region. Therefore, the arrest uses its own position dependent map rather than an extrapolated constant force.
 
 ![Finite electromagnetic force coefficient across the represented stroke](current/academic/assets/finite_force_coefficient.png)
 
@@ -59,7 +65,7 @@ The finite motor calculation retains the stator's spatial extent and represented
 
 ### Structure and mission consequences
 
-Structural and orbital calculations carry the mechanism beyond a motor-only result. The chassis study applies the stated loading and restraint boundary; the mission study counts retained device mass, host manoeuvres and recoil against shared delivery targets.
+The terminal epoch, host base mass, propulsion and force ceiling are identical for each delivery option. Each option is given the same target position and velocity states, while the same payload manifest is used for both. The traditional approach is to use spring separation and host manoeuvres, while the VOLLEY option has a supported release state followed by host manoeuvres. Each case includes consideration for the mass of the device, payload removal at each release, recoil, and propellant use and protection of guard intervals before and after release.
 
 ![Computed actual-chassis linear-elastic deformation and displacement result](current/academic/assets/ACTUAL_CHASSIS_RESULT.png)
 
@@ -71,9 +77,13 @@ Structural and orbital calculations carry the mechanism beyond a motor-only resu
 
 ## Design development
 
-The local [development archive](archive/README.md) preserves the earlier design studies, reports and numerical investigations leading to the integrated Gen5 reference. The current documents explain the selected mechanism and its evaluation; Gen6 development is presented as the subsequent research and prototype programme. [Repository map](docs/REPOSITORY_MAP.md).
+The final architecture includes both fixed banks, positively driven guided pushers, a vertically indexed captive pallet and a retained carrier. Forekeepers are opened, before payload departure, with passive cams. The powered-return and motor-arrest system then returns the carrier for the next cycle. The data presented numerically and graphically in this document are for this configuration.
 
-The next development stage is an instrumented prototype. Component tests will first measure transfer forces, lock sequencing and motor force. The integrated prototype will then demonstrate mixed 1U/3U release, carrier arrest and return. Host-specific qualification and a later flight demonstrator follow the measured prototype results.
+[Development history](archive/README.md) · [Repository map](docs/REPOSITORY_MAP.md).
+
+The present study is an integrated computational design for CubeSat storage, transfer, commanded release and carrier recovery. Physical hardware tests and performance measurements are needed to assess the design. The lab prototype phase, known as Gen6, will start by fabricating and testing the individual mechanisms and motor, and then eventually integrate those to execute an entire deployment cycle.
+
+The integrated prototype will combine the feeder, transfer pallet, launch carrier, electrical source and control system. Initial commanded-release tests will use the operating cases established by the present study. The complete sequence will include payload departure, carrier arrest, return and preparation for the next payload. Measured release speed, tip-off, contact loads, energy use and temperature will be compared with the corresponding model predictions.
 
 ## Report, presentation and supporting record
 
@@ -90,5 +100,15 @@ The next development stage is an instrumented prototype. Component tests will fi
 | Original report/manuscript capture | [Original academic files](current/academic/README.md) · [Dated original](archive/2026-10-24-acr1-original/README.md) |
 
 This checkout contains its supporting engineering core, eight CAD/STEP states and the indexed raw solver supplement. It can be inspected and its selected examples run independently. The report and presentation have their own source package. The separately archived nine-page manuscript retains its original source and results.
+
+## Credits
+
+**Adityavardhan Mishra:** Project conception and technical lead. Conceived VOLLEY and led its development across generations, including system architecture, engineering requirements, technical development, computational evaluation and integration of the project documentation.
+
+**Pratham Chawla:** Gen5 academic coordination and joint technical presentation. Supported faculty follow-ups and departmental coordination for the Gen5 thesis; assisted with blackbook printing, binding and submission arrangements; participated in presentation preparation and rehearsal; and co-presented the final Gen5 thesis review.
+
+**Academic guide:** Vikas Gulia.
+
+Adityavardhan Mishra and Pratham Chawla are the named authors of the submitted thesis.
 
 [Scientific figure conventions](docs/FIGURE_STANDARD.md) · [Capture verification](VALIDATION_CURRENT.json) · [Citation](CITATION.cff) · [Licensing](LICENSING.md) · [Edition and errata policy](RELEASE_POLICY.md)

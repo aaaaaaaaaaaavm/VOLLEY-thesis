@@ -1,4 +1,4 @@
-# VOLLEY Gen5 ACR1 — polished CAD render derivative
+# VOLLEY Gen5 — CAD-derived assembly views
 
 Blender 4.3.2 Workbench restyles the accepted scientific scene. No CAD mesh coordinates, object transforms, mechanism design or physics inputs change. Charcoal/ivory styling and one teal accent distinguish the selected feed/pallet path. Exact input pins, cameras, shown/hidden part names and geometry identity checks accompany each view.
 

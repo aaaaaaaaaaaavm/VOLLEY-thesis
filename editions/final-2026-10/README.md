@@ -6,7 +6,7 @@
 Mechanical Engineering · Symbiosis Institute of Technology, Pune<br>
 Guide: Vikas Gulia · October 2026
 
-The 64-page blackbook is the final report of the computational design study. It presents the selected storage, guided feed, pallet transfer and reusable electromagnetic carrier together with electromagnetic, electrical, structural, thermal and orbital analyses. Its conclusions distinguish the evaluated design from the subsequent prototype and qualification programme.
+The Gen5 design is an integrated computational reference for commanded electromagnetic CubeSat deployment. It has two fixed six-cell banks with guided positive pushers, a vertically indexed captive pallet and a retained moving-magnet carrier forming the payload path. Nominal compatibility of the design is achieved based on released native and STEP geometry, and 154 accepted motion and refinement checks.
 
 | Material | File |
 |:--|:--|
@@ -27,4 +27,6 @@ The 31-slide presentation is preserved as a separate document issue with its own
 
 ## Development beyond this study
 
-The next stage is an instrumented prototype: component force measurements, feeder and lock sequencing, integrated release, carrier arrest and return. Mixed-size operation, host-specific interfaces and environmental qualification follow those measurements. Higher-speed and cislunar investigations retain separate configurations and requirements; they are development objectives rather than ratings of the evaluated mechanism.
+The present study is an integrated computational design for CubeSat storage, transfer, commanded release and carrier recovery. Physical hardware tests and performance measurements are needed to assess the design. The lab prototype phase, known as Gen6, will start by fabricating and testing the individual mechanisms and motor, and then eventually integrate those to execute an entire deployment cycle.
+
+The integrated prototype will combine the feeder, transfer pallet, launch carrier, electrical source and control system. Initial commanded-release tests will use the operating cases established by the present study. The complete sequence will include payload departure, carrier arrest, return and preparation for the next payload. Measured release speed, tip-off, contact loads, energy use and temperature will be compared with the corresponding model predictions.

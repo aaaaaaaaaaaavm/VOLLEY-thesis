@@ -13,8 +13,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 2873,
-      "sha256": "18c40973e170e7c787ee31baa05f5ba375f8a76248be0ac9ad7cb79863b40aed"
+      "bytes": 3353,
+      "sha256": "2245e10f2a1e9f815ffbd0aa3bc60ad6a2be3678125a82b61ff025ecb6c0e3b9"
     },
     {
       "path": "VOLLEY_Blackbook.docx",
@@ -46,7 +46,7 @@
     {
       "path": "editions/presentation-2026-10/MANIFEST.json",
       "bytes": 5836,
-      "sha256": "f2fb7bd8074e2b94a0e34146e02e30c458f3cfd65f82a3e13ee5ac42737f6b86"
+      "sha256": "c30b78c87226b19a82f860e2a8632b9d5270ece8f455468d89b08216d24a0f53"
     }
   ],
   "engineering_core": "current/MANIFEST.sha256",
